@@ -16,7 +16,7 @@ function main_lifoff
 	if vehicle_type = "Falcon Heavy" 
 	{
 		PRINT "Press [ENTER] to START". set ch to terminal:input:getchar().
-		CLEARSCREEN. //PRINT " ".PRINT " ".
+		CLEARSCREEN.
 	
 		PRINT "Vehicle Release Auto Sequence".
 		PRINT " ".
