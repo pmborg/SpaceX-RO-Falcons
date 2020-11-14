@@ -15,6 +15,7 @@ parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
 
 PRINT "[5]Circularize------------------------------------".
 SET MAPVIEW TO TRUE.	// map view on
+SAS OFF.
 
 //Calculate circular velocity at apoapsis altitude:
 set x to 1.
@@ -46,8 +47,10 @@ function wait_for_AP
 {
 	parameter w.
 	
+	set warp to 0.
+	wait 1.
 	WAIT until eta:apoapsis < 3000.
-	set warp to 3.
+	set warp to 2.
 	WAIT until eta:apoapsis < 1000.
 	set warp to 1.
 	WAIT until eta:apoapsis < w.
@@ -64,7 +67,7 @@ function do_circle_step
 	set z to 0.
 	set x to 1. //x=Throttle.
 
-	if vehicle_type = "Crew Dragon 2"		
+	// if vehicle_type = "Crew Dragon 2"		
 		RCS ON.
 
 	PRINT "vcir-Vo: "+ (vcir-Vo) at (0,10).
@@ -72,7 +75,7 @@ function do_circle_step
 	//LOOP6: 
 	until (vcir-Vo < .001 and periapsis >= FINAL_ORBIT) 
 	{
-		set last_vcir_Vo to vcir-Vo.
+		//set last_vcir_Vo to vcir-Vo.
 		
 		set previous_ratio to (periapsis/apoapsis).
 		set thrust to x.
@@ -97,20 +100,19 @@ function do_circle_step
 
 		if (periapsis/apoapsis)>0 and (apoapsis/periapsis) < 1.1 and apoapsis>FINAL_ORBIT and periapsis > max(1.5*body:atm:height,40000) //and Y > 3
 		{
-			// set y to y+1.	
 			LOCK THROTTLE TO 0.
-			PRINT "break." at (0,9).
-			PRINT "WAIT 15.".
-			WAIT 15.
+			// PRINT "break." at (0,9).
+			// PRINT "WAIT 15.".
+			// WAIT 15.
 			break.
 		}
 		
 		if (periapsis/apoapsis)>0 and (periapsis/apoapsis) > 1.1 and apoapsis>FINAL_ORBIT and periapsis > max(body:atm:height,40000) //and Y > 4
 		{
 			LOCK THROTTLE TO 0.
-			PRINT "break." at (0,9).
-			PRINT "WAIT 10.".
-			WAIT 10.
+			// PRINT "break." at (0,9).
+			// PRINT "WAIT 10.".
+			// WAIT 10.
 			break.
 		}
 
@@ -123,7 +125,8 @@ function do_circle_step
 				set theta to 0. //arcsin(W/0.1).
 			set theta to theta*error.
 		}.
-		if stage:liquidfuel = 0 and z < 1{
+		if stage:liquidfuel = 0 and z < 1
+		{
 			set z to 1.5.
 		}.
 		if (Vcir-Vo) < 100  and y < 1{
@@ -136,20 +139,22 @@ function do_circle_step
 			set A to 1.
 			set y to y+1.
 		}.
-		if (Vcir-Vo) < 1 and y < 3{
-			set err to 8.
-			set A to .1.
-			set y to y+1.
-		}.
+		// if (Vcir-Vo) < 1 and y < 3{
+			// set err to 8.
+			// set A to .1.
+			// set y to y+1.
+		// }.
 		
 		//In theory we should have it...
-		if throttle > 0 and maxthrust = 0 {
+		if throttle > 0 and maxthrust = 0 
+		{
 			CLEARSCREEN.
 			confirm_stage().
 			WAIT 2.
 		}.
 		
-		if y > 1 {
+		if y > 1 
+		{
 			set error to 1-(err*verticalspeed).
 			set C to mass*A.
 			set B to ((W^2)+(C^2))^.5.
@@ -181,20 +186,28 @@ function do_circle_step
 		PRINT x 					+ "     " at (20,7).
 		PRINT "apoapsis/periapsis :"+ (apoapsis/periapsis)	at (0,8).
 		
-		if vcir-Vo > last_vcir_Vo
-			break.
+		// if vcir-Vo > last_vcir_Vo
+			// break.
 		//WAIT 0.1.
 	}.
 }
 
-LOCK STEERING TO heading (90, PlanetOuter*theta).
-wait_for_AP(15).
+//LOCK STEERING TO heading (90, PlanetOuter*theta).
+SET steeringDir TO 90.	// W/E
+SET Vdeg to 0.			// Vertical = 90
+set Vroll to -270.		// Zero Rotation
+LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
+
+
+if ship:verticalspeed > 0
+	wait_for_AP(30).
+
 do_circle_step().
 
 if orbit_type = "GSO"
 {
 	set FINAL_ORBIT to 35786000. //35,786 km
-	wait_for_AP(15).
+	wait_for_AP(30).
 	do_circle_step().
 }
 

@@ -356,204 +356,216 @@ if alt:radar < 100
 	WAIT 1.
 }
 
-CLEARSCREEN.
-PRINT " ".PRINT " ".
-update_phase_title("[6] STAGING...",1,false).
-PRINT "1st ORBIT: "+FINAL_ORBIT+"km, Done!".
-
-if vehicle_type = "Falcon Heavy" 
+if altitude*1.1 < FINAL_ORBIT2
 {
-	//SEND PROCESSOR ID TO BOOSTER --------------------------------------------
-	IF PROCESSOR_STAGE1L:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
-	{
-	  PRINT "PROCESSOR_STAGE1: Message sent!".
-	  WAIT 1.
-	}
-	//SEND PROCESSOR ID TO BOOSTER --------------------------------------------
-	IF PROCESSOR_STAGE1R:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
-	{
-	  PRINT "PROCESSOR_STAGE1: Message sent!".
-	  WAIT 1.
-	}
-} else {
-	//SEND PROCESSOR ID TO BOOSTER --------------------------------------------
-	IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
-	{
-	  PRINT "PROCESSOR_STAGE1: Message sent!".
-	  WAIT 1.
-	}	
-}
 
-RCS ON.
-if vehicle_type = "Falcon Heavy" 
-{
-	AG6 ON. //Toggle: FH Boosters separator
-	WAIT 0.5.
-	if (KUniverse:ActiveVessel = SHIP) STAGE.
-	WAIT 3.
-} else {
-	main_stage().
-}
+	CLEARSCREEN.
+	PRINT " ".PRINT " ".
+	update_phase_title("[6] STAGING...",1,false).
+	PRINT "1st ORBIT: "+FINAL_ORBIT+"km, Done!".
 
-// Stage-2 Initial Slow Burn:
-update_phase_title("[7] PHASE I OPT",1,false).
-UNLOCK STEERING.
-set thrust to 0.25.
-if vehicle_type = "Crew Dragon 2" or vehicle_type = "Falcon Heavy"
-	WAIT 1.
-else
-	WAIT 3.
-
-if vehicle_type = "Crew Dragon 2"
-{
-	//                             S/N W/E                   
-	SET myDir TO HEADING(0, 90)+ R(18,-74,0).
-}
-else
-if vehicle_type = "Falcon Heavy"
-{
-	//                             S/N W/E                   
-	SET myDir TO HEADING(0, 90)+ R(22,-85,0).
-}else
-{	
-	//                             S/N W/E                   
-	SET myDir TO HEADING(0, 90)+ R(22,-81,0).
-}
-LOCK STEERING TO myDir.
-
-function update_orbit_status 
-{
-	PRINT "Launch Site Distance:   "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,9).
-	PRINT "Periapsis: " + ROUND(periapsis/1000,1)+" km    " at (0,10).
-	PRINT "Apoapsis: " + ROUND(apoapsis/1000,1)+" km    " at (0,11).
-	PRINT "Eta:apoapsis: " + ROUND(eta:apoapsis,1)+" s    " at (0,12).
-	PRINT "Eccentricity: " + ROUND(SHIP:ORBIT:ECCENTRICITY,1)+"     " at (0,13).
-	PRINT "Altitude: " + ROUND(Altitude,1)+" km    " at (0,14).
-	PRINT "Phase: " + phase at (0,15).
-	PRINT "mphase: " + mphase at (0,16).
-	PRINT "deltaReduction: " + deltaReduction at (0,17).
-}
-
-if vehicle_type = "Falcon Heavy"
-	engines_thrustlimit_to (100).	//Main Core back to 100% now
-
-set thrust to 1.
-RCS OFF.
-set phase to 0.
-set deltaReduction to 0.
-UNTIL periapsis > 0 and apoapsis < FINAL_ORBIT2
-{
-	set eta_apoapsis to eta:apoapsis.
-	
-	set vorb to velocity:orbit.
-	set Vsx to vorb:x.
-	set Vsy to vorb:y.
-	set Vsz to vorb:z.
-	set velocity_orbit to (Vsx^2)+(Vsy^2)+(Vsz^2).
-	set Vs2 to SQRT(velocity_orbit).	//km/h
-	
-	
-	if vehicle_type = "Falcon Heavy" and phase=0 and (Vs2 > 3100 or apoapsis > 160000)
+	if vehicle_type = "Falcon Heavy" 
 	{
-		// Main Booster SEP:
-		RCS ON.
-		set thrust to 0.
-		WAIT 1.
-		if (KUniverse:ActiveVessel = SHIP) STAGE.
-		WAIT 3.
-		if (KUniverse:ActiveVessel = SHIP) STAGE.
-		set phase to 1.
-		set thrust to 1.
-		RCS OFF.
-		if vehicle_type = "Falcon Heavy"
-			SET myDir TO HEADING(0, 90)+ R(21,-80.5,0).
-		WAIT 1.
-	}
-	if vehicle_type <> "Falcon Heavy" and altitude > 160000 and phase =1
-	{
-		update_phase_title("[8] FAIRING SEPARATION",1,false).
-		if (KUniverse:ActiveVessel = SHIP) STAGE.
-		set phase to 2.
-	}
-	
-	if (Aceleration_value1 > 30.75)
-	{
-		//set deltaReduction to (deltaReduction+0.001).
-		if (mphase = 2) 
+		//SEND PROCESSOR ID TO BOOSTER --------------------------------------------
+		IF PROCESSOR_STAGE1L:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
 		{
-			PRINT "( Throttle down to reduce acceleration, to avoid stress on vehicle )" at (0,5).
-			set mphase to 3. // Acceleration Relation... to avoid stress on vehicle.
+		  PRINT "PROCESSOR_STAGE1: Message sent!".
+		  WAIT 1.
 		}
-		set thrust to (thrust-deltaReduction).
+		//SEND PROCESSOR ID TO BOOSTER --------------------------------------------
+		IF PROCESSOR_STAGE1R:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
+		{
+		  PRINT "PROCESSOR_STAGE1: Message sent!".
+		  WAIT 1.
+		}
+	} else {
+		//SEND PROCESSOR ID TO BOOSTER --------------------------------------------
+		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
+		{
+		  PRINT "PROCESSOR_STAGE1: Message sent!".
+		  WAIT 1.
+		}	
 	}
-	
-	update_orbit_status.
-	
-	set vel to SQRT(Vs2).
-	update_atmosphere (altitude, vel).
-	log_data (vel, g).
-	
-	set dx to eta:apoapsis.
-	if dx > eta_apoapsis and stage:number < 7
-		break.
-}
 
-LOCK STEERING TO myDir.
-update_phase_title("[7] PHASE II OPT",1,false).
-UNTIL (apoapsis >= FINAL_ORBIT2) //or (velocity:orbit >= MECO)
-{
-	set vorb to velocity:orbit.
-	set Vsx to vorb:x.
-	set Vsy to vorb:y.
-	set Vsz to vorb:z.
-	set velocity_orbit to (Vsx^2)+(Vsy^2)+(Vsz^2).
-	set Vs2 to SQRT(velocity_orbit). //km/h
-	
-	
-	// Main Booster SEP:
-	if vehicle_type = "Falcon Heavy" and phase=0 and (v > 3100 or apoapsis > 160000)
+	RCS ON.
+	if vehicle_type = "Falcon Heavy" 
 	{
-		RCS ON.
-		set thrust to 0.
-		WAIT 1.
+		AG6 ON. //Toggle: FH Boosters separator
+		WAIT 0.5.
 		if (KUniverse:ActiveVessel = SHIP) STAGE.
 		WAIT 3.
-		if (KUniverse:ActiveVessel = SHIP) STAGE.
-		set phase to 1.
-		set thrust to 1.
-		RCS OFF.
-		if vehicle_type = "Falcon Heavy"
-			SET myDir TO HEADING(0, 90)+ R(21,-75,0).
-		else
-			SET myDir TO HEADING(0, 90)+ R(22,-85,0).
+	} else {
+		main_stage().
+	}
+
+	// Stage-2 Initial Slow Burn:
+	update_phase_title("[7] PHASE I OPT",1,false).
+	UNLOCK STEERING.
+	set thrust to 0.25.
+	if vehicle_type = "Crew Dragon 2" or vehicle_type = "Falcon Heavy"
 		WAIT 1.
-	}
-	
-	if altitude > 160000 and phase =1
+	else
+		WAIT 3.
+
+	SAS OFF.
+
+	if vehicle_type = "Crew Dragon 2"
 	{
-		update_phase_title("[8] FAIRING SEPARATION",1,false).
-		if (KUniverse:ActiveVessel = SHIP) STAGE.
-		set phase to 2.
+		SET Vdeg to 90-74.	// Vertical = 90
 	}
-	
-	update_orbit_status.
-	
-	set vel to SQRT(Vs2).
-	update_atmosphere (altitude, vel).
-	log_data (vel, g).
+	else
+	if vehicle_type = "Falcon Heavy"
+	{
+		SET Vdeg to 90-85.	// Vertical = 90
+	}else
+	{	
+		SET Vdeg to 90-81.	// Vertical = 90
+	}
+
+	SET steeringDir TO 90.	// W/E
+	set Vroll to -270.		// Zero Rotation
+	LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
+
+	function update_orbit_status 
+	{
+		PRINT "Launch Site Distance:   "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,9).
+		PRINT "Periapsis: " + ROUND(periapsis/1000,1)+" km    " at (0,10).
+		PRINT "Apoapsis: " + ROUND(apoapsis/1000,1)+" km    " at (0,11).
+		PRINT "Eta:apoapsis: " + ROUND(eta:apoapsis,1)+" s    " at (0,12).
+		PRINT "Eccentricity: " + ROUND(SHIP:ORBIT:ECCENTRICITY,1)+"     " at (0,13).
+		PRINT "Altitude: " + ROUND(Altitude,1)+" km    " at (0,14).
+		PRINT "Phase: " + phase at (0,15).
+		PRINT "mphase: " + mphase at (0,16).
+		PRINT "deltaReduction: " + deltaReduction at (0,17).
+	}
+
+	if vehicle_type = "Falcon Heavy"
+		engines_thrustlimit_to (100).	//Main Core back to 100% now
+
+	set thrust to 1.
+	RCS OFF.
+	set phase to 0.
+	set deltaReduction to 0.
+	UNTIL periapsis > 0 and apoapsis < FINAL_ORBIT2
+	{
+		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
+		
+		set eta_apoapsis to eta:apoapsis.
+		
+		set vorb to velocity:orbit.
+		set Vsx to vorb:x.
+		set Vsy to vorb:y.
+		set Vsz to vorb:z.
+		set velocity_orbit to (Vsx^2)+(Vsy^2)+(Vsz^2).
+		set Vs2 to SQRT(velocity_orbit).	//km/h
+		
+		
+		if vehicle_type = "Falcon Heavy" and phase=0 and (Vs2 > 3100 or apoapsis > 160000)
+		{
+			// Main Booster SEP:
+			RCS ON.
+			set thrust to 0.
+			WAIT 1.
+			if (KUniverse:ActiveVessel = SHIP) STAGE.
+			WAIT 3.
+			if (KUniverse:ActiveVessel = SHIP) STAGE.
+			set phase to 1.
+			set thrust to 1.
+			RCS OFF.
+			if vehicle_type = "Falcon Heavy"
+				SET Vdeg to 90-80.5.
+			WAIT 1.
+		}
+		if vehicle_type <> "Falcon Heavy" and altitude > 160000 and phase = 0
+		{
+			update_phase_title("[8] FAIRING SEPARATION",1,false).
+			if (KUniverse:ActiveVessel = SHIP) STAGE.
+			set phase to 2.
+		}
+		
+		if (Aceleration_value1 > 30.75)
+		{
+			//set deltaReduction to (deltaReduction+0.001).
+			if (mphase = 2) 
+			{
+				PRINT "( Throttle down to reduce acceleration, to avoid stress on vehicle )" at (0,5).
+				set mphase to 3. // Acceleration Relation... to avoid stress on vehicle.
+			}
+			set thrust to (thrust-deltaReduction).
+		}
+		
+		update_orbit_status.
+		
+		set vel to SQRT(Vs2).
+		update_atmosphere (altitude, vel).
+		log_data (vel, g).
+		
+		set dx to eta:apoapsis.
+		if dx > eta_apoapsis and stage:number < 7
+			break.
+	}
+
+
+	update_phase_title("[7] PHASE II OPT",1,false).
+	UNTIL (apoapsis >= FINAL_ORBIT2) 
+	{
+		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
+		
+		set vorb to velocity:orbit.
+		set Vsx to vorb:x.
+		set Vsy to vorb:y.
+		set Vsz to vorb:z.
+		set velocity_orbit to (Vsx^2)+(Vsy^2)+(Vsz^2).
+		set Vs2 to SQRT(velocity_orbit). //km/h
+		
+		// Main Booster SEP:
+		if vehicle_type = "Falcon Heavy" and phase=0 and (v > 3100 or apoapsis > 160000)
+		{
+			RCS ON.
+			set thrust to 0.
+			WAIT 1.
+			if (KUniverse:ActiveVessel = SHIP) STAGE.
+			WAIT 3.
+			if (KUniverse:ActiveVessel = SHIP) STAGE.
+			set phase to 1.
+			set thrust to 1.
+			RCS OFF.
+			if vehicle_type = "Falcon Heavy"
+				SET Vdeg to 90-75.
+			else
+				SET Vdeg to 90-85.
+			WAIT 1.
+		}
+		
+		if altitude > 160000 and phase = 0
+		{
+			update_phase_title("[8] FAIRING SEPARATION",1,false).
+			if (KUniverse:ActiveVessel = SHIP) STAGE.
+			set phase to 2.
+		}
+		
+		update_orbit_status.
+		
+		set vel to SQRT(Vs2).
+		update_atmosphere (altitude, vel).
+		log_data (vel, g).
+	}
+
+	UNLOCK STEERING.
+	set thrust to 0.
+	PRINT "Orbit insertion completed".
+	WAIT 5.
+
+	if orbit_type = "GSO"
+	{
+		//25% now on.
+		LIST ENGINES IN myVariable.
+		FOR eng IN myVariable {
+			set eng:THRUSTLIMIT to 25.
+			set eng:Gimbal:LIMIT to 25.
+		}.
+	}
 }
 
-UNLOCK STEERING.
-set thrust to 0.
-PRINT "Orbit insertion completed".
-WAIT 5.
-
-if orbit_type = "GSO"
-{
-	//25% now on.
-	LIST ENGINES IN myVariable.
-	FOR eng IN myVariable {
-		set eng:THRUSTLIMIT to 25.
-		set eng:Gimbal:LIMIT to 25.
-	}.
-}
+set warp to 0.
+wait 2.
