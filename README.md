@@ -14,12 +14,13 @@ This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP user
 
 - First: Copy all these files to "KSP MAIN DIRECTORY" (sample: C:\SteamLibrary\steamapps\common\Kerbal Space Program)<br>
 <br>
-- Second: Run the Script: (**@[KSP ROOT]**\SteamLibrary\steamapps\common\Kerbal Space Program))<br>
+- Second: Run the Script: **@[KSP ROOT]**\SteamLibrary\steamapps\common\Kerbal Space Program<br>
 			for KSP 1.9.1  **Pmborg-RealFalcons-v2-Install-For_KSP_1.9.1-All_Dependencies.bat**<br>
 			for KSP 1.10.1 **Pmborg-RealFalcons-v2-Install-For_KSP_1.10.1-All_Dependencies.bat**<br>
 			
 
 --------------------------------------------------------------------------------------------------------------------------------
-<h2>YouTube Playlist:</h2>
-[LINK](https://www.youtube.com/playlist?list=PLKyZSZ3Rbi6afgvRnMc2XUgyUA8dcYNkP)
+<h2>YouTube video demos Playlist:</h2>
+https://www.youtube.com/playlist?list=PLKyZSZ3Rbi6afgvRnMc2XUgyUA8dcYNkP
 
+[![YouTube video Demos](blob:https://imgur.com/2e364972-9526-46f9-be95-8cb1b43dc7d2)](https://www.youtube.com/playlist?list=PLKyZSZ3Rbi6afgvRnMc2XUgyUA8dcYNkP)
