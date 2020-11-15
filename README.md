@@ -7,22 +7,26 @@ This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP user
 - KSP 1.10.1<br>
 
 ----
-<h2>Automatic Instalation:</h2>
+<h2>HOW TODO: Automatic Instalation:</h2>
 
+- First: Copy all these files to "KSP MAIN DIRECTORY" Sample: C:\SteamLibrary\steamapps\common\Kerbal Space Program<br>
+- Second: Run the Script: [KSP ROOT]\SteamLibrary\steamapps\common\Kerbal Space Program<br>
+ >- KSP 1.9.1  **Pmborg-RealFalcons-v2-Install-For_KSP_1.9.1-All_Dependencies.bat**<br>
+ >- KSP 1.10.1 **Pmborg-RealFalcons-v2-Install-For_KSP_1.10.1-All_Dependencies.bat**<br>
 
->- First: Copy all these files to "KSP MAIN DIRECTORY" Sample: C:\SteamLibrary\steamapps\common\Kerbal Space Program<br>
->- Second: Run the Script: [KSP ROOT]\SteamLibrary\steamapps\common\Kerbal Space Program<br>
- >>- KSP 1.9.1  **Pmborg-RealFalcons-v2-Install-For_KSP_1.9.1-All_Dependencies.bat**<br>
- >>- KSP 1.10.1 **Pmborg-RealFalcons-v2-Install-For_KSP_1.10.1-All_Dependencies.bat**<br>
-			
 ----
-<h2>Demo Sample Mission:</h2>
-<h4>Load saved game:</h4>
-saves\InterStar\KSP1-10-DEMO-BASE-DroneShip1-2-LZ1-2.sfs<br>
+<h2>HOW TODO: Automatic Mod dependencies Update:</h2>
 
-Select: 0 3 [ENTER] at KOS Console menu to Launch.
+- RUN  **Pmborg-RealFalcons-v2-CheckForModUpdates.bat**<br>
 
-If you want to follow Stage-1 landing, switch vessels imediattly after the separation.
+----
+<h2>Demo a Sample Mission, (load this saved game):</h2>
+
+saves\InterStar\\**KSP1-10-DEMO-BASE-DroneShip1-2-LZ1-2.sfs**<br>
+
+Select: 0 3 [ENTER] at KOS Console Launch Menu.
+
+If you want to follow Stage-1 landing, switch vessels imediattly after the stage separation.
 
 
 ----
