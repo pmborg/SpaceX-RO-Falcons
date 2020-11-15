@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used go get more realistic data from Planet Earth Atmosphere.
-// 14/Nov/2020
+// 15/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 // --------------------------------------------------------------------------------------------
@@ -161,6 +161,13 @@ function update_atmosphere
 	set indice to 20.
 	PRINT "Altitude: "		 	at (0,indice+0).	PRINT ROUND(h0/1000,1)+" km   "		 	at (22,indice+0).
 	PRINT "Speed: "				at (0,indice+1).	PRINT ROUND(v0*3.6,1)+" km/h   "		at (22,indice+1).
+
+	PRINT "Temperature: "		at (0,indice+3).
+	PRINT "Density: "			at (0,indice+4).
+	PRINT "Pressure: "			at (0,indice+5).
+	PRINT "Speed of Sound: "	at (0,indice+6).
+	PRINT "Mach Number: "		at (0,indice+7).
+	PRINT "Dynamic Pressure: "	at (0,indice+8).
 	
 	if ROUND(BODY:ATM:ALTITUDEPRESSURE(h),4) = 0 and ROUND(BODY:ATM:ALTITUDETEMPERATURE(h),1) = 0
 	{
@@ -174,13 +181,6 @@ function update_atmosphere
 		PRINT ROUND(SHIP:Q,3)+"     " at (22,indice+12).
 		return.
 	}
-	
-	PRINT "Temperature: "		at (0,indice+3).
-	PRINT "Density: "			at (0,indice+4).
-	PRINT "Pressure: "			at (0,indice+5).
-	PRINT "Speed of Sound: "	at (0,indice+6).
-	PRINT "Mach Number: "		at (0,indice+7).
-	PRINT "Dynamic Pressure: "	at (0,indice+8).
 	
 	//set indice to 22.
 	PRINT ROUND(tempVal,1)+" Cº   "			at (22,indice+3).

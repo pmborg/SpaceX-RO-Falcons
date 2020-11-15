@@ -53,7 +53,7 @@ function main_lifoff
 	if vehicle_type = "Crew Dragon 2"
 	{
 		set thrust to 1.
-		AG2 ON. //WATER AND CREW DOCK
+		AG3 ON. //Retract Crew Tower
 		if (KUniverse:ActiveVessel = SHIP) STAGE.	//Water run...
 	}
 
@@ -81,7 +81,7 @@ function main_lifoff
 			WAIT 1.
 		else {
 			WAIT 3.
-			if (KUniverse:ActiveVessel = SHIP) STAGE. // Water Tower Liftoff...
+			if (KUniverse:ActiveVessel = SHIP) STAGE.
 		}
 	}
 }
