@@ -50,7 +50,7 @@ function boostback_burn
 		
 		if (do_reverse)
 		{
-			if SHIP:GROUNDSPEED < 200
+			if SHIP:GROUNDSPEED < 200 or (SHIP:GROUNDSPEED < 350 and impactDist > prev_impactDist)
 				break.
 		}else{
 			if (impactDist < 1000) and (impactDist > prev_impactDist)

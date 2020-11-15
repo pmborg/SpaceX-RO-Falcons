@@ -53,9 +53,16 @@ if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 	if TARGET_N = 100
 	{
 		set LandingZone TO VESSEL(JRTI).
-		LOG "declare global LandingZone TO VESSEL(JRTI)." to "1:/STAGE1_TARGET_FILE.c".
-		LOG "INIT TARGET: VESSEL(JRTI)." to LOG.txt.
-		PRINT "LANDING AT: "+JRTI.
+		if vehicle_type = "Crew Dragon 2" 
+		{
+			LOG "declare global LandingZone TO VESSEL(OCISLY)." to "1:/STAGE1_TARGET_FILE.c".
+			LOG "INIT TARGET: VESSEL(OCISLY)." to LOG.txt.
+			PRINT "LANDING AT: "+OCISLY.
+		} else {
+			LOG "declare global LandingZone TO VESSEL(JRTI)." to "1:/STAGE1_TARGET_FILE.c".
+			LOG "INIT TARGET: VESSEL(JRTI)." to LOG.txt.			
+			PRINT "LANDING AT: "+JRTI.
+		}
 	} else
 	if TARGET_N = 101
 	{
