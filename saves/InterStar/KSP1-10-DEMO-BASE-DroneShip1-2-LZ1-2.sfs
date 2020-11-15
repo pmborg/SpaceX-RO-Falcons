@@ -12,7 +12,7 @@ GAME
 	scene = 7
 	editor = None
 	flag = Launchers Pack/Flags/SpaceX
-	launchID = 75
+	launchID = 76
 	defaultVABLaunchSite = LaunchPad
 	defaultSPHLaunchSite = Runway
 	modded = True
@@ -346,12 +346,6 @@ GAME
 			resistMultiplier = 1.75
 			reEntryMultiplier = 8
 		}
-		CP
-		{
-			flightExperienceCost = 5000
-			educationCost = 5000
-			inspirationCost = 50
-		}
 	}
 	SCENARIO
 	{
@@ -554,7 +548,7 @@ GAME
 	{
 		name = ContractSystem
 		scene = 7, 8, 5, 6
-		update = 3759927398.2630477
+		update = 3759927421.1430259
 		version = 1.10.1
 		WEIGHTS
 		{
@@ -614,150 +608,6 @@ GAME
 		{
 			CONTRACT
 			{
-				guid = 972a9001-21d4-47cb-bcb9-ccae13bf6f8e
-				type = TourismContract
-				prestige = 1
-				seed = 874903409
-				state = Offered
-				viewed = Unseen
-				agent = Zaltonic Electronics
-				agentName = Zaltonic Electronics
-				deadlineType = Floating
-				expiryType = Floating
-				values = 86400,736128000,0,0,0,0,50,6.6,3759934245.80383,0,0,0
-				preposition = around The Sun
-				homeDestinations = False
-				isGeeAdventure = False
-				tourists = Tidin Kerman|Shepfrid Kerman|Bartrey Kerman|Linmin Kerman
-				PARAM
-				{
-					name = KerbalTourParameter
-					state = Incomplete
-					allowPartialFailure = True
-					values = 292500,0,0,0,0
-					kerbalName = Tidin Kerman
-					kerbalGender = Female
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 48750,0,0,0,0
-						targetBody = 1
-						targetType = Suborbit
-						kerbalName = Tidin Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 48750,0,0,0,0
-						targetBody = 0
-						targetType = Flyby
-						kerbalName = Tidin Kerman
-					}
-				}
-				PARAM
-				{
-					name = KerbalTourParameter
-					state = Incomplete
-					allowPartialFailure = True
-					values = 73125,0,0,0,0
-					kerbalName = Shepfrid Kerman
-					kerbalGender = Male
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 12188,0,0,0,0
-						targetBody = 1
-						targetType = Suborbit
-						kerbalName = Shepfrid Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 12188,0,0,0,0
-						targetBody = 1
-						targetType = Orbit
-						kerbalName = Shepfrid Kerman
-					}
-				}
-				PARAM
-				{
-					name = KerbalTourParameter
-					state = Incomplete
-					allowPartialFailure = True
-					values = 438750,0,0,0,0
-					kerbalName = Bartrey Kerman
-					kerbalGender = Male
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 48750,0,0,0,0
-						targetBody = 0
-						targetType = Orbit
-						kerbalName = Bartrey Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 48750,0,0,0,0
-						targetBody = 0
-						targetType = Flyby
-						kerbalName = Bartrey Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 48750,0,0,0,0
-						targetBody = 1
-						targetType = Suborbit
-						kerbalName = Bartrey Kerman
-					}
-				}
-				PARAM
-				{
-					name = KerbalTourParameter
-					state = Incomplete
-					allowPartialFailure = True
-					values = 438750,0,0,0,0
-					kerbalName = Linmin Kerman
-					kerbalGender = Female
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 48750,0,0,0,0
-						targetBody = 0
-						targetType = Flyby
-						kerbalName = Linmin Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 48750,0,0,0,0
-						targetBody = 1
-						targetType = Orbit
-						kerbalName = Linmin Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 48750,0,0,0,0
-						targetBody = 1
-						targetType = Suborbit
-						kerbalName = Linmin Kerman
-					}
-				}
-			}
-			CONTRACT
-			{
 				guid = 8f4e81fe-3473-4bbe-a4e7-18f0d8670360
 				type = ExplorationContract
 				prestige = 0
@@ -783,825 +633,89 @@ GAME
 			}
 			CONTRACT
 			{
-				guid = 6a3ab5da-6be1-4607-a06b-4d29006b415c
-				type = ROCScienceArmContract
-				prestige = 2
-				seed = 874903415
-				state = Offered
-				viewed = Unseen
-				agent = Reaction Systems Ltd
-				agentName = Reaction Systems Ltd
-				deadlineType = Floating
-				expiryType = Floating
-				values = 259200,184032000,54000,129374.997317791,62099.9987125397,0,5.217391,2,3760107045.80383,0,0,0
-				subjectId = ROCScience_KerbinBaobabTree@KerbinSrfLanded
-				scienceTitle = Baobab Tree
-				rocType = KerbinBaobabTree
-				scannerArmName = RobotArmScanner.S3
-				scannerArmTitle = non RO - OP-E Large Scanning Arm
-				sciencePercentage = 100
-				biomes = #autoLOC_6002034
-				PARAM
-				{
-					name = CollectROCScienceArm
-					state = Incomplete
-					values = 0,0,0,0,0
-					subjectId = ROCScience_KerbinBaobabTree@KerbinSrfLanded
-					sciencePercentage = 100
-					scienceCollected = 0
-					rocType = KerbinBaobabTree
-					scienceTitle = Baobab Tree
-				}
-			}
-			CONTRACT
-			{
-				guid = 34e40c86-3da0-4d96-b554-6e76634bbe0a
-				type = TourismContract
-				prestige = 2
-				seed = 874903423
-				state = Offered
-				viewed = Unseen
-				agent = Periapsis Rocket Supplies Co
-				agentName = Periapsis Rocket Supplies Co
-				deadlineType = Floating
-				expiryType = Floating
-				values = 345600,736128000,0,0,0,0,60,8,3760193445.80383,0,0,0
-				preposition = of the solar system
-				homeDestinations = False
-				isGeeAdventure = False
-				tourists = Glecan Kerman|Podald Kerman|Jedfrey Kerman
-				PARAM
-				{
-					name = KerbalTourParameter
-					state = Incomplete
-					allowPartialFailure = True
-					values = 702000,0,0,0,0
-					kerbalName = Glecan Kerman
-					kerbalGender = Female
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 2
-						targetType = Land
-						kerbalName = Glecan Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 0
-						targetType = Orbit
-						kerbalName = Glecan Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 0
-						targetType = Flyby
-						kerbalName = Glecan Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 2
-						targetType = Flyby
-						kerbalName = Glecan Kerman
-					}
-				}
-				PARAM
-				{
-					name = KerbalTourParameter
-					state = Incomplete
-					allowPartialFailure = True
-					values = 263250,0,0,0,0
-					kerbalName = Podald Kerman
-					kerbalGender = Male
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 1
-						targetType = Orbit
-						kerbalName = Podald Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 2
-						targetType = Flyby
-						kerbalName = Podald Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 1
-						targetType = Suborbit
-						kerbalName = Podald Kerman
-					}
-				}
-				PARAM
-				{
-					name = KerbalTourParameter
-					state = Incomplete
-					allowPartialFailure = True
-					values = 702000,0,0,0,0
-					kerbalName = Jedfrey Kerman
-					kerbalGender = Male
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 2
-						targetType = Land
-						kerbalName = Jedfrey Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 2
-						targetType = Flyby
-						kerbalName = Jedfrey Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 2
-						targetType = Orbit
-						kerbalName = Jedfrey Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 0
-						targetType = Orbit
-						kerbalName = Jedfrey Kerman
-					}
-				}
-			}
-			CONTRACT
-			{
-				guid = 9762bef8-33f1-48ca-96ad-2f657a40aa60
-				type = TourismContract
-				prestige = 2
-				seed = 874903425
-				state = Offered
-				viewed = Unseen
-				agent = Research & Development Department
-				agentName = Research & Development Department
-				deadlineType = Floating
-				expiryType = Floating
-				values = 86400,736128000,0,0,0,0,60,8,3759934245.80383,0,0,0
-				preposition = of the solar system
-				homeDestinations = False
-				isGeeAdventure = False
-				tourists = Adbin Kerman|Daphwig Kerman|Dunfurt Kerman|Desgee Kerman|Haike Kerman
-				PARAM
-				{
-					name = KerbalTourParameter
-					state = Incomplete
-					allowPartialFailure = True
-					values = 351000,0,0,0,0
-					kerbalName = Adbin Kerman
-					kerbalGender = Male
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 2
-						targetType = Orbit
-						kerbalName = Adbin Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 1
-						targetType = Suborbit
-						kerbalName = Adbin Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 1
-						targetType = Orbit
-						kerbalName = Adbin Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 2
-						targetType = Land
-						kerbalName = Adbin Kerman
-					}
-				}
-				PARAM
-				{
-					name = KerbalTourParameter
-					state = Incomplete
-					allowPartialFailure = True
-					values = 351000,0,0,0,0
-					kerbalName = Daphwig Kerman
-					kerbalGender = Female
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 2
-						targetType = Flyby
-						kerbalName = Daphwig Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 1
-						targetType = Suborbit
-						kerbalName = Daphwig Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 1
-						targetType = Orbit
-						kerbalName = Daphwig Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 2
-						targetType = Orbit
-						kerbalName = Daphwig Kerman
-					}
-				}
-				PARAM
-				{
-					name = KerbalTourParameter
-					state = Incomplete
-					allowPartialFailure = True
-					values = 526500,0,0,0,0
-					kerbalName = Dunfurt Kerman
-					kerbalGender = Male
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 1
-						targetType = Orbit
-						kerbalName = Dunfurt Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 0
-						targetType = Orbit
-						kerbalName = Dunfurt Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 0
-						targetType = Flyby
-						kerbalName = Dunfurt Kerman
-					}
-				}
-				PARAM
-				{
-					name = KerbalTourParameter
-					state = Incomplete
-					allowPartialFailure = True
-					values = 526500,0,0,0,0
-					kerbalName = Desgee Kerman
-					kerbalGender = Male
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 2
-						targetType = Land
-						kerbalName = Desgee Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 0
-						targetType = Orbit
-						kerbalName = Desgee Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 1
-						targetType = Orbit
-						kerbalName = Desgee Kerman
-					}
-				}
-				PARAM
-				{
-					name = KerbalTourParameter
-					state = Incomplete
-					allowPartialFailure = True
-					values = 526500,0,0,0,0
-					kerbalName = Haike Kerman
-					kerbalGender = Female
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 0
-						targetType = Flyby
-						kerbalName = Haike Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 0
-						targetType = Orbit
-						kerbalName = Haike Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 1
-						targetType = Suborbit
-						kerbalName = Haike Kerman
-					}
-				}
-			}
-			CONTRACT
-			{
-				guid = a29be379-99b1-47a3-8004-f6fad052af83
-				type = TourismContract
-				prestige = 2
-				seed = 874903429
+				guid = c28f0d87-513a-4777-b95d-035cc23376fe
+				type = CollectScience
+				prestige = 0
+				seed = 379186022
 				state = Offered
 				viewed = Unseen
 				agent = Experimental Engineering Group
 				agentName = Experimental Engineering Group
 				deadlineType = Floating
 				expiryType = Floating
-				values = 109727.998352051,934882545.959473,0,0,0,0,39.95113,6.299212,3759957573.80218,0,0,0
-				preposition = of the solar system
-				homeDestinations = False
-				isGeeAdventure = False
-				tourists = Katgar Kerman|Shelrey Kerman|Jeddo Kerman|Arcal Kerman|Cordo Kerman
+				values = 342178.218841553,156118812.346458,23179.4997811317,59494.0467364311,24097.4989056587,8,9.52381,1,3760269593.28187,0,0,0
+				body = 1
+				location = Space
 				PARAM
 				{
-					name = KerbalTourParameter
+					name = CollectScience
 					state = Incomplete
-					allowPartialFailure = True
-					values = 702000,0,0,0,0
-					kerbalName = Katgar Kerman
-					kerbalGender = Female
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 0
-						targetType = Orbit
-						kerbalName = Katgar Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 2
-						targetType = Land
-						kerbalName = Katgar Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 0
-						targetType = Flyby
-						kerbalName = Katgar Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 58500,0,0,0,0
-						targetBody = 1
-						targetType = Orbit
-						kerbalName = Katgar Kerman
-					}
-				}
-				PARAM
-				{
-					name = KerbalTourParameter
-					state = Incomplete
-					allowPartialFailure = True
-					values = 263250,0,0,0,0
-					kerbalName = Shelrey Kerman
-					kerbalGender = Male
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 1
-						targetType = Orbit
-						kerbalName = Shelrey Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 2
-						targetType = Orbit
-						kerbalName = Shelrey Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 1
-						targetType = Suborbit
-						kerbalName = Shelrey Kerman
-					}
-				}
-				PARAM
-				{
-					name = KerbalTourParameter
-					state = Incomplete
-					allowPartialFailure = True
-					values = 263250,0,0,0,0
-					kerbalName = Jeddo Kerman
-					kerbalGender = Male
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 2
-						targetType = Flyby
-						kerbalName = Jeddo Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 1
-						targetType = Suborbit
-						kerbalName = Jeddo Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 1
-						targetType = Orbit
-						kerbalName = Jeddo Kerman
-					}
-				}
-				PARAM
-				{
-					name = KerbalTourParameter
-					state = Incomplete
-					allowPartialFailure = True
-					values = 263250,0,0,0,0
-					kerbalName = Arcal Kerman
-					kerbalGender = Female
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 1
-						targetType = Suborbit
-						kerbalName = Arcal Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 2
-						targetType = Orbit
-						kerbalName = Arcal Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 1
-						targetType = Orbit
-						kerbalName = Arcal Kerman
-					}
-				}
-				PARAM
-				{
-					name = KerbalTourParameter
-					state = Incomplete
-					allowPartialFailure = True
-					values = 351000,0,0,0,0
-					kerbalName = Cordo Kerman
-					kerbalGender = Male
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 2
-						targetType = Land
-						kerbalName = Cordo Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 1
-						targetType = Orbit
-						kerbalName = Cordo Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 1
-						targetType = Suborbit
-						kerbalName = Cordo Kerman
-					}
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 29250,0,0,0,0
-						targetBody = 2
-						targetType = Orbit
-						kerbalName = Cordo Kerman
-					}
+					values = 0,0,0,0,0
+					body = 1
+					location = Space
 				}
 			}
 			CONTRACT
 			{
-				guid = a102dc0c-400d-4ddc-bb71-5a6d5a2264e4
-				type = PartTest
-				prestige = 2
-				seed = 874903433
-				state = Offered
-				viewed = Unseen
-				agent = O.M.B. Demolition Enterprises
-				agentName = O.M.B. Demolition Enterprises
-				deadlineType = Floating
-				expiryType = Floating
-				values = 86400,73612800,129600,372599.992275238,149039.996910095,22,26.08696,5,3759934245.80383,0,0,0
-				part = Separator.1p5
-				haul = False
-				dest = 2
-				sit = ORBITING
-				exp = False
-				PARAM
-				{
-					name = PartTest
-					state = Incomplete
-					values = 0,0,0,0,0
-					part = Separator.1p5
-					body = Mun
-					situation = ORBITING
-					uniqueID = 0.49405678198396114
-					haul = False
-					repeatability = ONCEPERPART
-					notes = To perform the test, activate the part through the staging sequence when all test conditions are met.
-					PARAM
-					{
-						name = ReachDestination
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						dest = 2
-						title = 
-					}
-					PARAM
-					{
-						name = ReachSituation
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						sit = ORBITING
-						title = 
-					}
-					PARAM
-					{
-						name = ReachAltitudeEnvelope
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						minAlt = 440000
-						maxAlt = 450000
-					}
-				}
-			}
-			CONTRACT
-			{
-				guid = a611ad13-5a88-4af2-b27a-0c94947f192f
-				type = ARMContract
-				prestige = 1
-				seed = 877077590
-				state = Offered
-				viewed = Unseen
-				agent = Experimental Engineering Group
-				agentName = Experimental Engineering Group
-				deadlineType = Floating
-				expiryType = Floating
-				values = 432000,515289600,548550.03207922,1574100.12617111,603405.048365594,90,80.04574,11.42857,3760279860.21916,0,0,0
-				targetBody = 2
-				asteroidClass = C
-				isLanding = False
-				PARAM
-				{
-					name = AsteroidParameter
-					state = Incomplete
-					values = 0,0,0,0,0
-					forStation = False
-					asteroidClass = C
-				}
-				PARAM
-				{
-					name = LocationAndSituationParameter
-					state = Incomplete
-					values = 0,0,0,0,0
-					targetBody = 2
-					targetSituation = ORBITING
-					noun = vessel
-					finalObjective = False
-				}
-				PARAM
-				{
-					name = StabilityParameter
-					state = Incomplete
-					values = 0,0,0,0,0
-					holdSeconds = 10
-				}
-			}
-			CONTRACT
-			{
-				guid = 30f3b828-dff5-4510-b114-50f199d660b7
-				type = SurveyContract
+				guid = 8547a1f3-eeb6-4027-88d6-395d1e57dcca
+				type = TourismContract
 				prestige = 0
-				seed = -2063341676
+				seed = 382636910
 				state = Offered
 				viewed = Unseen
 				agent = Research & Development Department
 				agentName = Research & Development Department
 				deadlineType = Floating
 				expiryType = Floating
-				values = 432000,184032000,90000,159000,90000,0,18,4,3760321814.30601,0,0,0
-				targetBody = 1
-				centerLatitude = 24.053524912752657
-				centerLongitude = 0.37399555480759411
-				dataName = temperature
-				anomalyName = fluctuations
-				reportName = measurements
-				locationName = Earth near Bobak's Miscalculation
-				focusedSurvey = False
-				targetBand = GROUND
-				contextual = False
+				values = 345600,184032000,0,0,0,0,40,5,3760273015.12303,0,0,0
+				preposition = right here on Earth
+				homeDestinations = True
+				isGeeAdventure = False
+				tourists = Matson Kerman
 				PARAM
 				{
-					name = SurveyWaypointParameter
+					name = KerbalTourParameter
 					state = Incomplete
-					values = 26400,0,9,6,0
-					targetBody = 1
-					actionDescription = Measure the temperature
-					experiment = temperatureScan
-					flightThreshold = 52500
-					band = 1
-					clusterState = FULL
-					verified = True
-					contextual = False
-					wpSeed = -1038170111
-					wpIndex = 0
-					wpTexture = thermometer
-					wpLatitude = 24.063531838886021
-					wpLongitude = 0.37562579510564897
-					wpLandlocked = True
-					wpNavigationId = 03888e83-934b-43f0-a10f-0aadc7c9e6de
-				}
-				PARAM
-				{
-					name = SurveyWaypointParameter
-					state = Incomplete
-					values = 26400,0,9,6,0
-					targetBody = 1
-					actionDescription = Measure the temperature
-					experiment = temperatureScan
-					flightThreshold = 54500
-					band = 1
-					clusterState = FULL
-					verified = True
-					contextual = False
-					wpSeed = -1038170111
-					wpIndex = 1
-					wpTexture = thermometer
-					wpLatitude = 24.068698383404239
-					wpLongitude = 0.38308302375969971
-					wpLandlocked = True
-					wpNavigationId = 1a7fbf87-9910-4802-8eba-7cf8b8a11542
-				}
-				PARAM
-				{
-					name = SurveyWaypointParameter
-					state = Incomplete
-					values = 26400,0,9,6,0
-					targetBody = 1
-					actionDescription = Measure the temperature
-					experiment = temperatureScan
-					flightThreshold = 51500
-					band = 1
-					clusterState = FULL
-					verified = True
-					contextual = False
-					wpSeed = -1038170111
-					wpIndex = 2
-					wpTexture = thermometer
-					wpLatitude = 24.057781248440211
-					wpLongitude = 0.37933536756943786
-					wpLandlocked = True
-					wpNavigationId = 6a79a85a-be23-4c9b-abf5-ea9f1822404e
+					allowPartialFailure = True
+					values = 29250,0,0,0,0
+					kerbalName = Matson Kerman
+					kerbalGender = Male
+					PARAM
+					{
+						name = KerbalDestinationParameter
+						state = Incomplete
+						values = 9750,0,0,0,0
+						targetBody = 1
+						targetType = Suborbit
+						kerbalName = Matson Kerman
+					}
 				}
 			}
 			CONTRACT
 			{
-				guid = f2d68063-b339-479d-88c8-7afbb9e5c823
+				guid = 254e2974-a141-4034-97b1-fdcde787d151
 				type = TourismContract
 				prestige = 0
-				seed = -2062892871
+				seed = 383305121
 				state = Offered
 				viewed = Unseen
-				agent = Sean's Cannery
-				agentName = Sean's Cannery
+				agent = 
+				agentName = FASA
 				deadlineType = Floating
 				expiryType = Floating
-				values = 172800,736128000,0,0,0,0,41.90477,5.5,3760062614.32601,0,0,0
+				values = 518400,736128000,0,0,0,0,38.09524,5,3760445815.18303,0,0,0
 				preposition = around The Sun
 				homeDestinations = False
 				isGeeAdventure = False
-				tourists = Rosburry Kerman
+				tourists = Kelvis Kerman|Hangard Kerman
 				PARAM
 				{
 					name = KerbalTourParameter
 					state = Incomplete
 					allowPartialFailure = True
 					values = 117000,0,0,0,0
-					kerbalName = Rosburry Kerman
-					kerbalGender = Female
+					kerbalName = Kelvis Kerman
+					kerbalGender = Male
 					PARAM
 					{
 						name = KerbalDestinationParameter
@@ -1609,412 +723,70 @@ GAME
 						values = 39000,0,0,0,0
 						targetBody = 0
 						targetType = Flyby
-						kerbalName = Rosburry Kerman
+						kerbalName = Kelvis Kerman
+					}
+				}
+				PARAM
+				{
+					name = KerbalTourParameter
+					state = Incomplete
+					allowPartialFailure = True
+					values = 234000,0,0,0,0
+					kerbalName = Hangard Kerman
+					kerbalGender = Male
+					PARAM
+					{
+						name = KerbalDestinationParameter
+						state = Incomplete
+						values = 39000,0,0,0,0
+						targetBody = 0
+						targetType = Flyby
+						kerbalName = Hangard Kerman
+					}
+					PARAM
+					{
+						name = KerbalDestinationParameter
+						state = Incomplete
+						values = 39000,0,0,0,0
+						targetBody = 0
+						targetType = Orbit
+						kerbalName = Hangard Kerman
 					}
 				}
 			}
 			CONTRACT
 			{
-				guid = 06f61d12-7f23-4308-ad45-0a13e53603ed
-				type = PartTest
-				prestige = 1
-				seed = -2062892868
+				guid = 56f99a5a-9da0-4b5e-8041-ac06c16ebb43
+				type = TourismContract
+				prestige = 0
+				seed = 384118029
 				state = Offered
 				viewed = Unseen
 				agent = FLOOYD Dynamics Research Labs
 				agentName = FLOOYD Dynamics Research Labs
 				deadlineType = Floating
 				expiryType = Floating
-				values = 86400,36806400,25312,69609.1015087366,27843.2006034851,8,9.090909,2,3759976214.32601,0,0,0
-				part = fairingSize4
-				haul = True
-				dest = 1
-				sit = FLYING
-				exp = False
-				PARAM
-				{
-					name = PartTest
-					state = Incomplete
-					values = 0,0,0,0,0
-					part = fairingSize4
-					body = Earth
-					situation = FLYING
-					uniqueID = 0.15876394191699297
-					haul = True
-					repeatability = BODYANDSITUATION
-				}
-				PARAM
-				{
-					name = ReachDestination
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					dest = 1
-					title = 
-				}
-				PARAM
-				{
-					name = ReachSituation
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					sit = FLYING
-					title = 
-				}
-				PARAM
-				{
-					name = ReachAltitudeEnvelope
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					minAlt = 47000
-					maxAlt = 50000
-				}
-				PARAM
-				{
-					name = ReachSpeedEnvelope
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					minSpd = 180
-					maxSpd = 1950
-				}
-			}
-			CONTRACT
-			{
-				guid = 7760b3dd-f296-4c71-830e-668a1586fc5c
-				type = PartTest
-				prestige = 2
-				seed = -2062892867
-				state = Offered
-				viewed = Unseen
-				agent = Rockomax Conglomerate
-				agentName = Rockomax Conglomerate
-				deadlineType = Floating
-				expiryType = Floating
-				values = 125741.32423616,93740157.2180575,475938.281418375,1368322.5307097,533050.88027215,40,57.65744,10,3760015555.65025,0,0,0
-				part = smallRadialEngine.v2
-				haul = False
-				dest = 9
-				sit = LANDED
-				exp = False
-				PARAM
-				{
-					name = PartTest
-					state = Incomplete
-					values = 0,0,0,0,0
-					part = smallRadialEngine.v2
-					body = Moon
-					situation = LANDED
-					uniqueID = 0.20748097645467206
-					haul = False
-					repeatability = ONCEPERPART
-					notes = To perform the test, activate the part through the staging sequence when all test conditions are met.
-					PARAM
-					{
-						name = ReachDestination
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						dest = 9
-						title = 
-					}
-					PARAM
-					{
-						name = ReachSituation
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						sit = LANDED
-						title = 
-					}
-				}
-			}
-			CONTRACT
-			{
-				guid = 428137c0-6ec8-43fb-9c82-7e2ebae14575
-				type = RecoverAsset
-				prestige = 2
-				seed = -2062892864
-				state = Offered
-				viewed = Unseen
-				agent = STEADLER Engineering Corps
-				agentName = STEADLER Engineering Corps
-				deadlineType = Floating
-				expiryType = Floating
-				values = 518400,736128000,408932.058334351,1074390.32021874,484379.989957809,0,32.60174,9.099999,3760408214.32601,0,0,0
-				targetBody = 0
-				kerbalName = Meldas Kerman
-				partName = bluedog.Gemini.1p5mShortSegment
-				partID = 0
-				recoveryLocation = 2
-				recoveryType = 1
-				PARAM
-				{
-					name = AcquireCrew
-					state = Incomplete
-					values = 106920,0,0,12,0
-					title = Save Meldas Kerman
-					winOn = 0
-				}
-				PARAM
-				{
-					name = RecoverKerbal
-					state = Incomplete
-					values = 0,0,0,0,0
-					title = Recover Meldas Kerman on Earth
-					failOn = All
-					winOn = All
-				}
-			}
-			CONTRACT
-			{
-				guid = 49d1cd5a-dfe0-4345-8b12-6f8aab30dd4c
-				type = PartTest
-				prestige = 0
-				seed = -956413820
-				state = Offered
-				viewed = Unseen
-				agent = O.M.B. Demolition Enterprises
-				agentName = O.M.B. Demolition Enterprises
-				deadlineType = Floating
-				expiryType = Floating
-				values = 86400,36806400,5400,14174.9993562698,5669.99974250793,3,1.904762,0,3760010736.52597,0,0,0
-				part = Separator.3
-				haul = False
-				dest = 1
-				sit = LANDED
-				exp = False
-				PARAM
-				{
-					name = PartTest
-					state = Incomplete
-					values = 0,0,0,0,0
-					part = Separator.3
-					body = Earth
-					situation = LANDED
-					uniqueID = 0.39116683434283706
-					haul = False
-					repeatability = ALWAYS
-					notes = To perform the test, activate the part through the staging sequence when all test conditions are met.
-					PARAM
-					{
-						name = ReachDestination
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						dest = 1
-						title = 
-					}
-					PARAM
-					{
-						name = ReachSituation
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						sit = LANDED
-						title = 
-					}
-				}
-			}
-			CONTRACT
-			{
-				guid = e264a464-f355-4e7b-8602-c4e470fc4c7a
-				type = SurveyContract
-				prestige = 2
-				seed = -956413807
-				state = Offered
-				viewed = Unseen
-				agent = Maxo Construction Toys
-				agentName = Maxo Construction Toys
-				deadlineType = Floating
-				expiryType = Floating
-				values = 259200,184032000,135000,238500,135000,0,27,7,3760183536.52597,0,0,0
-				targetBody = 1
-				centerLatitude = 16.806731505394392
-				centerLongitude = 0.55939021127270117
-				dataName = atmospheric
-				anomalyName = abnormalities
-				reportName = readings
-				locationName = Earth
-				focusedSurvey = False
-				targetBand = LOWMIX
-				contextual = False
-				PARAM
-				{
-					name = SurveyWaypointParameter
-					state = Incomplete
-					values = 39600,0,14,9,0
-					targetBody = 1
-					actionDescription = Take pressure readings
-					experiment = barometerScan
-					flightThreshold = 50000
-					band = 1
-					clusterState = MIXED
-					verified = True
-					contextual = False
-					wpSeed = -1279885091
-					wpIndex = 0
-					wpTexture = pressure
-					wpLatitude = 16.804185861264457
-					wpLongitude = 0.56291873942639781
-					wpLandlocked = True
-					wpNavigationId = b58f0892-f702-4d67-bc4a-c346cd78dbc2
-				}
-				PARAM
-				{
-					name = SurveyWaypointParameter
-					state = Incomplete
-					values = 39600,0,14,9,0
-					targetBody = 1
-					actionDescription = Take pressure readings
-					experiment = barometerScan
-					flightThreshold = 53000
-					band = 1
-					clusterState = MIXED
-					verified = True
-					contextual = False
-					wpSeed = -1279885091
-					wpIndex = 1
-					wpTexture = pressure
-					wpLatitude = 16.769318092601129
-					wpLongitude = 0.56269414844941024
-					wpLandlocked = True
-					wpNavigationId = 0c437e6d-66c8-46db-bbec-09c534e63a65
-				}
-				PARAM
-				{
-					name = SurveyWaypointParameter
-					state = Incomplete
-					values = 32400,0,14,9,0
-					targetBody = 1
-					actionDescription = Perform atmospheric analysis
-					experiment = atmosphereAnalysis
-					flightThreshold = 48000
-					band = 2
-					clusterState = MIXED
-					verified = True
-					contextual = False
-					wpSeed = -1279885091
-					wpIndex = 2
-					wpTexture = balloon
-					wpLatitude = 16.24655052347401
-					wpLongitude = 0.47473887980595753
-					wpLandlocked = False
-					wpNavigationId = 44d5ee60-5c07-4737-9fc1-9f6ca3ca9274
-				}
-				PARAM
-				{
-					name = SurveyWaypointParameter
-					state = Incomplete
-					values = 32400,0,14,9,0
-					targetBody = 1
-					actionDescription = Perform atmospheric analysis
-					experiment = atmosphereAnalysis
-					flightThreshold = 47000
-					band = 2
-					clusterState = MIXED
-					verified = True
-					contextual = False
-					wpSeed = -1279885091
-					wpIndex = 3
-					wpTexture = balloon
-					wpLatitude = 15.867950631996704
-					wpLongitude = 0.4944772056009431
-					wpLandlocked = False
-					wpNavigationId = 656797aa-024c-4518-8c73-d94061446be1
-				}
-				PARAM
-				{
-					name = SurveyWaypointParameter
-					state = Incomplete
-					values = 39600,0,14,9,0
-					targetBody = 1
-					actionDescription = Take pressure readings
-					experiment = barometerScan
-					flightThreshold = 54500
-					band = 2
-					clusterState = MIXED
-					verified = True
-					contextual = False
-					wpSeed = -1279885091
-					wpIndex = 4
-					wpTexture = pressure
-					wpLatitude = 15.491152597425325
-					wpLongitude = 0.57474363405982265
-					wpLandlocked = False
-					wpNavigationId = 96634c45-377e-429e-8b3a-3d8fe7358dc0
-				}
-			}
-			CONTRACT
-			{
-				guid = 4f62abfb-1cbf-40bc-8c29-43c6330691e1
-				type = TourismContract
-				prestige = 1
-				seed = -1351759262
-				state = Offered
-				viewed = Unseen
-				agent = Rokea Inc
-				agentName = Rokea Inc
-				deadlineType = Floating
-				expiryType = Floating
-				values = 285714.27822113,152142853.152752,0,0,0,0,48.02744,6,3760210096.16415,0,0,0
-				preposition = right here on Earth
-				homeDestinations = True
+				values = 172800,736128000,0,0,0,0,38.09524,5,3760100215.26303,0,0,0
+				preposition = around The Sun
+				homeDestinations = False
 				isGeeAdventure = False
-				tourists = Lizdan Kerman|Alemy Kerman|Signer Kerman
+				tourists = Thompnard Kerman
 				PARAM
 				{
 					name = KerbalTourParameter
 					state = Incomplete
 					allowPartialFailure = True
-					values = 36562,0,0,0,0
-					kerbalName = Lizdan Kerman
-					kerbalGender = Female
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 12188,0,0,0,0
-						targetBody = 1
-						targetType = Suborbit
-						kerbalName = Lizdan Kerman
-					}
-				}
-				PARAM
-				{
-					name = KerbalTourParameter
-					state = Incomplete
-					allowPartialFailure = True
-					values = 36562,0,0,0,0
-					kerbalName = Alemy Kerman
+					values = 117000,0,0,0,0
+					kerbalName = Thompnard Kerman
 					kerbalGender = Male
 					PARAM
 					{
 						name = KerbalDestinationParameter
 						state = Incomplete
-						values = 12188,0,0,0,0
-						targetBody = 1
-						targetType = Suborbit
-						kerbalName = Alemy Kerman
-					}
-				}
-				PARAM
-				{
-					name = KerbalTourParameter
-					state = Incomplete
-					allowPartialFailure = True
-					values = 36562,0,0,0,0
-					kerbalName = Signer Kerman
-					kerbalGender = Male
-					PARAM
-					{
-						name = KerbalDestinationParameter
-						state = Incomplete
-						values = 12188,0,0,0,0
-						targetBody = 1
-						targetType = Suborbit
-						kerbalName = Signer Kerman
+						values = 39000,0,0,0,0
+						targetBody = 0
+						targetType = Flyby
+						kerbalName = Thompnard Kerman
 					}
 				}
 			}
@@ -2030,7 +802,7 @@ GAME
 	{
 		name = Funding
 		scene = 7, 8, 5, 6
-		funds = 5002234186449.6035
+		funds = 5002234264742.5518
 	}
 	SCENARIO
 	{
@@ -2273,6 +1045,7 @@ GAME
 			part = ROS-StaticSolarPanel
 			part = ROS-HingedSolarPanel
 			part = ROS-FoldingSolarPanel
+			part = 4mv.bucket.heatshield.s0.1
 		}
 		Tech
 		{
@@ -2334,7 +1107,6 @@ GAME
 			part = FASA.Mercury.LFT.Long
 			part = FASAExplorerLFTMed
 			part = Libra.Nesting.1
-			part = FairingsOcto
 		}
 		Tech
 		{
@@ -2367,7 +1139,6 @@ GAME
 			part = Ara.SensorBarometer.1
 			part = Tantares.Heatshield.1
 			part = Tantares.Parachute.1
-			part = BoxFairings
 		}
 		Tech
 		{
@@ -2451,7 +1222,6 @@ GAME
 			part = PMB.F9.Merlin1DVplusplus
 			part = PMB.F9.Merlin1DV
 			part = PMB.SPX.LandingZone2
-			part = SpaceCrane
 		}
 		Tech
 		{
@@ -2638,9 +1408,8 @@ GAME
 			part = SEP.Box
 			part = SEP.StorageLong
 			part = SEP.StorageShort
-			part = HangarResizeLimit1
-			part = HangarProcAdapter
 			part = flagPartSize1
+			part = KK.SpXCD.trunk.cargo
 		}
 		Tech
 		{
@@ -2666,7 +1435,6 @@ GAME
 			part = TacLifeSupportMFTContainerLarge
 			part = TacLifeSupportMFTContainerLarge375
 			part = HexCanMFTLifeSupportLarge
-			part = InlineHangar1
 		}
 		Tech
 		{
@@ -2831,7 +1599,6 @@ GAME
 			part = KIS.beer
 			part = scansat-multi-abi-1
 			part = mediumCargoContainer
-			part = civieDock
 		}
 		Tech
 		{
@@ -2855,8 +1622,6 @@ GAME
 			part = FASAApolloLFEF1
 			part = FASAApolloLFEJ2
 			part = FASAGerminiSRB175
-			part = InlineHangar2
-			part = RadialHangar
 		}
 		Tech
 		{
@@ -2905,8 +1670,6 @@ GAME
 			part = Libra.RCS.1
 			part = Hadar.Crew.1
 			part = Tantares.LES.1
-			part = InflatableHangar1
-			part = SquareHeatshield2
 		}
 		Tech
 		{
@@ -2922,16 +1685,12 @@ GAME
 			part = FASAMercuryMiniSRB
 			part = FASAGeminiMOLEquip1m
 			part = FASAProbeParachute
-			part = HangarResizeLimit0
 		}
 		Tech
 		{
 			id = storageTech
 			state = Available
 			cost = 90
-			part = t1CivBiomassTank
-			part = t1civWasteWaterTank
-			part = t1CivWaterTank
 		}
 		Tech
 		{
@@ -3014,7 +1773,6 @@ GAME
 			state = Available
 			cost = 160
 			part = HeatShield2
-			part = t1civSmallGardenModule
 		}
 		Tech
 		{
@@ -3090,7 +1848,6 @@ GAME
 			part = Ara.Antenna.1
 			part = KIS.bomb1
 			part = scansat-recon-ikonos-1
-			part = HangarResizeLimit00
 		}
 		Tech
 		{
@@ -3114,9 +1871,6 @@ GAME
 			part = FASA.RO.UA1207
 			part = FASA.RO.UA1564
 			part = FASAGerminiSRB175White
-			part = Spaceport
-			part = AsteroidDrill
-			part = AsteroidGateway
 		}
 		Tech
 		{
@@ -3207,11 +1961,6 @@ GAME
 			part = KAS.TJ1
 			part = kis.concreteBase1
 			part = KIS.Container4
-			part = DIYKit
-			part = MagneticFork
-			part = InlineGroundWorkshop
-			part = HangarResizeLimit2
-			part = HangarExtension
 			part = flagPartSize0
 			part = flagPartSize1p5
 		}
@@ -3252,7 +2001,6 @@ GAME
 			part = FASAFairingNosecone.3mSRB
 			part = FASAGeminiNoseCone2Cap
 			part = FASAGeminiNoseCone2Aero
-			part = SurfaceTail
 		}
 		Tech
 		{
@@ -3282,9 +2030,6 @@ GAME
 			part = HexLegsM
 			part = KRE-FalconLeg-M
 			part = SpaceXLegs-L
-			part = colossalLandingLeg
-			part = RoverLanderHangar
-			part = SquareHeatshield
 		}
 		Tech
 		{
@@ -3331,10 +2076,6 @@ GAME
 			part = FASAGemini4X800Mini
 			part = FASAGeminiMOLSci
 			part = Ara.SensorGravimeter.1
-			part = ndCncMillSmall2
-			part = SmallCivPopReactor
-			part = LaserSmelter2
-			part = pipeNetwork
 		}
 		Tech
 		{
@@ -3361,6 +2102,7 @@ GAME
 			part = Alnair.Engine.1
 			part = Alnair.Heatshield.1
 			part = Alnair.Parachute.1
+			part = KK.SpXCD.capsule.cargo
 		}
 		Tech
 		{
@@ -3426,14 +2168,6 @@ GAME
 			part = KAS.PortPylon
 			part = KAS.TJ2
 			part = KIS.Container3
-			part = OrbitalKitContainer2
-			part = OrbitalKitContainer
-			part = OrbitalWorkshop
-			part = HangarResizeLimit3
-			part = InflatableSpaceHangar
-			part = HangarExtensionL
-			part = HangarRadialAdapter1
-			part = HangarRadialAdapter2
 			part = flagPartSize2
 		}
 		Tech
@@ -3481,7 +2215,6 @@ GAME
 			part = FASAGeminiNoseCone2White
 			part = FASAGeminiPod2RCSWhite
 			part = FASAGerminiSRBInlineSep
-			part = SpaceportRCS
 		}
 		Tech
 		{
@@ -3657,8 +2390,6 @@ GAME
 			part = ISRU
 			part = LargeTank
 			part = RadialDrill
-			part = InsituKerbalRecruiterTest
-			part = t1civGardenBiosphereMedium
 		}
 		Tech
 		{
@@ -3740,27 +2471,6 @@ GAME
 			part = FASAGeminiDecDark375
 			part = CapsuleDockingPort1
 			part = PMB.SPX.F94.S2tank
-			part = bioDomeBase
-			part = bioDomeBaseLarge
-			part = bioSphereBase
-			part = bioSphereBaseNoWalls
-			part = bioSphereBaseWallRing
-			part = bioSphereWindows
-			part = bioSphereWindowsLarge
-			part = bioSphereWindowsWide
-			part = parkbioDomeBase
-			part = parkbioDomeBaseMetal
-			part = parkbioDomeBaseRock
-			part = truss18x18NoCore
-			part = truss6x18
-			part = truss6x6Core
-			part = truss6x6CoreL
-			part = truss6x6CoreT
-			part = truss6x6CoreX
-			part = truss6x6NoCore
-			part = bioSphereAirlock
-			part = GroundAssemblyLine
-			part = HangarExtensionXL
 		}
 		Tech
 		{
@@ -3800,7 +2510,6 @@ GAME
 			part = controller1000
 			part = KAS.W1
 			part = KAS.W2
-			part = StructuralGrappleNode
 			part = smallClaw
 		}
 		Tech
@@ -3853,7 +2562,6 @@ GAME
 			part = FASAGeminiBigGWhite
 			part = FASAICBMMIRV
 			part = scansat-resources-hyperion-1
-			part = megadrill
 		}
 		Tech
 		{
@@ -3862,7 +2570,6 @@ GAME
 			cost = 300
 			part = mk1-3pod
 			part = MEMLander
-			part = CivPopSaucer
 		}
 		Tech
 		{
@@ -3892,8 +2599,6 @@ GAME
 			part = KIS.basketball
 			part = KIS.golfclub
 			part = scansat-exomars-1
-			part = Hangar1
-			part = SmallVTOLHangar
 		}
 		Tech
 		{
@@ -3915,7 +2620,6 @@ GAME
 			part = ShepardLeg-M
 			part = KRE-FalconLeg-L
 			part = SpaceXLegs-XL
-			part = colossalLandingLeg2
 		}
 		Tech
 		{
@@ -3923,7 +2627,6 @@ GAME
 			state = Available
 			cost = 1000
 			part = Size3EngineCluster
-			part = CivPopSAS
 		}
 		Tech
 		{
@@ -4011,8 +2714,6 @@ GAME
 			part = FASALM.LandingLegs
 			part = FASALM.LandingLegsSA
 			part = FASALM.LandingLegStaircase
-			part = MobileWorkshop
-			part = Hangar2
 		}
 		Tech
 		{
@@ -4031,8 +2732,6 @@ GAME
 			part = radiator-surface-125-1
 			part = radiator-surface-25-1
 			part = radiator-surface-375-1
-			part = InflatableHangar2
-			part = MobileSmelter
 			part = PMB.batteryBankLarge
 		}
 		Tech
@@ -4057,9 +2756,6 @@ GAME
 			id = longTermHabitation
 			state = Available
 			cost = 1000
-			part = stbiodomeFarmMk2
-			part = t1civGardenBiosphere
-			part = t1CivilizationGenerationShipQuartersMedium
 		}
 		Tech
 		{
@@ -4086,7 +2782,6 @@ GAME
 			part = Grid Fin M Titanium
 			part = KIS.Container5
 			part = KIS.Container7
-			part = Mk3Hangar
 		}
 		Tech
 		{
@@ -4156,7 +2851,6 @@ GAME
 			part = Separator.4
 			part = Ara.Mount.1
 			part = dalim.adapter.s0p5.s0.1
-			part = HangarResizeLimit4
 			part = flagPartFlat
 			part = flagPartSize3
 		}
@@ -4174,6 +2868,17 @@ GAME
 			part = Ara.Control.1
 			part = dalim.control.s0p5.1
 			part = scansat-multi-msi-1
+			part = 1f.fuel.tank.srf.1
+			part = 1f.fuel.tank.srf.2
+			part = 1f.radiator.srf.1
+			part = 1f.sensor.array.srf.1
+			part = 1f.sensor.gamma.ray.spectrometer.srf.1
+			part = 1f.sensor.photometer.srf.1
+			part = 1f.sensor.visible.light.camera.srf.1
+			part = 1f.solar.srf.1
+			part = 1f.avionics.s0.1
+			part = 1f.high.gain.antenna.s0.1
+			part = 1f.science.container.s0.1
 		}
 		Tech
 		{
@@ -4262,25 +2967,7 @@ GAME
 			part = aquila.radiator.fuel.tank.single.srf.2
 			part = sargas.control.s1p5.1
 			part = sargas.control.s1p5.2
-			part = OrbitalAssemblyLine
-			part = OrbitalAssemblySpace
-			part = HangarResizeLimit5
-			part = AsteroidHatchNew
-			part = AsteroidHatchNew
-			part = AsteroidHatchPort
-			part = AsteroidHatchPortAdapter
-			part = HangarDockingPort
-			part = HangarStationHub
 			part = flagPartSize4
-			part = AsteroidHatchNew
-			part = AsteroidHatchNew
-			part = AsteroidHatchNew
-			part = AsteroidHatchNew
-			part = AsteroidHatchNew
-			part = AsteroidHatchNew
-			part = AsteroidHatchNew
-			part = AsteroidHatchNew
-			part = AsteroidHatchNew
 		}
 		Tech
 		{
@@ -4584,7 +3271,6 @@ GAME
 			id = orbitalAssembly
 			state = Available
 			cost = 1000
-			part = ndMovieTheater
 		}
 		Tech
 		{
@@ -4620,8 +3306,6 @@ GAME
 			id = orbitalMegastructures
 			state = Available
 			cost = 1500
-			part = nduniversity
-			part = ndflightSchool
 		}
 		Tech
 		{
@@ -4728,7 +3412,6 @@ GAME
 			id = advNuclearPower
 			state = Available
 			cost = 1000
-			part = CivPopReactor
 		}
 		Tech
 		{
@@ -4781,7 +3464,6 @@ GAME
 			id = colonization
 			state = Available
 			cost = 2250
-			part = t1CivilizationGenerationShipQuartersLarge
 		}
 		Tech
 		{
@@ -8605,7 +7287,7 @@ GAME
 	{
 		name = Reputation
 		scene = 7, 8, 5, 6
-		rep = 1600.32373
+		rep = -1000.13593
 	}
 	SCENARIO
 	{
@@ -12197,28 +10879,13 @@ GAME
 			Nataney Kerman = GENERIC GENERIC
 			Leahat Kerman = GENERIC GENERIC
 			Maubert Kerman = GENERIC GENERIC
-			Tidin Kerman = GENERIC GENERIC
-			Shepfrid Kerman = GENERIC GENERIC
-			Bartrey Kerman = GENERIC GENERIC
-			Linmin Kerman = GENERIC GENERIC
-			Glecan Kerman = GENERIC GENERIC
-			Podald Kerman = GENERIC GENERIC
-			Jedfrey Kerman = GENERIC GENERIC
-			Adbin Kerman = GENERIC GENERIC
-			Daphwig Kerman = GENERIC GENERIC
-			Dunfurt Kerman = GENERIC GENERIC
-			Desgee Kerman = GENERIC GENERIC
-			Haike Kerman = GENERIC GENERIC
-			Katgar Kerman = GENERIC GENERIC
-			Shelrey Kerman = GENERIC GENERIC
-			Jeddo Kerman = GENERIC GENERIC
-			Arcal Kerman = GENERIC GENERIC
-			Cordo Kerman = GENERIC GENERIC
-			Rosburry Kerman = GENERIC GENERIC
-			Meldas Kerman = GENERIC GENERIC
 			Lizdan Kerman = GENERIC GENERIC
 			Alemy Kerman = GENERIC GENERIC
 			Signer Kerman = GENERIC GENERIC
+			Luke Kerman = GENERIC GENERIC
+			Megdun Kerman = GENERIC GENERIC
+			Stelberry Kerman = GENERIC GENERIC
+			Dunoly Kerman = GENERIC GENERIC
 		}
 		ClassSuits
 		{
@@ -13247,7 +11914,7 @@ GAME
 				ReenableRcs = False
 				ReenableSas = False
 				IsolateReservePower = False
-				Guid = 91ace711-c161-4c4c-ad8d-c3422cb7f9b1
+				Guid = 8b260fed-9bda-42be-809f-baed115a1bbe
 			}
 		}
 	}
@@ -17716,7 +16383,7 @@ GAME
 	FLIGHTSTATE
 	{
 		version = 1.10.1
-		UT = 3759927403.8630424
+		UT = 3759927421.1430259
 		activeVessel = 17
 		mapViewFiltering = 31740
 		commNetUIModeTracking = Network
@@ -17766,11 +16433,11 @@ GAME
 			{
 				SMA = 0
 				ECC = 1
-				INC = 70.953101106710577
-				LPE = 90.000000000000014
-				LAN = 45.456928198750518
+				INC = 70.953101106596804
+				LPE = 90
+				LAN = 45.458147372943529
 				MNA = 0
-				EPH = 3759927397.6830482
+				EPH = 3759927414.8430319
 				REF = 2
 				IDENT = Mercury
 			}
@@ -17926,27 +16593,11 @@ GAME
 				SolverFlightSys
 				{
 				}
-				CivilianPopulationVesselModule
-				{
-					capacity = 0
-					allowDocking = False
-					allowBreeding = False
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
-				}
-				WorkshopManager
-				{
-					Workshops
-					{
-					}
-				}
-				HangarVesselModule
-				{
-					ShowHangarWindow = False
 				}
 				kOSVesselModule
 				{
@@ -18001,11 +16652,11 @@ GAME
 			{
 				SMA = 0
 				ECC = 1
-				INC = 95.37088096781342
-				LPE = 90
-				LAN = 2.0817058016135661
+				INC = 95.370880967812241
+				LPE = 90.000000000000014
+				LAN = 2.0829249751478187
 				MNA = 0
-				EPH = 3759927397.6830482
+				EPH = 3759927414.8430319
 				REF = 2
 				IDENT = Mercury
 			}
@@ -18182,27 +16833,11 @@ GAME
 				SolverFlightSys
 				{
 				}
-				CivilianPopulationVesselModule
-				{
-					capacity = 0
-					allowDocking = False
-					allowBreeding = False
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
-				}
-				WorkshopManager
-				{
-					Workshops
-					{
-					}
-				}
-				HangarVesselModule
-				{
-					ShowHangarWindow = False
 				}
 				kOSVesselModule
 				{
@@ -18255,13 +16890,13 @@ GAME
 			cMod = -1
 			ORBIT
 			{
-				SMA = 905650.18709546607
+				SMA = 905650.18710581027
 				ECC = 0.99999999999999989
-				INC = 58.458237336111686
+				INC = 58.458237336513378
 				LPE = 90
-				LAN = 50.702453296757369
-				MNA = 3.1415926207170166
-				EPH = 3759927397.6830482
+				LAN = 50.742819512989342
+				MNA = -3.1415926207170166
+				EPH = 3759927414.8430319
 				REF = 3
 				IDENT = Io
 			}
@@ -18417,27 +17052,11 @@ GAME
 				SolverFlightSys
 				{
 				}
-				CivilianPopulationVesselModule
-				{
-					capacity = 0
-					allowDocking = False
-					allowBreeding = False
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
-				}
-				WorkshopManager
-				{
-					Workshops
-					{
-					}
-				}
-				HangarVesselModule
-				{
-					ShowHangarWindow = False
 				}
 				kOSVesselModule
 				{
@@ -19150,27 +17769,11 @@ GAME
 				SolverFlightSys
 				{
 				}
-				CivilianPopulationVesselModule
-				{
-					capacity = 0
-					allowDocking = False
-					allowBreeding = False
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
-				}
-				WorkshopManager
-				{
-					Workshops
-					{
-					}
-				}
-				HangarVesselModule
-				{
-					ShowHangarWindow = False
 				}
 				kOSVesselModule
 				{
@@ -19223,13 +17826,13 @@ GAME
 			cMod = -1
 			ORBIT
 			{
-				SMA = 1220614.1670523793
-				ECC = 0.99999999999999989
-				INC = 45.605810559771548
+				SMA = NaN
+				ECC = 1
+				INC = 45.60581055969152
 				LPE = 90
-				LAN = 309.85758733885888
-				MNA = 3.1415926207170166
-				EPH = 3759927397.6830482
+				LAN = 309.85880651228894
+				MNA = 0
+				EPH = 3759927414.8430319
 				REF = 2
 				IDENT = Mercury
 			}
@@ -19399,27 +18002,11 @@ GAME
 				SolverFlightSys
 				{
 				}
-				CivilianPopulationVesselModule
-				{
-					capacity = 0
-					allowDocking = False
-					allowBreeding = False
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
-				}
-				WorkshopManager
-				{
-					Workshops
-					{
-					}
-				}
-				HangarVesselModule
-				{
-					ShowHangarWindow = False
 				}
 				kOSVesselModule
 				{
@@ -19474,11 +18061,11 @@ GAME
 			{
 				SMA = NaN
 				ECC = 1
-				INC = 82.93805009879263
+				INC = 82.938050098759803
 				LPE = 90
-				LAN = 134.52852615312992
+				LAN = 134.52974532757287
 				MNA = 0
-				EPH = 3759927397.6830482
+				EPH = 3759927414.8430319
 				REF = 2
 				IDENT = Mercury
 			}
@@ -19648,27 +18235,11 @@ GAME
 				SolverFlightSys
 				{
 				}
-				CivilianPopulationVesselModule
-				{
-					capacity = 0
-					allowDocking = False
-					allowBreeding = False
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
-				}
-				WorkshopManager
-				{
-					Workshops
-					{
-					}
-				}
-				HangarVesselModule
-				{
-					ShowHangarWindow = False
 				}
 				kOSVesselModule
 				{
@@ -19797,27 +18368,11 @@ GAME
 				SolverFlightSys
 				{
 				}
-				CivilianPopulationVesselModule
-				{
-					capacity = 0
-					allowDocking = False
-					allowBreeding = False
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
-				}
-				WorkshopManager
-				{
-					Workshops
-					{
-					}
-				}
-				HangarVesselModule
-				{
-					ShowHangarWindow = False
 				}
 				kOSVesselModule
 				{
@@ -19946,27 +18501,11 @@ GAME
 				SolverFlightSys
 				{
 				}
-				CivilianPopulationVesselModule
-				{
-					capacity = 0
-					allowDocking = False
-					allowBreeding = False
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
-				}
-				WorkshopManager
-				{
-					Workshops
-					{
-					}
-				}
-				HangarVesselModule
-				{
-					ShowHangarWindow = False
 				}
 				kOSVesselModule
 				{
@@ -20095,27 +18634,11 @@ GAME
 				SolverFlightSys
 				{
 				}
-				CivilianPopulationVesselModule
-				{
-					capacity = 0
-					allowDocking = False
-					allowBreeding = False
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
-				}
-				WorkshopManager
-				{
-					Workshops
-					{
-					}
-				}
-				HangarVesselModule
-				{
-					ShowHangarWindow = False
 				}
 				kOSVesselModule
 				{
@@ -20244,27 +18767,11 @@ GAME
 				SolverFlightSys
 				{
 				}
-				CivilianPopulationVesselModule
-				{
-					capacity = 0
-					allowDocking = False
-					allowBreeding = False
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
-				}
-				WorkshopManager
-				{
-					Workshops
-					{
-					}
-				}
-				HangarVesselModule
-				{
-					ShowHangarWindow = False
 				}
 				kOSVesselModule
 				{
@@ -20393,27 +18900,11 @@ GAME
 				SolverFlightSys
 				{
 				}
-				CivilianPopulationVesselModule
-				{
-					capacity = 0
-					allowDocking = False
-					allowBreeding = False
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
-				}
-				WorkshopManager
-				{
-					Workshops
-					{
-					}
-				}
-				HangarVesselModule
-				{
-					ShowHangarWindow = False
 				}
 				kOSVesselModule
 				{
@@ -20542,27 +19033,11 @@ GAME
 				SolverFlightSys
 				{
 				}
-				CivilianPopulationVesselModule
-				{
-					capacity = 0
-					allowDocking = False
-					allowBreeding = False
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
-				}
-				WorkshopManager
-				{
-					Workshops
-					{
-					}
-				}
-				HangarVesselModule
-				{
-					ShowHangarWindow = False
 				}
 				kOSVesselModule
 				{
@@ -20691,27 +19166,11 @@ GAME
 				SolverFlightSys
 				{
 				}
-				CivilianPopulationVesselModule
-				{
-					capacity = 0
-					allowDocking = False
-					allowBreeding = False
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
-				}
-				WorkshopManager
-				{
-					Workshops
-					{
-					}
-				}
-				HangarVesselModule
-				{
-					ShowHangarWindow = False
 				}
 				kOSVesselModule
 				{
@@ -20735,9 +19194,9 @@ GAME
 			landedAt = KSC
 			displaylandedAt = #autoLOC_300900
 			splashed = False
-			met = 3040.2371006011963
+			met = 3057.5170841217041
 			lct = 3759924363.6259418
-			lastUT = 3759927403.8630424
+			lastUT = 3759927421.1430259
 			distanceTraveled = 68.264599915025315
 			root = 0
 			lat = 28.612903098335448
@@ -20746,7 +19205,7 @@ GAME
 			hgt = 0.822068274
 			nrm = -1.1920929E-07,1,-1.83470547E-07
 			rot = 0.330978572,-0.55469054,0.38878423,-0.6569767
-			CoM = 0.067400679,0.622793674,0.0602532998
+			CoM = 0.0674493164,0.622818828,0.0603210256
 			stg = 1
 			prst = False
 			ref = 2268576983
@@ -20764,13 +19223,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 3189778.1151932222
-				ECC = 0.99734127737553113
-				INC = 28.612902492680956
+				SMA = 3189778.1152074439
+				ECC = 0.99734127737547096
+				INC = 28.612902492190837
 				LPE = 270
-				LAN = 225.30482793694316
+				LAN = 225.3770249907239
 				MNA = 3.1415926535897869
-				EPH = 3759927403.8630424
+				EPH = 3759927421.1430259
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -20798,9 +19257,9 @@ GAME
 				srfN = , -1
 				mass = 25
 				shielded = False
-				temp = 297.79710069329388
-				tempExt = 298.15205800350105
-				tempExtUnexp = 298.14949147348432
+				temp = 298.80596480899715
+				tempExt = 299.17713033668343
+				tempExtUnexp = 299.17480382539128
 				staticPressureAtm = 0.99118721917503239
 				expt = 0.5
 				state = 0
@@ -21187,6 +19646,22 @@ GAME
 					{
 					}
 					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -22041,27 +20516,11 @@ GAME
 				SolverFlightSys
 				{
 				}
-				CivilianPopulationVesselModule
-				{
-					capacity = 0
-					allowDocking = False
-					allowBreeding = False
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
-				}
-				WorkshopManager
-				{
-					Workshops
-					{
-					}
-				}
-				HangarVesselModule
-				{
-					ShowHangarWindow = False
 				}
 				kOSVesselModule
 				{
@@ -22116,11 +20575,11 @@ GAME
 			{
 				SMA = 0
 				ECC = 1
-				INC = 62.448686339659304
-				LPE = 90
-				LAN = 229.73691508531365
+				INC = 62.448686339660675
+				LPE = 90.000000000000014
+				LAN = 229.8086107706981
 				MNA = 0
-				EPH = 3759927397.6830482
+				EPH = 3759927414.8430319
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -23371,27 +21830,11 @@ GAME
 				SolverFlightSys
 				{
 				}
-				CivilianPopulationVesselModule
-				{
-					capacity = 0
-					allowDocking = False
-					allowBreeding = False
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
-				}
-				WorkshopManager
-				{
-					Workshops
-					{
-					}
-				}
-				HangarVesselModule
-				{
-					ShowHangarWindow = False
 				}
 				kOSVesselModule
 				{
@@ -23415,9 +21858,9 @@ GAME
 			landedAt = 
 			displaylandedAt = 
 			splashed = False
-			met = 1574.6184983253479
+			met = 1591.8984818458557
 			lct = 3759925829.244544
-			lastUT = 3759927403.8630424
+			lastUT = 3759927421.1430259
 			distanceTraveled = 67.281920182084022
 			root = 0
 			lat = 28.612890963687462
@@ -23426,7 +21869,7 @@ GAME
 			hgt = 0.827437818
 			nrm = 6.3598156E-05,0.99999994,-5.78090549E-05
 			rot = -0.328951955,0.558483124,-0.390350461,0.65384531
-			CoM = 0.0673597902,0.622816145,0.060324885
+			CoM = 0.0673945397,0.622751236,0.060243465
 			stg = 1
 			prst = False
 			ref = 958884826
@@ -23444,13 +21887,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 3189777.9398793615
-				ECC = 0.99734127720005794
-				INC = 28.612890353857566
+				SMA = 3189777.939842531
+				ECC = 0.99734127720014998
+				INC = 28.6128903538653
 				LPE = 270
-				LAN = 225.30291720862851
-				MNA = -3.1415926535897869
-				EPH = 3759927403.8630424
+				LAN = 225.37511426030656
+				MNA = 3.1415926535897869
+				EPH = 3759927421.1430259
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -23478,10 +21921,10 @@ GAME
 				srfN = , -1
 				mass = 25
 				shielded = False
-				temp = 300.33475990822217
-				tempExt = 300.65018155725721
-				tempExtUnexp = 300.64770842250601
-				staticPressureAtm = 0.99122833093830953
+				temp = 301.23645675260991
+				tempExt = 301.58048119608111
+				tempExtUnexp = 301.57831645510026
+				staticPressureAtm = 0.99122840623457931
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -23867,6 +22310,22 @@ GAME
 					{
 					}
 					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -24721,27 +23180,11 @@ GAME
 				SolverFlightSys
 				{
 				}
-				CivilianPopulationVesselModule
-				{
-					capacity = 0
-					allowDocking = False
-					allowBreeding = False
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
-				}
-				WorkshopManager
-				{
-					Workshops
-					{
-					}
-				}
-				HangarVesselModule
-				{
-					ShowHangarWindow = False
 				}
 				kOSVesselModule
 				{
@@ -24770,8 +23213,8 @@ GAME
 			lastUT = 3759927289.2431517
 			distanceTraveled = 5.431544933968004
 			root = 0
-			lat = 28.505833
-			lon = -79.419444
+			lat = 28.505832999999999
+			lon = -79.419443999999999
 			alt = 6.5471571860834956
 			hgt = 6.54715729
 			nrm = 2.38418579E-07,1,-1.2293458E-07
@@ -24794,13 +23237,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 3185503.273578593
-				ECC = 0.99999999999999989
-				INC = 61.563058352830218
-				LPE = 90.000000000000014
-				LAN = 229.72565394319534
-				MNA = -3.1415926207170166
-				EPH = 3759927397.6830482
+				SMA = NaN
+				ECC = 1
+				INC = 61.494167000000004
+				LPE = 90
+				LAN = 226.55096095462716
+				MNA = 0
+				EPH = 3759927414.8430319
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -26196,27 +24639,11 @@ GAME
 				SolverFlightSys
 				{
 				}
-				CivilianPopulationVesselModule
-				{
-					capacity = 0
-					allowDocking = False
-					allowBreeding = False
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
-				}
-				WorkshopManager
-				{
-					Workshops
-					{
-					}
-				}
-				HangarVesselModule
-				{
-					ShowHangarWindow = False
 				}
 				kOSVesselModule
 				{
@@ -26228,7 +24655,7 @@ GAME
 		}
 		VESSEL
 		{
-			pid = 91ace711c1614c4cad8dc3422cb7f9b1
+			pid = 8b260fed9bda42be809fbaed115a1bbe
 			persistentId = 3983080253
 			name = PMBT-SpaceX Falcon 9 v1.2 Block-5
 			type = Probe
@@ -26241,20 +24668,20 @@ GAME
 			displaylandedAt = #autoLOC_6002112
 			splashed = False
 			met = 0
-			lct = 3759927403.8630424
-			lastUT = 3759927403.8630424
+			lct = 3759927421.1430259
+			lastUT = 3759927421.1430259
 			distanceTraveled = 0
 			root = 0
-			lat = 28.608383939171024
-			lon = -80.599757253547324
-			alt = 144.52967926487327
-			hgt = 62.4036026
-			nrm = -0.0016246438,0.999984443,0.00534933805
-			rot = -0.510989964,-0.0705589578,-0.0427922048,0.85561645
-			CoM = -5.4359436E-05,-33.2078209,-0.00242996216
+			lat = 28.608389119900234
+			lon = -80.599755815101702
+			alt = 144.97376653831452
+			hgt = 62.5151215
+			nrm = 2.83122063E-07,1,-8.94069672E-08
+			rot = -0.508764982,-0.0704254881,-0.041808553,0.857000887
+			CoM = 1.90734863E-06,-33.1534348,0.000514030457
 			stg = 7
 			prst = False
-			ref = 1409318518
+			ref = 2627962642
 			ctrl = True
 			PQSMin = 2
 			PQSMax = 10
@@ -26264,18 +24691,18 @@ GAME
 			OverrideAxisControl = 0,0,0,0
 			OverrideGroupNames = ,,,
 			altDispState = ASL
-			cPch = 0.2
-			cHdg = 0.3
+			cPch = 0.7320001
+			cHdg = 0.4760001
 			cMod = 0
 			ORBIT
 			{
-				SMA = 3189796.4121488612
-				ECC = 0.99734105226733716
-				INC = 28.608385517508559
-				LPE = 269.9992762575622
-				LAN = 225.32559786989705
-				MNA = 3.1415913803651634
-				EPH = 3759927403.8630424
+				SMA = 3189796.7391011971
+				ECC = 0.99734100365487277
+				INC = 28.60838912448148
+				LPE = 269.99998966629033
+				LAN = 225.39698278484138
+				MNA = 3.1415926474620197
+				EPH = 3759927421.1430259
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -26283,10 +24710,10 @@ GAME
 			{
 				name = HECS2.ProbeCore
 				cid = 4294102532
-				uid = 1409318518
-				mid = 1314366132
+				uid = 2627962642
+				mid = 2856707997
 				persistentId = 2432969868
-				launchID = 74
+				launchID = 75
 				parent = 0
 				position = 0,0,0
 				rotation = 0,0,0,1
@@ -26305,10 +24732,10 @@ GAME
 				attN = bottom, 9
 				mass = 0.19577761
 				shielded = False
-				temp = 274.53569949442846
-				tempExt = 274.57563139719753
-				tempExtUnexp = 274.57559032241329
-				staticPressureAtm = 0.98304987600812666
+				temp = 274.16615204067193
+				tempExt = 274.20843463114193
+				tempExtUnexp = 274.20839236053558
+				staticPressureAtm = 0.98299814747081637
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28268,15 +26695,15 @@ GAME
 						}
 						MechJebModuleFlightRecorder
 						{
-							markUT = 3759927403.8630424
+							markUT = 3759927421.1430259
 							deltaVExpended = 0
 							dragLosses = 0
 							gravityLosses = 0
 							steeringLosses = 0
-							markLAN = 225.32409331060256
-							markLatitude = 28.608385848150824
-							markLongitude = -80.599758719562516
-							markAltitude = 111.32236590832471
+							markLAN = 225.39651308761964
+							markLatitude = 28.608389458418138
+							markLongitude = -80.599756731948872
+							markAltitude = 111.82206470966339
 							markBodyIndex = 1
 							maxDragGees = 0
 							unlockParts = 
@@ -28421,10 +26848,10 @@ GAME
 			{
 				name = trussPiece3x
 				cid = 4294102446
-				uid = 3418011764
-				mid = 1314366132
+				uid = 406655695
+				mid = 2856707997
 				persistentId = 3034799392
-				launchID = 74
+				launchID = 75
 				parent = 0
 				position = 0,0,0
 				rotation = 0.49999994,0.50000006,-0.49999994,0.50000006
@@ -28443,10 +26870,10 @@ GAME
 				attN = top, 2
 				mass = 0.0450000018
 				shielded = False
-				temp = 274.5327631168924
-				tempExt = 274.56865110663188
-				tempExtUnexp = 274.56857722919915
-				staticPressureAtm = 0.98304746652749497
+				temp = 274.16291866177539
+				tempExt = 274.20166663988488
+				tempExtUnexp = 274.2015873577069
+				staticPressureAtm = 0.98299822276708604
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28537,10 +26964,10 @@ GAME
 			{
 				name = strutOcto
 				cid = 4294102416
-				uid = 4292858930
-				mid = 1314366132
+				uid = 4193451265
+				mid = 2856707997
 				persistentId = 3575621348
-				launchID = 74
+				launchID = 75
 				parent = 1
 				position = 1.6039807796478271,0,-3.5762786865234375E-07
 				rotation = 0,0,-0.707106829,0.707106829
@@ -28559,10 +26986,10 @@ GAME
 				attN = bottom, 1
 				mass = 0.00300000003
 				shielded = False
-				temp = 274.53430236267218
-				tempExt = 274.58013352511171
-				tempExtUnexp = 274.58002604024972
-				staticPressureAtm = 0.98305010189693587
+				temp = 274.16467732865107
+				tempExt = 274.21438596367989
+				tempExtUnexp = 274.21427642139884
+				staticPressureAtm = 0.98299814747081637
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28653,10 +27080,10 @@ GAME
 			{
 				name = largeSolarPanel
 				cid = 4294102382
-				uid = 2926401213
-				mid = 1314366132
+				uid = 418398539
+				mid = 2856707997
 				persistentId = 1936610412
-				launchID = 74
+				launchID = 75
 				parent = 2
 				position = 1.7104346752166748,-0.009490966796875,-3.5762786865234375E-07
 				rotation = 1.34110451E-07,1.00000012,7.4505806E-08,1.1920929E-07
@@ -28673,10 +27100,10 @@ GAME
 				srfN = srfAttach, 2
 				mass = 0.0682500005
 				shielded = False
-				temp = 274.53259481545371
-				tempExt = 274.59958082582938
-				tempExtUnexp = 274.59942817351521
-				staticPressureAtm = 0.98305123134098193
+				temp = 274.16274436976306
+				tempExt = 274.23605827221735
+				tempExtUnexp = 274.2358991199128
+				staticPressureAtm = 0.98299927691486244
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28715,7 +27142,7 @@ GAME
 					name = ModuleDeployableSolarPanel
 					isEnabled = True
 					efficiencyMult = 1
-					launchUT = 3759927403.8630424
+					launchUT = 3759927421.1430259
 					currentRotation = (0, 0, -0.707106829, 0.707106829)
 					storedAnimationTime = 0
 					storedAnimationSpeed = 1
@@ -28889,10 +27316,10 @@ GAME
 			{
 				name = strutOcto
 				cid = 4294102306
-				uid = 401190860
-				mid = 1314366132
+				uid = 95314721
+				mid = 2856707997
 				persistentId = 4219663810
-				launchID = 74
+				launchID = 75
 				parent = 1
 				position = -1.6039803028106689,0,3.5762786865234375E-07
 				rotation = 7.10542736E-15,0,-0.707106769,-0.707106888
@@ -28911,10 +27338,10 @@ GAME
 				attN = bottom, 1
 				mass = 0.00300000003
 				shielded = False
-				temp = 274.53430236267207
-				tempExt = 274.58013352511171
-				tempExtUnexp = 274.58002604024972
-				staticPressureAtm = 0.98304934893423845
+				temp = 274.1646773286493
+				tempExt = 274.21438596367977
+				tempExtUnexp = 274.21427642139872
+				staticPressureAtm = 0.98299822276708604
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -29005,12 +27432,12 @@ GAME
 			{
 				name = largeSolarPanel
 				cid = 4294102272
-				uid = 1571390606
-				mid = 1314366132
+				uid = 1624864338
+				mid = 2856707997
 				persistentId = 1757299803
-				launchID = 74
+				launchID = 75
 				parent = 4
-				position = -1.7104403972625732,0.009490966796875,4.76837158203125E-07
+				position = -1.7104415893554688,0.009490966796875,4.8615038394927979E-07
 				rotation = 1.00000024,2.98023224E-07,2.38418579E-07,0
 				mirror = 1,1,1
 				symMethod = Radial
@@ -29025,10 +27452,10 @@ GAME
 				srfN = srfAttach, 4
 				mass = 0.0682500005
 				shielded = False
-				temp = 274.53259481545371
-				tempExt = 274.59958082582938
-				tempExtUnexp = 274.59942817351521
-				staticPressureAtm = 0.98304837008273183
+				temp = 274.16274436976306
+				tempExt = 274.23605827221735
+				tempExtUnexp = 274.2358991199128
+				staticPressureAtm = 0.98299709332303997
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -29067,7 +27494,7 @@ GAME
 					name = ModuleDeployableSolarPanel
 					isEnabled = True
 					efficiencyMult = 1
-					launchUT = 3759927403.8630424
+					launchUT = 3759927421.1430259
 					currentRotation = (0, 0, -0.707106829, 0.707106829)
 					storedAnimationTime = 0
 					storedAnimationSpeed = 1
@@ -29241,10 +27668,10 @@ GAME
 			{
 				name = rtg
 				cid = 4294102196
-				uid = 2923592913
-				mid = 1314366132
+				uid = 3476264729
+				mid = 2856707997
 				persistentId = 452789336
-				launchID = 74
+				launchID = 75
 				parent = 0
 				position = -2.9802322387695313E-07,-0.594573974609375,-0.8253253698348999
 				rotation = 0.847866535,-2.98023188E-08,-8.94069601E-08,-0.53020972
@@ -29264,10 +27691,10 @@ GAME
 				attN = bottom, -1
 				mass = 0.0331999995
 				shielded = False
-				temp = 274.53705767665315
-				tempExt = 274.57493940241966
-				tempExtUnexp = 274.57489817542353
-				staticPressureAtm = 0.98311960035390444
+				temp = 274.16747238039687
+				tempExt = 274.20763340380734
+				tempExtUnexp = 274.20759108641556
+				staticPressureAtm = 0.98306742003897574
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -29306,9 +27733,9 @@ GAME
 					name = ModuleCoreHeat
 					isEnabled = True
 					CoreTempGoalAdjustment = 0
-					CoreThermalEnergy = 9084.3035009683117
+					CoreThermalEnergy = 9085.7863602271336
 					stagingEnabled = True
-					lastUpdateTime = 3759927403.8630424
+					lastUpdateTime = 3759927421.1430259
 					EVENTS
 					{
 					}
@@ -29396,7 +27823,7 @@ GAME
 					EfficiencyBonus = 1
 					IsActivated = True
 					stagingEnabled = True
-					lastUpdateTime = 3759927403.8630424
+					lastUpdateTime = 3759927421.1430259
 					EVENTS
 					{
 					}
@@ -29425,7 +27852,7 @@ GAME
 				RESOURCE
 				{
 					name = Plutonium-238
-					amount = 0.22699999916217353
+					amount = 0.22699999913260319
 					maxAmount = 0.22700000000000001
 					flowState = True
 					isTweakable = True
@@ -29436,7 +27863,7 @@ GAME
 				RESOURCE
 				{
 					name = DepletedFuel
-					amount = 8.3782723293701691E-10
+					amount = 8.6739760586420574E-10
 					maxAmount = 0.22700000000000001
 					flowState = True
 					isTweakable = False
@@ -29449,10 +27876,10 @@ GAME
 			{
 				name = rtg
 				cid = 4294102154
-				uid = 1057159432
-				mid = 1314366132
+				uid = 3139912958
+				mid = 2856707997
 				persistentId = 3515621249
-				launchID = 74
+				launchID = 75
 				parent = 0
 				position = 3.5762786865234375E-07,-0.594573974609375,0.82532548904418945
 				rotation = -8.94069601E-08,-0.53020972,-0.847866535,2.98023188E-08
@@ -29472,10 +27899,10 @@ GAME
 				attN = bottom, -1
 				mass = 0.0331999995
 				shielded = False
-				temp = 274.53705767665315
-				tempExt = 274.57493940241966
-				tempExtUnexp = 274.57489817542353
-				staticPressureAtm = 0.98311854620612815
+				temp = 274.16747238039687
+				tempExt = 274.20763340380734
+				tempExtUnexp = 274.20759108641556
+				staticPressureAtm = 0.98306742003897574
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -29514,9 +27941,9 @@ GAME
 					name = ModuleCoreHeat
 					isEnabled = True
 					CoreTempGoalAdjustment = 0
-					CoreThermalEnergy = 9084.3035009683117
+					CoreThermalEnergy = 9085.7863602271336
 					stagingEnabled = True
-					lastUpdateTime = 3759927403.8630424
+					lastUpdateTime = 3759927421.1430259
 					EVENTS
 					{
 					}
@@ -29604,7 +28031,7 @@ GAME
 					EfficiencyBonus = 1
 					IsActivated = True
 					stagingEnabled = True
-					lastUpdateTime = 3759927403.8630424
+					lastUpdateTime = 3759927421.1430259
 					EVENTS
 					{
 					}
@@ -29633,7 +28060,7 @@ GAME
 				RESOURCE
 				{
 					name = Plutonium-238
-					amount = 0.22699999916217353
+					amount = 0.22699999913260319
 					maxAmount = 0.22700000000000001
 					flowState = True
 					isTweakable = True
@@ -29644,7 +28071,7 @@ GAME
 				RESOURCE
 				{
 					name = DepletedFuel
-					amount = 8.3782723293701691E-10
+					amount = 8.6739760586420574E-10
 					maxAmount = 0.22700000000000001
 					flowState = True
 					isTweakable = False
@@ -29657,10 +28084,10 @@ GAME
 			{
 				name = HighGainAntenna
 				cid = 4293738622
-				uid = 375601879
-				mid = 1314366132
+				uid = 2925099361
+				mid = 2856707997
 				persistentId = 409830442
-				launchID = 74
+				launchID = 75
 				parent = 0
 				position = 0.020395636558532715,0.4000091552734375,-0.0095656588673591614
 				rotation = 8.42937382E-08,1.19209275E-07,-7.09579453E-08,-1
@@ -29677,10 +28104,10 @@ GAME
 				srfN = srfAttach, 0,COL
 				mass = 0.0250000004
 				shielded = False
-				temp = 274.55135052106641
-				tempExt = 274.58408540319056
-				tempExtUnexp = 274.58400764284221
-				staticPressureAtm = 0.98300085813652693
+				temp = 274.18329331968573
+				tempExt = 274.21778235074436
+				tempExtUnexp = 274.21770030424653
+				staticPressureAtm = 0.982951614376118
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -29718,7 +28145,7 @@ GAME
 				{
 					name = ModuleDeployableAntenna
 					isEnabled = True
-					currentRotation = (-8.72251236E-17, -0.999945819, 4.25251832E-17, -0.0104102585)
+					currentRotation = (8.49810289E-18, -0.999998689, 5.95045013E-17, -0.00161674945)
 					storedAnimationTime = 0
 					storedAnimationSpeed = 1
 					deployState = RETRACTED
@@ -29845,10 +28272,10 @@ GAME
 			{
 				name = batteryBank
 				cid = 4294102718
-				uid = 1709535666
-				mid = 1314366132
+				uid = 3263721174
+				mid = 2856707997
 				persistentId = 1200706311
-				launchID = 74
+				launchID = 75
 				parent = 0
 				position = 0,-0.6108551025390625,0
 				rotation = 0,1,0,0
@@ -29867,10 +28294,10 @@ GAME
 				attN = bottom, 14
 				mass = 0.353399992
 				shielded = False
-				temp = 274.53289354144925
-				tempExt = 274.58868120789703
-				tempExtUnexp = 274.58863312908323
-				staticPressureAtm = 0.9831210309830295
+				temp = 274.16306015126656
+				tempExt = 274.2222572882514
+				tempExtUnexp = 274.22220751821175
+				staticPressureAtm = 0.98306930244571922
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -29972,12 +28399,12 @@ GAME
 			{
 				name = xenonTankRadial
 				cid = 4294102684
-				uid = 431616044
-				mid = 1314366132
+				uid = 2334814817
+				mid = 2856707997
 				persistentId = 3152688750
-				launchID = 74
+				launchID = 75
 				parent = 9
-				position = -0.42025279998779297,-0.516693115234375,1.4901161193847656E-07
+				position = -0.42025274038314819,-0.516693115234375,1.4901161193847656E-07
 				rotation = 0.70710665,0,0,-0.707106948
 				mirror = 1,1,1
 				symMethod = Radial
@@ -29995,10 +28422,10 @@ GAME
 				srfN = srfAttach, 9
 				mass = 0.000259534456
 				shielded = False
-				temp = 274.59018992693791
-				tempExt = 274.72134071260604
-				tempExtUnexp = 274.72122826289171
-				staticPressureAtm = 0.98310996243137794
+				temp = 274.22475116205771
+				tempExt = 274.36262568193541
+				tempExtUnexp = 274.36250573035034
+				staticPressureAtm = 0.98305830919033732
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -30210,10 +28637,10 @@ GAME
 			{
 				name = xenonTankRadial
 				cid = 4294102646
-				uid = 1666896647
-				mid = 1314366132
+				uid = 1290079949
+				mid = 2856707997
 				persistentId = 3964986032
-				launchID = 74
+				launchID = 75
 				parent = 9
 				position = 1.1920928955078125E-07,-0.516693115234375,0.42025259137153625
 				rotation = 0.499999911,-0.500000119,-0.499999911,-0.500000119
@@ -30233,10 +28660,10 @@ GAME
 				srfN = srfAttach, 9
 				mass = 0.000259534456
 				shielded = False
-				temp = 274.59018992693791
-				tempExt = 274.72134071260604
-				tempExtUnexp = 274.72122826289171
-				staticPressureAtm = 0.9831098118388385
+				temp = 274.22475116205771
+				tempExt = 274.36262568193541
+				tempExtUnexp = 274.36250573035034
+				staticPressureAtm = 0.98305830919033732
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -30448,10 +28875,10 @@ GAME
 			{
 				name = xenonTankRadial
 				cid = 4294102608
-				uid = 2286217548
-				mid = 1314366132
+				uid = 1348104042
+				mid = 2856707997
 				persistentId = 1192282658
-				launchID = 74
+				launchID = 75
 				parent = 9
 				position = 0.42025297880172729,-0.516693115234375,-1.7881393432617188E-07
 				rotation = -2.98023188E-08,-0.707107008,-0.70710665,0
@@ -30471,10 +28898,10 @@ GAME
 				srfN = srfAttach, 9
 				mass = 0.000259534456
 				shielded = False
-				temp = 274.59018992693791
-				tempExt = 274.72134071260604
-				tempExtUnexp = 274.72122826289171
-				staticPressureAtm = 0.98311011302391738
+				temp = 274.22475116205771
+				tempExt = 274.36262568193541
+				tempExtUnexp = 274.36250573035034
+				staticPressureAtm = 0.98305830919033732
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -30686,10 +29113,10 @@ GAME
 			{
 				name = xenonTankRadial
 				cid = 4294102570
-				uid = 2229996415
-				mid = 1314366132
+				uid = 3781014756
+				mid = 2856707997
 				persistentId = 2874483936
-				launchID = 74
+				launchID = 75
 				parent = 9
 				position = -1.1920928955078125E-07,-0.516693115234375,-0.42025262117385864
 				rotation = -0.499999911,-0.500000119,-0.499999911,0.500000119
@@ -30709,10 +29136,10 @@ GAME
 				srfN = srfAttach, 9
 				mass = 0.000259534456
 				shielded = False
-				temp = 274.59018992693791
-				tempExt = 274.72134071260604
-				tempExtUnexp = 274.72122826289171
-				staticPressureAtm = 0.98311033891272659
+				temp = 274.22475116205771
+				tempExt = 274.36262568193541
+				tempExtUnexp = 274.36250573035034
+				staticPressureAtm = 0.98305830919033732
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -30924,10 +29351,10 @@ GAME
 			{
 				name = ionEngine
 				cid = 4294102796
-				uid = 4060624996
-				mid = 1314366132
+				uid = 1477304809
+				mid = 2856707997
 				persistentId = 1674247536
-				launchID = 74
+				launchID = 75
 				parent = 9
 				position = 0,-0.935272216796875,0
 				rotation = 0,1,0,0
@@ -30946,10 +29373,10 @@ GAME
 				attN = bottom, 15
 				mass = 0.0494999997
 				shielded = False
-				temp = 274.53319833804255
-				tempExt = 274.57078864757415
-				tempExtUnexp = 274.57076660583465
-				staticPressureAtm = 0.98315739908131317
+				temp = 274.16338945107873
+				tempExt = 274.20313392062593
+				tempExtUnexp = 274.20311081071128
+				staticPressureAtm = 0.98310702587685816
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -31132,6 +29559,22 @@ GAME
 				}
 				MODULE
 				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -31181,10 +29624,10 @@ GAME
 			{
 				name = Decoupler.2
 				cid = 4294102876
-				uid = 1019039841
-				mid = 1314366132
+				uid = 62329302
+				mid = 2856707997
 				persistentId = 4236445475
-				launchID = 74
+				launchID = 75
 				parent = 14
 				position = 0,-1.2225494384765625,0
 				rotation = 0,1,0,0
@@ -31203,10 +29646,10 @@ GAME
 				attN = bottom, 16
 				mass = 0.349999994
 				shielded = False
-				temp = 274.53317872038099
-				tempExt = 274.55492630446452
-				tempExtUnexp = 274.55492213395144
-				staticPressureAtm = 0.98319226125420212
+				temp = 274.16336061761973
+				tempExt = 274.1862561528979
+				tempExtUnexp = 274.18625097234178
+				staticPressureAtm = 0.98314045742062206
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -31396,10 +29839,10 @@ GAME
 			{
 				name = KK.SPX.F9.1875mmPA
 				cid = 4294102924
-				uid = 2621709631
-				mid = 1314366132
+				uid = 692871327
+				mid = 2856707997
 				persistentId = 1375077982
-				launchID = 74
+				launchID = 75
 				parent = 15
 				position = 0,-1.785614013671875,0
 				rotation = 0,1,0,0
@@ -31419,10 +29862,10 @@ GAME
 				attN = top, -1
 				mass = 0.150000006
 				shielded = False
-				temp = 274.53205519956276
-				tempExt = 274.53237193968607
-				tempExtUnexp = 274.53237193968607
-				staticPressureAtm = 0.98325776900887452
+				temp = 274.16213132070595
+				tempExt = 274.16247709724007
+				tempExtUnexp = 274.16247709724007
+				staticPressureAtm = 0.98320604047156424
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -31581,10 +30024,10 @@ GAME
 			{
 				name = KK.SPX.F93.S2tank
 				cid = 4294654148
-				uid = 2998229079
-				mid = 1314366132
+				uid = 3230404045
+				mid = 2856707997
 				persistentId = 2774011159
-				launchID = 74
+				launchID = 75
 				parent = 16
 				position = 0,-6.3107757568359375,0
 				rotation = 0,0,0,1
@@ -31601,16 +30044,16 @@ GAME
 				srfN = srfAttach, -1
 				attN = top, 16
 				attN = fc, 18
-				attN = f01, 64
-				attN = f02, 66
+				attN = f01, 65
+				attN = f02, 67
 				attN = bottom, 26
 				attN = bottom02, 23
-				mass = 1.6281476
+				mass = 1.62814808
 				shielded = False
 				temp = 90.150001525878906
 				tempExt = 90.150001525878906
 				tempExtUnexp = 90.150001525878906
-				staticPressureAtm = 0.98378469230450438
+				staticPressureAtm = 0.98373296376719399
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -31619,7 +30062,7 @@ GAME
 				rigidAttachment = False
 				flag = Squad/Flags/default
 				rTrf = _default
-				modCost = 613.888916
+				modCost = 613.893616
 				EVENTS
 				{
 				}
@@ -31785,7 +30228,7 @@ GAME
 					isEnabled = True
 					type = Cryogenic
 					utilization = 86
-					mass = 2.76407385
+					mass = 2.76407409
 					_numberOfAddedMLILayers = 0
 					partPrevTemperature = -1
 					stagingEnabled = True
@@ -32614,7 +31057,7 @@ GAME
 					isEnabled = True
 					type = Cryogenic
 					utilization = 86
-					mass = 2.76407385
+					mass = 2.76407409
 					_numberOfAddedMLILayers = 0
 					partPrevTemperature = 90.150001525878906
 					stagingEnabled = True
@@ -33692,10 +32135,10 @@ GAME
 			{
 				name = KK.SPX.Falcon9.FC
 				cid = 4294629322
-				uid = 524576300
-				mid = 1314366132
+				uid = 607610987
+				mid = 2856707997
 				persistentId = 3345104943
-				launchID = 74
+				launchID = 75
 				parent = 17
 				position = 0,-1.8019561767578125,0
 				rotation = 0,0,0,1
@@ -33713,10 +32156,10 @@ GAME
 				attN = bottom, 17
 				mass = 0.150000006
 				shielded = False
-				temp = 274.53205510373334
-				tempExt = 274.53237822382846
-				tempExtUnexp = 274.53237822382846
-				staticPressureAtm = 0.983259651415618
+				temp = 274.16213122483509
+				tempExt = 274.16248327812065
+				tempExtUnexp = 274.16248327812065
+				staticPressureAtm = 0.98320792287830772
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -34202,10 +32645,10 @@ GAME
 			{
 				name = linearRcs
 				cid = 4293521798
-				uid = 109191916
-				mid = 1314366132
+				uid = 3946935447
+				mid = 2856707997
 				persistentId = 2164276641
-				launchID = 74
+				launchID = 75
 				parent = 17
 				position = 1.8293502330780029,-9.4857177734375,-2.384185791015625E-07
 				rotation = 0.5,0.5,-0.5,0.5
@@ -34225,10 +32668,10 @@ GAME
 				srfN = srfAttach, 17,collider
 				mass = 0.00855772011
 				shielded = False
-				temp = 274.53205935777561
-				tempExt = 274.53226703436906
-				tempExtUnexp = 274.53226703436906
-				staticPressureAtm = 0.98415492406280836
+				temp = 274.16213547752074
+				tempExt = 274.16237207759491
+				tempExtUnexp = 274.16237207759491
+				staticPressureAtm = 0.98410274374787965
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -34385,10 +32828,10 @@ GAME
 			{
 				name = linearRcs
 				cid = 4293521074
-				uid = 239644400
-				mid = 1314366132
+				uid = 156104723
+				mid = 2856707997
 				persistentId = 2095639858
-				launchID = 74
+				launchID = 75
 				parent = 17
 				position = -1.1920928955078125E-07,-9.4857177734375,-1.8293499946594238
 				rotation = 0,0.707106829,-0.707106829,0
@@ -34408,10 +32851,10 @@ GAME
 				srfN = srfAttach, 17,collider
 				mass = 0.00855772011
 				shielded = False
-				temp = 274.53205935777561
-				tempExt = 274.53226703436906
-				tempExtUnexp = 274.53226703436906
-				staticPressureAtm = 0.98415567702550577
+				temp = 274.16213547752074
+				tempExt = 274.16237207759491
+				tempExtUnexp = 274.16237207759491
+				staticPressureAtm = 0.98410281904414931
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -34568,10 +33011,10 @@ GAME
 			{
 				name = linearRcs
 				cid = 4293520988
-				uid = 1066203197
-				mid = 1314366132
+				uid = 2157864829
+				mid = 2856707997
 				persistentId = 1317574759
-				launchID = 74
+				launchID = 75
 				parent = 17
 				position = -1.8293502330780029,-9.4857177734375,3.5762786865234375E-07
 				rotation = -0.5,0.5,-0.5,-0.5
@@ -34591,10 +33034,10 @@ GAME
 				srfN = srfAttach, 17,collider
 				mass = 0.00855772011
 				shielded = False
-				temp = 274.53205935777561
-				tempExt = 274.53226703436906
-				tempExtUnexp = 274.53226703436906
-				staticPressureAtm = 0.98415424639638072
+				temp = 274.16213547752074
+				tempExt = 274.16237207759491
+				tempExtUnexp = 274.16237207759491
+				staticPressureAtm = 0.98410281904414931
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -34751,10 +33194,10 @@ GAME
 			{
 				name = linearRcs
 				cid = 4293520902
-				uid = 991308433
-				mid = 1314366132
+				uid = 3577418946
+				mid = 2856707997
 				persistentId = 89194481
-				launchID = 74
+				launchID = 75
 				parent = 17
 				position = 3.5762786865234375E-07,-9.4857177734375,1.8293502330780029
 				rotation = -0.707106829,0,0,-0.707106829
@@ -34774,10 +33217,10 @@ GAME
 				srfN = srfAttach, 17,collider
 				mass = 0.00855772011
 				shielded = False
-				temp = 274.53205935777561
-				tempExt = 274.53226703436906
-				tempExtUnexp = 274.53226703436906
-				staticPressureAtm = 0.98415341813741364
+				temp = 274.16213547752074
+				tempExt = 274.16237207759491
+				tempExtUnexp = 274.16237207759491
+				staticPressureAtm = 0.98410281904414931
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -34934,10 +33377,10 @@ GAME
 			{
 				name = asasmodule1-2
 				cid = 4293515306
-				uid = 3447858094
-				mid = 1314366132
+				uid = 887763549
+				mid = 2856707997
 				persistentId = 1699300765
-				launchID = 74
+				launchID = 75
 				parent = 17
 				position = 0,-10.187728881835938,0
 				rotation = 0,1,0,0
@@ -34956,10 +33399,10 @@ GAME
 				attN = bottom, 24
 				mass = 0.200000003
 				shielded = False
-				temp = 274.53205716484098
-				tempExt = 274.53216467307948
-				tempExtUnexp = 274.53216467307948
-				staticPressureAtm = 0.98423631933039568
+				temp = 274.16213328537634
+				tempExt = 274.16227034380273
+				tempExtUnexp = 274.16227034380273
+				staticPressureAtm = 0.98418459079308529
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -35107,10 +33550,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1DVplus
 				cid = 4294633406
-				uid = 3626152382
-				mid = 1314366132
+				uid = 1032299111
+				mid = 2856707997
 				persistentId = 1281197746
-				launchID = 74
+				launchID = 75
 				parent = 23
 				position = 0,-12.265960693359375,0
 				rotation = 0,1,0,0
@@ -35130,10 +33573,10 @@ GAME
 				attN = bottom, -1
 				mass = 0.469999999
 				shielded = False
-				temp = 274.53988900932882
-				tempExt = 274.58323888996694
-				tempExtUnexp = 274.58319147293395
-				staticPressureAtm = 0.98447854743014429
+				temp = 274.17087474064425
+				tempExt = 274.21722889939974
+				tempExtUnexp = 274.21717891049798
+				staticPressureAtm = 0.98442674359656424
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -35237,11 +33680,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89996307992847546
-							ullageHeightMax = 0.99999787099290915
-							ullageRadialMin = 5.4703031584030199E-05
-							ullageRadialMax = 0.99999998810318624
-							UT = 3759927403.8630424
+							ullageHeightMin = 0.89999921985387132
+							ullageHeightMax = 0.99999966362404513
+							ullageRadialMin = 2.3505255421393546E-07
+							ullageRadialMax = 0.99999999999993683
+							UT = 3759927421.1430259
 						}
 					}
 					UPGRADESAPPLIED
@@ -35369,6 +33812,22 @@ GAME
 				}
 				MODULE
 				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -35399,10 +33858,10 @@ GAME
 			{
 				name = KK.SpX.Mvac.skirt
 				cid = 4293871078
-				uid = 2684650047
-				mid = 1314366132
+				uid = 2370411492
+				mid = 2856707997
 				persistentId = 472345972
-				launchID = 74
+				launchID = 75
 				parent = 24
 				position = 0,-11.115966796875,0
 				rotation = 0,-0.707106829,0,-0.707106829
@@ -35420,10 +33879,10 @@ GAME
 				attN = top, 24
 				mass = 0.0149999997
 				shielded = False
-				temp = 274.56915886917267
-				tempExt = 274.61185658365918
-				tempExtUnexp = 274.61176884676939
-				staticPressureAtm = 0.98434436947747039
+				temp = 274.20237193427465
+				tempExt = 274.24754161084695
+				tempExtUnexp = 274.24745102995104
+				staticPressureAtm = 0.98429271623642978
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -35514,10 +33973,10 @@ GAME
 			{
 				name = Decoupler.3
 				cid = 4294107994
-				uid = 238430505
-				mid = 1314366132
+				uid = 1412466859
+				mid = 2856707997
 				persistentId = 408882307
-				launchID = 74
+				launchID = 75
 				parent = 17
 				position = 0,-10.0509033203125,0
 				rotation = 0,0,1,0
@@ -35536,10 +33995,10 @@ GAME
 				attN = bottom, 17
 				mass = 0.5
 				shielded = False
-				temp = 274.53205958800862
-				tempExt = 274.53235824886173
-				tempExtUnexp = 274.53235824886173
-				staticPressureAtm = 0.98422035652121109
+				temp = 274.16213570778825
+				tempExt = 274.16246331693299
+				tempExtUnexp = 274.16246331693299
+				staticPressureAtm = 0.98416862798390081
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -35729,10 +34188,10 @@ GAME
 			{
 				name = KK.SPX.F93.interstage
 				cid = 4294631684
-				uid = 3415674290
-				mid = 1314366132
+				uid = 249848357
+				mid = 2856707997
 				persistentId = 287038316
-				launchID = 74
+				launchID = 75
 				parent = 26
 				position = 0,-13.47650146484375,0
 				rotation = 0,0,0,1
@@ -35751,10 +34210,10 @@ GAME
 				attN = top, 26
 				mass = 0.589999974
 				shielded = False
-				temp = 274.53205964314867
-				tempExt = 274.53243389011021
-				tempExtUnexp = 274.53243389011021
-				staticPressureAtm = 0.98461942675082492
+				temp = 274.16213576205797
+				tempExt = 274.1625389518116
+				tempExtUnexp = 274.1625389518116
+				staticPressureAtm = 0.98456784880605408
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -35930,10 +34389,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294256998
-				uid = 3339574159
-				mid = 1314366132
+				uid = 1731913393
+				mid = 2856707997
 				persistentId = 3615798203
-				launchID = 74
+				launchID = 75
 				parent = 27
 				position = 1.8293530941009521,-16.749507904052734,-2.384185791015625E-07
 				rotation = 2.08931503E-08,0.707106769,-2.08931503E-08,0.707106888
@@ -35953,10 +34412,10 @@ GAME
 				srfN = srfAttach, 27,collider_F912_Interstage
 				mass = 0.150000006
 				shielded = False
-				temp = 274.53211303255421
-				tempExt = 274.55196026085861
-				tempExtUnexp = 274.55195569754557
-				staticPressureAtm = 0.98500148002347798
+				temp = 274.16219500412518
+				tempExt = 274.18343243366542
+				tempExtUnexp = 274.18342715650186
+				staticPressureAtm = 0.98494937500481894
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -36078,10 +34537,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294256346
-				uid = 2574960212
-				mid = 1314366132
+				uid = 3095012486
+				mid = 2856707997
 				persistentId = 3154247204
-				launchID = 74
+				launchID = 75
 				parent = 27
 				position = -1.1920928955078125E-07,-16.749507904052734,-1.8293533325195313
 				rotation = 1.77635663E-15,1,-2.95473725E-08,1.19209275E-07
@@ -36101,10 +34560,10 @@ GAME
 				srfN = srfAttach, 27,collider_F912_Interstage
 				mass = 0.150000006
 				shielded = False
-				temp = 274.53211303255421
-				tempExt = 274.55196026085861
-				tempExtUnexp = 274.55195569754557
-				staticPressureAtm = 0.98500230828244506
+				temp = 274.16219500412518
+				tempExt = 274.18343243366542
+				tempExtUnexp = 274.18342715650186
+				staticPressureAtm = 0.98494937500481894
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -36226,10 +34685,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294256276
-				uid = 3530955762
-				mid = 1314366132
+				uid = 4293737007
+				mid = 2856707997
 				persistentId = 1781508407
-				launchID = 74
+				launchID = 75
 				parent = 27
 				position = -1.8293530941009521,-16.749507904052734,3.5762786865234375E-07
 				rotation = -2.08931485E-08,0.707106829,-2.0893145E-08,-0.707106829
@@ -36249,10 +34708,10 @@ GAME
 				srfN = srfAttach, 27,collider_F912_Interstage
 				mass = 0.150000006
 				shielded = False
-				temp = 274.53211303255421
-				tempExt = 274.55196026085861
-				tempExtUnexp = 274.55195569754557
-				staticPressureAtm = 0.98500080235705034
+				temp = 274.16219500412518
+				tempExt = 274.18343243366542
+				tempExtUnexp = 274.18342715650186
+				staticPressureAtm = 0.98494937500481894
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -36374,10 +34833,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294256206
-				uid = 3594840801
-				mid = 1314366132
+				uid = 3734016578
+				mid = 2856707997
 				persistentId = 3779635155
-				launchID = 74
+				launchID = 75
 				parent = 27
 				position = 3.5762786865234375E-07,-16.749507904052734,1.8293530941009521
 				rotation = -2.95473725E-08,1.19209275E-07,-1.77635663E-15,-1
@@ -36397,10 +34856,10 @@ GAME
 				srfN = srfAttach, 27,collider_F912_Interstage
 				mass = 0.150000006
 				shielded = False
-				temp = 274.53211303255421
-				tempExt = 274.55196026085861
-				tempExtUnexp = 274.55195569754557
-				staticPressureAtm = 0.98499997409808315
+				temp = 274.16219500412518
+				tempExt = 274.18343243366542
+				tempExtUnexp = 274.18342715650186
+				staticPressureAtm = 0.98494937500481894
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -36522,10 +34981,10 @@ GAME
 			{
 				name = KK.SPX.F93.S1tank
 				cid = 4294625744
-				uid = 3001886327
-				mid = 1314366132
+				uid = 2120309443
+				mid = 2856707997
 				persistentId = 3644962350
-				launchID = 74
+				launchID = 75
 				parent = 27
 				position = 0,-35.923824310302734,0
 				rotation = 0,0,0,1
@@ -36544,12 +35003,12 @@ GAME
 				attN = fc, 33
 				attN = mid, -1
 				attN = bottom, 42
-				mass = 1.38907242
+				mass = 1.38908386
 				shielded = False
 				temp = 90.150001525878906
 				tempExt = 90.150001525878906
 				tempExtUnexp = 90.150001525878906
-				staticPressureAtm = 0.98723913456756562
+				staticPressureAtm = 0.98718725543771579
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -36558,7 +35017,7 @@ GAME
 				rigidAttachment = False
 				flag = Squad/Flags/default
 				rTrf = KK.SPX.F93.S1tank
-				modCost = 2437.98853
+				modCost = 2438.13306
 				EVENTS
 				{
 				}
@@ -36658,7 +35117,7 @@ GAME
 					isEnabled = True
 					type = Cryogenic
 					utilization = 86
-					mass = 11.7945366
+					mass = 11.7945423
 					_numberOfAddedMLILayers = 0
 					partPrevTemperature = -1
 					stagingEnabled = True
@@ -37384,7 +35843,7 @@ GAME
 					isEnabled = True
 					type = Cryogenic
 					utilization = 86
-					mass = 11.7945366
+					mass = 11.7945423
 					_numberOfAddedMLILayers = 0
 					partPrevTemperature = 90.150001525878906
 					stagingEnabled = True
@@ -38137,10 +36596,10 @@ GAME
 			{
 				name = KK.SPX.Falcon9.FC
 				cid = 4294622098
-				uid = 2092246112
-				mid = 1314366132
+				uid = 3232149072
+				mid = 2856707997
 				persistentId = 3982312001
-				launchID = 74
+				launchID = 75
 				parent = 32
 				position = 0,-16.5533447265625,0
 				rotation = 0,0,0,1
@@ -38158,10 +36617,10 @@ GAME
 				attN = bottom, 32
 				mass = 0.150000006
 				shielded = False
-				temp = 274.53205522552565
-				tempExt = 274.53237892160297
-				tempExtUnexp = 274.53237892160297
-				staticPressureAtm = 0.98497828877239846
+				temp = 274.16213134324983
+				tempExt = 274.16248395649473
+				tempExtUnexp = 274.16248395649473
+				staticPressureAtm = 0.9849264849388184
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -38623,7 +37082,7 @@ GAME
 				RESOURCE
 				{
 					name = ElectricCharge
-					amount = 799.99999981266626
+					amount = 800
 					maxAmount = 800
 					flowState = True
 					isTweakable = True
@@ -38647,10 +37106,10 @@ GAME
 			{
 				name = KK.SPX.F9LandingLeg
 				cid = 4294581646
-				uid = 1107854753
-				mid = 1314366132
+				uid = 1215888457
+				mid = 2856707997
 				persistentId = 2200303663
-				launchID = 74
+				launchID = 75
 				parent = 32
 				position = -1.2787079811096191,-52.520431518554688,-1.2787065505981445
 				rotation = -9.04808761E-09,0.923879564,-2.18440128E-08,-0.382683396
@@ -38670,10 +37129,10 @@ GAME
 				srfN = srfAttach, 32,collider_F912_S1FuelTank
 				mass = 0.150000006
 				shielded = False
-				temp = 274.53206115860564
-				tempExt = 274.53247292888011
-				tempExtUnexp = 274.53247292888011
-				staticPressureAtm = 0.98918034769769303
+				temp = 274.16213727789176
+				tempExt = 274.16260098102236
+				tempExtUnexp = 274.16260098102236
+				staticPressureAtm = 0.98912786619768533
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -38866,10 +37325,10 @@ GAME
 			{
 				name = KK.SPX.F9LandingLeg
 				cid = 4294581174
-				uid = 1984377346
-				mid = 1314366132
+				uid = 883714213
+				mid = 2856707997
 				persistentId = 771697880
-				launchID = 74
+				launchID = 75
 				parent = 32
 				position = -1.2787070274353027,-52.520431518554688,1.2787072658538818
 				rotation = -2.1844011E-08,0.382683396,-9.04808495E-09,-0.923879564
@@ -38889,10 +37348,10 @@ GAME
 				srfN = srfAttach, 32,collider_F912_S1FuelTank
 				mass = 0.150000006
 				shielded = False
-				temp = 274.53206115860564
-				tempExt = 274.53247292888011
-				tempExtUnexp = 274.53247292888011
-				staticPressureAtm = 0.98917876647602854
+				temp = 274.16213727789176
+				tempExt = 274.16260098102236
+				tempExtUnexp = 274.16260098102236
+				staticPressureAtm = 0.98912786619768533
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -39081,10 +37540,10 @@ GAME
 			{
 				name = KK.SPX.F9LandingLeg
 				cid = 4294581056
-				uid = 2572397126
-				mid = 1314366132
+				uid = 3557539730
+				mid = 2856707997
 				persistentId = 2618424244
-				launchID = 74
+				launchID = 75
 				parent = 32
 				position = 1.27870774269104,-52.520431518554688,1.2787063121795654
 				rotation = -2.1844011E-08,-0.382683396,9.04808495E-09,-0.923879564
@@ -39104,10 +37563,10 @@ GAME
 				srfN = srfAttach, 32,collider_F912_S1FuelTank
 				mass = 0.150000006
 				shielded = False
-				temp = 274.53206115860564
-				tempExt = 274.53247292888011
-				tempExtUnexp = 274.53247292888011
-				staticPressureAtm = 0.98917899236483775
+				temp = 274.16213727789176
+				tempExt = 274.16260098102236
+				tempExtUnexp = 274.16260098102236
+				staticPressureAtm = 0.98912786619768533
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -39296,10 +37755,10 @@ GAME
 			{
 				name = KK.SPX.F9LandingLeg
 				cid = 4294580938
-				uid = 2723637504
-				mid = 1314366132
+				uid = 3383253881
+				mid = 2856707997
 				persistentId = 1559303005
-				launchID = 74
+				launchID = 75
 				parent = 32
 				position = 1.2787063121795654,-52.520431518554688,-1.27870774269104
 				rotation = -9.04808495E-09,-0.923879564,2.1844011E-08,-0.382683396
@@ -39319,10 +37778,10 @@ GAME
 				srfN = srfAttach, 32,collider_F912_S1FuelTank
 				mass = 0.150000006
 				shielded = False
-				temp = 274.53206115860564
-				tempExt = 274.53247292888011
-				tempExtUnexp = 274.53247292888011
-				staticPressureAtm = 0.98918079947531146
+				temp = 274.16213727789176
+				tempExt = 274.16260098102236
+				tempExtUnexp = 274.16260098102236
+				staticPressureAtm = 0.98912786619768533
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -39511,10 +37970,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4289609260
-				uid = 2109735911
-				mid = 1314366132
+				uid = 1580505664
+				mid = 2856707997
 				persistentId = 950625074
-				launchID = 74
+				launchID = 75
 				parent = 32
 				position = 1.8293955326080322,-54.887134552001953,-2.384185791015625E-07
 				rotation = -6.55626106E-16,0.707106769,6.55626E-16,0.707106888
@@ -39534,10 +37993,10 @@ GAME
 				srfN = srfAttach, 32,collider_F913_S1FuelTank_collider
 				mass = 0.150000006
 				shielded = False
-				temp = 274.53206121885222
-				tempExt = 274.53222973766088
-				tempExtUnexp = 274.53222973766088
-				staticPressureAtm = 0.9894571367852516
+				temp = 274.16213733813652
+				tempExt = 274.16234483247138
+				tempExtUnexp = 274.16234483247138
+				staticPressureAtm = 0.98940488117405312
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -39659,10 +38118,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294247630
-				uid = 898214636
-				mid = 1314366132
+				uid = 669218412
+				mid = 2856707997
 				persistentId = 866001250
-				launchID = 74
+				launchID = 75
 				parent = 32
 				position = -1.1920928955078125E-07,-54.887134552001953,-1.8293957710266113
 				rotation = -1.05879106E-22,1,9.27195192E-16,1.19209275E-07
@@ -39682,10 +38141,10 @@ GAME
 				srfN = srfAttach, 32,collider_F913_S1FuelTank_collider
 				mass = 0.150000006
 				shielded = False
-				temp = 274.53206121885222
-				tempExt = 274.53222973766088
-				tempExtUnexp = 274.53222973766088
-				staticPressureAtm = 0.98945796504421879
+				temp = 274.16213733813652
+				tempExt = 274.16234483247138
+				tempExtUnexp = 274.16234483247138
+				staticPressureAtm = 0.98940488117405312
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -39807,10 +38266,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294247566
-				uid = 3431907687
-				mid = 1314366132
+				uid = 2681773415
+				mid = 2856707997
 				persistentId = 2261538391
-				launchID = 74
+				launchID = 75
 				parent = 32
 				position = -1.8293955326080322,-54.887134552001953,3.5762786865234375E-07
 				rotation = 6.55626E-16,0.707106829,6.55626E-16,-0.707106829
@@ -39830,10 +38289,10 @@ GAME
 				srfN = srfAttach, 32,collider_F913_S1FuelTank_collider
 				mass = 0.150000006
 				shielded = False
-				temp = 274.53206121885222
-				tempExt = 274.53222973766088
-				tempExtUnexp = 274.53222973766088
-				staticPressureAtm = 0.98945638382255419
+				temp = 274.16213733813652
+				tempExt = 274.16234483247138
+				tempExtUnexp = 274.16234483247138
+				staticPressureAtm = 0.98940488117405312
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -39955,10 +38414,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294247502
-				uid = 682710848
-				mid = 1314366132
+				uid = 1313018022
+				mid = 2856707997
 				persistentId = 3924499085
-				launchID = 74
+				launchID = 75
 				parent = 32
 				position = 3.5762786865234375E-07,-54.887134552001953,1.8293955326080322
 				rotation = 9.27195192E-16,1.19209275E-07,1.05879106E-22,-1
@@ -39978,10 +38437,10 @@ GAME
 				srfN = srfAttach, 32,collider_F913_S1FuelTank_collider
 				mass = 0.150000006
 				shielded = False
-				temp = 274.53206121885222
-				tempExt = 274.53222973766088
-				tempExtUnexp = 274.53222973766088
-				staticPressureAtm = 0.98945540497104767
+				temp = 274.16213733813652
+				tempExt = 274.16234483247138
+				tempExtUnexp = 274.16234483247138
+				staticPressureAtm = 0.98940488117405312
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -40103,10 +38562,10 @@ GAME
 			{
 				name = miniFuelTank
 				cid = 4290370112
-				uid = 1483904413
-				mid = 1314366132
+				uid = 3529486953
+				mid = 2856707997
 				persistentId = 4031445266
-				launchID = 74
+				launchID = 75
 				parent = 32
 				position = 0,-55.071018218994141,0
 				rotation = 0,0,0,1
@@ -40125,10 +38584,10 @@ GAME
 				attN = bottom, 43
 				mass = 0.00216278993
 				shielded = False
-				temp = 274.53205702514174
-				tempExt = 274.5308985867332
-				tempExtUnexp = 274.5308985867332
-				staticPressureAtm = 0.98947837033331787
+				temp = 274.16213314337921
+				tempExt = 274.16100610994323
+				tempExtUnexp = 274.16100610994323
+				staticPressureAtm = 0.98942641590719838
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -40967,10 +39426,10 @@ GAME
 			{
 				name = PMB.batteryBankLarge
 				cid = 4289602948
-				uid = 3513189997
-				mid = 1314366132
+				uid = 3055609330
+				mid = 2856707997
 				persistentId = 1629099948
-				launchID = 74
+				launchID = 75
 				parent = 42
 				position = 0,-54.694728851318359,0
 				rotation = 0,0,0,1
@@ -40989,10 +39448,10 @@ GAME
 				attN = bottom, 44
 				mass = 9.99999975E-05
 				shielded = False
-				temp = 274.91965208633462
-				tempExt = 275.72306415384651
-				tempExtUnexp = 275.72295229946809
-				staticPressureAtm = 0.98943296668266556
+				temp = 274.57172920212292
+				tempExt = 275.41782540466778
+				tempExtUnexp = 275.41767191826204
+				staticPressureAtm = 0.98938236758940135
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -41081,7 +39540,7 @@ GAME
 				RESOURCE
 				{
 					name = ElectricCharge
-					amount = 374999.99991218734
+					amount = 375000
 					maxAmount = 375000
 					flowState = True
 					isTweakable = True
@@ -41094,10 +39553,10 @@ GAME
 			{
 				name = PMB.Rockomax16.BW
 				cid = 4293210738
-				uid = 796875143
-				mid = 1314366132
+				uid = 1259636583
+				mid = 2856707997
 				persistentId = 176477378
-				launchID = 74
+				launchID = 75
 				parent = 43
 				position = 0,-53.972305297851563,0
 				rotation = 0,0,0,1
@@ -41114,12 +39573,12 @@ GAME
 				srfN = srfAttach, -1
 				attN = top, 43
 				attN = bottom, 45
-				mass = 0.281160057
+				mass = 0.281159908
 				shielded = False
-				temp = 274.53206123990981
-				tempExt = 274.65091078810667
-				tempExtUnexp = 274.65052241515588
-				staticPressureAtm = 0.98934840897174925
+				temp = 274.1743348473662
+				tempExt = 274.29141076353011
+				tempExtUnexp = 274.2910012150889
+				staticPressureAtm = 0.98929780987848503
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -41128,7 +39587,7 @@ GAME
 				rigidAttachment = False
 				flag = Squad/Flags/default
 				rTrf = PMB.Rockomax16.BW
-				modCost = 69.5284653
+				modCost = 69.5265884
 				EVENTS
 				{
 				}
@@ -41227,7 +39686,887 @@ GAME
 					isEnabled = True
 					type = Cryogenic
 					utilization = 86
-					mass = 0.281160057
+					mass = 0.281159908
+					_numberOfAddedMLILayers = 0
+					partPrevTemperature = -1
+					stagingEnabled = True
+					volume = 8000
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					TANK
+					{
+						name = LqdOxygen
+						note = (has insulation)
+						utilization = 1
+						mass = 1.11999998E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 90.1500015
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Kerosene
+						note = 
+						utilization = 1
+						mass = 1.20000004E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = LqdHydrogen
+						note = (has insulation)
+						utilization = 1
+						mass = 1.60000002E-06
+						cost = 0
+						loss_rate = 0
+						temperature = 20.1499996
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = NTO
+						note = 
+						utilization = 1
+						mass = 1.6E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = UDMH
+						note = 
+						utilization = 1
+						mass = 1.6E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Aerozine50
+						note = 
+						utilization = 1
+						mass = 1.6E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = MMH
+						note = 
+						utilization = 1
+						mass = 1.6E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = HTP
+						note = 
+						utilization = 1
+						mass = 1.6E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = AvGas
+						note = 
+						utilization = 1
+						mass = 7.99999998E-06
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = IRFNA-III
+						note = 
+						utilization = 1
+						mass = 1.99999995E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = NitrousOxide
+						note = (pressurized)
+						utilization = 100
+						mass = 2.99999992E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Aniline
+						note = 
+						utilization = 1
+						mass = 1.99999995E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Ethanol75
+						note = 
+						utilization = 1
+						mass = 1.29999999E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Ethanol90
+						note = 
+						utilization = 1
+						mass = 1.29999999E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Ethanol
+						note = 
+						utilization = 1
+						mass = 1.29999999E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = LqdAmmonia
+						note = (has insulation)
+						utilization = 1
+						mass = 9.60000034E-06
+						cost = 0
+						loss_rate = 0
+						temperature = 237.649994
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = LqdMethane
+						note = (has insulation)
+						utilization = 1
+						mass = 9.60000034E-06
+						cost = 0
+						loss_rate = 0
+						temperature = 111.449997
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = ClF3
+						note = 
+						utilization = 1
+						mass = 3.9999999E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = ClF5
+						note = 
+						utilization = 1
+						mass = 3.9999999E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Diborane
+						note = (has insulation)
+						utilization = 1
+						mass = 1.43999996E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 180.649994
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Pentaborane
+						note = 
+						utilization = 1
+						mass = 1.80000006E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Ethane
+						note = (has insulation)
+						utilization = 1
+						mass = 1.28000001E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 184.649994
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Ethylene
+						note = (has insulation)
+						utilization = 1
+						mass = 1.28000001E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 169.449997
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = OF2
+						note = (has insulation)
+						utilization = 1
+						mass = 1.43999996E-05
+						cost = 0
+						loss_rate = 1.6E-11
+						temperature = 128.399994
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = LqdFluorine
+						note = (has insulation)
+						utilization = 1
+						mass = 3.19999999E-05
+						cost = 0
+						loss_rate = 8.8000000000000006E-11
+						temperature = 85.0400009
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = N2F4
+						note = (has insulation)
+						utilization = 1
+						mass = 7.99999998E-06
+						cost = 0
+						loss_rate = 0
+						temperature = 200.149994
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Methanol
+						note = 
+						utilization = 1
+						mass = 1.20000004E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Furfuryl
+						note = 
+						utilization = 1
+						mass = 1.40000002E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = UH25
+						note = 
+						utilization = 1
+						mass = 1.6E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Tonka250
+						note = 
+						utilization = 1
+						mass = 1.6E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Tonka500
+						note = 
+						utilization = 1
+						mass = 1.6E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = FLOX30
+						note = (has insulation)
+						utilization = 1
+						mass = 1.31999996E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 216.149994
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = FLOX70
+						note = (has insulation)
+						utilization = 1
+						mass = 3.08000017E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 216.149994
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = FLOX88
+						note = (has insulation)
+						utilization = 1
+						mass = 3.87200016E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 216.149994
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = IWFNA
+						note = 
+						utilization = 1
+						mass = 1.99999995E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = IRFNA-IV
+						note = 
+						utilization = 1
+						mass = 1.99999995E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = AK20
+						note = 
+						utilization = 1
+						mass = 1.99999995E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = AK27
+						note = 
+						utilization = 1
+						mass = 1.99999995E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = MON1
+						note = 
+						utilization = 1
+						mass = 1.6E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = MON3
+						note = 
+						utilization = 1
+						mass = 1.6E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = MON10
+						note = 
+						utilization = 1
+						mass = 1.6E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = MON15
+						note = 
+						utilization = 1
+						mass = 1.6E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = MON20
+						note = 
+						utilization = 1
+						mass = 1.6E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = MON25
+						note = 
+						utilization = 1
+						mass = 1.6E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Hydyne
+						note = 
+						utilization = 1
+						mass = 1.29999999E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Syntin
+						note = 
+						utilization = 1
+						mass = 1.20000004E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = LiquidFuel
+						note = 
+						utilization = 1
+						mass = 1.6E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 3059.9999241530895
+						maxAmount = 3599.9999046325684
+					}
+					TANK
+					{
+						name = Oxidizer
+						note = 
+						utilization = 1
+						mass = 1.6E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 3460.0000195205212
+						maxAmount = 4400.0000953674316
+					}
+					TANK
+					{
+						name = LeadBallast
+						note = 
+						utilization = 1
+						mass = 0
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Beryllium
+						note = 
+						utilization = 1
+						mass = 1.6E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					UPGRADESAPPLIED
+					{
+						upgrade = MLI.Upgrade1
+						upgrade = MLI.Upgrade2
+						upgrade = MLI.Upgrade3
+						upgrade = MLI.Upgrade4
+						upgrade = MLI.Upgrade5
+					}
+				}
+				RESOURCE
+				{
+					name = LiquidFuel
+					amount = 3059.9999241530895
+					maxAmount = 3599.9999046325684
+					flowState = True
+					isTweakable = True
+					hideFlow = False
+					isVisible = True
+					flowMode = Both
+				}
+				RESOURCE
+				{
+					name = Oxidizer
+					amount = 3460.0000195205212
+					maxAmount = 4400.0000953674316
+					flowState = True
+					isTweakable = True
+					hideFlow = False
+					isVisible = True
+					flowMode = Both
+				}
+			}
+			PART
+			{
+				name = PMB.Rockomax16.BW
+				cid = 4289908726
+				uid = 3020077019
+				mid = 2856707997
+				persistentId = 249779402
+				launchID = 75
+				parent = 44
+				position = 0,-53.972305297851563,0
+				rotation = 0,0,0,1
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 4
+				resPri = 0
+				dstg = 8
+				sqor = -1
+				sepI = 4
+				sidx = -1
+				attm = 0
+				sameVesselCollision = False
+				srfN = srfAttach, -1
+				attN = top, 44
+				attN = bottom, 46
+				mass = 0.281159908
+				shielded = False
+				temp = 274.16213735117617
+				tempExt = 274.29132143309295
+				tempExtUnexp = 274.29091222047697
+				staticPressureAtm = 0.98929780987848503
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Flags/default
+				rTrf = PMB.Rockomax16.BW
+				modCost = 69.5265884
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+					ToggleSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					SetSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					RemoveSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModulePartVariants
+					isEnabled = True
+					useVariantMass = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = Driftless
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleFuelTanks
+					isEnabled = True
+					type = Cryogenic
+					utilization = 86
+					mass = 0.281159908
 					_numberOfAddedMLILayers = 0
 					partPrevTemperature = -1
 					stagingEnabled = True
@@ -41972,892 +41311,12 @@ GAME
 			}
 			PART
 			{
-				name = PMB.Rockomax16.BW
-				cid = 4289908726
-				uid = 1927952717
-				mid = 1314366132
-				persistentId = 249779402
-				launchID = 74
-				parent = 44
-				position = 0,-53.972305297851563,0
-				rotation = 0,0,0,1
-				mirror = 1,1,1
-				symMethod = Radial
-				istg = 4
-				resPri = 0
-				dstg = 8
-				sqor = -1
-				sepI = 4
-				sidx = -1
-				attm = 0
-				sameVesselCollision = False
-				srfN = srfAttach, -1
-				attN = top, 44
-				attN = bottom, 46
-				mass = 0.281160057
-				shielded = False
-				temp = 274.53206123098101
-				tempExt = 274.65082950502125
-				tempExtUnexp = 274.65044144709708
-				staticPressureAtm = 0.98934840897174925
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = Squad/Flags/default
-				rTrf = PMB.Rockomax16.BW
-				modCost = 69.5284653
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-					ToggleSameVesselInteraction
-					{
-						actionGroup = None
-						wasActiveBeforePartWasAdjusted = False
-					}
-					SetSameVesselInteraction
-					{
-						actionGroup = None
-						wasActiveBeforePartWasAdjusted = False
-					}
-					RemoveSameVesselInteraction
-					{
-						actionGroup = None
-						wasActiveBeforePartWasAdjusted = False
-					}
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = ModulePartVariants
-					isEnabled = True
-					useVariantMass = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleFuelTanks
-					isEnabled = True
-					type = Cryogenic
-					utilization = 86
-					mass = 0.281160057
-					_numberOfAddedMLILayers = 0
-					partPrevTemperature = -1
-					stagingEnabled = True
-					volume = 8000
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					TANK
-					{
-						name = LqdOxygen
-						note = (has insulation)
-						utilization = 1
-						mass = 1.11999998E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 90.1500015
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Kerosene
-						note = 
-						utilization = 1
-						mass = 1.20000004E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = LqdHydrogen
-						note = (has insulation)
-						utilization = 1
-						mass = 1.60000002E-06
-						cost = 0
-						loss_rate = 0
-						temperature = 20.1499996
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = NTO
-						note = 
-						utilization = 1
-						mass = 1.6E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = UDMH
-						note = 
-						utilization = 1
-						mass = 1.6E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Aerozine50
-						note = 
-						utilization = 1
-						mass = 1.6E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = MMH
-						note = 
-						utilization = 1
-						mass = 1.6E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = HTP
-						note = 
-						utilization = 1
-						mass = 1.6E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = AvGas
-						note = 
-						utilization = 1
-						mass = 7.99999998E-06
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = IRFNA-III
-						note = 
-						utilization = 1
-						mass = 1.99999995E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = NitrousOxide
-						note = (pressurized)
-						utilization = 100
-						mass = 2.99999992E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Aniline
-						note = 
-						utilization = 1
-						mass = 1.99999995E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Ethanol75
-						note = 
-						utilization = 1
-						mass = 1.29999999E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Ethanol90
-						note = 
-						utilization = 1
-						mass = 1.29999999E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Ethanol
-						note = 
-						utilization = 1
-						mass = 1.29999999E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = LqdAmmonia
-						note = (has insulation)
-						utilization = 1
-						mass = 9.60000034E-06
-						cost = 0
-						loss_rate = 0
-						temperature = 237.649994
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = LqdMethane
-						note = (has insulation)
-						utilization = 1
-						mass = 9.60000034E-06
-						cost = 0
-						loss_rate = 0
-						temperature = 111.449997
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = ClF3
-						note = 
-						utilization = 1
-						mass = 3.9999999E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = ClF5
-						note = 
-						utilization = 1
-						mass = 3.9999999E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Diborane
-						note = (has insulation)
-						utilization = 1
-						mass = 1.43999996E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 180.649994
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Pentaborane
-						note = 
-						utilization = 1
-						mass = 1.80000006E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Ethane
-						note = (has insulation)
-						utilization = 1
-						mass = 1.28000001E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 184.649994
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Ethylene
-						note = (has insulation)
-						utilization = 1
-						mass = 1.28000001E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 169.449997
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = OF2
-						note = (has insulation)
-						utilization = 1
-						mass = 1.43999996E-05
-						cost = 0
-						loss_rate = 1.6E-11
-						temperature = 128.399994
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = LqdFluorine
-						note = (has insulation)
-						utilization = 1
-						mass = 3.19999999E-05
-						cost = 0
-						loss_rate = 8.8000000000000006E-11
-						temperature = 85.0400009
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = N2F4
-						note = (has insulation)
-						utilization = 1
-						mass = 7.99999998E-06
-						cost = 0
-						loss_rate = 0
-						temperature = 200.149994
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Methanol
-						note = 
-						utilization = 1
-						mass = 1.20000004E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Furfuryl
-						note = 
-						utilization = 1
-						mass = 1.40000002E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = UH25
-						note = 
-						utilization = 1
-						mass = 1.6E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Tonka250
-						note = 
-						utilization = 1
-						mass = 1.6E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Tonka500
-						note = 
-						utilization = 1
-						mass = 1.6E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = FLOX30
-						note = (has insulation)
-						utilization = 1
-						mass = 1.31999996E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 216.149994
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = FLOX70
-						note = (has insulation)
-						utilization = 1
-						mass = 3.08000017E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 216.149994
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = FLOX88
-						note = (has insulation)
-						utilization = 1
-						mass = 3.87200016E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 216.149994
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = IWFNA
-						note = 
-						utilization = 1
-						mass = 1.99999995E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = IRFNA-IV
-						note = 
-						utilization = 1
-						mass = 1.99999995E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = AK20
-						note = 
-						utilization = 1
-						mass = 1.99999995E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = AK27
-						note = 
-						utilization = 1
-						mass = 1.99999995E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = MON1
-						note = 
-						utilization = 1
-						mass = 1.6E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = MON3
-						note = 
-						utilization = 1
-						mass = 1.6E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = MON10
-						note = 
-						utilization = 1
-						mass = 1.6E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = MON15
-						note = 
-						utilization = 1
-						mass = 1.6E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = MON20
-						note = 
-						utilization = 1
-						mass = 1.6E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = MON25
-						note = 
-						utilization = 1
-						mass = 1.6E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Hydyne
-						note = 
-						utilization = 1
-						mass = 1.29999999E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Syntin
-						note = 
-						utilization = 1
-						mass = 1.20000004E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = LiquidFuel
-						note = 
-						utilization = 1
-						mass = 1.6E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 3599.9999046325684
-						maxAmount = 3599.9999046325684
-					}
-					TANK
-					{
-						name = Oxidizer
-						note = 
-						utilization = 1
-						mass = 1.6E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 4400.0000953674316
-						maxAmount = 4400.0000953674316
-					}
-					TANK
-					{
-						name = LeadBallast
-						note = 
-						utilization = 1
-						mass = 0
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Beryllium
-						note = 
-						utilization = 1
-						mass = 1.6E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					UPGRADESAPPLIED
-					{
-						upgrade = MLI.Upgrade1
-						upgrade = MLI.Upgrade2
-						upgrade = MLI.Upgrade3
-						upgrade = MLI.Upgrade4
-						upgrade = MLI.Upgrade5
-					}
-				}
-				RESOURCE
-				{
-					name = LiquidFuel
-					amount = 0
-					maxAmount = 3599.9999046325684
-					flowState = True
-					isTweakable = True
-					hideFlow = False
-					isVisible = True
-					flowMode = Both
-				}
-				RESOURCE
-				{
-					name = Oxidizer
-					amount = 4400.0000953674316
-					maxAmount = 4400.0000953674316
-					flowState = True
-					isTweakable = True
-					hideFlow = False
-					isVisible = True
-					flowMode = Both
-				}
-			}
-			PART
-			{
 				name = KK.SPX.F9.Octaweb
 				cid = 4294617648
-				uid = 992444468
-				mid = 1314366132
+				uid = 2607379070
+				mid = 2856707997
 				persistentId = 3556012684
-				launchID = 74
+				launchID = 75
 				parent = 45
 				position = 0,-56.180709838867188,0
 				rotation = 0,0,0,1
@@ -42885,10 +41344,10 @@ GAME
 				attN = bottom, 56
 				mass = 0.5
 				shielded = False
-				temp = 274.5555081544212
-				tempExt = 274.66989377839639
-				tempExtUnexp = 274.66959054655814
-				staticPressureAtm = 0.98960509395528773
+				temp = 274.18812667256634
+				tempExt = 274.30732590747044
+				tempExtUnexp = 274.30703468317211
+				staticPressureAtm = 0.98955630197249722
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -43180,10 +41639,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294615978
-				uid = 371137744
-				mid = 1314366132
+				uid = 2548593616
+				mid = 2856707997
 				persistentId = 696728530
-				launchID = 74
+				launchID = 75
 				parent = 46
 				position = 0,-57.285015106201172,0
 				rotation = 0,0,0,1
@@ -43201,10 +41660,10 @@ GAME
 				attN = top, 46
 				mass = 0.469999999
 				shielded = False
-				temp = 274.53406587705405
-				tempExt = 274.61154732513586
-				tempExtUnexp = 274.61139859018766
-				staticPressureAtm = 0.98973686242733006
+				temp = 274.16438015746957
+				tempExt = 274.24698727679254
+				tempExtUnexp = 274.24684305146343
+				staticPressureAtm = 0.98968558566763809
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -43308,11 +41767,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89994528570889742
-							ullageHeightMax = 0.99997737758697647
-							ullageRadialMin = 1.8762223999253781E-05
-							ullageRadialMax = 0.99999989379732279
-							UT = 3759927403.8630424
+							ullageHeightMin = 0.89999920242269016
+							ullageHeightMax = 0.99999960389528264
+							ullageRadialMin = 5.8999120574304872E-08
+							ullageRadialMax = 0.99999999785547589
+							UT = 3759927421.1430259
 						}
 					}
 					UPGRADESAPPLIED
@@ -43432,6 +41891,22 @@ GAME
 					{
 					}
 					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -43470,10 +41945,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294615162
-				uid = 3707224653
-				mid = 1314366132
+				uid = 1717672292
+				mid = 2856707997
 				persistentId = 680954739
-				launchID = 74
+				launchID = 75
 				parent = 46
 				position = 1.1935441493988037,-57.145015716552734,-0.49438327550888062
 				rotation = 0,0.13052617,0,0.991444945
@@ -43491,10 +41966,10 @@ GAME
 				attN = top, 46
 				mass = 0.469999999
 				shielded = False
-				temp = 274.53406587707309
-				tempExt = 274.61154732605866
-				tempExtUnexp = 274.61139859110727
-				staticPressureAtm = 0.98972165258084288
+				temp = 274.16438015749026
+				tempExt = 274.24698727776001
+				tempExtUnexp = 274.24684305242795
+				staticPressureAtm = 0.98966917108083519
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -43598,11 +42073,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89995808667322563
-							ullageHeightMax = 0.99998845551914495
-							ullageRadialMin = 3.3241332624648151E-05
-							ullageRadialMax = 0.99999999238502058
-							UT = 3759927403.8630424
+							ullageHeightMin = 0.89999948608947422
+							ullageHeightMax = 0.99999993275383969
+							ullageRadialMin = 6.3851782429690069E-07
+							ullageRadialMax = 0.99999999932116568
+							UT = 3759927421.1430259
 						}
 					}
 					UPGRADESAPPLIED
@@ -43722,6 +42197,22 @@ GAME
 					{
 					}
 					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -43760,10 +42251,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294614724
-				uid = 444488931
-				mid = 1314366132
+				uid = 2042026084
+				mid = 2856707997
 				persistentId = 1149402617
-				launchID = 74
+				launchID = 75
 				parent = 46
 				position = 0.49438190460205078,-57.145015716552734,-1.1935462951660156
 				rotation = 0,0.608761489,0,0.793353319
@@ -43781,10 +42272,10 @@ GAME
 				attN = top, 46
 				mass = 0.469999999
 				shielded = False
-				temp = 274.53406587705405
-				tempExt = 274.61154732513586
-				tempExtUnexp = 274.61139859018766
-				staticPressureAtm = 0.98972172787711254
+				temp = 274.16438015749026
+				tempExt = 274.24698727776001
+				tempExtUnexp = 274.24684305242795
+				staticPressureAtm = 0.98966917108083519
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -43888,11 +42379,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89994909376619148
-							ullageHeightMax = 0.99998494837999008
-							ullageRadialMin = 2.7765277972410914E-05
-							ullageRadialMax = 0.99999873530096872
-							UT = 3759927403.8630424
+							ullageHeightMin = 0.89999870495871204
+							ullageHeightMax = 0.99999925628019315
+							ullageRadialMin = 0
+							ullageRadialMax = 0.9999999893075513
+							UT = 3759927421.1430259
 						}
 					}
 					UPGRADESAPPLIED
@@ -44012,6 +42503,22 @@ GAME
 					{
 					}
 					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -44050,12 +42557,12 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294614162
-				uid = 2274171021
-				mid = 1314366132
+				uid = 1470543606
+				mid = 2856707997
 				persistentId = 3201290625
-				launchID = 74
+				launchID = 75
 				parent = 46
-				position = -0.49438333511352539,-57.145015716552734,-1.1935434341430664
+				position = -0.49438327550888062,-57.145015716552734,-1.1935434341430664
 				rotation = 0,0.866025448,0,0.49999994
 				mirror = 1,1,1
 				symMethod = Radial
@@ -44071,10 +42578,10 @@ GAME
 				attN = top, 46
 				mass = 0.469999999
 				shielded = False
-				temp = 274.53406587705405
-				tempExt = 274.61154732513586
-				tempExtUnexp = 274.61139859018766
-				staticPressureAtm = 0.98972059843306648
+				temp = 274.16438015749026
+				tempExt = 274.24698727776001
+				tempExtUnexp = 274.24684305242795
+				staticPressureAtm = 0.98966917108083519
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -44178,11 +42685,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89994364997155085
-							ullageHeightMax = 0.99997521781043908
-							ullageRadialMin = 1.4615179483548229E-05
-							ullageRadialMax = 0.999999889232703
-							UT = 3759927403.8630424
+							ullageHeightMin = 0.89999917962359588
+							ullageHeightMax = 0.99999964152991994
+							ullageRadialMin = 1.875494786785182E-07
+							ullageRadialMax = 0.99999999401039597
+							UT = 3759927421.1430259
 						}
 					}
 					UPGRADESAPPLIED
@@ -44302,6 +42809,22 @@ GAME
 					{
 					}
 					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -44340,10 +42863,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294613744
-				uid = 483275548
-				mid = 1314366132
+				uid = 1498392558
+				mid = 2856707997
 				persistentId = 1885399608
-				launchID = 74
+				launchID = 75
 				parent = 46
 				position = -1.1935455799102783,-57.145015716552734,-0.49438267946243286
 				rotation = 0,0.991444945,0,0.130526051
@@ -44361,10 +42884,10 @@ GAME
 				attN = top, 46
 				mass = 0.469999999
 				shielded = False
-				temp = 274.53406587707309
-				tempExt = 274.61154732605866
-				tempExtUnexp = 274.61139859110727
-				staticPressureAtm = 0.98972127609949412
+				temp = 274.16438015749026
+				tempExt = 274.24698727776001
+				tempExtUnexp = 274.24684305242795
+				staticPressureAtm = 0.98966924637710485
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -44468,11 +42991,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.8999505453393265
-							ullageHeightMax = 0.99998641772088981
-							ullageRadialMin = 3.2211222734161837E-05
-							ullageRadialMax = 0.99999903247834554
-							UT = 3759927403.8630424
+							ullageHeightMin = 0.8999959646160427
+							ullageHeightMax = 0.99999687903291801
+							ullageRadialMin = 0
+							ullageRadialMax = 0.99999984227479788
+							UT = 3759927421.1430259
 						}
 					}
 					UPGRADESAPPLIED
@@ -44592,6 +43115,22 @@ GAME
 					{
 					}
 					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -44630,10 +43169,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294613336
-				uid = 1291000772
-				mid = 1314366132
+				uid = 1689387924
+				mid = 2856707997
 				persistentId = 2966390467
-				launchID = 74
+				launchID = 75
 				parent = 46
 				position = -1.1935453414916992,-57.145015716552734,0.49438118934631348
 				rotation = 0,0.965925813,0,-0.258819073
@@ -44651,10 +43190,10 @@ GAME
 				attN = top, 46
 				mass = 0.469999999
 				shielded = False
-				temp = 274.53406587705405
-				tempExt = 274.61154732513586
-				tempExtUnexp = 274.61139859018766
-				staticPressureAtm = 0.98972007135917839
+				temp = 274.16438015746957
+				tempExt = 274.24698727679254
+				tempExtUnexp = 274.24684305146343
+				staticPressureAtm = 0.98966924637710485
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -44758,11 +43297,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89996159076712512
-							ullageHeightMax = 0.99999389671637495
-							ullageRadialMin = 3.1957308513069135E-05
-							ullageRadialMax = 0.99999828986368378
-							UT = 3759927403.8630424
+							ullageHeightMin = 0.89999935003936915
+							ullageHeightMax = 0.99999968240653248
+							ullageRadialMin = 4.26891106457556E-08
+							ullageRadialMax = 0.99999999531651274
+							UT = 3759927421.1430259
 						}
 					}
 					UPGRADESAPPLIED
@@ -44882,6 +43421,22 @@ GAME
 					{
 					}
 					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -44920,12 +43475,12 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294612938
-				uid = 3557094723
-				mid = 1314366132
+				uid = 3069780734
+				mid = 2856707997
 				persistentId = 2347279057
-				launchID = 74
+				launchID = 75
 				parent = 46
-				position = -0.4943840503692627,-57.145015716552734,1.1935451030731201
+				position = -0.49438399076461792,-57.145015716552734,1.1935451030731201
 				rotation = 0,-0.79335326,0,0.608761549
 				mirror = 1,1,1
 				symMethod = Radial
@@ -44941,10 +43496,10 @@ GAME
 				attN = top, 46
 				mass = 0.469999999
 				shielded = False
-				temp = 274.53406587707309
-				tempExt = 274.61154732605866
-				tempExtUnexp = 274.61139859110727
-				staticPressureAtm = 0.9897202972479876
+				temp = 274.16438015749026
+				tempExt = 274.24698727776001
+				tempExtUnexp = 274.24684305242795
+				staticPressureAtm = 0.98966924637710485
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -45048,11 +43603,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89995752401572526
-							ullageHeightMax = 0.99999369388795689
-							ullageRadialMin = 5.0760370859433775E-05
-							ullageRadialMax = 0.99999999145920659
-							UT = 3759927403.8630424
+							ullageHeightMin = 0.89999914935996694
+							ullageHeightMax = 0.99999958101328079
+							ullageRadialMin = 3.5483558977082416E-08
+							ullageRadialMax = 0.99999999255034377
+							UT = 3759927421.1430259
 						}
 					}
 					UPGRADESAPPLIED
@@ -45172,6 +43727,22 @@ GAME
 					{
 					}
 					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -45210,10 +43781,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294612550
-				uid = 3999894688
-				mid = 1314366132
+				uid = 2881039108
+				mid = 2856707997
 				persistentId = 167668603
-				launchID = 74
+				launchID = 75
 				parent = 46
 				position = 0.49438238143920898,-57.145015716552734,1.1935441493988037
 				rotation = 0,0.500000119,0,-0.866025388
@@ -45231,10 +43802,10 @@ GAME
 				attN = top, 46
 				mass = 0.469999999
 				shielded = False
-				temp = 274.53406587705405
-				tempExt = 274.61154732513586
-				tempExtUnexp = 274.61139859018766
-				staticPressureAtm = 0.98972014665544805
+				temp = 274.16438015749026
+				tempExt = 274.24698727776001
+				tempExtUnexp = 274.24684305242795
+				staticPressureAtm = 0.98966917108083519
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -45338,11 +43909,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89993257310297037
-							ullageHeightMax = 0.99995933367529277
-							ullageRadialMin = 0
-							ullageRadialMax = 0.99999951738833159
-							UT = 3759927403.8630424
+							ullageHeightMin = 0.8999989310897103
+							ullageHeightMax = 0.99999949183607817
+							ullageRadialMin = 1.1448592036188367E-07
+							ullageRadialMax = 0.99999999222971214
+							UT = 3759927421.1430259
 						}
 					}
 					UPGRADESAPPLIED
@@ -45470,6 +44041,22 @@ GAME
 				}
 				MODULE
 				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -45500,10 +44087,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294612172
-				uid = 3749967573
-				mid = 1314366132
+				uid = 2739431152
+				mid = 2856707997
 				persistentId = 4278024331
-				launchID = 74
+				launchID = 75
 				parent = 46
 				position = 1.1935436725616455,-57.145015716552734,0.49438291788101196
 				rotation = 0,0.130526111,0,-0.991444886
@@ -45521,10 +44108,10 @@ GAME
 				attN = top, 46
 				mass = 0.469999999
 				shielded = False
-				temp = 274.53406587707309
-				tempExt = 274.61154732605866
-				tempExtUnexp = 274.61139859110727
-				staticPressureAtm = 0.98972089961814547
+				temp = 274.16438015746957
+				tempExt = 274.24698727679254
+				tempExtUnexp = 274.24684305146343
+				staticPressureAtm = 0.98966917108083519
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -45628,11 +44215,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89995331013284285
-							ullageHeightMax = 0.99999009526173188
-							ullageRadialMin = 3.9963462478167114E-05
-							ullageRadialMax = 0.99999912848053119
-							UT = 3759927403.8630424
+							ullageHeightMin = 0.89999881250424885
+							ullageHeightMax = 0.99999931469300662
+							ullageRadialMin = 0
+							ullageRadialMax = 0.9999999981424299
+							UT = 3759927421.1430259
 						}
 					}
 					UPGRADESAPPLIED
@@ -45760,6 +44347,22 @@ GAME
 				}
 				MODULE
 				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -45790,10 +44393,10 @@ GAME
 			{
 				name = Vandy.F9
 				cid = 4290141218
-				uid = 2045837695
-				mid = 1314366132
+				uid = 698211453
+				mid = 2856707997
 				persistentId = 1828942117
-				launchID = 74
+				launchID = 75
 				parent = 46
 				position = 0,-59.680709838867188,0
 				rotation = 0,0,0,-1
@@ -45811,10 +44414,10 @@ GAME
 				attN = top, 46
 				mass = 5
 				shielded = False
-				temp = 274.67839812227351
-				tempExt = 274.9826487549081
-				tempExtUnexp = 274.98186433759298
-				staticPressureAtm = 0.99001478095893469
+				temp = 274.32026975264006
+				tempExt = 274.62630184110526
+				tempExtUnexp = 274.6255404592041
+				staticPressureAtm = 0.98996613956868362
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -45927,7 +44530,7 @@ GAME
 					name = LaunchClamp
 					isEnabled = True
 					scaleFactor = 1
-					height = 0
+					height = 1.8310883
 					stagingEnabled = True
 					towerRot = 0,0,0,0
 					EVENTS
@@ -46070,10 +44673,10 @@ GAME
 			{
 				name = KAL9000
 				cid = 4290715134
-				uid = 3811552475
-				mid = 1314366132
+				uid = 3212421681
+				mid = 2856707997
 				persistentId = 2071846923
-				launchID = 74
+				launchID = 75
 				parent = 46
 				position = 1.8398532867431641,-55.210849761962891,0.0017769187688827515
 				rotation = -1.1660279E-08,-0.997858942,-7.64258212E-10,-0.0654034019
@@ -46090,10 +44693,10 @@ GAME
 				srfN = srfAttach, 46,collider_Octaweb
 				mass = 0.000500000024
 				shielded = False
-				temp = 274.54950918323425
-				tempExt = 274.63367510141666
-				tempExtUnexp = 274.63338385862659
-				staticPressureAtm = 0.98949358017980504
+				temp = 274.18165834197276
+				tempExt = 274.27084913727276
+				tempExtUnexp = 274.27056521416131
+				staticPressureAtm = 0.98944275519773162
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -46137,7 +44740,7 @@ GAME
 					baseModuleMass = 0
 					additionalCost = 0
 					MaxPartId = 100
-					RequiredPower = 0.000350000017
+					RequiredPower = 0.000200000009
 					stagingEnabled = True
 					activated = True
 					EVENTS
@@ -46177,13 +44780,13 @@ GAME
 							file
 							{
 								filename = boot-boosters.ks
-								binary = H4sIAL7LqV8A,0XHsQ5AMBAA0JmvaEwMemabWCoGkjYxiKEoFULTu,4,m+09OTSqFkx1rOARwN,VbDpcxPpKiZKNrewnkPZwCHLxh6PYh9tpsmkyPw8Bkt5N,hHJeOQnJhl,ARaw9TlcAAAA
+								binary = H4sIAFwysV8A,71TUU,bMBB+bn,FiSd4SNwg1HWRJlTKGAhYuyZjTNOELrFTmyY5y3Ya+u9nt0gwTXuEe7B09um77777zBhEbxhDj3+hatFiI1IoiFzkD+uEsfHaDt+h+,U8g6w0SjsLFRm4zhbgCAoBnRUcqIVMYynuH26wa0v5cCekKmth4ZY49MpJOFw0BZkVLOdw53krao,gPZjPiAsotpDCM4EIpHPapoz5QbomXgtTYG0DfW1oZbCJS2qYarl4irXUp8xfV159lnycTMZJpHc4LICfCYdQE3KoDDUpDF7A+76PuSFd0NMOz0r2yBOSYz4ZjdUWXcKm0zP8gPeF+nlebSZfIvx2crtdRg5Pef1pFPBv0Anr4Jz6NnRJX5FfeVG7Ygf9TGi,gWg5jy6wLqndGWPRGU3WuyYkf0Uuld1z7w1qLQzghhQPazUiElw5wJaDxY0ABEPlWjh47DwdX1FKbFcCnBRQBoGp+gf,IPiUWYcr8dqtBxC0jH35wMf34J5gqCyPEpjNl5,DCyQn7Ctt2PHoePTmHhlmP67y2SXkcxjFA8ZeUi4q7GoHi2l+mcIv7,nfLJNKW7b,CkPTtRqdPPzfqEfxH+kD2sUZBAAA
 							}
 						}
 						file
 						{
 							filename = STAGE1_TARGET_FILE.c
-							binary = H4sIAL7LqV8A,0tJTc5JLEpVSM,JT0rMUfBJzEvJzEuPys9LVQjxVwhzDQ529dHwd,YM9onU1OMCAKQyvmEuAAAA
+							binary = H4sIAFwysV8A,0tJTc5JLEpVSM,JT0rMUfBJzEvJzEuPys9LVQjxVwhzDQ529dHwCgrx1NTjAgC637Z5LAAAAA==
 						}
 					}
 					UPGRADESAPPLIED
@@ -46353,10 +44956,10 @@ GAME
 			{
 				name = 1mv.sensor.accelerometer.srf.1
 				cid = 4292396350
-				uid = 320862822
-				mid = 1314366132
+				uid = 2300345709
+				mid = 2856707997
 				persistentId = 3614983990
-				launchID = 74
+				launchID = 75
 				parent = 46
 				position = 1.8292410373687744,-55.916858673095703,1.1175870895385742E-07
 				rotation = 2.75255729E-09,0.707106829,-2.75255729E-09,0.707106829
@@ -46374,10 +44977,10 @@ GAME
 				srfN = srfAttach, 46,collider_Octaweb
 				mass = 0.00499999989
 				shielded = False
-				temp = 274.53368394255909
-				tempExt = 274.64932011463299
-				tempExtUnexp = 274.64899897266764
-				staticPressureAtm = 0.98957625548397787
+				temp = 274.16397085634043
+				tempExt = 274.28834382205605
+				tempExtUnexp = 274.28802902804165
+				staticPressureAtm = 0.98952543050190445
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -46551,10 +45154,10 @@ GAME
 			{
 				name = 1mv.sensor.accelerometer.srf.1
 				cid = 4292396304
-				uid = 384948158
-				mid = 1314366132
+				uid = 1065523042
+				mid = 2856707997
 				persistentId = 3863359051
-				launchID = 74
+				launchID = 75
 				parent = 46
 				position = -1.8292410373687744,-55.916858673095703,4.4703483581542969E-08
 				rotation = -2.75255752E-09,0.707106769,-2.75255707E-09,-0.707106888
@@ -46572,10 +45175,10 @@ GAME
 				srfN = srfAttach, 46,collider_Octaweb
 				mass = 0.00499999989
 				shielded = False
-				temp = 274.53368394255909
-				tempExt = 274.64932011463299
-				tempExtUnexp = 274.64899897266764
-				staticPressureAtm = 0.98957422248469495
+				temp = 274.16397085634043
+				tempExt = 274.28834382205605
+				tempExtUnexp = 274.28802902804165
+				staticPressureAtm = 0.98952543050190445
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -46747,12 +45350,267 @@ GAME
 			}
 			PART
 			{
+				name = launchClamp1
+				cid = 4288280982
+				uid = 3703659687
+				mid = 2856707997
+				persistentId = 788836828
+				launchID = 75
+				parent = 32
+				position = 0,-52.125041961669922,2.6251838207244873
+				rotation = 2.61119207E-23,1,7.04271897E-15,-3.70764774E-09
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 5
+				resPri = 0
+				dstg = 8
+				sqor = 5
+				sepI = 5
+				sidx = 3
+				attm = 1
+				sameVesselCollision = False
+				srfN = srfAttach, 32,collider_F913_S1FuelTank_collider
+				mass = 0.100000001
+				shielded = False
+				temp = 274.16213268277318
+				tempExt = 274.16251097268417
+				tempExtUnexp = 274.16251097268417
+				staticPressureAtm = 0.98908155899179617
+				expt = 0.100000001
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Flags/default
+				rTrf = launchClamp1
+				modCost = 0
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+					ToggleSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					SetSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					RemoveSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = LaunchClamp
+					isEnabled = True
+					scaleFactor = 4.3461442
+					height = 10.966197
+					stagingEnabled = True
+					towerRot = -2.61119207E-23,-1,-7.04271897E-15,-3.70764774E-09
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ReleaseClamp
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleGenerator
+					isEnabled = True
+					generatorIsActive = True
+					throttle = 1
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							active = False
+							wasActiveBeforePartWasAdjusted = False
+						}
+						ActivateAction
+						{
+							actionGroup = None
+							active = False
+							wasActiveBeforePartWasAdjusted = False
+						}
+						ShutdownAction
+						{
+							actionGroup = None
+							active = False
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleTestSubject
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = Driftless
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = RefuelingPump
+					isEnabled = True
+					enablePump = True
+					pump_rate = 100
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+						AYPwrPartList
+						{
+							PrtName = launchClamp1
+							PrtTitle = TT18-A Launch Stability Enhancer
+							PrtModuleName = ModuleGenerator
+							PrtSubsystem = False
+							PrtPower = 1
+							PrtPowerF = 1
+							PrtActive = True
+							PrtSolarDependant = False
+							PrtEditorInclude = True
+							PrtUserEditorInclude = True
+							PrtValidprtEmergShutDn = False
+							PrtEmergShutDnInclude = False
+							PrtPreEmergShutDnStateActive = True
+							PrtEmergShutDnPriority = 2
+							ProdPartKey = 4288280982,ModuleGenerator
+						}
+					}
+					VesselConsPartsList
+					{
+						AYPwrPartList
+						{
+							PrtName = launchClamp1
+							PrtTitle = TT18-A Launch Stability Enhancer
+							PrtModuleName = ModuleGenerator
+							PrtSubsystem = False
+							PrtPower = 0
+							PrtPowerF = 0
+							PrtActive = True
+							PrtSolarDependant = False
+							PrtEditorInclude = True
+							PrtUserEditorInclude = True
+							PrtValidprtEmergShutDn = False
+							PrtEmergShutDnInclude = False
+							PrtPreEmergShutDnStateActive = True
+							PrtEmergShutDnPriority = 2
+							ConsPartKey = 4288280982,ModuleGenerator
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KJRLaunchClampReinforcementModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+			}
+			PART
+			{
 				name = Grid Fin L Titanium
 				cid = 4293607304
-				uid = 1414715949
-				mid = 1314366132
+				uid = 2137648946
+				mid = 2856707997
 				persistentId = 1682757775
-				launchID = 74
+				launchID = 75
 				parent = 27
 				position = -1.3529086112976074,-15.863632202148438,1.1285436153411865
 				rotation = 0.321438849,1.23223515E-07,0.946930349,3.63005512E-07
@@ -46766,16 +45624,16 @@ GAME
 				sidx = -1
 				attm = 1
 				sameVesselCollision = False
-				sym = 61
 				sym = 62
 				sym = 63
+				sym = 64
 				srfN = srfAttach, 27,collider_F912_Interstage
 				mass = 0.140000001
 				shielded = False
-				temp = 274.53219747614497
-				tempExt = 274.54741629714533
-				tempExtUnexp = 274.54739735103601
-				staticPressureAtm = 0.98489689350481124
+				temp = 274.16229040538593
+				tempExt = 274.17869560233305
+				tempExtUnexp = 274.17867639270378
+				staticPressureAtm = 0.98484614381900748
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -47038,10 +45896,10 @@ GAME
 			{
 				name = Grid Fin L Titanium
 				cid = 4293603000
-				uid = 340986745
-				mid = 1314366132
+				uid = 2381353726
+				mid = 2856707997
 				persistentId = 871885310
-				launchID = 74
+				launchID = 75
 				parent = 27
 				position = 1.128543496131897,-15.863632202148438,1.3529086112976074
 				rotation = 0.896872461,3.43815827E-07,0.442289263,1.6955147E-07
@@ -47055,16 +45913,16 @@ GAME
 				sidx = -1
 				attm = 1
 				sameVesselCollision = False
-				sym = 60
-				sym = 62
+				sym = 61
 				sym = 63
+				sym = 64
 				srfN = srfAttach, 27,collider_F912_Interstage
 				mass = 0.140000001
 				shielded = False
-				temp = 274.53219747614497
-				tempExt = 274.54741629714533
-				tempExtUnexp = 274.54739735103601
-				staticPressureAtm = 0.9848972699861599
+				temp = 274.16229040538593
+				tempExt = 274.17869560233305
+				tempExtUnexp = 274.17867639270378
+				staticPressureAtm = 0.98484606852273771
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -47315,10 +46173,10 @@ GAME
 			{
 				name = Grid Fin L Titanium
 				cid = 4293602924
-				uid = 3822316874
-				mid = 1314366132
+				uid = 2056671866
+				mid = 2856707997
 				persistentId = 524194230
-				launchID = 74
+				launchID = 75
 				parent = 27
 				position = 1.3529084920883179,-15.863632202148438,-1.1285436153411865
 				rotation = 0.946930349,3.63005512E-07,-0.321438879,-1.23223529E-07
@@ -47332,16 +46190,16 @@ GAME
 				sidx = -1
 				attm = 1
 				sameVesselCollision = False
-				sym = 60
 				sym = 61
-				sym = 63
+				sym = 62
+				sym = 64
 				srfN = srfAttach, 27,collider_F912_Interstage
 				mass = 0.140000001
 				shielded = False
-				temp = 274.53219747614497
-				tempExt = 274.54741629714533
-				tempExtUnexp = 274.54739735103601
-				staticPressureAtm = 0.98489870061528495
+				temp = 274.16229040538593
+				tempExt = 274.17869560233305
+				tempExtUnexp = 274.17867639270378
+				staticPressureAtm = 0.98484606852273771
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -47592,10 +46450,10 @@ GAME
 			{
 				name = Grid Fin L Titanium
 				cid = 4293602848
-				uid = 2105268407
-				mid = 1314366132
+				uid = 967748923
+				mid = 2856707997
 				persistentId = 1417644189
-				launchID = 74
+				launchID = 75
 				parent = 27
 				position = -1.1285436153411865,-15.863632202148438,-1.3529083728790283
 				rotation = 0.442289263,1.6955147E-07,-0.896872461,-3.43815827E-07
@@ -47609,16 +46467,16 @@ GAME
 				sidx = -1
 				attm = 1
 				sameVesselCollision = False
-				sym = 60
 				sym = 61
 				sym = 62
+				sym = 63
 				srfN = srfAttach, 27,collider_F912_Interstage
 				mass = 0.140000001
 				shielded = False
-				temp = 274.53219747614497
-				tempExt = 274.54741629714533
-				tempExtUnexp = 274.54739735103601
-				staticPressureAtm = 0.9848985500227454
+				temp = 274.16229040538593
+				tempExt = 274.17869560233305
+				tempExtUnexp = 274.17867639270378
+				staticPressureAtm = 0.98484614381900748
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -47869,10 +46727,10 @@ GAME
 			{
 				name = KK.SPX.FalconPayloadFairing
 				cid = 4293981642
-				uid = 1881092044
-				mid = 1314366132
+				uid = 737649873
+				mid = 2856707997
 				persistentId = 3146854837
-				launchID = 74
+				launchID = 75
 				parent = 17
 				position = 0,5.5211410522460938,0
 				rotation = 0,0,0,1
@@ -47887,14 +46745,14 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = , -1
-				attN = frh, 65
+				attN = frh, 66
 				attN = bottom, 17
 				mass = 1.70000005
 				shielded = False
-				temp = 274.53205988882621
-				tempExt = 274.53233730117415
-				tempExtUnexp = 274.53233730117415
-				staticPressureAtm = 0.98240752353098781
+				temp = 274.16213600816934
+				tempExt = 274.16244216481959
+				tempExtUnexp = 274.16244216481959
+				staticPressureAtm = 0.98235571969740776
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -48096,11 +46954,11 @@ GAME
 			{
 				name = KK.SpX.FRH
 				cid = 4293834884
-				uid = 2828805190
-				mid = 1314366132
+				uid = 1751388818
+				mid = 2856707997
 				persistentId = 1419234269
-				launchID = 74
-				parent = 64
+				launchID = 75
+				parent = 65
 				position = 0,5.5211410522460938,0
 				rotation = 0,0.707106829,0,0.707106829
 				mirror = 1,1,1
@@ -48114,13 +46972,13 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = , -1
-				attN = bottom, 64
+				attN = bottom, 65
 				mass = 0.200000003
 				shielded = False
-				temp = 274.53212369734337
-				tempExt = 274.55639087838432
-				tempExtUnexp = 274.55640732834513
-				staticPressureAtm = 0.98240744823471804
+				temp = 274.16218472524366
+				tempExt = 274.18198970180526
+				tempExtUnexp = 274.18198905850863
+				staticPressureAtm = 0.98235571969740776
 				expt = 0
 				state = 0
 				PreFailState = 0
@@ -48748,10 +47606,10 @@ GAME
 			{
 				name = KK.SPX.FalconPayloadFairing
 				cid = 4293733208
-				uid = 3945667643
-				mid = 1314366132
+				uid = 3880304512
+				mid = 2856707997
 				persistentId = 227886526
-				launchID = 74
+				launchID = 75
 				parent = 17
 				position = 0,5.5211410522460938,0
 				rotation = 0,1,0,0
@@ -48770,10 +47628,10 @@ GAME
 				attN = bottom, 17
 				mass = 1.70000005
 				shielded = False
-				temp = 274.53205988742036
-				tempExt = 274.53233841134727
-				tempExtUnexp = 274.53233841134727
-				staticPressureAtm = 0.98240744823471804
+				temp = 274.16213600676349
+				tempExt = 274.1624434526737
+				tempExtUnexp = 274.1624434526737
+				staticPressureAtm = 0.98235571969740776
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -48963,10 +47821,10 @@ GAME
 			{
 				name = 1mv.sensor.accelerometer.srf.1
 				cid = 4293537238
-				uid = 4226411528
-				mid = 1314366132
+				uid = 2523949440
+				mid = 2856707997
 				persistentId = 2414940608
-				launchID = 74
+				launchID = 75
 				parent = 0
 				position = 0,0.24139404296875,0.72796446084976196
 				rotation = 1.11758652E-07,2.48352563E-07,2.77555485E-14,-1
@@ -48983,10 +47841,10 @@ GAME
 				srfN = srfAttach, 0,COL
 				mass = 0.00499999989
 				shielded = False
-				temp = 274.53313648798991
-				tempExt = 274.60373002645139
-				tempExtUnexp = 274.60357966267196
-				staticPressureAtm = 0.98302133872189579
+				temp = 274.16335881678776
+				tempExt = 274.24036902167296
+				tempExtUnexp = 274.24021467878964
+				staticPressureAtm = 0.98297006196220382
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -49160,10 +48018,10 @@ GAME
 			{
 				name = KAL9000
 				cid = 4294069058
-				uid = 2749833849
-				mid = 1314366132
+				uid = 1826045754
+				mid = 2856707997
 				persistentId = 3886097220
-				launchID = 74
+				launchID = 75
 				parent = 0
 				position = 0,-0.01071929931640625,0.73750829696655273
 				rotation = -7.90252841E-08,0.70710665,-7.90253267E-08,0.707107008
@@ -49180,10 +48038,10 @@ GAME
 				srfN = srfAttach, 0,COL
 				mass = 0.00423541851
 				shielded = False
-				temp = 274.53291899815468
-				tempExt = 274.57222313076136
-				tempExtUnexp = 274.57217189922346
-				staticPressureAtm = 0.98304806889765295
+				temp = 274.16309091466985
+				tempExt = 274.20493877511444
+				tempExtUnexp = 274.20488745820722
+				staticPressureAtm = 0.98299942750740188
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -49267,7 +48125,7 @@ GAME
 							file
 							{
 								filename = boot.ks
-								binary = H4sIAL7LqV8A,wsO9wxx9lAI8Vcw0OPU10dwU1LTEktzShQCHEM8rBSivYMDYvWDMzILivWDk4syC0q4ikrzChJLMjSUkvLzS,SLSxLTU3VzEzPzlDT1AFUySY9VAAAA
+								binary = H4sIAFwysV8A,72T0U,bMBDGn9u,4sRT+5C4rVDXRZpQoWIgYO2ajjFNE7rETmya5CzbaeG,n51WYhPPcG+XnH73+fNnxiB6x+p7,qWqRIO1SCAjcvHW9j9g6c0yhTQ3SjsLBRm4SVfgCDIBrRUcqIFUYy4eHm+xbXL5eC+kyith4Y447JWTMFjVGZkS1ku4F8YqaobwEcoviAvIXiCBo4AIpHPaJoz5g7R1vBUmw8oG+dpQabCOc6qZarh4jrXUZ8x,LrzpbPx5NpuOI91xWICfC4dQEXIoDNUJ9F7h+,0+5oZ0Rs8dz0r2xMckp3w2mqoXdGM2n5,jJ3zI1K9FsZt9jfD76d3LOnJ4xqsvo8C,RSesgwXtm7Al+Ud86U1tsw59FHS4gWi9jC6xyqnpgrFqjSbrwxKa,2ojlT1o3xvUWhjAHSkertWISHDlABsOFncCEAzlW+HgqfVy,EQusSkFOCkgDwZT8YZ,EuLJrMNSRDWq5gSCibGf6,n6EWITkhR+sQo9thv1pI563Dc4HAXSTTQBP70wWPp2MgzrxqfsG+3YZDQZvXuS+unP683FFWyWMIp7jL22XBTYVg5W881VAr,9y,jDUqm0ZYcH0zdto9HJwRtDhvFfsT6K9i8EAAA=
 							}
 						}
 					}
@@ -49494,27 +48352,11 @@ GAME
 				SolverFlightSys
 				{
 				}
-				CivilianPopulationVesselModule
-				{
-					capacity = 0
-					allowDocking = False
-					allowBreeding = False
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
-				}
-				WorkshopManager
-				{
-					Workshops
-					{
-					}
-				}
-				HangarVesselModule
-				{
-					ShowHangarWindow = False
 				}
 				kOSVesselModule
 				{
@@ -49769,9 +48611,9 @@ GAME
 		002_MultiAnimators v1.1.0.2 = False
 		ConfigurableContainers v2.4.4.0 = False
 		GroundConstruction v2.3.1.0 = False
-		000_AT_Utils = True
+		000_AT_Utils = False
 		ConfigurableContainers = False
-		GroundConstruction = True
+		GroundConstruction = False
 		ClickThroughBlocker v0.1.7.2 / v1.0.0.0 = False
 		BetterTimeWarp v2.3.11.4 = False
 		FShangarExtender v3.5.4.0 / v3.5.0.0 = False
@@ -49821,7 +48663,7 @@ GAME
 		ModuleManager v4.0.3.0 = False
 		000_AT_Utils v1.8.1.0 = False
 		001_AnisotropicPartResizer v1.3.0.0 = False
-		0_00_AT_Utils_UI v1.0.0.0 = True
+		0_00_AT_Utils_UI v1.0.0.0 = False
 		ConfigurableContainers v2.4.6.0 = False
 		FShangarExtender v3.4.9.0 = False
 		GroundConstruction v2.4.1.0 = False
@@ -49833,7 +48675,7 @@ GAME
 		Pathfinder v1.0.0.0 = False
 		Pmborg = False
 		WillStr1 = False
-		lista.txt = False
+		lista.txt = True
 		ModuleManager.4.0.3.dll = False
 		ContractConfigurator v1.0.0.0 / v1.27.1 = False
 		RSSTimeFormatter v1.6.1.0 = True
@@ -49849,7 +48691,7 @@ GAME
 		Interstellar v1.22.9.4 = False
 		Kerbaltek = False
 		zFinal_FilterExtensions = False
-		SubmodelResizer v1.0.0.0 = True
+		SubmodelResizer v1.0.0.0 = False
 		aaa_Toolbar v1.7.22.2 = False
 		ToolbarControl v0.1.8.2 / v1.0.0.0 = False
 		BetterBurnTime v1.0.0.0 = False
@@ -49890,7 +48732,7 @@ GAME
 		AtomicAge = False
 		BetterBurnTime = False
 		BLO = False
-		CivilianPopulation = True
+		CivilianPopulation = False
 		EasyVesselSwitch = True
 		ExperimentTracker = False
 		Grounded = False
@@ -49952,7 +48794,7 @@ GAME
 		PhotonSail v1.4.11.5 = False
 		Interstellar v1.24.1.4 = False
 		Sigma88LoadingScreens v0.4.0.0 = False
-		Sigma = True
+		Sigma = False
 		000_AT_Utils v1.8.2.0 = False
 		ConfigurableContainers v2.4.7.0 = False
 		ClickThroughBlocker v0.1.9.4 / v1.0.0.0 = False
@@ -49966,7 +48808,7 @@ GAME
 		DMagic v1.4.3.0 / vv1.4.3.0 = False
 		ExperimentTracker v1.3.5.0 / v1.0.0.0 = False
 		FShangarExtender v3.6.0.0 / v3.5.0.0 = True
-		GC.UI v1.0.0.0 = True
+		GC.UI v1.0.0.0 = False
 		GroundConstruction v2.5.0.1 = False
 		Hangar v3.4.0.0 = False
 		InterstellarFuelSwitch v3.12.2.5 = False
@@ -49988,7 +48830,7 @@ GAME
 		BetterCrewAssignment = True
 		CryoEngines = False
 		DMagicUtilities = False
-		Hangar = True
+		Hangar = False
 		KaptainsLog = False
 		KramaxAutoPilot = False
 		KSP-AVC = True
@@ -50166,7 +49008,7 @@ GAME
 		DockingPortAlignmentIndicator v6.9.0.0 = False
 		PersistentThrust v1.4.1.0 = False
 		RealSolarSystem v0.18.0.0 = False
-		CivilianPopulation v3.0.0.9 / v1.0.0.0 = True
+		CivilianPopulation v3.0.0.9 / v1.0.0.0 = False
 		DockingPortAlignmentIndicator v6.9.1.0 = True
 		PersistentThrust v1.4.2.0 = False
 		RetractableLiftingSurface v0.2.1.1 / v1.0.0.0 = True
@@ -50184,8 +49026,8 @@ GAME
 		Scale v2.4.3.15 = False
 		999_KSP-Recall = True
 		000_AT_Utils v1.9.4.0 = False
-		002_MultiAnimators v1.2.1.0 = True
-		CC.UI v1.0.0.0 = True
+		002_MultiAnimators v1.2.1.0 = False
+		CC.UI v1.0.0.0 = False
 		ConfigurableContainers v2.5.0.0 = False
 		ClickThroughBlocker v0.1.10.6 / v1.0.0.0 = False
 		MiniAVC v1.4.0.1 = False
@@ -50193,8 +49035,8 @@ GAME
 		ModuleManager v4.1.4.0 = True
 		ClickThroughBlocker v0.1.10.11 / v1.0.0.0 = False
 		AJE v2.15.0.0 = True
-		EngineGroupController v1.0.0.0 = False
-		UnityGUIFramework v1.0.0.0 = False
+		EngineGroupController v1.0.0.0 = True
+		UnityGUIFramework v1.0.0.0 = True
 		Atmosphere v1.10.1.2 = True
 		CelestialShadows v0.0.0.0 = True
 		CityLights v1.10.1.2 = True
@@ -50218,7 +49060,7 @@ GAME
 		RealSolarSystem v0.18.1.3 = True
 		ShipEffectsContinued v1.0.11.0 / v1.0.8.4 = True
 		AJE = True
-		EngineGroupController = False
+		EngineGroupController = True
 		FerramAerospaceResearch = False
 		RealChute = False
 		RealHeat = True
@@ -50245,8 +49087,8 @@ GAME
 		KSP-Recall v0.0.4.4 = True
 		KSPe.Light.Recall v2.2.0.3 = True
 		Resourceful v0.0.4.4 = True
-		BDAnimationModules v0.6.5.9 = False
-		RNModules v1.1.8.0 = False
+		BDAnimationModules v0.6.5.9 = True
+		RNModules v1.1.8.0 = True
 		DockingCamera v1.3.7.5 / v1.0.0.0 = False
 		EasyVesselSwitch v2.1.7366.39779 / v2.1 for KSP v1.* = True
 		KAS v1.7.7516.37663 / v1.7 for KSP v1 = True
@@ -50262,7 +49104,7 @@ GAME
 		KSPe.Light.TweakScale v2.2.0.2 = False
 		Scale v2.4.3.21 = False
 		000-Pmborg-RealFalcons = True
-		BahaSP = False
+		BahaSP = True
 		DockingCamKURS = True
 		ROCapsules = False
 		ROLib = True
@@ -50272,13 +49114,13 @@ GAME
 		ClickThroughBlocker v0.1.10.14 / v1.0.0.0 = True
 		DockingCamera v1.3.7.6 / v1.0.0.0 = True
 		VesselMover v1.9.0.0 = False
-		VesselMover = False
-		000_AT_Utils v1.9.6.0 = True
-		001_AnisotropicPartResizer v1.4.1.0 = True
-		ConfigurableContainers v2.6.1.0 = True
+		VesselMover = True
+		000_AT_Utils v1.9.6.0 = False
+		001_AnisotropicPartResizer v1.4.1.0 = False
+		ConfigurableContainers v2.6.1.0 = False
 		B9PartSwitch v2.17.0.0 / vv2.17.0 = True
-		GroundConstruction v2.6.4.1 = True
-		Hangar v3.6.2.0 = True
+		GroundConstruction v2.6.4.1 = False
+		Hangar v3.6.2.0 = False
 		MechJeb2 v2.5.1.0 / v / v2.11.0.0 = True
 		Pmborg-RealFalcons v1.0.0.0 = True
 		AmpYear v1.5.8.0 = True
@@ -50286,7 +49128,8 @@ GAME
 		scatterer v0.632.0.0 = True
 		TextureReplacer v4.2.1.21267 = True
 		TacLifeSupport v0.16.0.0 / v0.16.0 = True
-		ModuleManager - Copy.ConfigCache = True
+		ModuleManager - Copy.ConfigCache = False
+		VesselMover v1.10.0.0 = True
 	}
 	ROSTER
 	{
@@ -62710,48 +61553,12 @@ GAME
 		}
 		KERBAL
 		{
-			name = Tidin Kerman
-			gender = Female
-			type = Unowned
-			trait = Tourist
-			brave = 0.150042325
-			dumb = 0.925784826
-			badS = False
-			veteran = False
-			tour = False
-			state = Assigned
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 0
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			lightR = 1
-			lightG = 0.5176
-			lightB = 0
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Shepfrid Kerman
+			name = Matson Kerman
 			gender = Male
 			type = Unowned
 			trait = Tourist
-			brave = 0.49043563
-			dumb = 0.465170383
+			brave = 0.338815242
+			dumb = 0.310401559
 			badS = False
 			veteran = False
 			tour = False
@@ -62782,12 +61589,12 @@ GAME
 		}
 		KERBAL
 		{
-			name = Bartrey Kerman
+			name = Kelvis Kerman
 			gender = Male
 			type = Unowned
 			trait = Tourist
-			brave = 0.181196943
-			dumb = 0.309596241
+			brave = 0.352809042
+			dumb = 0.631303608
 			badS = False
 			veteran = False
 			tour = False
@@ -62818,85 +61625,13 @@ GAME
 		}
 		KERBAL
 		{
-			name = Linmin Kerman
-			gender = Female
-			type = Unowned
-			trait = Tourist
-			brave = 0.573809326
-			dumb = 0.159544438
-			badS = False
-			veteran = False
-			tour = False
-			state = Assigned
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 0
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			lightR = 1
-			lightG = 0.5176
-			lightB = 0
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Glecan Kerman
-			gender = Female
-			type = Unowned
-			trait = Tourist
-			brave = 0.327300727
-			dumb = 0.213152975
-			badS = False
-			veteran = False
-			tour = False
-			state = Assigned
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 0
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			lightR = 1
-			lightG = 0.5176
-			lightB = 0
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Podald Kerman
+			name = Hangard Kerman
 			gender = Male
 			type = Unowned
 			trait = Tourist
-			brave = 0.0369201303
-			dumb = 0.619348109
-			badS = True
+			brave = 0.782314062
+			dumb = 0.931210041
+			badS = False
 			veteran = False
 			tour = False
 			state = Assigned
@@ -62926,552 +61661,12 @@ GAME
 		}
 		KERBAL
 		{
-			name = Jedfrey Kerman
+			name = Thompnard Kerman
 			gender = Male
 			type = Unowned
 			trait = Tourist
-			brave = 0.510100782
-			dumb = 0.412131011
-			badS = True
-			veteran = False
-			tour = False
-			state = Assigned
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 0
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			lightR = 1
-			lightG = 0.5176
-			lightB = 0
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Adbin Kerman
-			gender = Male
-			type = Unowned
-			trait = Tourist
-			brave = 0.454071462
-			dumb = 0.484950274
-			badS = False
-			veteran = False
-			tour = False
-			state = Assigned
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 0
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			lightR = 1
-			lightG = 0.5176
-			lightB = 0
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Daphwig Kerman
-			gender = Female
-			type = Unowned
-			trait = Tourist
-			brave = 0.21998252
-			dumb = 0.932475507
-			badS = False
-			veteran = False
-			tour = False
-			state = Assigned
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 0
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			lightR = 1
-			lightG = 0.5176
-			lightB = 0
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Dunfurt Kerman
-			gender = Male
-			type = Unowned
-			trait = Tourist
-			brave = 0.0773019567
-			dumb = 0.207646742
-			badS = False
-			veteran = False
-			tour = False
-			state = Assigned
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 0
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			lightR = 1
-			lightG = 0.5176
-			lightB = 0
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Desgee Kerman
-			gender = Male
-			type = Unowned
-			trait = Tourist
-			brave = 0.668003976
-			dumb = 0.060949754
-			badS = False
-			veteran = False
-			tour = False
-			state = Assigned
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 0
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			lightR = 1
-			lightG = 0.5176
-			lightB = 0
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Haike Kerman
-			gender = Female
-			type = Unowned
-			trait = Tourist
-			brave = 0.756353498
-			dumb = 0.520321012
-			badS = False
-			veteran = False
-			tour = False
-			state = Assigned
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 0
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			lightR = 1
-			lightG = 0.5176
-			lightB = 0
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Katgar Kerman
-			gender = Female
-			type = Unowned
-			trait = Tourist
-			brave = 0.0320031494
-			dumb = 0.488133848
-			badS = False
-			veteran = False
-			tour = False
-			state = Assigned
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 0
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			lightR = 1
-			lightG = 0.5176
-			lightB = 0
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Shelrey Kerman
-			gender = Male
-			type = Unowned
-			trait = Tourist
-			brave = 0.300530583
-			dumb = 0.487200767
-			badS = False
-			veteran = False
-			tour = False
-			state = Assigned
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 0
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			lightR = 1
-			lightG = 0.5176
-			lightB = 0
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Jeddo Kerman
-			gender = Male
-			type = Unowned
-			trait = Tourist
-			brave = 0.148306236
-			dumb = 0.222411901
-			badS = False
-			veteran = False
-			tour = False
-			state = Assigned
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 0
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			lightR = 1
-			lightG = 0.5176
-			lightB = 0
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Arcal Kerman
-			gender = Female
-			type = Unowned
-			trait = Tourist
-			brave = 0.251951277
-			dumb = 0.673784733
-			badS = False
-			veteran = False
-			tour = False
-			state = Assigned
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 0
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			lightR = 1
-			lightG = 0.5176
-			lightB = 0
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Cordo Kerman
-			gender = Male
-			type = Unowned
-			trait = Tourist
-			brave = 0.83210355
-			dumb = 0.825623691
-			badS = False
-			veteran = False
-			tour = False
-			state = Assigned
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 0
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			lightR = 1
-			lightG = 0.5176
-			lightB = 0
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Rosburry Kerman
-			gender = Female
-			type = Unowned
-			trait = Tourist
-			brave = 0.529944062
-			dumb = 0.632765472
-			badS = False
-			veteran = False
-			tour = False
-			state = Assigned
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 0
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			lightR = 1
-			lightG = 0.5176
-			lightB = 0
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Meldas Kerman
-			gender = Female
-			type = Unowned
-			trait = Engineer
-			brave = 0.0402101278
-			dumb = 0.168333501
-			badS = True
-			veteran = False
-			tour = False
-			state = Assigned
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 0
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			lightR = 1
-			lightG = 0.5176
-			lightB = 0
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Lizdan Kerman
-			gender = Female
-			type = Unowned
-			trait = Tourist
-			brave = 0.270044506
-			dumb = 0.30020529
-			badS = False
-			veteran = False
-			tour = False
-			state = Assigned
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 0
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			lightR = 1
-			lightG = 0.5176
-			lightB = 0
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Alemy Kerman
-			gender = Male
-			type = Unowned
-			trait = Tourist
-			brave = 0.521912813
-			dumb = 0.160275057
-			badS = False
-			veteran = False
-			tour = False
-			state = Assigned
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 0
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			lightR = 1
-			lightG = 0.5176
-			lightB = 0
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Signer Kerman
-			gender = Male
-			type = Unowned
-			trait = Tourist
-			brave = 0.0531384014
-			dumb = 0.968664944
+			brave = 0.0551852696
+			dumb = 0.0538180098
 			badS = False
 			veteran = False
 			tour = False
