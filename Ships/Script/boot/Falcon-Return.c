@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 14/Nov/2020
+// 15/Nov/2020
 // --------------------------------------------------------------------------------------------
 // Tested: 
 // 13/Nov/2020 with ->0v2.sfs
@@ -28,7 +28,8 @@ function boostback_burn
 		SET prev_impactDist to impactDist.
 		
 		if STAGE_1_TYPE = "CORE" {
-			LOCK STEERING TO HEADING(270,0, -270).
+			//270: LandingTarget:HEADING+180
+			LOCK STEERING TO HEADING(270,0, -270). //DUE LandingTarget:BEARING calc bug, dont used it!
 			if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
 				SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
 		} else
@@ -37,17 +38,15 @@ function boostback_burn
 		if(impactDist < 3000)
 		{
 			PRINT "OP3: impactDist < 3km   " at (0,2).
-			SET thrust TO 0.05.	// For high precision, doit in slow thrust
+			SET thrust TO 0.05.	// Near? for high precision, do it in lower thrust
 			RCS ON.
 		}else if(impactDist < 10000){
 			PRINT "OP2: impactDist < 10km  " at (0,2).
 			SET thrust TO 0.1.
 		}else{
 			PRINT "OP1: impactDist > 10km   " at (0,2).
-			SET thrust TO 1.
+			SET thrust TO 1.	// Faraway? all seconds count do it ASAP
 		}
-		
-		PRINT_STATUS (3).
 		
 		if (do_reverse)
 		{
@@ -57,6 +56,8 @@ function boostback_burn
 			if (impactDist < 1000) and (impactDist > prev_impactDist)
 				break.
 		}
+		
+		PRINT_STATUS (3).
 	}
 	
 	SET thrust TO 0.

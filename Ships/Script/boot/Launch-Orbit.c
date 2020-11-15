@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 14/Nov/2020
+// 15/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 function main_lifoff
@@ -316,7 +316,7 @@ if alt:radar < 100
 		}
 
 		SET steeringDir TO -90.	// W/E
-		SET Vdeg to 90-delta+5.	// Vertical = 90
+		SET Vdeg to 90-delta+5.	// Vertical = 90 ---> SHOULD BE: 90-delta-5
 		set Vroll to -270.		// Zero Rotation
 		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
 
