@@ -7,7 +7,7 @@ This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP user
 - KSP 1.10.1<br>
 
 ----
-<h2>HOW TODO: Automatic Instalation:</h2>
+<h2>HOW TODO: Automatic Installation:</h2>
 
 - First: Copy all these files to "KSP MAIN DIRECTORY" Sample: C:\SteamLibrary\steamapps\common\Kerbal Space Program<br>
 - Second: Run the Script: [KSP ROOT]\SteamLibrary\steamapps\common\Kerbal Space Program<br>
