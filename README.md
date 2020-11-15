@@ -1,5 +1,5 @@
 # SpaceX-RO-Falcons
-This KSP (**Kerbal Space Program**) addon, work ontop of **kks-spacex-pack mod** for KSP.<br>
+This KSP (**Kerbal Space Program**) addon, work ontop of [kks-spacex-pack mod](https://forum.kerbalspaceprogram.com/index.php?/topic/193933-1101-kks-spacex-pack-v65-01112020/) for KSP.<br>
 This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP users.<br>
 <br>
 **Supported versions are:**
@@ -7,7 +7,7 @@ This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP user
 - KSP 1.10.1<br>
 
 ----
-<h2>HOW TODO: Automatic Instalation:</h2>
+<h2>HOW TODO: Automatic Installation:</h2>
 
 - First: Copy all these files to "KSP MAIN DIRECTORY" Sample: C:\SteamLibrary\steamapps\common\Kerbal Space Program<br>
 - Second: Run the Script: [KSP ROOT]\SteamLibrary\steamapps\common\Kerbal Space Program<br>
