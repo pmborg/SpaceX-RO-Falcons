@@ -208,7 +208,7 @@ function PRINT_STATUS
 	PRINT "LandingTarget:DISTANCE: "+ROUND(LandingTarget:DISTANCE/1000,3)+" km   " at (0,y+3).
 	PRINT "LandingTarget:TERRAINHEIGHT: "+ROUND (landingAltitude,1)+" m   " at (0,y+4).
 	PRINT "LandingTarget:HEADING: "+ROUND (LandingTarget:HEADING,1)+" deg.   " at (0,y+5).
-	PRINT "LandingTarget:BEARING: "+ROUND (LandingTarget:HEADING+180,1)+" deg.   " at (0,y+6).	//DUE LandingTarget:BEARING calc bug, dont used it!
+	PRINT "LandingTarget:BEARING: "+ROUND (LandingTarget:BEARING,1)+" deg.   " at (0,y+6).
 	
 	PRINT "Landing distance from target: " + ROUND(impactDist/1000,3) +" km   " at (0,y+8).
 	PRINT "Current distance from target: "+ROUND(HorizDist/1000,3)+" km   " at (0,y+9).

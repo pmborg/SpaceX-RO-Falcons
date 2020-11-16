@@ -53,16 +53,9 @@ if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 	if TARGET_N = 100
 	{
 		set LandingZone TO VESSEL(JRTI).
-		if vehicle_type = "Crew Dragon 2" 
-		{
-			LOG "declare global LandingZone TO VESSEL(OCISLY)." to "1:/STAGE1_TARGET_FILE.c".
-			LOG "INIT TARGET: VESSEL(OCISLY)." to LOG.txt.
-			PRINT "LANDING AT: "+OCISLY.
-		} else {
-			LOG "declare global LandingZone TO VESSEL(JRTI)." to "1:/STAGE1_TARGET_FILE.c".
-			LOG "INIT TARGET: VESSEL(JRTI)." to LOG.txt.			
-			PRINT "LANDING AT: "+JRTI.
-		}
+		LOG "declare global LandingZone TO VESSEL(JRTI)." to "1:/STAGE1_TARGET_FILE.c".
+		LOG "INIT TARGET: VESSEL(JRTI)." to LOG.txt.			
+		PRINT "LANDING AT: "+JRTI.
 	} else
 	if TARGET_N = 101
 	{
@@ -87,16 +80,18 @@ if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 	}
 } else  {
 	PRINT "LOAD: STAGE1_TARGET_FILE.c".
+	// MASTER:
 	if STAGE_1_TYPE <> "SLAVE" 
 	{
 		runpath("1:/STAGE1_TARGET_FILE.c"). //1: = Use KOS_CPU Internal Disk. (to allow each booster have it's file)
 		set LandingTarget TO LandingZone:GEOPOSITION.
-		PRINT "LOADED - LandingZone: "+LandingZone:NAME.
+		PRINT "LANDING ZONE (LOADED FROM INT. DISK): "+LandingZone:NAME.
 		LOG STAGE_1_TYPE+" "+LandingZone to LOG.txt.
 		
 		update_phase_title("BOOSTER SLEEPING...    ", 0, true).
 	} else 
-	{
+	// SLAVE:
+	{	
 		if CORE:BOOTFILENAME:FIND("boot-boosters-L.ks") > -1 		// STAGE-1L
 		{
 			declare global LandingZone_NAME to "LandingZone1".
@@ -119,8 +114,8 @@ if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 }
 
 //FORCE TO DEBUG:
-set LandingZone TO VESSEL(JRTI).
-set LandingTarget TO LandingZone:GEOPOSITION.
+// set LandingZone TO VESSEL(JRTI).
+// set LandingTarget TO LandingZone:GEOPOSITION.
 
 // Before COMMON:
 if STAGE_1_TYPE = "MASTER" 
@@ -181,7 +176,8 @@ if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
 	WAIT 5.
 	PRINT_STATUS (3).
 	RCS ON.
-	
+
+	CLEARSCREEN.	
 	update_phase_title("FLIP MANEUVER   ", 0, true).
 	FROM {local x is 6.} UNTIL x = 0 STEP {set x to x-1.} DO 
 	{
@@ -245,7 +241,6 @@ if CORE:BOOTFILENAME:FIND("boot-boosters.ks") > -1
 //Activate 3 engines:
 update_phase_title("(ACTIVATE 3 ENGINES)  ", 0, true).
 activate3engines().
-
 
 RUNPATH( "boot/Falcon-Return.c").
 

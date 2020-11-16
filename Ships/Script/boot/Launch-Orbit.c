@@ -46,6 +46,12 @@ function main_lifoff
 		PRINT "T-00:05 Side Boosters Ignition".
 	}
 
+	// if vehicle_type = "F9v1.2B5"
+	// {
+		// PRINT "Press [ENTER] to START". set ch to terminal:input:getchar().
+		// CLEARSCREEN.
+	// }
+
 	PRINT " ".
 	PRINT "Press [ENTER] to START". set ch to terminal:input:getchar().
 	CLEARSCREEN. PRINT " ".PRINT " ".	

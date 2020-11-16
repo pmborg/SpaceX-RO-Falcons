@@ -2,7 +2,7 @@ ship = PMBT-SpaceX Falcon 9 v1.2 Block-5 Crew Dragon 2
 version = 1.9.1
 description = 
 type = VAB
-size = 79.5961075,115.493866,95.6988754
+size = 79.5961304,115.493866,95.6988754
 steamPublishedFileId = 0
 persistentId = 3085809494
 rot = 0,0,0,0
@@ -151,21 +151,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -190,21 +175,6 @@ PART
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -298,21 +268,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -334,43 +289,9 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 2.5
-		defaultScale = 2.5
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 4500
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -503,21 +424,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -557,43 +463,9 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 2.5
-		defaultScale = 2.5
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 2100
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -1147,21 +1019,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleCrewAssignment
 		isEnabled = True
 		slotAssignments = Dersted Kerman|Engineer|Crew,Sigcal Kerman|Engineer|Crew,Debrick Kerman|Engineer|Crew,Chadfred Kerman|Engineer|Crew,Empty
@@ -1587,8 +1444,99 @@ PART
 			}
 			MechJebModuleAirplaneAutopilot
 			{
+				HeadingHoldEnabled = False
+				AltitudeHoldEnabled = False
+				VertSpeedHoldEnabled = False
+				RollHoldEnabled = False
+				SpeedHoldEnabled = False
+				AltitudeTarget = 0
+				HeadingTarget = 90
+				RollTarget = 0
+				SpeedTarget = 0
+				VertSpeedTarget = 0
+				BankAngle = 30
 				unlockParts = 
 				unlockTechs = 
+				AccKp
+				{
+					_val = 0.5
+					_text = 0.5
+				}
+				AccKi
+				{
+					_val = 0.5
+					_text = 0.5
+				}
+				AccKd
+				{
+					_val = 0.0050000000000000001
+					_text = 0.005
+				}
+				PitKp
+				{
+					_val = 2
+					_text = 2
+				}
+				PitKi
+				{
+					_val = 1
+					_text = 1
+				}
+				PitKd
+				{
+					_val = 0.0050000000000000001
+					_text = 0.005
+				}
+				RolKp
+				{
+					_val = 0.5
+					_text = 0.5
+				}
+				RolKi
+				{
+					_val = 0.02
+					_text = 0.02
+				}
+				RolKd
+				{
+					_val = 0.5
+					_text = 0.5
+				}
+				YawKp
+				{
+					_val = 1
+					_text = 1
+				}
+				YawKi
+				{
+					_val = 0.25
+					_text = 0.25
+				}
+				YawKd
+				{
+					_val = 0.02
+					_text = 0.02
+				}
+				YawLimit
+				{
+					_val = 10
+					_text = 10
+				}
+				RollLimit
+				{
+					_val = 45
+					_text = 45
+				}
+				PitchDownLimit
+				{
+					_val = 15
+					_text = 15
+				}
+				PitchUpLimit
+				{
+					_val = 25
+					_text = 25
+				}
 			}
 			MechJebModuleDockingGuidance
 			{
@@ -1806,6 +1754,7 @@ PART
 			}
 			MechJebModuleAirplaneGuidance
 			{
+				showpid = False
 				unlockParts = 
 				unlockTechs = 
 			}
@@ -2170,21 +2119,6 @@ PART
 	}
 	MODULE
 	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleTripLogger
 		isEnabled = True
 		stagingEnabled = True
@@ -2500,21 +2434,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleCrewRequirement
 		isEnabled = True
 		stagingEnabled = True
@@ -2554,21 +2473,6 @@ PART
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -2689,21 +2593,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -2765,21 +2654,6 @@ PART
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
 		}
 		UPGRADESAPPLIED
 		{
@@ -2915,21 +2789,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleCrewRequirement
 		isEnabled = True
 		stagingEnabled = True
@@ -2969,21 +2828,6 @@ PART
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -3102,21 +2946,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -3178,21 +3007,6 @@ PART
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
 		}
 		UPGRADESAPPLIED
 		{
@@ -3304,21 +3118,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KISCollider
 		isEnabled = True
 		stagingEnabled = True
@@ -3352,7 +3151,7 @@ PART
 				PrtModuleName = ModuleDeployableSolarPanel
 				PrtSubsystem = False
 				PrtPower = 2.829
-				PrtPowerF = 2.82870078
+				PrtPowerF = 2.82870674
 				PrtActive = True
 				PrtSolarDependant = True
 				PrtEditorInclude = True
@@ -3365,25 +3164,6 @@ PART
 			}
 		}
 		VesselConsPartsList
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 3000
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -3415,21 +3195,6 @@ PART
 		solarOutputPe = 
 		solarOutputAp = 
 		futureOutput = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -3547,21 +3312,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KISCollider
 		isEnabled = True
 		stagingEnabled = True
@@ -3595,7 +3345,7 @@ PART
 				PrtModuleName = ModuleDeployableSolarPanel
 				PrtSubsystem = False
 				PrtPower = 2.829
-				PrtPowerF = 2.82870078
+				PrtPowerF = 2.82870674
 				PrtActive = True
 				PrtSolarDependant = True
 				PrtEditorInclude = True
@@ -3608,25 +3358,6 @@ PART
 			}
 		}
 		VesselConsPartsList
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 3000
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -3658,21 +3389,6 @@ PART
 		solarOutputPe = 
 		solarOutputAp = 
 		futureOutput = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -3784,21 +3500,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -3823,21 +3524,6 @@ PART
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -3949,21 +3635,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -3988,21 +3659,6 @@ PART
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -4114,21 +3770,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -4153,21 +3794,6 @@ PART
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -4279,21 +3905,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -4318,21 +3929,6 @@ PART
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -4481,21 +4077,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleDockingNodeNamed
 		isEnabled = True
 		portName = non RO - C-100 Androgynous Docking Mechanism
@@ -4577,21 +4158,6 @@ PART
 		cameraForward = (0, 1, 0)
 		cameraUp = (0, 1, 0)
 		transformModification = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -4738,21 +4304,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -4795,21 +4346,6 @@ PART
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -4956,21 +4492,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -5024,21 +4545,6 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
@@ -5069,7 +4575,6 @@ PART
 	link = RCSTank1-2_4293529366
 	link = Decoupler.3_4291047728
 	attN = top,KK.SpXCD.heatshield_4293529574_0|1.82060099|0_0|1|0_0|1.82060099|0_0|1|0
-	attN = trunk,RCSTank1-2_4293529366_0|1.22445297|0_0|-1|0_0|1.22445297|0_0|-1|0
 	attN = bottom,Decoupler.3_4291047728_0|-1.79999995|0_0|-1|0_0|-1.79999995|0_0|-1|0
 	EVENTS
 	{
@@ -5166,21 +4671,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleAnimatedDecoupler
 		isEnabled = True
 		animationComplete = False
@@ -5222,7 +4712,7 @@ PART
 				PrtModuleName = ModuleDeployableSolarPanel
 				PrtSubsystem = False
 				PrtPower = 10.312
-				PrtPowerF = 10.3124342
+				PrtPowerF = 10.3124561
 				PrtActive = True
 				PrtSolarDependant = True
 				PrtEditorInclude = True
@@ -5303,21 +4793,6 @@ PART
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
 		}
 		UPGRADESAPPLIED
 		{
@@ -5411,21 +4886,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -5439,25 +4899,6 @@ PART
 		{
 		}
 		VesselConsPartsList
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 2.5
-		defaultScale = 2.5
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 1800
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -6486,21 +5927,6 @@ PART
 			upgrade = MLI.Upgrade5
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 	RESOURCE
 	{
 		name = MonoPropellant
@@ -6582,21 +6008,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -6618,43 +6029,9 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 1.25
-		defaultScale = 1.25
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 880
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -6801,8 +6178,9 @@ PART
 	}
 	MODULE
 	{
-		name = Driftless
+		name = ModulePartVariants
 		isEnabled = True
+		useVariantMass = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -6816,7 +6194,7 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
+		name = Driftless
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -6852,43 +6230,9 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 1.25
-		defaultScale = 1.25
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 375
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -7009,21 +6353,6 @@ PART
 	MODULE
 	{
 		name = Driftless
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = Resourceful
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -8954,21 +8283,6 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 	RESOURCE
 	{
 		name = Nitrogen
@@ -9240,21 +8554,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -9295,21 +8594,6 @@ PART
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -9390,21 +8674,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -9429,21 +8698,6 @@ PART
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -9579,8 +8833,9 @@ PART
 	}
 	MODULE
 	{
-		name = Driftless
+		name = ModulePartVariants
 		isEnabled = True
+		useVariantMass = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -9594,7 +8849,7 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
+		name = Driftless
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -9630,43 +8885,9 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 1.25
-		defaultScale = 1.25
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 375
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -9796,21 +9017,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -9877,28 +9083,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = KK.F9demo.S1RCS_4291046986
 	partName = Part
 	persistentId = 2003236802
-	pos = 1.82935262,48.2690125,0.000179380178
+	pos = 1.82935381,48.2690086,0.000178903341
 	attPos = 0,0,0
 	attPos0 = 1.82934916,-3.27300262,1.1920929E-07
 	rot = 2.08931521E-08,0.707106829,-2.08931521E-08,0.707106948
@@ -9995,21 +9186,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -10045,28 +9221,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = KK.F9demo.S1RCS_4291046930
 	partName = Part
 	persistentId = 651424717
-	pos = -9.74535942E-05,48.2690125,-1.8292712
+	pos = -9.6976757E-05,48.2690086,-1.82927239
 	attPos = 0,0,0
 	attPos0 = 2.38418579E-07,-3.27300262,-1.82934916
 	rot = 1.77635684E-15,1.00000012,-2.95473761E-08,1.1920929E-07
@@ -10163,21 +9324,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -10213,28 +9359,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = KK.F9demo.S1RCS_4291046874
 	partName = Part
 	persistentId = 485071796
-	pos = -1.82955718,48.2690125,0.000190585852
+	pos = -1.82955837,48.2690086,0.000191062689
 	attPos = 0,0,0
 	attPos0 = -1.82934916,-3.27300262,2.98023224E-08
 	rot = -2.08931503E-08,0.707106888,-2.08931468E-08,-0.707106888
@@ -10331,21 +9462,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -10381,28 +9497,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = KK.F9demo.S1RCS_4291046818
 	partName = Part
 	persistentId = 851132224
-	pos = -0.0001065135,48.2690125,1.82963836
+	pos = -0.000106990337,48.2690086,1.82963955
 	attPos = 0,0,0
 	attPos0 = 0,-3.27300262,1.82934904
 	rot = -2.95473761E-08,1.1920929E-07,-1.77635684E-15,-1.00000012
@@ -10499,21 +9600,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -10549,28 +9635,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = Grid Fin L Titanium_4291044060
 	partName = Part
 	persistentId = 1000032712
-	pos = -1.35306954,49.1549225,1.12879217
+	pos = -1.3530705,49.1549225,1.128793
 	attPos = 0,0,0
 	attPos0 = -1.35290861,-2.38713074,1.12854362
 	rot = 0.321438849,1.23223529E-07,0.946930468,3.6300554E-07
@@ -10693,6 +9764,61 @@ PART
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
+			PitchActive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			PitchInactive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			TogglePitch
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			YawActive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			YawInactive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleYaw
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			RollActive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			RollInactive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleRoll
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActivateAllControls
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			DeactivateAllControls
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
 		}
 		AXISGROUPS
 		{
@@ -10753,21 +9879,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -10781,25 +9892,6 @@ PART
 		{
 		}
 		VesselConsPartsList
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 5000
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -10822,28 +9914,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = Grid Fin L Titanium_4291043986
 	partName = Part
 	persistentId = 1516793881
-	pos = 1.12850189,49.1549225,1.35315001
+	pos = 1.12850213,49.1549225,1.35315025
 	attPos = 0,0,0
 	attPos0 = 1.1285435,-2.38713074,1.35290861
 	rot = 0.89687258,3.43815913E-07,0.442289293,1.69551498E-07
@@ -10962,6 +10039,61 @@ PART
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
+			PitchActive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			PitchInactive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			TogglePitch
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			YawActive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			YawInactive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleYaw
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			RollActive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			RollInactive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleRoll
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActivateAllControls
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			DeactivateAllControls
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
 		}
 		AXISGROUPS
 		{
@@ -11014,21 +10146,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -11042,25 +10159,6 @@ PART
 		{
 		}
 		VesselConsPartsList
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 5000
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -11083,28 +10181,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = Grid Fin L Titanium_4291043912
 	partName = Part
 	persistentId = 719470192
-	pos = 1.3528657,49.1549225,-1.12842715
+	pos = 1.35286641,49.1549225,-1.12842798
 	attPos = 0,0,0
 	attPos0 = 1.35290849,-2.38713074,-1.12854362
 	rot = 0.946930528,3.63005654E-07,-0.321438938,-1.23223643E-07
@@ -11223,6 +10306,61 @@ PART
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
+			PitchActive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			PitchInactive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			TogglePitch
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			YawActive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			YawInactive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleYaw
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			RollActive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			RollInactive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleRoll
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActivateAllControls
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			DeactivateAllControls
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
 		}
 		AXISGROUPS
 		{
@@ -11275,21 +10413,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -11303,25 +10426,6 @@ PART
 		{
 		}
 		VesselConsPartsList
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 5000
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -11344,28 +10448,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = Grid Fin L Titanium_4291043838
 	partName = Part
 	persistentId = 77862128
-	pos = -1.12870598,49.1549225,-1.35278094
+	pos = -1.12870622,49.1549225,-1.35278118
 	attPos = 0,0,0
 	attPos0 = -1.12854362,-2.38713074,-1.35290837
 	rot = 0.442289293,1.69551498E-07,-0.89687258,-3.43815913E-07
@@ -11484,6 +10573,61 @@ PART
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
+			PitchActive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			PitchInactive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			TogglePitch
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			YawActive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			YawInactive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleYaw
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			RollActive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			RollInactive
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleRoll
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActivateAllControls
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			DeactivateAllControls
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
 		}
 		AXISGROUPS
 		{
@@ -11536,21 +10680,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -11564,25 +10693,6 @@ PART
 		{
 		}
 		VesselConsPartsList
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 5000
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -11605,28 +10715,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = KK.SPX.F93.S1tank_4291046762
 	partName = Part
 	persistentId = 459067651
-	pos = -0.000102102757,29.0943909,0.000184863806
+	pos = -0.000102102757,29.0943451,0.000184863806
 	attPos = 0,0,0
 	attPos0 = 0,19.1471939,0
 	rot = 0,0,0,1.00000012
@@ -11705,21 +10800,6 @@ PART
 	MODULE
 	{
 		name = Driftless
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = Resourceful
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -13216,21 +12296,6 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 	RESOURCE
 	{
 		name = LqdOxygen
@@ -13270,7 +12335,7 @@ PART
 	part = KK.SPX.Falcon9.FC_4291046706
 	partName = Part
 	persistentId = 1928769384
-	pos = -0.000102102757,48.4649925,0.000184863806
+	pos = -0.000102102757,48.4649544,0.000184863806
 	attPos = 0,0,0
 	attPos0 = 0,19.3704872,0
 	rot = 0,0,0,1.00000012
@@ -13464,21 +12529,6 @@ PART
 	MODULE
 	{
 		name = Driftless
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = Resourceful
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -13732,21 +12782,6 @@ PART
 	}
 	MODULE
 	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleTripLogger
 		isEnabled = True
 		stagingEnabled = True
@@ -13766,9 +12801,9 @@ PART
 	}
 	RESOURCE
 	{
-		name = ReservePower
-		amount = 1000
-		maxAmount = 1000
+		name = ElectricCharge
+		amount = 800
+		maxAmount = 800
 		flowState = True
 		isTweakable = True
 		hideFlow = False
@@ -13777,9 +12812,9 @@ PART
 	}
 	RESOURCE
 	{
-		name = ElectricCharge
-		amount = 800
-		maxAmount = 800
+		name = ReservePower
+		amount = 1000
+		maxAmount = 1000
 		flowState = True
 		isTweakable = True
 		hideFlow = False
@@ -13792,7 +12827,7 @@ PART
 	part = KK.SPX.F9LandingLeg_4291046640
 	partName = Part
 	persistentId = 2131698406
-	pos = -1.27890587,12.4976959,-1.27862132
+	pos = -1.27890682,12.4976349,-1.27862227
 	attPos = -3.69548798E-06,0.2625103,-3.33786011E-06
 	attPos0 = -1.27869904,-16.8591175,-1.27869892
 	rot = -9.0480885E-09,0.923879683,-2.18440146E-08,-0.382683456
@@ -13914,21 +12949,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -13953,21 +12973,6 @@ PART
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -14031,7 +13036,7 @@ PART
 	part = KK.SPX.F9LandingLeg_4291046516
 	partName = Part
 	persistentId = 625352633
-	pos = -1.27891183,12.4976959,1.2789973
+	pos = -1.27891374,12.4976349,1.27899921
 	attPos = -3.33786011E-06,0.2625103,3.69548798E-06
 	attPos0 = -1.27869892,-16.8591175,1.27869892
 	rot = -2.18440128E-08,0.382683456,-9.04808584E-09,-0.923879683
@@ -14149,21 +13154,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -14188,21 +13178,6 @@ PART
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -14266,7 +13241,7 @@ PART
 	part = KK.SPX.F9LandingLeg_4291046392
 	partName = Part
 	persistentId = 2500695247
-	pos = 1.27870226,12.4976959,1.27898037
+	pos = 1.27870321,12.4976349,1.27898133
 	attPos = 3.69548798E-06,0.2625103,3.33786011E-06
 	attPos0 = 1.27869916,-16.8591175,1.2786988
 	rot = -2.18440128E-08,-0.382683456,9.04808584E-09,-0.923879683
@@ -14384,21 +13359,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -14423,21 +13383,6 @@ PART
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -14501,7 +13446,7 @@ PART
 	part = KK.SPX.F9LandingLeg_4291046268
 	partName = Part
 	persistentId = 824641434
-	pos = 1.27870798,12.4976959,-1.27862871
+	pos = 1.27870989,12.4976349,-1.27863061
 	attPos = 3.33786011E-06,0.2625103,-3.69548798E-06
 	attPos0 = 1.2786988,-16.8591175,-1.27869904
 	rot = -9.04808584E-09,-0.923879683,2.18440128E-08,-0.382683456
@@ -14619,21 +13564,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -14658,21 +13588,6 @@ PART
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -14736,7 +13651,7 @@ PART
 	part = KK.F9demo.S1RCS_4291046144
 	partName = Part
 	persistentId = 3082129141
-	pos = 1.82941151,10.1310654,0.000179380178
+	pos = 1.8294127,10.1310196,0.000178903341
 	attPos = 0,0,0
 	attPos0 = 1.8293916,-18.9633102,1.1920929E-07
 	rot = -6.55626159E-16,0.707106829,6.55626053E-16,0.707106948
@@ -14808,7 +13723,7 @@ PART
 		{
 			ToggleAction
 			{
-				actionGroup = None
+				actionGroup = Custom08
 				wasActiveBeforePartWasAdjusted = False
 			}
 		}
@@ -14819,21 +13734,6 @@ PART
 	MODULE
 	{
 		name = Driftless
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = Resourceful
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -14883,28 +13783,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = KK.F9demo.S1RCS_4291046088
 	partName = Part
 	persistentId = 2077146302
-	pos = -9.74535942E-05,10.1310654,-1.82933247
+	pos = -9.6976757E-05,10.1310196,-1.82933366
 	attPos = 0,0,0
 	attPos0 = 2.38418579E-07,-18.9633102,-1.8293916
 	rot = -1.05879118E-22,1.00000012,9.27195298E-16,1.1920929E-07
@@ -14976,7 +13861,7 @@ PART
 		{
 			ToggleAction
 			{
-				actionGroup = None
+				actionGroup = Custom08
 				wasActiveBeforePartWasAdjusted = False
 			}
 		}
@@ -14987,21 +13872,6 @@ PART
 	MODULE
 	{
 		name = Driftless
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = Resourceful
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -15051,28 +13921,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = KK.F9demo.S1RCS_4291046032
 	partName = Part
 	persistentId = 2592575863
-	pos = -1.82961607,10.1310654,0.000190585852
+	pos = -1.82961726,10.1310196,0.000191062689
 	attPos = 0,0,0
 	attPos0 = -1.8293916,-18.9633102,2.98023224E-08
 	rot = 6.55626053E-16,0.707106888,6.55626053E-16,-0.707106888
@@ -15144,7 +13999,7 @@ PART
 		{
 			ToggleAction
 			{
-				actionGroup = None
+				actionGroup = Custom08
 				wasActiveBeforePartWasAdjusted = False
 			}
 		}
@@ -15155,21 +14010,6 @@ PART
 	MODULE
 	{
 		name = Driftless
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = Resourceful
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -15219,28 +14059,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = KK.F9demo.S1RCS_4291045976
 	partName = Part
 	persistentId = 3702768457
-	pos = -0.0001065135,10.1310654,1.82969439
+	pos = -0.000106990337,10.1310196,1.82969558
 	attPos = 0,0,0
 	attPos0 = 0,-18.9633102,1.82939148
 	rot = 9.27195298E-16,1.1920929E-07,1.05879118E-22,-1.00000012
@@ -15312,7 +14137,7 @@ PART
 		{
 			ToggleAction
 			{
-				actionGroup = None
+				actionGroup = Custom08
 				wasActiveBeforePartWasAdjusted = False
 			}
 		}
@@ -15323,21 +14148,6 @@ PART
 	MODULE
 	{
 		name = Driftless
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = Resourceful
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -15387,28 +14197,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = miniFuelTank_4291045920
 	partName = Part
 	persistentId = 2883467621
-	pos = -0.000102102757,9.94710541,0.000184863806
+	pos = -0.000102102757,9.94704437,0.000184863806
 	attPos = 0,0,0
 	attPos0 = 0,-19.1471939,0
 	rot = 0,1.00000012,0,0
@@ -15473,21 +14268,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -15501,25 +14281,6 @@ PART
 		{
 		}
 		VesselConsPartsList
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 0.625
-		defaultScale = 0.625
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 70
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -16268,21 +15029,6 @@ PART
 			upgrade = MLI.Upgrade5
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 	RESOURCE
 	{
 		name = NTO
@@ -16311,7 +15057,7 @@ PART
 	part = PMB.batteryBankLarge_4291045880
 	partName = Part
 	persistentId = 210394890
-	pos = -0.000102102757,10.3234024,0.000184863806
+	pos = -0.000102102757,10.3233414,0.000184863806
 	attPos = 0,0.660564423,0
 	attPos0 = 0,-0.284275055,0
 	rot = 0,1.00000012,0,0
@@ -16376,21 +15122,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -16412,43 +15143,9 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 2.5
-		defaultScale = 2.5
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 4500
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -16477,7 +15174,7 @@ PART
 	part = PMB.Rockomax16.BW_4291045840
 	partName = Part
 	persistentId = 317631910
-	pos = -0.000102102757,11.0457535,0.000184863806
+	pos = -0.000102102757,11.0456772,0.000184863806
 	attPos = 0,1.78442383,0
 	attPos0 = 0,-1.06200027,0
 	rot = 0,1.00000012,0,0
@@ -16558,21 +15255,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -16586,25 +15268,6 @@ PART
 		{
 		}
 		VesselConsPartsList
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 2.5
-		defaultScale = 2.5
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 1550
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -17353,21 +16016,6 @@ PART
 			upgrade = MLI.Upgrade5
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 	RESOURCE
 	{
 		name = LiquidFuel
@@ -17396,7 +16044,7 @@ PART
 	part = KK.SPX.F9.Octaweb_4291045782
 	partName = Part
 	persistentId = 1485331477
-	pos = -0.000102102757,8.83719635,0.000184863806
+	pos = -0.000102102757,8.83708954,0.000184863806
 	attPos = 0,0.888408661,0
 	attPos0 = 0,2,0
 	rot = 0,1.00000012,0,0
@@ -17683,21 +16331,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -17733,28 +16366,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4291045634
 	partName = Part
 	persistentId = 246584685
-	pos = -0.000102102757,7.73280716,0.000184863806
+	pos = -0.000102102757,7.73268509,0.000184863806
 	attPos = 0,0,0
 	attPos0 = 0,-1.10430145,0
 	rot = 0,1.00000012,0,0
@@ -17972,21 +16590,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -18038,21 +16641,6 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 	RESOURCE
 	{
 		name = TEATEB
@@ -18070,7 +16658,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4291045476
 	partName = Part
 	persistentId = 2996965739
-	pos = -1.19378972,7.87280655,0.494629472
+	pos = -1.19379163,7.87268448,0.494630426
 	attPos = 0,0,0
 	attPos0 = 1.19353795,-0.964302063,-0.494379997
 	rot = 0,0.991445065,0,-0.130526185
@@ -18288,21 +16876,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -18354,21 +16927,6 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 	RESOURCE
 	{
 		name = TEATEB
@@ -18386,7 +16944,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4291045318
 	partName = Part
 	persistentId = 496061627
-	pos = -0.494543493,7.87280655,1.19386184
+	pos = -0.494544566,7.87268448,1.19386303
 	attPos = 0,0,0
 	attPos0 = 0.494379014,-0.964302063,-1.19353795
 	rot = 0,0.793353438,0,-0.608761549
@@ -18604,21 +17162,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -18670,21 +17213,6 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 	RESOURCE
 	{
 		name = TEATEB
@@ -18702,7 +17230,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4291045160
 	partName = Part
 	persistentId = 1192396259
-	pos = 0.494334221,7.87280655,1.19388163
+	pos = 0.494334221,7.87268448,1.19388258
 	attPos = 0,0,0
 	attPos0 = -0.494379967,-0.964302063,-1.193537
 	rot = 0,0.50000006,0,-0.866025627
@@ -18920,21 +17448,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -18986,21 +17499,6 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 	RESOURCE
 	{
 		name = TEATEB
@@ -19018,7 +17516,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4291045002
 	partName = Part
 	persistentId = 895468268
-	pos = 1.19358587,7.87280655,0.494618148
+	pos = 1.19358635,7.87268448,0.494618148
 	attPos = 0,0,0
 	attPos0 = -1.19353795,-0.964302063,-0.494379014
 	rot = 0,0.130526066,0,-0.991445065
@@ -19236,21 +17734,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -19302,21 +17785,6 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 	RESOURCE
 	{
 		name = TEATEB
@@ -19334,7 +17802,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4291044844
 	partName = Part
 	persistentId = 1408918977
-	pos = 1.1935873,7.87280655,-0.49425593
+	pos = 1.19358921,7.87268448,-0.494256884
 	attPos = 0,0,0
 	attPos0 = -1.19353795,-0.964302063,0.494378
 	rot = 0,-0.258819103,0,-0.965925932
@@ -19552,21 +18020,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -19618,21 +18071,6 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 	RESOURCE
 	{
 		name = TEATEB
@@ -19650,7 +18088,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4291044686
 	partName = Part
 	persistentId = 853815359
-	pos = 0.494341433,7.87280655,-1.19349229
+	pos = 0.494342506,7.87268448,-1.19349349
 	attPos = 0,0,0
 	attPos0 = -0.49438104,-0.964302063,1.193537
 	rot = 0,0.608761609,0,0.793353379
@@ -19868,21 +18306,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -19934,21 +18357,6 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 	RESOURCE
 	{
 		name = TEATEB
@@ -19966,7 +18374,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4291044528
 	partName = Part
 	persistentId = 437461019
-	pos = -0.494536281,7.87280655,-1.19351137
+	pos = -0.494536281,7.87268448,-1.19351232
 	attPos = 0,0,0
 	attPos0 = 0.494379014,-0.964302063,1.19353795
 	rot = 0,-0.866025507,0,-0.500000179
@@ -20184,21 +18592,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -20250,21 +18643,6 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 	RESOURCE
 	{
 		name = TEATEB
@@ -20282,7 +18660,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4291044370
 	partName = Part
 	persistentId = 2975403547
-	pos = -1.19378877,7.87280655,-0.494251996
+	pos = -1.19378924,7.87268448,-0.494251996
 	attPos = 0,0,0
 	attPos0 = 1.193537,-0.964302063,0.494380027
 	rot = 0,-0.991445005,0,-0.130526125
@@ -20500,21 +18878,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -20566,21 +18929,6 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 	RESOURCE
 	{
 		name = TEATEB
@@ -20598,7 +18946,7 @@ PART
 	part = KAL9000_4291044212
 	partName = Part
 	persistentId = 3450305160
-	pos = -1.84013224,9.80705261,-0.00158682466
+	pos = -1.84013343,9.8069458,-0.00158634782
 	attPos = 0,0,0
 	attPos0 = 1.83985329,0.969860077,0.00177691877
 	rot = -7.64258434E-10,-0.0654034019,1.16602816E-08,0.997859061
@@ -20792,21 +19140,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -20860,28 +19193,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = 1mv.sensor.accelerometer.srf.1_4291044144
 	partName = Part
 	persistentId = 3640499000
-	pos = -1.82953691,9.10096741,0.0001924932
+	pos = -1.8295393,9.10084534,0.000193446875
 	attPos = 0,0,0
 	attPos0 = 1.82924104,0.263851166,1.11758709E-07
 	rot = -2.75255752E-09,0.707106888,-2.75255752E-09,-0.707106888
@@ -21010,21 +19328,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -21078,28 +19381,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = 1mv.sensor.accelerometer.srf.1_4291044102
 	partName = Part
 	persistentId = 2270972684
-	pos = 1.82933331,9.10096741,0.000177234411
+	pos = 1.82933569,9.10084534,0.000176280737
 	attPos = 0,0,0
 	attPos0 = -1.82924104,0.263851166,4.47034836E-08
 	rot = -2.75255729E-09,-0.707106948,2.75255774E-09,-0.707106829
@@ -21228,21 +19516,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -21296,28 +19569,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = 39A.pad_4293623650
 	partName = Part
 	persistentId = 3101468911
-	pos = -0.000102102757,6.83695602,0.000184863806
+	pos = -0.000102102757,6.83680344,0.000184863806
 	attPos = 0,0,0
 	attPos0 = 0,-2.00003052,0
 	rot = 0,-1.00000012,0,0
@@ -21513,21 +19771,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = RefuelingPump
 		isEnabled = True
 		enablePump = True
@@ -21631,28 +19874,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = 39Base_4291330356
 	partName = Part
 	persistentId = 1263855698
-	pos = -0.000102102757,1.29972839,0.000184863806
+	pos = -0.000102102757,1.29957581,0.000184863806
 	attPos = 0,0,0
 	attPos0 = -0.0001039505,1.29981089,0.000178813934
 	rot = 0,0,0,1.00000012
@@ -21806,21 +20034,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -21887,21 +20100,6 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 	RESOURCE
 	{
 		name = SSWS
@@ -21919,7 +20117,7 @@ PART
 	part = FSS_4291330046
 	partName = Part
 	persistentId = 2819520228
-	pos = -29.4946995,1.29972839,1.98151195
+	pos = -29.4947186,1.29957581,1.98152149
 	attPos = 0,0,0
 	attPos0 = -29.4940014,0,1.9812001
 	rot = 0,-1.00000012,0,0
@@ -22040,21 +20238,6 @@ PART
 	}
 	MODULE
 	{
-		name = Resourceful
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -22105,28 +20288,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = launchClamp1_4288977740
 	partName = Part
 	persistentId = 366831419
-	pos = -36.4738464,50.0443268,7.90628242
+	pos = -36.4738655,50.0442047,7.90629387
 	attPos = 0,0,0
 	attPos0 = 6.97911644,48.7444267,-5.92473936
 	rot = 0,0.707106888,0,0.707106888
@@ -22176,8 +20344,8 @@ PART
 	{
 		name = LaunchClamp
 		isEnabled = True
-		scaleFactor = 20.0953255
-		height = 50.7044754
+		scaleFactor = 20.0952778
+		height = 50.7043533
 		stagingEnabled = True
 		towerRot = 0,-0.707106829,0,0.707106829
 		EVENTS
@@ -22248,21 +20416,6 @@ PART
 	MODULE
 	{
 		name = Driftless
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = Resourceful
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -22365,28 +20518,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = launchClamp1_4288977486
 	partName = Part
 	persistentId = 2194760817
-	pos = -36.4738464,50.2336502,-3.99214387
+	pos = -36.4738655,50.2335281,-3.99214005
 	attPos = 0,0,0
 	attPos0 = 6.97911644,48.9337502,5.97361708
 	rot = 0,0.707106888,0,0.707106888
@@ -22436,8 +20574,8 @@ PART
 	{
 		name = LaunchClamp
 		isEnabled = True
-		scaleFactor = 20.1703587
-		height = 50.8937988
+		scaleFactor = 20.170311
+		height = 50.8936768
 		stagingEnabled = True
 		towerRot = 0,-0.707106829,0,0.707106829
 		EVENTS
@@ -22508,21 +20646,6 @@ PART
 	MODULE
 	{
 		name = Driftless
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = Resourceful
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -22614,21 +20737,6 @@ PART
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
