@@ -144,6 +144,15 @@ function ReEntryburn
 			}
 			
 			SET thrust to 0.
+			RCS ON.
+			FROM {local x is 10.} UNTIL x = 0 STEP {set x to x-1.} DO 
+			{
+				LOCK STEERING TO UP + R(0,0,180).
+				wait 1.
+				if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+					SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
+				PRINT_STATUS (3).
+			}
 			break.
 		}
 
