@@ -179,7 +179,7 @@ if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
 
 	CLEARSCREEN.	
 	update_phase_title("FLIP MANEUVER   ", 0, true).
-	FROM {local x is 6.} UNTIL x = 0 STEP {set x to x-1.} DO 
+	FROM {local x is 10.} UNTIL x = 0 STEP {set x to x-1.} DO 
 	{
 		if STAGE_1_TYPE = "CORE"
 			LOCK STEERING TO HEADING(270,0, -270).
@@ -188,6 +188,8 @@ if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
 		
 		PRINT_STATUS (3).
 		WAIT 1.
+		if ship:heading>265 and ship:heading<275 
+			set x to 0.
 	}
 }
 
