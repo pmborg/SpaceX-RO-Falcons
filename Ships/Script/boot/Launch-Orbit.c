@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 15/Nov/2020
+// 16/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 function main_lifoff

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 15/Nov/2020
+// 16/Nov/2020
 // --------------------------------------------------------------------------------------------
 // Tested: 
 // 13/Nov/2020 with ->0v2.sfs
@@ -100,9 +100,9 @@ function ReEntryburn
 			
 			if impactDist > 250
 			{
-				steerToTarget(steeringPitch, 0, 0). // Calculate: impactDist
+				steerToTarget(steeringPitch, 0, 0). // Fast Correction
 			} else {
-				steerToTarget(82.5, 0, 0). 			// Calculate: impactDist
+				steerToTarget(82.5, 0, 0). 			// Slower Correction
 			}
 		} else {
 			lock steering to retrograde.
@@ -118,6 +118,7 @@ function ReEntryburn
 			SET thrust to 0.01.
 			activateOneEngine().			
 		
+			// Check if some "FINE TUNE BURN" is needed...
 			update_phase_title("FINE TUNE BURN", 0).
 			SAS OFF.
 			until (impactDist < 25) or (SHIP:VERTICALSPEED >= 0)
@@ -143,6 +144,7 @@ function ReEntryburn
 					 break.
 			}
 			
+			//Add 10 secs of vertical stability after REENTRY BURN
 			SET thrust to 0.
 			RCS ON.
 			FROM {local x is 10.} UNTIL x = 0 STEP {set x to x-1.} DO 
