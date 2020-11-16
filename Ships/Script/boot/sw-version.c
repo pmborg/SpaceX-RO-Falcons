@@ -46,7 +46,7 @@ if vehicle_type = "Falcon Heavy"
 {
 	// Data from: FH Demo 1:
 	//declare global Qmax 	to .5*0.40331*(337.367^2).	// 1/2 x air density ρ | Vehicle's speed v^2
-	declare global Qmax 	to 15238/.1.1.//.5*0.36075*(249.8^2).	// 1/2 x air density ρ | Vehicle's speed v^2
+	declare global Qmax 	to 15238/1.1.//.5*0.36075*(249.8^2).	// 1/2 x air density ρ | Vehicle's speed v^2
 	
 	declare global MECO1 	to 1650^2. //5 before: 1675^2.
 	declare global SEP   	to 1741^2.
