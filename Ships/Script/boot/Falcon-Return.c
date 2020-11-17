@@ -14,10 +14,11 @@
 // 13/Nov/2020 with ->0v2.sfs
 // 11/Nov/2020 with ->2_1v2.sfs
 
-//REGRESSION TESTS: 
-// [X] F9 ST-1 STAGE					1.20.11.17
-// [X] F9 ST-1 LAND						1.20.11.17
-// [X] F9 ST-2 ORBIT					1.20.11.17
+// REGRESSION TESTS: 
+// -----------------
+// [X] F9 ST-1 STAGE					1.20.11.17 F9.sfs
+// [X] F9 ST-1 LAND						1.20.11.17 F9.sfs
+// [X] F9 ST-2 ORBIT					1.20.11.17 F9.sfs
 
 // [X] Crew Dragon 2 STAGE				1.20.11.17
 // [ ] Crew Dragon 2 ST-1 LAND			1.20.11.##
