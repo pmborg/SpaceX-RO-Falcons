@@ -11,6 +11,8 @@
 // 14/Nov/2020
 // --------------------------------------------------------------------------------------------
 
+declare global g_OtherBooster to SHIP.
+
 function getNearbyProbe // The other Booster 
 {
 	WAIT 1. //Give time to check main VESSEL state.
@@ -34,6 +36,7 @@ function getNearbyProbe // The other Booster
 			LOG  "["+STAGE_1_TYPE+"] Altitude: "+ves:altitude to LOG.txt.
 			
 			nearby_vessels:ADD(ves). 
+			set g_OtherBooster to ves.
 		}
 	}
 

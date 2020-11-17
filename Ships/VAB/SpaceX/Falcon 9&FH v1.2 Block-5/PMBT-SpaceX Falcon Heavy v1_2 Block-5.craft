@@ -2,7 +2,7 @@ ship = PMBT-SpaceX Falcon Heavy v1.2 Block-5
 version = 1.9.1
 description = AG1: Core main engines toggle + Side Booster center (landing) engine toggle¨AG2: Core entry engines toggle + Side booster entry engines toggle¨AG5: Side booster shutdown and seperation¨GEAR: landing leg toggle¨BRAKES: gridfin deploy¨THROTTLE: controls throttle of the core and recovery-relevant side booster engines, main side booster engines not affected. Throttle down to 50-60% to enable side boosters to drain faster than the core.
 type = VAB
-size = 13.8329544,69.2817383,5.35249329
+size = 13.8329868,69.2817383,5.35250473
 steamPublishedFileId = 0
 persistentId = 3983080253
 rot = 0,0,0,0
@@ -17,7 +17,7 @@ PART
 	part = PMB.SPX.F94.S2tank_4294654148
 	partName = Part
 	persistentId = 1632009164
-	pos = 0.174686223,54.2308044,-1.03628528
+	pos = 0.169800937,54.2384796,-1.03926361
 	attPos = 0,0,0
 	attPos0 = 0.173156857,54.4556999,-0.823519349
 	rot = 0,-0.707106829,0,0.707106829
@@ -27,11 +27,11 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 3
+	istg = 4
 	resPri = 0
 	dstg = 4
 	sidx = 0
-	sqor = 3
+	sqor = 4
 	sepI = 1
 	attm = 0
 	sameVesselCollision = False
@@ -2668,7 +2668,7 @@ PART
 	part = KK.SPX.Falcon9.FC_4294629322
 	partName = Part
 	persistentId = 1032627987
-	pos = 0.174686223,58.739624,-1.03628528
+	pos = 0.169800937,58.7472992,-1.03926361
 	attPos = 0,0,0
 	attPos0 = 0,4.50881958,0
 	rot = 0,-0.707106829,0,0.707106829
@@ -2678,7 +2678,7 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 4
 	resPri = 0
 	dstg = 4
 	sidx = -1
@@ -3160,7 +3160,7 @@ PART
 	part = KK.SPX.F9.1875mmPA_4294078688
 	partName = Part
 	persistentId = 598507745
-	pos = 0.174686223,58.7559738,-1.03628528
+	pos = 0.169800937,58.763649,-1.03926361
 	attPos = 0,0,0
 	attPos0 = -0.041036725,59.0078697,-0.726800919
 	rot = 0,0,0,1
@@ -3320,7 +3320,7 @@ PART
 	part = Decoupler.0_4294139758
 	partName = Part
 	persistentId = 2625805615
-	pos = 0.174686223,59.2515373,-1.03628528
+	pos = 0.169800937,59.2592125,-1.03926361
 	attPos = 0,0,0
 	attPos0 = 0,0.56306076,0
 	rot = 0,0,0,1
@@ -3510,7 +3510,7 @@ PART
 	part = ionEngine_4294139678
 	partName = Part
 	persistentId = 2287381932
-	pos = 0.174686223,59.4713173,-1.03628528
+	pos = 0.169800937,59.4789925,-1.03926361
 	attPos = 0,0,0
 	attPos0 = 0,0.287281036,0
 	rot = 0,0,0,1
@@ -3698,6 +3698,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -3748,7 +3764,7 @@ PART
 	part = batteryBank_4294139600
 	partName = Part
 	persistentId = 1510787697
-	pos = 0.174686223,59.7957344,-1.03628528
+	pos = 0.169800937,59.8034096,-1.03926361
 	attPos = 0,0,0
 	attPos0 = 0,-0.610855103,0
 	rot = 0,0,0,1
@@ -3869,7 +3885,7 @@ PART
 	part = xenonTankRadial_4294139566
 	partName = Part
 	persistentId = 2764440348
-	pos = 0.59493804,59.8898888,-1.03628528
+	pos = 0.590052724,59.8975639,-1.03926361
 	attPos = 0,0,0
 	attPos0 = 0.420251489,0.0941553116,-4.28408384E-08
 	rot = 0,0.707106888,0.70710665,0
@@ -4097,7 +4113,7 @@ PART
 	part = xenonTankRadial_4294139528
 	partName = Part
 	persistentId = 271910252
-	pos = 0.174686223,59.8898888,-1.45653689
+	pos = 0.169800937,59.8975639,-1.45951521
 	attPos = 0,0,0
 	attPos0 = -1.76951289E-08,0.0941553116,-0.420251459
 	rot = 0.49999994,0.500000119,0.49999994,-0.500000119
@@ -4325,7 +4341,7 @@ PART
 	part = xenonTankRadial_4294139490
 	partName = Part
 	persistentId = 1365825860
-	pos = -0.2455661,59.8898888,-1.03628528
+	pos = -0.250451386,59.8975639,-1.03926361
 	attPos = 0,0,0
 	attPos0 = -0.420251489,0.0941553116,8.00937414E-08
 	rot = 0.70710665,-3.09086232E-08,-3.09086126E-08,-0.707106888
@@ -4553,7 +4569,7 @@ PART
 	part = xenonTankRadial_4294139452
 	partName = Part
 	persistentId = 1466052311
-	pos = 0.174686223,59.8898888,-0.616033435
+	pos = 0.169800937,59.8975639,-0.61901176
 	attPos = 0,0,0
 	attPos0 = 6.79865479E-08,0.0941553116,0.420251459
 	rot = 0.49999994,-0.500000119,-0.49999994,-0.500000119
@@ -4781,9 +4797,9 @@ PART
 	part = HECS2.ProbeCore_4294139414
 	partName = Part
 	persistentId = 1836031260
-	pos = 0.174686223,60.4065895,-1.03628528
+	pos = 0.169800937,60.4142647,-1.03926361
 	attPos = 0,0,0
-	attPos0 = -0.0410361066,60.7935028,-0.726795912
+	attPos0 = 0.169800937,60.4142647,-1.03926361
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
@@ -4808,6 +4824,7 @@ PART
 	link = batteryBank_4294139600
 	link = KAL9000_4293426776
 	link = 4mv.vl.sensor.accelerometer.srf.1_4289812974
+	link = asasmodule1-2_4294138994
 	attN = top,asasmodule1-2_4294138994_0|0.5|0_0|1|0_0|0.5|0_0|1|0
 	attN = bottom,batteryBank_4294139600_0|-0.5|0_0|-1|0_0|-0.5|0_0|-1|0
 	EVENTS
@@ -4986,6 +5003,42 @@ PART
 		}
 		VesselConsPartsList
 		{
+			AYPwrPartList
+			{
+				PrtName = AmpYear SubSystems-Max
+				PrtTitle = AmpYear SubSystems-Max
+				PrtModuleName = SAS
+				PrtSubsystem = True
+				PrtPower = 0
+				PrtPowerF = 0
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4294139414,SAS
+			}
+			AYPwrPartList
+			{
+				PrtName = AmpYear SubSystems-Max
+				PrtTitle = AmpYear SubSystems-Max
+				PrtModuleName = RCS
+				PrtSubsystem = True
+				PrtPower = 0
+				PrtPowerF = 0
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4294139414,RCS
+			}
 			AYPwrPartList
 			{
 				PrtName = HECS2.ProbeCore
@@ -6305,7 +6358,7 @@ PART
 	part = trussPiece3x_4294139328
 	partName = Part
 	persistentId = 2078704296
-	pos = 0.174686223,60.4065895,-1.03628528
+	pos = 0.169800937,60.4142647,-1.03926361
 	attPos = -2.29422474,-0.0117616653,-4.88153979E-08
 	attPos0 = 2.29422474,0.0117616653,4.88153979E-08
 	rot = 0.49999994,0.50000006,-0.49999994,0.50000006
@@ -6413,7 +6466,7 @@ PART
 	part = strutOcto_4294139298
 	partName = Part
 	persistentId = 3599008281
-	pos = 1.77866054,60.4065895,-1.03628528
+	pos = 1.77377534,60.4142647,-1.03926361
 	attPos = 0,0,0
 	attPos0 = 0,1.60397232,3.824168E-07
 	rot = 0,0,-0.707106829,0.707106829
@@ -6519,7 +6572,7 @@ PART
 	part = largeSolarPanel_4294139264
 	partName = Part
 	persistentId = 4256236599
-	pos = 1.88511348,60.3971024,-1.03628528
+	pos = 1.88022828,60.4047775,-1.03926361
 	attPos = 0,0,0
 	attPos0 = 0.00948715489,0.106452785,0
 	rot = 1.1920929E-07,1.00000012,1.1920929E-07,0
@@ -6651,7 +6704,7 @@ PART
 				PrtModuleName = ModuleDeployableSolarPanel
 				PrtSubsystem = False
 				PrtPower = 2.829
-				PrtPowerF = 2.82870984
+				PrtPowerF = 2.82870698
 				PrtActive = True
 				PrtSolarDependant = True
 				PrtEditorInclude = True
@@ -6745,7 +6798,7 @@ PART
 	part = strutOcto_4294139188
 	partName = Part
 	persistentId = 4145013995
-	pos = -1.42928863,60.4065895,-1.03628528
+	pos = -1.43417382,60.4142647,-1.03926361
 	attPos = 0,0,0
 	attPos0 = 0,-1.60397232,-3.824168E-07
 	rot = 7.10542736E-15,0,-0.707106769,-0.707106888
@@ -6851,7 +6904,7 @@ PART
 	part = largeSolarPanel_4294139154
 	partName = Part
 	persistentId = 713086288
-	pos = -1.53575408,60.4160767,-1.03628528
+	pos = -1.54063964,60.4237518,-1.03926361
 	attPos = 0,0,0
 	attPos0 = 0.00948715489,0.106452785,0
 	rot = 1.00000012,0,-1.49011612E-08,1.34110451E-07
@@ -6983,7 +7036,7 @@ PART
 				PrtModuleName = ModuleDeployableSolarPanel
 				PrtSubsystem = False
 				PrtPower = 2.829
-				PrtPowerF = 2.82870984
+				PrtPowerF = 2.82870698
 				PrtActive = True
 				PrtSolarDependant = True
 				PrtEditorInclude = True
@@ -7077,7 +7130,7 @@ PART
 	part = rtg_4294139078
 	partName = Part
 	persistentId = 1211476185
-	pos = 0.174686223,59.704792,-1.91993701
+	pos = 0.169800937,59.7124672,-1.92291534
 	attPos = -1.53668225E-07,-0.0707111359,-0.212131917
 	attPos0 = 3.7252903E-08,-0.631086349,-0.67151916
 	rot = -0.923879623,3.46524693E-08,8.02217883E-08,0.382683218
@@ -7275,7 +7328,7 @@ PART
 	part = rtg_4294139036
 	partName = Part
 	persistentId = 1040692426
-	pos = 0.174686223,59.704792,-0.152633667
+	pos = 0.169800937,59.7124672,-0.155611992
 	attPos = 1.76951289E-08,-0.0707111359,0.212131917
 	attPos0 = 2.14204192E-08,-0.631086349,0.67151916
 	rot = -3.9837726E-08,-0.382683218,-0.923879623,1.79248545E-08
@@ -7473,7 +7526,7 @@ PART
 	part = PMB.F9.Merlin1DVplusplus_4293984562
 	partName = Part
 	persistentId = 2743685613
-	pos = 0.174686223,48.4486275,-1.03628528
+	pos = 0.169800937,48.4563026,-1.03926361
 	attPos = 0,0,0
 	attPos0 = 0,-5.78217697,0
 	rot = 0,0,0,1.00000012
@@ -7483,11 +7536,11 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 2
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = 0
-	sqor = 2
+	sqor = 3
 	sepI = 1
 	attm = 0
 	sameVesselCollision = False
@@ -7714,6 +7767,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -7734,7 +7803,7 @@ PART
 	part = KK.SPX.F93.interstage_4294631684
 	partName = Part
 	persistentId = 4176739456
-	pos = 0.174686223,47.3282623,-1.03628528
+	pos = 0.169800937,47.3359375,-1.03926361
 	attPos = 0,0,0
 	attPos0 = 0,-6.90254211,0
 	rot = 0,0,0,1.00000012
@@ -7744,12 +7813,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 3
+	istg = 4
 	resPri = 0
 	dstg = 5
 	sidx = 1
-	sqor = 3
-	sepI = 3
+	sqor = 4
+	sepI = 4
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -7918,7 +7987,7 @@ PART
 	part = KK.SPX.F93.S1tank_4294625744
 	partName = Part
 	persistentId = 1649388674
-	pos = 0.174686223,24.8809471,-1.03628528
+	pos = 0.169800937,24.8886223,-1.03926361
 	attPos = 0,0,0
 	attPos0 = 0,-22.4473171,0
 	rot = 0,0,0,1.00000012
@@ -7928,12 +7997,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 3
+	istg = 4
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 4
 	attm = 0
 	sameVesselCollision = False
 	modCost = 1372.32446
@@ -9532,7 +9601,7 @@ PART
 	part = KK.SPX.Falcon9.FC_4294622098
 	partName = Part
 	persistentId = 3168529721
-	pos = 0.174686223,44.2514343,-1.03628528
+	pos = 0.169800937,44.2591095,-1.03926361
 	attPos = 0,0,0
 	attPos0 = 0,19.3704872,0
 	rot = 0,0,0,1.00000012
@@ -9542,12 +9611,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 4
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 4
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -10024,7 +10093,7 @@ PART
 	part = KK.SPX.F9LandingLeg_4294581646
 	partName = Part
 	persistentId = 4182868541
-	pos = -1.10419583,8.25708389,-2.31516743
+	pos = -1.10908389,8.26475906,-2.31814861
 	attPos = -7.86781311E-05,0.235254288,-7.89165497E-05
 	attPos0 = -1.27869904,-16.8591175,-1.27869892
 	rot = -9.0480885E-09,0.923879683,-2.18440146E-08,-0.382683456
@@ -10034,12 +10103,12 @@ PART
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 3
+	istg = 4
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -10233,7 +10302,7 @@ PART
 	part = KK.SPX.F9LandingLeg_4294581174
 	partName = Part
 	persistentId = 1977383172
-	pos = -1.10419679,8.25708389,0.242597342
+	pos = -1.10908484,8.26475906,0.239621878
 	attPos = -7.97510147E-05,0.235254288,7.93933868E-05
 	attPos0 = -1.27869892,-16.8591175,1.27869892
 	rot = -2.18440128E-08,0.382683516,-9.04808584E-09,-0.923879623
@@ -10243,12 +10312,12 @@ PART
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 3
+	istg = 4
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -10438,7 +10507,7 @@ PART
 	part = KK.SPX.F9LandingLeg_4294581056
 	partName = Part
 	persistentId = 3571979035
-	pos = 1.45356905,8.25708389,0.242597461
+	pos = 1.4486866,8.26475906,0.239621997
 	attPos = 7.93933868E-05,0.235254288,7.96318054E-05
 	attPos0 = 1.27869916,-16.8591175,1.2786988
 	rot = -2.18440128E-08,-0.382683516,9.04808584E-09,-0.923879623
@@ -10448,12 +10517,12 @@ PART
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 3
+	istg = 4
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -10643,7 +10712,7 @@ PART
 	part = KK.SPX.F9LandingLeg_4294580938
 	partName = Part
 	persistentId = 2417561873
-	pos = 1.45356894,8.25708389,-2.31516838
+	pos = 1.4486866,8.26475906,-2.31814957
 	attPos = 7.96318054E-05,0.235254288,-7.95125961E-05
 	attPos0 = 1.2786988,-16.8591175,-1.27869904
 	rot = -9.04808584E-09,-0.923879623,2.18440128E-08,-0.382683516
@@ -10653,12 +10722,12 @@ PART
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 3
+	istg = 4
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -10848,7 +10917,7 @@ PART
 	part = KK.SPX.F93Heavy.seperator_4292276294
 	partName = Part
 	persistentId = 2170726154
-	pos = 0.234902292,22.9690781,-1.0362854
+	pos = 0.230017066,22.9767532,-1.03926373
 	attPos = 0.0472024679,-0.401069641,0
 	attPos0 = 0.0130109806,-1.51079941,-1.78813977E-07
 	rot = -1.05879118E-22,1.1920929E-07,-9.27195404E-16,1.00000012
@@ -10858,12 +10927,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = 0
-	sqor = 4
-	sepI = 4
+	sqor = 5
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -11062,7 +11131,7 @@ PART
 	part = KK.SPX.F93.S1tank_4293243962
 	partName = Part
 	persistentId = 2418080441
-	pos = -4.06543159,24.9181709,-1.03628433
+	pos = -4.0703249,24.9258461,-1.03926265
 	attPos = 0,0,0
 	attPos0 = -4.3000021,1.94909286,1.07288201E-07
 	rot = -2.19282916E-23,0.707106888,-2.1928279E-23,0.707106888
@@ -11072,12 +11141,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 1705.17493
@@ -12701,7 +12770,7 @@ PART
 	part = KK.SPX.Falcon9.FC_4293243910
 	partName = Part
 	persistentId = 2681519566
-	pos = -4.06557989,44.2886581,-1.03628385
+	pos = -4.07047701,44.2963333,-1.03926218
 	attPos = 0,0,0
 	attPos0 = 0,19.3704872,0
 	rot = -2.19282916E-23,0.707106888,-2.1928279E-23,0.707106888
@@ -12711,12 +12780,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -13194,7 +13263,7 @@ PART
 	part = KK.SPX.F9LandingLeg_4293241888
 	partName = Part
 	persistentId = 2132438506
-	pos = -5.34450865,8.33570862,0.242717862
+	pos = -5.34941149,8.34338379,0.239745259
 	attPos = -9.54866409E-05,0.276655197,-5.57899475E-05
 	attPos0 = -1.27869904,-16.8591175,-1.27869892
 	rot = 2.18440341E-08,-0.382683456,9.04809383E-09,0.923879683
@@ -13204,12 +13273,12 @@ PART
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -13403,7 +13472,7 @@ PART
 	part = KK.SPX.F9LandingLeg_4293241786
 	partName = Part
 	persistentId = 157879260
-	pos = -2.78661323,8.33570862,0.242608428
+	pos = -2.79150605,8.34338379,0.239633918
 	attPos = -5.37633896E-05,0.276655197,9.32216644E-05
 	attPos0 = -1.27869892,-16.8591175,1.27869892
 	rot = 2.18440235E-08,0.382683575,-9.04809383E-09,0.923879802
@@ -13413,12 +13482,12 @@ PART
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -13612,7 +13681,7 @@ PART
 	part = KK.SPX.F9LandingLeg_4293241684
 	partName = Part
 	persistentId = 1677374610
-	pos = -2.78668332,8.33570862,-2.31521893
+	pos = -2.79157805,8.34338379,-2.31820107
 	attPos = 9.40561295E-05,0.276655197,5.3524971E-05
 	attPos0 = 1.27869916,-16.8591175,1.2786988
 	rot = -9.04808939E-09,-0.923879683,2.18440341E-08,-0.382683456
@@ -13622,12 +13691,12 @@ PART
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -13821,7 +13890,7 @@ PART
 	part = KK.SPX.F9LandingLeg_4293241582
 	partName = Part
 	persistentId = 906093793
-	pos = -5.3445363,8.33570862,-2.31523991
+	pos = -5.34943724,8.34338379,-2.31822395
 	attPos = 5.3524971E-05,0.276655197,-9.67979431E-05
 	attPos0 = 1.2786988,-16.8591175,-1.27869904
 	rot = 9.04809738E-09,-0.923879802,2.18440306E-08,0.382683575
@@ -13831,12 +13900,12 @@ PART
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -14030,7 +14099,7 @@ PART
 	part = KK.SpX.FH.SB.attachPart_4291703992
 	partName = Part
 	persistentId = 2942866898
-	pos = -4.06555986,44.1410904,-1.03628433
+	pos = -4.07045698,44.1487656,-1.03926265
 	attPos = 0,0,0
 	attPos0 = -1.13686784E-13,19.2229195,-1.90734806E-06
 	rot = 1.31124194E-15,0.707106948,-1.31124279E-15,0.707106829
@@ -14040,12 +14109,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = 1
-	sqor = 4
-	sepI = 4
+	sqor = 5
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -14225,7 +14294,7 @@ PART
 	part = KK.SPX.F.nosecone_4291687498
 	partName = Part
 	persistentId = 3052876852
-	pos = -4.06556177,46.1548615,-1.03628433
+	pos = -4.07045889,46.1625366,-1.03926265
 	attPos = 0,0,0
 	attPos0 = 4.54747026E-13,2.01377106,-1.90734772E-06
 	rot = 2.11758237E-22,1.1920929E-07,-1.85437853E-15,1.00000024
@@ -14235,12 +14304,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -14330,7 +14399,7 @@ PART
 	part = KK.SPX.F93Heavy.seperator_4294616840
 	partName = Part
 	persistentId = 3854137754
-	pos = 0.114469551,22.9690781,-1.03628516
+	pos = 0.10958419,22.9767532,-1.03926349
 	attPos = -0.0472025052,-0.401069641,0
 	attPos0 = -0.0130109806,-1.51079941,1.78813977E-07
 	rot = -9.27195298E-16,1.00000012,1.58818678E-22,-2.08616257E-07
@@ -14340,12 +14409,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = 0
-	sqor = 4
-	sepI = 4
+	sqor = 5
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -14544,22 +14613,22 @@ PART
 	part = KK.SPX.F93.S1tank_4294616764
 	partName = Part
 	persistentId = 2961689227
-	pos = 4.41480732,24.9181709,-1.03628671
+	pos = 4.40992928,24.9258461,-1.03926504
 	attPos = 0,0,0
 	attPos0 = -4.3000021,1.94909286,1.07288201E-07
-	rot = 4.39398382E-21,0.707106829,-4.39398382E-21,-0.707106948
+	rot = 4.49986294E-21,0.707106829,-4.49986294E-21,-0.707106948
 	attRot = 0,0.707106769,0,0.707106769
 	attRot0 = -6.55626053E-16,0.707106769,6.55626159E-16,0.707106888
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 1705.17493
@@ -16183,22 +16252,22 @@ PART
 	part = KK.SPX.Falcon9.FC_4294616716
 	partName = Part
 	persistentId = 3675742096
-	pos = 4.41495848,44.2886581,-1.03628767
+	pos = 4.41008425,44.2963333,-1.03926599
 	attPos = 0,0,0
 	attPos0 = 0,19.3704872,0
-	rot = 4.39398382E-21,0.707106829,-4.60574205E-21,-0.707106948
+	rot = 4.49986334E-21,0.707106829,-4.71162158E-21,-0.707106948
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -16676,7 +16745,7 @@ PART
 	part = KK.SPX.F9LandingLeg_4294614694
 	partName = Part
 	persistentId = 3697314221
-	pos = 5.69382477,8.33570862,-2.31529045
+	pos = 5.68895435,8.34338379,-2.3182745
 	attPos = -9.54866409E-05,0.276655197,-5.57899475E-05
 	attPos0 = -1.27869904,-16.8591175,-1.27869892
 	rot = 9.04809561E-09,0.923879743,-2.18440395E-08,0.382683396
@@ -16686,12 +16755,12 @@ PART
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -16885,7 +16954,7 @@ PART
 	part = KK.SPX.F9LandingLeg_4294614592
 	partName = Part
 	persistentId = 3526699411
-	pos = 3.13602138,8.33570862,-2.3151803
+	pos = 3.13114572,8.34338379,-2.31816244
 	attPos = -5.37633896E-05,0.276655197,9.32216644E-05
 	attPos0 = -1.27869892,-16.8591175,1.27869892
 	rot = -9.04809738E-09,0.923879683,-2.1844027E-08,-0.382683456
@@ -16895,12 +16964,12 @@ PART
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -17094,7 +17163,7 @@ PART
 	part = KK.SPX.F9LandingLeg_4294614490
 	partName = Part
 	persistentId = 2414136045
-	pos = 3.13606381,8.33570862,0.242665291
+	pos = 3.13118625,8.34338379,0.239691257
 	attPos = 9.40561295E-05,0.276655197,5.3524971E-05
 	attPos0 = 1.27869916,-16.8591175,1.2786988
 	rot = 2.18440341E-08,-0.382683396,9.04808939E-09,0.923879743
@@ -17104,12 +17173,12 @@ PART
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -17303,7 +17372,7 @@ PART
 	part = KK.SPX.F9LandingLeg_4294614388
 	partName = Part
 	persistentId = 2816468036
-	pos = 5.69393063,8.33570862,0.242673516
+	pos = 5.68906212,8.34338379,0.239700913
 	attPos = 5.3524971E-05,0.276655197,-9.67979431E-05
 	attPos0 = 1.2786988,-16.8591175,-1.27869904
 	rot = 2.1844027E-08,0.382683456,-9.04809738E-09,0.923879683
@@ -17313,12 +17382,12 @@ PART
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -17512,7 +17581,7 @@ PART
 	part = KK.SpX.FH.SB.attachPart_4294613934
 	partName = Part
 	persistentId = 733467259
-	pos = 4.4149375,44.1410904,-1.03628719
+	pos = 4.41006327,44.1487656,-1.03926551
 	attPos = 0,0,0
 	attPos0 = -1.13686784E-13,19.2229195,-1.90734806E-06
 	rot = -1.31124395E-15,0.707106769,-1.31124311E-15,-0.707107008
@@ -17522,12 +17591,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = 1
-	sqor = 4
-	sepI = 4
+	sqor = 5
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -17707,22 +17776,22 @@ PART
 	part = KK.SPX.F.nosecone_4294613878
 	partName = Part
 	persistentId = 2710625711
-	pos = 4.4149394,46.1548615,-1.03628719
+	pos = 4.41006517,46.1625366,-1.03926551
 	attPos = 0,0,0
 	attPos0 = 4.54747026E-13,2.01377106,-1.90734772E-06
-	rot = -1.85438297E-15,1.00000024,-1.1646703E-21,-1.78813934E-07
+	rot = -1.8543834E-15,1.00000024,-1.1646703E-21,-1.78813934E-07
 	attRot = 0,0,0,1
 	attRot0 = 2.11758212E-22,-0.707106829,-1.05879106E-22,0.707106829
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -17812,7 +17881,7 @@ PART
 	part = asasmodule1-2_4294138994
 	partName = Part
 	persistentId = 2163067281
-	pos = 0.174686223,61.1565895,-1.03628528
+	pos = 0.169800937,61.1642647,-1.03926361
 	attPos = 0,0,0
 	attPos0 = 0.174686223,61.1565895,-1.03628528
 	rot = 0,0,0,1
@@ -17833,7 +17902,6 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = HECS2.ProbeCore_4294139414
 	link = HighGainAntenna_4293767882
 	attN = top,Null_0_0|0.25|0_0|1|0_0|0.25|0_0|1|0
 	attN = bottom,HECS2.ProbeCore_4294139414_0|-0.25|0_0|-1|0_0|-0.25|0_0|-1|0
@@ -17933,42 +18001,6 @@ PART
 		{
 			AYPwrPartList
 			{
-				PrtName = AmpYear SubSystems-Max
-				PrtTitle = AmpYear SubSystems-Max
-				PrtModuleName = SAS
-				PrtSubsystem = True
-				PrtPower = 0
-				PrtPowerF = 0
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = True
-				PrtEmergShutDnInclude = True
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4294138994,SAS
-			}
-			AYPwrPartList
-			{
-				PrtName = AmpYear SubSystems-Max
-				PrtTitle = AmpYear SubSystems-Max
-				PrtModuleName = RCS
-				PrtSubsystem = True
-				PrtPower = 0
-				PrtPowerF = 0
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = True
-				PrtEmergShutDnInclude = True
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4294138994,RCS
-			}
-			AYPwrPartList
-			{
 				PrtName = asasmodule1-2
 				PrtTitle = Advanced Reaction Wheel Module, Large
 				PrtModuleName = ModuleReactionWheel
@@ -18012,7 +18044,7 @@ PART
 	part = KAL9000_4293437364
 	partName = Part
 	persistentId = 3632220435
-	pos = 4.41480827,6.10851669,0.798843026
+	pos = 4.40993023,6.11619186,0.795868516
 	attPos = 0,0,0
 	attPos0 = 1.83500183,-18.8096542,-1.1920924E-07
 	rot = 7.5983048E-12,0.707106829,7.5983048E-12,0.707106948
@@ -18022,12 +18054,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -18265,7 +18297,7 @@ PART
 	part = KAL9000_4293435936
 	partName = Part
 	persistentId = 1812544072
-	pos = -4.06543255,6.09563828,0.79885447
+	pos = -4.07032585,6.10331345,0.79587996
 	attPos = 0,0,0
 	attPos0 = -1.83501089,-18.8225327,-1.31130162E-06
 	rot = 9.39535255E-12,0.707107067,9.39534908E-12,0.707106709
@@ -18275,12 +18307,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -18518,7 +18550,7 @@ PART
 	part = KAL9000_4293435838
 	partName = Part
 	persistentId = 2726899583
-	pos = 2.01242161,6.02215958,-1.03628516
+	pos = 2.0075388,6.02983475,-1.03926349
 	attPos = 0,0,0
 	attPos0 = 1.83765566,-18.8587875,1.19209318E-07
 	rot = 9.27195404E-16,1.00000012,0,0
@@ -18528,12 +18560,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 4
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -18771,7 +18803,7 @@ PART
 	part = KAL9000_4293426776
 	partName = Part
 	persistentId = 836163329
-	pos = -0.366856545,60.3129463,-1.57782793
+	pos = -0.371741831,60.3206215,-1.58080626
 	attPos = 0,0,0
 	attPos0 = -0.541542768,-0.0936431885,-0.541542649
 	rot = -8.0263467E-09,0.382683456,1.93773158E-08,-0.923879623
@@ -19024,7 +19056,7 @@ PART
 	part = PMB.Rockomax16.BW_4291192474
 	partName = Part
 	persistentId = 3203501265
-	pos = -4.06559563,7.11816788,-1.03628433
+	pos = -4.07049656,7.12584305,-1.03926265
 	attPos = 1.02318132E-12,2.0929184,-5.72204408E-06
 	attPos0 = 3.41060432E-13,-19.8929214,-1.90734806E-06
 	rot = 1.26217745E-29,0,1.05879144E-22,1.00000024
@@ -19034,12 +19066,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 60.238102
@@ -19895,22 +19927,22 @@ PART
 	part = PMB.Rockomax16.BW_4291191376
 	partName = Part
 	persistentId = 538276524
-	pos = 4.41496754,7.11816788,-1.03628671
+	pos = 4.41009712,7.12584305,-1.03926504
 	attPos = 5.6843408E-13,2.0929184,-1.90734806E-06
 	attPos0 = 7.95807539E-13,-19.8929214,-1.90734806E-06
-	rot = 0,1.00000024,-8.24051624E-22,-1.1920929E-07
+	rot = 0,1.00000024,-7.71112065E-22,-1.1920929E-07
 	attRot = 0,0,0,1
 	attRot0 = 5.29395529E-23,-0.707106829,4.72617171E-23,0.707106829
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 60.238102
@@ -20766,7 +20798,7 @@ PART
 	part = PMB.batteryBankLarge_4291176224
 	partName = Part
 	persistentId = 2562046313
-	pos = -4.06567574,6.08816528,-1.03628433
+	pos = -4.07058048,6.09584045,-1.03926265
 	attPos = 0,0,0
 	attPos0 = -1.90734863E-06,-1.03000259,-1.13686865E-13
 	rot = 1.26217745E-29,0,1.05879144E-22,1.00000024
@@ -20776,12 +20808,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -20884,22 +20916,22 @@ PART
 	part = PMB.batteryBankLarge_4291176002
 	partName = Part
 	persistentId = 1671640892
-	pos = 4.41504765,6.08816528,-1.03628671
+	pos = 4.41018105,6.09584045,-1.03926504
 	attPos = 0,0,0
 	attPos0 = -1.90734863E-06,-1.03000259,-3.41060594E-13
-	rot = 0,1.00000024,-8.24051624E-22,-1.1920929E-07
+	rot = 0,1.00000024,-7.71112065E-22,-1.1920929E-07
 	attRot = 0,0,0,1
 	attRot0 = 0,0,-7.48678287E-23,1
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -21002,7 +21034,7 @@ PART
 	part = PMB.Rockomax16.BW_4291172188
 	partName = Part
 	persistentId = 1754303282
-	pos = 0.174686223,7.08094406,-1.03628528
+	pos = 0.169800937,7.08861923,-1.03926361
 	attPos = 0,2.0929184,0
 	attPos0 = 0,-19.8929214,0
 	rot = 0,0,0,1.00000012
@@ -21012,12 +21044,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 4
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 4
 	attm = 0
 	sameVesselCollision = False
 	modCost = 60.238102
@@ -21872,7 +21904,7 @@ PART
 	part = PMB.batteryBankLarge_4291172124
 	partName = Part
 	persistentId = 2862935951
-	pos = 0.174684316,6.05094147,-1.03628528
+	pos = 0.16979903,6.05861664,-1.03926361
 	attPos = 0,0,0
 	attPos0 = -1.90734863E-06,-1.03000259,-1.13686865E-13
 	rot = 0,0,0,1.00000012
@@ -21882,12 +21914,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 4
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 4
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -21989,7 +22021,7 @@ PART
 	part = KK.SPX.F9.Octaweb_4294617648
 	partName = Part
 	persistentId = 3046206841
-	pos = 0.174684316,4.6205368,-1.03628528
+	pos = 0.16979903,4.62821198,-1.03926361
 	attPos = 0,0,0
 	attPos0 = 2.27373675E-13,-1.43040466,2.2737373E-13
 	rot = 0,0,0,1.00000012
@@ -21999,12 +22031,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 4
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 4
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -22320,7 +22352,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4294615978
 	partName = Part
 	persistentId = 3140069749
-	pos = 0.174684316,3.51623535,-1.03628528
+	pos = 0.16979903,3.52391052,-1.03926361
 	attPos = 0,0,0
 	attPos0 = 0,-1.10430145,0
 	rot = 0,0,0,1.00000012
@@ -22330,12 +22362,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 9
-	sqor = 6
-	sepI = 3
+	sqor = 7
+	sepI = 4
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -22551,6 +22583,22 @@ PART
 		{
 		}
 		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -22579,7 +22627,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4294615162
 	partName = Part
 	persistentId = 3901342250
-	pos = 1.36838031,3.65623474,-1.53072667
+	pos = 1.36349797,3.66390991,-1.53370595
 	attPos = 0,0,0
 	attPos0 = 1.19353795,-0.964302063,-0.494379997
 	rot = 0,0.130526185,0,0.991445065
@@ -22589,12 +22637,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 10
-	sqor = 6
-	sepI = 3
+	sqor = 7
+	sepI = 4
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -22810,6 +22858,22 @@ PART
 		{
 		}
 		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -22838,7 +22902,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4294614724
 	partName = Part
 	persistentId = 585097094
-	pos = 0.66912508,3.65623474,-2.22996092
+	pos = 0.664240718,3.66390991,-2.23294115
 	attPos = 0,0,0
 	attPos0 = 0.494379014,-0.964302063,-1.19353795
 	rot = 0,0.608761549,0,0.793353438
@@ -22848,12 +22912,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 11
-	sqor = 6
-	sepI = 3
+	sqor = 7
+	sepI = 4
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -23069,6 +23133,22 @@ PART
 		{
 		}
 		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -23097,7 +23177,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4294614162
 	partName = Part
 	persistentId = 1302736981
-	pos = -0.31977132,3.65623474,-2.22997952
+	pos = -0.324657798,3.66390991,-2.2329607
 	attPos = 0,0,0
 	attPos0 = -0.494379967,-0.964302063,-1.193537
 	rot = 0,0.866025627,0,0.50000006
@@ -23107,12 +23187,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 12
-	sqor = 6
-	sepI = 3
+	sqor = 7
+	sepI = 4
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -23328,6 +23408,22 @@ PART
 		{
 		}
 		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -23356,7 +23452,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4294613744
 	partName = Part
 	persistentId = 4220542092
-	pos = -1.01903534,3.65623474,-1.53072715
+	pos = -1.0239234,3.66390991,-1.53370643
 	attPos = 0,0,0
 	attPos0 = -1.19353795,-0.964302063,-0.494379014
 	rot = 0,0.991445005,0,0.130526125
@@ -23366,12 +23462,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 13
-	sqor = 6
-	sepI = 3
+	sqor = 7
+	sepI = 4
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -23595,6 +23691,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -23615,7 +23727,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4294613336
 	partName = Part
 	persistentId = 3321199257
-	pos = -1.01901436,3.65623474,-0.541846037
+	pos = -1.02390242,3.66390991,-0.544823408
 	attPos = 0,0,0
 	attPos0 = -1.19353795,-0.964302063,0.494378
 	rot = 0,0.965925932,0,-0.258819103
@@ -23625,12 +23737,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 14
-	sqor = 6
-	sepI = 3
+	sqor = 7
+	sepI = 4
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -23854,6 +23966,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -23874,7 +24002,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4294612938
 	partName = Part
 	persistentId = 55910742
-	pos = -0.319758326,3.65623474,0.15743506
+	pos = -0.324644566,3.66390991,0.154459596
 	attPos = 0,0,0
 	attPos0 = -0.49438104,-0.964302063,1.193537
 	rot = 0,-0.793353379,0,0.608761609
@@ -23884,12 +24012,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 15
-	sqor = 6
-	sepI = 3
+	sqor = 7
+	sepI = 4
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -24105,6 +24233,22 @@ PART
 		{
 		}
 		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -24133,7 +24277,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4294612550
 	partName = Part
 	persistentId = 2078499541
-	pos = 0.669130921,3.65623474,0.157408834
+	pos = 0.664246738,3.66390991,0.154433131
 	attPos = 0,0,0
 	attPos0 = 0.494379014,-0.964302063,1.19353795
 	rot = 0,0.50000006,0,-0.866025507
@@ -24143,12 +24287,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 16
-	sqor = 6
-	sepI = 3
+	sqor = 7
+	sepI = 4
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -24364,6 +24508,22 @@ PART
 		{
 		}
 		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -24392,7 +24552,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4294612172
 	partName = Part
 	persistentId = 4145548010
-	pos = 1.36840129,3.65623474,-0.541843772
+	pos = 1.36351895,3.66390991,-0.544821143
 	attPos = 0,0,0
 	attPos0 = 1.193537,-0.964302063,0.494380027
 	rot = 0,0.130526066,0,-0.991445065
@@ -24402,12 +24562,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 17
-	sqor = 6
-	sepI = 3
+	sqor = 7
+	sepI = 4
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -24631,6 +24791,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -24651,7 +24827,7 @@ PART
 	part = 4mv.vl.sensor.accelerometer.srf.1_4291678296
 	partName = Part
 	persistentId = 1252389130
-	pos = 0.174684316,5.82053757,0.663810134
+	pos = 0.16979903,5.82821274,0.660836577
 	attPos = 7.10542939E-14,0.00117492676,-0.129804015
 	attPos0 = -7.10542939E-14,1.19882584,1.82980549
 	rot = 0,1.00000012,-4.13663003E-07,0
@@ -24661,12 +24837,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 4
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -24839,7 +25015,7 @@ PART
 	part = 4mv.vl.sensor.accelerometer.srf.1_4291677592
 	partName = Part
 	persistentId = 4022389222
-	pos = 0.174684197,5.82053757,-2.73638177
+	pos = 0.169798911,5.82821274,-2.73936486
 	attPos = 1.42108547E-13,0.00117492676,0.129803061
 	attPos0 = -1.19209204E-07,1.19882584,-1.82980561
 	rot = -4.13663059E-07,-1.1920929E-07,0,-1.00000012
@@ -24849,12 +25025,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 4
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -25027,7 +25203,7 @@ PART
 	part = KK.SPX.F9.Octaweb_4293243854
 	partName = Part
 	persistentId = 900010811
-	pos = -4.06575584,4.65776062,-1.03628433
+	pos = -4.07066441,4.66543579,-1.03926265
 	attPos = 0,0,0
 	attPos0 = -1.90734909E-06,-1.43040466,1.13686865E-13
 	rot = -2.19282995E-23,0.707107008,-7.48678476E-23,0.707107008
@@ -25037,12 +25213,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -25358,7 +25534,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4293243726
 	partName = Part
 	persistentId = 3310580411
-	pos = -4.06589699,3.55345917,-1.03628433
+	pos = -4.07080936,3.56113434,-1.03926265
 	attPos = 0,0,0
 	attPos0 = 0,-1.10430145,0
 	rot = -2.19282995E-23,0.707107008,-7.48678476E-23,0.707107008
@@ -25368,12 +25544,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 0
-	sqor = 6
-	sepI = 4
+	sqor = 7
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -25598,6 +25774,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -25618,7 +25810,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4293243576
 	partName = Part
 	persistentId = 4184482134
-	pos = -4.56056404,3.69345856,-2.23011112
+	pos = -4.56548405,3.70113373,-2.23309517
 	attPos = 0,0,0
 	attPos0 = 1.19353795,-0.964302063,-0.494379997
 	rot = -6.44551614E-23,0.793353677,-9.83972132E-22,0.60876143
@@ -25628,12 +25820,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 1
-	sqor = 6
-	sepI = 4
+	sqor = 7
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -25858,6 +26050,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -25878,22 +26086,22 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4293243426
 	partName = Part
 	persistentId = 2757271056
-	pos = -5.25966311,3.69345856,-1.53081834
+	pos = -5.2645793,3.70113373,-1.53380048
 	attPos = 0,0,0
 	attPos0 = 0.494379014,-0.964302063,-1.19353795
-	rot = -5.94305198E-21,0.991445065,-3.03496727E-22,0.130526632
+	rot = -6.15480981E-21,0.991445065,-3.03496525E-22,0.130526632
 	attRot = 0,0.60876143,0,0.793353319
 	attRot0 = 0,0.60876143,0,0.793353319
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 2
-	sqor = 6
-	sepI = 4
+	sqor = 7
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -26118,6 +26326,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -26138,7 +26362,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4293243276
 	partName = Part
 	persistentId = 2055409228
-	pos = -5.25961256,3.69345856,-0.54174459
+	pos = -5.26452875,3.70113373,-0.5447191
 	attPos = 0,0,0
 	attPos0 = -0.494379967,-0.964302063,-1.193537
 	rot = 4.50920063E-22,0.96592629,3.74184647E-22,-0.258819371
@@ -26148,12 +26372,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 3
-	sqor = 6
-	sepI = 4
+	sqor = 7
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -26378,6 +26602,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -26398,7 +26638,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4293243126
 	partName = Part
 	persistentId = 2464816281
-	pos = -4.56047058,3.69345856,0.157585263
+	pos = -4.56538677,3.70113373,0.154614568
 	attPos = 0,0,0
 	attPos0 = -1.19353795,-0.964302063,-0.494379014
 	rot = -2.37076507E-21,0.793353438,-3.15449446E-21,-0.608761907
@@ -26408,12 +26648,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 4
-	sqor = 6
-	sepI = 4
+	sqor = 7
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -26638,6 +26878,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -26658,7 +26914,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4293242976
 	partName = Part
 	persistentId = 2650799197
-	pos = -3.57146287,3.69345856,0.157526135
+	pos = -3.57637286,3.70113373,0.154553533
 	attPos = 0,0,0
 	attPos0 = -1.19353795,-0.964302063,0.494378
 	rot = -1.81413027E-21,0.5,-1.90582413E-21,-0.866025805
@@ -26668,12 +26924,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 5
-	sqor = 6
-	sepI = 4
+	sqor = 7
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -26898,6 +27154,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -26918,7 +27190,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4293242826
 	partName = Part
 	persistentId = 1633175588
-	pos = -2.87226605,3.69345856,-0.541767716
+	pos = -2.877177,3.70113373,-0.54474318
 	attPos = 0,0,0
 	attPos0 = -0.49438104,-0.964302063,1.193537
 	rot = 1.2001981E-22,-0.130525947,-4.09696539E-22,0.991445184
@@ -26928,12 +27200,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 6
-	sqor = 6
-	sepI = 4
+	sqor = 7
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -27158,6 +27430,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -27178,7 +27466,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4293242676
 	partName = Part
 	persistentId = 1686419099
-	pos = -2.8722775,3.69345856,-1.53080022
+	pos = -2.87718749,3.70113373,-1.53378141
 	attPos = 0,0,0
 	attPos0 = 0.494379014,-0.964302063,1.19353795
 	rot = 7.11076342E-22,-0.258819371,4.50920063E-22,-0.96592629
@@ -27188,12 +27476,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 7
-	sqor = 6
-	sepI = 4
+	sqor = 7
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -27418,6 +27706,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -27438,7 +27742,7 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4293242526
 	partName = Part
 	persistentId = 2871495751
-	pos = -3.57148528,3.69345856,-2.23015022
+	pos = -3.57639718,3.70113373,-2.23313618
 	attPos = 0,0,0
 	attPos0 = 1.193537,-0.964302063,0.494380027
 	rot = 9.83972132E-22,-0.608761907,-2.53182244E-22,-0.793353438
@@ -27448,12 +27752,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 8
-	sqor = 6
-	sepI = 4
+	sqor = 7
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -27678,6 +27982,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -27698,7 +28018,7 @@ PART
 	part = 4mv.vl.sensor.accelerometer.srf.1_4291678692
 	partName = Part
 	persistentId = 3454663733
-	pos = -4.06582451,5.75775909,0.663944364
+	pos = -4.07073689,5.76543427,0.660977483
 	attPos = 0.120901346,0.00105285645,-3.33787284E-06
 	attPos0 = -1.82090414,1.09894562,-8.34450475E-07
 	rot = -6.39488462E-14,1.00000024,-2.20032575E-07,-2.68220901E-07
@@ -27708,12 +28028,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -27886,7 +28206,7 @@ PART
 	part = 4mv.vl.sensor.accelerometer.srf.1_4291677320
 	partName = Part
 	persistentId = 2395811162
-	pos = -4.06582832,5.85776138,-2.73651743
+	pos = -4.0707407,5.86543655,-2.7395072
 	attPos = -0.118415117,0.0487785339,-5.24522011E-06
 	attPos0 = 1.8184222,1.15122223,-2.02654337E-06
 	rot = 3.86474824E-07,-2.38418579E-07,4.26325641E-14,1.00000036
@@ -27896,12 +28216,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -28074,22 +28394,22 @@ PART
 	part = KK.SPX.F9.Octaweb_4291146936
 	partName = Part
 	persistentId = 3137577607
-	pos = 4.41512775,4.65776062,-1.03628671
+	pos = 4.41026497,4.66543579,-1.03926504
 	attPos = 0,0,0
 	attPos0 = -1.90734909E-06,-1.43040466,-1.13686865E-13
-	rot = 4.23516554E-21,0.707106769,-4.8175007E-21,-0.707107008
+	rot = 4.34104466E-21,0.707106769,-4.92337981E-21,-0.707107008
 	attRot = 0,0.707106769,0,0.707106769
 	attRot0 = 4.38565422E-23,0.707106829,5.67782124E-24,0.707106709
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -28405,22 +28725,22 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4291146800
 	partName = Part
 	persistentId = 2984601054
-	pos = 4.4152689,3.55345917,-1.03628671
+	pos = 4.41040993,3.56113434,-1.03926504
 	attPos = 0,0,0
 	attPos0 = 0,-1.10430145,0
-	rot = 4.23516554E-21,0.707106769,-4.8175007E-21,-0.707107008
+	rot = 4.34104466E-21,0.707106769,-4.92337981E-21,-0.707107008
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 0
-	sqor = 6
-	sepI = 4
+	sqor = 7
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -28637,6 +28957,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -28657,22 +28993,22 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4291146640
 	partName = Part
 	persistentId = 669393084
-	pos = 4.90989065,3.69345856,0.157494187
+	pos = 4.9050374,3.70113373,0.154519677
 	attPos = 0,0,0
 	attPos0 = 1.19353795,-0.964302063,-0.494379997
-	rot = 1.95876389E-21,0.60876137,-1.27054952E-21,-0.793353617
+	rot = 1.95876389E-21,0.60876137,-1.1646705E-21,-0.793353617
 	attRot = 0,0.1305262,0,0.991444886
 	attRot0 = 0,0.1305262,0,0.991444886
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 1
-	sqor = 6
-	sepI = 4
+	sqor = 7
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -28889,6 +29225,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -28909,22 +29261,22 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4291146480
 	partName = Part
 	persistentId = 1711237751
-	pos = 5.60899162,3.69345856,-0.541797519
+	pos = 5.60413456,3.70113373,-0.544773936
 	attPos = 0,0,0
 	attPos0 = 0.494379014,-0.964302063,-1.19353795
-	rot = 2.84550151E-21,0.130525589,-6.77626439E-21,-0.991445303
+	rot = 2.97785021E-21,0.130525589,-6.98802262E-21,-0.991445303
 	attRot = 0,0.60876143,0,0.793353319
 	attRot0 = 0,0.60876143,0,0.793353319
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 2
-	sqor = 6
-	sepI = 4
+	sqor = 7
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -29141,6 +29493,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -29161,22 +29529,22 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4291146320
 	partName = Part
 	persistentId = 3974684446
-	pos = 5.60889244,3.69345856,-1.5307821
+	pos = 5.60403347,3.70113373,-1.53376234
 	attPos = 0,0,0
 	attPos0 = -0.494379967,-0.964302063,-1.193537
-	rot = 1.5617172E-21,-0.258819371,4.23516474E-22,-0.965926051
+	rot = 1.53524742E-21,-0.258819371,2.11758287E-22,-0.965926051
 	attRot = 0,0.866025448,0,0.49999997
 	attRot0 = 0,0.866025448,0,0.49999997
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 3
-	sqor = 6
-	sepI = 4
+	sqor = 7
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -29393,6 +29761,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -29413,22 +29797,22 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4291146160
 	partName = Part
 	persistentId = 2515539629
-	pos = 4.90984201,3.69345856,-2.23011065
+	pos = 4.90498734,3.70113373,-2.23309469
 	attPos = 0,0,0
 	attPos0 = -1.19353795,-0.964302063,-0.494379014
-	rot = -1.11173095E-21,-0.608762026,5.55865452E-21,-0.793353319
+	rot = -1.05879118E-21,-0.608762026,5.61159408E-21,-0.793353319
 	attRot = 0,0.991444886,0,0.130526125
 	attRot0 = 0,0.991444886,0,0.130526125
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 4
-	sqor = 6
-	sepI = 4
+	sqor = 7
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -29645,6 +30029,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -29665,22 +30065,22 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4291146000
 	partName = Part
 	persistentId = 2314480435
-	pos = 3.92087913,3.69345856,-2.23005199
+	pos = 3.91602063,3.70113373,-2.23303413
 	attPos = 0,0,0
 	attPos0 = -1.19353795,-0.964302063,0.494378
-	rot = -2.91167616E-21,-0.866025686,3.75870911E-21,-0.5
+	rot = -3.01755528E-21,-0.866025686,3.97046734E-21,-0.5
 	attRot = 0,0.965925872,0,-0.258819073
 	attRot0 = 0,0.965925872,0,-0.258819073
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 5
-	sqor = 6
-	sepI = 4
+	sqor = 7
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -29897,6 +30297,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -29917,22 +30333,22 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4291145840
 	partName = Part
 	persistentId = 1569312184
-	pos = 3.22168255,3.69345856,-1.53080285
+	pos = 3.21682501,3.70113373,-1.53378403
 	attPos = 0,0,0
 	attPos0 = -0.49438104,-0.964302063,1.193537
-	rot = -7.83505638E-21,0.991445303,-3.26901818E-21,0.130525589
+	rot = -8.04681461E-21,0.991445303,-3.34842752E-21,0.130525589
 	attRot = 0,-0.793353319,0,0.608761549
 	attRot0 = 0,-0.793353319,0,0.608761549
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 6
-	sqor = 6
-	sepI = 4
+	sqor = 7
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -30149,6 +30565,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -30169,22 +30601,22 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4291145680
 	partName = Part
 	persistentId = 2227372904
-	pos = 3.22173095,3.69345856,-0.541770577
+	pos = 3.21687245,3.70113373,-0.544746041
 	attPos = 0,0,0
 	attPos0 = 0.494379014,-0.964302063,1.19353795
-	rot = -2.11758287E-22,-0.965926051,4.23516524E-22,0.258819371
+	rot = -2.11758287E-22,-0.965926051,3.97046795E-22,0.258819371
 	attRot = 0,0.50000006,0,-0.866025388
 	attRot0 = 0,0.50000006,0,-0.866025388
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 7
-	sqor = 6
-	sepI = 4
+	sqor = 7
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -30401,6 +30833,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -30421,22 +30869,22 @@ PART
 	part = PMB.F9.Merlin1Dplusplus_4291145520
 	partName = Part
 	persistentId = 1197735794
-	pos = 3.92081189,3.69345856,0.157488704
+	pos = 3.91595149,3.70113373,0.154514194
 	attPos = 0,0,0
 	attPos0 = 1.193537,-0.964302063,0.494380027
-	rot = -3.38813219E-21,-0.793353319,1.37642854E-21,0.608762026
+	rot = -3.49401172E-21,-0.793353319,1.4293685E-21,0.608762026
 	attRot = 0,0.130526066,0,-0.991444945
 	attRot0 = 0,0.130526066,0,-0.991444945
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 6
+	istg = 7
 	resPri = 0
 	dstg = 6
 	sidx = 8
-	sqor = 6
-	sepI = 4
+	sqor = 7
+	sepI = 5
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -30653,6 +31101,22 @@ PART
 	}
 	MODULE
 	{
+		name = EngineGroupModule
+		isEnabled = True
+		EngineGroupId = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -30673,7 +31137,7 @@ PART
 	part = 4mv.vl.sensor.accelerometer.srf.1_4291145360
 	partName = Part
 	persistentId = 1237628200
-	pos = 4.41520023,5.75775909,-2.73648262
+	pos = 4.41034126,5.76543427,-2.73947048
 	attPos = 0.120896578,0.00105285645,-7.15257011E-06
 	attPos0 = -1.82090414,1.09894562,-8.34450475E-07
 	rot = -2.20032604E-07,-3.87430191E-07,9.9475983E-14,-1.00000024
@@ -30683,12 +31147,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -30861,7 +31325,7 @@ PART
 	part = 4mv.vl.sensor.accelerometer.srf.1_4291145302
 	partName = Part
 	persistentId = 2940508324
-	pos = 4.41519642,5.85776138,0.663866162
+	pos = 4.41033745,5.86543655,0.660895467
 	attPos = -0.118420362,0.0487785339,-1.43052512E-06
 	attPos0 = 1.8184222,1.15122223,-2.02654337E-06
 	rot = -4.26325641E-14,1.00000024,-3.86474767E-07,0
@@ -30871,12 +31335,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -31049,7 +31513,7 @@ PART
 	part = Vandy.F9_4292493348
 	partName = Part
 	persistentId = 4037430865
-	pos = 0.174684316,0.620536804,-1.03628528
+	pos = 0.16979903,0.628211975,-1.03926361
 	attPos = 0,-0.5,0
 	attPos0 = 0,-3.5,0
 	rot = 0,0,0,1.00000012
@@ -31059,12 +31523,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 7
-	sidx = 5
-	sqor = 5
-	sepI = 5
+	sidx = 9
+	sqor = 6
+	sepI = 6
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -31303,7 +31767,7 @@ PART
 	part = KK.F9demo.S1RCS_4291127992
 	partName = Part
 	persistentId = 2657539173
-	pos = 0.174686223,44.0751724,0.792695045
+	pos = 0.169800937,44.0828476,0.789718866
 	attPos = 0,0,0
 	attPos0 = -7.105426E-14,-3.2530899,1.82892168
 	rot = -4.12160375E-07,0,0,1.00000012
@@ -31313,12 +31777,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
 	sidx = 0
-	sqor = 5
-	sepI = 3
+	sqor = 6
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -31441,7 +31905,7 @@ PART
 	part = KK.F9demo.S1RCS_4291121764
 	partName = Part
 	persistentId = 2159304134
-	pos = 2.00367284,44.0751724,-1.03628516
+	pos = 1.99878955,44.0828476,-1.03926349
 	attPos = 0,0,0
 	attPos0 = 1.82892156,-3.2530899,1.19209261E-07
 	rot = -2.9144141E-07,0.707106888,2.9144141E-07,0.707106888
@@ -31451,12 +31915,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
 	sidx = 0
-	sqor = 5
-	sepI = 3
+	sqor = 6
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -31579,7 +32043,7 @@ PART
 	part = KK.F9demo.S1RCS_4291121694
 	partName = Part
 	persistentId = 876328167
-	pos = 0.174686104,44.0751724,-2.86525917
+	pos = 0.169800818,44.0828476,-2.8682394
 	attPos = 0,0,0
 	attPos0 = -1.19209147E-07,-3.2530899,-1.82892168
 	rot = 4.26325641E-14,1.00000012,4.12160375E-07,-1.1920929E-07
@@ -31589,12 +32053,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
 	sidx = 0
-	sqor = 5
-	sepI = 3
+	sqor = 6
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -31717,7 +32181,7 @@ PART
 	part = KK.F9demo.S1RCS_4291121624
 	partName = Part
 	persistentId = 711947993
-	pos = -1.65429401,44.0751724,-1.03628516
+	pos = -1.65918159,44.0828476,-1.03926349
 	attPos = 0,0,0
 	attPos0 = -1.82892156,-3.2530899,1.19209261E-07
 	rot = 2.9144141E-07,0.707106888,2.9144141E-07,-0.707106888
@@ -31727,12 +32191,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
 	sidx = 0
-	sqor = 5
-	sepI = 3
+	sqor = 6
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -31855,7 +32319,7 @@ PART
 	part = KK.F9demo.S1RCS_4291120698
 	partName = Part
 	persistentId = 1834489289
-	pos = 6.23446178,43.7910995,-1.03628671
+	pos = 6.22959042,43.7987747,-1.03926504
 	attPos = 0,0,0
 	attPos0 = 6.39934399E-07,18.8729286,-1.8194747
 	rot = -4.97995869E-15,0.707106888,4.9799553E-15,0.707106888
@@ -31865,12 +32329,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
 	sidx = 1
-	sqor = 5
-	sepI = 4
+	sqor = 6
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -31991,7 +32455,7 @@ PART
 	part = KK.F9demo.S1RCS_4291113052
 	partName = Part
 	persistentId = 1460042800
-	pos = -5.8850913,43.7910995,-1.0362848
+	pos = -5.88999128,43.7987747,-1.03926313
 	attPos = 0,0,0
 	attPos0 = 7.91425578E-07,18.8729286,-1.81947994
 	rot = -4.9799553E-15,-0.707106948,-4.97995615E-15,0.707106829
@@ -32001,12 +32465,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
 	sidx = 1
-	sqor = 5
-	sepI = 4
+	sqor = 6
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -32127,22 +32591,22 @@ PART
 	part = KK.F9demo.S1RCS_4291112864
 	partName = Part
 	persistentId = 3435443369
-	pos = 4.41480827,43.7721634,0.791419148
+	pos = 4.40993023,43.7798386,0.788444638
 	attPos = 0,0,0
 	attPos0 = 1.82760274,18.8539925,-1.1920924E-07
-	rot = 9.2720271E-16,-1.1920929E-07,-3.17637355E-21,1.00000024
+	rot = 9.27202922E-16,-1.1920929E-07,-3.12343399E-21,1.00000024
 	attRot = 0,0,0,1
 	attRot0 = -6.55628859E-16,-0.70710665,6.55628489E-16,-0.707107008
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
 	sidx = 2
-	sqor = 5
-	sepI = 4
+	sqor = 6
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -32263,7 +32727,7 @@ PART
 	part = KK.F9demo.S1RCS_4291111108
 	partName = Part
 	persistentId = 1367748962
-	pos = -4.0654335,43.7721634,-2.86399221
+	pos = -4.07032681,43.7798386,-2.86697435
 	attPos = 0,0,0
 	attPos0 = 1.82760465,18.8539925,-1.54972008E-06
 	rot = -2.11758237E-22,-1.00000024,9.27199004E-16,-1.78813934E-07
@@ -32273,12 +32737,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
 	sidx = 2
-	sqor = 5
-	sepI = 4
+	sqor = 6
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -32399,22 +32863,22 @@ PART
 	part = KK.F9demo.S1RCS_4291110914
 	partName = Part
 	persistentId = 1893623513
-	pos = 4.41480923,43.781517,-2.86481476
+	pos = 4.40993118,43.7891922,-2.8677969
 	attPos = 0,0,0
 	attPos0 = -1.82842481,18.8633461,-2.74181252E-06
-	rot = 0,1.00000024,-9.27180264E-16,1.1920929E-07
+	rot = 0,1.00000024,-9.27180052E-16,1.1920929E-07
 	attRot = 0,0,0,1
 	attRot0 = 6.55613824E-16,-0.707107008,6.55613983E-16,0.70710665
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
 	sidx = 3
-	sqor = 5
-	sepI = 4
+	sqor = 6
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -32535,7 +32999,7 @@ PART
 	part = KK.F9demo.S1RCS_4291108552
 	partName = Part
 	persistentId = 2591244853
-	pos = -4.06543541,43.781517,0.792245507
+	pos = -4.07032871,43.7891922,0.789270997
 	attPos = 0,0,0
 	attPos0 = -1.82842672,18.8633461,-4.17232332E-06
 	rot = 9.2717804E-16,-1.78813934E-07,2.11758237E-22,1.00000024
@@ -32545,12 +33009,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
 	sidx = 3
-	sqor = 5
-	sepI = 4
+	sqor = 6
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -32671,7 +33135,7 @@ PART
 	part = KK.F9demo.S1RCS_4291108352
 	partName = Part
 	persistentId = 1213076280
-	pos = -2.24718857,43.7685585,-1.03628504
+	pos = -2.25207925,43.7762337,-1.03926337
 	attPos = 0,0,0
 	attPos0 = 4.00974784E-07,18.8503876,1.81818962
 	rot = 1.63318074E-11,0.707107008,-1.63318144E-11,0.707106769
@@ -32681,12 +33145,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
 	sidx = 4
-	sqor = 5
-	sepI = 4
+	sqor = 6
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -32807,7 +33271,7 @@ PART
 	part = KK.F9demo.S1RCS_4291102152
 	partName = Part
 	persistentId = 2233268616
-	pos = 2.59656405,43.7685585,-1.03628576
+	pos = 2.59168458,43.7762337,-1.03926408
 	attPos = 0,0,0
 	attPos0 = 3.14276122E-07,18.8503876,1.81818867
 	rot = -1.63318144E-11,0.707106709,-1.6331804E-11,-0.707107067
@@ -32817,12 +33281,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
 	sidx = 4
-	sqor = 5
-	sepI = 4
+	sqor = 6
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -32943,7 +33407,7 @@ PART
 	part = Grid Fin L Titanium_4293514068
 	partName = Part
 	persistentId = 4077239493
-	pos = 0.174686223,44.8867493,0.737846613
+	pos = 0.169800937,44.8944244,0.734870434
 	attPos = 0,0,0
 	attPos0 = -7.105426E-14,-2.44151306,1.77408504
 	rot = -0.707106888,-2.9144141E-07,-0.707106888,-2.9144141E-07
@@ -32953,12 +33417,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 4
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -33210,7 +33674,7 @@ PART
 	part = Grid Fin L Titanium_4293508554
 	partName = Part
 	persistentId = 596209604
-	pos = 1.94881797,44.8867493,-1.03628516
+	pos = 1.94393468,44.8944244,-1.03926349
 	attPos = 0,0,0
 	attPos0 = 1.77408493,-2.44151306,1.19209261E-07
 	rot = -1.00000012,-4.12160432E-07,0,0
@@ -33220,12 +33684,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 4
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -33477,7 +33941,7 @@ PART
 	part = Grid Fin L Titanium_4293508476
 	partName = Part
 	persistentId = 2167350304
-	pos = 0.174686104,44.8867493,-2.81041193
+	pos = 0.169800818,44.8944244,-2.81339216
 	attPos = 0,0,0
 	attPos0 = -1.19209147E-07,-2.44151306,-1.77408493
 	rot = -0.707106829,-2.9144141E-07,0.707106948,2.9144141E-07
@@ -33487,12 +33951,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 4
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -33744,7 +34208,7 @@ PART
 	part = Grid Fin L Titanium_4293508398
 	partName = Part
 	persistentId = 824035605
-	pos = -1.59944558,44.8867493,-1.03628516
+	pos = -1.60433316,44.8944244,-1.03926349
 	attPos = 0,0,0
 	attPos0 = -1.77408493,-2.44151306,1.19209261E-07
 	rot = 0,0,1.00000012,4.12160432E-07
@@ -33754,12 +34218,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 4
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -34011,7 +34475,7 @@ PART
 	part = Grid Fin L Titanium_4293514434
 	partName = Part
 	persistentId = 3022902134
-	pos = 3.05257916,44.0913696,0.0979509354
+	pos = 3.04770446,44.0990448,0.0949747562
 	attPos = 0,0,0
 	attPos0 = 1.13419092,-0.0497207642,1.36233747
 	rot = -0.352249801,-1.97019574E-07,-0.935906231,-5.23468657E-07
@@ -34021,12 +34485,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -34276,7 +34740,7 @@ PART
 	part = Grid Fin L Titanium_4293506328
 	partName = Part
 	persistentId = 3770028616
-	pos = -2.70320344,44.0913696,-2.1705184
+	pos = -2.70809913,44.0990448,-2.17349863
 	attPos = 0,0,0
 	attPos0 = 1.13419199,-0.0497207642,1.36233604
 	rot = 0.935906231,5.23468657E-07,-0.352249801,-1.9701956E-07
@@ -34286,12 +34750,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -34541,7 +35005,7 @@ PART
 	part = Grid Fin L Titanium_4293507812
 	partName = Part
 	persistentId = 1520795175
-	pos = 5.66905308,44.1361542,-2.2904582
+	pos = 5.66417885,44.1438293,-2.29343939
 	attPos = -5.24520874E-06,-0.00793075562,-9.53674316E-06
 	attPos0 = -1.2541033,0.00299453735,-1.25410545
 	rot = -0.923879743,5.16742261E-07,0.382683396,-2.14041563E-07
@@ -34551,12 +35015,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -34806,7 +35270,7 @@ PART
 	part = Grid Fin L Titanium_4293506228
 	partName = Part
 	persistentId = 2493297572
-	pos = -5.3196907,44.1361542,0.217883706
+	pos = -5.32458878,44.1438293,0.214908242
 	attPos = -1.43051147E-06,-0.00793075562,-2.38418579E-06
 	attPos0 = -1.2541045,0.00299453735,-1.25410783
 	rot = -0.382683396,2.14041435E-07,-0.923879743,5.16742091E-07
@@ -34816,12 +35280,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -35071,7 +35535,7 @@ PART
 	part = Grid Fin L Titanium_4293510372
 	partName = Part
 	persistentId = 632090589
-	pos = 5.73930216,44.1289711,0.141315103
+	pos = 5.73442984,44.1366463,0.138338685
 	attPos = 4.76837158E-06,0.0136146545,-1.14440918E-05
 	attPos0 = 1.17755687,-0.0257339478,-1.32431102
 	rot = -0.935906291,6.37043485E-08,-0.352249712,2.39765736E-08
@@ -35081,12 +35545,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -35336,7 +35800,7 @@ PART
 	part = Grid Fin L Titanium_4293506004
 	partName = Part
 	persistentId = 1065430112
-	pos = -5.38993406,44.1289711,-2.21388578
+	pos = -5.39483309,44.1366463,-2.21686602
 	attPos = 1.43051147E-06,0.0136146545,-2.86102295E-06
 	attPos0 = 1.17755842,-0.0257339478,-1.324314
 	rot = 0.352249831,-2.39765843E-08,-0.935906291,6.37043485E-08
@@ -35346,12 +35810,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -35601,7 +36065,7 @@ PART
 	part = Grid Fin L Titanium_4293507622
 	partName = Part
 	persistentId = 2066880809
-	pos = 3.01725268,44.1279068,-2.13022709
+	pos = 3.01237798,44.135582,-2.13320637
 	attPos = -3.57627869E-06,0.0424308777,-4.29153442E-06
 	attPos0 = -1.09390664,-0.0556144714,1.39766705
 	rot = -0.352251202,-2.39760372E-08,0.935905695,6.3702565E-08
@@ -35611,12 +36075,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -35866,7 +36330,7 @@ PART
 	part = Grid Fin L Titanium_4293505892
 	partName = Part
 	persistentId = 3693935863
-	pos = -2.66784215,44.1279068,0.0576635599
+	pos = -2.67273688,44.135582,0.054686904
 	attPos = -9.53674316E-07,0.0424308777,-9.53674316E-07
 	attPos0 = -1.09390736,-0.0556144714,1.3976661
 	rot = -0.935905695,-6.37025792E-08,-0.35225141,-2.39760514E-08
@@ -35876,12 +36340,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 4
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -36131,7 +36595,7 @@ PART
 	part = launchClamp1_4290988774
 	partName = Part
 	persistentId = 2193139844
-	pos = 0.174686223,8.82120895,1.59665835
+	pos = 0.169800937,8.82888412,1.59368193
 	attPos = 0,0,0
 	attPos0 = -7.10542939E-14,-16.0597382,2.63290524
 	rot = 0,1.00000012,7.04272151E-15,0
@@ -36141,12 +36605,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
-	sidx = 6
-	sqor = 5
-	sepI = 5
+	sidx = 10
+	sqor = 6
+	sepI = 6
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -36181,8 +36645,8 @@ PART
 	{
 		name = LaunchClamp
 		isEnabled = True
-		scaleFactor = 3.75767732
-		height = 9.48136139
+		scaleFactor = 3.76071906
+		height = 9.48903656
 		stagingEnabled = True
 		towerRot = 0,-1,-7.04272066E-15,0
 		EVENTS
@@ -36361,7 +36825,7 @@ PART
 	part = 4mv.vl.sensor.accelerometer.srf.1_4289812974
 	partName = Part
 	persistentId = 466439748
-	pos = 0.185852587,60.3904037,-0.308778167
+	pos = 0.180967301,60.3980789,-0.311756492
 	attPos = 0.120901346,0.00105285645,-3.33787284E-06
 	attPos0 = 0.011166364,-0.0161857605,0.727507114
 	rot = 2.77555485E-14,1,-1.11758652E-07,2.48352563E-07
@@ -36548,7 +37012,7 @@ PART
 	part = FASAGeminiMiniSRB_4292889512
 	partName = Part
 	persistentId = 2564864240
-	pos = 2.71492434,43.6410904,-1.03628695
+	pos = 2.71004868,43.6487656,-1.03926528
 	attPos = -0.28087157,-0.75,-0.0122436285
 	attPos0 = 0.280870825,0.25,1.71223915
 	rot = -6.2584877E-07,-1.49011612E-07,-0.707107186,0.707106709
@@ -36558,12 +37022,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 7
 	sidx = 2
-	sqor = 4
-	sepI = 4
+	sqor = 5
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0.416831493
@@ -36812,7 +37276,7 @@ PART
 	part = FASAGeminiMiniSRB_4293559720
 	partName = Part
 	persistentId = 1362901572
-	pos = -2.36554551,43.6410904,-1.03628433
+	pos = -2.37044001,43.6487656,-1.03926265
 	attPos = -0.280871838,-0.75,-0.0122412443
 	attPos0 = 0.280871153,0.25,1.71223843
 	rot = 0.707107067,-0.707106829,-5.06639481E-07,-2.08616257E-07
@@ -36822,12 +37286,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 5
 	resPri = 0
 	dstg = 7
 	sidx = 2
-	sqor = 4
-	sepI = 4
+	sqor = 5
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0.416831493
@@ -37068,7 +37532,7 @@ PART
 	part = HighGainAntenna_4293767882
 	partName = Part
 	persistentId = 4056252553
-	pos = 0.126805544,61.3551979,-1.02345574
+	pos = 0.121920258,61.3628731,-1.02643406
 	attPos = 0,0,0
 	attPos0 = -0.0478806794,0.198608398,0.0128295422
 	rot = -1.68587405E-07,0,0,1
@@ -37245,7 +37709,7 @@ PART
 	part = KK.SPX.FalconPayloadFairing_4294075404
 	partName = Part
 	persistentId = 2888225376
-	pos = 0.174686223,66.0627213,-1.03628528
+	pos = 0.169800937,66.0703964,-1.03926361
 	attPos = 0,0,0
 	attPos0 = 0,11.8319168,0
 	rot = 0,-0.707106829,0,0.707106829
@@ -37258,7 +37722,7 @@ PART
 	istg = 2
 	resPri = 0
 	dstg = 5
-	sidx = 1
+	sidx = 0
 	sqor = 2
 	sepI = 2
 	attm = 0
@@ -37446,7 +37910,7 @@ PART
 	part = KK.SPX.FalconPayloadFairing_4294006996
 	partName = Part
 	persistentId = 1728790260
-	pos = 0.174686223,66.0627213,-1.03628528
+	pos = 0.169800937,66.0703964,-1.03926361
 	attPos = 0,0,0
 	attPos0 = 0,11.8319168,0
 	rot = 0,0.707106829,0,0.707106829
@@ -37459,7 +37923,7 @@ PART
 	istg = 2
 	resPri = 0
 	dstg = 5
-	sidx = 2
+	sidx = 1
 	sqor = 2
 	sepI = 2
 	attm = 0
@@ -37635,7 +38099,7 @@ PART
 	part = KK.F9demo.S1RCS_4290027118
 	partName = Part
 	persistentId = 2156469458
-	pos = 0.174684316,5.80543137,0.779551744
+	pos = 0.16979903,5.81310654,0.776575804
 	attPos = 0,0,0
 	attPos0 = 0,1.18489456,1.81583595
 	rot = -4.13663003E-07,0,0,1.00000012
@@ -37645,12 +38109,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
-	sidx = 7
-	sqor = 5
-	sepI = 3
+	sidx = 5
+	sqor = 6
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -37773,7 +38237,7 @@ PART
 	part = KK.F9demo.S1RCS_4290026108
 	partName = Part
 	persistentId = 1898065336
-	pos = 1.99052119,5.80543137,-1.03628516
+	pos = 1.98563838,5.81310654,-1.03926349
 	attPos = 0,0,0
 	attPos0 = 1.81583583,1.18489456,1.19209318E-07
 	rot = -2.92503927E-07,0.707106888,2.92503927E-07,0.707106888
@@ -37783,12 +38247,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
-	sidx = 8
-	sqor = 5
-	sepI = 3
+	sidx = 5
+	sqor = 6
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -37911,7 +38375,7 @@ PART
 	part = KK.F9demo.S1RCS_4290026036
 	partName = Part
 	persistentId = 2409064014
-	pos = 0.174684197,5.80543137,-2.85212231
+	pos = 0.169798911,5.81310654,-2.85510302
 	attPos = 0,0,0
 	attPos0 = -1.19209062E-07,1.18489456,-1.81583595
 	rot = 0,1.00000012,4.13663003E-07,-1.1920929E-07
@@ -37921,12 +38385,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
-	sidx = 8
-	sqor = 5
-	sepI = 3
+	sidx = 5
+	sqor = 6
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -38049,7 +38513,7 @@ PART
 	part = KK.F9demo.S1RCS_4290025964
 	partName = Part
 	persistentId = 3770358254
-	pos = -1.64115262,5.80543137,-1.03628516
+	pos = -1.6460402,5.81310654,-1.03926349
 	attPos = 0,0,0
 	attPos0 = -1.81583583,1.18489456,1.19209318E-07
 	rot = 2.92503927E-07,0.707106888,2.92503927E-07,-0.707106888
@@ -38059,12 +38523,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
-	sidx = 8
-	sqor = 5
-	sepI = 3
+	sidx = 5
+	sqor = 6
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -38187,7 +38651,7 @@ PART
 	part = KK.F9demo.S1RCS_4290025842
 	partName = Part
 	persistentId = 3364279003
-	pos = 4.41512966,5.83808517,0.785736203
+	pos = 4.41026688,5.84576035,0.78276217
 	attPos = 0,0,0
 	attPos0 = 1.82202053,1.18032455,-1.07288338E-06
 	rot = -4.23801964E-07,0,0,1.00000024
@@ -38197,12 +38661,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
-	sidx = 8
-	sqor = 5
-	sepI = 4
+	sidx = 6
+	sqor = 6
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -38323,7 +38787,7 @@ PART
 	part = KK.F9demo.S1RCS_4290025258
 	partName = Part
 	persistentId = 2379094561
-	pos = 4.41512966,5.83808517,-2.85830975
+	pos = 4.41026688,5.84576035,-2.86129284
 	attPos = 0,0,0
 	attPos0 = -1.82202053,1.18032455,-2.74181298E-06
 	rot = 0,1.00000024,4.23801964E-07,-1.1920929E-07
@@ -38333,12 +38797,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
-	sidx = 9
-	sqor = 5
-	sepI = 4
+	sidx = 6
+	sqor = 6
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -38459,7 +38923,7 @@ PART
 	part = KK.F9demo.S1RCS_4290025150
 	partName = Part
 	persistentId = 2361451715
-	pos = 6.2429986,5.84798431,-1.03628671
+	pos = 6.23814344,5.85565948,-1.03926504
 	attPos = 0,0,0
 	attPos0 = 5.96002735E-07,1.19022369,-1.82786763
 	rot = 3.26886948E-07,0.707106888,-3.26886948E-07,0.707106888
@@ -38469,12 +38933,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
-	sidx = 9
-	sqor = 5
-	sepI = 4
+	sidx = 7
+	sqor = 6
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -38595,7 +39059,7 @@ PART
 	part = KK.F9demo.S1RCS_4290024614
 	partName = Part
 	persistentId = 3986140026
-	pos = -5.89363384,5.84798431,-1.0362848
+	pos = -5.89855194,5.85565948,-1.03926313
 	attPos = 0,0,0
 	attPos0 = 8.34450304E-07,1.19022369,-1.82787395
 	rot = 3.26886891E-07,-0.707107127,3.26887061E-07,0.707106888
@@ -38605,12 +39069,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
-	sidx = 10
-	sqor = 5
-	sepI = 4
+	sidx = 7
+	sqor = 6
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -38731,22 +39195,22 @@ PART
 	part = KK.F9demo.S1RCS_4290024500
 	partName = Part
 	persistentId = 2064984013
-	pos = 2.59011889,5.82275391,-1.03628647
+	pos = 2.58525372,5.83042908,-1.0392648
 	attPos = 0,0,0
 	attPos0 = -3.57671439E-07,1.16499329,1.82500637
-	rot = -2.58120821E-07,-0.707106829,-2.58120764E-07,0.707106948
+	rot = -2.58120906E-07,-0.707106829,-2.58120849E-07,0.707106948
 	attRot = 0,0,0,1
 	attRot0 = 3.65037806E-07,1.19209275E-07,4.26325641E-14,-1
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
-	sidx = 10
-	sqor = 5
-	sepI = 4
+	sidx = 8
+	sqor = 6
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -38867,22 +39331,22 @@ PART
 	part = KK.F9demo.S1RCS_4290023022
 	partName = Part
 	persistentId = 3574802986
-	pos = -2.2407465,5.82275391,-1.03628433
+	pos = -2.24565005,5.83042908,-1.03926265
 	attPos = 0,0,0
 	attPos0 = -3.57642335E-07,1.16499329,1.82500672
-	rot = 2.58120764E-07,-0.707106948,-2.58120764E-07,-0.707107067
+	rot = 2.58120764E-07,-0.707106948,-2.58120821E-07,-0.707107067
 	attRot = 0,0,0,1
 	attRot0 = 3.65037778E-07,5.96046164E-08,2.84216959E-14,-1
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
-	sidx = 11
-	sqor = 5
-	sepI = 4
+	sidx = 8
+	sqor = 6
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -39003,22 +39467,22 @@ PART
 	part = KK.F9demo.S1RCS_4290027426
 	partName = Part
 	persistentId = 1502876145
-	pos = -4.0657568,5.88784409,0.791167378
+	pos = -4.07066536,5.89551926,0.788194776
 	attPos = 0,0,0
 	attPos0 = -1.82744849,1.23008347,-1.31130162E-06
-	rot = -4.30795637E-07,3.57627869E-07,1.56319402E-13,1.00000036
+	rot = -4.30795581E-07,3.57627869E-07,1.70530257E-13,1.00000036
 	attRot = 0,0,0,1
 	attRot0 = -3.04618538E-07,-0.70710659,-3.04618311E-07,0.707106948
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
 	sidx = 11
-	sqor = 5
-	sepI = 4
+	sqor = 6
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -39138,7 +39602,7 @@ PART
 	part = KK.F9demo.S1RCS_4289968052
 	partName = Part
 	persistentId = 3089767174
-	pos = -4.06575871,5.86122131,-2.85213995
+	pos = -4.07066727,5.86889648,-2.85512495
 	attPos = 0,0,0
 	attPos0 = 1.81585228,1.20346069,-2.50339394E-06
 	rot = -7.10542736E-14,1.00000024,-3.37435722E-07,-2.68220901E-07
@@ -39148,12 +39612,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 6
 	resPri = 0
 	dstg = 6
 	sidx = 12
-	sqor = 5
-	sepI = 4
+	sqor = 6
+	sepI = 5
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0

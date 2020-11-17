@@ -8,13 +8,13 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to control (ST-1) Boosters and waiting phases and prepare them to land.
-// 16/Nov/2020
+// 17/Nov/2020
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 CLEARSCREEN.
 RCS OFF.
 RUNPATH( "boot/sw-version.c" ).
-PRINT "BOOSTERS - STAGE 1 - Loading...".			//FOR STAGE-1
+PRINT "Falcon 9 - STAGE 1 - Loading...".			//FOR STAGE-1
 runpath("boot/lib_activateVessel.c").
 LIST PROCESSORS IN ALL_PROCESSORS.
 PRINT "ALL_PROCESSORS:LENGTH "+ALL_PROCESSORS:LENGTH.
@@ -113,10 +113,6 @@ if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 	}
 }
 
-//FORCE TO DEBUG:
-// set LandingZone TO VESSEL(JRTI).
-// set LandingTarget TO LandingZone:GEOPOSITION.
-
 // Before COMMON:
 if STAGE_1_TYPE = "MASTER" 
 {
@@ -176,20 +172,42 @@ if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
 	WAIT 5.
 	PRINT_STATUS (3).
 	RCS ON.
-
+	
+	//FLIP MANEUVER:
 	CLEARSCREEN.	
 	update_phase_title("FLIP MANEUVER   ", 0, true).
-	FROM {local x is 10.} UNTIL x = 0 STEP {set x to x-1.} DO 
+	FROM {local x is 15.} UNTIL x = 0 STEP {set x to x-1.} DO 
 	{
 		if STAGE_1_TYPE = "CORE"
-			LOCK STEERING TO HEADING(270,0, -270).
+			LOCK STEERING TO HEADING(270,0, -270).						// For Drone Ship Landing
 		else
-			steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset). // Calculate: impactDist
+			steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset). // Heading to Return Home
 		
 		PRINT_STATUS (3).
 		WAIT 1.
 		if ship:heading>265 and ship:heading<275 
 			set x to 0.
+	}
+
+	// FOR FH:
+	if STAGE_1_TYPE = "SLAVE" or STAGE_1_TYPE = "MASTER"
+	{
+		//Sync Moment for Coastal Burn:
+		getNearbyProbe().
+		set OTHER_CONNECTION TO g_OtherBooster:CONNECTION.
+		
+		if STAGE_1_TYPE = "SLAVE"
+			OTHER_CONNECTION:SENDMESSAGE(255).
+			
+
+		PRINT "WAIT for Booster go".
+		WAIT UNTIL NOT SHIP:MESSAGES:EMPTY.		//VESSEL:QUEUE
+		SET CODE_RECEIVED TO SHIP:MESSAGES:POP.
+		PRINT "RECEIVED MSG - CODE_RECEIVED: "+CODE_RECEIVED.	
+
+		
+		if STAGE_1_TYPE = "MASTER"
+			OTHER_CONNECTION:SENDMESSAGE(255).
 	}
 }
 

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 16/Nov/2020
+// 17/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 function main_lifoff
@@ -117,11 +117,11 @@ PRINT "Qmax: "+ ROUND(Qmax).
 
 if vehicle_type = "Falcon Heavy"
 {
-	//60->75%
+	//Factory set 60 -> 70%
 	LIST ENGINES IN myVariable.
 	FOR eng IN myVariable {
 		if eng:THRUSTLIMIT = 60
-			set eng:THRUSTLIMIT to 75.
+			set eng:THRUSTLIMIT to 70. // Set CORE to 70% Thrust
 	}.
 }
 set last_value1 to 0.
@@ -399,7 +399,7 @@ if altitude*1.1 < FINAL_ORBIT2
 		AG6 ON. //Toggle: FH Boosters separator
 		WAIT 0.5.
 		if (KUniverse:ActiveVessel = SHIP) STAGE.
-		WAIT 3.
+		WAIT 5.
 	} else {
 		main_stage().
 	}
@@ -463,12 +463,12 @@ if altitude*1.1 < FINAL_ORBIT2
 		set Vsy to vorb:y.
 		set Vsz to vorb:z.
 		set velocity_orbit to (Vsx^2)+(Vsy^2)+(Vsz^2).
-		set Vs2 to SQRT(velocity_orbit).	//km/h
+		set Vs2 to (velocity_orbit).	//km/h
 		
 		
-		if vehicle_type = "Falcon Heavy" and phase=0 and (Vs2 > 3100 or apoapsis > 160000)
+		if vehicle_type = "Falcon Heavy" and phase=0 and (Vs2 > MECO2 or altitude > FAIRSEP)
 		{
-			// Main Booster SEP:
+			// FH:CORE Booster SEP:
 			RCS ON.
 			set thrust to 0.
 			WAIT 1.
@@ -482,7 +482,7 @@ if altitude*1.1 < FINAL_ORBIT2
 				SET Vdeg to 90-80.5.
 			WAIT 1.
 		}
-		if vehicle_type <> "Falcon Heavy" and altitude > 160000 and phase = 0
+		if vehicle_type <> "Falcon Heavy" and altitude > FAIRSEP and phase = 0
 		{
 			update_phase_title("[8] FAIRING SEPARATION",1,false).
 			if (KUniverse:ActiveVessel = SHIP) STAGE.
@@ -522,10 +522,10 @@ if altitude*1.1 < FINAL_ORBIT2
 		set Vsy to vorb:y.
 		set Vsz to vorb:z.
 		set velocity_orbit to (Vsx^2)+(Vsy^2)+(Vsz^2).
-		set Vs2 to SQRT(velocity_orbit). //km/h
+		set Vs2 to (velocity_orbit). //km/h
 		
-		// Main Booster SEP:
-		if vehicle_type = "Falcon Heavy" and phase=0 and (v > 3100 or apoapsis > 160000)
+		// FH:CORE Booster SEP:
+		if vehicle_type = "Falcon Heavy" and phase=0 and (Vs2 > MECO2 or altitude > FAIRSEP)
 		{
 			RCS ON.
 			set thrust to 0.
@@ -543,7 +543,7 @@ if altitude*1.1 < FINAL_ORBIT2
 			WAIT 1.
 		}
 		
-		if altitude > 160000 and phase = 0
+		if altitude > FAIRSEP and phase = 0
 		{
 			update_phase_title("[8] FAIRING SEPARATION",1,false).
 			if (KUniverse:ActiveVessel = SHIP) STAGE.

@@ -145,11 +145,12 @@ function ReEntryburn
 			}
 			
 			//Add 10 secs of vertical stability after REENTRY BURN
+			update_phase_title("(vertical stability)", 0).
 			SET thrust to 0.
 			RCS ON.
 			FROM {local x is 10.} UNTIL x = 0 STEP {set x to x-1.} DO 
 			{
-				LOCK STEERING TO UP + R(0,0,180).
+				lock steering to retrograde.
 				wait 1.
 				if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
 					SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
@@ -161,7 +162,7 @@ function ReEntryburn
 		PRINT_STATUS (3).
 	}
 	
-	UNLOCK STEERING.
+	//UNLOCK STEERING.
 }
 
 
@@ -233,7 +234,7 @@ function aerodynamic_guidance
 {
 	update_phase_title("AERODYNAMIC GUIDANCE", 1).
 	RCS ON.	wait 1.
-	until (SHIP:GROUNDSPEED < 1) or(SHIP:ALTITUDE <= (sBurnDist*1.3)) or impactTime <= 13
+	until (SHIP:GROUNDSPEED < 1) or(SHIP:ALTITUDE <= (sBurnDist*1.4)) or impactTime <= 15
 	{
 		if (impactDist < 50)
 		{
@@ -359,6 +360,7 @@ function rocketshutdown
 	shutDownAllEngines().
 	if KUniverse:ActiveVessel = SHIP
 		set target to BODY("Earth").
+	// Final Stability:
 	SAS ON.
 	WAIT 3.
 	SAS OFF.
@@ -369,7 +371,7 @@ function rocketshutdown
 // START:
 ////////////////////////////////////////////////////////////////////////////////////////////////
 CLEARSCREEN.
-update_phase_title("(Return Home)  ",0).
+update_phase_title("(Return Home)",0).
 SET thrust TO 0.
 lock throttle to thrust.
 
