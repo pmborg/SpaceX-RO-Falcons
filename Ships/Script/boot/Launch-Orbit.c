@@ -179,7 +179,7 @@ if alt:radar < 100
 		set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).	
 		set vel to SQRT(Vs2).
 		update_atmosphere (altitude, vel).
-		log_data (vel, g).
+		log_data (vel).
 	}.
 
 	// Throttle is reduced to maintain a constant terminal velocity.
@@ -286,7 +286,7 @@ if alt:radar < 100
 	
 		set vel to SQRT(Vs2).
 		update_atmosphere (altitude, vel).
-		log_data (vel, g).
+		log_data (vel).
 	}.
 
 	SAS OFF.
@@ -353,7 +353,7 @@ if alt:radar < 100
 		
 		set vel to SQRT(Vs2).
 		update_atmosphere (altitude, vel).
-		log_data (vel, g).
+		log_data (vel).
 	}.		
 
 	RCS ON.
@@ -513,7 +513,7 @@ if altitude*1.1 < FINAL_ORBIT2
 		
 		set vel to SQRT(Vs2).
 		update_atmosphere (altitude, vel).
-		log_data (vel, g).
+		log_data (vel).
 		
 		set dx to eta:apoapsis.
 		if dx > eta_apoapsis and stage:number < 7
@@ -568,7 +568,7 @@ if altitude*1.1 < FINAL_ORBIT2
 		
 		set vel to SQRT(Vs2).
 		update_atmosphere (altitude, vel).
-		log_data (vel, g).
+		log_data (vel).
 	}
 
 	UNLOCK STEERING.

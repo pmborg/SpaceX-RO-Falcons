@@ -22,7 +22,7 @@
 
 // [X] Crew Dragon 2 STAGE				1.20.11.17
 // [ ] Crew Dragon 2 ST-1 LAND			1.20.11.##
-// [ ] Crew Dragon 2 ST-2 ORBIT			1.20.11.##
+// [X] Crew Dragon 2 ST-2 ORBIT			1.20.11.17 (TODO: Need more MECO1 on ST-1)
 
 // [ ] FH ST1 Master Booster Land
 // [not done] FH ST1 Slave Booster Land
@@ -33,7 +33,7 @@
 function boostback_burn
 {
 	parameter do_reverse to false.
-	parameter do_reverse_max_speed to 180.
+	parameter do_reverse_max_speed to 150.
 	
 	if do_reverse
 		update_phase_title("BOOSTBACK BURN REV.", 1).

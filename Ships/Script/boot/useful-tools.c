@@ -155,7 +155,7 @@ function updateVars  //Scalar projection of two vectors. Find component of a alo
 function log_data
 {
 	parameter Vs2.
-	parameter g.
+	//parameter g.
 	
 	updateVars().
 	
