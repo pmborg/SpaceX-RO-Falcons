@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Activate or get near by VESSEL parts.
-// 14/Nov/2020
+// 17/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 declare global g_OtherBooster to SHIP.

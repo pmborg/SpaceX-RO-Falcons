@@ -8,11 +8,24 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 16/Nov/2020
+// 17/Nov/2020
 // --------------------------------------------------------------------------------------------
 // Tested: 
 // 13/Nov/2020 with ->0v2.sfs
 // 11/Nov/2020 with ->2_1v2.sfs
+
+//REGRESSION TESTS:
+// [ ] F9 ST1 Land
+// [ ] F9 ST2 Orbit
+
+// [ ] Crew Dragon 2 ST-1 Landed
+// [ ] Crew Dragon 2 Orbit
+
+// [ ] FH ST1 Master Booster Land
+// [not done] FH ST1 Slave Booster Land
+// [ ] FH Core Booster Land
+// [ ] FH Orbit
+
 
 function boostback_burn
 {
@@ -166,6 +179,7 @@ function ReEntryburn
 		PRINT_STATUS (3).
 	}
 	
+	SET thrust to 0.
 	//UNLOCK STEERING.
 }
 
