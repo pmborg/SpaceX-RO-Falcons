@@ -72,7 +72,7 @@ function do_circle_step
 	PRINT "vcir-Vo: "+ (vcir-Vo) at (0,10).
 
 	//LOOP6: 
-	until (vcir-Vo < .001 and periapsis >= FINAL_ORBIT) 
+	until (periapsis >= FINAL_ORBIT)// (vcir-Vo < .001 and periapsis >= FINAL_ORBIT) 
 	{
 		set last_ecc to SHIP:ORBIT:ECCENTRICITY.
 		
@@ -86,12 +86,6 @@ function do_circle_step
 		set ar to (Vo^2)/r.
 		set W to mass*(g-ar).
 		
-		if SHIP:ORBIT:ECCENTRICITY > last_ecc and SHIP:ORBIT:ECCENTRICITY < 0.1
-		{
-			LOCK THROTTLE TO 0.
-			break.
-		}
-
 		if y = .5 {
 			set err to .75.
 			set error to 1-(err*verticalspeed).
@@ -164,6 +158,13 @@ function do_circle_step
 		PRINT "thrust(x): "     at (0,7). PRINT x 					+ "     " at (20,7).
 		PRINT "apoapsis/periapsis :"+ (apoapsis/periapsis)	at (0,8).
 		PRINT "Eccentricity: " + ROUND(SHIP:ORBIT:ECCENTRICITY,3)   +"     " at (0,10).
+		
+		wait 0.5.
+		if SHIP:ORBIT:ECCENTRICITY > last_ecc and SHIP:ORBIT:ECCENTRICITY < 0.1
+		{
+			LOCK THROTTLE TO 0.
+			break.
+		}
 	}.
 }
 
@@ -186,7 +187,8 @@ if orbit_type = "GSO"
 	do_circle_step().
 }
 
-
+print "DONE!".
+wait 5.
 CLEARSCREEN.
 PRINT "[7] DONE: Craft is now in Parking Orbit ---".
 

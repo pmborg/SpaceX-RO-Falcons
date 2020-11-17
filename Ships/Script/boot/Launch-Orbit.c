@@ -491,6 +491,12 @@ if altitude*1.1 < FINAL_ORBIT2
 			if (KUniverse:ActiveVessel = SHIP) STAGE.
 			set phase to 2.
 		}
+		if vehicle_type = "Crew Dragon 2"
+		{
+			if throttle > 0 and maxthrust = 0 
+				stage.
+			wait 3.
+		}
 		
 		if (Aceleration_value1 > 30.75)
 		{
@@ -545,12 +551,17 @@ if altitude*1.1 < FINAL_ORBIT2
 				SET Vdeg to 90-85.
 			WAIT 1.
 		}
-		
 		if vehicle_type = "F9v1.2B5" and altitude > FAIRSEP and phase = 0
 		{
 			update_phase_title("[8] FAIRING SEPARATION",1,false).
 			if (KUniverse:ActiveVessel = SHIP) STAGE.
 			set phase to 2.
+		}
+		if vehicle_type = "Crew Dragon 2"
+		{
+			if throttle > 0 and maxthrust = 0 
+				stage.
+			wait 3.
 		}
 		
 		update_orbit_status.
