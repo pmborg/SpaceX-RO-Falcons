@@ -14,12 +14,14 @@
 // 13/Nov/2020 with ->0v2.sfs
 // 11/Nov/2020 with ->2_1v2.sfs
 
-//REGRESSION TESTS:
-// [ ] F9 ST1 Land
-// [ ] F9 ST2 Orbit
+//REGRESSION TESTS: 
+// [X] F9 ST-1 STAGE					1.20.11.17
+// [X] F9 ST-1 LAND						1.20.11.17
+// [X] F9 ST-2 ORBIT					1.20.11.17
 
-// [ ] Crew Dragon 2 ST-1 Landed
-// [ ] Crew Dragon 2 Orbit
+// [X] Crew Dragon 2 STAGE				1.20.11.17
+// [ ] Crew Dragon 2 ST-1 LAND			1.20.11.##
+// [ ] Crew Dragon 2 ST-2 ORBIT			1.20.11.##
 
 // [ ] FH ST1 Master Booster Land
 // [not done] FH ST1 Slave Booster Land
@@ -158,7 +160,7 @@ function ReEntryburn
 			}
 			
 			// FOR FH:
-			if STAGE_1_TYPE = "SLAVE" or STAGE_1_TYPE = "MASTER"
+			//if STAGE_1_TYPE = "SLAVE" or STAGE_1_TYPE = "MASTER"
 			{
 				//Add 10 secs of vertical stability after REENTRY BURN
 				update_phase_title("(vertical stability)", 0).
@@ -166,7 +168,8 @@ function ReEntryburn
 				RCS ON.
 				FROM {local x is 10.} UNTIL x = 0 STEP {set x to x-1.} DO 
 				{
-					lock steering to retrograde.
+					//lock steering to retrograde.
+					LOCK STEERING TO up + R(0,0,180). //UP
 					wait 1.
 					if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
 						SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
@@ -380,8 +383,6 @@ function rocketshutdown
 		set target to BODY("Earth").
 	// Final Stability:
 	SAS ON.
-	WAIT 1.
-	set SASMODE to "STABILITY".			
 	WAIT 3.
 	SAS OFF.
 	RCS OFF.

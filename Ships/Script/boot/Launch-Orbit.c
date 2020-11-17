@@ -100,7 +100,7 @@ set FINAL_ORBIT  to 150000. 	//(FINAL_ORBIT/2) - For Phase-1 falcon stage-1
 
 set thrust to 0.
 lock throttle to thrust.
-LOCK STEERING TO up + R(0,0,180).
+LOCK STEERING TO up + R(0,0,180). //UP
 
 set initialmass to mass.
 // set r to altitude+BODY(DEFAULT_KSC):radius. //600000 (KERBIN)
@@ -362,48 +362,51 @@ if alt:radar < 100
 	WAIT 1.
 }
 
-if altitude*1.1 < FINAL_ORBIT2
+if altitude*1.1 < FINAL_ORBIT2 
 {
 
 	CLEARSCREEN.
 	PRINT " ".PRINT " ".
-	update_phase_title("[6] STAGING...",1,false).
-	PRINT "1st ORBIT: "+FINAL_ORBIT+"km, Done!".
-
-	if vehicle_type = "Falcon Heavy" 
+	
+	if STAGE:NUMBER > 3
 	{
-		//SEND PROCESSOR ID TO BOOSTER --------------------------------------------
-		IF PROCESSOR_STAGE1L:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
-		{
-		  PRINT "PROCESSOR_STAGE1: Message sent!".
-		  WAIT 1.
-		}
-		//SEND PROCESSOR ID TO BOOSTER --------------------------------------------
-		IF PROCESSOR_STAGE1R:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
-		{
-		  PRINT "PROCESSOR_STAGE1: Message sent!".
-		  WAIT 1.
-		}
-	} else {
-		//SEND PROCESSOR ID TO BOOSTER --------------------------------------------
-		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
-		{
-		  PRINT "PROCESSOR_STAGE1: Message sent!".
-		  WAIT 1.
-		}	
-	}
+		update_phase_title("[6] STAGING...",1,false).
+		PRINT "1st ORBIT: "+FINAL_ORBIT+"km, Done!".
 
-	RCS ON.
-	if vehicle_type = "Falcon Heavy" 
-	{
-		AG6 ON. //Toggle: FH Boosters separator
-		WAIT 0.5.
-		if (KUniverse:ActiveVessel = SHIP) STAGE.
-		WAIT 5.
-	} else {
-		main_stage().
-	}
+		if vehicle_type = "Falcon Heavy" 
+		{
+			//SEND PROCESSOR ID TO BOOSTER --------------------------------------------
+			IF PROCESSOR_STAGE1L:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
+			{
+			  PRINT "PROCESSOR_STAGE1: Message sent!".
+			  WAIT 1.
+			}
+			//SEND PROCESSOR ID TO BOOSTER --------------------------------------------
+			IF PROCESSOR_STAGE1R:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
+			{
+			  PRINT "PROCESSOR_STAGE1: Message sent!".
+			  WAIT 1.
+			}
+		} else {
+			//SEND PROCESSOR ID TO BOOSTER --------------------------------------------
+			IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
+			{
+			  PRINT "PROCESSOR_STAGE1: Message sent!".
+			  WAIT 1.
+			}	
+		}
 
+		RCS ON.
+		if vehicle_type = "Falcon Heavy" 
+		{
+			AG6 ON. //Toggle: FH Boosters separator
+			WAIT 0.5.
+			if (KUniverse:ActiveVessel = SHIP) STAGE.
+			WAIT 5.
+		} else {
+			main_stage().
+		}
+	}
 	// Stage-2 Initial Slow Burn:
 	update_phase_title("[7] PHASE I OPT",1,false).
 	UNLOCK STEERING.
