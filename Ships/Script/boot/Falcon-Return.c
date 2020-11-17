@@ -144,17 +144,21 @@ function ReEntryburn
 					 break.
 			}
 			
-			//Add 10 secs of vertical stability after REENTRY BURN
-			update_phase_title("(vertical stability)", 0).
-			SET thrust to 0.
-			RCS ON.
-			FROM {local x is 10.} UNTIL x = 0 STEP {set x to x-1.} DO 
+			// FOR FH:
+			if STAGE_1_TYPE = "SLAVE" or STAGE_1_TYPE = "MASTER"
 			{
-				lock steering to retrograde.
-				wait 1.
-				if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
-					SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
-				PRINT_STATUS (3).
+				//Add 10 secs of vertical stability after REENTRY BURN
+				update_phase_title("(vertical stability)", 0).
+				SET thrust to 0.
+				RCS ON.
+				FROM {local x is 10.} UNTIL x = 0 STEP {set x to x-1.} DO 
+				{
+					lock steering to retrograde.
+					wait 1.
+					if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+						SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
+					PRINT_STATUS (3).
+				}
 			}
 			break.
 		}
@@ -250,8 +254,8 @@ function aerodynamic_guidance
 		else
 			SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), COM_ADDONS_TR_IMPACTPOS).
 		
-		if altitude <= 10000 and (SHIP:GROUNDSPEED > 50) and impactDist > 500 
-			break. // Just Aerodynamic Guidance not enouf...
+		//if altitude <= 10000 and (SHIP:GROUNDSPEED > 50) and impactDist > 500 
+		//	break. // Just Aerodynamic Guidance not enouf...
 		
 		PRINT_STATUS (3).
 	}
@@ -362,6 +366,8 @@ function rocketshutdown
 		set target to BODY("Earth").
 	// Final Stability:
 	SAS ON.
+	WAIT 1.
+	set SASMODE to "STABILITY".			
 	WAIT 3.
 	SAS OFF.
 	RCS OFF.

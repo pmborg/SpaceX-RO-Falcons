@@ -434,7 +434,7 @@ if altitude*1.1 < FINAL_ORBIT2
 
 	function update_orbit_status 
 	{
-		PRINT "Launch Site Distance:   "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,9).
+		//PRINT "Launch Site Distance:   "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,9).
 		PRINT "Periapsis: " + ROUND(periapsis/1000,1)+" km    " at (0,10).
 		PRINT "Apoapsis: " + ROUND(apoapsis/1000,1)+" km    " at (0,11).
 		PRINT "Eta:apoapsis: " + ROUND(eta:apoapsis,1)+" s    " at (0,12).

@@ -160,6 +160,7 @@ if ALL_PROCESSORS:LENGTH > 2
 else
 	core:doaction("Open Terminal", true).
 
+// --------------------------------------------------------------------------------------------
 // WAIT and point falcons to Target (Horizontally only)
 if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
 {

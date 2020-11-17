@@ -67,15 +67,14 @@ function do_circle_step
 	set z to 0.
 	set x to 1. //x=Throttle.
 
-	// if vehicle_type = "Crew Dragon 2"		
-		RCS ON.
+	RCS ON.
 
 	PRINT "vcir-Vo: "+ (vcir-Vo) at (0,10).
 
 	//LOOP6: 
 	until (vcir-Vo < .001 and periapsis >= FINAL_ORBIT) 
 	{
-		//set last_vcir_Vo to vcir-Vo.
+		set last_ecc to SHIP:ORBIT:ECCENTRICITY.
 		
 		set previous_ratio to (periapsis/apoapsis).
 		set thrust to x.
@@ -86,33 +85,10 @@ function do_circle_step
 		set Vo to ((Vox^2)+(Voy^2)+(Voz^2))^.5.
 		set ar to (Vo^2)/r.
 		set W to mass*(g-ar).
-
-		PRINT "[6]Circularize-Burn to Circularize Orbit:" at (0,0).
-		PRINT "Vertical Speed" at (0,1).
-		PRINT "Orbital Speed" at (0,2).
-		PRINT "Vcir" at (0,3).
-		PRINT ROUND(vcir) at (20,3).
-		PRINT "Theta" at (0,4).
-		PRINT ROUND(theta,3) at (20,4).
-		PRINT "vcir-Vo: " at (0,5).
-		PRINT "Y: "       at (0,6).
-		PRINT "x: "       at (0,7).
-
-		if (periapsis/apoapsis)>0 and (apoapsis/periapsis) < 1.1 and apoapsis>FINAL_ORBIT and periapsis > max(1.5*body:atm:height,40000) //and Y > 3
-		{
-			LOCK THROTTLE TO 0.
-			// PRINT "break." at (0,9).
-			// PRINT "WAIT 15.".
-			// WAIT 15.
-			break.
-		}
 		
-		if (periapsis/apoapsis)>0 and (periapsis/apoapsis) > 1.1 and apoapsis>FINAL_ORBIT and periapsis > max(body:atm:height,40000) //and Y > 4
+		if SHIP:ORBIT:ECCENTRICITY > last_ecc and SHIP:ORBIT:ECCENTRICITY < 0.1
 		{
 			LOCK THROTTLE TO 0.
-			// PRINT "break." at (0,9).
-			// PRINT "WAIT 10.".
-			// WAIT 10.
 			break.
 		}
 
@@ -178,17 +154,16 @@ function do_circle_step
 			set theta to theta*error.
 		}.
 
-		PRINT ROUND(verticalspeed,2)	+ "     " at (20,1).
-		PRINT ROUND(Vo,2)				+ "     " at (20,2).
-		PRINT ROUND(theta,3)			+ "     " at (20,4).
-		PRINT ROUND(vcir-Vo,2)		+ "     " at (20,5).
-		PRINT y 					+ "     " at (20,6).
-		PRINT x 					+ "     " at (20,7).
+		PRINT "[6]Circularize-Burn to Circularize Orbit:"           at (0,0).
+		PRINT "Vertical Speed" 	at (0,1). PRINT ROUND(verticalspeed,2)	+ "     " at (20,1).
+		PRINT "Orbital Speed" 	at (0,2). PRINT ROUND(Vo,2)				+ "     " at (20,2).
+		PRINT "Vcir" 			at (0,3). PRINT ROUND(vcir) 		at (20,3).
+		PRINT "Theta" 			at (0,4). PRINT ROUND(theta,3) 	    at (20,4).
+		PRINT "vcir-Vo: " 		at (0,5). PRINT ROUND(vcir-Vo,2)	+ "     " at (20,5).
+		PRINT "Y: "       		at (0,6). PRINT y 					+ "     " at (20,6).
+		PRINT "thrust(x): "     at (0,7). PRINT x 					+ "     " at (20,7).
 		PRINT "apoapsis/periapsis :"+ (apoapsis/periapsis)	at (0,8).
-		
-		// if vcir-Vo > last_vcir_Vo
-			// break.
-		//WAIT 0.1.
+		PRINT "Eccentricity: " + ROUND(SHIP:ORBIT:ECCENTRICITY,3)   +"     " at (0,10).
 	}.
 }
 
