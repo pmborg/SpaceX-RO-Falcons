@@ -3,7 +3,7 @@ This KSP (**Kerbal Space Program**) addon, works ontop of [kks-spacex-pack mod](
 This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP users.<br>
 <br>
 **Supported versions are:**
-- KSP 1.9.1 (The International space station is only supported on this version)<br>
+- KSP 1.9.1 (ISS - The International space station is only supported on this version)<br>
 - KSP 1.10.1<br>
 
 ----
