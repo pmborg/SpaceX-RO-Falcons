@@ -24,7 +24,7 @@ This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP user
 
 saves\InterStar\\**KSP1-9-BASE-DroneShip-LZ1-LZ2-ISS.sfs**<br>
 (Include: LZ-1, LZ-2, OCISLY, JRTI, ISS)<br>
---OR--
+--OR--<br>
 saves\InterStar\\**KSP1-10-DEMO-BASE-DroneShip1-2-LZ1-2.sfs**<br>
 (Include: LZ-1, LZ-2, OCISLY, JRTI)<br>
 
