@@ -23,10 +23,10 @@ This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP user
 <h2>Demo a Sample Mission, (load this saved game):</h2>
 
 saves\InterStar\\**KSP1-9-BASE-DroneShip-LZ1-LZ2-ISS.sfs**<br>
-(Include: LZ-1, LZ-2, OCISLY, JRTI, ISS)<br>
+(Include: LZ-1, LZ-2, OCISLY, JRTI, ISS and F9)<br>
 --OR--<br>
 saves\InterStar\\**KSP1-10-DEMO-BASE-DroneShip1-2-LZ1-2.sfs**<br>
-(Include: LZ-1, LZ-2, OCISLY, JRTI)<br>
+(Include: LZ-1, LZ-2, OCISLY, JRTI and F9)<br>
 
 Select: 0 3 [ENTER] at KOS Console Launch Menu.
 
