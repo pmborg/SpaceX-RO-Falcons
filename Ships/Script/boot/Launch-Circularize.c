@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Circularize an orbit after Launch-Orbit.c
-// 17/Nov/2020
+// 21/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
@@ -166,6 +166,7 @@ function do_circle_step
 			break.
 		}
 	}.
+	LOCK THROTTLE TO 0.
 }
 
 //LOCK STEERING TO heading (90, PlanetOuter*theta).

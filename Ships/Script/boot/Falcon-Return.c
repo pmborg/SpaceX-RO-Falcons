@@ -8,21 +8,23 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 17/Nov/2020
+// 21/Nov/2020
 // --------------------------------------------------------------------------------------------
 // Tested: 
 // 13/Nov/2020 with ->0v2.sfs
 // 11/Nov/2020 with ->2_1v2.sfs
 
-// REGRESSION TESTS: 
+// REGRESSION TESTS:
 // -----------------
-// [X] F9 ST-1 STAGE					1.20.11.17 F9.sfs
-// [X] F9 ST-1 LAND						1.20.11.17 F9.sfs
-// [X] F9 ST-2 ORBIT					1.20.11.17 F9.sfs
+// [ok] F9 QMAX							1.20.11.21
+// [ok] F9 ST-1 STAGE					1.20.11.21
+// [ok] F9 ST-1 LAND					1.20.11.21
+// [ok] F9 ST-2 LEO ORBIT				1.20.11.21
 
-// [X] Crew Dragon 2 STAGE				1.20.11.17
-// [ ] Crew Dragon 2 ST-1 LAND			1.20.11.##
-// [X] Crew Dragon 2 ST-2 ORBIT			1.20.11.17 (TODO: Need more MECO1 on ST-1)
+// [ok] Crew Dragon 2 QMAX				1.20.11.21
+// [ok] Crew Dragon 2 STAGE				1.20.11.21
+// [ok] Crew Dragon 2 ST-1 LAND			1.20.11.21
+// [ok] Crew Dragon 2 DRAGON LEO ORBIT	1.20.11.21
 
 // [ ] FH ST1 Master Booster Land
 // [not done] FH ST1 Slave Booster Land
@@ -258,7 +260,14 @@ function aerodynamic_guidance
 	RCS ON.	wait 1.
 	until (SHIP:GROUNDSPEED < 1) or(SHIP:ALTITUDE <= (sBurnDist*1.4)) or impactTime <= 15
 	{
-		if (impactDist < 50)
+		if SHIP:ALTITUDE > 7000
+			set aerodynamic_target to 100.
+		else if SHIP:ALTITUDE > 3000
+			set aerodynamic_target to 50.
+		else
+			set aerodynamic_target to 25.
+	
+		if (impactDist < aerodynamic_target)
 		{
 			LOCK STEERING TO UP + R(0,0,180).
 		} else {
@@ -309,7 +318,8 @@ function landingBurn
 			set maxDescendSpeed to 125.
 		}
 		
-		set error to 0.825. //Keep up @82.5% x g
+		//set error to 0.825. //Keep up @82.5% x g
+		set error to 0.75. //Keep up @75% x g
 		if maxthrust = 0
 			set t to 1.
 		else
@@ -337,7 +347,10 @@ function touchdown
 	until (SHIP:STATUS="LANDED") or sBurnDist <= 0.1
 	{
 		if alt:radar > 650 and (impactDist < 150) and SHIP:GROUNDSPEED < 5 and Verticalspeed > -25
-			set thrust to 0. // we are too high! we need to gain vertical speed a bit 
+		{
+			set thrust to 0.01. // we are too high! we need to gain vertical speed a bit 
+			wait until Verticalspeed < -15.
+		}
 		
 		if alt:radar < 250 and checkgear = 0 {
 			GEAR ON.
@@ -359,7 +372,7 @@ function touchdown
 		if (alt:radar<=60) 
 			set error to 0.5.
 		else
-			set error to 0.825.
+			set error to 0.75. //Keep up @75% x g //set error to 0.825.
 		if maxthrust = 0
 			set t to 1.
 		else

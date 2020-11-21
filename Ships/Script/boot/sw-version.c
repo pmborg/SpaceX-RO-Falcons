@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to specify the SW version and the diferent types of profiles supported.
-// 17/Nov/2020
+// 21/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
@@ -46,9 +46,9 @@ if vehicle_type = "Falcon Heavy"
 {
 	// Data from: FH Demo 1:
 	//declare global Qmax 	to .5*0.40331*(337.367^2).	// 1/2 x air density ρ | Vehicle's speed v^2
-	declare global Qmax 	to 15238/1.1.//.5*0.36075*(249.8^2).	// 1/2 x air density ρ | Vehicle's speed v^2
+	declare global Qmax 	to 15238/1.1.
 	
-	declare global MECO1 	to 1675^2. //1650^2.
+	declare global MECO1 	to 1675^2. //1545* +130
 	declare global SEP   	to 1741^2.
 	declare global MECO2 	to 3060^2.
 	declare global FAIRSEP  to 160*1000.
@@ -58,9 +58,9 @@ if vehicle_type = "Crew Dragon 2"
 {
 	// Data from: Crew Demo 1:
 	//declare global Qmax 	to .5*0.5486668*(282.5^2).	// 1/2 x air density ρ | Vehicle's speed v^2
-	declare global Qmax 	to .5*0.34876*(259.9^2).	// 1/2 x air density ρ | Vehicle's speed v^2
+	declare global Qmax 	to .5*0.34876*(259.9^2).
 	
-	declare global MECO1 	to 1875^2.
+	declare global MECO1 	to 2005^2.// 1875* +130
 	declare global FAIRSEP 	to 160*1000.
 	declare global SECO1 	to 7503^2.
 }else
@@ -68,7 +68,7 @@ if vehicle_type = "F9v1.2B5"
 {
 	// Data from: SpaceX CRS-16:
 	//declare global Qmax 	to .5*0.330856*(374.166^2).	// 1/2 x air density ρ | Vehicle's speed v^2
-	declare global Qmax 	to .5*0.37435*(295.5^2).	// 1/2 x air density ρ | Vehicle's speed v^2
+	declare global Qmax 	to 16344/1.2.//.5*0.37435*(295.5^2).
 	
 	declare global MECO1 	to 2100^2. //2180^2.
 	declare global FAIRSEP 	to 160*1000.
