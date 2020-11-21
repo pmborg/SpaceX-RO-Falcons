@@ -33,7 +33,7 @@ Select: 0 3 [ENTER] at KOS Console Launch Menu.
 If you want to follow Stage-1 landing, switch vessels imediattly after the stage separation.
 
 ----
-<h2>HOW TO: Disable the KOS automatic lanch and landing:</h2>
+<h2>HOW TO: Disable the KOS automatic Launch and Landing:</h2>
 
 Rename directory:<br>
 
