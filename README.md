@@ -3,7 +3,7 @@ This KSP (**Kerbal Space Program**) addon, works ontop of [kks-spacex-pack mod](
 This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP users.<br>
 <br>
 **Supported versions are:**
-- KSP 1.9.1 (The International space station is only supported on this version)<br>
+- KSP 1.9.1 (ISS - The International space station is only supported on this version)<br>
 - KSP 1.10.1<br>
 
 ----
@@ -22,7 +22,11 @@ This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP user
 ----
 <h2>Demo a Sample Mission, (load this saved game):</h2>
 
+saves\InterStar\\**KSP1-9-BASE-DroneShip-LZ1-LZ2-ISS.sfs**<br>
+(Include: LZ-1, LZ-2, OCISLY, JRTI, ISS and F9)<br>
+--OR--<br>
 saves\InterStar\\**KSP1-10-DEMO-BASE-DroneShip1-2-LZ1-2.sfs**<br>
+(Include: LZ-1, LZ-2, OCISLY, JRTI and F9)<br>
 
 Select: 0 3 [ENTER] at KOS Console Launch Menu.
 
