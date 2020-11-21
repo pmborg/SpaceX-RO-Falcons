@@ -35,7 +35,7 @@
 function boostback_burn
 {
 	parameter do_reverse to false.
-	parameter do_reverse_max_speed to 150.
+	parameter do_reverse_max_speed to 50.
 	
 	if do_reverse
 		update_phase_title("BOOSTBACK BURN REV.", 1).
@@ -52,7 +52,11 @@ function boostback_burn
 		
 		if STAGE_1_TYPE = "CORE"
 		{
-			LOCK STEERING TO HEADING(270,0, -270). //DUE LandingTarget:BEARING calc bug, dont used it!
+			set lat_correction to 0.
+			if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT //and STAGE_1_TYPE <> "SLAVE"
+				set lat_correction to (LandingTarget:LAT - ADDONS:TR:IMPACTPOS:LAT).
+			
+			LOCK STEERING TO HEADING(270+lat_correction*50,0, -270). //DUE LandingTarget:BEARING calc bug, dont used it!
 			if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
 				SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
 		} else
