@@ -35,7 +35,7 @@
 function boostback_burn
 {
 	parameter do_reverse to false.
-	parameter do_reverse_max_speed to 50.
+	parameter do_reverse_max_speed to 100.
 	
 	if do_reverse
 		update_phase_title("BOOSTBACK BURN REV.", 1).
@@ -54,9 +54,9 @@ function boostback_burn
 		{
 			set lat_correction to 0.
 			if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT //and STAGE_1_TYPE <> "SLAVE"
-				set lat_correction to (LandingTarget:LAT - ADDONS:TR:IMPACTPOS:LAT).
+				set lat_correction to (LandingTarget:LAT - ADDONS:TR:IMPACTPOS:LAT)*50.
 			
-			LOCK STEERING TO HEADING(270+lat_correction*50,0, -270). //DUE LandingTarget:BEARING calc bug, dont used it!
+			LOCK STEERING TO HEADING(270+lat_correction,0, -270). //DUE LandingTarget:BEARING calc bug, dont used it!
 			if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
 				SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
 		} else
@@ -323,7 +323,7 @@ function landingBurn
 		}
 		
 		//set error to 0.825. //Keep up @82.5% x g
-		set error to 0.75. //Keep up @75% x g
+		set error to 0.65. //Keep up @75% x g
 		if maxthrust = 0
 			set t to 1.
 		else
@@ -331,7 +331,7 @@ function landingBurn
 		if (alt:radar>landing_burn)
 			setHoverDescendSpeed(maxDescendSpeed, t).
 		else
-			setHoverDescendSpeed(15, t).
+			break. //setHoverDescendSpeed(15, t).
 		 
 		PRINT_STATUS (3, t). 
 		

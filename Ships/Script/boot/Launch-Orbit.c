@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 17/Nov/2020
+// 21/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 function main_lifoff
@@ -321,10 +321,7 @@ if alt:radar < 100
 				set delta to (-50).
 		}
 
-		SET steeringDir TO -90.	// W/E
-		SET Vdeg to 90-delta+5.	// Vertical = 90 ---> SHOULD BE: 90-delta-5
-		set Vroll to -270.		// Zero Rotation
-		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
+		steering_falcon(90-delta+5).
 
 		set vorb to velocity:orbit.
 		set Vsx to vorb:x.
@@ -431,9 +428,10 @@ if altitude*1.1 < FINAL_ORBIT2
 		SET Vdeg to 90-81.	// Vertical = 90
 	}
 
-	SET steeringDir TO 90.	// W/E
-	set Vroll to -270.		// Zero Rotation
-	LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
+	//SET steeringDir TO 90.	// W/E
+	//set Vroll to -270.		// Zero Rotation
+	//LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
+	steering_falcon(Vdeg).
 
 	function update_orbit_status 
 	{
@@ -457,7 +455,8 @@ if altitude*1.1 < FINAL_ORBIT2
 	set deltaReduction to 0.
 	UNTIL periapsis > 0 and apoapsis < FINAL_ORBIT2
 	{
-		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
+		//LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
+		steering_falcon(Vdeg).
 		
 		set eta_apoapsis to eta:apoapsis.
 		
@@ -524,7 +523,8 @@ if altitude*1.1 < FINAL_ORBIT2
 	update_phase_title("[7] PHASE II OPT",1,false).
 	UNTIL (apoapsis >= FINAL_ORBIT2) 
 	{
-		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
+		//LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
+		steering_falcon(Vdeg).
 		
 		set vorb to velocity:orbit.
 		set Vsx to vorb:x.

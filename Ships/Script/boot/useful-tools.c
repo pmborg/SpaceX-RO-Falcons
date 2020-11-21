@@ -8,9 +8,23 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 14/Nov/2020
+// 21/Nov/2020
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
+
+function steering_falcon
+{
+	parameter Vdeg.
+	
+	set lat_correction to 0.
+	if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT //and STAGE_1_TYPE <> "SLAVE"
+		set lat_correction to (VESSEL("Landingzone1"):GEOPOSITION:LAT - ADDONS:TR:IMPACTPOS:LAT)*50.
+				
+	SET steeringDir TO (-90-lat_correction).		// W/E
+	//SET Vdeg to 90-delta+5.	// Vertical = 90 ---> SHOULD BE: 90-delta-5
+	set Vroll to -270.			// Zero Rotation
+	LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
+}
 
 function main_stage 
 {
@@ -155,7 +169,6 @@ function updateVars  //Scalar projection of two vectors. Find component of a alo
 function log_data
 {
 	parameter Vs2.
-	//parameter g.
 	
 	updateVars().
 	
