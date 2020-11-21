@@ -311,10 +311,10 @@ function landingBurn
 		updateHoverSteering().
 		if impactDist > 500 
 		{
-			steerToTarget(steeringPitch).
+			steerToTarget(steeringPitch).	//FAST correction
 			set maxDescendSpeed to 25.
 		} else {
-			steerToTarget(80).
+			steerToTarget(80).				//MEDIUM correction
 			set maxDescendSpeed to 125.
 		}
 		
