@@ -23,14 +23,13 @@
 // [ok] Crew Dragon 2 ST-1 LANDING		1.20.11.21
 // [ok] Crew Dragon 2 DRAGON LEO ORBIT	1.20.11.21
 
-// [ok] FH ST1 QMAX	
-// [ok] FH ST1 STAGE
-// [ ] FH ST1 Master ST-1 LANDING
-// [not working] Slave ST-1 LANDING
+// [ok] FH ST1 QMAX						1.20.11.22
+// [ok] FH ST1 STAGE					1.20.11.22
+// [ok] FH ST1 Master ST-1 LANDING		1.20.11.22
+// [not working] Slave ST-1 LANDING		----------
 // [ ] FH Core ST-1 LANDING
-// [ ] FH LEO Orbit
+// [ok] FH LEO Orbit					1.20.11.22
 // [ ] FH GSO Orbit
-
 
 function boostback_burn
 {
@@ -168,12 +167,13 @@ function ReEntryburn
 			
 			// FOR FH:
 			//if STAGE_1_TYPE = "SLAVE" or STAGE_1_TYPE = "MASTER"
+			if shipPitch < 60
 			{
 				//Add 10 secs of vertical stability after REENTRY BURN
 				update_phase_title("(vertical stability)", 0).
 				SET thrust to 0.
 				RCS ON.
-				FROM {local x is 10.} UNTIL x = 0 STEP {set x to x-1.} DO 
+				FROM {local x is 5.} UNTIL x = 0 STEP {set x to x-1.} DO 
 				{
 					//lock steering to retrograde.
 					LOCK STEERING TO up + R(0,0,180). //UP
@@ -203,8 +203,9 @@ function waitAndDoReEntryburn
 		{
 			if STAGE_1_TYPE <> "SLAVE" 
 			{
-				RCS ON. wait 0.5.
-				SAS ON. wait 0.5.
+				SAS OFF. 
+				RCS ON. wait 1.
+				SAS ON. wait 2.
 				set sasmode TO "PROGRADE". wait 0.5.
 			} else {
 				SAS OFF.
@@ -252,7 +253,10 @@ function waitAndDoReEntryburn
 	// Major Correction:
 	PRINT_STATUS(3).
 
-	set burnAlt to 32000.
+	if mass*1000 > 40000
+		set burnAlt to 35000.
+	else
+		set burnAlt to 32000.
 	if (SHIP:altitude > burnAlt)
 		ReEntryburn(burnAlt).
 }
@@ -266,27 +270,23 @@ function aerodynamic_guidance
 	{
 		if SHIP:ALTITUDE > 7000
 			set aerodynamic_target to 100.
-		else if SHIP:ALTITUDE > 3000
+		else if SHIP:ALTITUDE > 3000 
 			set aerodynamic_target to 50.
-		else
-			set aerodynamic_target to 25.
 	
-		if (impactDist < aerodynamic_target)
+		if (impactDist < aerodynamic_target) and SHIP:ALTITUDE > 3500
 		{
 			LOCK STEERING TO UP + R(0,0,180).
-		} else {
+		} else 
+		{
 			SAS OFF.
 			updateHoverSteering().
-			steerToTarget(steeringPitch/1.1, 0, 0, true). // Calculate: impactDist
+			steerToTarget(steeringPitch, 0, 0, true). // Calculate: impactDist
 		}
 			
 		if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
 			SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
 		else
 			SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), COM_ADDONS_TR_IMPACTPOS).
-		
-		//if altitude <= 10000 and (SHIP:GROUNDSPEED > 50) and impactDist > 500 
-		//	break. // Just Aerodynamic Guidance not enouf...
 		
 		PRINT_STATUS (3).
 	}
@@ -313,17 +313,19 @@ function landingBurn
 		}
 		
 		updateHoverSteering().
-		if impactDist > 500 
+		if impactDist > 100 
 		{
 			steerToTarget(steeringPitch).	//FAST correction
 			set maxDescendSpeed to 25.
+			set error to 0.825. //Keep up @82.5% x g
 		} else {
 			steerToTarget(80).				//MEDIUM correction
 			set maxDescendSpeed to 125.
+			set error to 0.65. //Keep up @75% x g
 		}
 		
 		//set error to 0.825. //Keep up @82.5% x g
-		set error to 0.65. //Keep up @75% x g
+		//set error to 0.65. //Keep up @75% x g
 		if maxthrust = 0
 			set t to 1.
 		else

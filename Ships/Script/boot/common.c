@@ -204,8 +204,15 @@ function PRINT_STATUS
 		PRINT "TARGET: "+LandingZone_NAME at (0,y).
 	
 	PRINT "LandingTarget: "+ROUND (LandingTarget:LAT,2)+" " +ROUND (LandingTarget:LNG,2) at (0,y+1).
-	if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT //and STAGE_1_TYPE <> "SLAVE"
-		PRINT "ImpactTarget: "+ROUND (ADDONS:TR:IMPACTPOS:LAT,2)+" " +ROUND (ADDONS:TR:IMPACTPOS:LNG,2)  at (0,y+2).
+	if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+	{
+		set val_1at to ADDONS:TR:IMPACTPOS:LAT.
+		if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+		{
+			set val_lng to ADDONS:TR:IMPACTPOS:LNG.
+			PRINT "ImpactTarget: "+ROUND (val_1at,2)+" " +ROUND (val_lng,2)  at (0,y+2).
+		}
+	}
 		
 	PRINT "LandingTarget:DISTANCE: "+ROUND(LandingTarget:DISTANCE/1000,3)+" km   " at (0,y+3).
 	PRINT "LandingTarget:TERRAINHEIGHT: "+ROUND (landingAltitude,1)+" m   " at (0,y+4).

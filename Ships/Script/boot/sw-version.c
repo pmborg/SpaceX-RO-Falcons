@@ -48,8 +48,8 @@ if vehicle_type = "Falcon Heavy"
 	//declare global Qmax 	to .5*0.40331*(337.367^2).	// 1/2 x air density ρ | Vehicle's speed v^2
 	declare global Qmax 	to 15238/1.1.
 	
-	declare global MECO1 	to 1675^2. //1545* +130
-	declare global SEP   	to 1741^2.
+	declare global MECO1 	to 1750^2. //1545* +130
+	//declare global SEP   	to (MECO1+200)^2.
 	declare global MECO2 	to 3060^2.
 	declare global FAIRSEP  to 160*1000.
 	declare global SECO1 	to 7451^2.
