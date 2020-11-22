@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to control (ST-1) Boosters and waiting phases and prepare them to land.
-// 17/Nov/2020
+// 22/Nov/2020
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 CLEARSCREEN.
@@ -21,6 +21,7 @@ PRINT "ALL_PROCESSORS:LENGTH "+ALL_PROCESSORS:LENGTH.
 if ALL_PROCESSORS:LENGTH = 0 { WAIT 5. reboot. }	//Check Processors Sanity-Check
 
 update_phase_title("WAIT4LANDING TARGET", 0, true).
+set in_sync to false.
 
 //Define Offline (defautl) Values: https://www.fcc.gov/media/radio/dms-decimal
 declare global offline_LandingZone1 to latlng(28.612903103981047, -80.619702436818869).
@@ -190,38 +191,37 @@ if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
 			set x to 0.
 	}
 
-	// FOR FH:
-	if STAGE_1_TYPE = "SLAVE" or STAGE_1_TYPE = "MASTER"
-	{
-		//Sync Moment for Coastal Burn:
-		getNearbyProbe().
-		set OTHER_CONNECTION TO g_OtherBooster:CONNECTION.
+	// FOR FH - Sync Moment for Coastal Burn:
+	// if STAGE_1_TYPE = "SLAVE" or STAGE_1_TYPE = "MASTER"
+	// {
+		// getNearbyProbe().
+		// set OTHER_CONNECTION TO g_OtherBooster:CONNECTION.
 		
-		if STAGE_1_TYPE = "SLAVE"
-			OTHER_CONNECTION:SENDMESSAGE(255).
+		// if STAGE_1_TYPE = "SLAVE"
+			// OTHER_CONNECTION:SENDMESSAGE(255).
 			
-
-		PRINT "WAIT for Booster go".
-		WAIT UNTIL NOT SHIP:MESSAGES:EMPTY.		//VESSEL:QUEUE
-		SET CODE_RECEIVED TO SHIP:MESSAGES:POP.
-		PRINT "RECEIVED MSG - CODE_RECEIVED: "+CODE_RECEIVED.	
-
+		// PRINT "WAIT for Booster go".
+		// WAIT UNTIL NOT SHIP:MESSAGES:EMPTY.		//VESSEL:QUEUE
+		// SET CODE_RECEIVED TO SHIP:MESSAGES:POP.
+		// PRINT "RECEIVED MSG - CODE_RECEIVED: "+CODE_RECEIVED.	
 		
-		if STAGE_1_TYPE = "MASTER"
-			OTHER_CONNECTION:SENDMESSAGE(255).
-	}
+		// if STAGE_1_TYPE = "MASTER"
+			// OTHER_CONNECTION:SENDMESSAGE(255).
+	// }
 }
 
 set TOTAL_PARTS to 0.
 FOR P IN SHIP:PARTS
 	SET TOTAL_PARTS to TOTAL_PARTS + 1.
 
+set in_sync to true.
+
 // Open Inf. Thread to read values from Master:
 if STAGE_1_TYPE = "SLAVE" 
 {
 	set y to 3.
 	PRINT "[Slav]" at (44,1).
-	WHEN TRUE THEN
+	WHEN in_sync THEN
 	{
 		WAIT UNTIL NOT SHIP:MESSAGES:EMPTY.		//VESSEL:QUEUE
 		SET MESSAGE TO SHIP:MESSAGES:POP.

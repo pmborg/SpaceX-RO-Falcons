@@ -321,7 +321,7 @@ if alt:radar < 100
 				set delta to (-50).
 		}
 
-		steering_falcon(90-delta+5).
+		steering_falcon(90-delta). //90-delta+5
 
 		set vorb to velocity:orbit.
 		set Vsx to vorb:x.
@@ -428,10 +428,10 @@ if altitude*1.1 < FINAL_ORBIT2
 		SET Vdeg to 90-81.	// Vertical = 90
 	}
 
-	//SET steeringDir TO 90.	// W/E
-	//set Vroll to -270.		// Zero Rotation
-	//LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
-	steering_falcon(Vdeg).
+	SET steeringDir TO 90.	// W/E
+	set Vroll to -270.		// Zero Rotation
+	LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
+	//steering_falcon(Vdeg).
 
 	function update_orbit_status 
 	{
@@ -455,8 +455,8 @@ if altitude*1.1 < FINAL_ORBIT2
 	set deltaReduction to 0.
 	UNTIL periapsis > 0 and apoapsis < FINAL_ORBIT2
 	{
-		//LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
-		steering_falcon(Vdeg).
+		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
+		//steering_falcon(Vdeg).
 		
 		set eta_apoapsis to eta:apoapsis.
 		
@@ -486,7 +486,13 @@ if altitude*1.1 < FINAL_ORBIT2
 		}
 		if vehicle_type = "F9v1.2B5" and altitude > FAIRSEP and phase = 0
 		{
-			update_phase_title("[8] FAIRING SEPARATION",1,false).
+			update_phase_title("I - FAIRING SEPARATION",1,false).
+			if (KUniverse:ActiveVessel = SHIP) STAGE.
+			set phase to 2.
+		}
+		if vehicle_type = "Falcon Heavy" and altitude > FAIRSEP and phase = 1
+		{
+			update_phase_title("I - FAIRING SEPARATION",1,false).
 			if (KUniverse:ActiveVessel = SHIP) STAGE.
 			set phase to 2.
 		}
@@ -523,8 +529,8 @@ if altitude*1.1 < FINAL_ORBIT2
 	update_phase_title("[7] PHASE II OPT",1,false).
 	UNTIL (apoapsis >= FINAL_ORBIT2) 
 	{
-		//LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
-		steering_falcon(Vdeg).
+		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
+		//steering_falcon(Vdeg).
 		
 		set vorb to velocity:orbit.
 		set Vsx to vorb:x.
@@ -553,7 +559,13 @@ if altitude*1.1 < FINAL_ORBIT2
 		}
 		if vehicle_type = "F9v1.2B5" and altitude > FAIRSEP and phase = 0
 		{
-			update_phase_title("[8] FAIRING SEPARATION",1,false).
+			update_phase_title("II- FAIRING SEPARATION",1,false).
+			if (KUniverse:ActiveVessel = SHIP) STAGE.
+			set phase to 2.
+		}
+		if vehicle_type = "Falcon Heavy" and altitude > FAIRSEP and phase = 1
+		{
+			update_phase_title("II- FAIRING SEPARATION",1,false).
 			if (KUniverse:ActiveVessel = SHIP) STAGE.
 			set phase to 2.
 		}
@@ -582,7 +594,8 @@ if altitude*1.1 < FINAL_ORBIT2
 		LIST ENGINES IN myVariable.
 		FOR eng IN myVariable {
 			set eng:THRUSTLIMIT to 25.
-			set eng:Gimbal:LIMIT to 25.
+			ir eng:HASGIMBAL
+				set eng:Gimbal:LIMIT to 25.
 		}.
 	}
 }
