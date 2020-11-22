@@ -594,7 +594,7 @@ if altitude*1.1 < FINAL_ORBIT2
 		LIST ENGINES IN myVariable.
 		FOR eng IN myVariable {
 			set eng:THRUSTLIMIT to 25.
-			ir eng:HASGIMBAL
+			if eng:HASGIMBAL
 				set eng:Gimbal:LIMIT to 25.
 		}.
 	}
