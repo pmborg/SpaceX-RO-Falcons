@@ -25,9 +25,9 @@
 
 // [ok] FH ST1 QMAX						1.20.11.22
 // [ok] FH ST1 STAGE					1.20.11.22
-// [ok] FH ST1 Master ST-1 LANDING		1.20.11.22
+// [ok] FH ST1 Master ST-1 LANDING		1.20.11.23
 // [not working] Slave ST-1 LANDING		----------
-// [ ] FH Core ST-1 LANDING
+// [ ] FH Core ST-1 LANDING				
 // [ok] FH LEO Orbit					1.20.11.22
 // [ ] FH GSO Orbit
 
