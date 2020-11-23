@@ -11,8 +11,8 @@
 // 23/Nov/2020
 // --------------------------------------------------------------------------------------------
 
-// REGRESSION TESTS:
-// -----------------
+// REGRESSION TESTS for KOS Automatic Pilot Orbit and Landing:
+// -----------------------------------------------------------
 // [ok] F9 QMAX							1.20.11.21
 // [ok] F9 ST-1 STAGE					1.20.11.21
 // [ok] F9 ST-1 LANDING					1.20.11.21
@@ -26,10 +26,10 @@
 // [ok] FH ST1 QMAX						1.20.11.22
 // [ok] FH ST1 STAGE					1.20.11.22
 // [ok] FH ST1 Master ST-1 LANDING		1.20.11.23
-// [not working] Slave ST-1 LANDING		----------
-// [ ] FH Core ST-1 LANDING				
+// [not working] Slave ST-1 LANDING		Checking the impossible (at KSP) land of both ST-1 at same time...
+// [ ] FH Core ST-1 LANDING				developing... -> FH-CORE.sfs
 // [ok] FH LEO Orbit					1.20.11.22
-// [ ] FH GSO Orbit
+// [ ] FH GSO Orbit						developing... -> GSO.sfs
 
 function boostback_burn
 {
@@ -52,10 +52,10 @@ function boostback_burn
 		if STAGE_1_TYPE = "CORE"
 		{
 			set lat_correction to 0.
-			if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT //and STAGE_1_TYPE <> "SLAVE"
+			if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
 				set lat_correction to (LandingTarget:LAT - ADDONS:TR:IMPACTPOS:LAT)*50.
 			
-			LOCK STEERING TO HEADING(270+lat_correction,0, -270). //DUE LandingTarget:BEARING calc bug, dont used it!
+			LOCK STEERING TO HEADING(270+lat_correction,0, -270).
 			if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
 				SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
 		} else
@@ -166,7 +166,6 @@ function ReEntryburn
 			}
 			
 			// FOR FH:
-			//if STAGE_1_TYPE = "SLAVE" or STAGE_1_TYPE = "MASTER"
 			if shipPitch < 60
 			{
 				//Add 10 secs of vertical stability after REENTRY BURN
@@ -190,7 +189,6 @@ function ReEntryburn
 	}
 	
 	SET thrust to 0.
-	//UNLOCK STEERING.
 }
 
 
@@ -199,7 +197,7 @@ function waitAndDoReEntryburn
 	update_phase_title("STEERING PROGRADE", 0).
 	if SHIP:altitude > 100000
 	{
-		until (SHIP:VERTICALSPEED < 0) 	//(SHIP:altitude > 140000) or 
+		until (SHIP:VERTICALSPEED < 0)
 		{
 			// if STAGE_1_TYPE <> "SLAVE" 
 			// {
@@ -322,11 +320,9 @@ function landingBurn
 		} else {
 			steerToTarget(80).				//MEDIUM correction
 			set maxDescendSpeed to 125.
-			set error to 0.65. //Keep up @75% x g
+			set error to 0.65. //Keep up @65% x g
 		}
 		
-		//set error to 0.825. //Keep up @82.5% x g
-		//set error to 0.65. //Keep up @75% x g
 		if maxthrust = 0
 			set t to 1.
 		else
@@ -334,7 +330,7 @@ function landingBurn
 		if (alt:radar>landing_burn)
 			setHoverDescendSpeed(maxDescendSpeed, t).
 		else
-			break. //setHoverDescendSpeed(15, t).
+			break.
 		 
 		PRINT_STATUS (3, t). 
 		
@@ -379,7 +375,7 @@ function touchdown
 		if (alt:radar<=60) 
 			set error to 0.5.
 		else
-			set error to 0.75. //Keep up @75% x g //set error to 0.825.
+			set error to 0.75. //Keep up @75% x g
 		if maxthrust = 0
 			set t to 1.
 		else

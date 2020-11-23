@@ -226,7 +226,6 @@ function PRINT_STATUS
 	PRINT "steeringDir: "+ROUND (steeringDir,1)+"   " at (0,y+12).
 	PRINT "steeringPitch: "+ROUND (steeringPitch,1)+"   " at (0,y+14).
 	PRINT "shipPitch: "+ROUND (shipPitch,1)+"   " at (0,y+15).
-	
 	PRINT "throttle(maxthrust): " + ROUND(throttle,2) + " ("+ROUND(maxthrust)+")     " at (0,16).
 	
 	PRINT "sBurnDist: "+ROUND (sBurnDist,1)+" m   " at (0,y+17).
@@ -234,7 +233,8 @@ function PRINT_STATUS
 	PRINT "Altitude: "+ROUND(SHIP:ALTITUDE)+"  " at (0, y+19).
 	PRINT "Verticalspeed: "+ROUND(SHIP:VERTICALSPEED)+"   " at (0, y+20).
 	
-	set trueRadar to alt:radar - radarOffset.//this is all the suicide burn calculation					
+	//Suicide burn calculation: (impactTime)
+	set trueRadar to alt:radar - radarOffset.
 	set maxDecel to (ship:availablethrust / ship:mass) - g.	
 	set stopDist to ship:verticalspeed^2 / (2 * maxDecel).		
 	set idealThrottle to stopDist / trueRadar.					
@@ -247,7 +247,6 @@ function PRINT_STATUS
 	{
 		if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT //and STAGE_1_TYPE <> "SLAVE"
 			SLAVE_CONNECTION:SENDMESSAGE(list(throttle,steeringDir,shipPitch, ADDONS:TR:IMPACTPOS, SHIP:altitude)).
-		
 	} 
 }
 
