@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 22/Nov/2020
+// 23/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 // REGRESSION TESTS:
@@ -201,13 +201,14 @@ function waitAndDoReEntryburn
 	{
 		until (SHIP:VERTICALSPEED < 0) 	//(SHIP:altitude > 140000) or 
 		{
-			if STAGE_1_TYPE <> "SLAVE" 
+			// if STAGE_1_TYPE <> "SLAVE" 
+			// {
+				// SAS OFF. 
+				// RCS ON. wait 1.
+				SAS ON. wait 1.
+				// set sasmode TO "PROGRADE". wait 0.5.
+			// } else 
 			{
-				SAS OFF. 
-				RCS ON. wait 1.
-				SAS ON. wait 2.
-				set sasmode TO "PROGRADE". wait 0.5.
-			} else {
 				SAS OFF.
 				LOCK STEERING TO UP + R(0,0,180).
 			}
