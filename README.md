@@ -14,7 +14,7 @@ This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP user
 [ok] **F9 ST-1 LANDING**<br>
 [ok] **F9 ST-2 LEO ORBIT**<br>
 <br>
-[ok] **F9 + Crew Dragon 2** QMAX<br>
+[ok] **F9 + Crew Dragon 2 QMAX**<br>
 [ok] **F9 + Crew Dragon 2 STAGE**<br>
 [ok] **F9 + Crew Dragon 2 ST-1 LANDING**<br>
 [ok] **F9 + Crew Dragon 2 DRAGON LEO ORBIT**<br>
@@ -41,6 +41,9 @@ This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP user
  **Pmborg-RealFalcons-v2-Install-For_KSP_1.9.1-All_Dependencies.bat**<br>
  --or--(depending of your case)<br>
  **Pmborg-RealFalcons-v2-Install-For_KSP_1.10.1-All_Dependencies.bat**<br>
+ 
+**Note:**<br> 
+After the instalation, during the KSP Loading, there will be some addon's that will rise some warnings about *outdated versions*, but that is "normal", they were not compiled for KSP 1.10.1 but they will work.
 
 ----
 <h2>HOW TODO: Automatic Mod dependencies Update:</h2>
