@@ -9,9 +9,9 @@ This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP user
 ----
 <H1>Regression Tests for KOS Code:</H2>
 
-[ok] **F9** QMAX<br>
-[ok] **F9 ST-1** STAGE<br>
-[ok] **F9 ST-1 LANDING**	<br>
+[ok] **F9 QMAX**<br>
+[ok] **F9 ST-1 STAGE**<br>
+[ok] **F9 ST-1 LANDING**<br>
 [ok] **F9 ST-2 LEO ORBIT**<br>
 <br>
 [ok] **F9 + Crew Dragon 2** QMAX<br>
