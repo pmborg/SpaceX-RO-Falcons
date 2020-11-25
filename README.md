@@ -7,6 +7,28 @@ This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP user
 - KSP 1.10.1<br>
 
 ----
+<H1>Regression Tests for KOS Code:</H2>
+
+[ok] **F9** QMAX<br>
+[ok] **F9 ST-1** STAGE<br>
+[ok] **F9 ST-1 LANDING**	<br>
+[ok] **F9 ST-2 LEO ORBIT**<br>
+<br>
+[ok] **F9 + Crew Dragon 2** QMAX<br>
+[ok] **F9 + Crew Dragon 2 STAGE**<br>
+[ok] **F9 + Crew Dragon 2 ST-1 LANDING**<br>
+[ok] **F9 + Crew Dragon 2 DRAGON LEO ORBIT**<br>
+<br>
+[ok] **FH ST1 QMAX**<br>
+[ok] **FH ST1 STAGE**<br>
+[ok] **FH ST1 Master ST-1 LANDING**<br>
+[ok] **FH LEO Orbit**<br>
+
+[on development] FH Core ST-1 LANDING<br>
+[on development] FH GSO Orbit<br>
+[not working yet] Slave ST-1 LANDING		Checking the impossible (at KSP) land of both ST-1 at same time...<br>
+
+----
 <h2>HOW TODO: Automatic Installation:</h2>
 
 [1] First **do a Kerbal Space Program clean Install**, to avoid mod conflicts.
