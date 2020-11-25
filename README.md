@@ -17,6 +17,7 @@ This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP user
 [3] then after the copy, Run the .BAT file for KSP 1.9.1 or KSP 1.10.1 depending on the case.<br>
 (**Run Script From**: [KSP ROOT]\SteamLibrary\steamapps\common\Kerbal Space Program)<br>
  **Pmborg-RealFalcons-v2-Install-For_KSP_1.9.1-All_Dependencies.bat**<br>
+ --or--(depending of your case)<br>
  **Pmborg-RealFalcons-v2-Install-For_KSP_1.10.1-All_Dependencies.bat**<br>
 
 ----
