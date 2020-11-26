@@ -23,8 +23,8 @@ This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP user
 [ok] **FH ST1 STAGE**<br>
 [ok] **FH ST1 Master ST-1 LANDING**<br>
 [ok] **FH LEO Orbit**<br>
+[ok] **FH Core ST-1 LANDING**<br>
 <br>
-[on development] FH Core ST-1 LANDING<br>
 [on development] FH GSO Orbit<br>
 [checking] FH Slave ST-1 LANDING		Checking the impossible (at KSP) land of both ST-1 at same time...<br>
 
