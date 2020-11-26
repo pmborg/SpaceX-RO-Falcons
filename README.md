@@ -17,7 +17,7 @@ This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP user
 [ok] **F9 + Crew Dragon 2 QMAX**<br>
 [ok] **F9 + Crew Dragon 2 STAGE**<br>
 [ok] **F9 + Crew Dragon 2 ST-1 LANDING**<br>
-[ok] **F9 + Crew Dragon 2 DRAGON LEO ORBIT**<br>
+[ok] **F9 + Crew Dragon 2 LEO ORBIT**<br>
 <br>
 [ok] **FH ST1 QMAX**<br>
 [ok] **FH ST1 STAGE**<br>
