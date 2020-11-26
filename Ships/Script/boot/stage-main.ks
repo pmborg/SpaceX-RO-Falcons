@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used before main.c, to distribute tasks among all Processors.
-// 16/Nov/2020
+// 26/Nov/2020
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 core:doaction("Open Terminal", true).
@@ -63,7 +63,8 @@ if vehicle_type = "Falcon Heavy"
 	// 2=LandZone:  LZ-2
 	// 100=DroneShip: OCISLY
 	// 101=DroneShip: JRTI
-	IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(100)	//OCISLY
+	// 102=DroneShip: OCISLY-FAROUT
+	IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(102)	//OCISLY
 	  WAIT 0.1.
 
 	IF PROCESSOR_STAGE1L:CONNECTION:SENDMESSAGE(1) //LZ-1(Slave)

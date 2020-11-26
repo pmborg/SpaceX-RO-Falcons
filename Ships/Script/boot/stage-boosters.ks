@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to control (ST-1) Boosters and waiting phases and prepare them to land.
-// 22/Nov/2020
+// 26/Nov/2020
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 CLEARSCREEN.
@@ -30,8 +30,9 @@ declare global offline_LandingZone2 to latlng(28.612890963687462,  -80.621613149
 //Define VESSELS on SAVED LOAD GAME: ""
 set LZ_1 to "LandingZone1". 				
 set LZ_2 to "LandingZone2". 				//R: MASTER
-set OCISLY to "OCISLY".				
+set OCISLY to "OCISLY".
 set JRTI to "JRTI".
+set OCISLY_FAROUT to "OCISLY-FAROUT".		
 
 //Define Globals:
 declare global mission_target to BODY.						// Planet Name - Sample: Kerbin, Earth
@@ -64,6 +65,13 @@ if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 		LOG "declare global LandingZone TO VESSEL(OCISLY)." to "1:/STAGE1_TARGET_FILE.c".
 		LOG "INIT TARGET: VESSEL(OCISLY)." to LOG.txt.
 		PRINT "LANDING AT: "+OCISLY.
+	} else
+	if TARGET_N = 102
+	{
+		set LandingZone TO VESSEL(OCISLY_FAROUT).
+		LOG "declare global LandingZone TO VESSEL(OCISLY_FAROUT)." to "1:/STAGE1_TARGET_FILE.c".
+		LOG "INIT TARGET: VESSEL(OCISLY_FAROUT)." to LOG.txt.
+		PRINT "LANDING AT: "+OCISLY_FAROUT.
 	} else
 	if TARGET_N = 1
 	{
@@ -179,7 +187,7 @@ if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
 	//FLIP MANEUVER:
 	CLEARSCREEN.	
 	update_phase_title("FLIP MANEUVER   ", 0, true).
-	FROM {local x is 15.} UNTIL x = 0 STEP {set x to x-1.} DO 
+	FROM {local x is 20.} UNTIL x = 0 STEP {set x to x-1.} DO 
 	{
 		if STAGE_1_TYPE = "CORE"
 			LOCK STEERING TO HEADING(270,0, -270).						// For Drone Ship Landing
@@ -187,9 +195,9 @@ if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
 			steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset). // Heading to Return Home
 		
 		PRINT_STATUS (3).
-		WAIT 1.
 		if ship:heading>265 and ship:heading<275 
 			set x to 0.
+		WAIT 1.
 	}
 
 	// FOR FH - Sync Moment for Coastal Burn:

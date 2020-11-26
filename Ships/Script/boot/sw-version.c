@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to specify the SW version and the diferent types of profiles supported.
-// 23/Nov/2020
+// 26/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
@@ -50,7 +50,7 @@ if vehicle_type = "Falcon Heavy"
 	
 	declare global MECO1 	to 1750^2. //1545* +130
 	//declare global SEP   	to (MECO1+200)^2.
-	declare global MECO2 	to 3060^2.
+	declare global MECO2 	to 3000^2. //3060^2.
 	declare global FAIRSEP  to 160*1000.
 	declare global SECO1 	to 7451^2.
 }else

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 21/Nov/2020
+// 26/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 function main_lifoff
@@ -118,11 +118,11 @@ PRINT "Qmax: "+ ROUND(Qmax).
 if vehicle_type = "Falcon Heavy"
 {
 	//Factory set 60 -> 70%
-	LIST ENGINES IN myVariable.
-	FOR eng IN myVariable {
-		if eng:THRUSTLIMIT = 60
-			set eng:THRUSTLIMIT to 70. // Set CORE to 70% Thrust
-	}.
+	// LIST ENGINES IN myVariable.
+	// FOR eng IN myVariable {
+		// if eng:THRUSTLIMIT = 60
+			// set eng:THRUSTLIMIT to 70. // Set CORE to 70% Thrust
+	// }.
 }
 set last_value1 to 0.
 set Aceleration_value1 to 0.
@@ -496,11 +496,14 @@ if altitude*1.1 < FINAL_ORBIT2
 			if (KUniverse:ActiveVessel = SHIP) STAGE.
 			set phase to 2.
 		}
-		if vehicle_type = "Crew Dragon 2"
+		//if vehicle_type = "Crew Dragon 2"
 		{
 			if throttle > 0 and maxthrust = 0 
+			{
+				UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 				stage.
-			wait 3.
+				wait 3.
+			}
 		}
 		
 		if (Aceleration_value1 > 30.75)
@@ -569,11 +572,14 @@ if altitude*1.1 < FINAL_ORBIT2
 			if (KUniverse:ActiveVessel = SHIP) STAGE.
 			set phase to 2.
 		}
-		if vehicle_type = "Crew Dragon 2"
+		//if vehicle_type = "Crew Dragon 2"
 		{
 			if throttle > 0 and maxthrust = 0 
+			{
+				UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 				stage.
-			wait 3.
+				wait 3.
+			}
 		}
 		
 		update_orbit_status.

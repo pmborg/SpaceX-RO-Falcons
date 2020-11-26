@@ -27,7 +27,7 @@
 // [ok] FH ST1 STAGE					1.20.11.22
 // [ok] FH ST1 Master ST-1 LANDING		1.20.11.23
 // [not working] Slave ST-1 LANDING		Checking the impossible (at KSP) land of both ST-1 at same time...
-// [ ] FH Core ST-1 LANDING				developing... -> FH-CORE.sfs
+// [ ] FH Core ST-1 LANDING				developing... -> FH-CORE.sfs & FH-CORE-2.sfs
 // [ok] FH LEO Orbit					1.20.11.22
 // [ ] FH GSO Orbit						developing... -> GSO.sfs
 
@@ -347,7 +347,7 @@ function touchdown
 	update_phase_title("TOUCHDOWN",1).
 	SET step to TRUE.
 	set checkgear to 0.
-	until (SHIP:STATUS="LANDED") or sBurnDist <= 0.1
+	until (SHIP:STATUS="LANDED" or sBurnDist <= 0.1) and alt:radar < 100
 	{
 		if alt:radar > 650 and (impactDist < 150) and SHIP:GROUNDSPEED < 5 and Verticalspeed > -25
 		{
