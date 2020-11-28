@@ -7,6 +7,10 @@ This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP user
 - KSP 1.10.1<br>
 
 ----
+**FLEET:**
+![!](https://i.imgur.com/w9gUgOb.png)
+
+----
 <H1>Regression Tests for KOS Code:</H2>
 
 [ok] **F9 QMAX**<br>
