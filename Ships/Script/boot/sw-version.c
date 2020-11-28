@@ -82,7 +82,7 @@ if vehicle_type = "F9v1.2B5"
 	declare global Qmax 	to 16344/1.2.
 	declare global MECO1 	to 2100^2. //2180.
 	declare global FAIRSEP 	to 160*1000.
-}
+}else
 if vehicle_type = "F1-M1"
 {
 	declare global Qmax 	to 8576/1.1.

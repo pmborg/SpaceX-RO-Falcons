@@ -32,6 +32,7 @@ set Va to h/r.
 set ar to (Va^2)/r.
 set g to GM/(r)^2.
 set W to mass*(g-ar).
+set circle_error to 0.
 
 if maxthrust > 0
 	set theta to arcsin(W/maxthrust).
@@ -57,6 +58,11 @@ function wait_for_AP
 	set warp to 0.
 }
 
+function calculate_circle_error
+{
+	set avg to (apoapsis+periapsis)/2-FINAL_ORBIT.
+	set circle_error to avg/FINAL_ORBIT*100.
+}
 
 function do_circle_step
 {
@@ -167,6 +173,10 @@ function do_circle_step
 		}
 	}.
 	LOCK THROTTLE TO 0.
+	
+	calculate_circle_error().
+	if error > 1	//Good enough, no? do another iteration
+		do_circle_step().	
 }
 
 //LOCK STEERING TO heading (90, PlanetOuter*theta).
@@ -190,12 +200,12 @@ if orbit_type = "GSO"
 
 wait 5.
 CLEARSCREEN.
-PRINT "[7] DONE: Craft is now in Parking Orbit ---".
+//PRINT "[7] DONE: Craft is now in Parking Orbit ---".
+update_phase_title("Craft in Parking Orbit", 1).
 
 set e to (apoapsis-periapsis)/(apoapsis+periapsis).
 PRINT "Eccentricity" at (0,1). PRINT ROUND(e) at (20,1).
-set avg to (apoapsis+periapsis)/2-FINAL_ORBIT.
-set error to avg/FINAL_ORBIT*100.
+calculate_circle_error().
 PRINT "Error " + ROUND(error) + "%" at (0,2).
 PRINT "Craft is now in Parking Orbit -> Begin Phase I" at (0,3).
 WAIT 5.
