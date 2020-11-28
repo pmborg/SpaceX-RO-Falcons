@@ -230,7 +230,7 @@ if alt:radar < 100
 	{
 		if machVal > 0.8 and mphase = 0
 		{
-			update_phase_title("[3](Vehicle Transonic)", 1, false).
+			update_phase_title("[3](Vehicle Transonic)", 0, false).
 			set mphase to 1.
 		}
 		if machVal > 1.2 and mphase = 1
@@ -396,7 +396,8 @@ if alt:radar < 100
 		set vel to SQRT(Vs2).
 		update_atmosphere (altitude, vel).
 		log_data (vel).
-		check_if_we_need_new_stage().
+		if vehicle_type = "F1-M1"
+			check_if_we_need_new_stage().
 	}.		
 
 	RCS ON.
