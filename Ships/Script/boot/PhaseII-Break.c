@@ -9,7 +9,7 @@
 // Purpose: 
 //              This is used in orbital (de-orbit) mechanics.
 //              to land without precision (land any where near by)
-// 14/Nov/2020
+// 28/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 parameter goto_mission_target.
@@ -42,9 +42,9 @@ function break_velocity {
 		PRINT "BODY:ATM " + ROUND(body:atm:height) +"     " at (0,2).
 		PRINT "ship:Orbit:TRANSITION: "+ship:Orbit:TRANSITION+"     " at (0,3). //FINAL
 		
-		SET impactDist TO calcDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
-		PRINT_STATUS (14).
-		WAIT 0.05.
+		//SET impactDist TO calcDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
+		//PRINT_STATUS (14).
+		//WAIT 0.05.
 	}
 	
 	set thrust to 0.

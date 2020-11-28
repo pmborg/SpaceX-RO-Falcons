@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestre all mission phases.
-// 14/Nov/2020
+// 28/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 // Reset Engine settings before all, ("migth be a reboot")
@@ -77,15 +77,16 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 
 	//ACTION: BURN ----------------------------------------------------
 	if STATUS = "ORBITING" and apoapsis > body:atm:height and periapsis > body:atm:height and BODY:name = mission_origin
-		runpath("boot/BURN.c").
+		if BODY:name <> mission_target:name
+			runpath("boot/BURN.c").
 	else
 		PRINT "SKIP: BURN".
 
 	//ACTION: Break & LAND! -------------------------------------------
 	if status <> "LANDED" and status <> "SPLASHED"
 	{
-		PRINT "Press: 1 to Confirm the Burn to Land!". 
-		PRINT "Press: 2 to Confirm the Burn to Escape(Abort) and Return!".
+		PRINT "Press: 1 - Land Anywhere!". 
+		PRINT "Press: 2 - Escape(Abort) and Return!".
 		set ch to terminal:input:getchar(). PRINT "selected: "+ch.
 		if ch="1" or ch =""  {
 			PRINT "Confirm: SPEED-BREAK? (y/n)". set ch to terminal:input:getchar().

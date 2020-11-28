@@ -9,13 +9,13 @@
 // Purpose: 
 //              	- Used to land any where near by, (sample: after de-orbit on Mun or Moon)
 //                    used in missions (Beyond Earth)
-// 14/Nov/2020
+// 28/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 CLEARSCREEN.
 //PRINT "PhaseIII-Descending" at (0,0).
 update_phase_title("PHASEIII-DESCENDING   ", 1).
-runpath("boot/common.c").
+//runpath("boot/common.c").
 
 set GM to mission_target:mu. 		//GM = 6.5138398*(10^10).  (MUN)
 
@@ -74,7 +74,7 @@ UNLOCK STEERING.
 SET thrust TO 0.1.
 if altitude > 100000 //100km
 {
-	steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset).
+	lock steering to retrograde. //steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset).
 	
 	set warp to 3.
 	set Vo to 0.
@@ -103,7 +103,8 @@ SET Vdown TO 1.
 until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 {
 	//if alt:radar > 500
-	steerToTarget(85, 0, 0).
+	lock steering to retrograde. //
+	
 	//else
 	//	steerToTarget(87.5, 0, 0).
 	
@@ -214,11 +215,11 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 	PRINT "t: " + ROUND(t,1) + "     " at (0,12).
 	PRINT "x: " + x + "     " at (0,13).
 	
-	if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT 
-	{
-		SET impactDist TO calcDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
-		PRINT_STATUS (15).
-	}
+	// if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT 
+	// {
+		// SET impactDist TO calcDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
+		// PRINT_STATUS (15).
+	// }
 }
 
 //WAIT 5.
