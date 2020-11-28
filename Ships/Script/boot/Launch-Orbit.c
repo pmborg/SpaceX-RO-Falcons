@@ -496,7 +496,7 @@ if altitude*1.1 < FINAL_ORBIT2
 			if (KUniverse:ActiveVessel = SHIP) STAGE.
 			set phase to 2.
 		}
-		//if vehicle_type = "Crew Dragon 2"
+		if vehicle_type = "Crew Dragon 2" or vehicle_type = "Falcon Heavy"
 		{
 			if throttle > 0 and maxthrust = 0 
 			{
@@ -572,7 +572,7 @@ if altitude*1.1 < FINAL_ORBIT2
 			if (KUniverse:ActiveVessel = SHIP) STAGE.
 			set phase to 2.
 		}
-		//if vehicle_type = "Crew Dragon 2"
+		if vehicle_type = "Crew Dragon 2" or vehicle_type = "Falcon Heavy"
 		{
 			if throttle > 0 and maxthrust = 0 
 			{

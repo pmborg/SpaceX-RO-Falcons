@@ -176,13 +176,20 @@ if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
 	set present_heading to SHIP:HEADING.
 	
 	update_phase_title("STAGE-1 SEPARATION...   ", 0, true).
-	SAS ON. //OFF.
-	RCS ON. //OFF.
+	// SAS ON. //OFF.
+	// RCS ON. //OFF.
+	// LOCK STEERING TO SHIP:PROGRADE  + R(0,0,180).
+	// WAIT 5.
+	// PRINT_STATUS (3).
+	// SAS OFF.
+	// RCS ON.
+	
+	SAS OFF.
+	RCS OFF.
 	LOCK STEERING TO SHIP:PROGRADE  + R(0,0,180).
 	WAIT 5.
 	PRINT_STATUS (3).
-	SAS OFF.
-	RCS ON.
+	RCS ON.	
 	
 	//FLIP MANEUVER:
 	CLEARSCREEN.	
