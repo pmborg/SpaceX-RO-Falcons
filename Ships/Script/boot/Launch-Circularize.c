@@ -13,7 +13,7 @@
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
 
-PRINT "[5]Circularize------------------------------------".
+update_phase_title("[5]Circularize",1, false).
 SET MAPVIEW TO TRUE.	// map view on
 SAS OFF.
 
@@ -75,7 +75,7 @@ function do_circle_step
 
 	RCS ON.
 
-	PRINT "vcir-Vo: "+ (vcir-Vo) at (0,10).
+	PRINT "vcir-Vo: " at (0,10). PRINT ROUND (vcir-Vo) at (20,10).
 
 	//LOOP6: 
 	until (periapsis >= FINAL_ORBIT)// (vcir-Vo < .001 and periapsis >= FINAL_ORBIT) 
@@ -154,16 +154,16 @@ function do_circle_step
 			set theta to theta*error.
 		}.
 
-		PRINT "[6]Circularize-Burn to Circularize Orbit:"           at (0,0).
-		PRINT "Vertical Speed" 	at (0,1). PRINT ROUND(verticalspeed,2)	+ "     " at (20,1).
-		PRINT "Orbital Speed" 	at (0,2). PRINT ROUND(Vo,2)				+ "     " at (20,2).
-		PRINT "Vcir" 			at (0,3). PRINT ROUND(vcir) 		at (20,3).
-		PRINT "Theta" 			at (0,4). PRINT ROUND(theta,3) 	    at (20,4).
-		PRINT "vcir-Vo: " 		at (0,5). PRINT ROUND(vcir-Vo,2)	+ "     " at (20,5).
-		PRINT "Y: "       		at (0,6). PRINT y 					+ "     " at (20,6).
-		PRINT "thrust(x): "     at (0,7). PRINT x 					+ "     " at (20,7).
+		//PRINT "[6]Circularize-Burn to Circularize Orbit:"           at (0,0).
+		PRINT "Vertical Speed" 	at (0,2). PRINT ROUND(verticalspeed,2)	+ "     " at (20,2).
+		PRINT "Orbital Speed" 	at (0,3). PRINT ROUND(Vo,2)				+ "     " at (20,3).
+		PRINT "Vcir" 			at (0,4). PRINT ROUND(vcir) 		at (20,4).
+		PRINT "Theta" 			at (0,5). PRINT ROUND(theta,3) 	    at (20,5).
+		PRINT "vcir-Vo: " 		at (0,6). PRINT ROUND(vcir-Vo,2)	+ "     " at (20,6).
+		PRINT "Y: "       		at (0,7). PRINT y 					+ "     " at (20,7).
+		PRINT "thrust(x): "     at (0,8). PRINT x 					+ "     " at (20,8).
 		//PRINT "apoapsis/periapsis :"+ (apoapsis/periapsis)	at (0,8).
-		PRINT "Eccentricity: " at (0,10). PRINT ROUND(SHIP:ORBIT:ECCENTRICITY,3)   +"     " at (20,10).
+		PRINT "Eccentricity: " at (0,11). PRINT ROUND(SHIP:ORBIT:ECCENTRICITY,3)   +"     " at (20,11).
 		
 		wait 0.5.
 		if SHIP:ORBIT:ECCENTRICITY > last_ecc and SHIP:ORBIT:ECCENTRICITY < 0.1
@@ -174,9 +174,10 @@ function do_circle_step
 	}.
 	LOCK THROTTLE TO 0.
 	
-	calculate_circle_error().
-	if error > 1	//Good enough, no? do another iteration
-		do_circle_step().	
+	// calculate_circle_error().
+	// PRINT "circle_error " + ROUND(error) + "%" at (0,10).
+	// if error > 1	//Good enough, no? do another iteration
+		// runpath("boot/Launch-Circularize.c", FINAL_ORBIT).
 }
 
 //LOCK STEERING TO heading (90, PlanetOuter*theta).
@@ -198,11 +199,11 @@ if orbit_type = "GSO"
 	do_circle_step().
 }
 
+
+//PRINT "[7] DONE: Craft is now in Parking Orbit ---".
 wait 5.
 CLEARSCREEN.
-//PRINT "[7] DONE: Craft is now in Parking Orbit ---".
 update_phase_title("Craft in Parking Orbit", 1).
-
 set e to (apoapsis-periapsis)/(apoapsis+periapsis).
 PRINT "Eccentricity" at (0,1). PRINT ROUND(e) at (20,1).
 calculate_circle_error().
