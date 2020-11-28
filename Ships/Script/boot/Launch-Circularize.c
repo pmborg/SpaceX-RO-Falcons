@@ -13,36 +13,18 @@
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
 
+CLEARSCREEN.
 update_phase_title("[5]Circularize",1, false).
 SET MAPVIEW TO TRUE.	// map view on
 SAS OFF.
 
-//Calculate circular velocity at apoapsis altitude:
+// Calculate circular velocity (vcir) at apoapsis altitude:
 set x to 1.
-set GM to BODY:mu. 		//GM = 
-set r to max(apoapsis,periapsis)+BODY:radius. //apoapsis+BODY:radius. BODY("Kerbin")=600000.
-set vcir to (GM/r)^.5.
-set r to FINAL_ORBIT+BODY:radius. //apoapsis+BODY:radius. BODY("Kerbin")=600000.
-set v to 0.
-set per to periapsis+BODY:radius. //periapsis+BODY:radius. BODY("Kerbin")=600000.
-set a to (r+per)/2.
-set e to (r-per)/(r+per).
-set h to (GM*a*(1-(e^2)))^.5.
-set Va to h/r.
-set ar to (Va^2)/r.
-set g to GM/(r)^2.
-set W to mass*(g-ar).
 set circle_error to 0.
+set GM to BODY:mu.
+set v to 0.
 
-if maxthrust > 0
-	set theta to arcsin(W/maxthrust).
-else
-	set theta to 0. //arcsin(W/0.01).
-
-//LOOP5: Waiting on apoapsis arrival.
-CLEARSCREEN.
-PRINT "Warp to Apogee".
-PRINT "theta: " + ROUND(theta,2).
+//PRINT "Warp to Apogee".
 
 function wait_for_AP
 {
@@ -58,15 +40,8 @@ function wait_for_AP
 	set warp to 0.
 }
 
-function calculate_circle_error
-{
-	set avg to (apoapsis+periapsis)/2-FINAL_ORBIT.
-	set circle_error to avg/FINAL_ORBIT*100.
-}
-
 function do_circle_step
 {
-	CLEARSCREEN.
 	// Burn to circularize, theta is used to maintain the apogee in-front of the craft
 	set y to .5.
 	set Vo to 0.
@@ -74,10 +49,6 @@ function do_circle_step
 	set x to 1. //x=Throttle.
 
 	RCS ON.
-
-	PRINT "vcir-Vo: " at (0,10). PRINT ROUND (vcir-Vo) at (20,10).
-
-	//LOOP6: 
 	until (periapsis >= FINAL_ORBIT)// (vcir-Vo < .001 and periapsis >= FINAL_ORBIT) 
 	{
 		set last_ecc to SHIP:ORBIT:ECCENTRICITY.
@@ -89,7 +60,17 @@ function do_circle_step
 		set Voy to vorbit:y.
 		set Voz to vorbit:z.
 		set Vo to ((Vox^2)+(Voy^2)+(Voz^2))^.5.
-		set ar to (Vo^2)/r.
+		
+		set r to max(apoapsis,periapsis)+BODY:radius. //apoapsis+BODY:radius. BODY("Kerbin")=600000.
+		set vcir to (GM/r)^.5.
+		set r to FINAL_ORBIT+BODY:radius. //apoapsis+BODY:radius. BODY("Kerbin")=600000.
+		set per to periapsis+BODY:radius. //periapsis+BODY:radius. BODY("Kerbin")=600000.
+		set a to (r+per)/2.
+		set e to (r-per)/(r+per).
+		set h to (GM*a*(1-(e^2)))^.5.
+		set Va to h/r.
+		set ar to (Va^2)/r.
+		set g to GM/(r)^2.
 		set W to mass*(g-ar).
 		
 		if y = .5 {
@@ -158,11 +139,12 @@ function do_circle_step
 		PRINT "Vertical Speed" 	at (0,2). PRINT ROUND(verticalspeed,2)	+ "     " at (20,2).
 		PRINT "Orbital Speed" 	at (0,3). PRINT ROUND(Vo,2)				+ "     " at (20,3).
 		PRINT "Vcir" 			at (0,4). PRINT ROUND(vcir) 		at (20,4).
-		PRINT "Theta" 			at (0,5). PRINT ROUND(theta,3) 	    at (20,5).
+		PRINT "Theta" 			at (0,5). PRINT ROUND(theta,2) 	    at (20,5).
 		PRINT "vcir-Vo: " 		at (0,6). PRINT ROUND(vcir-Vo,2)	+ "     " at (20,6).
 		PRINT "Y: "       		at (0,7). PRINT y 					+ "     " at (20,7).
 		PRINT "thrust(x): "     at (0,8). PRINT x 					+ "     " at (20,8).
 		//PRINT "apoapsis/periapsis :"+ (apoapsis/periapsis)	at (0,8).
+		PRINT "vcir-Vo: " at (0,10). 	  PRINT ROUND (vcir-Vo)+"  " at (20,10).
 		PRINT "Eccentricity: " at (0,11). PRINT ROUND(SHIP:ORBIT:ECCENTRICITY,3)   +"     " at (20,11).
 		
 		wait 0.5.
@@ -173,42 +155,34 @@ function do_circle_step
 		}
 	}.
 	LOCK THROTTLE TO 0.
-	
-	// calculate_circle_error().
-	// PRINT "circle_error " + ROUND(error) + "%" at (0,10).
-	// if error > 1	//Good enough, no? do another iteration
-		// runpath("boot/Launch-Circularize.c", FINAL_ORBIT).
 }
 
-//LOCK STEERING TO heading (90, PlanetOuter*theta).
+// DO CIRCULARIZATION:
+////////////////////////////////////////////////////////////////////////////////////////////////
 SET steeringDir TO 90.	// W/E
 SET Vdeg to 0.			// Vertical = 90
 set Vroll to -270.		// Zero Rotation
-LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
-
+LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).	//LOCK STEERING TO heading (90, PlanetOuter*theta).
 
 if ship:verticalspeed > 0
-	wait_for_AP(45).
+	wait_for_AP(60).
 
 do_circle_step().
 
 if orbit_type = "GSO"
 {
 	set FINAL_ORBIT to 35786000. //35,786 km
-	wait_for_AP(45).
+	wait_for_AP(60).
 	do_circle_step().
 }
 
-
-//PRINT "[7] DONE: Craft is now in Parking Orbit ---".
+// ITS DONE:
+////////////////////////////////////////////////////////////////////////////////////////////////
 wait 5.
 CLEARSCREEN.
-update_phase_title("Craft in Parking Orbit", 1).
+update_phase_title("Craft in Parking Orbit", 1, false).
 set e to (apoapsis-periapsis)/(apoapsis+periapsis).
-PRINT "Eccentricity" at (0,1). PRINT ROUND(e) at (20,1).
-calculate_circle_error().
-PRINT "Error " + ROUND(error) + "%" at (0,2).
-PRINT "Craft is now in Parking Orbit -> Begin Phase I" at (0,3).
+PRINT "Eccentricity Error: " at (0,2). PRINT ROUND(e,2) at (20,2).
 WAIT 5.
 
 RCS OFF.
