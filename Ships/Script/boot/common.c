@@ -9,7 +9,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Common lib of functions used by Falcon-Return.c
-// 21/Nov/2020
+// 28/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 declare global landingAltitude TO LandingTarget:TERRAINHEIGHT.
@@ -219,8 +219,8 @@ function PRINT_STATUS
 	PRINT "LandingTarget:HEADING: "+ROUND (LandingTarget:HEADING,1)+" deg.   " at (0,y+5).
 	PRINT "LandingTarget:BEARING: "+ROUND (LandingTarget:BEARING,1)+" deg.   " at (0,y+6).
 	
-	PRINT "Landing distance from target: " + ROUND(impactDist/1000,3) +" km   " at (0,y+8).
-	PRINT "Current distance from target: "+ROUND(HorizDist/1000,3)+" km   " at (0,y+9).
+	PRINT "Hor. Landing distance from target: " + ROUND(impactDist/1000,3) +" km   " at (0,y+8).
+	PRINT "Hor. Current distance from target: "+ROUND(HorizDist/1000,3)+" km   " at (0,y+9).
 	PRINT "landingAltitude: "+ROUND (landingAltitude,1)+" m   " at (0,y+10).
 	PRINT "alt:radar: "+ROUND (alt:radar,1)+" m   " at (0,y+11).
 	PRINT "steeringDir: "+ROUND (steeringDir,1)+"   " at (0,y+12).

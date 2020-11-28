@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to control (ST-1) Boosters and waiting phases and prepare them to land.
-// 26/Nov/2020
+// 28/Nov/2020
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 CLEARSCREEN.
@@ -45,7 +45,7 @@ if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 	DELETEPATH("1:/STAGE1_TARGET_FILE.c").
 
 	//WAIT until signal received:
-	update_phase_title("WAIT TO STARTUP SIGNAL   ", 0, true).
+	update_phase_title("WAIT TO STARTUP SIGNAL", 0, true).
 	WAIT UNTIL NOT CORE:MESSAGES:EMPTY.
 	SET RECEIVED TO CORE:MESSAGES:POP.
 	set TARGET_N to RECEIVED:CONTENT.
@@ -169,6 +169,13 @@ if ALL_PROCESSORS:LENGTH > 2
 else
 	core:doaction("Open Terminal", true).
 
+
+set TOTAL_PARTS to 0.
+FOR P IN SHIP:PARTS
+	SET TOTAL_PARTS to TOTAL_PARTS + 1.
+
+set in_sync to true.
+
 // --------------------------------------------------------------------------------------------
 // WAIT and point falcons to Target (Horizontally only)
 if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
@@ -176,6 +183,7 @@ if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
 	set present_heading to SHIP:HEADING.
 	
 	update_phase_title("STAGE-1 SEPARATION...   ", 0, true).
+	// FH:
 	// SAS ON. //OFF.
 	// RCS ON. //OFF.
 	// LOCK STEERING TO SHIP:PROGRADE  + R(0,0,180).
@@ -184,6 +192,7 @@ if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
 	// SAS OFF.
 	// RCS ON.
 	
+	//F9:
 	SAS OFF.
 	RCS OFF.
 	LOCK STEERING TO SHIP:PROGRADE  + R(0,0,180).
@@ -196,17 +205,27 @@ if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
 	update_phase_title("FLIP MANEUVER   ", 0, true).
 	FROM {local x is 20.} UNTIL x = 0 STEP {set x to x-1.} DO 
 	{
+		
+		//print "heading: "+ship:heading+"  " at (0,2).
+		
+		print "wait: "+x+" " at (42,2).
+		
 		if STAGE_1_TYPE = "CORE"
 			LOCK STEERING TO HEADING(270,0, -270).						// For Drone Ship Landing
 		else
 			steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset). // Heading to Return Home
 		
 		PRINT_STATUS (3).
-		if ship:heading>265 and ship:heading<275 
-			set x to 0.
-		WAIT 1.
+		if shipPitch>-5 and shipPitch<5
+		{
+			set x to 1.
+			//break. 
+		}
+		else
+			WAIT 1.
 	}
-
+	print "wait: --" at (42,2).
+	
 	// FOR FH - Sync Moment for Coastal Burn:
 	// if STAGE_1_TYPE = "SLAVE" or STAGE_1_TYPE = "MASTER"
 	// {
@@ -225,12 +244,6 @@ if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
 			// OTHER_CONNECTION:SENDMESSAGE(255).
 	// }
 }
-
-set TOTAL_PARTS to 0.
-FOR P IN SHIP:PARTS
-	SET TOTAL_PARTS to TOTAL_PARTS + 1.
-
-set in_sync to true.
 
 // Open Inf. Thread to read values from Master:
 if STAGE_1_TYPE = "SLAVE" 
@@ -262,6 +275,9 @@ if STAGE_1_TYPE = "SLAVE"
 else {
 	 if STAGE_1_TYPE <> "SLAVE" 
 	 {
+		if KUniverse:ActiveVessel <> SHIP
+			update_phase_title("(wait to be active vessel)", 0, true).
+		
 		UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 			SET TARGET TO LandingZone.
 	 }
@@ -276,7 +292,7 @@ if CORE:BOOTFILENAME:FIND("boot-boosters.ks") > -1
 }
 
 //Activate 3 engines:
-update_phase_title("(ACTIVATE 3 ENGINES)  ", 0, true).
+update_phase_title("(ACTIVATE 3 ENGINES)", 0, true).
 activate3engines().
 
 RUNPATH( "boot/Falcon-Return.c").

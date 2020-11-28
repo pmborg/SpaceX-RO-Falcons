@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Circularize an orbit after Launch-Orbit.c
-// 21/Nov/2020
+// 28/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
@@ -156,7 +156,7 @@ function do_circle_step
 		PRINT "vcir-Vo: " 		at (0,5). PRINT ROUND(vcir-Vo,2)	+ "     " at (20,5).
 		PRINT "Y: "       		at (0,6). PRINT y 					+ "     " at (20,6).
 		PRINT "thrust(x): "     at (0,7). PRINT x 					+ "     " at (20,7).
-		PRINT "apoapsis/periapsis :"+ (apoapsis/periapsis)	at (0,8).
+		//PRINT "apoapsis/periapsis :"+ (apoapsis/periapsis)	at (0,8).
 		PRINT "Eccentricity: " + ROUND(SHIP:ORBIT:ECCENTRICITY,3)   +"     " at (0,10).
 		
 		wait 0.5.
@@ -177,14 +177,14 @@ LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
 
 
 if ship:verticalspeed > 0
-	wait_for_AP(30).
+	wait_for_AP(45).
 
 do_circle_step().
 
 if orbit_type = "GSO"
 {
 	set FINAL_ORBIT to 35786000. //35,786 km
-	wait_for_AP(30).
+	wait_for_AP(45).
 	do_circle_step().
 }
 
