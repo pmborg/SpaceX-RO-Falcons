@@ -31,7 +31,7 @@ PART
 	resPri = 0
 	dstg = 0
 	sidx = 0
-	sqor = 4
+	sqor = 3
 	sepI = -1
 	attm = 0
 	sameVesselCollision = False
@@ -44,7 +44,7 @@ PART
 	link = Decoupler.1_4292680602
 	link = KK.SPX.F1Fairing_4294422108
 	attN = top,Decoupler.1_4292680602_0|1.25416398|0_0|1|0_0|1.25416398|0_0|1|0
-	attN = fairing01,KK.SPX.F1Fairing_4294422108_0|2.75367999|-0.749999702_0|1|0_0|2.75367999|-0.749999702_0|1|0
+	attN = fairing01,Null_0_0|2.75367999|-0.749999702_0|1|0_0|2.75367999|-0.749999702_0|1|0
 	attN = fairing01,Null_0_0|2.75367999|-0.749999702_0|1|0_0|2.75367999|-0.749999702_0|1|0
 	attN = engine,RO.surveyorCore_4293341990_0|-1.16999996|0_0|-1|0_0|-1.16999996|0_0|-1|0
 	attN = bottom,KK.SPX.F1IS_4293820886_0|-0.781997919|0_0|-1|0_0|-0.781997919|0_0|-1|0
@@ -113,6 +113,49 @@ PART
 		}
 		ACTIONS
 		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = kOSProcessor
+		isEnabled = True
+		bootFile = None
+		diskSpace = 10000
+		baseDiskSpace = 10000
+		baseModuleMass = 0
+		additionalCost = 0
+		MaxPartId = 100
+		RequiredPower = 0.00999999978
+		stagingEnabled = True
+		activated = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			Activate
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			Deactivate
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			Toggle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			TogglePower
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -191,7 +234,7 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
+		name = Driftless
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -206,7 +249,7 @@ PART
 	}
 	MODULE
 	{
-		name = FARAeroPartModule
+		name = AYCrewPart
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -221,8 +264,102 @@ PART
 	}
 	MODULE
 	{
-		name = FARPartModule
+		name = AYPart
 		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = PMB.SPXF1M1A1C.S2FT
+				PrtTitle = WIP RO - PMB_Falcon 1 (Merlin 1A) S2 Fuel Tank
+				PrtModuleName = ModuleCommand
+				PrtSubsystem = False
+				PrtPower = 0.08
+				PrtPowerF = 0.0799999982
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4293821694,ModuleCommand
+			}
+			AYPwrPartList
+			{
+				PrtName = PMB.SPXF1M1A1C.S2FT
+				PrtTitle = WIP RO - PMB_Falcon 1 (Merlin 1A) S2 Fuel Tank
+				PrtModuleName = ModuleDataTransmitter
+				PrtSubsystem = False
+				PrtPower = 6
+				PrtPowerF = 6
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4293821694,ModuleDataTransmitter
+			}
+			AYPwrPartList
+			{
+				PrtName = AmpYear SubSystems-Max
+				PrtTitle = AmpYear SubSystems-Max
+				PrtModuleName = RCS
+				PrtSubsystem = True
+				PrtPower = 0
+				PrtPowerF = 0
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4293821694,RCS
+			}
+			AYPwrPartList
+			{
+				PrtName = AmpYear SubSystems-Max
+				PrtTitle = AmpYear SubSystems-Max
+				PrtModuleName = SAS
+				PrtSubsystem = True
+				PrtPower = 0
+				PrtPowerF = 0
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4293821694,SAS
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
 		stagingEnabled = True
 		EVENTS
 		{
@@ -2451,8 +2588,99 @@ PART
 			}
 			MechJebModuleAirplaneAutopilot
 			{
+				HeadingHoldEnabled = False
+				AltitudeHoldEnabled = False
+				VertSpeedHoldEnabled = False
+				RollHoldEnabled = False
+				SpeedHoldEnabled = False
+				AltitudeTarget = 0
+				HeadingTarget = 90
+				RollTarget = 0
+				SpeedTarget = 0
+				VertSpeedTarget = 0
+				BankAngle = 30
 				unlockParts = 
 				unlockTechs = 
+				AccKp
+				{
+					_val = 0.5
+					_text = 0.5
+				}
+				AccKi
+				{
+					_val = 0.5
+					_text = 0.5
+				}
+				AccKd
+				{
+					_val = 0.0050000000000000001
+					_text = 0.005
+				}
+				PitKp
+				{
+					_val = 2
+					_text = 2
+				}
+				PitKi
+				{
+					_val = 1
+					_text = 1
+				}
+				PitKd
+				{
+					_val = 0.0050000000000000001
+					_text = 0.005
+				}
+				RolKp
+				{
+					_val = 0.5
+					_text = 0.5
+				}
+				RolKi
+				{
+					_val = 0.02
+					_text = 0.02
+				}
+				RolKd
+				{
+					_val = 0.5
+					_text = 0.5
+				}
+				YawKp
+				{
+					_val = 1
+					_text = 1
+				}
+				YawKi
+				{
+					_val = 0.25
+					_text = 0.25
+				}
+				YawKd
+				{
+					_val = 0.02
+					_text = 0.02
+				}
+				YawLimit
+				{
+					_val = 10
+					_text = 10
+				}
+				RollLimit
+				{
+					_val = 45
+					_text = 45
+				}
+				PitchDownLimit
+				{
+					_val = 15
+					_text = 15
+				}
+				PitchUpLimit
+				{
+					_val = 25
+					_text = 25
+				}
 			}
 			MechJebModuleDockingGuidance
 			{
@@ -2670,6 +2898,7 @@ PART
 			}
 			MechJebModuleAirplaneGuidance
 			{
+				showpid = False
 				unlockParts = 
 				unlockTechs = 
 			}
@@ -2837,8 +3066,23 @@ PART
 	}
 	MODULE
 	{
-		name = ModulePartInfo
+		name = TrajectoriesVesselSettings
 		isEnabled = True
+		Initialized = False
+		EntryAngle = 3.1415926535897931
+		EntryHorizon = False
+		HighAngle = 3.1415926535897931
+		HighHorizon = False
+		LowAngle = 3.1415926535897931
+		LowHorizon = False
+		GroundAngle = 3.1415926535897931
+		GroundHorizon = False
+		RetrogradeEntry = True
+		TargetBody = 
+		TargetPosition_x = 0
+		TargetPosition_y = 0
+		TargetPosition_z = 0
+		ManualTargetTxt = 
 		stagingEnabled = True
 		EVENTS
 		{
@@ -2918,12 +3162,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 2
+	istg = 1
 	resPri = 0
 	dstg = 1
 	sidx = 0
-	sqor = 3
-	sepI = 2
+	sqor = 1
+	sepI = 1
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -2978,7 +3222,7 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
+		name = Driftless
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -2993,7 +3237,7 @@ PART
 	}
 	MODULE
 	{
-		name = FARAeroPartModule
+		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -3002,14 +3246,21 @@ PART
 		ACTIONS
 		{
 		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+		}
 		UPGRADESAPPLIED
 		{
 		}
 	}
 	MODULE
 	{
-		name = FARPartModule
+		name = KOSNameTag
 		isEnabled = True
+		nameTag = 
 		stagingEnabled = True
 		EVENTS
 		{
@@ -3069,21 +3320,6 @@ PART
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
 		}
 		UPGRADESAPPLIED
 		{
@@ -3231,6 +3467,21 @@ PART
 	}
 	MODULE
 	{
+		name = Driftless
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = ModuleCrewAssignment
 		isEnabled = True
 		slotAssignments = 
@@ -3247,7 +3498,7 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
+		name = AYCrewPart
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -3262,7 +3513,7 @@ PART
 	}
 	MODULE
 	{
-		name = FARAeroPartModule
+		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -3271,14 +3522,57 @@ PART
 		ACTIONS
 		{
 		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = RO.surveyorCore
+				PrtTitle = Surveyor Core
+				PrtModuleName = ModuleCommand
+				PrtSubsystem = False
+				PrtPower = 0.12
+				PrtPowerF = 0.119999997
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4293341990,ModuleCommand
+			}
+			AYPwrPartList
+			{
+				PrtName = RO.surveyorCore
+				PrtTitle = Surveyor Core
+				PrtModuleName = ModuleDataTransmitter
+				PrtSubsystem = False
+				PrtPower = 6
+				PrtPowerF = 6
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4293341990,ModuleDataTransmitter
+			}
+		}
 		UPGRADESAPPLIED
 		{
 		}
 	}
 	MODULE
 	{
-		name = FARPartModule
+		name = KOSNameTag
 		isEnabled = True
+		nameTag = 
 		stagingEnabled = True
 		EVENTS
 		{
@@ -4445,14 +4739,72 @@ PART
 	}
 	MODULE
 	{
-		name = ModulePartInfo
+		name = TrajectoriesVesselSettings
 		isEnabled = True
+		Initialized = False
+		EntryAngle = 3.1415926535897931
+		EntryHorizon = False
+		HighAngle = 3.1415926535897931
+		HighHorizon = False
+		LowAngle = 3.1415926535897931
+		LowHorizon = False
+		GroundAngle = 3.1415926535897931
+		GroundHorizon = False
+		RetrogradeEntry = True
+		TargetBody = 
+		TargetPosition_x = 0
+		TargetPosition_y = 0
+		TargetPosition_z = 0
+		ManualTargetTxt = 
 		stagingEnabled = True
 		EVENTS
 		{
 		}
 		ACTIONS
 		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = kOSProcessor
+		isEnabled = True
+		bootFile = None
+		diskSpace = 5000
+		baseDiskSpace = 5000
+		baseModuleMass = 0
+		additionalCost = 0
+		MaxPartId = 100
+		RequiredPower = 0.00999999978
+		stagingEnabled = True
+		activated = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			Activate
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			Deactivate
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			Toggle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			TogglePower
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -4504,11 +4856,11 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 2
 	resPri = 0
 	dstg = 0
 	sidx = 0
-	sqor = 0
+	sqor = 2
 	sepI = -1
 	attm = 0
 	sameVesselCollision = False
@@ -4697,6 +5049,42 @@ PART
 	}
 	MODULE
 	{
+		name = Driftless
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = EngineGroupModule
 		isEnabled = True
 		EngineGroupId = 
@@ -4713,38 +5101,9 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
+		name = KOSNameTag
 		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
+		nameTag = 
 		stagingEnabled = True
 		EVENTS
 		{
@@ -4764,21 +5123,6 @@ PART
 		techLevel = -1
 		thrustRating = maxThrust
 		modded = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -4810,7 +5154,7 @@ PART
 	resPri = 0
 	dstg = 1
 	sidx = 1
-	sqor = 4
+	sqor = 3
 	sepI = 3
 	attm = 0
 	sameVesselCollision = False
@@ -4872,7 +5216,7 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
+		name = Driftless
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -4887,7 +5231,7 @@ PART
 	}
 	MODULE
 	{
-		name = FARAeroPartModule
+		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -4896,14 +5240,21 @@ PART
 		ACTIONS
 		{
 		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+		}
 		UPGRADESAPPLIED
 		{
 		}
 	}
 	MODULE
 	{
-		name = FARPartModule
+		name = KOSNameTag
 		isEnabled = True
+		nameTag = 
 		stagingEnabled = True
 		EVENTS
 		{
@@ -4941,21 +5292,6 @@ PART
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
 		}
 		UPGRADESAPPLIED
 		{
@@ -5017,7 +5353,7 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
+		name = Driftless
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -5032,7 +5368,7 @@ PART
 	}
 	MODULE
 	{
-		name = FARAeroPartModule
+		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -5041,14 +5377,21 @@ PART
 		ACTIONS
 		{
 		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+		}
 		UPGRADESAPPLIED
 		{
 		}
 	}
 	MODULE
 	{
-		name = FARPartModule
+		name = KOSNameTag
 		isEnabled = True
+		nameTag = 
 		stagingEnabled = True
 		EVENTS
 		{
@@ -7067,21 +7410,6 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 	RESOURCE
 	{
 		name = LqdOxygen
@@ -7160,7 +7488,7 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
+		name = Driftless
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -7175,8 +7503,30 @@ PART
 	}
 	MODULE
 	{
-		name = FARAeroPartModule
+		name = AYPart
 		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
 		stagingEnabled = True
 		EVENTS
 		{
@@ -7190,8 +7540,12 @@ PART
 	}
 	MODULE
 	{
-		name = FARPartModule
+		name = TweakScale
 		isEnabled = True
+		currentScale = 1.25
+		defaultScale = 1.25
+		defaultTransformScale = (0, 0, 0)
+		DryCost = 300
 		stagingEnabled = True
 		EVENTS
 		{
@@ -7929,21 +8283,6 @@ PART
 			upgrade = MLI.Upgrade5
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
@@ -7964,7 +8303,7 @@ PART
 	resPri = 0
 	dstg = 2
 	sidx = 0
-	sqor = 5
+	sqor = 4
 	sepI = 3
 	attm = 1
 	sameVesselCollision = False
@@ -8032,7 +8371,7 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
+		name = Driftless
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -8047,7 +8386,7 @@ PART
 	}
 	MODULE
 	{
-		name = FARAeroPartModule
+		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -8056,19 +8395,10 @@ PART
 		ACTIONS
 		{
 		}
-		UPGRADESAPPLIED
+		VesselProdPartsList
 		{
 		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
+		VesselConsPartsList
 		{
 		}
 		UPGRADESAPPLIED
@@ -8077,8 +8407,9 @@ PART
 	}
 	MODULE
 	{
-		name = ModulePartInfo
+		name = KOSNameTag
 		isEnabled = True
+		nameTag = 
 		stagingEnabled = True
 		EVENTS
 		{
@@ -8110,7 +8441,7 @@ PART
 	resPri = 0
 	dstg = 2
 	sidx = 0
-	sqor = 5
+	sqor = 4
 	sepI = 3
 	attm = 1
 	sameVesselCollision = False
@@ -8178,7 +8509,7 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
+		name = Driftless
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -8193,7 +8524,7 @@ PART
 	}
 	MODULE
 	{
-		name = FARAeroPartModule
+		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -8202,19 +8533,10 @@ PART
 		ACTIONS
 		{
 		}
-		UPGRADESAPPLIED
+		VesselProdPartsList
 		{
 		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
+		VesselConsPartsList
 		{
 		}
 		UPGRADESAPPLIED
@@ -8223,8 +8545,9 @@ PART
 	}
 	MODULE
 	{
-		name = ModulePartInfo
+		name = KOSNameTag
 		isEnabled = True
+		nameTag = 
 		stagingEnabled = True
 		EVENTS
 		{
@@ -8256,7 +8579,7 @@ PART
 	resPri = 0
 	dstg = 2
 	sidx = 0
-	sqor = 5
+	sqor = 4
 	sepI = 3
 	attm = 1
 	sameVesselCollision = False
@@ -8324,7 +8647,7 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
+		name = Driftless
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -8339,7 +8662,7 @@ PART
 	}
 	MODULE
 	{
-		name = FARAeroPartModule
+		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -8348,19 +8671,10 @@ PART
 		ACTIONS
 		{
 		}
-		UPGRADESAPPLIED
+		VesselProdPartsList
 		{
 		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
+		VesselConsPartsList
 		{
 		}
 		UPGRADESAPPLIED
@@ -8369,8 +8683,9 @@ PART
 	}
 	MODULE
 	{
-		name = ModulePartInfo
+		name = KOSNameTag
 		isEnabled = True
+		nameTag = 
 		stagingEnabled = True
 		EVENTS
 		{
@@ -8402,7 +8717,7 @@ PART
 	resPri = 0
 	dstg = 2
 	sidx = 0
-	sqor = 5
+	sqor = 4
 	sepI = 3
 	attm = 1
 	sameVesselCollision = False
@@ -8470,7 +8785,7 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
+		name = Driftless
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -8485,7 +8800,7 @@ PART
 	}
 	MODULE
 	{
-		name = FARAeroPartModule
+		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -8494,19 +8809,10 @@ PART
 		ACTIONS
 		{
 		}
-		UPGRADESAPPLIED
+		VesselProdPartsList
 		{
 		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
+		VesselConsPartsList
 		{
 		}
 		UPGRADESAPPLIED
@@ -8515,8 +8821,9 @@ PART
 	}
 	MODULE
 	{
-		name = ModulePartInfo
+		name = KOSNameTag
 		isEnabled = True
+		nameTag = 
 		stagingEnabled = True
 		EVENTS
 		{
@@ -8544,12 +8851,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 1
+	istg = 0
 	resPri = 0
 	dstg = 1
 	sidx = 0
-	sqor = 1
-	sepI = 1
+	sqor = 0
+	sepI = 0
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -8652,7 +8959,23 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
+		name = ModulePartVariants
+		isEnabled = True
+		useVariantMass = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = Driftless
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -8667,8 +8990,33 @@ PART
 	}
 	MODULE
 	{
-		name = FARAeroPartModule
+		name = AYPart
 		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 1.25
+		defaultScale = 1.25
+		defaultTransformScale = (0, 0, 0)
+		DryCost = 200
 		stagingEnabled = True
 		EVENTS
 		{
@@ -8682,23 +9030,9 @@ PART
 	}
 	MODULE
 	{
-		name = FARPartModule
+		name = KOSNameTag
 		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
+		nameTag = 
 		stagingEnabled = True
 		EVENTS
 		{
@@ -8726,17 +9060,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 1
+	istg = 0
 	resPri = 0
 	dstg = 2
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
+	link = 4mv.vl.sensor.accelerometer.srf.1_4292537294
 	attN = bottom,Decoupler.1_4292680602_0|-0.274479985|0_0|-1|0_0|-0.274479985|0_0|-1|0
 	EVENTS
 	{
@@ -8834,6 +9169,21 @@ PART
 	}
 	MODULE
 	{
+		name = Driftless
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = ModuleCrewAssignment
 		isEnabled = True
 		slotAssignments = 
@@ -8850,7 +9200,7 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
+		name = AYCrewPart
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -8865,7 +9215,7 @@ PART
 	}
 	MODULE
 	{
-		name = FARAeroPartModule
+		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -8874,14 +9224,57 @@ PART
 		ACTIONS
 		{
 		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = probeCoreSphere.v2
+				PrtTitle = Sputnik PS-1
+				PrtModuleName = ModuleCommand
+				PrtSubsystem = False
+				PrtPower = 0.001
+				PrtPowerF = 0.00100000005
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4294422252,ModuleCommand
+			}
+			AYPwrPartList
+			{
+				PrtName = probeCoreSphere.v2
+				PrtTitle = Sputnik PS-1
+				PrtModuleName = ModuleDataTransmitter
+				PrtSubsystem = False
+				PrtPower = 6
+				PrtPowerF = 6
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4294422252,ModuleDataTransmitter
+			}
+		}
 		UPGRADESAPPLIED
 		{
 		}
 	}
 	MODULE
 	{
-		name = FARPartModule
+		name = KOSNameTag
 		isEnabled = True
+		nameTag = 
 		stagingEnabled = True
 		EVENTS
 		{
@@ -9042,14 +9435,72 @@ PART
 	}
 	MODULE
 	{
-		name = ModulePartInfo
+		name = TrajectoriesVesselSettings
 		isEnabled = True
+		Initialized = False
+		EntryAngle = 3.1415926535897931
+		EntryHorizon = False
+		HighAngle = 3.1415926535897931
+		HighHorizon = False
+		LowAngle = 3.1415926535897931
+		LowHorizon = False
+		GroundAngle = 3.1415926535897931
+		GroundHorizon = False
+		RetrogradeEntry = True
+		TargetBody = 
+		TargetPosition_x = 0
+		TargetPosition_y = 0
+		TargetPosition_z = 0
+		ManualTargetTxt = 
 		stagingEnabled = True
 		EVENTS
 		{
 		}
 		ACTIONS
 		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = kOSProcessor
+		isEnabled = True
+		bootFile = /boot/boot.ks
+		diskSpace = 5000
+		baseDiskSpace = 5000
+		baseModuleMass = 0
+		additionalCost = 0
+		MaxPartId = 100
+		RequiredPower = 0.00999999978
+		stagingEnabled = True
+		activated = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			Activate
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			Deactivate
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			Toggle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			TogglePower
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -9085,6 +9536,17 @@ PART
 		isVisible = True
 		flowMode = Both
 	}
+	RESOURCE
+	{
+		name = ReservePower
+		amount = 1000
+		maxAmount = 1000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
 }
 PART
 {
@@ -9101,12 +9563,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 2
+	istg = 1
 	resPri = 0
 	dstg = 1
 	sidx = 1
-	sqor = 3
-	sepI = 2
+	sqor = 1
+	sepI = 1
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -9161,7 +9623,7 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
+		name = Driftless
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -9176,7 +9638,7 @@ PART
 	}
 	MODULE
 	{
-		name = FARAeroPartModule
+		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -9185,14 +9647,21 @@ PART
 		ACTIONS
 		{
 		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+		}
 		UPGRADESAPPLIED
 		{
 		}
 	}
 	MODULE
 	{
-		name = FARPartModule
+		name = KOSNameTag
 		isEnabled = True
+		nameTag = 
 		stagingEnabled = True
 		EVENTS
 		{
@@ -9257,21 +9726,6 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
@@ -9292,7 +9746,7 @@ PART
 	resPri = 0
 	dstg = 2
 	sidx = 1
-	sqor = 5
+	sqor = 4
 	sepI = 3
 	attm = 0
 	sameVesselCollision = False
@@ -9300,7 +9754,7 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	link = F1.pad_4293934484
-	attN = top,Null_0_0|2.02316999|0_0|1|0_0|2.02316999|0_0|1|0
+	attN = mid,Null_0_0|1.88557994|0_0|1|0_0|1.88557994|0_0|1|0
 	attN = top,FASA.Mercury.LFT.Short_4292570000_0|2.02316999|0_0|1|0_0|2.02316999|0_0|1|0
 	attN = bottom,F1.pad_4293934484_0|-0.88459599|0_0|-1|0_0|-0.88459599|0_0|-1|0
 	EVENTS
@@ -9607,6 +10061,21 @@ PART
 	}
 	MODULE
 	{
+		name = Driftless
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = TRReflection
 		isEnabled = True
 		stagingEnabled = True
@@ -9614,6 +10083,27 @@ PART
 		{
 		}
 		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
 		{
 		}
 		UPGRADESAPPLIED
@@ -9638,38 +10128,9 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
+		name = KOSNameTag
 		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
+		nameTag = 
 		stagingEnabled = True
 		EVENTS
 		{
@@ -9738,21 +10199,6 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 	RESOURCE
 	{
 		name = TEATEB
@@ -9784,7 +10230,7 @@ PART
 	resPri = 0
 	dstg = 3
 	sidx = 0
-	sqor = 6
+	sqor = 5
 	sepI = 5
 	attm = 0
 	sameVesselCollision = False
@@ -9916,6 +10362,21 @@ PART
 	}
 	MODULE
 	{
+		name = Driftless
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = RefuelingPump
 		isEnabled = True
 		enablePump = True
@@ -9933,7 +10394,197 @@ PART
 	}
 	MODULE
 	{
-		name = FARPartModule
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = F1.pad
+				PrtTitle = non RO - Falcon 1 Launch Pad
+				PrtModuleName = ModuleGenerator
+				PrtSubsystem = False
+				PrtPower = 0.75
+				PrtPowerF = 0.75
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ProdPartKey = 4293934484,ModuleGenerator
+			}
+		}
+		VesselConsPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = F1.pad
+				PrtTitle = non RO - Falcon 1 Launch Pad
+				PrtModuleName = ModuleGenerator
+				PrtSubsystem = False
+				PrtPower = 0
+				PrtPowerF = 0
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4293934484,ModuleGenerator
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = 4mv.vl.sensor.accelerometer.srf.1_4292537294
+	partName = Part
+	persistentId = 1074248844
+	pos = -0.0204763208,24.9777565,0.128235132
+	attPos = 0,0,0
+	attPos0 = 0.0121960845,0.400161743,0.00544068217
+	rot = -0.393950731,-0.578891277,-0.607109964,0.375639796
+	attRot = 0.99999994,0,0,0
+	attRot0 = -0.393950731,-0.578891277,-0.607109964,0.375639796
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 2
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	srfN = srfAttach,probeCoreSphere.v2_4294422252,sphere,0|0|0,0|0|-1,0|0|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEnviroSensor
+		isEnabled = True
+		sensorActive = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleScienceExperiment
+		isEnabled = True
+		Deployed = False
+		Inoperable = False
+		cooldownToGo = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DeployAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ResetAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartVariants
+		isEnabled = True
+		useVariantMass = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = Driftless
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -9948,8 +10599,48 @@ PART
 	}
 	MODULE
 	{
-		name = ModulePartInfo
+		name = AYPart
 		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = 4mv.vl.sensor.accelerometer.srf.1
+				PrtTitle = non RO - Garnet Accelerometer
+				PrtModuleName = ModuleEnviroSensor
+				PrtSubsystem = False
+				PrtPower = 0.008
+				PrtPowerF = 0.00749999983
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4292537294,ModuleEnviroSensor
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
 		stagingEnabled = True
 		EVENTS
 		{

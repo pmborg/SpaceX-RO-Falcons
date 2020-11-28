@@ -17,12 +17,12 @@ function steering_falcon
 	parameter Vdeg.
 	
 	set lat_correction to 0.
-	if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT //and STAGE_1_TYPE <> "SLAVE"
+	if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
 		set lat_correction to (VESSEL("Landingzone1"):GEOPOSITION:LAT - ADDONS:TR:IMPACTPOS:LAT)*50.
 				
 	SET steeringDir TO (-90-lat_correction).	// W/E
-	//SET Vdeg to 90-delta+5.					// Vertical = 90
-	set Vroll to -270.							// Zero Rotation
+	//SET Vdeg to 90-delta.						// Vertical = 90
+	set Vroll to -270.							// -270 = Zero Rotation
 	LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
 }
 

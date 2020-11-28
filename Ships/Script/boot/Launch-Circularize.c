@@ -157,7 +157,7 @@ function do_circle_step
 		PRINT "Y: "       		at (0,6). PRINT y 					+ "     " at (20,6).
 		PRINT "thrust(x): "     at (0,7). PRINT x 					+ "     " at (20,7).
 		//PRINT "apoapsis/periapsis :"+ (apoapsis/periapsis)	at (0,8).
-		PRINT "Eccentricity: " + ROUND(SHIP:ORBIT:ECCENTRICITY,3)   +"     " at (0,10).
+		PRINT "Eccentricity: " at (0,10). PRINT ROUND(SHIP:ORBIT:ECCENTRICITY,3)   +"     " at (20,10).
 		
 		wait 0.5.
 		if SHIP:ORBIT:ECCENTRICITY > last_ecc and SHIP:ORBIT:ECCENTRICITY < 0.1
@@ -188,7 +188,6 @@ if orbit_type = "GSO"
 	do_circle_step().
 }
 
-print "DONE!".
 wait 5.
 CLEARSCREEN.
 PRINT "[7] DONE: Craft is now in Parking Orbit ---".

@@ -191,7 +191,7 @@ function ReEntryburn
 	SET thrust to 0.
 }
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////
 function waitAndDoReEntryburn 
 {
 	update_phase_title("STEERING PROGRADE", 0).

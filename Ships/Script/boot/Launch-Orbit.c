@@ -11,6 +11,9 @@
 // 28/Nov/2020
 // --------------------------------------------------------------------------------------------
 
+set phase to 0.
+
+////////////////////////////////////////////////////////////////////////////////////////////////
 function main_lifoff
 {
 	if vehicle_type = "Falcon Heavy" 
@@ -64,11 +67,15 @@ function main_lifoff
 	}
 
 	RCS ON.
-	SAS ON.
+	if vehicle_type = "F1-M1"
+		SAS OFF.
+	else
+		SAS ON.
+	
 	if status = "PRELAUNCH" 
 	{
 		update_phase_title("[ ] COUNTING DOWN...", 0, false).
-		AG1 ON. //TOWER...!
+		AG1 ON. //TOGGLE
 		Print "(Release Tower Clamp)".
 		
 		FROM {local countdown is 5.} UNTIL countdown = 0 STEP {SET countdown to countdown - 1.} 
@@ -89,6 +96,35 @@ function main_lifoff
 			WAIT 3.
 			if (KUniverse:ActiveVessel = SHIP) STAGE.
 		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+function check_if_we_need_new_stage
+{
+	if throttle > 0 and maxthrust = 0 
+	{
+		UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
+		stage.
+		wait 3.
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+function check_fairing_sep 
+{
+	if (vehicle_type = "F9v1.2B5") or (vehicle_type = "F1-M1")
+	and altitude > FAIRSEP and phase = 0
+	{
+		update_phase_title("(FAIRING SEPARATION)",1,false).
+		if (KUniverse:ActiveVessel = SHIP) STAGE.
+		set phase to 2.
+	}
+	if vehicle_type = "Falcon Heavy" and altitude > FAIRSEP and phase = 1
+	{
+		update_phase_title("(FAIRING SEPARATION)",1,false).
+		if (KUniverse:ActiveVessel = SHIP) STAGE.
+		set phase to 2.
 	}
 }
 
@@ -241,7 +277,8 @@ if alt:radar < 100
 		//                    S   
 		// NORTH ORINENTED:270 90                                                EST  NORTH DW
 		//                    N                                                  WEST SOUTH UP 
-		LOCK STEERING TO LOOKDIRUP(SHIP:SRFPROGRADE:VECTOR,SHIP:NORTH:VECTOR)+ Q(delta,0,180,0).
+		//LOCK STEERING TO LOOKDIRUP(SHIP:SRFPROGRADE:VECTOR,SHIP:NORTH:VECTOR)+ Q(delta,0,180,0).
+		steering_falcon(90-delta).
 		
 		set tThrust to (Drag+ Weight)*error.
 		if  tThrust < 0.85 
@@ -307,21 +344,27 @@ if alt:radar < 100
 	PRINT "VERTICALSPEED: " 	at (0,8).
 	PRINT "mphase: " 			at (0,9).
 	PRINT "deltaReduction: " 	at (0,10).
-	until (Vs2 >= MECO1) //or (apoapsis >= FINAL_ORBIT)
+	until (Vs2 >= MECO1) //or (apoapsis >= FINAL_ORBIT2) //(Reusable) or (Non Reusable Mission)
 	{ 
 		set I to altitude/(15000).
 		if vehicle_type = "Falcon Heavy"
 		{
-			set delta to (1*(e^I)*(-1))*1.2.
-			if delta < (-60)
+			set delta to (1*(e^I)*(-1))*1.2.	//Rotate 20% Faster
+			if delta < (-60)					//MAX. Keep: 30 deg nose up
 				set delta to (-60).
+		} else
+		if vehicle_type = "F1-M1"
+		{
+			set delta to (1*(e^I)*(-1))*1.3.	//Rotate 30% Faster
+			if delta < (-80)					//MAX. Keep: 10 deg nose up
+				set delta to (-80).
 		} else {
-			set delta to (1*(e^I)*(-1)).
-			if delta < (-50)
+			set delta to (1*(e^I)*(-1)).		//Normal Rotation
+			if delta < (-50)					//MAX. Keep: 40 deg nose up
 				set delta to (-50).
 		}
 
-		steering_falcon(90-delta). //90-delta+5
+		steering_falcon(90-delta).
 
 		set vorb to velocity:orbit.
 		set Vsx to vorb:x.
@@ -348,9 +391,12 @@ if alt:radar < 100
 			set thrust to (thrust-deltaReduction).
 		}
 		
+		check_fairing_sep().
+		
 		set vel to SQRT(Vs2).
 		update_atmosphere (altitude, vel).
 		log_data (vel).
+		check_if_we_need_new_stage().
 	}.		
 
 	RCS ON.
@@ -404,10 +450,11 @@ if altitude*1.1 < FINAL_ORBIT2
 			main_stage().
 		}
 	}
-	// Stage-2 Initial Slow Burn:
-	update_phase_title("[7] PHASE I OPT",1,false).
+	
+	// Horizontal Aceleration:
+	update_phase_title("[7] ORBIT PHASE I",1,false).
 	UNLOCK STEERING.
-	set thrust to 0.25.
+	set thrust to 0.25.	// Stage-2 Initial Slow Burn:
 	if vehicle_type = "Crew Dragon 2" or vehicle_type = "Falcon Heavy"
 		WAIT 1.
 	else
@@ -416,22 +463,16 @@ if altitude*1.1 < FINAL_ORBIT2
 	SAS OFF.
 
 	if vehicle_type = "Crew Dragon 2"
-	{
 		SET Vdeg to 90-74.	// Vertical = 90
-	}
 	else
 	if vehicle_type = "Falcon Heavy"
-	{
 		SET Vdeg to 90-85.	// Vertical = 90
-	}else
-	{	
+	else
 		SET Vdeg to 90-81.	// Vertical = 90
-	}
 
 	SET steeringDir TO 90.	// W/E
-	set Vroll to -270.		// Zero Rotation
-	LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
-	//steering_falcon(Vdeg).
+	set Vroll to -270.		// -270 = Zero Rotation
+	LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).//steering_falcon(Vdeg).
 
 	function update_orbit_status 
 	{
@@ -455,18 +496,15 @@ if altitude*1.1 < FINAL_ORBIT2
 	set deltaReduction to 0.
 	UNTIL periapsis > 0 and apoapsis < FINAL_ORBIT2
 	{
-		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
-		//steering_falcon(Vdeg).
+		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).//steering_falcon(Vdeg).
 		
 		set eta_apoapsis to eta:apoapsis.
-		
 		set vorb to velocity:orbit.
 		set Vsx to vorb:x.
 		set Vsy to vorb:y.
 		set Vsz to vorb:z.
 		set velocity_orbit to (Vsx^2)+(Vsy^2)+(Vsz^2).
 		set Vs2 to (velocity_orbit).	//km/h
-		
 		
 		if vehicle_type = "Falcon Heavy" and phase=0 and (Vs2 > MECO2 or altitude > FAIRSEP)
 		{
@@ -484,27 +522,7 @@ if altitude*1.1 < FINAL_ORBIT2
 				SET Vdeg to 90-80.5.
 			WAIT 1.
 		}
-		if vehicle_type = "F9v1.2B5" and altitude > FAIRSEP and phase = 0
-		{
-			update_phase_title("I - FAIRING SEPARATION",1,false).
-			if (KUniverse:ActiveVessel = SHIP) STAGE.
-			set phase to 2.
-		}
-		if vehicle_type = "Falcon Heavy" and altitude > FAIRSEP and phase = 1
-		{
-			update_phase_title("I - FAIRING SEPARATION",1,false).
-			if (KUniverse:ActiveVessel = SHIP) STAGE.
-			set phase to 2.
-		}
-		if vehicle_type = "Crew Dragon 2" or vehicle_type = "Falcon Heavy"
-		{
-			if throttle > 0 and maxthrust = 0 
-			{
-				UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
-				stage.
-				wait 3.
-			}
-		}
+		check_fairing_sep().
 		
 		if (Aceleration_value1 > 30.75)
 		{
@@ -518,18 +536,18 @@ if altitude*1.1 < FINAL_ORBIT2
 		}
 		
 		update_orbit_status.
-		
 		set vel to SQRT(Vs2).
 		update_atmosphere (altitude, vel).
 		log_data (vel).
+		check_if_we_need_new_stage().
 		
 		set dx to eta:apoapsis.
 		if dx > eta_apoapsis and stage:number < 7
 			break.
 	}
 
-
-	update_phase_title("[7] PHASE II OPT",1,false).
+	// Vertical Aceleration:
+	update_phase_title("[7] ORBIT PHASE II",1,false). 
 	UNTIL (apoapsis >= FINAL_ORBIT2) 
 	{
 		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
@@ -560,33 +578,13 @@ if altitude*1.1 < FINAL_ORBIT2
 				SET Vdeg to 90-85.
 			WAIT 1.
 		}
-		if vehicle_type = "F9v1.2B5" and altitude > FAIRSEP and phase = 0
-		{
-			update_phase_title("II- FAIRING SEPARATION",1,false).
-			if (KUniverse:ActiveVessel = SHIP) STAGE.
-			set phase to 2.
-		}
-		if vehicle_type = "Falcon Heavy" and altitude > FAIRSEP and phase = 1
-		{
-			update_phase_title("II- FAIRING SEPARATION",1,false).
-			if (KUniverse:ActiveVessel = SHIP) STAGE.
-			set phase to 2.
-		}
-		if vehicle_type = "Crew Dragon 2" or vehicle_type = "Falcon Heavy"
-		{
-			if throttle > 0 and maxthrust = 0 
-			{
-				UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
-				stage.
-				wait 3.
-			}
-		}
+		check_fairing_sep().
 		
 		update_orbit_status.
-		
 		set vel to SQRT(Vs2).
 		update_atmosphere (altitude, vel).
 		log_data (vel).
+		check_if_we_need_new_stage().
 	}
 
 	UNLOCK STEERING.
