@@ -27,7 +27,7 @@ if not exist buildID64.txt (
 	if not exist "%TEMP%" mkdir %TEMP%
 
 	echo "Downloading ckan..."
-	powershell -command "& { iwr https://github.com/KSP-CKAN/CKAN/releases/download/v1.28.0/ckan.exe -OutFile ckan.exe }"
+	powershell -command "& { iwr https://github.com/KSP-CKAN/CKAN/releases/download/v1.29.0/ckan.exe -OutFile ckan.exe }"
 
 	ckan.exe ksp default auto
 	ckan.exe update
