@@ -96,7 +96,7 @@ if vehicle_type = "F1-M1"
 }
 else
 {
-	declare global Qmax 	to .5*1.2*(104.1^2). 		// 1/2 x air density ρ | Vehicle's speed v^2 (Default value)	
+	declare global Qmax 	to .5*1.2*(250^2). 		// 1/2 x air density ρ | Vehicle's speed v^2 (Default value)	
 	declare global MECO1 	to 2100^2.
 	declare global FAIRSEP 	to 80*1000.
 }

@@ -113,7 +113,7 @@ function check_if_we_need_new_stage
 ////////////////////////////////////////////////////////////////////////////////////////////////
 function check_fairing_sep 
 {
-	if (vehicle_type = "F9v1.2B5") or (vehicle_type = "F1-M1")
+	if ((vehicle_type = "F9v1.2B5") or (vehicle_type = "F1-M1"))
 	and altitude > FAIRSEP and phase = 0
 	{
 		update_phase_title("(FAIRING SEPARATION)",1,false).
@@ -391,13 +391,13 @@ if alt:radar < 100
 			set thrust to (thrust-deltaReduction).
 		}
 		
-		check_fairing_sep().
+		if vehicle_type = "F1-M1"
+			check_fairing_sep().
 		
 		set vel to SQRT(Vs2).
 		update_atmosphere (altitude, vel).
 		log_data (vel).
-		if vehicle_type = "F1-M1"
-			check_if_we_need_new_stage().
+		check_if_we_need_new_stage().
 	}.		
 
 	RCS ON.
