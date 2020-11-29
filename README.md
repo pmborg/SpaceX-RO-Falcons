@@ -55,6 +55,10 @@ This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP user
  **Pmborg-RealFalcons-v2-Install-For_KSP_1.10.1-All_Dependencies.bat**<br>
  
 ![!](https://i.imgur.com/uNntmol.png)
+
+You can also check the videos about HOW TO INSTALL in Wiki page:
+
+WIKI: (https://github.com/pmborg/SpaceX-RO-Falcons/wiki)
  
 **Note:**<br> 
 After the instalation, during the KSP Loading, there will be some addon's that will rise some warnings about *outdated versions*, but that is "normal", they were not compiled for KSP 1.10.1 but they will work.
