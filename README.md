@@ -1,6 +1,6 @@
 # NEW:
 First Challenge added on Wiki:<br>
-[Will the Falcon Heavy be capable of land the NASA LEM of Apollo Missions (with 2 Astronauts) on the Moon?](https://github.com/pmborg/SpaceX-RO-Falcons/wiki)
+[Will the Falcon Heavy be capable of land the NASA LEM of Apollo Missions (with 2 or 3 Astronauts) on the Moon?](https://github.com/pmborg/SpaceX-RO-Falcons/wiki)
 
 # SpaceX-RO-Falcons
 This KSP (**Kerbal Space Program**) addon, works ontop of [kks-spacex-pack mod](https://forum.kerbalspaceprogram.com/index.php?/topic/193933-1101-kks-spacex-pack-v65-01112020/) for KSP.<br>
