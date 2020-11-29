@@ -99,15 +99,21 @@ function main_lifoff
 	}
 }
 
+function do_stage
+{
+	UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
+	stage.
+	wait 3.	
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 function check_if_we_need_new_stage
 {
 	if throttle > 0 and maxthrust = 0 
-	{
-		UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
-		stage.
-		wait 3.
-	}
+		do_stage().
+	
+	if alt:radar > 1000 and vehicle_sub_type = "Falcon Heavy LEM" and maxthrust < 10000 and stage:number = 8
+		do_stage().
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

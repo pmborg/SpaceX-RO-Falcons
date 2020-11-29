@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor @start, to init or restart the all Mission.
-// 14/Nov/2020
+// 29/Nov/2020
 // --------------------------------------------------------------------------------------------
 function ResetMission 
 {
@@ -112,8 +112,9 @@ FOR P IN SHIP:PARTS {
 	SET TOTAL_PARTS to TOTAL_PARTS + 1.
 }.
 
-//LIST BODIES IN KerbalDestiny.
-SET KerbalDestiny to BODY("Sun"):ORBITINGCHILDREN.
+// LIST ALL BODIES IN KerbalDestiny vector:
+SET KerbalDestiny to BODY("Sun"):ORBITINGCHILDREN. //Mercury, Venus, Earth...
+// Insert our Mun/Moon:
 if ( RealSolarSystemMod )
 	KerbalDestiny:INSERT (0,BODY("Moon")).
 else
@@ -164,11 +165,11 @@ if NOT EXISTS("target.c") {
 		LOG "declare global PlanetOuter to 1." to target.c.
 }
 
-set KerbalDestiny[0] to BODY:name.
+//set KerbalDestiny[0] to BODY:name.
 runpath("target.c").
-declare global mission_origin to KerbalDestiny[0].
-PRINT "ORIGIN: "+ mission_origin.
-PRINT "TARGET: "+ mission_target.
+declare global mission_origin to BODY:name. //string-name
+PRINT "ORIGIN: "+ mission_origin.			//string-name
+PRINT "TARGET: "+ mission_target:name.
 PRINT "PlanetOuter: "+ PlanetOuter.
 
 //LIBS: (LOAD After: mission_target)-------------------------------

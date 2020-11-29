@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to specify the SW version and the diferent types of profiles supported.
-// 28/Nov/2020
+// 29/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 // GLOBALS:
@@ -25,7 +25,7 @@ declare global COM_altitude to 0.
 
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //             #.YY.MM.DD
-PRINT "SW-Ver: 1.20.11.28" at (0,2).
+PRINT "SW-Ver: 1.20.11.29" at (0,2).
 PRINT time:calendar + " " + time:clock at (23,2).
 
 //vehicle_type:
@@ -40,10 +40,16 @@ else
 if SHIP:NAME = "PMBT-SpaceX Falcon 9 v1.2 Block-5 Crew Dragon 2"
 	declare global vehicle_type to "Crew Dragon 2".			// BASE: Falcon-9 v1.2Blk:5 
 else
-if SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5"
+if SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5" or SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM"
 	declare global vehicle_type to "Falcon Heavy".			// BASE: Falcon-9 v1.2Blk:5 
 else
 	declare global vehicle_type to "Stage-1".
+
+declare global vehicle_sub_type to vehicle_type.
+
+if SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM"
+	set vehicle_sub_type to "Falcon Heavy LEM".
+
 
 //STAGE_1_TYPE:
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -68,6 +74,13 @@ if vehicle_type = "Falcon Heavy"
 	declare global MECO1 	to 1750^2.  //1545* +130(BOOST SEP)
 	declare global MECO2 	to 3000^2.  //3060.		(CORE STAGE)
 	declare global FAIRSEP  to 160*1000.//			(FAIRING STAGE)
+	
+	if vehicle_sub_type = "Falcon Heavy LEM"
+	{
+		set MECO1 to 2600^2.  //A non recovery Mission 
+		set MECO2 to 9999^2.  //A non recovery Mission
+	}
+	
 }else
 if vehicle_type = "Crew Dragon 2"
 {
