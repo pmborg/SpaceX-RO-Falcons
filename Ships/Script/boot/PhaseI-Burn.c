@@ -23,7 +23,7 @@ wait 1.
 
 //-------------------------------------------------------------------------------
 // KERBIN:
-set GM to originBody:mu. 	//GM = 3.5316*(10^12). for Kerbin
+set GM to originBody:mu. 			//GM = 3.5316*(10^12). for Kerbin
 set target to goto_mission_target.	//"Mun"/"Moon", etc
 runpath("boot/lib_trajectory.c").
 set warp to 3. wait 1.
@@ -40,13 +40,13 @@ set target to goto_mission_target.	//"Mun"/"Moon", etc
 
 // Calculations: 
 // https://gaming.stackexchange.com/questions/144030/how-do-i-calculate-necessary-delta-v-for-circularization-burn
-// dV = RAIZ ( GM . (2/r - 1/a ) )
+// dV = SQRT ( GM . (2/r - 1/a ) )
 //
 // r is the distance from the center of the planet to the orbiting vessel at that point in the orbit (i.e. the vessel's altitude plus the radius of the planet). 
 // a is the semi-major axis of the orbit (the average of the apoapsis and periapsis altitudes, plus the radius of the planet).
 
 // https://en.wikipedia.org/wiki/Vis-viva_equation
-// dV = RAIZ ( GM . (2/r - 1/a ) )
+// dV = SQRT ( GM . (2/r - 1/a ) )
 //
 //
 //Where:
@@ -76,7 +76,7 @@ set Rp to (apoapsis+periapsis)/2+ BODY(goto_mission_target):radius + altitude.	/
 // Minmus: 61301
 set e to (Ra-Rp)/(Ra+Rp).
 set a to (Ra+Rp)/2.
-set h to (GM*a*(1-(e^2)))^.5. // "^.5" = Raiz-Quadrada
+set h to (GM*a*(1-(e^2)))^.5. // "^.5" = SQRT
 
 //Rp.Vp = Ra.Va
 set Vp to h/Rp. //perigee 
@@ -86,7 +86,7 @@ set Va to h/Ra. //apogee
 set Vcir to (GM/Rp)^.5.
 set dV to Vp-Vcir.
 
-//set LAUNCH to 1.229146628119515*(10^7). //MAGIC NUMBER?
+//set LAUNCH to 1.229146628119515*(10^7). //MAGIC NUMBER
 set LAUNCH to Ra.
 
 print "-----------------".
@@ -121,9 +121,6 @@ set thrust to 1.
 if vehicle_type = 3 
 	{AG2 ON. AG1 OFF. AG1 ON. wait 1.}
 	
-//WHEN STAGE:SOLIDFUEL < 1000 THEN 
-//	STAGE. //PRESERVE.
-
 print "[PhaseI-Burn] to "+goto_mission_target+" Intercept: "+goto_mission_target at (0,0).
 print "Orbital Speed(V)" at (0,1).
 print "Desired Speed (Vp)" at (0,2). 
@@ -155,7 +152,7 @@ until (Vp-V) < 0.001 {
 
 	if phaseAngle = 999 {
 		if (Vp-V) > 100  and y < 1{
-			set x to 1.	//POWER!	//set x to 0.75.	//POWER! (No need max)
+			set x to 1.	//set x to 0.75.	//POWER! (No need max)
 			set y to y+1.
 		}
 		
@@ -163,8 +160,6 @@ until (Vp-V) < 0.001 {
 			set y to y+1.
 			
 			if (maxthrust > 4000) {
-				// shutDownAllEngines().
-				// activateLiquidEngine().
 				set x to (mass*5)/maxthrust.
 			} else
 				set x to (mass*10)/maxthrust.
@@ -229,7 +224,6 @@ until (Vp-V) < 0.001 {
 	print "maxthrust: "+maxthrust+"     " 					 	  at (0,11).
 
 	if apoapsis > (Ra - BODY(goto_mission_target):RADIUS)*0.7 {
-		//print "#ON-1#".
 		if (maxthrust > 5000) {
 			//shutDownAllEngines().
 			//activateLiquidEngine().
@@ -253,11 +247,12 @@ until (Vp-V) < 0.001 {
 }.
 
 set thrust to 0.
-if vehicle_type = 3 
-	{ AG2 ON. wait 1.}
-//shutDownAllEngines().	
 
+// if vehicle_type = 3 
+	// { AG2 ON. wait 1.}
+//shutDownAllEngines().	
 //SAS OFF.
+
 print "BURN-I END!" at (0,25).
 wait 1.
 PRINT "Press [ENTER] to Confirm: Warp             "at (0,26)..set ch to terminal:input:getchar().
