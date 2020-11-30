@@ -77,10 +77,9 @@ if vehicle_type = "Falcon Heavy"
 	
 	if vehicle_sub_type = "Falcon Heavy LEM"
 	{
-		set MECO1 to 2600^2.  //A non recovery Mission 
+		set MECO1 to 9999^2.  //A non recovery Mission 
 		set MECO2 to 9999^2.  //A non recovery Mission
 	}
-	
 }else
 if vehicle_type = "Crew Dragon 2"
 {
@@ -114,9 +113,15 @@ else
 	declare global FAIRSEP 	to 80*1000.
 }
 
+
+// SELECT VEHICLE TYPE: -------------------------------------------------------
+declare global orbit_type to "LEO".			// Default: Orbit Type
+declare global LEOrbit to 300000.			// Default: Orbit Target at Launch
+
+if vehicle_sub_type = "Falcon Heavy"
+	set orbit_type to "GSO".
+	
+if orbit_type = "GSO" 
+	set LEOrbit to 33000000.				// 1st step form (stage-2)
+
 runpath("boot/useful-tools.c").
-
-
-
-
-

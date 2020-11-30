@@ -10,7 +10,9 @@
 //              This code is to do the Launch until the point of Final Orbit AP
 // 28/Nov/2020
 // --------------------------------------------------------------------------------------------
-
+parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
+set FINAL_ORBIT2 to FINAL_ORBIT.// For Phase-2 falcon stage-2
+set FINAL_ORBIT  to 150000. 	//(FINAL_ORBIT/2) - For Phase-1 falcon stage-1
 set phase to 0.
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -82,7 +84,8 @@ function main_lifoff
 		DO { PRINT "..." + countdown. WAIT 1. }
 
 		update_phase_title("[ ] IGNITION...", 0, false).
-		set thrust to 1. //All ENGINES...
+		set thrust to 1. //ALL ENGINES START IGNITION...
+		////////////////////////////////////////////////////////////////////////////////////////////////
 		
 		if vehicle_type = "Crew Dragon 2" or vehicle_type = "Falcon Heavy"
 			WAIT 1.
@@ -99,10 +102,15 @@ function main_lifoff
 	}
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
 function do_stage
 {
 	UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 	stage.
+	
+	if vehicle_type = "Falcon Heavy" 
+		AG6 ON. //Toggle: FH Boosters separator
+			
 	wait 3.	
 }
 
@@ -113,20 +121,27 @@ function check_if_we_need_new_stage
 		do_stage().
 	
 	if alt:radar > 1000 and vehicle_sub_type = "Falcon Heavy LEM" and maxthrust < 10000 and stage:number = 8
+	{
 		do_stage().
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 function check_fairing_sep 
 {
-	if ((vehicle_type = "F9v1.2B5") or (vehicle_type = "F1-M1"))
-	and altitude > FAIRSEP and phase = 0
+	if ((vehicle_type = "F9v1.2B5") or (vehicle_type = "F1-M1")) and altitude > FAIRSEP and phase = 0
 	{
 		update_phase_title("(FAIRING SEPARATION)",1,false).
 		if (KUniverse:ActiveVessel = SHIP) STAGE.
 		set phase to 2.
 	}
-	if vehicle_type = "Falcon Heavy" and altitude > FAIRSEP and phase = 1
+	if vehicle_type = "Falcon Heavy" and altitude > FAIRSEP and phase = 1	// MECO1 done?
+	{
+		update_phase_title("(FAIRING SEPARATION)",1,false).
+		if (KUniverse:ActiveVessel = SHIP) STAGE.
+		set phase to 2.
+	}
+	if vehicle_sub_type = "Falcon Heavy LEM" and altitude > FAIRSEP
 	{
 		update_phase_title("(FAIRING SEPARATION)",1,false).
 		if (KUniverse:ActiveVessel = SHIP) STAGE.
@@ -134,21 +149,16 @@ function check_fairing_sep
 	}
 }
 
-runpath("boot/atm.c").
 
-parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
-set FINAL_ORBIT2 to FINAL_ORBIT.// For Phase-2 falcon stage-2
-set FINAL_ORBIT  to 150000. 	//(FINAL_ORBIT/2) - For Phase-1 falcon stage-1
+// Vehicle Release Auto Sequence:
+////////////////////////////////////////////////////////////////////////////////////////////////
+runpath("boot/atm.c").
 
 set thrust to 0.
 lock throttle to thrust.
 LOCK STEERING TO up + R(0,0,180). //UP
 
 set initialmass to mass.
-// set r to altitude+BODY(DEFAULT_KSC):radius. //600000 (KERBIN)
-// set GM to BODY(DEFAULT_KSC):mu. 			//GM = 3.5316*(10^12). (KERBIN)
-// set g to GM/(r^2).							//Calculate g = 9.81
-//set Qmax to .5*1.2*(100.9^2).
 set Cd to .20075*.008.
 set D to (mass*g)/Qmax.
 set deltaReduction to 0.
@@ -157,15 +167,6 @@ PRINT "Takeoff MASS: "+ROUND (SHIP:MASS)+" t".
 PRINT "Final Orbit: "+ ROUND(FINAL_ORBIT2/1000)+" km".
 PRINT "Qmax: "+ ROUND(Qmax).
 
-if vehicle_type = "Falcon Heavy"
-{
-	//Factory set 60 -> 70%
-	// LIST ENGINES IN myVariable.
-	// FOR eng IN myVariable {
-		// if eng:THRUSTLIMIT = 60
-			// set eng:THRUSTLIMIT to 70. // Set CORE to 70% Thrust
-	// }.
-}
 set last_value1 to 0.
 set Aceleration_value1 to 0.
 
@@ -179,9 +180,14 @@ set TakeOffTime to TIME:SECONDS. //(define: Secure for reboots)
 if alt:radar < 100
 {
 	//WAIT for the GO!
+	////////////////////////////////////////////////////////////////////////////////////////////////
 	main_lifoff().
 	
+	//LIFTOFF...
+	////////////////////////////////////////////////////////////////////////////////////////////////	
 	CLEARSCREEN.
+	update_phase_title("[1] LIFTOFF...",0, false).
+	
 	DELETEPATH("FLIGHT_LOG.txt").
 	LOG   "TIME,   VELO,   R:ALT,  Acel,   Q" to FLIGHT_LOG.txt.
 
@@ -189,24 +195,17 @@ if alt:radar < 100
 	set value1 to 0.
 	set last_value1 to 0.
 
-	update_phase_title("[1] LIFTOFF...",0, false).
 	PRINT "Q-Max" 				at (0,2).
 	PRINT "Dynamic Pressure" 	at (0,3).
 	PRINT "q/Qmax" 				at (0,4).
 	
-	// (not used for falcons)
-	// WAIT until alt:radar-30 > 50.
-	// GEAR OFF.
-
-	// LOOP1: UNTIL HALF Qmax
+	// LOOP: UNTIL HALF Qmax
+	////////////////////////////////////////////////////////////////////////////////////////////////
 	until q > Qmax*.50
 	{ 
 		set thrust to 1.
 		set H to altitude/(-5000).
 		set p to p0*(e^H).
-		// set r to altitude+BODY(DEFAULT_KSC):radius. //600000.
-		// set g to GM/(r^2).
-		//set Qmax to g/Cd.
 		set q to .5*p*(verticalspeed^2). // pd = 1/2 ρ v^2
 		
 		PRINT ROUND(Qmax) at (22,2).
@@ -225,6 +224,7 @@ if alt:radar < 100
 	}.
 
 	// Throttle is reduced to maintain a constant terminal velocity.
+	////////////////////////////////////////////////////////////////////////////////////////////////
 	update_phase_title("[2] LAUNCH-Trusting",1, false).
 	set index2 to 6.
 	PRINT "Throttle" at (0,1+index2).
@@ -245,18 +245,15 @@ if alt:radar < 100
 			set mphase to 2.
 		}
 		
-		set H to altitude/(-5000).
+		// set_max_delta_curve:
 		set I to altitude/(15000).
 		if vehicle_type = "Falcon Heavy"
 			set delta to (1*(e^I)*(-1))*1.2.
 		else 
 			set delta to (1*(e^I)*(-1)).
   
+		set H to altitude/(-5000).
 		set p to p0*(e^H).
-		// set r to altitude+BODY(DEFAULT_KSC):radius. //600000.
-		// set g to GM/(r^2).
-		//set Qmax to g/Cd.
-		
 		set vsurf to velocity:surface.
 		set Vsx to vsurf:x.
 		set Vsy to vsurf:y.
@@ -280,10 +277,7 @@ if alt:radar < 100
 			set Drag to ((Qmax*Cd*mass)/0.01). 
 			set Weight to (mass*g)/0.01.		
 		}
-		//                    S   
-		// NORTH ORINENTED:270 90                                                EST  NORTH DW
-		//                    N                                                  WEST SOUTH UP 
-		//LOCK STEERING TO LOOKDIRUP(SHIP:SRFPROGRADE:VECTOR,SHIP:NORTH:VECTOR)+ Q(delta,0,180,0).
+
 		steering_falcon(90-delta).
 		
 		set tThrust to (Drag+ Weight)*error.
@@ -332,17 +326,17 @@ if alt:radar < 100
 		log_data (vel).
 	}.
 
+	////////////////////////////////////////////////////////////////////////////////////////////////
 	SAS OFF.
 	CLEARSCREEN.
 	PRINT " ".PRINT " ".
 	update_phase_title("[5] ASCENT",1,false).
-	//PRINT "Burn: from 30km to " + FINAL_ORBIT/1000 + "Km Apogee".
 	set thrust to 1.
 	set x to 0.
 	RCS OFF.
-
 	set Vs2 to 0.
-	//LOOP3: After 30km, the effects of drag are minimal so thrust to 100% and Burn until MECO1:
+	
+	// After 30km, the effects of drag are minimal so thrust to 100% and Burn until MECO1:
 	PRINT "mass: " 				at (0,4).
 	PRINT "thrust: " 			at (0,5).
 	PRINT "apoapsis: " 			at (0,6).
@@ -350,26 +344,9 @@ if alt:radar < 100
 	PRINT "VERTICALSPEED: " 	at (0,8).
 	PRINT "mphase: " 			at (0,9).
 	PRINT "deltaReduction: " 	at (0,10).
-	until (Vs2 >= MECO1) //or (apoapsis >= FINAL_ORBIT2) //(Reusable) or (Non Reusable Mission)
+	until (Vs2 >= MECO1) or (apoapsis >= FINAL_ORBIT2) //(Reusable) or (Non Reusable Mission)
 	{ 
-		set I to altitude/(15000).
-		if vehicle_type = "Falcon Heavy"
-		{
-			set delta to (1*(e^I)*(-1))*1.2.	//Rotate 20% Faster
-			if delta < (-60)					//MAX. Keep: 30 deg nose up
-				set delta to (-60).
-		} else
-		if vehicle_type = "F1-M1"
-		{
-			set delta to (1*(e^I)*(-1))*1.3.	//Rotate 30% Faster
-			if delta < (-80)					//MAX. Keep: 10 deg nose up
-				set delta to (-80).
-		} else {
-			set delta to (1*(e^I)*(-1)).		//Normal Rotation
-			if delta < (-50)					//MAX. Keep: 40 deg nose up
-				set delta to (-50).
-		}
-
+		set delta to set_max_delta_curve().
 		steering_falcon(90-delta).
 
 		set vorb to velocity:orbit.
@@ -397,7 +374,7 @@ if alt:radar < 100
 			set thrust to (thrust-deltaReduction).
 		}
 		
-		if vehicle_type = "F1-M1"
+		if vehicle_type = "F1-M1" or vehicle_sub_type = "Falcon Heavy LEM"
 			check_fairing_sep().
 		
 		set vel to SQRT(Vs2).
@@ -412,13 +389,14 @@ if alt:radar < 100
 	WAIT 1.
 }
 
+//F9/FH: STAGE-1/BOOSTER SEP
+////////////////////////////////////////////////////////////////////////////////////////////////
 if altitude*1.1 < FINAL_ORBIT2 
 {
-
 	CLEARSCREEN.
 	PRINT " ".PRINT " ".
 	
-	if STAGE:NUMBER > 3
+	if (STAGE:NUMBER > 3) and (vehicle_sub_type <> "Falcon Heavy LEM")
 	{
 		update_phase_title("[6] STAGING...",1,false).
 		PRINT "1st ORBIT: "+FINAL_ORBIT+"km, Done!".
@@ -459,6 +437,7 @@ if altitude*1.1 < FINAL_ORBIT2
 	}
 	
 	// Horizontal Aceleration:
+	////////////////////////////////////////////////////////////////////////////////////////////////
 	update_phase_title("[7] ORBIT PHASE I",1,false).
 	UNLOCK STEERING.
 	set thrust to 0.25.	// Stage-2 Initial Slow Burn:
@@ -513,7 +492,7 @@ if altitude*1.1 < FINAL_ORBIT2
 		set velocity_orbit to (Vsx^2)+(Vsy^2)+(Vsz^2).
 		set Vs2 to (velocity_orbit).	//km/h
 		
-		if vehicle_type = "Falcon Heavy" and phase=0 and (Vs2 > MECO2 or altitude > FAIRSEP)
+		if vehicle_sub_type = "Falcon Heavy" and phase=0 and (Vs2 > MECO2 or altitude > FAIRSEP)
 		{
 			// FH:CORE Booster SEP:
 			RCS ON.
@@ -554,6 +533,7 @@ if altitude*1.1 < FINAL_ORBIT2
 	}
 
 	// Vertical Aceleration:
+	////////////////////////////////////////////////////////////////////////////////////////////////
 	update_phase_title("[7] ORBIT PHASE II",1,false). 
 	UNTIL (apoapsis >= FINAL_ORBIT2) 
 	{
@@ -568,7 +548,7 @@ if altitude*1.1 < FINAL_ORBIT2
 		set Vs2 to (velocity_orbit). //km/h
 		
 		// FH:CORE Booster SEP:
-		if vehicle_type = "Falcon Heavy" and phase=0 and (Vs2 > MECO2 or altitude > FAIRSEP)
+		if vehicle_sub_type = "Falcon Heavy" and phase=0 and (Vs2 > MECO2 or altitude > FAIRSEP)
 		{
 			RCS ON.
 			set thrust to 0.

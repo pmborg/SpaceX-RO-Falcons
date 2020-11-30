@@ -14,16 +14,47 @@ set phase_title_position to 0.
 
 function steering_falcon
 {
-	parameter Vdeg.
+	parameter Vdeg.	//SET Vdeg to 90-delta.						// Vertical = 90
 	
 	set lat_correction to 0.
-	if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+	if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT and vehicle_sub_type <> "Falcon Heavy LEM"
 		set lat_correction to (VESSEL("Landingzone1"):GEOPOSITION:LAT - ADDONS:TR:IMPACTPOS:LAT)*50.
 				
 	SET steeringDir TO (-90-lat_correction).	// W/E
-	//SET Vdeg to 90-delta.						// Vertical = 90
 	set Vroll to -270.							// -270 = Zero Rotation
+	
 	LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
+}
+
+function set_max_delta_curve
+{
+		set I to altitude/(15000).
+		if vehicle_type = "Falcon Heavy"
+		{
+			set delta to (1*(e^I)*(-1))*1.2.	//Rotate 20% Faster
+			if vehicle_sub_type = "Falcon Heavy"
+			{
+				if delta < (-60)				//MAX. Keep: 30 deg nose up
+					set delta to (-60).
+			} else
+			if vehicle_sub_type = "Falcon Heavy LEM"
+			{
+				if delta < (-75)				//MAX. Keep: 15 deg nose up
+					set delta to (-75).	
+			}
+		} else
+		if vehicle_type = "F1-M1"
+		{
+			set delta to (1*(e^I)*(-1))*1.3.	//Rotate 30% Faster
+			if delta < (-80)					//MAX. Keep: 10 deg nose up
+				set delta to (-80).
+		} else {
+			set delta to (1*(e^I)*(-1)).		//Normal Rotation
+			if delta < (-50)					//MAX. Keep: 40 deg nose up
+				set delta to (-50).
+		}
+		
+		return delta.
 }
 
 function main_stage 
@@ -171,6 +202,7 @@ function log_data
 	parameter Vs2.
 	
 	updateVars().
+	return. //Remove: for DEBUG
 	
 	PRINT "TIME,   VELO,   ALT,    Acel,   Q     --LOG:FILE" at (0,34).
 	

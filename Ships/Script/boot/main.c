@@ -8,21 +8,13 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestre all mission phases.
-// 28/Nov/2020
+// 29/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 // Reset Engine settings before all, ("migth be a reboot")
 set thrust to 0.	
 lock throttle to thrust.
 WAIT 0.
-
-// SELECT VEHICLE TYPE: -------------------------------------------------------
-declare global orbit_type to "LEO".			// Default: Orbit Type
-declare global LEOrbit to 300000.			// Default: Orbit Target at Launch
-if vehicle_type = "Falcon Heavy"
-	set orbit_type to "GSO".
-if orbit_type = "GSO" 
-	set LEOrbit to 33000000.				// 1st step form (stage-2)
 
 runpath("boot/declare-globals.c").
 
