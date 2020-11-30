@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to specify the SW version and the diferent types of profiles supported.
-// 29/Nov/2020
+// 30/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 // GLOBALS:
@@ -25,7 +25,7 @@ declare global COM_altitude to 0.
 
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //             #.YY.MM.DD
-PRINT "SW-Ver: 1.20.11.29" at (0,2).
+PRINT "SW-Ver: 1.20.11.30" at (0,2).
 PRINT time:calendar + " " + time:clock at (23,2).
 
 //vehicle_type:
@@ -40,14 +40,17 @@ else
 if SHIP:NAME = "PMBT-SpaceX Falcon 9 v1.2 Block-5 Crew Dragon 2"
 	declare global vehicle_type to "Crew Dragon 2".			// BASE: Falcon-9 v1.2Blk:5 
 else
-if SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5" or SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM"
+if SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5" or 
+   SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" or
+   SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
 	declare global vehicle_type to "Falcon Heavy".			// BASE: Falcon-9 v1.2Blk:5 
 else
 	declare global vehicle_type to "Stage-1".
 
 declare global vehicle_sub_type to vehicle_type.
 
-if SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM"
+if SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" or
+   SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
 	set vehicle_sub_type to "Falcon Heavy LEM".
 
 
@@ -56,11 +59,14 @@ if SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM"
 declare global STAGE_1_TYPE to "".
 if CORE:BOOTFILENAME:FIND("boot-boosters-L.ks") > -1 		// STAGE-1L	if vehicle_type = "Falcon Heavy" 
 	set STAGE_1_TYPE to "SLAVE".
-else if CORE:BOOTFILENAME:FIND("boot-boosters-R.ks") > -1 	// STAGE-1R	if vehicle_type = "Falcon Heavy" 
+else 
+if CORE:BOOTFILENAME:FIND("boot-boosters-R.ks") > -1 	// STAGE-1R	if vehicle_type = "Falcon Heavy" 
 	set STAGE_1_TYPE to "MASTER".
-else if CORE:BOOTFILENAME:FIND("boot-boosters.ks") > -1 	// STAGE-1 (General ST-1)
+else 
+if CORE:BOOTFILENAME:FIND("boot-boosters.ks") > -1 	// STAGE-1 (General ST-1)
 	set STAGE_1_TYPE to "CORE".
-else if CORE:BOOTFILENAME:FIND("boot.ks") > -1 				// STAGE-2 (General ST-2)
+else 
+if CORE:BOOTFILENAME:FIND("boot.ks") > -1 				// STAGE-2 (General ST-2)
 	set STAGE_1_TYPE to "MAIN".
 
 PRINT "INIT CODE FOR: "+STAGE_1_TYPE.
@@ -113,6 +119,59 @@ else
 	declare global FAIRSEP 	to 80*1000.
 }
 
+function set_max_delta_curve
+{
+	set e to constant:e.
+	set I to altitude/(15000).
+	
+	if vehicle_type = "Falcon Heavy"
+	{
+		set delta to (1*(e^I)*(-1))*1.2.	//Rotate 20% Faster
+		if vehicle_sub_type = "Falcon Heavy"
+		{
+			if delta < (-60)				//MAX. Keep: 30 deg nose up
+				set delta to (-60).
+		} 
+		else if SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM"
+		{
+			if delta < (-80)				//MAX. Keep: 10 deg nose up
+				set delta to (-80).	
+		}
+		else if SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
+		{
+			if delta < (-70)				//MAX. Keep: 20 deg nose up
+				set delta to (-70).	
+		}
+	} else
+	if vehicle_type = "F1-M1"
+	{
+		set delta to (1*(e^I)*(-1))*1.3.	//Rotate 30% Faster
+		if delta < (-80)					//MAX. Keep: 10 deg nose up
+			set delta to (-80).
+	} else {
+		set delta to (1*(e^I)*(-1)).		//Normal Rotation
+		if delta < (-50)					//MAX. Keep: 40 deg nose up
+			set delta to (-50).
+	}
+	
+	return delta.
+}
+
+function set_Vdeg 
+{
+	if vehicle_type = "Crew Dragon 2"
+		return 90-74.	// Vertical = 90
+	else
+	if 	SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" or
+		SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
+		return 90-74.	// Vertical = 90
+	else
+	if vehicle_type = "Falcon Heavy"
+		return 90-85.	// Vertical = 90
+	
+	return  90-81.	// Vertical = 90
+}
+
 
 // SELECT VEHICLE TYPE: -------------------------------------------------------
 declare global orbit_type to "LEO".			// Default: Orbit Type
@@ -120,6 +179,9 @@ declare global LEOrbit to 300000.			// Default: Orbit Target at Launch
 
 if vehicle_sub_type = "Falcon Heavy"
 	set orbit_type to "GSO".
+
+if SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
+	declare global LEOrbit to 500000.		// Default: Orbit Target at Launch
 	
 if orbit_type = "GSO" 
 	set LEOrbit to 33000000.				// 1st step form (stage-2)

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Circularize an orbit after Launch-Orbit.c
-// 28/Nov/2020
+// 30/Nov/2020
 // --------------------------------------------------------------------------------------------
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
@@ -156,7 +156,7 @@ function do_circle_step
 
 
 		//wait 0.25.
-		if SHIP:ORBIT:ECCENTRICITY > last_ecc and SHIP:ORBIT:ECCENTRICITY < 0.1
+		if SHIP:ORBIT:ECCENTRICITY > last_ecc and SHIP:ORBIT:ECCENTRICITY < 0.1 and periapsis > BODY:ATM:HEIGHT
 		{
 			LOCK THROTTLE TO 0.
 			break.
@@ -182,6 +182,7 @@ if orbit_type = "GSO"
 
 // ITS DONE:
 ////////////////////////////////////////////////////////////////////////////////////////////////
+RCS OFF.
 wait 5.
 CLEARSCREEN.
 update_phase_title("Craft in Parking Orbit", 1, false).
@@ -189,7 +190,6 @@ set e to (apoapsis-periapsis)/(apoapsis+periapsis).
 PRINT "Eccentricity Error: " at (0,2). PRINT ROUND(e,2) at (20,2).
 WAIT 5.
 
-RCS OFF.
 SET MAPVIEW TO FALSE.  	// map view off
 lock throttle to 0.		//set thrust to 0.
 SAS ON.

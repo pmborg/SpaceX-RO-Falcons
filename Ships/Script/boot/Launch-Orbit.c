@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 28/Nov/2020
+// 30/Nov/2020
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 set FINAL_ORBIT2 to FINAL_ORBIT.// For Phase-2 falcon stage-2
@@ -69,7 +69,7 @@ function main_lifoff
 	}
 
 	RCS ON.
-	if vehicle_type = "F1-M1"
+	if vehicle_type = "F1-M1" or vehicle_sub_type = "Falcon Heavy LEM"
 		SAS OFF.
 	else
 		SAS ON.
@@ -120,9 +120,12 @@ function check_if_we_need_new_stage
 	if throttle > 0 and maxthrust = 0 
 		do_stage().
 	
-	if alt:radar > 1000 and vehicle_sub_type = "Falcon Heavy LEM" and maxthrust < 10000 and stage:number = 8
+	if alt:radar > 1000 and SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" and maxthrust < 10000 and stage:number = 8
+		do_stage().
+	if alt:radar > 1000 and SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2" and maxthrust < 10000 and stage:number = 6
 	{
 		do_stage().
+		set phase to 3.
 	}
 }
 
@@ -131,21 +134,21 @@ function check_fairing_sep
 {
 	if ((vehicle_type = "F9v1.2B5") or (vehicle_type = "F1-M1")) and altitude > FAIRSEP and phase = 0
 	{
-		update_phase_title("(FAIRING SEPARATION)",1,false).
+		//update_phase_title("(FAIRING SEPARATION)",1,false).
 		if (KUniverse:ActiveVessel = SHIP) STAGE.
-		set phase to 2.
+		set phase to 2.	//fairing-sep
 	}
 	if vehicle_type = "Falcon Heavy" and altitude > FAIRSEP and phase = 1	// MECO1 done?
 	{
-		update_phase_title("(FAIRING SEPARATION)",1,false).
+		//update_phase_title("(FAIRING SEPARATION)",1,false).
 		if (KUniverse:ActiveVessel = SHIP) STAGE.
-		set phase to 2.
+		set phase to 2.	//fairing-sep
 	}
-	if vehicle_sub_type = "Falcon Heavy LEM" and altitude > FAIRSEP
+	if vehicle_sub_type = "Falcon Heavy LEM" and altitude > FAIRSEP and phase < 2
 	{
-		update_phase_title("(FAIRING SEPARATION)",1,false).
-		if (KUniverse:ActiveVessel = SHIP) STAGE.
-		set phase to 2.
+		//update_phase_title("(FAIRING SEPARATION)",1,false).
+		AG3 ON. //Special: Faring Decouple
+		set phase to 2.	//fairing-sep
 	}
 }
 
@@ -267,7 +270,7 @@ if alt:radar < 100
 		if q < q0 and phase = 1 
 		{
 			PRINT "( Passed MAXQ! )              " at (0,10+index2).
-			set phase to 1.
+			set phase to 1. //Passed MAXQ
 		}
 		
 		if 	maxthrust > 0 {
@@ -335,6 +338,7 @@ if alt:radar < 100
 	set x to 0.
 	RCS OFF.
 	set Vs2 to 0.
+	set phase to 0.
 	
 	// After 30km, the effects of drag are minimal so thrust to 100% and Burn until MECO1:
 	PRINT "mass: " 				at (0,4).
@@ -343,8 +347,9 @@ if alt:radar < 100
 	PRINT "delta: " 			at (0,7).
 	PRINT "VERTICALSPEED: " 	at (0,8).
 	PRINT "mphase: " 			at (0,9).
-	PRINT "deltaReduction: " 	at (0,10).
-	until (Vs2 >= MECO1) or (apoapsis >= FINAL_ORBIT2) //(Reusable) or (Non Reusable Mission)
+	PRINT "phase: " 			at (0,10).
+	PRINT "deltaReduction: " 	at (0,11).
+	until (Vs2 >= MECO1) or (apoapsis >= FINAL_ORBIT2) or phase = 3 //(Reusable) or (Non Reusable Mission) or (on stage-2 burn)
 	{ 
 		set delta to set_max_delta_curve().
 		steering_falcon(90-delta).
@@ -362,7 +367,8 @@ if alt:radar < 100
 		PRINT ROUND(delta)+"    " 			at (22,7).
 		PRINT ROUND(VERTICALSPEED)+"    " 	at (22,8).
 		PRINT mphase 						at (22,9).
-		PRINT deltaReduction 				at (22,10).
+		PRINT phase 						at (22,10).
+		PRINT deltaReduction 				at (22,11).
 		
 		if (Aceleration_value1 > 30)
 		{
@@ -376,7 +382,7 @@ if alt:radar < 100
 		
 		if vehicle_type = "F1-M1" or vehicle_sub_type = "Falcon Heavy LEM"
 			check_fairing_sep().
-		
+
 		set vel to SQRT(Vs2).
 		update_atmosphere (altitude, vel).
 		log_data (vel).
@@ -385,8 +391,12 @@ if alt:radar < 100
 
 	RCS ON.
 	SAS OFF.
-	set thrust to 0.01.
-	WAIT 1.
+    if SHIP:NAME <> "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" and 
+      SHIP:NAME <> "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
+    { 
+	    set thrust to 0.01.
+	    WAIT 1.
+    }
 }
 
 //F9/FH: STAGE-1/BOOSTER SEP
@@ -436,7 +446,7 @@ if altitude*1.1 < FINAL_ORBIT2
 		}
 	}
 	
-	// Horizontal Aceleration:
+	// Maximizing: Horizontal Aceleration:
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	update_phase_title("[7] ORBIT PHASE I",1,false).
 	UNLOCK STEERING.
@@ -448,14 +458,7 @@ if altitude*1.1 < FINAL_ORBIT2
 
 	SAS OFF.
 
-	if vehicle_type = "Crew Dragon 2"
-		SET Vdeg to 90-74.	// Vertical = 90
-	else
-	if vehicle_type = "Falcon Heavy"
-		SET Vdeg to 90-85.	// Vertical = 90
-	else
-		SET Vdeg to 90-81.	// Vertical = 90
-
+	SET Vdeg to set_Vdeg().
 	SET steeringDir TO 90.	// W/E
 	set Vroll to -270.		// -270 = Zero Rotation
 	LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).//steering_falcon(Vdeg).
@@ -501,7 +504,7 @@ if altitude*1.1 < FINAL_ORBIT2
 			if (KUniverse:ActiveVessel = SHIP) STAGE.
 			WAIT 3.
 			if (KUniverse:ActiveVessel = SHIP) STAGE.
-			set phase to 1.
+			set phase to 1. // Booster SEP
 			set thrust to 1.
 			RCS OFF.
 			if vehicle_type = "Falcon Heavy"
@@ -532,12 +535,22 @@ if altitude*1.1 < FINAL_ORBIT2
 			break.
 	}
 
-	// Vertical Aceleration:
+	// Maximizing Apoapsis Increase:
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	update_phase_title("[7] ORBIT PHASE II",1,false). 
 	UNTIL (apoapsis >= FINAL_ORBIT2) 
 	{
-		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
+		//v3
+		//SET steeringDir TO -90.		// W/E
+		if verticalspeed < 0 
+			SET Vdeg to (-verticalspeed/8).	// UP/DOWN: Vertical = 90 (magical number: 8 tune precision)
+		else
+			SET Vdeg to set_Vdeg().
+		set Vroll to -270.			// Zero Rotation
+		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).	//LOCK STEERING TO heading (90, PlanetOuter*theta).
+		//v2
+		//LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
+		//v1
 		//steering_falcon(Vdeg).
 		
 		set vorb to velocity:orbit.
@@ -556,7 +569,7 @@ if altitude*1.1 < FINAL_ORBIT2
 			if (KUniverse:ActiveVessel = SHIP) STAGE.
 			WAIT 3.
 			if (KUniverse:ActiveVessel = SHIP) STAGE.
-			set phase to 1.
+			set phase to 1. // Booster SEP
 			set thrust to 1.
 			RCS OFF.
 			if vehicle_type = "Falcon Heavy"

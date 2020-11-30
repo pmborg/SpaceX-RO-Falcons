@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 28/Nov/2020
+// 30/Nov/2020
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
 
@@ -24,37 +24,6 @@ function steering_falcon
 	set Vroll to -270.							// -270 = Zero Rotation
 	
 	LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
-}
-
-function set_max_delta_curve
-{
-		set I to altitude/(15000).
-		if vehicle_type = "Falcon Heavy"
-		{
-			set delta to (1*(e^I)*(-1))*1.2.	//Rotate 20% Faster
-			if vehicle_sub_type = "Falcon Heavy"
-			{
-				if delta < (-60)				//MAX. Keep: 30 deg nose up
-					set delta to (-60).
-			} else
-			if vehicle_sub_type = "Falcon Heavy LEM"
-			{
-				if delta < (-75)				//MAX. Keep: 15 deg nose up
-					set delta to (-75).	
-			}
-		} else
-		if vehicle_type = "F1-M1"
-		{
-			set delta to (1*(e^I)*(-1))*1.3.	//Rotate 30% Faster
-			if delta < (-80)					//MAX. Keep: 10 deg nose up
-				set delta to (-80).
-		} else {
-			set delta to (1*(e^I)*(-1)).		//Normal Rotation
-			if delta < (-50)					//MAX. Keep: 40 deg nose up
-				set delta to (-50).
-		}
-		
-		return delta.
 }
 
 function main_stage 
@@ -170,11 +139,14 @@ function update_phase_title
 	
 	if STAGE_1_TYPE = "MASTER"		//FH
 		PRINT "(Mast)" at (44,1).
-	else if STAGE_1_TYPE = "SLAVE"	//FH
+	else 
+	if STAGE_1_TYPE = "SLAVE"		//FH
 		PRINT "(Slav)" at (44,1).
-	else if STAGE_1_TYPE = "CORE" 	//FH
+	else 
+	if STAGE_1_TYPE = "CORE" 		//FH
 		PRINT "(Core)" at (44,1).
-	else if STAGE_1_TYPE = "MAIN" 
+	else 
+	if STAGE_1_TYPE = "MAIN" 
 		PRINT "(ST-2)" at (44,1).
 
 		
