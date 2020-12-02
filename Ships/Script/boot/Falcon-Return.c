@@ -61,7 +61,7 @@ function boostback_burn
 		} else
 			steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset, do_reverse). // Calculate: impactDist
 		
-		if(impactDist < 3000)
+		if(impactDist < 5000)
 		{
 			PRINT "OP3: impactDist < 3km   " at (0,2).
 			SET thrust TO 0.05.	// Near? for high precision, do it in lower thrust
@@ -105,7 +105,7 @@ function ReEntryburn
 		SET prev_impactDist to impactDist.
 		updateHoverSteering().	
 		
-		if SHIP:ALTITUDE < safe_alt or SHIP:VERTICALSPEED < -1800
+		if SHIP:ALTITUDE < safe_alt //or SHIP:VERTICALSPEED < -1800
 		{
 			//REENTRY BURN!!!
 			if  x = 0 
@@ -252,7 +252,7 @@ function waitAndDoReEntryburn
 	// Major Correction:
 	PRINT_STATUS(3).
 
-	if mass*1000 > 40000
+	if mass*1000 > 50000
 		set burnAlt to 35000.
 	else
 		set burnAlt to 32000.

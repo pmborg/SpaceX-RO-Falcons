@@ -141,7 +141,7 @@ function do_circle_step
 		PRINT "Theta" 			at (0,5). PRINT ROUND(theta,2)      + "     " 			at (20,5).
 		PRINT "vcir-Vo: " 		at (0,6). PRINT ROUND(vcir-Vo,2)	+ "     " 			at (20,6).
 		PRINT "Y: "       		at (0,7). PRINT y 					+ "     " 			at (20,7).
-		PRINT "thrust(x): "     at (0,8). PRINT x 					+ "     " 			at (20,8).
+		PRINT "thrust(x): "     at (0,8). PRINT ROUND(x*100,1)		+ " %   " 			at (20,8).
 		//PRINT "apoapsis/periapsis :"+ (apoapsis/periapsis)	at (0,9).
 		PRINT "vcir-Vo: " 		at (0,10). PRINT ROUND (vcir-Vo)     + " m/s     "		at (20,10).
 		PRINT "Eccentricity: " 	at (0,11). PRINT ROUND(SHIP:ORBIT:ECCENTRICITY,3)+"   " at (20,11).
