@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Circularize an orbit after Launch-Orbit.c
-// 30/Nov/2020
+// 02/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
@@ -135,16 +135,16 @@ function do_circle_step
 			set theta to theta*error.
 		}.
 
-		PRINT "Vertical Speed" 	at (0,2). PRINT ROUND(verticalspeed,2)	+ "     " at (20,2).
-		PRINT "Orbital Speed" 	at (0,3). PRINT ROUND(Vo,2)				+ "     " at (20,3).
-		PRINT "Vcir" 			at (0,4). PRINT ROUND(vcir) 		+ "     " at (20,4).
-		PRINT "Theta" 			at (0,5). PRINT ROUND(theta,2)      + "     " at (20,5).
-		PRINT "vcir-Vo: " 		at (0,6). PRINT ROUND(vcir-Vo,2)	+ "     " at (20,6).
-		PRINT "Y: "       		at (0,7). PRINT y 					+ "     " at (20,7).
-		PRINT "thrust(x): "     at (0,8). PRINT x 					+ "     " at (20,8).
+		PRINT "Vertical Speed" 	at (0,2). PRINT ROUND(verticalspeed,2)	+ " m/s     " 	at (20,2).
+		PRINT "Orbital Speed" 	at (0,3). PRINT ROUND(Vo,2)				+ " m/s     " 	at (20,3).
+		PRINT "Target (Vcir)" 	at (0,4). PRINT ROUND(vcir) 		+ " m/s     " 		at (20,4).
+		PRINT "Theta" 			at (0,5). PRINT ROUND(theta,2)      + "     " 			at (20,5).
+		PRINT "vcir-Vo: " 		at (0,6). PRINT ROUND(vcir-Vo,2)	+ "     " 			at (20,6).
+		PRINT "Y: "       		at (0,7). PRINT y 					+ "     " 			at (20,7).
+		PRINT "thrust(x): "     at (0,8). PRINT x 					+ "     " 			at (20,8).
 		//PRINT "apoapsis/periapsis :"+ (apoapsis/periapsis)	at (0,9).
-		PRINT "vcir-Vo: " at (0,10). 	  PRINT ROUND (vcir-Vo)     + "     " at (20,10).
-		PRINT "Eccentricity: " at (0,11). PRINT ROUND(SHIP:ORBIT:ECCENTRICITY,3) + "     " at (20,11).
+		PRINT "vcir-Vo: " 		at (0,10). PRINT ROUND (vcir-Vo)     + " m/s     "		at (20,10).
+		PRINT "Eccentricity: " 	at (0,11). PRINT ROUND(SHIP:ORBIT:ECCENTRICITY,3)+"   " at (20,11).
 		
 		SET steeringDir TO 90.		// W/E
 		if verticalspeed < 0 

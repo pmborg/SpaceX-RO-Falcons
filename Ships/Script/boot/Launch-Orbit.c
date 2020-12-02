@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 30/Nov/2020
+// 02/Dez/2020
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 set FINAL_ORBIT2 to FINAL_ORBIT.// For Phase-2 falcon stage-2
@@ -361,14 +361,14 @@ if alt:radar < 100
 		set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).
 		
 		PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,3).
-		PRINT ROUND(mass)+"    " 			at (22,4).
-		PRINT thrust+"    " 				at (22,5).
-		PRINT ROUND(apoapsis)+"    " 		at (22,6).
-		PRINT ROUND(delta)+"    " 			at (22,7).
-		PRINT ROUND(VERTICALSPEED)+"    " 	at (22,8).
-		PRINT mphase 						at (22,9).
-		PRINT phase 						at (22,10).
-		PRINT deltaReduction 				at (22,11).
+		PRINT ROUND(mass)+" t   " 			 at (22,4).
+		PRINT thrust*100+" %   " 			 at (22,5).
+		PRINT ROUND(apoapsis/1000)+" km    " at (22,6).
+		PRINT ROUND(delta)+"    " 			 at (22,7).
+		PRINT ROUND(VERTICALSPEED)+" m/s   " at (22,8).
+		PRINT mphase 						 at (22,9).
+		PRINT phase 						 at (22,10).
+		PRINT deltaReduction 				 at (22,11).
 		
 		if (Aceleration_value1 > 30)
 		{
@@ -448,6 +448,7 @@ if altitude*1.1 < FINAL_ORBIT2
 	
 	// Maximizing: Horizontal Aceleration:
 	////////////////////////////////////////////////////////////////////////////////////////////////
+	CLEARSCREEN.
 	update_phase_title("[7] ORBIT PHASE I",1,false).
 	UNLOCK STEERING.
 	set thrust to 0.25.	// Stage-2 Initial Slow Burn:
@@ -465,15 +466,16 @@ if altitude*1.1 < FINAL_ORBIT2
 
 	function update_orbit_status 
 	{
+		set y to 3.
 		//PRINT "Launch Site Distance:   "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,9).
-		PRINT "Periapsis: " + ROUND(periapsis/1000,1)+" km    " at (0,10).
-		PRINT "Apoapsis: " + ROUND(apoapsis/1000,1)+" km    " at (0,11).
-		PRINT "Eta:apoapsis: " + ROUND(eta:apoapsis,1)+" s    " at (0,12).
-		PRINT "Eccentricity: " + ROUND(SHIP:ORBIT:ECCENTRICITY,1)+"     " at (0,13).
-		PRINT "Altitude: " + ROUND(Altitude,1)+" km    " at (0,14).
-		PRINT "Phase: " + phase at (0,15).
-		PRINT "mphase: " + mphase at (0,16).
-		PRINT "deltaReduction: " + deltaReduction at (0,17).
+		PRINT "Periapsis: " at (0,y+0). 	 PRINT ROUND(periapsis/1000,1)+" km    " 	at (22,y+0).
+		PRINT "Apoapsis: " at (0,y+1). 		 PRINT ROUND(apoapsis/1000,1)+" km    " 	at (22,y+1).
+		PRINT "Eta:apoapsis: " at (0,y+2). 	 PRINT ROUND(eta:apoapsis,1)+" s    " 		at (22,y+2).
+		PRINT "Eccentricity: " at (0,y+3). 	 PRINT ROUND(SHIP:ORBIT:ECCENTRICITY,3)+"" 	at (22,y+3).
+		PRINT "Altitude: " at (0,y+4). 		 PRINT ROUND(Altitude/1000,1)+" km    "  	at (22,y+4).
+		PRINT "Phase: " at (0,y+5). 		 PRINT phase 								at (22,y+5).
+		PRINT "mphase: " at (0,y+6).		 PRINT mphase 								at (22,y+6).
+		PRINT "deltaReduction: " at (0,y+7). PRINT deltaReduction 						at (22,y+7).
 	}
 
 	if vehicle_type = "Falcon Heavy"
@@ -525,8 +527,11 @@ if altitude*1.1 < FINAL_ORBIT2
 		}
 		
 		update_orbit_status.
-		set vel to SQRT(Vs2).
-		update_atmosphere (altitude, vel).
+		if ROUND(BODY:ATM:ALTITUDEPRESSURE(h),4) > 0 or ROUND(BODY:ATM:ALTITUDETEMPERATURE(h),1) > 0
+		{
+			set vel to SQRT(Vs2).
+			update_atmosphere (altitude, vel).
+		}
 		log_data (vel).
 		check_if_we_need_new_stage().
 		
@@ -581,8 +586,11 @@ if altitude*1.1 < FINAL_ORBIT2
 		check_fairing_sep().
 		
 		update_orbit_status.
-		set vel to SQRT(Vs2).
-		update_atmosphere (altitude, vel).
+		if ROUND(BODY:ATM:ALTITUDEPRESSURE(h),4) > 0 or ROUND(BODY:ATM:ALTITUDETEMPERATURE(h),1) > 0
+		{
+			set vel to SQRT(Vs2).
+			update_atmosphere (altitude, vel).
+		}
 		log_data (vel).
 		check_if_we_need_new_stage().
 	}
