@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestre all mission phases.
-// 29/Nov/2020
+// 03/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 // Reset Engine settings before all, ("migth be a reboot")
@@ -46,7 +46,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 				RUNPATH( "boot/PhaseIV-Orbit.c" ).			// NO-ATM-Launch: "PhaseIV-Orbit.c"
 		}
 		
-		if (BODY:name = mission_origin) and (apoapsis < LEOrbit or periapsis < body:atm:height)
+		if (BODY:name = mission_origin) and (apoapsis < LEOrbit or periapsis < body:atm:height) or orbit_type = "GSO"
 		{
 			if body:atm:height > 0
 				RUNPATH( "boot/Launch-Circularize.c", LEOrbit ). // [2] runpath("boot/GOORBIT.c")

@@ -14,7 +14,7 @@
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
 
 CLEARSCREEN.
-update_phase_title("Circularize",1, false).
+update_phase_title("W8-4 Circularize",1, false).
 SET MAPVIEW TO TRUE.	// map view on
 SAS OFF.
 
@@ -24,20 +24,25 @@ set circle_error to 0.
 set GM to BODY:mu.
 set v to 0.
 
-//PRINT "Warp to Apogee".
+
 
 function wait_for_AP
 {
 	parameter w.
-	
+
+	//PRINT "Warp to Apogee".	
 	set warp to 0.
 	wait 1.
+	if eta:apoapsis > 3000
+		set warp to 3.
 	WAIT until eta:apoapsis < 3000.
 	set warp to 2.
-	WAIT until eta:apoapsis < 1000.
+	WAIT until eta:apoapsis < 200.
 	set warp to 1.
 	WAIT until eta:apoapsis < w.
 	set warp to 0.
+	
+	LOCK STEERING TO SHIP:PROGRADE  + R(0,0,180).
 }
 
 function do_circle_step
@@ -171,14 +176,16 @@ function do_circle_step
 if ship:verticalspeed > 0 and eta:apoapsis > 60
 	wait_for_AP(60).
 
+update_phase_title("Circularize-I",1, false).
 do_circle_step().
 
-if orbit_type = "GSO"
-{
-	set FINAL_ORBIT to 35786000. //35,786 km
-	wait_for_AP(60).
-	do_circle_step().
-}
+// if orbit_type = "GSO"
+// {
+	// update_phase_title("Circularize-II",1, false).
+	// set FINAL_ORBIT to 35786000. //35,786 km
+	// wait_for_AP(60).
+	// do_circle_step().
+// }
 
 // ITS DONE:
 ////////////////////////////////////////////////////////////////////////////////////////////////

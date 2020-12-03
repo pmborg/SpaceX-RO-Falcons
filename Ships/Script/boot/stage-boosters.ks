@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to control (ST-1) Boosters and waiting phases and prepare them to land.
-// 02/Dez/2020
+// 03/Dez/2020
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 CLEARSCREEN.
@@ -276,7 +276,7 @@ else {
 	 if STAGE_1_TYPE <> "SLAVE" 
 	 {
 		if KUniverse:ActiveVessel <> SHIP
-			update_phase_title("(wait to be active vessel)", 0, true).
+			update_phase_title("(W8-4 Active vessel)", 0, true).
 		
 		UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 			SET TARGET TO LandingZone.
