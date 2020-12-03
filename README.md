@@ -37,8 +37,7 @@ This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP user
 [ok] **FH LEO Orbit**<br>
 [ok] **FH Core ST-1 LANDING**<br>
 <br>
-[on development] FH GSO Orbit<br>
-[checking] FH Slave ST-1 LANDING		Checking the impossible (at KSP) land of both ST-1 at same time...<br>
+[on development] / [checking] FH Slave ST-1 LANDING		Checking the impossible (at KSP) land of both ST-1 at same time...<br>
 
 ----
 <h2>HOW TODO: Automatic Installation:</h2>
