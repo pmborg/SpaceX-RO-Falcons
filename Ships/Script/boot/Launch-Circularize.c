@@ -159,7 +159,6 @@ function do_circle_step
 		set Vroll to -270.			// Zero Rotation
 		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).	//LOCK STEERING TO heading (90, PlanetOuter*theta).
 
-
 		//wait 0.25.
 		if SHIP:ORBIT:ECCENTRICITY > last_ecc and SHIP:ORBIT:ECCENTRICITY < 0.1 and periapsis > BODY:ATM:HEIGHT
 		{
@@ -172,20 +171,11 @@ function do_circle_step
 
 // DO CIRCULARIZATION:
 ////////////////////////////////////////////////////////////////////////////////////////////////
-
 if ship:verticalspeed > 0 and eta:apoapsis > 60
 	wait_for_AP(60).
 
 update_phase_title("Circularize-I",1, false).
 do_circle_step().
-
-// if orbit_type = "GSO"
-// {
-	// update_phase_title("Circularize-II",1, false).
-	// set FINAL_ORBIT to 35786000. //35,786 km
-	// wait_for_AP(60).
-	// do_circle_step().
-// }
 
 // ITS DONE:
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -202,3 +192,4 @@ lock throttle to 0.		//set thrust to 0.
 SAS ON.
 WAIT 1.
 set sasmode TO "PROGRADE".
+

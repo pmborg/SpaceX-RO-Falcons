@@ -52,6 +52,9 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 				RUNPATH( "boot/Launch-Circularize.c", LEOrbit ). // [2] runpath("boot/GOORBIT.c")
 			else
 				RUNPATH( "boot/Launch-Circularize.c", apoapsis ).
+			
+			//SET ON SATELITE Solar Panels:
+			AG3 ON. //Toggle
 		} else
 			PRINT "SKIP: Launch-Circularize".
 	} else

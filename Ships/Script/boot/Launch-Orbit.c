@@ -134,19 +134,16 @@ function check_fairing_sep
 {
 	if ((vehicle_type = "F9v1.2B5") or (vehicle_type = "F1-M1")) and altitude > FAIRSEP and phase = 0
 	{
-		//update_phase_title("(FAIRING SEPARATION)",1,false).
 		if (KUniverse:ActiveVessel = SHIP) STAGE.
 		set phase to 2.	//fairing-sep
 	}
 	if vehicle_type = "Falcon Heavy" and altitude > FAIRSEP and phase = 1	// MECO1 done?
 	{
-		//update_phase_title("(FAIRING SEPARATION)",1,false).
 		if (KUniverse:ActiveVessel = SHIP) STAGE.
 		set phase to 2.	//fairing-sep
 	}
 	if vehicle_sub_type = "Falcon Heavy LEM" and altitude > FAIRSEP and phase < 2
 	{
-		//update_phase_title("(FAIRING SEPARATION)",1,false).
 		AG3 ON. //Special: Faring Decouple
 		set phase to 2.	//fairing-sep
 	}
