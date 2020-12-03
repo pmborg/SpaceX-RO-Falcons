@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 28/Nov/2020
+// 03/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 // REGRESSION TESTS for KOS Automatic Pilot Orbit and Landing:
@@ -26,10 +26,11 @@
 // [ok] FH ST1 QMAX						1.20.11.22
 // [ok] FH ST1 STAGE					1.20.11.22
 // [ok] FH ST1 Master ST-1 LANDING		1.20.11.23
-// [not working] Slave ST-1 LANDING		Checking the impossible (at KSP) land of both ST-1 at same time...
-// [ ] FH Core ST-1 LANDING				developing... -> FH-CORE.sfs & FH-CORE-2.sfs
+// [ok] FH Core ST-1 LANDING			1.20.12.03
 // [ok] FH LEO Orbit					1.20.11.22
-// [ ] FH GSO Orbit						developing... -> GSO.sfs
+// [ok] FH GSO Orbit					1.20.12.03
+
+// [not working] Slave ST-1 LANDING		Checking the impossible (at KSP) land of both ST-1 at same time...
 
 function boostback_burn
 {
@@ -412,6 +413,17 @@ CLEARSCREEN.
 update_phase_title("(Return Home)",0).
 SET thrust TO 0.
 lock throttle to thrust.
+
+//Back to 100% now:
+if CORE:BOOTFILENAME:FIND("boot-boosters.ks") > -1
+{
+	update_phase_title("(THRUST MAX)  ", 0, true).
+	engines_thrustlimit_to (100).	
+}
+
+//Activate 3 engines:
+update_phase_title("(ACTIVATE 3 ENGINES)", 0, true).
+activate3engines().
 
 steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset). // Calculate: impactDist
 if (impactDist > 5000) and (SHIP:altitude > 50000) 

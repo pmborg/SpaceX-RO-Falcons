@@ -542,18 +542,12 @@ if altitude*1.1 < FINAL_ORBIT2
 	update_phase_title("[7] ORBIT PHASE II",1,false). 
 	UNTIL (apoapsis >= FINAL_ORBIT2) 
 	{
-		//v3
-		//SET steeringDir TO -90.		// W/E
 		if verticalspeed < 0 
 			SET Vdeg to (-verticalspeed/8).	// UP/DOWN: Vertical = 90 (magical number: 8 tune precision)
 		else
 			SET Vdeg to set_Vdeg().
 		set Vroll to -270.			// Zero Rotation
 		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).	//LOCK STEERING TO heading (90, PlanetOuter*theta).
-		//v2
-		//LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
-		//v1
-		//steering_falcon(Vdeg).
 		
 		set vorb to velocity:orbit.
 		set Vsx to vorb:x.
