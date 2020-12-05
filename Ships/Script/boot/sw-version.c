@@ -27,7 +27,7 @@ DELETEPATH("LOG.txt").
 
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //             #.YY.MM.DD
-PRINT "SW-Ver: 1.20.12.03" at (0,2).
+PRINT "SW-Ver: 1.20.12.05" at (0,2).
 PRINT time:calendar + " " + time:clock at (23,2).
 
 //vehicle_type:
