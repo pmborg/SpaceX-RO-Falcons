@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 02/Dez/2020
+// 05/Dez/2020
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 set FINAL_ORBIT2 to FINAL_ORBIT.// For Phase-2 falcon stage-2
@@ -69,7 +69,7 @@ function main_lifoff
 	}
 
 	RCS ON.
-	if vehicle_type = "F1-M1" or vehicle_sub_type = "Falcon Heavy LEM"
+	if vehicle_type = "F1-M1" or vehicle_sub_type = "Falcon Heavy LEM" or vehicle_type = "Crew Dragon 2"
 		SAS OFF.
 	else
 		SAS ON.

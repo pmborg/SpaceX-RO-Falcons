@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to control (ST-1) Boosters and waiting phases and prepare them to land.
-// 03/Dez/2020
+// 05/Dez/2020
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 CLEARSCREEN.
@@ -28,15 +28,15 @@ declare global offline_LandingZone1 to latlng(28.612903098335448, -80.6197024318
 declare global offline_LandingZone2 to latlng(28.612890963687462, -80.621613149083217).
 
 //Define VESSELS on SAVED LOAD GAME: ""
-set LZ_1 to "LandingZone1". 				
-set LZ_2 to "LandingZone2". 				//R: MASTER
-set OCISLY to "OCISLY".
-set JRTI to "JRTI".
-set OCISLY_FAROUT to "OCISLY-FAROUT".		
+declare global  LZ_1 to "LandingZone1". 				
+declare global  LZ_2 to "LandingZone2". 				//R: MASTER
+declare global  OCISLY to "OCISLY".
+declare global  JRTI to "JRTI".
+declare global  OCISLY_FAROUT to "OCISLY-FAROUT".		
 
 //Define Globals:
 declare global mission_target to BODY.						// Planet Name - Sample: Kerbin, Earth
-declare global LandingZone TO VESSEL(JRTI).					// VESSEL NAME - Sample: LandingZone1, LandingZone2
+declare global LandingZone TO SHIP.							// VESSEL NAME - Sample: LandingZone1, LandingZone2
 declare global LandingTarget TO LandingZone:GEOPOSITION.	// Landing Target Geoposition
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -93,7 +93,7 @@ if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 	}
 } else  {
 	PRINT "LOAD: STAGE1_TARGET_FILE.c".
-	// MASTER:
+	// MASTER or CORE:
 	if STAGE_1_TYPE <> "SLAVE" 
 	{
 		runpath("1:/STAGE1_TARGET_FILE.c"). //1: = Use KOS_CPU Internal Disk. (to allow each booster have it's file)
@@ -117,7 +117,7 @@ if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 		}
 		else if CORE:BOOTFILENAME:FIND("boot-boosters.ks") > -1 	// STAGE-1C
 		{
-			declare global LandingZone_NAME to "JRTI".
+			declare global LandingZone_NAME to "OCISLY_FAROUT".
 			set LandingTarget TO offline_DroneShip.
 		}
 
@@ -127,7 +127,7 @@ if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 }
 
 // Before COMMON:
-if STAGE_1_TYPE = "MASTER" 
+if STAGE_1_TYPE = "MASTER" and mass < 1000
 {
 	set near_vessel to getNearbyProbe().
 	if (near_vessel = "")
@@ -188,63 +188,78 @@ if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
 {
 	set present_heading to SHIP:HEADING.
 	
-	update_phase_title("STAGE-1 SEPARATION...   ", 0, true).
-	
-	SAS OFF.
-	RCS OFF.
-	LOCK STEERING TO SHIP:PROGRADE  + R(0,0,180).
-	WAIT 7.
-	PRINT_STATUS (3).
-	RCS ON.	
+	if SHIP:HEADING > 80 and SHIP:HEADING < 100
+	{
+		update_phase_title("STAGE-1 SEPARATION...   ", 0, true).
+		
+		SAS OFF.
+		RCS ON. //OFF.
+		LOCK STEERING TO SHIP:PROGRADE  + R(0,0,180).
+		WAIT 7.
+		PRINT_STATUS (3).
+		RCS ON.	
+	}
+	else
+		update_phase_title("(SKIP SEP)", 0, false).
 	
 	//FLIP MANEUVER:
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	CLEARSCREEN.	
+	RCS ON.
 	update_phase_title("FLIP MANEUVER   ", 0, true).
-	FROM {local x is 20.} UNTIL x = 0 STEP {set x to x-1.} DO 
+	FROM {local x is 25.} UNTIL x = 0 STEP {set x to x-1.} DO 
 	{
 		print "wait: "+x+" " at (42,2).
 		
 		if STAGE_1_TYPE = "CORE"
 			LOCK STEERING TO HEADING(270,0, -270).						// For Drone Ship Landing
 		else
+		{
 			steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset). // Heading to Return Home
+			PRINT_STATUS (3).
+		}
 		
 		PRINT_STATUS (3).
-		if shipPitch>-5 and shipPitch<5
+		if shipPitch>-5 and shipPitch<5 and x < 20 
 		{
-			set x to 1.
+			set x to 1.	//End the Wait...
 		}
-		else
-			WAIT 1.
+		
+		WAIT 1. //Mandatory wait.
 	}
 	print "wait: --" at (42,2).
-}
+
+} 
 
 // Open Inf. Thread to read values from Master:
 if STAGE_1_TYPE = "SLAVE" 
 {
 	set y to 3.
-	PRINT "[Slav]" at (44,1).
+	//PRINT "(Slav)" at (44,1).
+	update_phase_title("(INIT MSG READER)",0).
 	WHEN in_sync THEN
 	{
 		WAIT UNTIL NOT SHIP:MESSAGES:EMPTY.		//VESSEL:QUEUE
 		SET MESSAGE TO SHIP:MESSAGES:POP.
 		
-		SET COM_thrust to MESSAGE:CONTENT[0].
-		SET COM_steeringDir to MESSAGE:CONTENT[1].
-		SET COM_pitch to MESSAGE:CONTENT[2].
-		SET COM_ADDONS_TR_IMPACTPOS to MESSAGE:CONTENT[3].
-		SET COM_altitude to MESSAGE:CONTENT[4].
-		
-		//DEBUG:
-		// PRINT "COM_thrust:      "+ROUND (COM_thrust,1)+"   " at (0,y+12).
-		// PRINT "COM_steeringDir: "+ROUND (COM_steeringDir,1)+"   " at (0,y+13).
-		// PRINT "COM_pitch:       "+ROUND (COM_pitch,1)+"   " at (0,y+14).
-		// PRINT "COM_ADDONS_TR_IMPACTPOS:HEADING: "+ROUND (COM_ADDONS_TR_IMPACTPOS:HEADING,1)+"   " at (0,y+15).
-		// PRINT "COM_impactDist:       "+ROUND (COM_impactDist,1)+"   " at (0,y+16).
-		// PRINT "COM_targetDir:       "+ROUND (COM_targetDir,1)+"   " at (0,y+17).
-
+		//if KUniverse:ActiveVessel <> SHIP
+		// {
+			SET COM_thrust to MESSAGE:CONTENT[0].
+			SET COM_steeringDir to MESSAGE:CONTENT[1].
+			SET COM_pitch to MESSAGE:CONTENT[2].				//not used
+			SET COM_ADDONS_TR_IMPACTPOS to MESSAGE:CONTENT[3].
+			SET COM_altitude to MESSAGE:CONTENT[4]. 			//not used
+			
+			// LOG  "GOT - COM_thrust: "+COM_thrust to LOG.txt.
+			 
+			//DEBUG:
+			// PRINT "COM_thrust:      "+ROUND (COM_thrust,1)+"   " at (0,y+12).
+			// PRINT "COM_steeringDir: "+ROUND (COM_steeringDir,1)+"   " at (0,y+13).
+			// PRINT "COM_pitch:       "+ROUND (COM_pitch,1)+"   " at (0,y+14).
+			// PRINT "COM_ADDONS_TR_IMPACTPOS:HEADING: "+ROUND (COM_ADDONS_TR_IMPACTPOS:HEADING,1)+"   " at (0,y+15).
+			// PRINT "COM_impactDist:       "+ROUND (COM_impactDist,1)+"   " at (0,y+16).
+			// PRINT "COM_targetDir:       "+ROUND (COM_targetDir,1)+"   " at (0,y+17).
+		// }
 		PRESERVE.
 	}
 } 

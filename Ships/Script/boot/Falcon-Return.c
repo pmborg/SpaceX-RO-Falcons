@@ -8,19 +8,19 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 03/Dez/2020
+// 05/Dez/2020
 // --------------------------------------------------------------------------------------------
 
-// REGRESSION TESTS for KOS Automatic Pilot Orbit and Landing:
-// -----------------------------------------------------------
-// [ok] F9 QMAX							1.20.11.21
-// [ok] F9 ST-1 STAGE					1.20.11.21
-// [ok] F9 ST-1 LANDING					1.20.11.21
+// REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
+// ------------------------------------------------------------
+// [ok] F9 QMAX							1.20.12.05
+// [ok] F9 ST-1 STAGE					1.20.12.05
+// [ok] F9 ST-1 LANDING					1.20.12.05
 // [ok] F9 ST-2 LEO ORBIT				1.20.11.21
 
-// [ok] Crew Dragon 2 QMAX				1.20.11.21
-// [ok] Crew Dragon 2 STAGE				1.20.11.21
-// [ok] Crew Dragon 2 ST-1 LANDING		1.20.11.21
+// [ok] Crew Dragon 2 QMAX				1.20.12.05
+// [ok] Crew Dragon 2 STAGE				1.20.12.05
+// [ok] Crew Dragon 2 ST-1 LANDING		1.20.12.05
 // [ok] Crew Dragon 2 DRAGON LEO ORBIT	1.20.11.21
 
 // [ok] FH ST1 QMAX						1.20.11.22
@@ -38,35 +38,47 @@ function boostback_burn
 	parameter do_reverse_max_speed to 100.
 	
 	if do_reverse
-		update_phase_title("BOOSTBACK BURN REV.", 1).
+		update_phase_title("BOOSTBACK BURN REV."+do_reverse_max_speed, 1).
 	else
-		update_phase_title("BOOSTBACK BURN NOR.", 1).
+		update_phase_title("BOOSTBACK BURN NOR."+do_reverse_max_speed, 1).
 	
 	set warp to 0.
 	SAS OFF.
-	set impactDist to 999999.
 	
-	until FALSE
+	set impactDist to 999999.
+	LOG  STAGE_1_TYPE + " - boostback_burn("+do_reverse_max_speed+") - START" to LOG.txt.
+	
+	set we_are_done to FALSE.
+	until we_are_done
 	{
 		SET prev_impactDist to impactDist.
-		
+
+		// PRINT "COM_thrust:      "+ROUND (COM_thrust,1)+"   " at (0,1).
+		// if COM_thrust = 0 and STAGE_1_TYPE = "SLAVE"
+			// set we_are_done to TRUE.
+
 		if STAGE_1_TYPE = "CORE"
 		{
 			set lat_correction to 0.
-			if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+			if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
 				set lat_correction to (LandingTarget:LAT - ADDONS:TR:IMPACTPOS:LAT)*50.
 			
 			LOCK STEERING TO HEADING(270+lat_correction,0, -270).
-			if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+			if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
 				SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
 		} else
 			steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset, do_reverse). // Calculate: impactDist
-		
+
 		if(impactDist < 5000)
 		{
 			PRINT "OP3: impactDist < 3km   " at (0,2).
 			SET thrust TO 0.05.	// Near? for high precision, do it in lower thrust
 			RCS ON.
+			if STAGE_1_TYPE = "SLAVE" and impactDist < 500
+			{
+				LOG  "SLAVE:[we_are_done] " to LOG.txt.
+				set we_are_done to TRUE.
+			}
 		}else if(impactDist < 10000){
 			PRINT "OP2: impactDist < 10km  " at (0,2).
 			SET thrust TO 0.1.
@@ -87,7 +99,11 @@ function boostback_burn
 		PRINT_STATUS (3).
 	}
 	
+	LOG  STAGE_1_TYPE + " - boostback_burn() - END" to LOG.txt.
 	SET thrust TO 0.
+	wait 1.
+	if STAGE_1_TYPE = "MASTER"
+		PRINT_STATUS (3). // Send STOP to "SLAVE"
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -129,7 +145,7 @@ function ReEntryburn
 		} else {
 			lock steering to retrograde.
 				
-			if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+			if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
 				SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
 		}
 		
@@ -140,14 +156,34 @@ function ReEntryburn
 			SET thrust to 0.01.
 			activateOneEngine().			
 		
+			AG8 ON. //Enable Lower RCS.
+			// FOR FH:
+			//if shipPitch < 60
+			{
+				//Add 10 secs of vertical stability after REENTRY BURN
+				update_phase_title("(vertical stability)", 0).
+				SET thrust to 0.
+				RCS ON.
+				FROM {local x is 5.} UNTIL x = 0 STEP {set x to x-1.} DO 
+				{
+					//lock steering to retrograde.
+					LOCK STEERING TO up + R(0,0,180). //UP
+					wait 1.
+					if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+						SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
+					PRINT_STATUS (3).
+				}
+			}
+			AG8 ON. //Disable Lower RCS.
+			
 			// Check if some "FINE TUNE BURN" is needed...
 			update_phase_title("FINE TUNE BURN", 0).
 			SAS OFF.
-			until (impactDist < 25) or (SHIP:VERTICALSPEED >= 0)
+			until (impactDist < 50) or (SHIP:VERTICALSPEED >= 0)
 			{
 				SET prev_impactDist to impactDist.
 				
-				if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+				if KUniverse:ActiveVessel = SHIP and  ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
 					SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
 				
 				updateHoverSteering().
@@ -166,23 +202,7 @@ function ReEntryburn
 					 break.
 			}
 			
-			// FOR FH:
-			if shipPitch < 60
-			{
-				//Add 10 secs of vertical stability after REENTRY BURN
-				update_phase_title("(vertical stability)", 0).
-				SET thrust to 0.
-				RCS ON.
-				FROM {local x is 5.} UNTIL x = 0 STEP {set x to x-1.} DO 
-				{
-					//lock steering to retrograde.
-					LOCK STEERING TO up + R(0,0,180). //UP
-					wait 1.
-					if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
-						SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
-					PRINT_STATUS (3).
-				}
-			}
+
 			break.
 		}
 
@@ -200,31 +220,36 @@ function waitAndDoReEntryburn
 	{
 		until (SHIP:VERTICALSPEED < 0)
 		{
-			// if STAGE_1_TYPE <> "SLAVE" 
-			// {
-				// SAS OFF. 
-				// RCS ON. wait 1.
-				SAS ON. wait 1.
-				// set sasmode TO "PROGRADE". wait 0.5.
-			// } else 
-			{
-				SAS OFF.
-				LOCK STEERING TO UP + R(0,0,180).
-			}
+			SAS ON. wait 1.
+			SAS OFF.
+			LOCK STEERING TO UP + R(0,0,180).
 		
 			if SHIP:altitude > BODY:ATM:HEIGHT 
 			{
 				RCS OFF.
 				wait 1.
-				set warp to 2.
+				if STAGE_1_TYPE <> "MASTER"
+				{
+					set warp to 2.
+					
+					if (SHIP:VERTICALSPEED > 0) 
+					{
+						// Wait until out ATM...
+						until (SHIP:altitude > 140000) or (SHIP:VERTICALSPEED < 0) 
+						{
+							WAIT 0.1.
+							PRINT_STATUS (3).
+						}
+					}
+
+					// Warp until re-enter in atmosphere:
+					until (warp = 0) 
+					{
+						WAIT 0.1.  // Wait until return again to ATM...
+						PRINT_STATUS(3).
+					}
+				}
 			}
-
-			// Wait until out ATM...
-			until (SHIP:altitude > 140000) or (SHIP:VERTICALSPEED < 0)
-				PRINT_STATUS (3).
-
-			// Warp until re-enter in atmosphere:
-			until (warp = 0) WAIT 1.  // Wait until return again to ATM...
 		}
 	}
 
@@ -235,15 +260,15 @@ function waitAndDoReEntryburn
 	WAIT 2.
 	SAS OFF.
 	WAIT 2.
-	if STAGE_1_TYPE <> "SLAVE" 
-	{
-		UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
-		SAS ON.
-		WAIT 2.
-		SET TARGET TO LandingZone.
-		WAIT 2.
-	}
-	else
+	// if STAGE_1_TYPE <> "SLAVE" 
+	// {
+		// UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
+		// SAS ON.
+		// WAIT 2.
+		// SET TARGET TO LandingZone.
+		// WAIT 2.
+	// }
+	if STAGE_1_TYPE = "SLAVE"  //else
 		set LandingTarget TO offline_LandingZone1.
 
 	RCS ON.
@@ -283,7 +308,7 @@ function aerodynamic_guidance
 			steerToTarget(steeringPitch, 0, 0, true). // Calculate: impactDist
 		}
 			
-		if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+		if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
 			SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
 		else
 			SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), COM_ADDONS_TR_IMPACTPOS).
@@ -430,10 +455,22 @@ if (impactDist > 5000) and (SHIP:altitude > 50000)
 {
 	if STAGE_1_TYPE = "CORE"
 		boostback_burn(true).
-	else
+	else{
 		boostback_burn().
+		// if STAGE_1_TYPE = "SLAVE" 
+		// {
+			// wait 15.
+			// if (KUniverse:ActiveVessel = SHIP)
+			// {
+				// SET TARGET TO VESSEL("LandingZone1").
+				// wait 1.
+			// }
+			// set STAGE_1_TYPE to "MASTER" .
+			// boostback_burn(false, 99).
+			// set STAGE_1_TYPE to "SLAVE".
+		// }
+	}
 }
-
 AG8 ON. //Disable Lower RCS.
 waitAndDoReEntryburn().
 activateOneEngine().

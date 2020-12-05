@@ -64,7 +64,7 @@ if vehicle_type = "Falcon Heavy"
 	// 100=DroneShip: OCISLY
 	// 101=DroneShip: JRTI
 	// 102=DroneShip: OCISLY-FAROUT
-	IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(102)	//OCISLY
+	IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(102)	//OCISLY_FAROUT
 	  WAIT 0.1.
 
 	IF PROCESSOR_STAGE1L:CONNECTION:SENDMESSAGE(1) //LZ-1(Slave)
@@ -72,14 +72,13 @@ if vehicle_type = "Falcon Heavy"
 
 	IF PROCESSOR_STAGE1R:CONNECTION:SENDMESSAGE(2) //LZ-2(Master)
 	  WAIT 0.1.
-
-} else
-if vehicle_type = "Crew Dragon 2"
+} 
+else if vehicle_type = "Crew Dragon 2"
 {
 	IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(101) //JRTI
 	  WAIT 0.1.	
-} else
-if vehicle_type = "F9v1.2B5"
+} 
+else if vehicle_type = "F9v1.2B5"
 {
 	IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(100)	//OCISLY
 	  WAIT 0.1.	

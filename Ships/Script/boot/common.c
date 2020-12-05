@@ -9,7 +9,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Common lib of functions used by Falcon-Return.c
-// 28/Nov/2020
+// 05/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 declare global landingAltitude TO LandingTarget:TERRAINHEIGHT.
@@ -82,14 +82,21 @@ function steerToTarget
 	
 	SET overshootLatLng TO LATLNG(LandingTarget:LAT + overshootLatModifier, LandingTarget:LNG + overshootLngModifier).
 	
-	if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+	if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
 	{
 		SET impactDist TO horizontalDistance(overshootLatLng, ADDONS:TR:IMPACTPOS).
-		SET targetDir TO horizontalDirection(ADDONS:TR:IMPACTPOS,overshootLatLng).
-	} else{
-		SET impactDist TO horizontalDistance(overshootLatLng, COM_ADDONS_TR_IMPACTPOS).
-		SET targetDir TO horizontalDirection(COM_ADDONS_TR_IMPACTPOS,overshootLatLng).
+		PRINT "*" at(48,3+8).
 	}
+	else 
+	{
+		SET impactDist TO horizontalDistance(overshootLatLng, COM_ADDONS_TR_IMPACTPOS).
+		PRINT "#" at(48,3+8).
+	}
+
+	if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+		SET targetDir TO horizontalDirection(ADDONS:TR:IMPACTPOS,overshootLatLng).
+	else
+		SET targetDir TO horizontalDirection(COM_ADDONS_TR_IMPACTPOS,overshootLatLng).
 	
 	SET steeringDir TO targetDir - 180.
 	if (do_reverse)
@@ -145,7 +152,7 @@ function updateHoverSteering
 	LOCAL northVelPIDOut IS northVelPID:UPDATE(TIME:SECONDS, cVelLast:Z).
 	
 	LOCAL eastPlusNorth is MAX(ABS(eastVelPIDOut), ABS(northVelPIDOut)).
-	if STAGE_1_TYPE = "SLAVE" 
+	if STAGE_1_TYPE = "SLAVE" and KUniverse:ActiveVessel <> SHIP
 		SET steeringPitch TO COM_steeringDir.
 	else {
 		SET steeringPitch TO 90 - eastPlusNorth.
@@ -203,26 +210,28 @@ function PRINT_STATUS
 	else
 		PRINT "TARGET: "+LandingZone_NAME at (0,y).
 	
-	PRINT "LandingTarget: "+ROUND (LandingTarget:LAT,2)+" " +ROUND (LandingTarget:LNG,2) at (0,y+1).
-	if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
-	{
-		set val_1at to ADDONS:TR:IMPACTPOS:LAT.
+	PRINT "LandingTarget: "+ROUND (LandingTarget:LAT,3)+" " +ROUND (LandingTarget:LNG,3) at (0,y+1).
+	if KUniverse:ActiveVessel = SHIP
 		if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
 		{
-			set val_lng to ADDONS:TR:IMPACTPOS:LNG.
-			PRINT "ImpactTarget: "+ROUND (val_1at,2)+" " +ROUND (val_lng,2)  at (0,y+2).
+			set val_1at to ADDONS:TR:IMPACTPOS:LAT.
+			if KUniverse:ActiveVessel = SHIP
+				if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+				{
+					set val_lng to ADDONS:TR:IMPACTPOS:LNG.
+					PRINT "ImpactTarget: "+ROUND (val_1at,3)+" " +ROUND (val_lng,3)  at (0,y+2).
+				}
 		}
-	}
 		
 	PRINT "LandingTarget:DISTANCE: "+ROUND(LandingTarget:DISTANCE/1000,3)+" km   " at (0,y+3).
 	PRINT "LandingTarget:TERRAINHEIGHT: "+ROUND (landingAltitude,1)+" m   " at (0,y+4).
 	PRINT "LandingTarget:HEADING: "+ROUND (LandingTarget:HEADING,1)+" deg.   " at (0,y+5).
 	PRINT "LandingTarget:BEARING: "+ROUND (LandingTarget:BEARING,1)+" deg.   " at (0,y+6).
 	
-	PRINT "Hor. Landing distance from target: " + ROUND(impactDist/1000,3) +" km   " at (0,y+8).
-	PRINT "Hor. Current distance from target: "+ROUND(HorizDist/1000,3)+" km   " at (0,y+9).
+	PRINT "Hor. Landing distance to target: " + ROUND(impactDist/1000,3) +" km  " at (0,y+8).
+	PRINT "Hor. Current distance to target: "+ROUND(HorizDist/1000,3)+" km  " at (0,y+9).
 	PRINT "landingAltitude: "+ROUND (landingAltitude,1)+" m   " at (0,y+10).
-	PRINT "alt:radar: "+ROUND (alt:radar,1)+" m   " at (0,y+11).
+	PRINT "alt:radar: "+ROUND (alt:radar/1000,3)+" km   " at (0,y+11).
 	PRINT "steeringDir: "+ROUND (steeringDir,1)+"   " at (0,y+12).
 	PRINT "steeringPitch: "+ROUND (steeringPitch,1)+"   " at (0,y+14).
 	PRINT "shipPitch: "+ROUND (shipPitch,1)+"   " at (0,y+15).
@@ -230,8 +239,8 @@ function PRINT_STATUS
 	
 	PRINT "sBurnDist: "+ROUND (sBurnDist,1)+" m   " at (0,y+17).
 	PRINT "Groundspeed: "+ROUND (GROUNDSPEED,1)+" m/s   " at (0,y+18).
-	PRINT "Altitude: "+ROUND(SHIP:ALTITUDE)+"  " at (0, y+19).
-	PRINT "Verticalspeed: "+ROUND(SHIP:VERTICALSPEED)+"   " at (0, y+20).
+	//PRINT "Altitude: "+ROUND(SHIP:ALTITUDE)+"  " at (0, y+19).
+	PRINT "Verticalspeed: "+ROUND(SHIP:VERTICALSPEED)+"   " at (0, y+19).
 	
 	//Suicide burn calculation: (impactTime)
 	set trueRadar to alt:radar - radarOffset.
@@ -243,11 +252,21 @@ function PRINT_STATUS
 	PRINT "burnAlt: "+ROUND(burnAlt)+"   " at (0, y+22).
 	PRINT "[t]: "+ROUND(t,2)+"   " at (0, y+23).
 	
+	if STAGE_1_TYPE = "SLAVE" or STAGE_1_TYPE = "MASTER"
+	{
+		if KUniverse:ActiveVessel = SHIP
+			PRINT "*" at (43,1).
+		else
+			PRINT "-" at (43,1).
+	}
+	
 	if STAGE_1_TYPE = "MASTER"
 	{
-		if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT //and STAGE_1_TYPE <> "SLAVE"
-			SLAVE_CONNECTION:SENDMESSAGE(list(throttle,steeringDir,shipPitch, ADDONS:TR:IMPACTPOS, SHIP:altitude)).
+		if KUniverse:ActiveVessel = SHIP
+			if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+				SLAVE_CONNECTION:SENDMESSAGE(list(throttle,steeringDir,shipPitch, ADDONS:TR:IMPACTPOS, SHIP:altitude)).
 	} 
 }
 
+update_phase_title("(INIT PIDLOOPS)", 0, false).
 setHoverPIDLOOPS().

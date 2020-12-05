@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to specify the SW version and the diferent types of profiles supported.
-// 03/Dez/2020
+// 05/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 // GLOBALS:
@@ -22,6 +22,8 @@ declare global COM_steeringDir to 0.
 declare global COM_pitch to 0.
 declare global COM_ADDONS_TR_IMPACTPOS to SHIP:GEOPOSITION.
 declare global COM_altitude to 0.
+
+DELETEPATH("LOG.txt").
 
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //             #.YY.MM.DD
@@ -57,13 +59,13 @@ if SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" or
 //STAGE_1_TYPE:
 ////////////////////////////////////////////////////////////////////////////////////////////////
 declare global STAGE_1_TYPE to "".
-if CORE:BOOTFILENAME:FIND("boot-boosters-L.ks") > -1 		// STAGE-1L	if vehicle_type = "Falcon Heavy" 
+if CORE:BOOTFILENAME:FIND("boot-boosters-L.ks") > -1 	// STAGE-1L	if vehicle_type = "Falcon Heavy" 
 	set STAGE_1_TYPE to "SLAVE".
 else 
 if CORE:BOOTFILENAME:FIND("boot-boosters-R.ks") > -1 	// STAGE-1R	if vehicle_type = "Falcon Heavy" 
 	set STAGE_1_TYPE to "MASTER".
 else 
-if CORE:BOOTFILENAME:FIND("boot-boosters.ks") > -1 	// STAGE-1 (General ST-1)
+if CORE:BOOTFILENAME:FIND("boot-boosters.ks") > -1 		// STAGE-1 (General ST-1)
 	set STAGE_1_TYPE to "CORE".
 else 
 if CORE:BOOTFILENAME:FIND("boot.ks") > -1 				// STAGE-2 (General ST-2)
@@ -78,7 +80,7 @@ if vehicle_type = "Falcon Heavy"
 	// Data from: FH Demo 1:
 	declare global Qmax 	to 15238/1.1.
 	declare global MECO1 	to 1750^2.  //1545* +130(BOOST SEP)
-	declare global MECO2 	to 3000^2.  //3060.		(CORE STAGE)
+	declare global MECO2 	to 2950^2.  //3060.		(CORE STAGE)
 	declare global FAIRSEP  to 160*1000.//			(FAIRING STAGE)
 	
 	if vehicle_sub_type = "Falcon Heavy LEM"

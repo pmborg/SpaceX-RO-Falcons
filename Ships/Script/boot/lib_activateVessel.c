@@ -8,15 +8,16 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Activate or get near by VESSEL parts.
-// 17/Nov/2020
+// 05/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 declare global g_OtherBooster to SHIP.
 
 function getNearbyProbe // The other Booster 
 {
-	WAIT 1. //Give time to check main VESSEL state.
+	parameter do_activation to 0.
 	
+	WAIT 1. //Give time to check main VESSEL state.
 	LOCAL all_vessels IS LIST().
 	LIST TARGETS IN all_vessels.
 	//We'll want to limit ourselves to nearby vessels:
@@ -42,14 +43,19 @@ function getNearbyProbe // The other Booster
 
 	WAIT 1. //Give time to check vessels list
 	if nearby_vessels:LENGTH >= 1
-		return nearby_vessels[0].
+		return nearby_vessels[do_activation].
 	else
 		return "".
 }
 
-function activateVesselProbe 
+function activateVesselProbe
 {
 	SET KUniverse:ACTIVEVESSEL TO VESSEL(getNearbyProbe()).
+}
+
+function activateVesselProbeSlave
+{
+	SET KUniverse:ACTIVEVESSEL TO VESSEL(getNearbyProbe(1)).
 }
 
 function activateMainVessel {

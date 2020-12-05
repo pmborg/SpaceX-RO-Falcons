@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 30/Nov/2020
+// 05/Dez/2020
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
 
@@ -17,9 +17,11 @@ function steering_falcon
 	parameter Vdeg.	//SET Vdeg to 90-delta.						// Vertical = 90
 	
 	set lat_correction to 0.
-	if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT and vehicle_sub_type <> "Falcon Heavy LEM"
-		set lat_correction to (VESSEL("Landingzone1"):GEOPOSITION:LAT - ADDONS:TR:IMPACTPOS:LAT)*50.
-				
+	if KUniverse:ActiveVessel = SHIP
+		if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT and vehicle_sub_type <> "Falcon Heavy LEM"
+	set lat_correction to (VESSEL("Landingzone1"):GEOPOSITION:LAT - ADDONS:TR:IMPACTPOS:LAT)*50.
+
+	PRINT "lat_correction: " at (0,18). PRINT ROUND(lat_correction,2) at (22,18).
 	SET steeringDir TO (-90-lat_correction).	// W/E
 	set Vroll to -270.							// -270 = Zero Rotation
 	
@@ -107,7 +109,9 @@ function activate3engines
 {
 	shutDownAllEngines().
 	AG2 OFF. 	//Reset 3 main engines
+	wait 1.
 	AG2 ON. 	//Activate 3 main engines
+	wait 1.
 }
 
 function engines_thrustlimit_to 
@@ -157,6 +161,8 @@ function update_phase_title
 	}
 	WAIT 0.5.
 	PRINT "| Profile: "+vehicle_type + " " at (24,0). //avoid overlap (KOS Bug) here, instead in ORI.
+	
+	LOG time:clock +": " + STAGE_1_TYPE + " - PHASE: "+phase to LOG.txt.
 }
 
 
