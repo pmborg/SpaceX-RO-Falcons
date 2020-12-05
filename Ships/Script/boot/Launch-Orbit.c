@@ -524,9 +524,9 @@ if altitude*1.1 < FINAL_ORBIT2
 		}
 		
 		update_orbit_status.
+		set vel to SQRT(Vs2).
 		if ROUND(BODY:ATM:ALTITUDEPRESSURE(altitude),4) > 0 or ROUND(BODY:ATM:ALTITUDETEMPERATURE(altitude),1) > 0
 		{
-			set vel to SQRT(Vs2).
 			update_atmosphere (altitude, vel).
 		}
 		log_data (vel).
@@ -577,9 +577,9 @@ if altitude*1.1 < FINAL_ORBIT2
 		check_fairing_sep().
 		
 		update_orbit_status.
-		if ROUND(BODY:ATM:ALTITUDEPRESSURE(h),4) > 0 or ROUND(BODY:ATM:ALTITUDETEMPERATURE(h),1) > 0
+		set vel to SQRT(Vs2).
+		if ROUND(BODY:ATM:ALTITUDEPRESSURE(altitude),4) > 0 or ROUND(BODY:ATM:ALTITUDETEMPERATURE(altitude),1) > 0
 		{
-			set vel to SQRT(Vs2).
 			update_atmosphere (altitude, vel).
 		}
 		log_data (vel).
