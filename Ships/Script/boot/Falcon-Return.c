@@ -23,12 +23,12 @@
 // [ok] Crew Dragon 2 ST-1 LANDING		1.20.12.05
 // [ok] Crew Dragon 2 DRAGON LEO ORBIT	1.20.11.21
 
-// [ok] FH ST1 QMAX						1.20.11.22
-// [ok] FH ST1 STAGE					1.20.11.22
+// [ok] FH ST1 QMAX						1.20.12.07
+// [ok] FH ST1 STAGE					1.20.12.07
 // [ok] FH ST1 Master ST-1 LANDING		1.20.11.23
-// [ok] FH Core ST-1 LANDING			1.20.12.03
+// [ok] FH Core ST-1 LANDING			1.20.12.07
 // [ok] FH LEO Orbit					1.20.11.22
-// [ok] FH GSO Orbit					1.20.12.03
+// [ok] FH GSO Orbit					1.20.12.07
 
 // [not working] Slave ST-1 LANDING		Checking the impossible (at KSP) land of both ST-1 at same time...
 
