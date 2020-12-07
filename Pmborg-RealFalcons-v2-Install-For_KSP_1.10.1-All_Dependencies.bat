@@ -75,6 +75,8 @@ if not exist buildID64.txt (
 	REM Acelerometers needed to Falcons:
 	ckan.exe install --headless --allow-incompatible --no-recommends TantaresSP
 
+    REM SET HD Settings for RealPlume:
+    copy /Y GameData\RealPlume\GlobalSettings.cfg.HD GameData\RealPlume\GlobalSettings.cfg
 	pause
 
 REM INSTALL: ISS (International SpaceStation) Dep-1:

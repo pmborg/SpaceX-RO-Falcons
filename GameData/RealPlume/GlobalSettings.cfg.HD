@@ -1,0 +1,12 @@
+@SmokeScreen:FINAL
+{
+	%atmDensityExp = 0.5128 //Scale atmosphere to stock solar system.
+}
+@SmokeScreen:NEEDS[RealSolarSystem]:FINAL
+{
+	%atmDensityExp = 1
+}
+@SmokeScreen:NEEDS[64k]:FINAL
+{
+	%atmDensityExp = 0.714
+}
