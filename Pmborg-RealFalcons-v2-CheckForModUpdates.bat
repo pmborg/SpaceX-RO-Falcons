@@ -13,6 +13,3 @@ MKDIR %KSPTEMP%
 powershell -command "& { iwr https://github.com/pmborg/SpaceX-RO-Falcons/archive/main.zip -OutFile main.zip }"
 powershell.exe -NoP -NonI -Command "Expand-Archive 'main.zip' '%KSPTEMP%'"
 xcopy /Y /S %KSPTEMP%\SpaceX-RO-Falcons-main .
-
-REM SET HD Settings for RealPlume:
-copy /Y GameData\RealPlume\GlobalSettings.cfg.HD GameData\RealPlume\GlobalSettings.cfg
