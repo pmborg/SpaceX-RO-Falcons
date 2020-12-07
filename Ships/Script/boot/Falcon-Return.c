@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 05/Dez/2020
+// 07/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
@@ -328,7 +328,7 @@ function landingBurn
 	RCS ON.
 	until (alt:radar<100 and Verticalspeed=0)
 	{
-		if impactDist > 100
+		if impactDist > 50
 		{
 			setHoverMaxSteerAngle(10).
 			setHoverMaxHorizSpeed(10).
@@ -338,15 +338,15 @@ function landingBurn
 		}
 		
 		updateHoverSteering().
-		if impactDist > 100 
+		if impactDist > 50
 		{
 			steerToTarget(steeringPitch).	//FAST correction
 			set maxDescendSpeed to 25.
-			set error to 0.825. //Keep up @82.5% x g
+			set error to 0.825. 			//Keep up @82.5% x g
 		} else {
 			steerToTarget(80).				//MEDIUM correction
 			set maxDescendSpeed to 125.
-			set error to 0.65. //Keep up @65% x g
+			set error to 0.65. 				//Keep up @65% x g
 		}
 		
 		if maxthrust = 0
