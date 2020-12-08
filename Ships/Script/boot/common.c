@@ -9,7 +9,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Common lib of functions used by Falcon-Return.c
-// 05/Dez/2020
+// 08/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 declare global landingAltitude TO LandingTarget:TERRAINHEIGHT.
@@ -26,6 +26,18 @@ declare global radarOffset to 29.//the radar altitude Kerbal Engineer (or kOS it
 set steeringDir to 0.
 SET steeringPitch to 0.
 SET shipPitch TO 0.	
+
+// Before COMMON:
+if STAGE_1_TYPE = "MASTER" and mass < 1000
+{
+	set near_vessel to getNearbyProbe().
+	if (near_vessel = "")
+		set STAGE_1_TYPE to "CORE".
+	else {
+		declare global SLAVE_BOOSTER to getNearbyProbe(). 
+		declare global SLAVE_CONNECTION TO SLAVE_BOOSTER:CONNECTION.
+	}
+}
 
 function setHoverPIDLOOPS
 {

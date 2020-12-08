@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to control (ST-1) Boosters and waiting phases and prepare them to land.
-// 05/Dez/2020
+// 08/Dez/2020
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 CLEARSCREEN.
@@ -98,7 +98,7 @@ if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 	{
 		runpath("1:/STAGE1_TARGET_FILE.c"). //1: = Use KOS_CPU Internal Disk. (to allow each booster have it's file)
 		set LandingTarget TO LandingZone:GEOPOSITION.
-		PRINT "LANDING ZONE (LOADED FROM INT. DISK): "+LandingZone:NAME.
+		PRINT "LANDING ZONE (LOADED FROM INT.DISK): "+LandingZone:NAME.
 		LOG STAGE_1_TYPE+" "+LandingZone to LOG.txt.
 		
 		update_phase_title("BOOSTER SLEEPING...    ", 0, true).
@@ -126,41 +126,26 @@ if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 	}
 }
 
-// Before COMMON:
-if STAGE_1_TYPE = "MASTER" and mass < 1000
-{
-	set near_vessel to getNearbyProbe().
-	if (near_vessel = "")
-		set STAGE_1_TYPE to "CORE".
-	else {
-		declare global SLAVE_BOOSTER to getNearbyProbe(). 
-		declare global SLAVE_CONNECTION TO SLAVE_BOOSTER:CONNECTION.
-	}
-}
-
-// Init Common (After "LOADED - LandingZone"):
-runpath("boot/common.c").
-
 //WAIT until booster is "Free" from main rocket:
-WHEN ALL_PROCESSORS:LENGTH > 2 THEN
+WHEN ALL_PROCESSORS:LENGTH > 1 THEN
 {
 	LIST PROCESSORS IN ALL_PROCESSORS.
-	if ALL_PROCESSORS:LENGTH > 2
+	if ALL_PROCESSORS:LENGTH > 1
 		PRESERVE.
-	WAIT 1.
+	WAIT 0.1.
 }
 
 // Boosters still on main rocket attached? -> WAIT for the call...
 LIST PROCESSORS IN ALL_PROCESSORS.
-if ALL_PROCESSORS:LENGTH > 2	
+if ALL_PROCESSORS:LENGTH > 1	
 {
 	//WAIT for all processors...
 	update_phase_title("WAIT4ALL PROCESSORS", 0, true).
-	WHEN ALL_PROCESSORS:LENGTH <=2 THEN
+	WHEN ALL_PROCESSORS:LENGTH <=1 THEN
 	{
 		reboot.
-		PRESERVE.
-		WAIT 1.
+		//PRESERVE.
+		//WAIT 1.
 	}
 
 	//WAIT for SEP1 or SEP2:
@@ -172,6 +157,9 @@ if ALL_PROCESSORS:LENGTH > 2
 }
 else
 	core:doaction("Open Terminal", true).
+
+// Init Common (After "LOADED - LandingZone"):
+runpath("boot/common.c").
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // START:
@@ -188,19 +176,37 @@ if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
 {
 	set present_heading to SHIP:HEADING.
 	
-	if SHIP:HEADING > 80 and SHIP:HEADING < 100
+	// if SHIP:HEADING > 80 and SHIP:HEADING < 100
 	{
-		update_phase_title("STAGE-1 SEPARATION...   ", 0, true).
-		
 		SAS OFF.
 		RCS ON. //OFF.
-		LOCK STEERING TO SHIP:PROGRADE  + R(0,0,180).
-		WAIT 7.
+
+		if STAGE_1_TYPE = "MASTER" or STAGE_1_TYPE = "SLAVE"
+		{
+			update_phase_title("HEAVY-1 SEPARATION...   ", 0, true).
+			SET thrust TO 0.2.
+			lock throttle to thrust.
+			SET Vdeg to shipPitch.
+			SET steeringDir TO 90.	// W/E
+			set Vroll to -270.		// -270 = Zero Rotation
+			
+			if STAGE_1_TYPE = "MASTER"
+				set steeringDir TO steeringDir+45.
+			if STAGE_1_TYPE = "SLAVE"
+				set steeringDir TO steeringDir-45.
+				
+			LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).//steering_falcon(Vdeg).
+		} else {
+			update_phase_title("STAGE-1 SEPARATION...   ", 0, true).
+			LOCK STEERING TO SHIP:PROGRADE  + R(0,0,180).
+		}
+		
+		WAIT 7. // wait for SEP
 		PRINT_STATUS (3).
 		RCS ON.	
 	}
-	else
-		update_phase_title("(SKIP SEP)", 0, false).
+	// else
+		// update_phase_title("(SKIP SEP)", 0, false).
 	
 	//FLIP MANEUVER:
 	////////////////////////////////////////////////////////////////////////////////////////////////
@@ -267,7 +273,7 @@ else {
 	 if STAGE_1_TYPE <> "SLAVE" 
 	 {
 		if KUniverse:ActiveVessel <> SHIP
-			update_phase_title("(W8-4 Active vessel)", 0, true).
+			update_phase_title("(W8-TOBE Active vessel)", 0, true).
 		
 		UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 			SET TARGET TO LandingZone.
