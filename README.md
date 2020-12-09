@@ -2,6 +2,15 @@
 First Challenge added on Wiki:<br>
 [Will the Falcon Heavy be capable of land the NASA LEM of Apollo Missions (with 2 or 3 Astronauts) on the Moon?](https://github.com/pmborg/SpaceX-RO-Falcons/wiki)
 
+# RELEASE 1 - On development:
+**[checking]** FH if is possible to Land ST-1...	Checking the aparent impossible Missiom (at KSP) to land both ST-1 at same time... **DONE!**<br>
+
+Now I know the answer, yes it will be possible, writing and re-writing a lot of code to do that!<br>
+
+**[on development]** Landing Both FH ST-1 Boosters at the same time on LZ-1 and LZ-2<br>
+
+----
+
 # SpaceX-RO-Falcons
 This KSP (**Kerbal Space Program**) addon, works ontop of [kks-spacex-pack mod](https://forum.kerbalspaceprogram.com/index.php?/topic/193933-1101-kks-spacex-pack-v65-01112020/) for KSP.<br>
 This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP users.<br>
@@ -36,8 +45,7 @@ This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP user
 [ok] **FH ST1 Master ST-1 LANDING**<br>
 [ok] **FH LEO Orbit**<br>
 [ok] **FH Core ST-1 LANDING**<br>
-<br>
-[on development] / [checking] FH Slave ST-1 LANDING		Checking the impossible (at KSP) land of both ST-1 at same time...<br>
+
 
 ----
 <h2>HOW TODO: Automatic Installation:</h2>
