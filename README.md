@@ -3,7 +3,7 @@ First Challenge added on Wiki:<br>
 [Will the Falcon Heavy be capable of land the NASA LEM of Apollo Missions (with 2 or 3 Astronauts) on the Moon?](https://github.com/pmborg/SpaceX-RO-Falcons/wiki)
 
 # RELEASE 1 - On development:
-**[checking]** FH if is possible to Land ST-1...	Checking the aparent impossible Missiom (at KSP) to land both ST-1 at same time... **DONE!**<br>
+**[checking]** Checking the aparent impossible Missiom (at KSP) to landing both ST-1 at same time... **DONE!**<br>
 
 Now I know the answer, yes it will be possible, writing and re-writing a lot of code to do that!<br>
 
