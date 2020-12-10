@@ -16,7 +16,7 @@ PART
 {
 	part = KK.SPX.F93.S2tank_4294654148
 	partName = Part
-	persistentId = 2774011159
+	persistentId = 579348422
 	pos = -0.800000012,54.4867249,0
 	attPos = 0,0,0
 	attPos0 = -1.30232871,53.3018456,-0.296337545
@@ -159,24 +159,6 @@ PART
 			{
 				PrtName = KK.SPX.F93.S2tank
 				PrtTitle = PMB_Falcon 9 Block 4 Upper Fuel Tank
-				PrtModuleName = ModuleDataTransmitter
-				PrtSubsystem = False
-				PrtPower = 12
-				PrtPowerF = 12
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = True
-				PrtEmergShutDnInclude = True
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4294654148,ModuleDataTransmitter
-			}
-			AYPwrPartList
-			{
-				PrtName = KK.SPX.F93.S2tank
-				PrtTitle = PMB_Falcon 9 Block 4 Upper Fuel Tank
 				PrtModuleName = ModuleCommand
 				PrtSubsystem = False
 				PrtPower = 0.4
@@ -190,6 +172,24 @@ PART
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
 				ConsPartKey = 4294654148,ModuleCommand
+			}
+			AYPwrPartList
+			{
+				PrtName = KK.SPX.F93.S2tank
+				PrtTitle = PMB_Falcon 9 Block 4 Upper Fuel Tank
+				PrtModuleName = ModuleDataTransmitter
+				PrtSubsystem = False
+				PrtPower = 12
+				PrtPowerF = 12
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4294654148,ModuleDataTransmitter
 			}
 		}
 		UPGRADESAPPLIED
@@ -2697,7 +2697,7 @@ PART
 {
 	part = KK.SPX.Falcon9.FC_4294629322
 	partName = Part
-	persistentId = 3345104943
+	persistentId = 1629889608
 	pos = -0.800000012,58.9955444,0
 	attPos = 0,0,0
 	attPos0 = 0,4.50881958,0
@@ -2939,24 +2939,6 @@ PART
 			{
 				PrtName = KK.SPX.Falcon9.FC
 				PrtTitle = Falcon 9 Flight Control System
-				PrtModuleName = ModuleDataTransmitter
-				PrtSubsystem = False
-				PrtPower = 6
-				PrtPowerF = 6
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = True
-				PrtEmergShutDnInclude = True
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4294629322,ModuleDataTransmitter
-			}
-			AYPwrPartList
-			{
-				PrtName = KK.SPX.Falcon9.FC
-				PrtTitle = Falcon 9 Flight Control System
 				PrtModuleName = ModuleCommand
 				PrtSubsystem = False
 				PrtPower = 0.15
@@ -2970,6 +2952,24 @@ PART
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
 				ConsPartKey = 4294629322,ModuleCommand
+			}
+			AYPwrPartList
+			{
+				PrtName = KK.SPX.Falcon9.FC
+				PrtTitle = Falcon 9 Flight Control System
+				PrtModuleName = ModuleDataTransmitter
+				PrtSubsystem = False
+				PrtPower = 6
+				PrtPowerF = 6
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4294629322,ModuleDataTransmitter
 			}
 		}
 		UPGRADESAPPLIED
@@ -3204,7 +3204,7 @@ PART
 {
 	part = KK.SPX.F9.1875mmPA_4294102924
 	partName = Part
-	persistentId = 1375077982
+	persistentId = 1652662431
 	pos = -0.800000012,59.0118866,0
 	attPos = 0,0,0
 	attPos0 = -0.746819139,78.1947403,-0.0876235664
@@ -3379,7 +3379,7 @@ PART
 {
 	part = Decoupler.2_4294102876
 	partName = Part
-	persistentId = 4236445475
+	persistentId = 3340465589
 	pos = -0.800000012,59.4762001,0
 	attPos = 0,0,0
 	attPos0 = 0,0.56306076,0
@@ -3584,7 +3584,7 @@ PART
 {
 	part = ionEngine_4294102796
 	partName = Part
-	persistentId = 1674247536
+	persistentId = 1032177011
 	pos = -0.800000012,59.6647263,0
 	attPos = 0,0,0
 	attPos0 = 0,0.287281036,0
@@ -3853,7 +3853,7 @@ PART
 {
 	part = batteryBank_4294102718
 	partName = Part
-	persistentId = 1200706311
+	persistentId = 1482224453
 	pos = -0.800000012,59.9891434,0
 	attPos = 0,0,0
 	attPos0 = -0.807561994,80.0610352,-0.0921270102
@@ -3989,7 +3989,7 @@ PART
 {
 	part = xenonTankRadial_4294102684
 	partName = Part
-	persistentId = 3152688750
+	persistentId = 78550662
 	pos = -1.22025275,59.8976822,5.96046448E-08
 	attPos = 0,0,0
 	attPos0 = 0.420251489,0.0941553116,-4.28408384E-08
@@ -4221,7 +4221,7 @@ PART
 {
 	part = xenonTankRadial_4294102646
 	partName = Part
-	persistentId = 3964986032
+	persistentId = 4291072562
 	pos = -0.799999952,59.8976822,0.420252591
 	attPos = 0,0,0
 	attPos0 = -1.76951289E-08,0.0941553116,-0.420251459
@@ -4453,7 +4453,7 @@ PART
 {
 	part = xenonTankRadial_4294102608
 	partName = Part
-	persistentId = 1192282658
+	persistentId = 914585093
 	pos = -0.379747033,59.8976822,-1.1920929E-07
 	attPos = 0,0,0
 	attPos0 = -0.420251489,0.0941553116,8.00937414E-08
@@ -4685,7 +4685,7 @@ PART
 {
 	part = xenonTankRadial_4294102570
 	partName = Part
-	persistentId = 2874483936
+	persistentId = 4018265504
 	pos = -0.800000072,59.8976822,-0.420252621
 	attPos = 0,0,0
 	attPos0 = 6.79865479E-08,0.0941553116,0.420251459
@@ -4917,7 +4917,7 @@ PART
 {
 	part = linearRcs_4293521798
 	partName = Part
-	persistentId = 2164276641
+	persistentId = 2964429061
 	pos = 1.02935028,51.3117828,-2.38418579E-07
 	attPos = 0,0,0
 	attPos0 = 1.82934618,-3.17493439,1.08033419E-07
@@ -5105,7 +5105,7 @@ PART
 {
 	part = linearRcs_4293521074
 	partName = Part
-	persistentId = 2095639858
+	persistentId = 4128989997
 	pos = -0.800000131,51.3117828,-1.82934999
 	attPos = 0,0,0
 	attPos0 = 2.38418579E-07,-3.17493439,-1.82934594
@@ -5293,7 +5293,7 @@ PART
 {
 	part = linearRcs_4293520988
 	partName = Part
-	persistentId = 1317574759
+	persistentId = 886154520
 	pos = -2.62935019,51.3117828,3.57627869E-07
 	attPos = 0,0,0
 	attPos0 = -1.82934618,-3.17493439,5.21540642E-08
@@ -5481,7 +5481,7 @@ PART
 {
 	part = linearRcs_4293520902
 	partName = Part
-	persistentId = 89194481
+	persistentId = 1844144608
 	pos = -0.799999654,51.3117828,1.82935023
 	attPos = 0,0,0
 	attPos0 = 0,-3.17493439,1.82934618
@@ -5669,7 +5669,7 @@ PART
 {
 	part = asasmodule1-2_4293515306
 	partName = Part
-	persistentId = 1699300765
+	persistentId = 1866841011
 	pos = -0.800000012,50.6097717,0
 	attPos = 0,0,0
 	attPos0 = 0,-3.8769455,0
@@ -5847,7 +5847,7 @@ PART
 {
 	part = PMB.F9.Merlin1DVplus_4294633406
 	partName = Part
-	persistentId = 1281197746
+	persistentId = 3958460647
 	pos = -0.800000012,48.5315399,0
 	attPos = 0,0,0
 	attPos0 = 0,-2.07823944,0
@@ -6151,7 +6151,7 @@ PART
 {
 	part = KK.SpX.Mvac.skirt_4293871078
 	partName = Part
-	persistentId = 472345972
+	persistentId = 3403875740
 	pos = -0.800000012,49.6815338,0
 	attPos = 0,0,0
 	attPos0 = 0,1.14999771,0
@@ -6270,7 +6270,7 @@ PART
 {
 	part = Decoupler.3_4294107994
 	partName = Part
-	persistentId = 408882307
+	persistentId = 1785055232
 	pos = -0.800000012,50.894722,0
 	attPos = 0,0.363807678,0
 	attPos0 = 0,-4.10393524,0
@@ -6475,7 +6475,7 @@ PART
 {
 	part = HECS2.ProbeCore_4294102532
 	partName = Part
-	persistentId = 2432969868
+	persistentId = 713043476
 	pos = -0.800000012,60.5999985,0
 	attPos = -0.0529561639,-19.3801346,0.0874549747
 	attPos0 = -0.747043848,79.9801331,-0.0874549747
@@ -7977,7 +7977,7 @@ PART
 		{
 			Activate
 			{
-				actionGroup = None
+				actionGroup = Custom10
 				wasActiveBeforePartWasAdjusted = False
 			}
 			Deactivate
@@ -8050,7 +8050,7 @@ PART
 {
 	part = trussPiece3x_4294102446
 	partName = Part
-	persistentId = 3034799392
+	persistentId = 2823692717
 	pos = -0.800000012,60.5999985,0
 	attPos = -2.29422474,-0.0117616653,-4.88153979E-08
 	attPos0 = 2.29422474,0.0117616653,4.88153979E-08
@@ -8173,7 +8173,7 @@ PART
 {
 	part = strutOcto_4294102416
 	partName = Part
-	persistentId = 3575621348
+	persistentId = 4188927805
 	pos = 0.803980768,60.5999985,-3.57627869E-07
 	attPos = 0,0,0
 	attPos0 = 0,1.60397232,3.824168E-07
@@ -8294,7 +8294,7 @@ PART
 {
 	part = largeSolarPanel_4294102382
 	partName = Part
-	persistentId = 1936610412
+	persistentId = 759870105
 	pos = 0.910434663,60.5905075,-3.57627869E-07
 	attPos = 0,0,0
 	attPos0 = 0.00948715489,0.106452785,0
@@ -8427,7 +8427,7 @@ PART
 				PrtModuleName = ModuleDeployableSolarPanel
 				PrtSubsystem = False
 				PrtPower = 2.829
-				PrtPowerF = 2.82869792
+				PrtPowerF = 2.82870054
 				PrtActive = True
 				PrtSolarDependant = True
 				PrtEditorInclude = True
@@ -8553,7 +8553,7 @@ PART
 {
 	part = strutOcto_4294102306
 	partName = Part
-	persistentId = 4219663810
+	persistentId = 3316689274
 	pos = -2.40398026,60.5999985,3.57627869E-07
 	attPos = 0,0,0
 	attPos0 = 0,-1.60397232,-3.824168E-07
@@ -8674,8 +8674,8 @@ PART
 {
 	part = largeSolarPanel_4294102272
 	partName = Part
-	persistentId = 1757299803
-	pos = -2.51044226,60.6094894,4.91738319E-07
+	persistentId = 3799522457
+	pos = -2.5104425,60.6094894,4.93600965E-07
 	attPos = 0,0,0
 	attPos0 = 0.00948715489,0.106452785,0
 	rot = 1.00000024,2.98023224E-07,2.38418579E-07,0
@@ -8739,7 +8739,7 @@ PART
 		{
 			ExtendPanelsAction
 			{
-				actionGroup = Custom03
+				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
 			ExtendAction
@@ -8807,7 +8807,7 @@ PART
 				PrtModuleName = ModuleDeployableSolarPanel
 				PrtSubsystem = False
 				PrtPower = 2.829
-				PrtPowerF = 2.82869792
+				PrtPowerF = 2.82870054
 				PrtActive = True
 				PrtSolarDependant = True
 				PrtEditorInclude = True
@@ -8933,7 +8933,7 @@ PART
 {
 	part = rtg_4294102196
 	partName = Part
-	persistentId = 452789336
+	persistentId = 2898175187
 	pos = -0.80000031,60.0054245,-0.82532537
 	attPos = -1.56462193E-07,0.0365123749,-0.153802991
 	attPos0 = 3.7252903E-08,-0.631086349,-0.67151916
@@ -9146,7 +9146,7 @@ PART
 {
 	part = rtg_4294102154
 	partName = Part
-	persistentId = 3515621249
+	persistentId = 13571385
 	pos = -0.799999654,60.0054245,0.825325489
 	attPos = 1.57393515E-07,0.0365123749,0.153802991
 	attPos0 = 2.14204192E-08,-0.631086349,0.67151916
@@ -9359,7 +9359,7 @@ PART
 {
 	part = HighGainAntenna_4293738622
 	partName = Part
-	persistentId = 409830442
+	persistentId = 2782208232
 	pos = -0.779604375,61.0000076,-0.00956565887
 	attPos = -0.0527659655,0,-0.0153743625
 	attPos0 = 0.020395577,0.400001526,-0.00956566632
@@ -9551,7 +9551,7 @@ PART
 {
 	part = KK.SPX.FalconPayloadFairing_4293981642
 	partName = Part
-	persistentId = 3146854837
+	persistentId = 2615176020
 	pos = -0.800000012,66.3186417,0
 	attPos = 0,0,0
 	attPos0 = 0,11.8319168,0
@@ -9768,7 +9768,7 @@ PART
 {
 	part = KK.SpX.FRH_4293834884
 	partName = Part
-	persistentId = 1419234269
+	persistentId = 1817341965
 	pos = -0.800000012,66.3186417,0
 	attPos = 0,0,0
 	attPos0 = 0,0,0
@@ -10080,19 +10080,19 @@ PART
 			{
 				PrtName = KK.SpX.FRH
 				PrtTitle = non RO - SpaceX Fairing Recovery Hardware
-				PrtModuleName = ModuleDataTransmitter
+				PrtModuleName = ModuleCommand
 				PrtSubsystem = False
-				PrtPower = 10
-				PrtPowerF = 10
+				PrtPower = 0.02
+				PrtPowerF = 0.0199999996
 				PrtActive = True
 				PrtSolarDependant = False
 				PrtEditorInclude = True
 				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = True
-				PrtEmergShutDnInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4293834884,ModuleDataTransmitter
+				ConsPartKey = 4293834884,ModuleCommand
 			}
 			AYPwrPartList
 			{
@@ -10116,19 +10116,19 @@ PART
 			{
 				PrtName = KK.SpX.FRH
 				PrtTitle = non RO - SpaceX Fairing Recovery Hardware
-				PrtModuleName = ModuleCommand
+				PrtModuleName = ModuleDataTransmitter
 				PrtSubsystem = False
-				PrtPower = 0.02
-				PrtPowerF = 0.0199999996
+				PrtPower = 10
+				PrtPowerF = 10
 				PrtActive = True
 				PrtSolarDependant = False
 				PrtEditorInclude = True
 				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = False
-				PrtEmergShutDnInclude = False
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4293834884,ModuleCommand
+				ConsPartKey = 4293834884,ModuleDataTransmitter
 			}
 		}
 		UPGRADESAPPLIED
@@ -10417,7 +10417,7 @@ PART
 {
 	part = KK.SPX.FalconPayloadFairing_4293733208
 	partName = Part
-	persistentId = 227886526
+	persistentId = 617151093
 	pos = -0.800000012,66.3186417,0
 	attPos = 0,0,0
 	attPos0 = 0,11.8319168,0
@@ -10621,7 +10621,7 @@ PART
 {
 	part = KK.SPX.F93.interstage_4294631684
 	partName = Part
-	persistentId = 287038316
+	persistentId = 2832985031
 	pos = -0.800000012,47.6172485,0
 	attPos = 0,0,0
 	attPos0 = 0,3.42559814,0
@@ -10820,7 +10820,7 @@ PART
 {
 	part = KK.F9demo.S1RCS_4294256998
 	partName = Part
-	persistentId = 3615798203
+	persistentId = 3012762193
 	pos = 1.02935314,44.3442421,-2.38418579E-07
 	attPos = 0,0,0
 	attPos0 = 1.82934916,-3.27300262,1.1920929E-07
@@ -10973,7 +10973,7 @@ PART
 {
 	part = KK.F9demo.S1RCS_4294256346
 	partName = Part
-	persistentId = 3154247204
+	persistentId = 1163188947
 	pos = -0.800000131,44.3442421,-1.82935333
 	attPos = 0,0,0
 	attPos0 = 2.38418579E-07,-3.27300262,-1.82934916
@@ -11126,7 +11126,7 @@ PART
 {
 	part = KK.F9demo.S1RCS_4294256276
 	partName = Part
-	persistentId = 1781508407
+	persistentId = 2107624888
 	pos = -2.62935305,44.3442421,3.57627869E-07
 	attPos = 0,0,0
 	attPos0 = -1.82934916,-3.27300262,2.98023224E-08
@@ -11279,7 +11279,7 @@ PART
 {
 	part = KK.F9demo.S1RCS_4294256206
 	partName = Part
-	persistentId = 3779635155
+	persistentId = 308245408
 	pos = -0.799999654,44.3442421,1.82935309
 	attPos = 0,0,0
 	attPos0 = 0,-3.27300262,1.82934904
@@ -11432,7 +11432,7 @@ PART
 {
 	part = KK.SPX.F93.S1tank_4294625744
 	partName = Part
-	persistentId = 3644962350
+	persistentId = 526792388
 	pos = -0.800000012,25.1699257,0
 	attPos = 0,0,0
 	attPos0 = 0,-22.447319,0
@@ -13062,7 +13062,7 @@ PART
 {
 	part = KK.SPX.Falcon9.FC_4294622098
 	partName = Part
-	persistentId = 3982312001
+	persistentId = 1208775091
 	pos = -0.800000012,44.5404053,0
 	attPos = 0,0,0
 	attPos0 = 0,19.3704872,0
@@ -13144,7 +13144,7 @@ PART
 		{
 			Activate
 			{
-				actionGroup = None
+				actionGroup = Custom09
 				wasActiveBeforePartWasAdjusted = False
 			}
 			Deactivate
@@ -13304,24 +13304,6 @@ PART
 			{
 				PrtName = KK.SPX.Falcon9.FC
 				PrtTitle = Falcon 9 Flight Control System
-				PrtModuleName = ModuleDataTransmitter
-				PrtSubsystem = False
-				PrtPower = 6
-				PrtPowerF = 6
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = True
-				PrtEmergShutDnInclude = True
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4294622098,ModuleDataTransmitter
-			}
-			AYPwrPartList
-			{
-				PrtName = KK.SPX.Falcon9.FC
-				PrtTitle = Falcon 9 Flight Control System
 				PrtModuleName = ModuleCommand
 				PrtSubsystem = False
 				PrtPower = 0.15
@@ -13335,6 +13317,24 @@ PART
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
 				ConsPartKey = 4294622098,ModuleCommand
+			}
+			AYPwrPartList
+			{
+				PrtName = KK.SPX.Falcon9.FC
+				PrtTitle = Falcon 9 Flight Control System
+				PrtModuleName = ModuleDataTransmitter
+				PrtSubsystem = False
+				PrtPower = 6
+				PrtPowerF = 6
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4294622098,ModuleDataTransmitter
 			}
 		}
 		UPGRADESAPPLIED
@@ -13569,7 +13569,7 @@ PART
 {
 	part = KK.SPX.F9LandingLeg_4294581646
 	partName = Part
-	persistentId = 2200303663
+	persistentId = 3738723664
 	pos = -2.07870793,8.57331848,-1.27870655
 	attPos = -3.69548798E-06,0.2625103,-3.33786011E-06
 	attPos0 = -1.27869904,-16.8591175,-1.27869892
@@ -13793,7 +13793,7 @@ PART
 {
 	part = KK.SPX.F9LandingLeg_4294581174
 	partName = Part
-	persistentId = 771697880
+	persistentId = 1326950246
 	pos = -2.07870698,8.57331848,1.27870727
 	attPos = -3.33786011E-06,0.2625103,3.69548798E-06
 	attPos0 = -1.27869892,-16.8591175,1.27869892
@@ -14013,7 +14013,7 @@ PART
 {
 	part = KK.SPX.F9LandingLeg_4294581056
 	partName = Part
-	persistentId = 2618424244
+	persistentId = 1754682138
 	pos = 0.478707731,8.57331848,1.27870631
 	attPos = 3.69548798E-06,0.2625103,3.33786011E-06
 	attPos0 = 1.27869916,-16.8591175,1.2786988
@@ -14233,7 +14233,7 @@ PART
 {
 	part = KK.SPX.F9LandingLeg_4294580938
 	partName = Part
-	persistentId = 1559303005
+	persistentId = 2447077189
 	pos = 0.4787063,8.57331848,-1.27870774
 	attPos = 3.33786011E-06,0.2625103,-3.69548798E-06
 	attPos0 = 1.2786988,-16.8591175,-1.27869904
@@ -14453,7 +14453,7 @@ PART
 {
 	part = KK.F9demo.S1RCS_4289609260
 	partName = Part
-	persistentId = 950625074
+	persistentId = 597995376
 	pos = 1.02939558,6.20661545,-2.38418579E-07
 	attPos = 0,0,0
 	attPos0 = 1.8293916,-18.9633102,1.1920929E-07
@@ -14606,7 +14606,7 @@ PART
 {
 	part = KK.F9demo.S1RCS_4294247630
 	partName = Part
-	persistentId = 866001250
+	persistentId = 1401641660
 	pos = -0.800000131,6.20661545,-1.82939577
 	attPos = 0,0,0
 	attPos0 = 2.38418579E-07,-18.9633102,-1.8293916
@@ -14759,7 +14759,7 @@ PART
 {
 	part = KK.F9demo.S1RCS_4294247566
 	partName = Part
-	persistentId = 2261538391
+	persistentId = 3380630310
 	pos = -2.62939548,6.20661545,3.57627869E-07
 	attPos = 0,0,0
 	attPos0 = -1.8293916,-18.9633102,2.98023224E-08
@@ -14912,7 +14912,7 @@ PART
 {
 	part = KK.F9demo.S1RCS_4294247502
 	partName = Part
-	persistentId = 3924499085
+	persistentId = 789697671
 	pos = -0.799999654,6.20661545,1.82939553
 	attPos = 0,0,0
 	attPos0 = 0,-18.9633102,1.82939148
@@ -15065,7 +15065,7 @@ PART
 {
 	part = miniFuelTank_4290370112
 	partName = Part
-	persistentId = 4031445266
+	persistentId = 3140562807
 	pos = -0.800000012,6.02273178,0
 	attPos = 0,0,0
 	attPos0 = 0,-19.1471939,0
@@ -15934,7 +15934,7 @@ PART
 {
 	part = PMB.batteryBankLarge_4289602948
 	partName = Part
-	persistentId = 1629099948
+	persistentId = 471182658
 	pos = -0.800000012,6.39902115,0
 	attPos = 0,0.660564423,0
 	attPos0 = 0,-0.284275055,0
@@ -16066,7 +16066,7 @@ PART
 {
 	part = Grid Fin L Titanium_4293607304
 	partName = Part
-	persistentId = 1682757775
+	persistentId = 2328081720
 	pos = -2.15290856,45.2301178,1.12854362
 	attPos = 0,0,0
 	attPos0 = -1.35290861,-2.38713074,1.12854362
@@ -16360,7 +16360,7 @@ PART
 {
 	part = Grid Fin L Titanium_4293603000
 	partName = Part
-	persistentId = 871885310
+	persistentId = 2086285366
 	pos = 0.328543484,45.2301178,1.35290861
 	attPos = 0,0,0
 	attPos0 = 1.1285435,-2.38713074,1.35290861
@@ -16642,7 +16642,7 @@ PART
 {
 	part = Grid Fin L Titanium_4293602924
 	partName = Part
-	persistentId = 524194230
+	persistentId = 4066078995
 	pos = 0.55290848,45.2301178,-1.12854362
 	attPos = 0,0,0
 	attPos0 = 1.35290849,-2.38713074,-1.12854362
@@ -16924,7 +16924,7 @@ PART
 {
 	part = Grid Fin L Titanium_4293602848
 	partName = Part
-	persistentId = 1417644189
+	persistentId = 3320852100
 	pos = -1.92854357,45.2301178,-1.35290837
 	attPos = 0,0,0
 	attPos0 = -1.12854362,-2.38713074,-1.35290837
@@ -17206,7 +17206,7 @@ PART
 {
 	part = PMB.Rockomax16.BW_4293210738
 	partName = Part
-	persistentId = 176477378
+	persistentId = 1156320785
 	pos = -0.800000012,7.1214447,0
 	attPos = 0,1.78442383,0
 	attPos0 = 0,-1.06200027,0
@@ -18091,7 +18091,7 @@ PART
 {
 	part = 1mv.sensor.accelerometer.srf.1_4293537238
 	partName = Part
-	persistentId = 2414940608
+	persistentId = 1803750239
 	pos = -0.800000012,60.8413925,0.727964461
 	attPos = 0,0,0
 	attPos0 = 0,0.241394043,0.727964461
@@ -18293,7 +18293,7 @@ PART
 {
 	part = PMB.Rockomax16.BW_4289908726
 	partName = Part
-	persistentId = 249779402
+	persistentId = 2893874595
 	pos = -0.800000012,7.1214447,0
 	attPos = 0,1.83999634,0
 	attPos0 = 0,-1.83999634,0
@@ -19178,7 +19178,7 @@ PART
 {
 	part = KK.SPX.F9.Octaweb_4294617648
 	partName = Part
-	persistentId = 3556012684
+	persistentId = 4161287128
 	pos = -0.800000012,4.91304016,0
 	attPos = 0,0.888408661,0
 	attPos0 = 0,-2.20840454,0
@@ -19520,7 +19520,7 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4294615978
 	partName = Part
-	persistentId = 696728530
+	persistentId = 2460599543
 	pos = -0.800000012,3.80873489,0
 	attPos = 0,0,0
 	attPos0 = 0,-1.10430145,0
@@ -19821,7 +19821,7 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4294615162
 	partName = Part
-	persistentId = 680954739
+	persistentId = 1114045749
 	pos = 0.393544137,3.94873428,-0.494383276
 	attPos = 0,0,0
 	attPos0 = 1.19353795,-0.964302063,-0.494379997
@@ -20122,7 +20122,7 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4294614724
 	partName = Part
-	persistentId = 1149402617
+	persistentId = 2202196946
 	pos = -0.305618107,3.94873428,-1.1935463
 	attPos = 0,0,0
 	attPos0 = 0.494379014,-0.964302063,-1.19353795
@@ -20423,7 +20423,7 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4294614162
 	partName = Part
-	persistentId = 3201290625
+	persistentId = 78093436
 	pos = -1.29438329,3.94873428,-1.19354343
 	attPos = 0,0,0
 	attPos0 = -0.494379967,-0.964302063,-1.193537
@@ -20724,7 +20724,7 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4294613744
 	partName = Part
-	persistentId = 1885399608
+	persistentId = 1253440327
 	pos = -1.99354553,3.94873428,-0.494382679
 	attPos = 0,0,0
 	attPos0 = -1.19353795,-0.964302063,-0.494379014
@@ -21025,7 +21025,7 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4294613336
 	partName = Part
-	persistentId = 2966390467
+	persistentId = 222593185
 	pos = -1.99354529,3.94873428,0.494381189
 	attPos = 0,0,0
 	attPos0 = -1.19353795,-0.964302063,0.494378
@@ -21326,7 +21326,7 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4294612938
 	partName = Part
-	persistentId = 2347279057
+	persistentId = 2882520202
 	pos = -1.294384,3.94873428,1.1935451
 	attPos = 0,0,0
 	attPos0 = -0.49438104,-0.964302063,1.193537
@@ -21627,7 +21627,7 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4294612550
 	partName = Part
-	persistentId = 167668603
+	persistentId = 1278813865
 	pos = -0.30561763,3.94873428,1.19354415
 	attPos = 0,0,0
 	attPos0 = 0.494379014,-0.964302063,1.19353795
@@ -21928,7 +21928,7 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4294612172
 	partName = Part
-	persistentId = 4278024331
+	persistentId = 3738231478
 	pos = 0.393543661,3.94873428,0.494382918
 	attPos = 0,0,0
 	attPos0 = 1.193537,-0.964302063,0.494380027
@@ -22229,7 +22229,7 @@ PART
 {
 	part = Vandy.F9_4290141218
 	partName = Part
-	persistentId = 1828942117
+	persistentId = 2417303758
 	pos = -0.800000012,1.41304016,0
 	attPos = 0,0,0
 	attPos0 = -0.807403088,20.93536,-0.0921878815
@@ -22498,7 +22498,7 @@ PART
 {
 	part = 1mv.sensor.accelerometer.srf.1_4292396350
 	partName = Part
-	persistentId = 3614983990
+	persistentId = 2991313796
 	pos = 1.02924109,5.17689133,1.11758709E-07
 	attPos = 0,0,0
 	attPos0 = 1.82924104,0.263851166,1.11758709E-07
@@ -22701,7 +22701,7 @@ PART
 {
 	part = 1mv.sensor.accelerometer.srf.1_4292396304
 	partName = Part
-	persistentId = 3863359051
+	persistentId = 4039797537
 	pos = -2.62924099,5.17689133,4.47034836E-08
 	attPos = 0,0,0
 	attPos0 = -1.82924104,0.263851166,4.47034836E-08
@@ -22904,7 +22904,7 @@ PART
 {
 	part = launchClamp1_4288280982
 	partName = Part
-	persistentId = 788836828
+	persistentId = 3000955265
 	pos = -0.800000012,8.96870804,2.62518382
 	attPos = 0,0,0
 	attPos0 = 0,-16.2012177,2.62518382
