@@ -42,8 +42,8 @@ function main_stage
 	UNTIL SHIP:MAXTHRUST > 0
 	{
 		if (KUniverse:ActiveVessel = SHIP) STAGE.
-		set thrust to 0.2.
-		WAIT 3.
+		// set thrust to 0.2.
+		// WAIT 3.
 		SAS ON.
 		wait 0.25.
 		set sasmode TO "PROGRADE".

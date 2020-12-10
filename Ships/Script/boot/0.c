@@ -155,8 +155,7 @@ if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
 {
 	set present_heading to SHIP:HEADING.
 	
-	// if SHIP:HEADING > 90-45 and SHIP:HEADING < 90+45
-	// {
+	{
 		SAS OFF.
 		RCS ON. //OFF.
 
@@ -183,10 +182,7 @@ if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
 		}
 		
 		PRINT_STATUS (3).
-		// RCS ON.	
-	// }
-	// else
-		// update_phase_title("(SKIP SEP)", 0, false).
+	}
 	
 	//FLIP MANEUVER:
 	////////////////////////////////////////////////////////////////////////////////////////////////

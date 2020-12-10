@@ -469,8 +469,8 @@ function main_falcon_return
 	//Activate 3 engines:
 	update_phase_title("(ACTIVATE 3 ENGINES)", 0, true).
 	activate3engines().
-
-	steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset). // Calculate: impactDist
+	
+	PRINT_STATUS (3). //steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset). // Calculate: impactDist
 	if (impactDist > 5000) and (SHIP:altitude > 50000) 
 	{
 		if STAGE_1_TYPE = "CORE"
