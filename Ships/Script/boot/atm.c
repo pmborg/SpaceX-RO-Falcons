@@ -98,6 +98,23 @@ function update_atmosphere
 {
 	parameter h0.
 	parameter v0.
+	set indice to 20.
+	
+	PRINT "Altitude: "		 	at (0,indice+0).	PRINT ROUND(h0/1000,1)+" km   "		 	at (22,indice+0).
+	PRINT "Speed: "				at (0,indice+1).	PRINT ROUND(v0*3.6,1)+" km/h   "		at (22,indice+1).	
+	
+	if ROUND(BODY:ATM:ALTITUDEPRESSURE(h0),4) = 0 and ROUND(BODY:ATM:ALTITUDETEMPERATURE(h0),1) = 0
+	{
+		PRINT "--- Cº   "		at (22,indice+3).
+		PRINT "--- kg/m^3   "	at (22,indice+4).
+		PRINT "--- (hPa)   "	at (22,indice+5).
+		PRINT "--- m/sec   "	at (22,indice+6).
+		PRINT "---   "			at (22,indice+7).
+		PRINT "--- N/m^2   "	at (22,indice+8).
+		PRINT "--- K     "		at (22,indice+11).
+		PRINT ROUND(SHIP:Q,3)+"     " at (22,indice+12).
+		return.
+	}
 	
 	set TEMPSL to 518.67.
 	set RHOSL to 0.00237689.
@@ -158,13 +175,10 @@ function update_atmosphere
 
 	// Algorithm-1:
 	// ------------
-	set indice to 20.
-	PRINT "ImpactTarget: " at (0,indice-1). 
-	if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT and KUniverse:ActiveVessel = SHIP
-		print ROUND (ADDONS:TR:IMPACTPOS:LAT,3)+", " +ROUND (ADDONS:TR:IMPACTPOS:LNG,3)+" " at (22,indice-1).
 
-	PRINT "Altitude: "		 	at (0,indice+0).	PRINT ROUND(h0/1000,1)+" km   "		 	at (22,indice+0).
-	PRINT "Speed: "				at (0,indice+1).	PRINT ROUND(v0*3.6,1)+" km/h   "		at (22,indice+1).
+	// PRINT "ImpactTarget: " at (0,indice-1). 
+	// if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT and KUniverse:ActiveVessel = SHIP
+		// print ROUND (ADDONS:TR:IMPACTPOS:LAT,3)+", " +ROUND (ADDONS:TR:IMPACTPOS:LNG,3)+" " at (22,indice-1).
 
 	PRINT "Temperature: "		at (0,indice+3).
 	PRINT "Density: "			at (0,indice+4).
@@ -172,19 +186,6 @@ function update_atmosphere
 	PRINT "Speed of Sound: "	at (0,indice+6).
 	PRINT "Mach Number: "		at (0,indice+7).
 	PRINT "Dynamic Pressure: "	at (0,indice+8).
-	
-	if ROUND(BODY:ATM:ALTITUDEPRESSURE(h),4) = 0 and ROUND(BODY:ATM:ALTITUDETEMPERATURE(h),1) = 0
-	{
-		PRINT "--- Cº   "		at (22,indice+3).
-		PRINT "--- kg/m^3   "	at (22,indice+4).
-		PRINT "--- (hPa)   "	at (22,indice+5).
-		PRINT "--- m/sec   "	at (22,indice+6).
-		PRINT "---   "			at (22,indice+7).
-		PRINT "--- N/m^2   "	at (22,indice+8).
-		PRINT "--- K     "		at (22,indice+11).
-		PRINT ROUND(SHIP:Q,3)+"     " at (22,indice+12).
-		return.
-	}
 	
 	//set indice to 22.
 	PRINT ROUND(tempVal,1)+" Cº   "			at (22,indice+3).

@@ -8,8 +8,41 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to specify the SW version and the diferent types of profiles supported.
-// 08/Dez/2020
+// 09/Dez/2020
 // --------------------------------------------------------------------------------------------
+//https://ksp-kos.github.io/KOS/structures/misc/loaddistance.html#attribute:SITUATIONLOADDISTANCE:UNLOAD
+//MAGIC LINES! Extend Physics:
+SET KUNIVERSE:DEFAULTLOADDISTANCE:FLYING:UNLOAD TO 760000. 
+SET KUNIVERSE:DEFAULTLOADDISTANCE:FLYING:LOAD   TO 769500.
+WAIT 0.001.
+SET KUNIVERSE:DEFAULTLOADDISTANCE:FLYING:PACK TO   769999.
+SET KUNIVERSE:DEFAULTLOADDISTANCE:FLYING:UNPACK TO 769000.
+WAIT 0.001.
+SET KUNIVERSE:DEFAULTLOADDISTANCE:SUBORBITAL:UNLOAD TO 760000. 
+SET KUNIVERSE:DEFAULTLOADDISTANCE:SUBORBITAL:LOAD   TO 769500.
+WAIT 0.001.
+SET KUNIVERSE:DEFAULTLOADDISTANCE:SUBORBITAL:PACK TO   769999.
+SET KUNIVERSE:DEFAULTLOADDISTANCE:SUBORBITAL:UNPACK TO 769000.
+WAIT 0.001.
+SET KUNIVERSE:DEFAULTLOADDISTANCE:ORBIT:UNLOAD TO 760000. 
+SET KUNIVERSE:DEFAULTLOADDISTANCE:ORBIT:LOAD   TO 769500.
+WAIT 0.001.
+SET KUNIVERSE:DEFAULTLOADDISTANCE:ORBIT:PACK TO   769999.
+SET KUNIVERSE:DEFAULTLOADDISTANCE:ORBIT:UNPACK TO 769000.
+WAIT 0.001.
+
+SET KUNIVERSE:DEFAULTLOADDISTANCE:LANDED:UNLOAD TO	10000.
+SET KUNIVERSE:DEFAULTLOADDISTANCE:LANDED:LOAD TO 	09500.
+WAIT 0.001.
+SET KUNIVERSE:DEFAULTLOADDISTANCE:LANDED:PACK TO 	9999.
+SET KUNIVERSE:DEFAULTLOADDISTANCE:LANDED:UNPACK TO 	9000.
+WAIT 0.001.
+SET KUNIVERSE:DEFAULTLOADDISTANCE:SPLASHED:UNLOAD TO	10000.
+SET KUNIVERSE:DEFAULTLOADDISTANCE:SPLASHED:LOAD TO 		09500.
+WAIT 0.001.
+SET KUNIVERSE:DEFAULTLOADDISTANCE:SPLASHED:PACK TO 		9999.
+SET KUNIVERSE:DEFAULTLOADDISTANCE:SPLASHED:UNPACK TO 	9000.
+WAIT 0.001.
 
 // GLOBALS:
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -22,37 +55,39 @@ declare global COM_steeringDir to 0.
 declare global COM_pitch to 0.
 declare global COM_ADDONS_TR_IMPACTPOS to SHIP:GEOPOSITION.
 declare global COM_altitude to 0.
+declare global SHIP_NAME to SHIP:NAME.
 
-DELETEPATH("LOG.txt").
+declare global MAIN_SHIP_NAME to SHIP_NAME:REPLACE(" probe", "").
+LOG  "MAIN_SHIP_NAME: "+MAIN_SHIP_NAME to LOG.txt.
 
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //             #.YY.MM.DD
-PRINT "SW-Ver: 1.20.12.08" at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
-PRINT "MODEL: "+SHIP:name.
-PRINT "BOOT: " + CORE:BOOTFILENAME.
-//vehicle_type:
+PRINT "SW-Ver: 1.20.12.09" at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
+//DEBUG:
+// PRINT "MODEL: "+SHIP_NAME.
+// PRINT "BOOT: " + CORE:BOOTFILENAME.
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-if SHIP:NAME = "PMBT-SpaceX Falcon 1 (Merlin 1A)" or SHIP:NAME = "PMBT-SpaceX Falcon 1 (Merlin 1C)"
+if SHIP_NAME = "PMBT-SpaceX Falcon 1 (Merlin 1A)" or SHIP_NAME = "PMBT-SpaceX Falcon 1 (Merlin 1C)"
 	declare global vehicle_type to "F1-M1".					// BASE: Falcon 1 (Merlin 1A)
 else
-if SHIP:NAME = "PMBT-SpaceX Falcon 9 v1.2 Block-5"
+if SHIP_NAME = "PMBT-SpaceX Falcon 9 v1.2 Block-5"
 	declare global vehicle_type to "F9v1.2B5".				// BASE: Falcon-9 v1.2Blk:5 
 else
-if SHIP:NAME = "PMBT-SpaceX Falcon 9 v1.2 Block-5 Crew Dragon 2"
+if SHIP_NAME = "PMBT-SpaceX Falcon 9 v1.2 Block-5 Crew Dragon 2"
 	declare global vehicle_type to "Crew Dragon 2".			// BASE: Falcon-9 v1.2Blk:5 
 else
-if SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5" or 
-   SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" or
-   SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
+if SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5" or 
+   SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" or
+   SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
 	declare global vehicle_type to "Falcon Heavy".			// BASE: Falcon-9 v1.2Blk:5 
 else
 	declare global vehicle_type to "Stage-1".
 
 declare global vehicle_sub_type to vehicle_type.
 
-if SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" or
-   SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
+if SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" or
+   SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
 	set vehicle_sub_type to "Falcon Heavy LEM".
 
 
@@ -107,9 +142,9 @@ if vehicle_type = "F1-M1"
 {
 	declare global Qmax 	to 8576/1.1.
 		
-	if SHIP:NAME = "PMBT-SpaceX Falcon 1 (Merlin 1A)"
+	if SHIP_NAME = "PMBT-SpaceX Falcon 1 (Merlin 1A)"
 		declare global MECO1 	to 2300^2.	//Change from: ASCENT to Orbit
-	if SHIP:NAME = "PMBT-SpaceX Falcon 1 (Merlin 1C)"
+	if SHIP_NAME = "PMBT-SpaceX Falcon 1 (Merlin 1C)"
 		declare global MECO1 	to 3160^2.	//Change from: ASCENT to Orbit
 	
 	declare global FAIRSEP 	to 160*1000.
@@ -134,12 +169,12 @@ function set_max_delta_curve
 			if delta < (-60)				//MAX. Keep: 30 deg nose up
 				set delta to (-60).
 		} 
-		else if SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM"
+		else if SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM"
 		{
 			if delta < (-80)				//MAX. Keep: 10 deg nose up
 				set delta to (-80).	
 		}
-		else if SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
+		else if SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
 		{
 			if delta < (-70)				//MAX. Keep: 20 deg nose up
 				set delta to (-70).	
@@ -164,8 +199,8 @@ function set_Vdeg
 	if vehicle_type = "Crew Dragon 2"
 		return 90-74.	// Vertical = 90
 	else
-	if 	SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" or
-		SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
+	if 	SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" or
+		SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
 		return 90-74.	// Vertical = 90
 	else
 	if vehicle_type = "Falcon Heavy"
@@ -182,7 +217,7 @@ declare global LEOrbit to 300000.			// Default: Orbit Target at Launch
 if vehicle_sub_type = "Falcon Heavy"
 	set orbit_type to "GSO".
 
-if SHIP:NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
+if SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
 	declare global LEOrbit to 500000.		// Default: Orbit Target at Launch
 	
 if orbit_type = "GSO" 

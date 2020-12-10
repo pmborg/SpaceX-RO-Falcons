@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Activate or get near by VESSEL parts.
-// 05/Dez/2020
+// 08/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 declare global g_OtherBooster to SHIP.
@@ -16,13 +16,15 @@ declare global g_OtherBooster to SHIP.
 function getNearbyProbe // The other Booster 
 {
 	parameter do_activation to 0.
-	
-	WAIT 1. //Give time to check main VESSEL state.
+	WAIT 2. // Give time to check main VESSEL state.
 	LOCAL all_vessels IS LIST().
 	LIST TARGETS IN all_vessels.
+	LOG  "all_vessels:LENGTH: "+all_vessels:LENGTH to LOG.txt.
+	
 	//We'll want to limit ourselves to nearby vessels:
 	LOCAL nearby_vessels IS LIST().
 	FOR ves IN all_vessels {
+		LOG "VES: "+ves:name to LOG.txt.
 		if ves:name:find("Probe") > 0
 		{
 			// DEBUG:
@@ -31,10 +33,10 @@ function getNearbyProbe // The other Booster
 			// PRINT "["+STAGE_1_TYPE+"] AIRSPEED: "+ves:AIRSPEED.
 			// PRINT "["+STAGE_1_TYPE+"] Altitude: "+ves:altitude.
 			
-			LOG  "["+STAGE_1_TYPE+"] name: "+ves:name to LOG.txt.
-			LOG  "["+STAGE_1_TYPE+"] mass: "+ves:mass to LOG.txt.
-			LOG  "["+STAGE_1_TYPE+"] AIRSPEED: "+ves:AIRSPEED to LOG.txt.
-			LOG  "["+STAGE_1_TYPE+"] Altitude: "+ves:altitude to LOG.txt.
+			// LOG  "["+STAGE_1_TYPE+"] name: "+ves:name to LOG.txt.
+			// LOG  "["+STAGE_1_TYPE+"] mass: "+ves:mass to LOG.txt.
+			// LOG  "["+STAGE_1_TYPE+"] AIRSPEED: "+ves:AIRSPEED to LOG.txt.
+			// LOG  "["+STAGE_1_TYPE+"] Altitude: "+ves:altitude to LOG.txt.
 			
 			nearby_vessels:ADD(ves). 
 			set g_OtherBooster to ves.
@@ -42,6 +44,7 @@ function getNearbyProbe // The other Booster
 	}
 
 	WAIT 1. //Give time to check vessels list
+	LOG  "nearby_vessels:LENGTH: "+nearby_vessels:LENGTH to LOG.txt.
 	if nearby_vessels:LENGTH >= 1
 		return nearby_vessels[do_activation].
 	else
@@ -50,30 +53,24 @@ function getNearbyProbe // The other Booster
 
 function activateVesselProbe
 {
-	SET KUniverse:ACTIVEVESSEL TO VESSEL(getNearbyProbe()).
+	SET KUniverse:ACTIVEVESSEL TO VESSEL(getNearbyProbe():NAME).
 }
 
-function activateVesselProbeSlave
+function activateMainVessel 
 {
-	SET KUniverse:ACTIVEVESSEL TO VESSEL(getNearbyProbe(1)).
-}
-
-function activateMainVessel {
 	LOCAL all_vessels IS LIST().
 	LIST TARGETS IN all_vessels.
 	
 	//We'll want to limit ourselves to nearby vessels:
 	LOCAL nearby_vessels IS LIST().
 	FOR ves IN all_vessels {
-	  if ves:name:find("Probe") < 0 and ves:name:find("MunBase") > 0 //!!!!!!!!!!!!
-		nearby_vessels:ADD(ves).
+		//LOG  "["+STAGE_1_TYPE+"] name: "+ves:name to LOG.txt.
+		if ves:name = MAIN_SHIP_NAME
+			nearby_vessels:ADD(ves).
 	}
 	
 	// Booster Landed, return now FOCUS-VIEW to main VESSEL:
-	PRINT "Activate VESSEL: "+nearby_vessels[0]:name.
+	LOG "Activate VESSEL: "+nearby_vessels[0]:name to LOG.TXT.
 	
-	FROM {local counter is 1.} UNTIL counter >5 STEP {SET counter to counter + 1.} DO {
-		PRINT "Try: " + counter.
-		SET KUniverse:ACTIVEVESSEL TO VESSEL(nearby_vessels[0]:name). WAIT 2.
-	}
+	SET KUniverse:ACTIVEVESSEL TO VESSEL(nearby_vessels[0]:name). WAIT 2.
 }

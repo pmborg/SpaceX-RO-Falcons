@@ -11,7 +11,7 @@
 // 14/Nov/2020
 // --------------------------------------------------------------------------------------------
 
-// FOR: "PhaseV-Return.ks"-------------------------------------------------------------------------------------------------
+// FOR: "PhaseV-Return.ks"
 declare global return_dV to 9999.
 declare global return_ejection_angle to 45. // default
 if body:name = "Mun"   { set return_dV to 286.		set return_ejection_angle to 21.88. }	//#3.1
@@ -38,7 +38,7 @@ if mission_target = "Plock"  { set phaseAngle to -130.04. set return_dV to (3735
 //MOD: "Extrasolar"
 if mission_target = "Valentine" { set phaseAngle to -130.04.  set return_dV to (3735).  set return_ejection_angle to 73. } //retrograde
 
-// ------------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------
 if (BODY:name <> DEFAULT_KSC) and (CrewOnBoard)
 {
 	if ship:Orbit:TRANSITION <> "ESCAPE" {

@@ -12,9 +12,12 @@
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 core:doaction("Open Terminal", true).
-DELETEPATH("LOG.txt").
 CLEARSCREEN.
+
+DELETEPATH("LOG.txt").
+DELETEPATH("MAIN_SHIP.txt").
 RUNPATH( "boot/sw-version.c" ).
+LOG  "SET SLAVE_STAGE to 0." to SLAVE.TXT.
 
 LIST PROCESSORS IN ALL_PROCESSORS.
 PRINT  "TOTAL CPU PROCESSORS: "+ALL_PROCESSORS:LENGTH.
@@ -29,6 +32,7 @@ declare global PROCESSOR_STAGE1R to ALL_PROCESSORS[0].
 
 PRINT "List CPU Stages:".
  FROM {local counter is 0.} UNTIL counter = ALL_PROCESSORS:LENGTH STEP {SET counter to counter + 1.} DO {
+	LOG "BOOTFILENAME: "+ALL_PROCESSORS[counter]:BOOTFILENAME to LOG.txt.
 	
 	if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-boosters.ks") <> -1 // STAGE-1:
 	{

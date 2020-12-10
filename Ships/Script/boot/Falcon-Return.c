@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 07/Dez/2020
+// 09/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
@@ -32,6 +32,17 @@
 
 // [not working] Slave ST-1 LANDING		Checking the impossible (at KSP) land of both ST-1 at same time...
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+// INIT:
+////////////////////////////////////////////////////////////////////////////////////////////////
+SET thrust TO 0.
+lock throttle to thrust.
+
+set TOTAL_PARTS to 0.
+FOR P IN SHIP:PARTS
+	SET TOTAL_PARTS to TOTAL_PARTS + 1.
+
+////////////////////////////////////////////////////////////////////////////////////////////////
 function boostback_burn
 {
 	parameter do_reverse to false.
@@ -51,21 +62,21 @@ function boostback_burn
 	set we_are_done to FALSE.
 	until we_are_done
 	{
+		PRINT_STATUS (3).
+		
 		SET prev_impactDist to impactDist.
-
-		// PRINT "COM_thrust:      "+ROUND (COM_thrust,1)+"   " at (0,1).
-		// if COM_thrust = 0 and STAGE_1_TYPE = "SLAVE"
-			// set we_are_done to TRUE.
 
 		if STAGE_1_TYPE = "CORE"
 		{
 			set lat_correction to 0.
-			if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
-				set lat_correction to (LandingTarget:LAT - ADDONS:TR:IMPACTPOS:LAT)*50.
+			// if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+				// set ADDONS_TR_IMPACTPOS to COM_ADDONS_TR_IMPACTPOS.
+				
+			set lat_correction to (LandingTarget:LAT - ADDONS_TR_IMPACTPOS:LAT)*50.
 			
 			LOCK STEERING TO HEADING(270+lat_correction,0, -270).
-			if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
-				SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
+			//if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+			SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
 		} else
 			steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset, do_reverse). // Calculate: impactDist
 
@@ -74,8 +85,9 @@ function boostback_burn
 			PRINT "OP3: impactDist < 3km   " at (0,2).
 			SET thrust TO 0.05.	// Near? for high precision, do it in lower thrust
 			RCS ON.
-			if STAGE_1_TYPE = "SLAVE" and impactDist < 500
+			if STAGE_1_TYPE = "SLAVE" and impactDist < 2500
 			{
+				SET thrust TO 0.
 				LOG  "SLAVE:[we_are_done] " to LOG.txt.
 				set we_are_done to TRUE.
 			}
@@ -95,15 +107,21 @@ function boostback_burn
 			if (impactDist < 1000) and (impactDist > prev_impactDist)
 				break.
 		}
-		
-		PRINT_STATUS (3).
 	}
 	
-	LOG  STAGE_1_TYPE + " - boostback_burn() - END" to LOG.txt.
+	PRINT_STATUS (3). // Send MSG: STOP to "SLAVE" (if MASTER)
+	SET SHIP:CONTROL:PILOTMAINTHROTTLE TO 0.	//Pilot Throttle Lever
 	SET thrust TO 0.
-	wait 1.
-	if STAGE_1_TYPE = "MASTER"
-		PRINT_STATUS (3). // Send STOP to "SLAVE"
+	
+	if STAGE_1_TYPE = "SLAVE" and SLAVE_STAGE = 0
+	{
+		LOG  "SET SLAVE_STAGE to 1." to SLAVE.TXT.
+		LOG  "REBOOT:1" to LOG.TXT.
+		reboot.
+	}
+
+	update_phase_title("BOOSTBACK BURN END", 1).
+	LOG  STAGE_1_TYPE + " " + we_are_done + " - boostback_burn() - END" to LOG.txt.
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -119,6 +137,7 @@ function ReEntryburn
 	sas off.
 	until SHIP:ALTITUDE < 3000
 	{
+		PRINT_STATUS (3).
 		SET prev_impactDist to impactDist.
 		updateHoverSteering().	
 		
@@ -145,8 +164,8 @@ function ReEntryburn
 		} else {
 			lock steering to retrograde.
 				
-			if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
-				SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
+			//if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+				SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
 		}
 		
 		if SHIP:VERTICALSPEED >-200 and (impactDist > prev_impactDist)
@@ -169,44 +188,15 @@ function ReEntryburn
 					//lock steering to retrograde.
 					LOCK STEERING TO up + R(0,0,180). //UP
 					wait 1.
-					if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
-						SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
+					//if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+						SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
 					PRINT_STATUS (3).
 				}
 			}
 			AG8 ON. //Disable Lower RCS.
 			
-			// Check if some "FINE TUNE BURN" is needed...
-			update_phase_title("FINE TUNE BURN", 0).
-			SAS OFF.
-			until (impactDist < 50) or (SHIP:VERTICALSPEED >= 0)
-			{
-				SET prev_impactDist to impactDist.
-				
-				if KUniverse:ActiveVessel = SHIP and  ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
-					SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
-				
-				updateHoverSteering().
-				steerToTarget(85).
-				set error to 0.825.
-				if maxthrust = 0
-					set t to 1.
-				else
-					set t to error*((1000*SHIP:MASS*g)/maxthrust)/maxthrust.
-				
-				setHoverDescendSpeed(1+((alt:radar-29)/10),t).
-				
-				PRINT_STATUS (3, t).
-				
-				if (impactDist > prev_impactDist) //Results worst than before? exit...
-					 break.
-			}
-			
-
 			break.
 		}
-
-		PRINT_STATUS (3).
 	}
 	
 	SET thrust to 0.
@@ -216,59 +206,54 @@ function ReEntryburn
 function waitAndDoReEntryburn 
 {
 	update_phase_title("STEERING PROGRADE", 0).
-	if SHIP:altitude > 100000
+	
+	if altitude > 100000 and VERTICALSPEED > 0
 	{
-		until (SHIP:VERTICALSPEED < 0)
+		SAS ON. wait 1.
+		SAS OFF.
+		RCS ON.
+		LOCK STEERING TO UP + R(0,0,180).
+			
+		// Wait until out ATM...
+		until (altitude > BODY:ATM:HEIGHT) or (VERTICALSPEED < 0) //BODY:ATM:HEIGHT=140000m (EARTH)
 		{
-			SAS ON. wait 1.
-			SAS OFF.
-			LOCK STEERING TO UP + R(0,0,180).
+			WAIT 0.1.
+			PRINT_STATUS (3).
+		}
 		
-			if SHIP:altitude > BODY:ATM:HEIGHT 
-			{
-				RCS OFF.
-				wait 1.
-				if STAGE_1_TYPE <> "MASTER"
-				{
-					set warp to 2.
-					
-					if (SHIP:VERTICALSPEED > 0) 
-					{
-						// Wait until out ATM...
-						until (SHIP:altitude > 140000) or (SHIP:VERTICALSPEED < 0) 
-						{
-							WAIT 0.1.
-							PRINT_STATUS (3).
-						}
-					}
-
-					// Warp until re-enter in atmosphere:
-					until (warp = 0) 
-					{
-						WAIT 0.1.  // Wait until return again to ATM...
-						PRINT_STATUS(3).
-					}
-				}
-			}
+		if SHIP:altitude > BODY:ATM:HEIGHT 
+		{
+			RCS OFF.
+			wait 1.
+		}
+				
+		// if STAGE_1_TYPE = "CORE" or STAGE_1_TYPE = "ST-1"
+			// set warp to 2.
+		// else
+		{
+			set warp to 0.
+			wait 1.
+			
+			if STAGE_1_TYPE = "MASTER"
+				SET KUniverse:ACTIVEVESSEL TO SLAVE_BOOSTER.
+		}
+		
+		// Warp until re-enter in atmosphere:
+		update_phase_title("W8 4 RE-ENTER", 0).
+		until (SHIP:altitude < BODY:ATM:HEIGHT )  //warp = 0
+		{
+			WAIT 0.1.  // Wait until return again to ATM...
+			PRINT_STATUS(3).
 		}
 	}
-
-
 
 	update_phase_title("FOCUS ON TARGET", 0).
 	UNLOCK STEERING.
 	WAIT 2.
 	SAS OFF.
 	WAIT 2.
-	// if STAGE_1_TYPE <> "SLAVE" 
-	// {
-		// UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
-		// SAS ON.
-		// WAIT 2.
-		// SET TARGET TO LandingZone.
-		// WAIT 2.
-	// }
-	if STAGE_1_TYPE = "SLAVE"  //else
+
+	if STAGE_1_TYPE = "SLAVE"
 		set LandingTarget TO offline_LandingZone1.
 
 	RCS ON.
@@ -290,9 +275,14 @@ function waitAndDoReEntryburn
 function aerodynamic_guidance 
 {
 	update_phase_title("AERODYNAMIC GUIDANCE", 1).
+	if KUniverse:ActiveVessel = SHIP 
+		SET NAVMODE TO "SURFACE".
+
 	RCS ON.	wait 1.
 	until (SHIP:GROUNDSPEED < 1) or(SHIP:ALTITUDE <= (sBurnDist*1.4)) or impactTime <= 15
 	{
+		PRINT_STATUS (3).
+		
 		if SHIP:ALTITUDE > 7000
 			set aerodynamic_target to 100.
 		else if SHIP:ALTITUDE > 3000 
@@ -308,12 +298,10 @@ function aerodynamic_guidance
 			steerToTarget(steeringPitch, 0, 0, true). // Calculate: impactDist
 		}
 			
-		if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
-			SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
-		else
-			SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), COM_ADDONS_TR_IMPACTPOS).
-		
-		PRINT_STATUS (3).
+		// if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+			SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
+		// else
+			// SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), COM_ADDONS_TR_IMPACTPOS).
 	}
 }
 
@@ -328,16 +316,7 @@ function landingBurn
 	RCS ON.
 	until (alt:radar<100 and Verticalspeed=0)
 	{
-		if impactDist > 50
-		{
-			setHoverMaxSteerAngle(10).
-			setHoverMaxHorizSpeed(10).
-		} else {
-			setHoverMaxSteerAngle(5).
-			setHoverMaxHorizSpeed(5).
-		}
-		
-		updateHoverSteering().
+		// set error for min. thrust
 		if impactDist > 50
 		{
 			steerToTarget(steeringPitch).	//FAST correction
@@ -349,17 +328,30 @@ function landingBurn
 			set error to 0.65. 				//Keep up @65% x g
 		}
 		
+		//need: error
 		if maxthrust = 0
 			set t to 1.
 		else
 			set t to error*((1000*SHIP:MASS*g)/maxthrust)/maxthrust.
+
+		PRINT_STATUS (3, t). //need: t
+		
+		if impactDist > 50
+		{
+			setHoverMaxSteerAngle(10).
+			setHoverMaxHorizSpeed(10).
+		} else {
+			setHoverMaxSteerAngle(5).
+			setHoverMaxHorizSpeed(5).
+		}
+		
+		updateHoverSteering().
+	
 		if (alt:radar>landing_burn)
 			setHoverDescendSpeed(maxDescendSpeed, t).
 		else
 			break.
 		 
-		PRINT_STATUS (3, t). 
-		
 		if ((impactDist < 150) and (alt:radar<(landing_burn*0.9))) or (alt:radar<(landing_burn*0.9))
 			break.
 	}
@@ -375,6 +367,8 @@ function touchdown
 	set checkgear to 0.
 	until (SHIP:STATUS="LANDED" or sBurnDist <= 0.1) and alt:radar < 100
 	{
+		PRINT_STATUS (3, t). 
+		
 		if alt:radar > 650 and (impactDist < 150) and SHIP:GROUNDSPEED < 5 and Verticalspeed > -25
 		{
 			set thrust to 0.01. // we are too high! we need to gain vertical speed a bit 
@@ -398,9 +392,9 @@ function touchdown
 		steerToTarget(rate).
 
 		//Calc Optimized Throttle:
-		if (alt:radar<=60) 
-			set error to 0.5.
-		else
+		// if (alt:radar<=60) 
+			// set error to 0.5.
+		// else
 			set error to 0.75. //Keep up @75% x g
 		if maxthrust = 0
 			set t to 1.
@@ -408,10 +402,9 @@ function touchdown
 			set t to error*((1000*SHIP:MASS*g)/maxthrust)/maxthrust.
 		
 		setHoverDescendSpeed(2+((alt:radar-30)/7.5),t).
-		
-		PRINT_STATUS (3, t). 
 	}
 }
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 function rocketshutdown
 {
@@ -426,55 +419,68 @@ function rocketshutdown
 		set target to BODY("Earth").
 	// Final Stability:
 	SAS ON.
-	WAIT 3.
+	WAIT 5.
 	SAS OFF.
 	RCS OFF.
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-// START:
+function after_landing
+{
+	CLEARSCREEN.
+	set AFTER_LAND_TOTAL_PARTS to 0.
+	FOR P IN SHIP:PARTS 
+		SET AFTER_LAND_TOTAL_PARTS to AFTER_LAND_TOTAL_PARTS + 1.
+
+	if TOTAL_PARTS = AFTER_LAND_TOTAL_PARTS and STATUS <> "SPLASHED"
+		PRINT "GRATZ: Another Booster landed safely!".
+	else
+		PRINT "INTEGRITY: "+(AFTER_LAND_TOTAL_PARTS/TOTAL_PARTS)*100+"%".
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
-CLEARSCREEN.
-update_phase_title("(Return Home)",0).
-SET thrust TO 0.
-lock throttle to thrust.
-
-//Back to 100% now:
-if CORE:BOOTFILENAME:FIND("boot-boosters.ks") > -1
+function falcon_core
 {
-	update_phase_title("(THRUST MAX)  ", 0, true).
-	engines_thrustlimit_to (100).	
+	AG8 ON. //Disable Lower RCS.
+	waitAndDoReEntryburn().
+	activateOneEngine().
+	aerodynamic_guidance().
+	landingBurn(). //3000
+	touchdown().
+	rocketshutdown().
+	after_landing().
 }
 
-//Activate 3 engines:
-update_phase_title("(ACTIVATE 3 ENGINES)", 0, true).
-activate3engines().
-
-steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset). // Calculate: impactDist
-if (impactDist > 5000) and (SHIP:altitude > 50000) 
+////////////////////////////////////////////////////////////////////////////////////////////////
+// MAIN FUNCTION:
+////////////////////////////////////////////////////////////////////////////////////////////////
+function main_falcon_return 
 {
-	if STAGE_1_TYPE = "CORE"
-		boostback_burn(true).
-	else{
-		boostback_burn().
-		// if STAGE_1_TYPE = "SLAVE" 
-		// {
-			// wait 15.
-			// if (KUniverse:ActiveVessel = SHIP)
-			// {
-				// SET TARGET TO VESSEL("LandingZone1").
-				// wait 1.
-			// }
-			// set STAGE_1_TYPE to "MASTER" .
-			// boostback_burn(false, 99).
-			// set STAGE_1_TYPE to "SLAVE".
-		// }
+	CLEARSCREEN.
+	update_phase_title("(Return Home)",0).
+
+	//Back to 100% now:
+	if CORE:BOOTFILENAME:FIND("boot-boosters.ks") > -1
+	{
+		update_phase_title("(THRUST MAX)  ", 0, true).
+		engines_thrustlimit_to (100).	
 	}
+
+	//Activate 3 engines:
+	update_phase_title("(ACTIVATE 3 ENGINES)", 0, true).
+	activate3engines().
+
+	steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset). // Calculate: impactDist
+	if (impactDist > 5000) and (SHIP:altitude > 50000) 
+	{
+		if STAGE_1_TYPE = "CORE"
+			boostback_burn(true).
+		else{
+			boostback_burn().
+		}
+		
+		activateMainVessel(). //ST-2 or crew dragon
+	}
+		
+	falcon_core ().
 }
-AG8 ON. //Disable Lower RCS.
-waitAndDoReEntryburn().
-activateOneEngine().
-aerodynamic_guidance().
-landingBurn(). //3000
-touchdown().
-rocketshutdown().

@@ -10,8 +10,10 @@
 //              This load wrapper avoid to re-edit and save a rocket just to change the code of
 //              "boot/iss-landingzone.ks" file.
 //				Used for potencionally load code on landingzone (LZ-1 or LZ-2)
-// 14/Nov/2020
+// 09/Dez/2020
 // --------------------------------------------------------------------------------------------
-
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
-runpath("boot/stage-landingzone.ks").
+CLEARSCREEN.
+RUNPATH( "boot/sw-version.c" ).
+
+PRINT "Landingzone: "+SHIP_NAME.

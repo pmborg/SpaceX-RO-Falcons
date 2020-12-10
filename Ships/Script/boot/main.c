@@ -54,7 +54,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 				RUNPATH( "boot/Launch-Circularize.c", apoapsis ).
 			
 			//SET ON SATELITE Solar Panels:
-			AG3 ON. //Toggle
+			//AG3 ON. //Toggle
 		} else
 			PRINT "SKIP: Launch-Circularize".
 	} else
@@ -92,6 +92,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		}
 	}
 	
+	LOG  STAGE_1_TYPE+" REBOOT FIR FUEL" to LOG.TXT.
 	reboot. // Re-Fuel...
 }
 
@@ -116,7 +117,8 @@ if (ch = "y" OR ch = "Y")
 			print"NOATM: Launch-Orbit".
 			RUNPATH( "boot/PhaseIV-Orbit.c" ).					// Re-Launch to TARGET Orbit
 			activateAllEngines(). WAIT 1.
-			RUNPATH( "boot/Launch-Circularize.c", apoapsis ).				
+			RUNPATH( "boot/Launch-Circularize.c", apoapsis ).
+			activateVesselProbe().
 		}
 		
 		RUNPATH( "boot/PhaseV-Return.c" ).					// Return: Burn to "Kerbin SOI"
@@ -132,4 +134,5 @@ if (ch = "y" OR ch = "Y")
 } else {
 	ResetMission(). // Re-define Target
 	reboot.
+	LOG  STAGE_1_TYPE+" MISSION END" to LOG.TXT.
 }

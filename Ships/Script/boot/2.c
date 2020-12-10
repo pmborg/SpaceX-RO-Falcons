@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------
-// Filename: stage-droneship.ks
+// Filename: 2.c
 // --------------------------------------------------------------------------------------------
 // KOS Scripts for KSP to be used on SpaceX_Launch_Vehicles Mod with (Pmborg RO Version) 
 // --------------------------------------------------------------------------------------------
@@ -7,11 +7,14 @@
 // Beta load from: 	- https://www.dropbox.com/sh/jd1oh6d806iyat1/AABa7aXbiYDfv8G-aQ4MyR-ta?dl=0
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
-//				Used for potencionally load code on droneship (JRTI or OCISLY)
+//				Used to control (ST-1) Booster from FH
 // 09/Dez/2020
 // --------------------------------------------------------------------------------------------
-SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
-CLEARSCREEN.
+RCS OFF.
 RUNPATH( "boot/sw-version.c" ).
+runpath("boot/lib_activateVessel.c").
 
-PRINT "Droneship: "+SHIP_NAME.
+set STAGE_1_TYPE to "ST-1".
+runpath("boot/common.c").
+RUNPATH( "boot/Falcon-Return.c").
+falcon_core ().

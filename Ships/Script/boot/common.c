@@ -9,7 +9,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Common lib of functions used by Falcon-Return.c
-// 08/Dez/2020
+// 09/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 declare global landingAltitude TO LandingTarget:TERRAINHEIGHT.
@@ -27,18 +27,23 @@ set steeringDir to 0.
 SET steeringPitch to 0.
 SET shipPitch TO 0.	
 
-// Before COMMON:
+declare global ADDONS_TR_IMPACTPOS to LandingTarget. //ADDONS:TR:IMPACTPOS.
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+// INIT: (Before COMMON)
+////////////////////////////////////////////////////////////////////////////////////////////////
 if STAGE_1_TYPE = "MASTER" and mass < 1000
 {
 	set near_vessel to getNearbyProbe().
 	if (near_vessel = "")
 		set STAGE_1_TYPE to "CORE".
 	else {
-		declare global SLAVE_BOOSTER to getNearbyProbe(). 
+		declare global SLAVE_BOOSTER to near_vessel. 
 		declare global SLAVE_CONNECTION TO SLAVE_BOOSTER:CONNECTION.
 	}
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
 function setHoverPIDLOOPS
 {
 	// KP=The proportional gain factor
@@ -77,14 +82,16 @@ function horizontalDistance
 	parameter geo1. parameter geo2.
 	return (geo1:POSITION - geo2:POSITION):MAG.
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////
 function steerToTarget
 {
 	parameter pitch is 1. parameter overshootLatModifier is 0 .parameter overshootLngModifier is 0. parameter do_reverse to false.
 	
-	if STAGE_1_TYPE = "CORE"
-		set limit to 57.
-	else
+	if LandingZone:NAME = "LZ-1" or LandingZone:NAME = "LZ-2" 
 		set limit to 30.
+	else
+		set limit to 57.
 	
 	if alt:radar <= limit
 	{
@@ -93,22 +100,12 @@ function steerToTarget
 	}
 	
 	SET overshootLatLng TO LATLNG(LandingTarget:LAT + overshootLatModifier, LandingTarget:LNG + overshootLngModifier).
-	
-	if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
-	{
-		SET impactDist TO horizontalDistance(overshootLatLng, ADDONS:TR:IMPACTPOS).
-		PRINT "*" at(48,3+8).
-	}
-	else 
-	{
-		SET impactDist TO horizontalDistance(overshootLatLng, COM_ADDONS_TR_IMPACTPOS).
-		PRINT "#" at(48,3+8).
-	}
+	SET impactDist TO horizontalDistance(overshootLatLng, ADDONS_TR_IMPACTPOS).
 
-	if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
-		SET targetDir TO horizontalDirection(ADDONS:TR:IMPACTPOS,overshootLatLng).
-	else
-		SET targetDir TO horizontalDirection(COM_ADDONS_TR_IMPACTPOS,overshootLatLng).
+	//if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+	SET targetDir TO horizontalDirection(ADDONS_TR_IMPACTPOS,overshootLatLng).
+	// else
+		// SET targetDir TO horizontalDirection(COM_ADDONS_TR_IMPACTPOS,overshootLatLng).
 	
 	SET steeringDir TO targetDir - 180.
 	if (do_reverse)
@@ -154,6 +151,7 @@ function cVel
 	RETURN V(eComp, uComp, nComp).
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
 function updateHoverSteering
 {
 	SET cVelLast TO cVel().
@@ -177,6 +175,7 @@ function updateHoverSteering
 		SET steeringDir TO 360 + steeringDirNonNorm.
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
 function setHoverDescendSpeed
 {
 	parameter a. parameter minThrott is 0.
@@ -195,9 +194,22 @@ function setHoverDescendSpeed
 	SET thrust TO calcThrott.	
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
 function updateLandingVars  //Scalar projection of two vectors. Find component of a along b. a(dot)b/||b||
 {
 	updateVars().
+	
+	if STAGE_1_TYPE = "SLAVE"
+	{
+		set ADDONS_TR_IMPACTPOS to COM_ADDONS_TR_IMPACTPOS.
+		PRINT " " at(48,3+8).
+	} else
+	if KUniverse:ActiveVessel = SHIP and (ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT or altitude >3000)
+	{
+		set ADDONS_TR_IMPACTPOS to ADDONS:TR:IMPACTPOS.
+		PRINT "*" at(48,3+8).
+	}
+	
 	SET HorizDist TO horizontalDistance(landingTarget, SHIP:GEOPOSITION).
 	            // Get angle between:  UP      SHIP:Delta
 	SET shipPitch TO 90 - vang(SHIP:up:vector, SHIP:facing:forevector).
@@ -210,6 +222,7 @@ function updateLandingVars  //Scalar projection of two vectors. Find component o
 		set sBurnDist to 0.
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
 function PRINT_STATUS 
 {
 	parameter y.
@@ -222,26 +235,30 @@ function PRINT_STATUS
 	else
 		PRINT "TARGET: "+LandingZone_NAME at (0,y).
 	
-	PRINT "LandingTarget: "+ROUND (LandingTarget:LAT,3)+" " +ROUND (LandingTarget:LNG,3) at (0,y+1).
-	if KUniverse:ActiveVessel = SHIP
-		if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+	PRINT "[LandingTarget]: "+ROUND (LandingTarget:LAT,3)+" " +ROUND (LandingTarget:LNG,3) at (0,y+1).
+	
+	//ImpactTarget:
+	// if KUniverse:ActiveVessel = SHIP or STAGE_1_TYPE = "ST-1"
+	{
+		// if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
 		{
-			set val_1at to ADDONS:TR:IMPACTPOS:LAT.
-			if KUniverse:ActiveVessel = SHIP
-				if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+			set val_1at to ADDONS_TR_IMPACTPOS:LAT.
+			// if KUniverse:ActiveVessel = SHIP or STAGE_1_TYPE = "ST-1"
+				// if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
 				{
-					set val_lng to ADDONS:TR:IMPACTPOS:LNG.
-					PRINT "ImpactTarget: "+ROUND (val_1at,3)+" " +ROUND (val_lng,3)  at (0,y+2).
+					set val_lng to ADDONS_TR_IMPACTPOS:LNG.
+					PRINT "[ImpactTarget]: "+ROUND (val_1at,3)+" " +ROUND (val_lng,3)  at (0,y+2).
 				}
 		}
-		
+	}
+
 	PRINT "LandingTarget:DISTANCE: "+ROUND(LandingTarget:DISTANCE/1000,3)+" km   " at (0,y+3).
 	PRINT "LandingTarget:TERRAINHEIGHT: "+ROUND (landingAltitude,1)+" m   " at (0,y+4).
 	PRINT "LandingTarget:HEADING: "+ROUND (LandingTarget:HEADING,1)+" deg.   " at (0,y+5).
 	PRINT "LandingTarget:BEARING: "+ROUND (LandingTarget:BEARING,1)+" deg.   " at (0,y+6).
 	
-	PRINT "Hor. Landing distance to target: " + ROUND(impactDist/1000,3) +" km  " at (0,y+8).
-	PRINT "Hor. Current distance to target: "+ROUND(HorizDist/1000,3)+" km  " at (0,y+9).
+	PRINT "Hor. Landing distance to target: " + ROUND(impactDist/1000,3) +" km    " at (0,y+8).
+	PRINT "Hor. Current distance to target: "+ROUND(HorizDist/1000,3)+" km    " at (0,y+9).
 	PRINT "landingAltitude: "+ROUND (landingAltitude,1)+" m   " at (0,y+10).
 	PRINT "alt:radar: "+ROUND (alt:radar/1000,3)+" km   " at (0,y+11).
 	PRINT "steeringDir: "+ROUND (steeringDir,1)+"   " at (0,y+12).
@@ -251,22 +268,22 @@ function PRINT_STATUS
 	
 	PRINT "sBurnDist: "+ROUND (sBurnDist,1)+" m   " at (0,y+17).
 	PRINT "Groundspeed: "+ROUND (GROUNDSPEED,1)+" m/s   " at (0,y+18).
-	//PRINT "Altitude: "+ROUND(SHIP:ALTITUDE)+"  " at (0, y+19).
-	PRINT "Verticalspeed: "+ROUND(SHIP:VERTICALSPEED)+"   " at (0, y+19).
+	PRINT "Verticalspeed: "+ROUND(VERTICALSPEED)+"   " at (0, y+19).
 	
 	//Suicide burn calculation: (impactTime)
 	set trueRadar to alt:radar - radarOffset.
-	set maxDecel to (ship:availablethrust / ship:mass) - g.	
-	set stopDist to ship:verticalspeed^2 / (2 * maxDecel).		
+	set maxDecel to (availablethrust / mass) - g.	
+	set stopDist to verticalspeed^2 / (2 * maxDecel).		
 	set idealThrottle to stopDist / trueRadar.					
-	set impactTime to trueRadar / abs(ship:verticalspeed).	
+	set impactTime to trueRadar / abs(verticalspeed).	
 	PRINT "impactTime: "+ROUND(impactTime,1)+"   " at (0, y+21).
 	PRINT "burnAlt: "+ROUND(burnAlt)+"   " at (0, y+22).
 	PRINT "[t]: "+ROUND(t,2)+"   " at (0, y+23).
+	PRINT "Altitude: "+ROUND(ALTITUDE)+"  " at (0, y+24).
 	
-	if STAGE_1_TYPE = "SLAVE" or STAGE_1_TYPE = "MASTER"
+	if STAGE_1_TYPE = "SLAVE" or STAGE_1_TYPE = "MASTER" or STAGE_1_TYPE = "ST-1"
 	{
-		if KUniverse:ActiveVessel = SHIP
+		if KUniverse:ActiveVessel = SHIP //or STAGE_1_TYPE = "ST-1"
 			PRINT "*" at (43,1).
 		else
 			PRINT "-" at (43,1).
@@ -274,11 +291,46 @@ function PRINT_STATUS
 	
 	if STAGE_1_TYPE = "MASTER"
 	{
-		if KUniverse:ActiveVessel = SHIP
-			if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
-				SLAVE_CONNECTION:SENDMESSAGE(list(throttle,steeringDir,shipPitch, ADDONS:TR:IMPACTPOS, SHIP:altitude)).
+		// if KUniverse:ActiveVessel = SHIP
+			// if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT 
+			{
+				set local_ADDONS_TR_IMPACTPOS to ADDONS_TR_IMPACTPOS.	// To avoid crash on VESSEL switch...
+				SLAVE_CONNECTION:SENDMESSAGE(list(throttle,steeringDir,shipPitch, local_ADDONS_TR_IMPACTPOS, altitude)).
+			}
 	} 
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+function flip_maneuver
+{
+	CLEARSCREEN.	
+	RCS ON.
+	update_phase_title("FLIP MANEUVER   ", 0, true).
+	set wait_max_sec to 25.
+	FROM {local x is wait_max_sec.} UNTIL x = 0 STEP {set x to x-1.} DO 
+	{
+		print "wait: "+x+" " at (42,2).
+		
+		if STAGE_1_TYPE = "CORE"
+			LOCK STEERING TO HEADING(270,0, -270).						// For Drone Ship Landing
+		else
+		{
+			steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset). // Heading to Return Home
+			PRINT_STATUS (3).
+		}
+		
+		PRINT_STATUS (3).
+		if shipPitch>-5 and shipPitch<5 and x < (wait_max_sec-5)
+			set x to 1.	//End the Wait Cicle...
+		
+		WAIT 1. //Mandatory wait.
+	}
+	print "wait: --" at (42,2).
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+// START:
+////////////////////////////////////////////////////////////////////////////////////////////////
 update_phase_title("(INIT PIDLOOPS)", 0, false).
 setHoverPIDLOOPS().
