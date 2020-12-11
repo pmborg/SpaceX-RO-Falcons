@@ -13,14 +13,14 @@
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
 // ------------------------------------------------------------
-// [ok] F9 QMAX							1.20.12.05
-// [ok] F9 ST-1 STAGE					1.20.12.05
-// [ok] F9 ST-1 LANDING					1.20.12.05
-// [ok] F9 ST-2 LEO ORBIT				1.20.11.21
+// [ok] F9 QMAX							1.20.12.10
+// [ok] F9 ST-1 STAGE					1.20.12.10
+// [ok] F9 ST-1 LANDING					1.20.12.10
+// [ok] F9 ST-2 LEO ORBIT				1.20.12.10
 
-// [ok] Crew Dragon 2 QMAX				1.20.12.05
-// [ok] Crew Dragon 2 STAGE				1.20.12.05
-// [ok] Crew Dragon 2 ST-1 LANDING		1.20.12.05
+// [ok] Crew Dragon 2 QMAX				1.20.12.10
+// [ok] Crew Dragon 2 STAGE				1.20.12.10
+// [ok] Crew Dragon 2 ST-1 LANDING		1.20.12.10
 // [ok] Crew Dragon 2 DRAGON LEO ORBIT	1.20.11.21
 
 // [ok] FH ST1 QMAX						1.20.12.07
@@ -213,7 +213,8 @@ function waitAndDoReEntryburn
 		SAS OFF.
 		RCS ON.
 		LOCK STEERING TO UP + R(0,0,180).
-			
+		wait 10.
+		
 		// Wait until out ATM...
 		until (altitude > BODY:ATM:HEIGHT) or (VERTICALSPEED < 0) //BODY:ATM:HEIGHT=140000m (EARTH)
 		{
@@ -479,7 +480,8 @@ function main_falcon_return
 			boostback_burn().
 		}
 		
-		activateMainVessel(). //ST-2 or crew dragon
+		if MAIN_SHIP_NAME <> "PMBT-SpaceX Falcon 9 v1.2 Block-5 Crew Dragon 2"
+			activateMainVessel(). //ST-2 or crew dragon
 	}
 		
 	falcon_core ().
