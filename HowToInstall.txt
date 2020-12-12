@@ -1,11 +1,46 @@
---------------------------------------------------------------------------------------------------------------------------------
+
 IMPORTANT! This Automatic Instalation, assume a Clean Install of KSP 1.9.1 or KSP 1.10.1 in order to avoid conflicts with other MODS.
 --------------------------------------------------------------------------------------------------------------------------------
-First  - Copy all these files to "KSP MAIN DIRECTORY" (sample: C:\SteamLibrary\steamapps\common\Kerbal Space Program)
+First  - Copy all these files to "KSP MAIN DIRECTORY" (samples:)
 
-Second - Run the Script: (@[KSP ROOT]\SteamLibrary\steamapps\common\Kerbal Space Program))
-			for KSP 1.9.1  Pmborg-RealFalcons-v2-Install-For_KSP_1.9.1-All_Dependencies.bat
-			for KSP 1.10.1 Pmborg-RealFalcons-v2-Install-For_KSP_1.10.1-All_Dependencies.bat
+---------
+DOWNLOAD: https://codeload.github.com/pmborg/SpaceX-RO-Falcons/zip/main
+---------
+
+--------------
+UNZIP AND COPY: UNZIP SpaceX-RO-Falcons-main.zip
+---------------
+
+------------------
+ALL THESE CONTENT:
+------------------
+	GameData
+	HowToInstall.txt
+	LICENSE
+	Pmborg-RealFalcons-v2-Apollo-Parts(Challenge-1).bat
+	Pmborg-RealFalcons-v2-CheckForModUpdates.bat
+	Pmborg-RealFalcons-v2-Install-For_KSP_1.10.1-All_Dependencies.bat
+	Pmborg-RealFalcons-v2-Install-For_KSP_1.9.1-All_Dependencies.bat
+	README.md
+	saves
+	Ships
+	thumbs
+	UserLoadingScreens
+	
+--------
+TO: (Where Kerbal Space Program is Installed)
+--------
+    Windows x86: C:\Program Files\Steam\SteamApps\common\Kerbal Space Program
+    Windows x64: C:\Program Files (x86)\Steam\SteamApps\common\Kerbal Space Program
+
+--------------------------------------------------------------------------------------------------------------------------------
+Second - Run the Script:
+ From:
+    Windows x86: C:\Program Files\Steam\SteamApps\common\Kerbal Space Program
+    Windows x64: C:\Program Files (x86)\Steam\SteamApps\common\Kerbal Space Program
+
+	(for KSP 1.9.1)  Pmborg-RealFalcons-v2-Install-For_KSP_1.9.1-All_Dependencies.bat
+	(for KSP 1.10.1) Pmborg-RealFalcons-v2-Install-For_KSP_1.10.1-All_Dependencies.bat
 
 The respective script will download ckan and install all Dependencies for Pmborg-RealFalcons-v2
 --------------------------------------------------------------------------------------------------------------------------------

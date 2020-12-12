@@ -10,7 +10,12 @@ TYPE HowToInstall.txt
 echo.
 
 if not exist buildID64.txt (
-	echo "Installation error script not located at KSP root directory"
+	echo.
+	echo "Installation error, the script not located at KSP root directory"
+	echo "----------------------------------------------------------------"
+	echo "Please check the videos on the wiki:"
+	echo "https://github.com/pmborg/SpaceX-RO-Falcons/wiki/HOW-TO-INSTALL"
+	pause
 	goto :No 
 	)
 
