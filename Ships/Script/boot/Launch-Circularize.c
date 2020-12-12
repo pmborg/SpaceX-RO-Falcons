@@ -112,7 +112,7 @@ function do_circle_step
 		//In theory we should have it...
 		if throttle > 0 and maxthrust = 0 
 		{
-			CLEARSCREEN.
+			//CLEARSCREEN.
 			confirm_stage().
 			WAIT 2.
 		}.
