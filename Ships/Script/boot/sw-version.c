@@ -8,8 +8,12 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to specify the SW version and the diferent types of profiles supported.
-// 09/Dez/2020
+// 12/Dez/2020
 // --------------------------------------------------------------------------------------------
+PRINT " ".PRINT " ".PRINT " ".PRINT " ".
+//             #.YY.MM.DD
+PRINT "SW-Ver: 1.20.12.12" at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
+
 //https://ksp-kos.github.io/KOS/structures/misc/loaddistance.html#attribute:SITUATIONLOADDISTANCE:UNLOAD
 //MAGIC LINES! Extend Physics:
 SET KUNIVERSE:DEFAULTLOADDISTANCE:FLYING:UNLOAD TO 760000. 
@@ -60,9 +64,6 @@ declare global SHIP_NAME to SHIP:NAME.
 declare global MAIN_SHIP_NAME to SHIP_NAME:REPLACE(" probe", "").
 LOG  "MAIN_SHIP_NAME: "+MAIN_SHIP_NAME to LOG.txt.
 
-PRINT " ".PRINT " ".PRINT " ".PRINT " ".
-//             #.YY.MM.DD
-PRINT "SW-Ver: 1.20.12.09" at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 //DEBUG:
 // PRINT "MODEL: "+SHIP_NAME.
 // PRINT "BOOT: " + CORE:BOOTFILENAME.
@@ -114,9 +115,9 @@ if vehicle_type = "Falcon Heavy"
 {
 	// Data from: FH Demo 1:
 	declare global Qmax 	to 15238/1.1.
-	declare global MECO1 	to 1750^2.  //1545* +130(BOOST SEP)
-	declare global MECO2 	to 2950^2.  //3060.		(CORE STAGE)
-	declare global FAIRSEP  to 160*1000.//			(FAIRING STAGE)
+	declare global MECO1 	to 1750^2.  //1545* (BOOST SEP)
+	declare global MECO2 	to 2950^2.  //3060.	(CORE STAGE)
+	declare global FAIRSEP  to 160*1000.//		(FAIRING STAGE)
 	
 	if vehicle_sub_type = "Falcon Heavy LEM"
 	{
@@ -128,14 +129,14 @@ if vehicle_type = "Crew Dragon 2"
 {
 	// Data from: Crew Demo 1:
 	declare global Qmax 	to .5*0.34876*(259.9^2).
-	declare global MECO1 	to 2005^2.// 1875* +130
+	declare global MECO1 	to 2005^2.// 1875*
 	declare global FAIRSEP 	to 160*1000.
 }else
 if vehicle_type = "F9v1.2B5"
 {
 	// Data from: SpaceX CRS-16:
 	declare global Qmax 	to 16344/1.2.
-	declare global MECO1 	to 2080^2. //2180.
+	declare global MECO1 	to 2080^2. //2180*
 	declare global FAIRSEP 	to 160*1000.
 }else
 if vehicle_type = "F1-M1"

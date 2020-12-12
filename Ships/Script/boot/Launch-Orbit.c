@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 05/Dez/2020
+// 12/Dez/2020
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 set FINAL_ORBIT2 to FINAL_ORBIT.// For Phase-2 falcon stage-2
@@ -105,12 +105,16 @@ function main_lifoff
 ////////////////////////////////////////////////////////////////////////////////////////////////
 function do_stage
 {
-	UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
-	stage.
-	
-	if vehicle_type = "Falcon Heavy" 
-		AG6 ON. //Toggle: FH Boosters separator
-			
+	if vehicle_type = "Crew Dragon 2" and KUniverse:ActiveVessel <> SHIP
+		AG7 ON.
+	else
+	{
+		UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
+		stage.
+		
+		if vehicle_type = "Falcon Heavy" 
+			AG6 ON. //Toggle: FH Boosters separator
+	}		
 	wait 3.	
 }
 
@@ -216,7 +220,11 @@ if alt:radar < 100
 		PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,6).
 		
 		if alt:radar > 130 and alt:radar < 1000
+		{
 			PRINT "( Tower is cleared )" at (0,5+index2).
+			if vehicle_type = "Crew Dragon 2"
+				SAS ON.
+		}
 		else
 			PRINT "                    " at (0,5+index2).
 		
@@ -324,7 +332,7 @@ if alt:radar < 100
 		PRINT ROUND(Qmax)+"  " 							at (22,2).
 		PRINT ROUND(q)+"  " 							at (22,3).
 		PRINT ROUND(q/Qmax*100,2)+ " %       " 			at (22,4).
-		PRINT ROUND(maxthrust)+ "     " 				at (22,2+index2).
+		PRINT ROUND(maxthrust)+ " kN    " 				at (22,2+index2).
 		PRINT ROUND(delta)+ "    " 						at (22,3+index2).
 	
 		set vel to SQRT(Vs2).
@@ -468,21 +476,40 @@ if altitude*1.1 < FINAL_ORBIT2
 
 	SAS OFF.
 
-	function update_orbit_status 
+	function print_orbit_status 
 	{
 		set y to 3.
 		//PRINT "Launch Site Distance:   "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,9).
-		PRINT "Periapsis: " at (0,y+0). 	 PRINT ROUND(periapsis/1000,1)+" km    " 	at (22,y+0).
-		PRINT "Apoapsis: " at (0,y+1). 		 PRINT ROUND(apoapsis/1000,1)+" km    " 	at (22,y+1).
-		PRINT "Eta:apoapsis: " at (0,y+2). 	 PRINT ROUND(eta:apoapsis,1)+" s    " 		at (22,y+2).
-		PRINT "Eccentricity: " at (0,y+3). 	 PRINT ROUND(SHIP:ORBIT:ECCENTRICITY,3)+"" 	at (22,y+3).
-		PRINT "Altitude: " at (0,y+4). 		 PRINT ROUND(Altitude/1000,1)+" km    "  	at (22,y+4).
-		PRINT "Phase: " at (0,y+5). 		 PRINT phase 								at (22,y+5).
-		PRINT "mphase: " at (0,y+6).		 PRINT mphase 								at (22,y+6).
-		PRINT "deltaReduction: " at (0,y+7). PRINT deltaReduction 						at (22,y+7).
-		PRINT "throttle(maxthrust): " at (0,y+8). PRINT ROUND(throttle,2) + " ("+ROUND(maxthrust)+")     " at (22,y+8).
-		PRINT "HEADING: " at (0,y+9). 	 	PRINT ROUND (HEADING,1)+" deg.   " 	at (22,y+9).
-		PRINT "PITCH: " at (0,y+10). 	 	PRINT ROUND (SHIP:FACING:PITCH,1)+"   " at (22,y+10).
+		PRINT "Periapsis: " at (0,y+0). 	 //PRINT ROUND(periapsis/1000,1)+" km    " 	at (22,y+0).
+		PRINT "Apoapsis: " at (0,y+1). 		 //PRINT ROUND(apoapsis/1000,1)+" km    " 	at (22,y+1).
+		PRINT "Eta:apoapsis: " at (0,y+2). 	 //PRINT ROUND(eta:apoapsis,1)+" s    " 		at (22,y+2).
+		PRINT "Eccentricity: " at (0,y+3). 	 //PRINT ROUND(SHIP:ORBIT:ECCENTRICITY,3)+"" 	at (22,y+3).
+		PRINT "Altitude: " at (0,y+4). 		 //PRINT ROUND(Altitude/1000,1)+" km    "  	at (22,y+4).
+		PRINT "Phase: " at (0,y+5). 		 //PRINT phase 								at (22,y+5).
+		PRINT "mphase: " at (0,y+6).		 //PRINT mphase 								at (22,y+6).
+		PRINT "deltaReduction: " at (0,y+7). //PRINT deltaReduction 						at (22,y+7).
+		PRINT "throttle(maxthrust): " at (0,y+8). //PRINT ROUND(throttle,2) + " ("+ROUND(maxthrust)+")     " at (22,y+8).
+		PRINT "HEADING: " at (0,y+9). 	 	//PRINT ROUND (HEADING,1)+" deg.   " 	at (22,y+9).
+		PRINT "PITCH: " at (0,y+10). 	 	//PRINT ROUND (SHIP:FACING:PITCH,1)+"   " at (22,y+10).
+	}
+	
+	print_orbit_status ().
+	
+	function update_orbit_status 
+	{
+		set y to 3.
+
+		PRINT ROUND(periapsis/1000,1)+" km    " 	at (22,y+0).
+		PRINT ROUND(apoapsis/1000,1)+" km    " 	at (22,y+1).
+		PRINT ROUND(eta:apoapsis,1)+" s    " 		at (22,y+2).
+		PRINT ROUND(SHIP:ORBIT:ECCENTRICITY,3)+"" 	at (22,y+3).
+		PRINT ROUND(Altitude/1000,1)+" km    "  	at (22,y+4).
+		PRINT phase 								at (22,y+5).
+		PRINT mphase 								at (22,y+6).
+		PRINT deltaReduction 						at (22,y+7).
+		PRINT ROUND(throttle*100) + "% ("+ROUND(maxthrust)+")     " at (22,y+8).
+		PRINT ROUND (HEADING,1)+" deg.   " 	at (22,y+9).
+		PRINT ROUND (SHIP:FACING:PITCH,1)+"   " at (22,y+10).
 	}
 
 	if vehicle_type = "Falcon Heavy"
@@ -542,7 +569,7 @@ if altitude*1.1 < FINAL_ORBIT2
 			set thrust to (thrust-deltaReduction).
 		}
 		
-		update_orbit_status.
+		update_orbit_status().
 		set vel to SQRT(Vs2).
 		// if ROUND(BODY:ATM:ALTITUDEPRESSURE(altitude),4) > 0 or ROUND(BODY:ATM:ALTITUDETEMPERATURE(altitude),1) > 0
 		{
@@ -599,7 +626,7 @@ if altitude*1.1 < FINAL_ORBIT2
 		}
 		check_fairing_sep().
 		
-		update_orbit_status.
+		update_orbit_status().
 		set vel to SQRT(Vs2).
 		// if ROUND(BODY:ATM:ALTITUDEPRESSURE(altitude),4) > 0 or ROUND(BODY:ATM:ALTITUDETEMPERATURE(altitude),1) > 0
 		{

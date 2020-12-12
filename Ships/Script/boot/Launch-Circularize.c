@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Circularize an orbit after Launch-Orbit.c
-// 02/Dez/2020
+// 12/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
@@ -24,21 +24,23 @@ set circle_error to 0.
 set GM to BODY:mu.
 set v to 0.
 
-
-
 function wait_for_AP
 {
 	parameter w.
 
-	//PRINT "Warp to Apogee".	
 	set warp to 0.
-	wait 1.
+	WAIT 1.
 	if eta:apoapsis > 3000
-		set warp to 3.
+		if vehicle_type <> "Crew Dragon 2"
+			set warp to 3.
 	WAIT until eta:apoapsis < 3000.
-	set warp to 2.
+	if vehicle_type <> "Crew Dragon 2"
+		set warp to 2.
+		
 	WAIT until eta:apoapsis < 200.
-	set warp to 1.
+	if vehicle_type <> "Crew Dragon 2"
+		set warp to 1.
+		
 	WAIT until eta:apoapsis < w.
 	set warp to 0.
 	

@@ -9,7 +9,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Common lib of functions used by Falcon-Return.c
-// 09/Dez/2020
+// 12/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 declare global landingAltitude TO LandingTarget:TERRAINHEIGHT.
@@ -264,30 +264,28 @@ function PRINT_STATUS
 	PRINT "steeringDir: "+ROUND (steeringDir,1)+"   " at (0,y+12).
 	PRINT "steeringPitch: "+ROUND (steeringPitch,1)+"   " at (0,y+14).
 	PRINT "shipPitch: "+ROUND (shipPitch,1)+"   " at (0,y+15).
-	PRINT "throttle(maxthrust): " + ROUND(throttle,2) + " ("+ROUND(maxthrust)+")     " at (0,16).
+	PRINT "throttle(maxthrust): " + ROUND(throttle,2) + " ("+ROUND(maxthrust)+" kN)     " at (0,16).
 	
 	PRINT "sBurnDist: "+ROUND (sBurnDist,1)+" m   " at (0,y+17).
 	PRINT "Groundspeed: "+ROUND (GROUNDSPEED,1)+" m/s   " at (0,y+18).
-	PRINT "Verticalspeed: "+ROUND(VERTICALSPEED)+"   " at (0, y+19).
+	PRINT "Verticalspeed: "+ROUND(VERTICALSPEED)+" m/s  " at (0, y+19).
 	
 	//Suicide burn calculation: (impactTime)
 	set trueRadar to alt:radar - radarOffset.
 	set maxDecel to (availablethrust / mass) - g.	
-	set stopDist to verticalspeed^2 / (2 * maxDecel).		
-	set idealThrottle to stopDist / trueRadar.					
-	set impactTime to trueRadar / abs(verticalspeed).	
-	PRINT "impactTime: "+ROUND(impactTime,1)+"   " at (0, y+21).
-	PRINT "burnAlt: "+ROUND(burnAlt)+"   " at (0, y+22).
+	if maxDecel <> 0 set stopDist to verticalspeed^2 / (2 * maxDecel).
+	set idealThrottle to stopDist / trueRadar.				
+	if verticalspeed <> 0 set impactTime to trueRadar / abs(verticalspeed).
+	PRINT "impactTime: "+ROUND(impactTime,1)+" s  " at (0, y+21).
+	PRINT "burnAlt: "+ROUND(burnAlt)+" m   " at (0, y+22).
 	PRINT "[t]: "+ROUND(t,2)+"   " at (0, y+23).
-	PRINT "Altitude: "+ROUND(ALTITUDE)+"  " at (0, y+24).
+	//PRINT "ST-2 Distance: " + +ROUND(VESSEL(MAIN_SHIP_NAME):GEOPOSITION:DISTANCE/1000)+" km  " at (0,y+23).
+	PRINT "Altitude: "+ROUND(ALTITUDE/1000,3)+" km " at (0, y+24).
 	
-	if STAGE_1_TYPE = "SLAVE" or STAGE_1_TYPE = "MASTER" or STAGE_1_TYPE = "ST-1"
-	{
-		if KUniverse:ActiveVessel = SHIP //or STAGE_1_TYPE = "ST-1"
-			PRINT "*" at (43,1).
-		else
-			PRINT "-" at (43,1).
-	}
+	if KUniverse:ActiveVessel = SHIP //or STAGE_1_TYPE = "ST-1"
+		PRINT "*" at (43,1).
+	else
+		PRINT "-" at (43,1).
 	
 	if STAGE_1_TYPE = "MASTER"
 	{

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 09/Dez/2020
+// 12/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
@@ -29,8 +29,6 @@
 // [ok] FH Core ST-1 LANDING			1.20.12.07
 // [ok] FH LEO Orbit					1.20.11.22
 // [ok] FH GSO Orbit					1.20.12.07
-
-// [not working] Slave ST-1 LANDING		Checking the impossible (at KSP) land of both ST-1 at same time...
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // INIT:
@@ -69,13 +67,8 @@ function boostback_burn
 		if STAGE_1_TYPE = "CORE"
 		{
 			set lat_correction to 0.
-			// if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
-				// set ADDONS_TR_IMPACTPOS to COM_ADDONS_TR_IMPACTPOS.
-				
 			set lat_correction to (LandingTarget:LAT - ADDONS_TR_IMPACTPOS:LAT)*50.
-			
 			LOCK STEERING TO HEADING(270+lat_correction,0, -270).
-			//if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
 			SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
 		} else
 			steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset, do_reverse). // Calculate: impactDist
@@ -141,7 +134,7 @@ function ReEntryburn
 		SET prev_impactDist to impactDist.
 		updateHoverSteering().	
 		
-		if SHIP:ALTITUDE < safe_alt //or SHIP:VERTICALSPEED < -1800
+		if SHIP:ALTITUDE < safe_alt
 		{
 			//REENTRY BURN!!!
 			if  x = 0 
@@ -163,9 +156,7 @@ function ReEntryburn
 			}
 		} else {
 			lock steering to retrograde.
-				
-			//if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
-				SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
+			SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
 		}
 		
 		if SHIP:VERTICALSPEED >-200 and (impactDist > prev_impactDist)
@@ -175,9 +166,9 @@ function ReEntryburn
 			SET thrust to 0.01.
 			activateOneEngine().			
 		
-			AG8 ON. //Enable Lower RCS.
+			AG8 OFF.
+			//AG8 ON. //Enable Lower RCS.
 			// FOR FH:
-			//if shipPitch < 60
 			{
 				//Add 10 secs of vertical stability after REENTRY BURN
 				update_phase_title("(vertical stability)", 0).
@@ -185,15 +176,13 @@ function ReEntryburn
 				RCS ON.
 				FROM {local x is 5.} UNTIL x = 0 STEP {set x to x-1.} DO 
 				{
-					//lock steering to retrograde.
 					LOCK STEERING TO up + R(0,0,180). //UP
 					wait 1.
-					//if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
-						SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
+					SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
 					PRINT_STATUS (3).
 				}
 			}
-			AG8 ON. //Disable Lower RCS.
+			//AG8 OFF. //Disable Lower RCS.
 			
 			break.
 		}
@@ -228,17 +217,12 @@ function waitAndDoReEntryburn
 			wait 1.
 		}
 				
-		// if STAGE_1_TYPE = "CORE" or STAGE_1_TYPE = "ST-1"
-			// set warp to 2.
-		// else
-		{
-			set warp to 0.
-			wait 1.
-			
-			if STAGE_1_TYPE = "MASTER"
-				SET KUniverse:ACTIVEVESSEL TO SLAVE_BOOSTER.
-		}
+		set warp to 0.
+		wait 1.
 		
+		if STAGE_1_TYPE = "MASTER"
+			SET KUniverse:ACTIVEVESSEL TO SLAVE_BOOSTER.
+
 		// Warp until re-enter in atmosphere:
 		update_phase_title("W8 4 RE-ENTER", 0).
 		until (SHIP:altitude < BODY:ATM:HEIGHT )  //warp = 0
@@ -299,10 +283,7 @@ function aerodynamic_guidance
 			steerToTarget(steeringPitch, 0, 0, true). // Calculate: impactDist
 		}
 			
-		// if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
-			SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
-		// else
-			// SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), COM_ADDONS_TR_IMPACTPOS).
+		SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
 	}
 }
 
@@ -393,10 +374,7 @@ function touchdown
 		steerToTarget(rate).
 
 		//Calc Optimized Throttle:
-		// if (alt:radar<=60) 
-			// set error to 0.5.
-		// else
-			set error to 0.75. //Keep up @75% x g
+		set error to 0.75. //Keep up @75% x g
 		if maxthrust = 0
 			set t to 1.
 		else
@@ -471,7 +449,7 @@ function main_falcon_return
 	update_phase_title("(ACTIVATE 3 ENGINES)", 0, true).
 	activate3engines().
 	
-	PRINT_STATUS (3). //steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset). // Calculate: impactDist
+	PRINT_STATUS (3). // Calculate: impactDist
 	if (impactDist > 5000) and (SHIP:altitude > 50000) 
 	{
 		if STAGE_1_TYPE = "CORE"

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used go get more realistic data from Planet Earth Atmosphere.
-// 22/Nov/2020
+// 12/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 // --------------------------------------------------------------------------------------------
@@ -175,11 +175,6 @@ function update_atmosphere
 
 	// Algorithm-1:
 	// ------------
-
-	// PRINT "ImpactTarget: " at (0,indice-1). 
-	// if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT and KUniverse:ActiveVessel = SHIP
-		// print ROUND (ADDONS:TR:IMPACTPOS:LAT,3)+", " +ROUND (ADDONS:TR:IMPACTPOS:LNG,3)+" " at (22,indice-1).
-
 	PRINT "Temperature: "		at (0,indice+3).
 	PRINT "Density: "			at (0,indice+4).
 	PRINT "Pressure: "			at (0,indice+5).
@@ -190,10 +185,10 @@ function update_atmosphere
 	//set indice to 22.
 	PRINT ROUND(tempVal,1)+" Cº   "			at (22,indice+3).
 	PRINT ROUND(rhoVal,3)+" kg/m^3   "		at (22,indice+4).
-	PRINT ROUND(pVal,3)+" (hPa)   "			at (22,indice+5).
+	PRINT ROUND(pVal,3)+" (hPa)     "		at (22,indice+5).
 	PRINT ROUND(soundVal,1)+" m/sec   "		at (22,indice+6).
 	PRINT ROUND(machVal,2)+"   "			at (22,indice+7).
-	PRINT ROUND(qVal,1)+" N/m^2   "			at (22,indice+8).
+	PRINT ROUND(qVal,1)+" N/m^2    "		at (22,indice+8).
 
 	// KSP-Values:
 	// -----------

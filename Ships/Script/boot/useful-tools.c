@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 05/Dez/2020
+// 12/Dez/2020
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
 
@@ -135,7 +135,7 @@ function update_phase_title
 	{
 		set y to 16.
 		PRINT "   " at (25,y+phase_title_position). 
-		PRINT "-->"+phase+"          " at (25,y+1+phase_title_position). 
+		PRINT "-->"+phase at (25,y+1+phase_title_position). 
 		set phase_title_position to phase_title_position+1.
 	}
 	//ORI
@@ -181,9 +181,12 @@ function updateVars  //Scalar projection of two vectors. Find component of a alo
 function log_data
 {
 	parameter Vs2.
+	parameter showlog to false.	//true = TURN ON LOG file.
 	
 	updateVars().
-	return. //Remove: for DEBUG
+	
+	if (not showlog)
+		return.
 	
 	PRINT "TIME,   VELO,   ALT,    Acel,   Q     --LOG:FILE" at (0,34).
 	
