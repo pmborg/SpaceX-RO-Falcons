@@ -30,10 +30,12 @@ function steering_falcon
 
 function st1_stage 
 {
-if SHIP_NAME = "PMBT-SpaceX Falcon 9 v1.2 Block-5" and STAGE:NUMBER > 4
-or SHIP_NAME = "PMBT-SpaceX Falcon 9 v1.2 Block-5 Crew Dragon 2" and STAGE:NUMBER > 8
-or SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5" and STAGE:NUMBER > 4
-  {	
+if SHIP_NAME = "PMBT-SpaceX Falcon 9 v1.2 Block-5" and STAGE:NUMBER <= 4
+or SHIP_NAME = "PMBT-SpaceX Falcon 9 v1.2 Block-5 Crew Dragon 2" and STAGE:NUMBER <= 8
+or SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5" and STAGE:NUMBER <= 4
+	return.
+
+	// ST-1 SEPARATION
 	UNTIL SHIP:MAXTHRUST <= 0
 	{
 		UNLOCK STEERING.
@@ -42,19 +44,17 @@ or SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5" and STAGE:NUMBER > 4
 		if (KUniverse:ActiveVessel = SHIP) STAGE.
 	}
 
-	// WAIT for thrust:
+	// ST-2 Ignite the engine (WAIT for thrust)
 	UNTIL SHIP:MAXTHRUST > 0
 	{
 		if (KUniverse:ActiveVessel = SHIP) STAGE.
-		// set thrust to 0.2.
-		// WAIT 3.
 		SAS ON.
 		wait 0.25.
 		set sasmode TO "PROGRADE".
 		wait 0.25.
 		set thrust to 0.25.
 		wait 0.25.
-		PRINT "Stage Nº: "+ stage:number.// activated - MAXTHRUST: "+SHIP:MAXTHRUST.
+		PRINT "Stage Nº: "+ stage:number.
 
 		// Backup plan: to Start engine, due failor of vapors in fuel line:
 		if SHIP:MAXTHRUST <= 0 and stage:number = 1
@@ -63,12 +63,12 @@ or SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5" and STAGE:NUMBER > 4
 			activateAllEngines().
 		}
 	}
-	
+
+	// WAIT in Prograde before heading correction:
 	if vehicle_type = "Crew Dragon 2"
 		WAIT 1.
 	else
-			WAIT 1.75.
-  }
+		WAIT 1.75.
 }
 
 function confirm_stage 
@@ -230,4 +230,28 @@ function log_data
 		LOG value1+","+value2+","+value3+","+Aceleration_value1+","+ROUND(qVal,0) to FLIGHT_LOG.txt.
 	}
 	PRINT "T.ORB: "+orbit_type at (8*5-2,35).
+}
+
+function east_for {
+  parameter ves.
+
+  return vcrs(ves:up:vector, ves:north:vector).
+}
+function compass
+{
+  parameter ves to SHIP.
+
+  local pointing is ves:facing:forevector.
+  local east is east_for(ves).
+
+  local trig_x is vdot(ves:north:vector, pointing).
+  local trig_y is vdot(east, pointing).
+
+  local result is arctan2(trig_y, trig_x).
+
+  if result < 0 {
+	return 360 + result.
+  } else {
+	return result.
+  }
 }
