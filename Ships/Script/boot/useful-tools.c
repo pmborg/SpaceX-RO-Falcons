@@ -73,11 +73,14 @@ or SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5" and STAGE:NUMBER <= 4
 
 function confirm_stage 
 {
-	PRINT "Confirm Stage? (y/n)". set ch to terminal:input:getchar().
-	if (ch = "y" OR ch = "Y")
-		if (KUniverse:ActiveVessel = SHIP) STAGE.
+	IF (KUniverse:ActiveVessel <> SHIP) 
+		do_stage().
+	else {
+		PRINT "Confirm Stage? (y/n)". set ch to terminal:input:getchar().
+		if (ch = "y" OR ch = "Y") 
+			stage.
+	}
 }
-
 
 function shutDownAllEngines 
 {
@@ -160,7 +163,6 @@ function update_phase_title
 	else 
 	if STAGE_1_TYPE = "MAIN" 		//ST-2
 		PRINT "(ST-2)" at (44,1).
-
 		
 	if status <> "PRELAUNCH" and play_sound = 1
 	{
@@ -173,7 +175,6 @@ function update_phase_title
 	LOG time:clock +": " + STAGE_1_TYPE + " - PHASE: "+phase to LOG.txt.
 }
 
-
 function updateVars  //Scalar projection of two vectors. Find component of a along b. a(dot)b/||b||
 {
 	//set g TO constant:G * BODY:Mass / BODY:RADIUS^2.
@@ -181,7 +182,6 @@ function updateVars  //Scalar projection of two vectors. Find component of a alo
 	set GM to BODY:mu. 				//GM = 3.5316*(10^12). (KERBIN)
 	set g to GM/(r^2).				//Calculate g = 9.81	
 }
-
 
 function log_data
 {

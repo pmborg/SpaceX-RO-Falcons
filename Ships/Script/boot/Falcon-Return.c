@@ -166,8 +166,7 @@ function ReEntryburn
 			SET thrust to 0.01.
 			activateOneEngine().			
 		
-			AG8 OFF.
-			//AG8 ON. //Enable Lower RCS.
+			AG8 OFF. //Re-enable Lower RCS.
 			// FOR FH:
 			{
 				//Add 10 secs of vertical stability after REENTRY BURN
@@ -182,7 +181,7 @@ function ReEntryburn
 					PRINT_STATUS (3).
 				}
 			}
-			//AG8 OFF. //Disable Lower RCS.
+			AG8 ON. //Disable Lower RCS.
 			
 			break.
 		}
@@ -302,7 +301,7 @@ function landingBurn
 		if impactDist > 50
 		{
 			steerToTarget(steeringPitch).	//FAST correction
-			set maxDescendSpeed to 25.
+			set maxDescendSpeed to 15.
 			set error to 0.825. 			//Keep up @82.5% x g
 		} else {
 			steerToTarget(80).				//MEDIUM correction
@@ -450,7 +449,7 @@ function main_falcon_return
 	activate3engines().
 	
 	PRINT_STATUS (3). // Calculate: impactDist
-	if (impactDist > 5000) and (SHIP:altitude > 50000) 
+	if (impactDist > 5000) and (SHIP:altitude > 50000)
 	{
 		if STAGE_1_TYPE = "CORE"
 			boostback_burn(true).
@@ -459,7 +458,7 @@ function main_falcon_return
 		}
 		
 		if MAIN_SHIP_NAME <> "PMBT-SpaceX Falcon 9 v1.2 Block-5 Crew Dragon 2"
-			activateMainVessel(). //ST-2 or crew dragon
+			activateMainVessel(). //ST-2
 	}
 		
 	falcon_core ().
