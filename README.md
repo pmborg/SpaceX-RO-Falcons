@@ -65,7 +65,7 @@ This addon Introduce a Realistic Performance of SpaceX Falcon Family to KSP user
 
 You can also check the videos about HOW TO INSTALL in Wiki page:
 
-WIKI-HOW TO INSTALL: (https://github.com/pmborg/SpaceX-RO-Falcons/wiki)
+**WIKI-HOW TO INSTALL**: (https://github.com/pmborg/SpaceX-RO-Falcons/wiki)
  
 **Note:**<br> 
 After the instalation, during the KSP Loading, there will be some addon's that will rise some warnings about *outdated versions*, but that is "normal", they were not compiled for KSP 1.10.1 but they will work.
