@@ -508,8 +508,8 @@ if altitude*1.1 < FINAL_ORBIT2
 		PRINT mphase 								at (22,y+6).
 		PRINT deltaReduction 						at (22,y+7).
 		PRINT ROUND(throttle*100) + "% ("+ROUND(maxthrust)+")     " at (22,y+8).
-		PRINT ROUND (compass,1)+" deg.   " 	at (22,y+9).
-		PRINT ROUND (SHIP:FACING:PITCH,1)+"   " at (22,y+10).
+		PRINT ROUND (vessel_compass(),1)+" deg.   " 	at (22,y+9).
+		PRINT ROUND (vessel_pitch(),1)+" deg.   " at (22,y+10).
 	}
 
 	if vehicle_type = "Falcon Heavy"

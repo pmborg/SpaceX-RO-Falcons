@@ -232,12 +232,14 @@ function log_data
 	PRINT "T.ORB: "+orbit_type at (8*5-2,35).
 }
 
-function east_for {
-  parameter ves.
+function east_for 
+{
+  parameter ves to SHIP.
 
   return vcrs(ves:up:vector, ves:north:vector).
 }
-function compass
+
+function vessel_compass
 {
   parameter ves to SHIP.
 
@@ -254,4 +256,11 @@ function compass
   } else {
 	return result.
   }
+}
+
+function vessel_pitch 
+{
+  parameter ves to SHIP.
+
+  return 90 - vang(ves:up:vector, ves:facing:forevector).
 }
