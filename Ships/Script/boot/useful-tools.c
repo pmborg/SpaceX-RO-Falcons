@@ -28,8 +28,12 @@ function steering_falcon
 	LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).
 }
 
-function main_stage 
+function st1_stage 
 {
+if SHIP_NAME = "PMBT-SpaceX Falcon 9 v1.2 Block-5" and STAGE:NUMBER > 4
+or SHIP_NAME = "PMBT-SpaceX Falcon 9 v1.2 Block-5 Crew Dragon 2" and STAGE:NUMBER > 8
+or SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5" and STAGE:NUMBER > 4
+  {	
 	UNTIL SHIP:MAXTHRUST <= 0
 	{
 		UNLOCK STEERING.
@@ -63,7 +67,8 @@ function main_stage
 	if vehicle_type = "Crew Dragon 2"
 		WAIT 1.
 	else
-		WAIT 1.75.
+			WAIT 1.75.
+  }
 }
 
 function confirm_stage 

@@ -457,7 +457,7 @@ if altitude*1.1 < FINAL_ORBIT2
 			if (KUniverse:ActiveVessel = SHIP) STAGE.	//FH
 			WAIT 5.
 		} else {
-			main_stage().								//F9
+			st1_stage().								//F9
 		}
 		
 		activateVesselProbe().
@@ -508,7 +508,7 @@ if altitude*1.1 < FINAL_ORBIT2
 		PRINT mphase 								at (22,y+6).
 		PRINT deltaReduction 						at (22,y+7).
 		PRINT ROUND(throttle*100) + "% ("+ROUND(maxthrust)+")     " at (22,y+8).
-		PRINT ROUND (HEADING,1)+" deg.   " 	at (22,y+9).
+		PRINT ROUND (SHIP:FACING:YAW,1)+" deg.   " 	at (22,y+9).
 		PRINT ROUND (SHIP:FACING:PITCH,1)+"   " at (22,y+10).
 	}
 
