@@ -1,8 +1,4 @@
 # RELEASE 1 - On development:
-**[checking]** Checking the aparent impossible Mission (at KSP) to landing both ST-1 at same time... **DONE!**<br>
-
-Now I know the answer, yes it will be possible, writing and re-writing a lot of code to do that!<br>
-
 **[on development]** Landing Both FH ST-1 Boosters at the same time on LZ-1 and LZ-2<br>
 
 ----
