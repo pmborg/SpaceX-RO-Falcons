@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to control (ST-1) Boosters and waiting phases and prepare them to land.
-// 09/Dez/2020
+// 13/Dez/2020
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 CLEARSCREEN.
@@ -22,7 +22,7 @@ declare global  LZ_1 to "LandingZone1".
 declare global  LZ_2 to "LandingZone2". 				//R: MASTER
 declare global  OCISLY to "OCISLY".
 declare global  JRTI to "JRTI".
-declare global  OCISLY_FAROUT to "OCISLY-FAROUT".		
+declare global  OCISLY_FAROUT to "OCISLY-FAROUT".
 
 //Define Globals:
 declare global mission_target to BODY.						// Planet Name - Sample: Kerbin, Earth

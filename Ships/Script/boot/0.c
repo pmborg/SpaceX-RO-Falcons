@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to control (ST-1) Boosters and waiting phases and prepare them to land.
-// 09/Dez/2020
+// 13/Dez/2020
 // --------------------------------------------------------------------------------------------
 RCS OFF.
 RUNPATH( "boot/sw-version.c" ).
@@ -155,37 +155,7 @@ if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
 {
 	set present_heading to SHIP:HEADING.
 	
-	{
-		SAS OFF.
-		RCS ON. //OFF.
-
-		if STAGE_1_TYPE = "MASTER" or STAGE_1_TYPE = "SLAVE"
-		{
-			update_phase_title("HEAVY-1 SEPARATION...   ", 0, true).
-			SET thrust TO 0.2.
-			lock throttle to thrust.
-			SET Vdeg to shipPitch.
-			SET steeringDir TO 90.	// W/E
-			set Vroll to -270.		// -270 = Zero Rotation
-			
-			if STAGE_1_TYPE = "MASTER"
-				set steeringDir TO steeringDir+45.
-			if STAGE_1_TYPE = "SLAVE"
-				set steeringDir TO steeringDir-45.
-				
-			LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).//steering_falcon(Vdeg).
-			WAIT 5. // wait for SEP
-		} else {
-			update_phase_title("STAGE-1 SEPARATION...   ", 0, true).
-			LOCK STEERING TO SHIP:PROGRADE  + R(0,0,180).
-			WAIT 7. // wait for SEP
-		}
-		
-		PRINT_STATUS (3).
-	}
-	
 	//FLIP MANEUVER:
-	////////////////////////////////////////////////////////////////////////////////////////////////
 	flip_maneuver().
 	
 	if STAGE_1_TYPE = "MASTER" or STAGE_1_TYPE = "SLAVE"
@@ -199,16 +169,12 @@ if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
 		WAIT 4. // wait for SEP
 	}
 	SET thrust TO 0.
-	
-	// LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).//steering_falcon(Vdeg).
-	// WAIT 5. // wait for SEP
 } 
 
 // Open Inf. Thread to read values from Master:
 if STAGE_1_TYPE = "SLAVE" 
 {
 	set y to 3.
-	//PRINT "(Slav)" at (44,1).
 	update_phase_title("(INIT MSG READER)",0).
 	WHEN in_sync THEN
 	{

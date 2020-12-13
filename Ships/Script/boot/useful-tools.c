@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 12/Dez/2020
+// 13/Dez/2020
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
 
@@ -21,7 +21,9 @@ function steering_falcon
 		if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT and vehicle_sub_type <> "Falcon Heavy LEM"
 	set lat_correction to (VESSEL("Landingzone1"):GEOPOSITION:LAT - ADDONS:TR:IMPACTPOS:LAT)*50.
 
-	PRINT "lat_correction: " at (0,18). PRINT ROUND(lat_correction,2) at (22,18).
+	PRINT "[GEOPOSITION]: " at (0,17).
+	PRINT ROUND (GEOPOSITION:LAT,3)+", " +ROUND (GEOPOSITION:LNG,3)+"   " at (22,17).
+	PRINT "lat.correction: " at (0,18). PRINT ROUND(lat_correction,2) at (22,18).
 	SET steeringDir TO (-90-lat_correction).	// W/E
 	set Vroll to -270.							// -270 = Zero Rotation
 	
@@ -263,4 +265,60 @@ function vessel_pitch
   parameter ves to SHIP.
 
   return 90 - vang(ves:up:vector, ves:facing:forevector).
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+function flip_maneuver
+{
+	SAS OFF.
+	RCS ON. //OFF.
+
+	if STAGE_1_TYPE = "MASTER" or STAGE_1_TYPE = "SLAVE"
+	{
+		update_phase_title("HEAVY-1 SEPARATION...   ", 0, true).
+		SET thrust TO 0.2.
+		lock throttle to thrust.
+		SET Vdeg to shipPitch.
+		SET steeringDir TO 90.	// W/E
+		set Vroll to -270.		// -270 = Zero Rotation
+		
+		if STAGE_1_TYPE = "MASTER"
+			set steeringDir TO steeringDir+45.
+		if STAGE_1_TYPE = "SLAVE"
+			set steeringDir TO steeringDir-45.
+			
+		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).//steering_falcon(Vdeg).
+		//WAIT 5. // wait for SEP
+	} else {
+		update_phase_title("STAGE-1 SEPARATION...   ", 0, true).
+		LOCK STEERING TO SHIP:PROGRADE  + R(0,0,180).
+		//WAIT 7. // wait for SEP
+	}
+	
+	WAIT 5. // wait for SEP
+	PRINT_STATUS (3).
+	
+	CLEARSCREEN.
+	RCS ON.
+	update_phase_title("FLIP MANEUVER   ", 0, true).
+	set wait_max_sec to 25.
+	FROM {local x is wait_max_sec.} UNTIL x = 0 STEP {set x to x-1.} DO 
+	{
+		print "wait: "+x+" " at (42,2).
+		
+		if STAGE_1_TYPE = "CORE"
+			LOCK STEERING TO HEADING(270,0, -270).						// For Drone Ship Landing
+		else
+		{
+			steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset). // Heading to Return Home
+			PRINT_STATUS (3).
+		}
+		
+		PRINT_STATUS (3).
+		if shipPitch>-5 and shipPitch<5 and x < (wait_max_sec-5)
+			set x to 1.	//End the Wait Cicle...
+		
+		WAIT 1. //Mandatory wait.
+	}
+	print "wait: --" at (42,2).
 }

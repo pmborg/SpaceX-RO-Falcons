@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 12/Dez/2020
+// 13/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
@@ -56,17 +56,15 @@ function boostback_burn
 	
 	set impactDist to 999999.
 	LOG  STAGE_1_TYPE + " - boostback_burn("+do_reverse_max_speed+") - START" to LOG.txt.
-	
+
+	set lat_correction to 0.	
 	set we_are_done to FALSE.
 	until we_are_done
 	{
-		PRINT_STATUS (3).
-		
-		SET prev_impactDist to impactDist.
+ 		SET prev_impactDist to impactDist.
 
 		if STAGE_1_TYPE = "CORE"
 		{
-			set lat_correction to 0.
 			set lat_correction to (LandingTarget:LAT - ADDONS_TR_IMPACTPOS:LAT)*50.
 			LOCK STEERING TO HEADING(270+lat_correction,0, -270).
 			SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
@@ -76,7 +74,7 @@ function boostback_burn
 		if(impactDist < 5000)
 		{
 			PRINT "OP3: impactDist < 3km   " at (0,2).
-			SET thrust TO 0.05.	// Near? for high precision, do it in lower thrust
+			SET thrust TO 0.0025.	// Near? for high precision, do it in lower thrust
 			RCS ON.
 			if STAGE_1_TYPE = "SLAVE" and impactDist < 2500
 			{
@@ -92,9 +90,11 @@ function boostback_burn
 			SET thrust TO 1.	// Faraway? all seconds count do it ASAP
 		}
 		
+		PRINT_STATUS (3). //impactDist
+		PRINT "lat.correct. "+ROUND(lat_correction,2) at (32, 4).
 		if (do_reverse)
 		{
-			if SHIP:GROUNDSPEED < do_reverse_max_speed or (SHIP:GROUNDSPEED < 350 and impactDist > prev_impactDist)
+			if (impactDist < 1000) and SHIP:GROUNDSPEED < do_reverse_max_speed or (SHIP:GROUNDSPEED < 350 and impactDist > prev_impactDist)
 				break.
 		}else{
 			if (impactDist < 1000) and (impactDist > prev_impactDist)
@@ -105,6 +105,7 @@ function boostback_burn
 	PRINT_STATUS (3). // Send MSG: STOP to "SLAVE" (if MASTER)
 	SET SHIP:CONTROL:PILOTMAINTHROTTLE TO 0.	//Pilot Throttle Lever
 	SET thrust TO 0.
+	wait 1.
 	
 	if STAGE_1_TYPE = "SLAVE" and SLAVE_STAGE = 0
 	{
@@ -130,7 +131,6 @@ function ReEntryburn
 	sas off.
 	until SHIP:ALTITUDE < 3000
 	{
-		PRINT_STATUS (3).
 		SET prev_impactDist to impactDist.
 		updateHoverSteering().	
 		
@@ -148,6 +148,9 @@ function ReEntryburn
 				SET thrust to safe_power .
 			}
 			
+			// if impactDist < 2000
+				// SET thrust to 0.5.
+			
 			if impactDist > 250
 			{
 				steerToTarget(steeringPitch, 0, 0). // Fast Correction
@@ -156,9 +159,10 @@ function ReEntryburn
 			}
 		} else {
 			lock steering to retrograde.
-			SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
+			//SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
 		}
 		
+		PRINT_STATUS (3).
 		if SHIP:VERTICALSPEED >-200 and (impactDist > prev_impactDist)
 		{
 			SET thrust to 0.
@@ -177,7 +181,7 @@ function ReEntryburn
 				{
 					LOCK STEERING TO up + R(0,0,180). //UP
 					wait 1.
-					SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
+					//SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
 					PRINT_STATUS (3).
 				}
 			}
@@ -209,6 +213,9 @@ function waitAndDoReEntryburn
 			WAIT 0.1.
 			PRINT_STATUS (3).
 		}
+		
+		// if impactDist > 2000
+			// prepare_boostback_burn().
 		
 		if SHIP:altitude > BODY:ATM:HEIGHT 
 		{
@@ -417,7 +424,7 @@ function after_landing
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-function falcon_core
+function guide_falcon_core
 {
 	AG8 ON. //Disable Lower RCS.
 	waitAndDoReEntryburn().
@@ -428,6 +435,22 @@ function falcon_core
 	rocketshutdown().
 	after_landing().
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+function prepare_boostback_burn
+{
+	parameter default_max_distance to 5000. 
+	
+	PRINT_STATUS (3). // Calculate: impactDist
+	if (impactDist > default_max_distance) and (SHIP:altitude > 50000)
+	{
+		if STAGE_1_TYPE = "CORE"
+			boostback_burn(true).
+		else{
+			boostback_burn().
+		}
+	}
+}	
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // MAIN FUNCTION:
@@ -448,18 +471,10 @@ function main_falcon_return
 	update_phase_title("(ACTIVATE 3 ENGINES)", 0, true).
 	activate3engines().
 	
-	PRINT_STATUS (3). // Calculate: impactDist
-	if (impactDist > 5000) and (SHIP:altitude > 50000)
-	{
-		if STAGE_1_TYPE = "CORE"
-			boostback_burn(true).
-		else{
-			boostback_burn().
-		}
-		
-		if MAIN_SHIP_NAME <> "PMBT-SpaceX Falcon 9 v1.2 Block-5 Crew Dragon 2"
-			activateMainVessel(). //ST-2
-	}
-		
-	falcon_core ().
+	prepare_boostback_burn().
+	
+	if MAIN_SHIP_NAME <> "PMBT-SpaceX Falcon 9 v1.2 Block-5 Crew Dragon 2"
+		activateMainVessel(). //ST-2
+			
+	guide_falcon_core().
 }

@@ -9,8 +9,8 @@
 // Purpose: 
 //              This load wrapper avoid to re-edit and save a rocket just to change the code of
 //              "boot/stage-main" file.
-//				Used for main/last stage of the rocket (Falcon ST-2 or Dragon 2)
-// 14/Nov/2020
+//				Used for main/last stage of the rocket (Falcon ST-2 or Crew Dragon 2)
+// 13/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script

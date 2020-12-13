@@ -62,6 +62,12 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 
 	if NOT EXISTS("normal.txt")
 	{
+		clearscreen.
+		// Just reaction-wheels Stability:
+		RCS OFF.
+		SAS OFF.
+		LOCK STEERING TO prograde.
+		// Confirm?
 		PRINT "Confirm: START Phase0-Normal? (y/n)" at (0,5). set ch to terminal:input:getchar().
 		if (ch = "y" OR ch = "Y")
 			runpath( "boot/Phase0-Normal.c", mission_target).	// Correct Normal Before Burn

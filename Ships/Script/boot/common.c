@@ -9,7 +9,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Common lib of functions used by Falcon-Return.c
-// 12/Dez/2020
+// 13/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 declare global landingAltitude TO LandingTarget:TERRAINHEIGHT.
@@ -99,13 +99,10 @@ function steerToTarget
 		return.
 	}
 	
+	// Fixed Block 3:
 	SET overshootLatLng TO LATLNG(LandingTarget:LAT + overshootLatModifier, LandingTarget:LNG + overshootLngModifier).
-	SET impactDist TO horizontalDistance(overshootLatLng, ADDONS_TR_IMPACTPOS).
-
-	//if KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+	SET impactDist TO horizontalDistance(overshootLatLng, ADDONS_TR_IMPACTPOS).																	
 	SET targetDir TO horizontalDirection(ADDONS_TR_IMPACTPOS,overshootLatLng).
-	// else
-		// SET targetDir TO horizontalDirection(COM_ADDONS_TR_IMPACTPOS,overshootLatLng).
 	
 	SET steeringDir TO targetDir - 180.
 	if (do_reverse)
@@ -220,6 +217,10 @@ function updateLandingVars  //Scalar projection of two vectors. Find component o
 	SET sBurnDist TO (SHIP:VERTICALSPEED^2 / (2 * (maxVertAcc + dragAcc/2)))+distMargin.
 	if sBurnDist < 0 
 		set sBurnDist to 0.
+		
+	// SET overshootLatLng TO LATLNG(LandingTarget:LAT + overshootLatModifier, LandingTarget:LNG + overshootLngModifier).
+	// SET impactDist TO horizontalDistance(overshootLatLng, ADDONS_TR_IMPACTPOS).
+	SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -237,20 +238,9 @@ function PRINT_STATUS
 	
 	PRINT "[LandingTarget]: "+ROUND (LandingTarget:LAT,3)+" " +ROUND (LandingTarget:LNG,3) at (0,y+1).
 	
-	//ImpactTarget:
-	// if KUniverse:ActiveVessel = SHIP or STAGE_1_TYPE = "ST-1"
-	{
-		// if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
-		{
-			set val_1at to ADDONS_TR_IMPACTPOS:LAT.
-			// if KUniverse:ActiveVessel = SHIP or STAGE_1_TYPE = "ST-1"
-				// if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
-				{
-					set val_lng to ADDONS_TR_IMPACTPOS:LNG.
-					PRINT "[ImpactTarget]: "+ROUND (val_1at,3)+" " +ROUND (val_lng,3)  at (0,y+2).
-				}
-		}
-	}
+	set val_1at to ADDONS_TR_IMPACTPOS:LAT.
+	set val_lng to ADDONS_TR_IMPACTPOS:LNG.
+	PRINT "[ImpactTarget]: "+ROUND (val_1at,3)+" " +ROUND (val_lng,3)  at (0,y+2).
 
 	PRINT "LandingTarget:DISTANCE: "+ROUND(LandingTarget:DISTANCE/1000,3)+" km   " at (0,y+3).
 	PRINT "LandingTarget:TERRAINHEIGHT: "+ROUND (landingAltitude,1)+" m   " at (0,y+4).
@@ -295,36 +285,10 @@ function PRINT_STATUS
 				set local_ADDONS_TR_IMPACTPOS to ADDONS_TR_IMPACTPOS.	// To avoid crash on VESSEL switch...
 				SLAVE_CONNECTION:SENDMESSAGE(list(throttle,steeringDir,shipPitch, local_ADDONS_TR_IMPACTPOS, altitude)).
 			}
-	} 
+	}
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-function flip_maneuver
-{
-	CLEARSCREEN.	
-	RCS ON.
-	update_phase_title("FLIP MANEUVER   ", 0, true).
-	set wait_max_sec to 25.
-	FROM {local x is wait_max_sec.} UNTIL x = 0 STEP {set x to x-1.} DO 
-	{
-		print "wait: "+x+" " at (42,2).
-		
-		if STAGE_1_TYPE = "CORE"
-			LOCK STEERING TO HEADING(270,0, -270).						// For Drone Ship Landing
-		else
-		{
-			steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset). // Heading to Return Home
-			PRINT_STATUS (3).
-		}
-		
-		PRINT_STATUS (3).
-		if shipPitch>-5 and shipPitch<5 and x < (wait_max_sec-5)
-			set x to 1.	//End the Wait Cicle...
-		
-		WAIT 1. //Mandatory wait.
-	}
-	print "wait: --" at (42,2).
-}
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

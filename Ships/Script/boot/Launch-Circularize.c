@@ -15,7 +15,8 @@ parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
 
 CLEARSCREEN.
 update_phase_title("W8-4 Circularize",1, false).
-SET MAPVIEW TO TRUE.	// map view on
+if KUniverse:ActiveVessel = SHIP
+	SET MAPVIEW TO TRUE.	// map view on
 SAS OFF.
 
 // Calculate circular velocity (vcir) at apoapsis altitude:
