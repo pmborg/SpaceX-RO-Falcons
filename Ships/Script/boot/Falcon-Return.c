@@ -13,10 +13,10 @@
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
 // ------------------------------------------------------------
-// [ok] F9 QMAX							1.20.12.10
-// [ok] F9 ST-1 STAGE					1.20.12.10
-// [ok] F9 ST-1 LANDING					1.20.12.10
-// [ok] F9 ST-2 LEO ORBIT				1.20.12.10
+// [ok] F9 QMAX							1.20.12.16
+// [ok] F9 ST-1 STAGE					1.20.12.16
+// [ok] F9 ST-1 LANDING					1.20.12.16
+// [ok] F9 ST-2 LEO ORBIT				1.20.12.16
 
 // [ok] Crew Dragon 2 QMAX				1.20.12.10
 // [ok] Crew Dragon 2 STAGE				1.20.12.10
