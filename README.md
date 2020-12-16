@@ -1,5 +1,7 @@
 # RELEASE 1 - On development:
-**[on development]** Landing Both FH ST-1 Boosters at the same time on LZ-1 and LZ-2<br>
+**[on development]** <br>
+-> Working on Code for ST-2 Deorbit (16/Dez/2020)<br>
+Landing Both FH ST-1 Boosters at the same time on LZ-1 and LZ-2<br>
 
 ----
 
