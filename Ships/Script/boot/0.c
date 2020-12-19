@@ -8,11 +8,11 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to control (ST-1) Boosters and waiting phases and prepare them to land.
-// 13/Dez/2020
+// 19/Dez/2020
 // --------------------------------------------------------------------------------------------
 RCS OFF.
 RUNPATH( "boot/sw-version.c" ).
-PRINT "Falcon 9 - STAGE 1 - Loading...".			//FOR STAGE-1
+update_phase_title("STAGE 1 - Loading...", 0, false). //PRINT "Falcon 9 - STAGE 1 - Loading...".			//FOR STAGE-1
 runpath("boot/lib_activateVessel.c").
 LIST PROCESSORS IN ALL_PROCESSORS.
 PRINT "ALL_PROCESSORS:LENGTH "+ALL_PROCESSORS:LENGTH.

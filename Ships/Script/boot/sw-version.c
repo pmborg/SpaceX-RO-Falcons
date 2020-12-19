@@ -8,11 +8,11 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to specify the SW version and the diferent types of profiles supported.
-// 13/Dez/2020
+// 19/Dez/2020
 // --------------------------------------------------------------------------------------------
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //             #.YY.MM.DD
-PRINT "SW-Ver: 1.20.12.13" at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
+PRINT "SW-Ver: 1.20.12.19" at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 
 //https://ksp-kos.github.io/KOS/structures/misc/loaddistance.html#attribute:SITUATIONLOADDISTANCE:UNLOAD
 //MAGIC LINES! Extend Physics:
@@ -83,7 +83,12 @@ if SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5" or
    SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
 	declare global vehicle_type to "Falcon Heavy".			// BASE: Falcon-9 v1.2Blk:5 
 else
-	declare global vehicle_type to "Stage-1".
+{
+	if MASS < 20
+		declare global vehicle_type to "Stage-2".
+	else
+		declare global vehicle_type to "Stage-1".
+}
 
 declare global vehicle_sub_type to vehicle_type.
 
@@ -107,7 +112,8 @@ else
 if CORE:BOOTFILENAME:FIND("boot.ks") > -1 				// STAGE-2 (General ST-2)
 	set STAGE_1_TYPE to "MAIN".
 
-PRINT "INIT CODE FOR: "+STAGE_1_TYPE.
+if STAGE_1_TYPE <> ""
+	PRINT "INIT CODE FOR: "+STAGE_1_TYPE.
 
 // Defaults for Fligth Profile:
 ////////////////////////////////////////////////////////////////////////////////////////////////

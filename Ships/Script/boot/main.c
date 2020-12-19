@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestre all mission phases.
-// 03/Dez/2020
+// 19/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 // Reset Engine settings before all, ("migth be a reboot")
@@ -60,6 +60,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 	} else
 		PRINT "SKIP: Launch".
 
+	// Adjust mission inclination?
 	if NOT EXISTS("normal.txt")
 	{
 		clearscreen.
@@ -87,7 +88,8 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 	if status <> "LANDED" and status <> "SPLASHED"
 	{
 		PRINT "Press: 1 - Land Anywhere!". 
-		PRINT "Press: 2 - Escape(Abort) and Return!".
+		PRINT "Press: 2 - Stage Satellite". 
+		PRINT "Press: 3 - Escape(Abort) and Return!".
 		set ch to terminal:input:getchar(). PRINT "selected: "+ch.
 		if ch="1" or ch =""  {
 			PRINT "Confirm: SPEED-BREAK? (y/n)". set ch to terminal:input:getchar().
@@ -95,6 +97,9 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 				RUNPATH( "boot/PhaseII-Break.c", mission_target ).	 // Burn Capture & Burn Circularize: [NOW5]
 			
 			RUNPATH( "boot/PhaseIII-Land.c" ).  	// Auto-Land / Touch-Down
+		}
+		if ch="2"  {
+			
 		}
 	}
 	

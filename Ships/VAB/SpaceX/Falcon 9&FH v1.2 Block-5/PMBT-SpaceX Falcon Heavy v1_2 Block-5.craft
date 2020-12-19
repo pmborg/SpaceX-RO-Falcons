@@ -2,7 +2,7 @@ ship = PMBT-SpaceX Falcon Heavy v1.2 Block-5
 version = 1.9.1
 description = AG1: Core main engines toggle + Side Booster center (landing) engine toggle¨AG2: Core entry engines toggle + Side booster entry engines toggle¨AG5: Side booster shutdown and seperation¨GEAR: landing leg toggle¨BRAKES: gridfin deploy¨THROTTLE: controls throttle of the core and recovery-relevant side booster engines, main side booster engines not affected. Throttle down to 50-60% to enable side boosters to drain faster than the core.
 type = VAB
-size = 5.35262537,69.2817459,13.8334579
+size = 5.35263681,69.2817459,13.8335075
 steamPublishedFileId = 0
 persistentId = 3983080253
 rot = 0,0,0,0
@@ -16,7 +16,7 @@ PART
 {
 	part = Decoupler.0_4294139758
 	partName = Part
-	persistentId = 130533679
+	persistentId = 1744943738
 	pos = 0.16978389,59.2591553,-1.03926659
 	attPos = 0,0,0
 	attPos0 = 0,0.56306076,0
@@ -221,7 +221,7 @@ PART
 {
 	part = ionEngine_4294139678
 	partName = Part
-	persistentId = 2001595525
+	persistentId = 1152179318
 	pos = 0.16978389,59.4789352,-1.03926659
 	attPos = 0,0,0
 	attPos0 = 0,0.287281036,0
@@ -490,7 +490,7 @@ PART
 {
 	part = batteryBank_4294139600
 	partName = Part
-	persistentId = 4032567182
+	persistentId = 2158273474
 	pos = 0.16978389,59.8033524,-1.03926659
 	attPos = 0,0,0
 	attPos0 = 0,-0.610855103,0
@@ -626,7 +626,7 @@ PART
 {
 	part = xenonTankRadial_4294139566
 	partName = Part
-	persistentId = 4218098351
+	persistentId = 3976333146
 	pos = 0.590035975,59.8975067,-1.03926659
 	attPos = 0,0,0
 	attPos0 = 0.420251489,0.0941553116,-4.28408384E-08
@@ -869,7 +869,7 @@ PART
 {
 	part = xenonTankRadial_4294139528
 	partName = Part
-	persistentId = 1710323142
+	persistentId = 1408885579
 	pos = 0.16978389,59.8975067,-1.45951843
 	attPos = 0,0,0
 	attPos0 = -1.76951289E-08,0.0941553116,-0.420251459
@@ -1112,7 +1112,7 @@ PART
 {
 	part = xenonTankRadial_4294139490
 	partName = Part
-	persistentId = 966109524
+	persistentId = 1082204208
 	pos = -0.250468761,59.8975067,-1.03926659
 	attPos = 0,0,0
 	attPos0 = -0.420251489,0.0941553116,8.00937414E-08
@@ -1355,7 +1355,7 @@ PART
 {
 	part = xenonTankRadial_4294139452
 	partName = Part
-	persistentId = 3678334578
+	persistentId = 2546906285
 	pos = 0.16978389,59.8975067,-0.619014382
 	attPos = 0,0,0
 	attPos0 = 6.79865479E-08,0.0941553116,0.420251459
@@ -1598,7 +1598,7 @@ PART
 {
 	part = HECS2.ProbeCore_4294139414
 	partName = Part
-	persistentId = 4050268214
+	persistentId = 2149054915
 	pos = 0.16978389,60.4142075,-1.03926659
 	attPos = 0,0,0
 	attPos0 = 0.16978389,60.4142075,-1.03926659
@@ -1806,12 +1806,12 @@ PART
 		{
 			AYPwrPartList
 			{
-				PrtName = AmpYear SubSystems-Max
-				PrtTitle = AmpYear SubSystems-Max
-				PrtModuleName = RCS
-				PrtSubsystem = True
-				PrtPower = 0
-				PrtPowerF = 0
+				PrtName = HECS2.ProbeCore
+				PrtTitle = 1t Satellite Bus
+				PrtModuleName = ModuleDataTransmitter
+				PrtSubsystem = False
+				PrtPower = 6
+				PrtPowerF = 6
 				PrtActive = True
 				PrtSolarDependant = False
 				PrtEditorInclude = True
@@ -1820,25 +1820,7 @@ PART
 				PrtEmergShutDnInclude = True
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4294139414,RCS
-			}
-			AYPwrPartList
-			{
-				PrtName = AmpYear SubSystems-Max
-				PrtTitle = AmpYear SubSystems-Max
-				PrtModuleName = SAS
-				PrtSubsystem = True
-				PrtPower = 0
-				PrtPowerF = 0
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = True
-				PrtEmergShutDnInclude = True
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4294139414,SAS
+				ConsPartKey = 4294139414,ModuleDataTransmitter
 			}
 			AYPwrPartList
 			{
@@ -1860,12 +1842,12 @@ PART
 			}
 			AYPwrPartList
 			{
-				PrtName = HECS2.ProbeCore
-				PrtTitle = 1t Satellite Bus
-				PrtModuleName = ModuleDataTransmitter
-				PrtSubsystem = False
-				PrtPower = 6
-				PrtPowerF = 6
+				PrtName = AmpYear SubSystems-Max
+				PrtTitle = AmpYear SubSystems-Max
+				PrtModuleName = SAS
+				PrtSubsystem = True
+				PrtPower = 0
+				PrtPowerF = 0
 				PrtActive = True
 				PrtSolarDependant = False
 				PrtEditorInclude = True
@@ -1874,7 +1856,25 @@ PART
 				PrtEmergShutDnInclude = True
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4294139414,ModuleDataTransmitter
+				ConsPartKey = 4294139414,SAS
+			}
+			AYPwrPartList
+			{
+				PrtName = AmpYear SubSystems-Max
+				PrtTitle = AmpYear SubSystems-Max
+				PrtModuleName = RCS
+				PrtSubsystem = True
+				PrtPower = 0
+				PrtPowerF = 0
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4294139414,RCS
 			}
 		}
 		UPGRADESAPPLIED
@@ -3738,7 +3738,7 @@ PART
 {
 	part = trussPiece3x_4294139328
 	partName = Part
-	persistentId = 3078888600
+	persistentId = 76206739
 	pos = 0.16978389,60.4142075,-1.03926659
 	attPos = -2.29422474,-0.0117616653,-4.88153979E-08
 	attPos0 = 2.29422474,0.0117616653,4.88153979E-08
@@ -3861,7 +3861,7 @@ PART
 {
 	part = strutOcto_4294139298
 	partName = Part
-	persistentId = 481045505
+	persistentId = 125086629
 	pos = 1.77375937,60.4142075,-1.03926659
 	attPos = 0,0,0
 	attPos0 = 0,1.60397232,3.824168E-07
@@ -3982,7 +3982,7 @@ PART
 {
 	part = largeSolarPanel_4294139264
 	partName = Part
-	persistentId = 873447600
+	persistentId = 3145558609
 	pos = 1.88021231,60.4047203,-1.03926659
 	attPos = 0,0,0
 	attPos0 = 0.00948715489,0.106452785,0
@@ -4115,7 +4115,7 @@ PART
 				PrtModuleName = ModuleDeployableSolarPanel
 				PrtSubsystem = False
 				PrtPower = 2.829
-				PrtPowerF = 2.82870007
+				PrtPowerF = 2.82869959
 				PrtActive = True
 				PrtSolarDependant = True
 				PrtEditorInclude = True
@@ -4241,7 +4241,7 @@ PART
 {
 	part = strutOcto_4294139188
 	partName = Part
-	persistentId = 1112118110
+	persistentId = 4200240137
 	pos = -1.43419218,60.4142075,-1.03926659
 	attPos = 0,0,0
 	attPos0 = 0,-1.60397232,-3.824168E-07
@@ -4362,7 +4362,7 @@ PART
 {
 	part = largeSolarPanel_4294139154
 	partName = Part
-	persistentId = 953909209
+	persistentId = 624377951
 	pos = -1.54065895,60.4236946,-1.03926659
 	attPos = 0,0,0
 	attPos0 = 0.00948715489,0.106452785,0
@@ -4495,7 +4495,7 @@ PART
 				PrtModuleName = ModuleDeployableSolarPanel
 				PrtSubsystem = False
 				PrtPower = 2.829
-				PrtPowerF = 2.82870007
+				PrtPowerF = 2.82869959
 				PrtActive = True
 				PrtSolarDependant = True
 				PrtEditorInclude = True
@@ -4621,7 +4621,7 @@ PART
 {
 	part = rtg_4294139078
 	partName = Part
-	persistentId = 2777962487
+	persistentId = 779027842
 	pos = 0.16978389,59.71241,-1.92291903
 	attPos = -1.53668225E-07,-0.0707111359,-0.212131917
 	attPos0 = 3.7252903E-08,-0.631086349,-0.67151916
@@ -4834,7 +4834,7 @@ PART
 {
 	part = rtg_4294139036
 	partName = Part
-	persistentId = 413032329
+	persistentId = 1571537677
 	pos = 0.16978389,59.71241,-0.155614257
 	attPos = 1.76951289E-08,-0.0707111359,0.212131917
 	attPos0 = 2.14204192E-08,-0.631086349,0.67151916
@@ -5047,7 +5047,7 @@ PART
 {
 	part = asasmodule1-2_4294138994
 	partName = Part
-	persistentId = 2602215878
+	persistentId = 2787247822
 	pos = 0.16978389,61.1642075,-1.03926659
 	attPos = 0,0,0
 	attPos0 = 0.174686223,61.1565895,-1.03628528
@@ -5225,7 +5225,7 @@ PART
 {
 	part = 4mv.vl.sensor.accelerometer.srf.1_4289812974
 	partName = Part
-	persistentId = 799870010
+	persistentId = 4048900319
 	pos = 0.180950269,60.3980217,-0.311758876
 	attPos = 0.120901346,0.00105285645,-3.33787284E-06
 	attPos0 = 0.011166364,-0.0161857605,0.727507114
@@ -5427,7 +5427,7 @@ PART
 {
 	part = HighGainAntenna_4293767882
 	partName = Part
-	persistentId = 1590931481
+	persistentId = 3667384130
 	pos = 0.121903181,61.3628159,-1.02643704
 	attPos = 0,0,0
 	attPos0 = -0.0478806794,0.198608398,0.0128295422
@@ -5478,7 +5478,7 @@ PART
 	{
 		name = ModuleDeployableAntenna
 		isEnabled = True
-		currentRotation = (6.1232336E-17, 1, -6.1232336E-17, -7.55001537E-08)
+		currentRotation = (6.12323492E-17, -1, 6.12323492E-17, 1.33158053E-07)
 		storedAnimationTime = 0
 		storedAnimationSpeed = 1
 		deployState = RETRACTED
@@ -5619,7 +5619,7 @@ PART
 {
 	part = KK.SPX.F9.1875mmPA_4294078688
 	partName = Part
-	persistentId = 3309537490
+	persistentId = 3452690732
 	pos = 0.16978389,58.7635918,-1.03926659
 	attPos = 0,0,0
 	attPos0 = 0,-0.495563507,0
@@ -5708,6 +5708,49 @@ PART
 	}
 	MODULE
 	{
+		name = kOSProcessor
+		isEnabled = True
+		bootFile = /boot/boot-st2.ks
+		diskSpace = 10000
+		baseDiskSpace = 10000
+		baseModuleMass = 0
+		additionalCost = 0
+		MaxPartId = 100
+		RequiredPower = 0.0399999991
+		stagingEnabled = True
+		activated = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			Activate
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			Deactivate
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			Toggle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			TogglePower
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -5789,12 +5832,23 @@ PART
 		{
 		}
 	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 1000
+		maxAmount = 1000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
 }
 PART
 {
 	part = PMB.SPX.F94.S2tank_4294654148
 	partName = Part
-	persistentId = 550059471
+	persistentId = 3037967767
 	pos = 0.16978389,54.2384224,-1.03926659
 	attPos = 0,0,0
 	attPos0 = 0.173156857,54.4556999,-0.823519349
@@ -5813,8 +5867,8 @@ PART
 	sepI = 1
 	attm = 0
 	sameVesselCollision = False
-	modCost = 591.516785
-	modMass = -1.80467272
+	modCost = 887.275146
+	modMass = -2.70700908
 	modSize = 0,0,0
 	link = KK.SPX.Falcon9.FC_4294629322
 	link = PMB.F9.Merlin1DVplusplus_4293984562
@@ -5933,28 +5987,10 @@ PART
 			{
 				PrtName = PMB.SPX.F94.S2tank
 				PrtTitle = PMB_Falcon 9 Block 5 Upper Fuel Tank
-				PrtModuleName = ModuleDataTransmitter
-				PrtSubsystem = False
-				PrtPower = 12
-				PrtPowerF = 12
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = True
-				PrtEmergShutDnInclude = True
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4294654148,ModuleDataTransmitter
-			}
-			AYPwrPartList
-			{
-				PrtName = PMB.SPX.F94.S2tank
-				PrtTitle = PMB_Falcon 9 Block 5 Upper Fuel Tank
 				PrtModuleName = ModuleCommand
 				PrtSubsystem = False
-				PrtPower = 0.4
-				PrtPowerF = 0.400000006
+				PrtPower = 0.6
+				PrtPowerF = 0.600000024
 				PrtActive = True
 				PrtSolarDependant = False
 				PrtEditorInclude = True
@@ -5964,6 +6000,24 @@ PART
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
 				ConsPartKey = 4294654148,ModuleCommand
+			}
+			AYPwrPartList
+			{
+				PrtName = PMB.SPX.F94.S2tank
+				PrtTitle = PMB_Falcon 9 Block 5 Upper Fuel Tank
+				PrtModuleName = ModuleDataTransmitter
+				PrtSubsystem = False
+				PrtPower = 18
+				PrtPowerF = 18
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4294654148,ModuleDataTransmitter
 			}
 		}
 		UPGRADESAPPLIED
@@ -7639,6 +7693,829 @@ PART
 	}
 	MODULE
 	{
+		name = ModuleFuelTanks
+		isEnabled = True
+		type = Cryogenic
+		utilization = 86
+		mass = 2.99766374
+		_numberOfAddedMLILayers = 0
+		partPrevTemperature = -1
+		stagingEnabled = True
+		volume = 91103.300000000003
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		TANK
+		{
+			name = LqdOxygen
+			note = (has insulation)
+			utilization = 1
+			mass = 1.11999998E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 90.1500015
+			fillable = True
+			techRequired = 
+			amount = 70036.350000000006
+			maxAmount = 70036.350000000006
+		}
+		TANK
+		{
+			name = Kerosene
+			note = 
+			utilization = 1
+			mass = 1.20000004E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 41441.620000000003
+			maxAmount = 41441.620000000003
+		}
+		TANK
+		{
+			name = LqdHydrogen
+			note = (has insulation)
+			utilization = 1
+			mass = 1.60000002E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 20.1499996
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = NTO
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = UDMH
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Aerozine50
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MMH
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = HTP
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = AvGas
+			note = 
+			utilization = 1
+			mass = 7.99999998E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = IRFNA-III
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = NitrousOxide
+			note = (pressurized)
+			utilization = 100
+			mass = 2.99999992E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Aniline
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethanol75
+			note = 
+			utilization = 1
+			mass = 1.29999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethanol90
+			note = 
+			utilization = 1
+			mass = 1.29999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethanol
+			note = 
+			utilization = 1
+			mass = 1.29999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = LqdAmmonia
+			note = (has insulation)
+			utilization = 1
+			mass = 9.60000034E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 237.649994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = LqdMethane
+			note = (has insulation)
+			utilization = 1
+			mass = 9.60000034E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 111.449997
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = ClF3
+			note = 
+			utilization = 1
+			mass = 3.9999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = ClF5
+			note = 
+			utilization = 1
+			mass = 3.9999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Diborane
+			note = (has insulation)
+			utilization = 1
+			mass = 1.43999996E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 180.649994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Pentaborane
+			note = 
+			utilization = 1
+			mass = 1.80000006E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethane
+			note = (has insulation)
+			utilization = 1
+			mass = 1.28000001E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 184.649994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethylene
+			note = (has insulation)
+			utilization = 1
+			mass = 1.28000001E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 169.449997
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = OF2
+			note = (has insulation)
+			utilization = 1
+			mass = 1.43999996E-05
+			cost = 0
+			loss_rate = 1.6E-11
+			temperature = 128.399994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = LqdFluorine
+			note = (has insulation)
+			utilization = 1
+			mass = 3.19999999E-05
+			cost = 0
+			loss_rate = 8.8000000000000006E-11
+			temperature = 85.0400009
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = N2F4
+			note = (has insulation)
+			utilization = 1
+			mass = 7.99999998E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 200.149994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Methanol
+			note = 
+			utilization = 1
+			mass = 1.20000004E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Furfuryl
+			note = 
+			utilization = 1
+			mass = 1.40000002E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = UH25
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Tonka250
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Tonka500
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = FLOX30
+			note = (has insulation)
+			utilization = 1
+			mass = 1.31999996E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 216.149994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = FLOX70
+			note = (has insulation)
+			utilization = 1
+			mass = 3.08000017E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 216.149994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = FLOX88
+			note = (has insulation)
+			utilization = 1
+			mass = 3.87200016E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 216.149994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = IWFNA
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = IRFNA-IV
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = AK20
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = AK27
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON1
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON3
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON10
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON15
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON20
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON25
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Hydyne
+			note = 
+			utilization = 1
+			mass = 1.29999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Syntin
+			note = 
+			utilization = 1
+			mass = 1.20000004E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = LiquidFuel
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Oxidizer
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = LeadBallast
+			note = 
+			utilization = 1
+			mass = 0
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Beryllium
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCommand
+		isEnabled = True
+		hibernation = False
+		hibernateOnWarp = False
+		activeControlPointName = _default
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			MakeReferenceToggle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			HibernateToggle
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleProbeControlPoint
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleKerbNetAccess
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OpenKerbNetAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDataTransmitter
+		isEnabled = True
+		xmitIncomplete = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StartTransmissionAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSAS
+		isEnabled = True
+		standaloneToggle = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = MechJebCore
 		isEnabled = True
 		running = True
@@ -7895,7 +8772,7 @@ PART
 {
 	part = KK.SPX.Falcon9.FC_4294629322
 	partName = Part
-	persistentId = 2822366852
+	persistentId = 3265008264
 	pos = 0.16978389,58.747242,-1.03926659
 	attPos = 0,0,0
 	attPos0 = 0,4.50881958,0
@@ -8137,24 +9014,6 @@ PART
 			{
 				PrtName = KK.SPX.Falcon9.FC
 				PrtTitle = Falcon 9 Flight Control System
-				PrtModuleName = ModuleDataTransmitter
-				PrtSubsystem = False
-				PrtPower = 6
-				PrtPowerF = 6
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = True
-				PrtEmergShutDnInclude = True
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4294629322,ModuleDataTransmitter
-			}
-			AYPwrPartList
-			{
-				PrtName = KK.SPX.Falcon9.FC
-				PrtTitle = Falcon 9 Flight Control System
 				PrtModuleName = ModuleCommand
 				PrtSubsystem = False
 				PrtPower = 0.15
@@ -8168,6 +9027,24 @@ PART
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
 				ConsPartKey = 4294629322,ModuleCommand
+			}
+			AYPwrPartList
+			{
+				PrtName = KK.SPX.Falcon9.FC
+				PrtTitle = Falcon 9 Flight Control System
+				PrtModuleName = ModuleDataTransmitter
+				PrtSubsystem = False
+				PrtPower = 6
+				PrtPowerF = 6
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4294629322,ModuleDataTransmitter
 			}
 		}
 		UPGRADESAPPLIED
@@ -8402,7 +9279,7 @@ PART
 {
 	part = PMB.F9.Merlin1DVplusplus_4293984562
 	partName = Part
-	persistentId = 398603199
+	persistentId = 424038604
 	pos = 0.16978389,48.4562454,-1.03926659
 	attPos = 0,0,0
 	attPos0 = 0,-5.78217697,0
@@ -8705,7 +9582,7 @@ PART
 {
 	part = KK.SPX.FalconPayloadFairing_4294075404
 	partName = Part
-	persistentId = 4078941067
+	persistentId = 2271332522
 	pos = 0.16978389,66.0703354,-1.03926659
 	attPos = 0,0,0
 	attPos0 = 0,11.8319168,0
@@ -8921,7 +9798,7 @@ PART
 {
 	part = KK.SPX.FalconPayloadFairing_4294006996
 	partName = Part
-	persistentId = 1362227685
+	persistentId = 3746978307
 	pos = 0.16978389,66.0703354,-1.03926659
 	attPos = 0,0,0
 	attPos0 = 0,11.8319168,0
@@ -9125,7 +10002,7 @@ PART
 {
 	part = KK.SPX.F93.interstage_4294631684
 	partName = Part
-	persistentId = 2552017098
+	persistentId = 664438501
 	pos = 0.16978389,47.3358803,-1.03926659
 	attPos = 0,0,0
 	attPos0 = 0,-6.90254211,0
@@ -9324,8 +10201,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4291127992
 	partName = Part
-	persistentId = 1678038979
-	pos = 1.99881029,44.0827904,-1.03926682
+	persistentId = 2485486069
+	pos = 1.99881411,44.0827904,-1.03926682
 	attPos = 0,0,0
 	attPos0 = -7.105426E-14,-3.2530899,1.82892168
 	rot = -2.91441467E-07,0.707106888,2.91441467E-07,0.707106888
@@ -9477,8 +10354,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4291121764
 	partName = Part
-	persistentId = 459687701
-	pos = 0.169783771,44.0827904,-2.86829853
+	persistentId = 116436712
+	pos = 0.169783771,44.0827904,-2.86830235
 	attPos = 0,0,0
 	attPos0 = 1.82892156,-3.2530899,1.19209261E-07
 	rot = 0,1.00000024,4.12160489E-07,0
@@ -9630,8 +10507,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4291121694
 	partName = Part
-	persistentId = 2033677604
-	pos = -1.65923119,44.0827904,-1.03926623
+	persistentId = 619379638
+	pos = -1.65923452,44.0827904,-1.03926623
 	attPos = 0,0,0
 	attPos0 = -1.19209147E-07,-3.2530899,-1.82892168
 	rot = 2.91441495E-07,0.707106829,2.91441438E-07,-0.707106948
@@ -9783,8 +10660,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4291121624
 	partName = Part
-	persistentId = 4128525123
-	pos = 0.169784248,44.0827904,0.789757967
+	persistentId = 1758201576
+	pos = 0.169784248,44.0827904,0.789761543
 	attPos = 0,0,0
 	attPos0 = -1.82892156,-3.2530899,1.19209261E-07
 	rot = 4.12160489E-07,0,0,-1.00000024
@@ -9936,8 +10813,8 @@ PART
 {
 	part = Grid Fin L Titanium_4293514068
 	partName = Part
-	persistentId = 2060267056
-	pos = 1.94396186,44.8943672,-1.03926682
+	persistentId = 3036871415
+	pos = 1.94396567,44.8943672,-1.03926682
 	attPos = 0,0,0
 	attPos0 = -7.105426E-14,-2.44151306,1.77408504
 	rot = -1.00000024,-4.12160489E-07,0,0
@@ -10218,8 +11095,8 @@ PART
 {
 	part = Grid Fin L Titanium_4293508554
 	partName = Part
-	persistentId = 3084332516
-	pos = 0.169783771,44.8943672,-2.81344366
+	persistentId = 1555639437
+	pos = 0.169783771,44.8943672,-2.81344748
 	attPos = 0,0,0
 	attPos0 = 1.77408493,-2.44151306,1.19209261E-07
 	rot = -0.707106888,-2.91441467E-07,0.707106888,2.91441467E-07
@@ -10500,8 +11377,8 @@ PART
 {
 	part = Grid Fin L Titanium_4293508476
 	partName = Part
-	persistentId = 3138351011
-	pos = -1.60438395,44.8943672,-1.03926623
+	persistentId = 1218397094
+	pos = -1.60438728,44.8943672,-1.03926623
 	attPos = 0,0,0
 	attPos0 = -1.19209147E-07,-2.44151306,-1.77408493
 	rot = 1.1920929E-07,0,1.00000024,4.12160489E-07
@@ -10782,8 +11659,8 @@ PART
 {
 	part = Grid Fin L Titanium_4293508398
 	partName = Part
-	persistentId = 263670745
-	pos = 0.169784248,44.8943672,0.734909773
+	persistentId = 1675210141
+	pos = 0.169784248,44.8943672,0.734913349
 	attPos = 0,0,0
 	attPos0 = -1.77408493,-2.44151306,1.19209261E-07
 	rot = 0.707106888,2.91441467E-07,0.707106888,2.91441467E-07
@@ -11064,7 +11941,7 @@ PART
 {
 	part = KK.SPX.F93.S1tank_4294625744
 	partName = Part
-	persistentId = 3090984669
+	persistentId = 3374968117
 	pos = 0.16978389,24.8885651,-1.03926659
 	attPos = 0,0,0
 	attPos0 = 0,-22.4473171,0
@@ -11083,8 +11960,8 @@ PART
 	sepI = 4
 	attm = 0
 	sameVesselCollision = False
-	modCost = 1372.32446
-	modMass = -20.8879108
+	modCost = 2058.48682
+	modMass = -31.3318672
 	modSize = 0,0,0
 	link = KK.SPX.Falcon9.FC_4294622098
 	link = KK.SPX.F9LandingLeg_4294581646
@@ -12641,6 +13518,727 @@ PART
 	}
 	MODULE
 	{
+		name = ModuleFuelTanks
+		isEnabled = True
+		type = Cryogenic
+		utilization = 86
+		mass = 11.7560453
+		_numberOfAddedMLILayers = 0
+		partPrevTemperature = -1
+		stagingEnabled = True
+		volume = 388934
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		TANK
+		{
+			name = LqdOxygen
+			note = (has insulation)
+			utilization = 1
+			mass = 1.11999998E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 90.1500015
+			fillable = True
+			techRequired = 
+			amount = 244349
+			maxAmount = 244349
+		}
+		TANK
+		{
+			name = Kerosene
+			note = 
+			utilization = 1
+			mass = 1.20000004E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 144585
+			maxAmount = 144585
+		}
+		TANK
+		{
+			name = LqdHydrogen
+			note = (has insulation)
+			utilization = 1
+			mass = 1.60000002E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 20.1499996
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = NTO
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = UDMH
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Aerozine50
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MMH
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = HTP
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = AvGas
+			note = 
+			utilization = 1
+			mass = 7.99999998E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = IRFNA-III
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = NitrousOxide
+			note = (pressurized)
+			utilization = 100
+			mass = 2.99999992E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Aniline
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethanol75
+			note = 
+			utilization = 1
+			mass = 1.29999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethanol90
+			note = 
+			utilization = 1
+			mass = 1.29999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethanol
+			note = 
+			utilization = 1
+			mass = 1.29999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = LqdAmmonia
+			note = (has insulation)
+			utilization = 1
+			mass = 9.60000034E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 237.649994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = LqdMethane
+			note = (has insulation)
+			utilization = 1
+			mass = 9.60000034E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 111.449997
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = ClF3
+			note = 
+			utilization = 1
+			mass = 3.9999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = ClF5
+			note = 
+			utilization = 1
+			mass = 3.9999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Diborane
+			note = (has insulation)
+			utilization = 1
+			mass = 1.43999996E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 180.649994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Pentaborane
+			note = 
+			utilization = 1
+			mass = 1.80000006E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethane
+			note = (has insulation)
+			utilization = 1
+			mass = 1.28000001E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 184.649994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethylene
+			note = (has insulation)
+			utilization = 1
+			mass = 1.28000001E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 169.449997
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = OF2
+			note = (has insulation)
+			utilization = 1
+			mass = 1.43999996E-05
+			cost = 0
+			loss_rate = 1.6E-11
+			temperature = 128.399994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = LqdFluorine
+			note = (has insulation)
+			utilization = 1
+			mass = 3.19999999E-05
+			cost = 0
+			loss_rate = 8.8000000000000006E-11
+			temperature = 85.0400009
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = N2F4
+			note = (has insulation)
+			utilization = 1
+			mass = 7.99999998E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 200.149994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Methanol
+			note = 
+			utilization = 1
+			mass = 1.20000004E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Furfuryl
+			note = 
+			utilization = 1
+			mass = 1.40000002E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = UH25
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Tonka250
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Tonka500
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = FLOX30
+			note = (has insulation)
+			utilization = 1
+			mass = 1.31999996E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 216.149994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = FLOX70
+			note = (has insulation)
+			utilization = 1
+			mass = 3.08000017E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 216.149994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = FLOX88
+			note = (has insulation)
+			utilization = 1
+			mass = 3.87200016E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 216.149994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = IWFNA
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = IRFNA-IV
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = AK20
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = AK27
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON1
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON3
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON10
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON15
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON20
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON25
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Hydyne
+			note = 
+			utilization = 1
+			mass = 1.29999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Syntin
+			note = 
+			utilization = 1
+			mass = 1.20000004E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = LiquidFuel
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Oxidizer
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = LeadBallast
+			note = 
+			utilization = 1
+			mass = 0
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Beryllium
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = ModulePartInfo
 		isEnabled = True
 		stagingEnabled = True
@@ -12692,7 +14290,7 @@ PART
 {
 	part = KK.SPX.Falcon9.FC_4294622098
 	partName = Part
-	persistentId = 4280045786
+	persistentId = 4245449193
 	pos = 0.16978389,44.2590523,-1.03926659
 	attPos = 0,0,0
 	attPos0 = 0,19.3704872,0
@@ -12934,24 +14532,6 @@ PART
 			{
 				PrtName = KK.SPX.Falcon9.FC
 				PrtTitle = Falcon 9 Flight Control System
-				PrtModuleName = ModuleDataTransmitter
-				PrtSubsystem = False
-				PrtPower = 6
-				PrtPowerF = 6
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = True
-				PrtEmergShutDnInclude = True
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4294622098,ModuleDataTransmitter
-			}
-			AYPwrPartList
-			{
-				PrtName = KK.SPX.Falcon9.FC
-				PrtTitle = Falcon 9 Flight Control System
 				PrtModuleName = ModuleCommand
 				PrtSubsystem = False
 				PrtPower = 0.15
@@ -12965,6 +14545,24 @@ PART
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
 				ConsPartKey = 4294622098,ModuleCommand
+			}
+			AYPwrPartList
+			{
+				PrtName = KK.SPX.Falcon9.FC
+				PrtTitle = Falcon 9 Flight Control System
+				PrtModuleName = ModuleDataTransmitter
+				PrtSubsystem = False
+				PrtPower = 6
+				PrtPowerF = 6
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4294622098,ModuleDataTransmitter
 			}
 		}
 		UPGRADESAPPLIED
@@ -13199,8 +14797,8 @@ PART
 {
 	part = KK.SPX.F9LandingLeg_4294581646
 	partName = Part
-	persistentId = 2954829714
-	pos = -1.10913992,8.26470184,0.239660859
+	persistentId = 4050025381
+	pos = -1.10914373,8.26470184,0.239665151
 	attPos = -7.86781311E-05,0.235254288,-7.89165497E-05
 	attPos0 = -1.27869904,-16.8591175,-1.27869892
 	rot = -2.18440146E-08,0.382683545,-9.0480885E-09,-0.923879743
@@ -13423,8 +15021,8 @@ PART
 {
 	part = KK.SPX.F9LandingLeg_4294581174
 	partName = Part
-	persistentId = 2755309944
-	pos = 1.44871211,8.26470184,0.239661336
+	persistentId = 1702323409
+	pos = 1.4487164,8.26470184,0.239665627
 	attPos = -7.97510147E-05,0.235254288,7.93933868E-05
 	attPos0 = -1.27869892,-16.8591175,1.27869892
 	rot = -2.18440146E-08,-0.382683456,9.04808495E-09,-0.923879683
@@ -13643,8 +15241,8 @@ PART
 {
 	part = KK.SPX.F9LandingLeg_4294581056
 	partName = Part
-	persistentId = 3043578515
-	pos = 1.44871569,8.26470184,-2.31819105
+	persistentId = 623165503
+	pos = 1.44872046,8.26470184,-2.31819487
 	attPos = 7.93933868E-05,0.235254288,7.96318054E-05
 	attPos0 = 1.27869916,-16.8591175,1.2786988
 	rot = -9.04808495E-09,-0.923879683,2.18440146E-08,-0.382683456
@@ -13863,8 +15461,8 @@ PART
 {
 	part = KK.SPX.F9LandingLeg_4294580938
 	partName = Part
-	persistentId = 3387122042
-	pos = -1.10914111,8.26470184,-2.31819105
+	persistentId = 4213896476
+	pos = -1.10914493,8.26470184,-2.31819487
 	attPos = 7.96318054E-05,0.235254288,-7.95125961E-05
 	attPos0 = 1.2786988,-16.8591175,-1.27869904
 	rot = 9.04808495E-09,-0.923879683,2.18440146E-08,0.382683456
@@ -14083,7 +15681,7 @@ PART
 {
 	part = KK.SPX.F93Heavy.seperator_4292276294
 	partName = Part
-	persistentId = 1503414024
+	persistentId = 887101360
 	pos = 0.169783756,22.976696,-1.09948301
 	attPos = 0.0472024679,-0.401069641,0
 	attPos0 = 0.0130109806,-1.51079941,-1.78813977E-07
@@ -14312,8 +15910,8 @@ PART
 {
 	part = KK.SPX.F93.S1tank_4293243962
 	partName = Part
-	persistentId = 1985814130
-	pos = 0.169785321,24.9257889,3.20097351
+	persistentId = 865645703
+	pos = 0.169785321,24.9257889,3.20098495
 	attPos = 0,0,0
 	attPos0 = -4.3000021,1.94909286,1.07288201E-07
 	rot = -3.10112645E-23,1.00000024,7.88860905E-30,0
@@ -14331,8 +15929,8 @@ PART
 	sepI = 5
 	attm = 0
 	sameVesselCollision = False
-	modCost = 1705.17493
-	modMass = -19.8430462
+	modCost = 2557.76245
+	modMass = -29.7645683
 	modSize = 0,0,0
 	link = KK.SPX.Falcon9.FC_4293243910
 	link = KK.SPX.F9LandingLeg_4293241888
@@ -15892,6 +17490,727 @@ PART
 	}
 	MODULE
 	{
+		name = ModuleFuelTanks
+		isEnabled = True
+		type = Cryogenic
+		utilization = 86
+		mass = 12.2784777
+		_numberOfAddedMLILayers = 0
+		partPrevTemperature = -1
+		stagingEnabled = True
+		volume = 388934
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		TANK
+		{
+			name = LqdOxygen
+			note = (has insulation)
+			utilization = 1
+			mass = 1.11999998E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 90.1500015
+			fillable = True
+			techRequired = 
+			amount = 244349
+			maxAmount = 244349
+		}
+		TANK
+		{
+			name = Kerosene
+			note = 
+			utilization = 1
+			mass = 1.20000004E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 144585
+			maxAmount = 144585
+		}
+		TANK
+		{
+			name = LqdHydrogen
+			note = (has insulation)
+			utilization = 1
+			mass = 1.60000002E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 20.1499996
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = NTO
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = UDMH
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Aerozine50
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MMH
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = HTP
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = AvGas
+			note = 
+			utilization = 1
+			mass = 7.99999998E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = IRFNA-III
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = NitrousOxide
+			note = (pressurized)
+			utilization = 100
+			mass = 2.99999992E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Aniline
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethanol75
+			note = 
+			utilization = 1
+			mass = 1.29999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethanol90
+			note = 
+			utilization = 1
+			mass = 1.29999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethanol
+			note = 
+			utilization = 1
+			mass = 1.29999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = LqdAmmonia
+			note = (has insulation)
+			utilization = 1
+			mass = 9.60000034E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 237.649994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = LqdMethane
+			note = (has insulation)
+			utilization = 1
+			mass = 9.60000034E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 111.449997
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = ClF3
+			note = 
+			utilization = 1
+			mass = 3.9999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = ClF5
+			note = 
+			utilization = 1
+			mass = 3.9999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Diborane
+			note = (has insulation)
+			utilization = 1
+			mass = 1.43999996E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 180.649994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Pentaborane
+			note = 
+			utilization = 1
+			mass = 1.80000006E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethane
+			note = (has insulation)
+			utilization = 1
+			mass = 1.28000001E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 184.649994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethylene
+			note = (has insulation)
+			utilization = 1
+			mass = 1.28000001E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 169.449997
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = OF2
+			note = (has insulation)
+			utilization = 1
+			mass = 1.43999996E-05
+			cost = 0
+			loss_rate = 1.6E-11
+			temperature = 128.399994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = LqdFluorine
+			note = (has insulation)
+			utilization = 1
+			mass = 3.19999999E-05
+			cost = 0
+			loss_rate = 8.8000000000000006E-11
+			temperature = 85.0400009
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = N2F4
+			note = (has insulation)
+			utilization = 1
+			mass = 7.99999998E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 200.149994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Methanol
+			note = 
+			utilization = 1
+			mass = 1.20000004E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Furfuryl
+			note = 
+			utilization = 1
+			mass = 1.40000002E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = UH25
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Tonka250
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Tonka500
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = FLOX30
+			note = (has insulation)
+			utilization = 1
+			mass = 1.31999996E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 216.149994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = FLOX70
+			note = (has insulation)
+			utilization = 1
+			mass = 3.08000017E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 216.149994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = FLOX88
+			note = (has insulation)
+			utilization = 1
+			mass = 3.87200016E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 216.149994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = IWFNA
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = IRFNA-IV
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = AK20
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = AK27
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON1
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON3
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON10
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON15
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON20
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON25
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Hydyne
+			note = 
+			utilization = 1
+			mass = 1.29999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Syntin
+			note = 
+			utilization = 1
+			mass = 1.20000004E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = LiquidFuel
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 14434.200000000001
+		}
+		TANK
+		{
+			name = Oxidizer
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 17641.799999999999
+		}
+		TANK
+		{
+			name = LeadBallast
+			note = 
+			utilization = 1
+			mass = 0
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Beryllium
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = ModulePartInfo
 		isEnabled = True
 		stagingEnabled = True
@@ -15965,8 +18284,8 @@ PART
 {
 	part = KK.SPX.Falcon9.FC_4293243910
 	partName = Part
-	persistentId = 3749021037
-	pos = 0.169785798,44.2962761,3.2011714
+	persistentId = 385683971
+	pos = 0.169785798,44.2962761,3.20118856
 	attPos = 0,0,0
 	attPos0 = 0,19.3704872,0
 	rot = -3.10112645E-23,1.00000024,7.88860905E-30,0
@@ -16207,24 +18526,6 @@ PART
 			{
 				PrtName = KK.SPX.Falcon9.FC
 				PrtTitle = Falcon 9 Flight Control System
-				PrtModuleName = ModuleCommand
-				PrtSubsystem = False
-				PrtPower = 0.15
-				PrtPowerF = 0.150000006
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = False
-				PrtEmergShutDnInclude = False
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4293243910,ModuleCommand
-			}
-			AYPwrPartList
-			{
-				PrtName = KK.SPX.Falcon9.FC
-				PrtTitle = Falcon 9 Flight Control System
 				PrtModuleName = ModuleDataTransmitter
 				PrtSubsystem = False
 				PrtPower = 6
@@ -16238,6 +18539,24 @@ PART
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
 				ConsPartKey = 4293243910,ModuleDataTransmitter
+			}
+			AYPwrPartList
+			{
+				PrtName = KK.SPX.Falcon9.FC
+				PrtTitle = Falcon 9 Flight Control System
+				PrtModuleName = ModuleCommand
+				PrtSubsystem = False
+				PrtPower = 0.15
+				PrtPowerF = 0.150000006
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4293243910,ModuleCommand
 			}
 		}
 		UPGRADESAPPLIED
@@ -16472,8 +18791,8 @@ PART
 {
 	part = KK.SPX.F9LandingLeg_4293241888
 	partName = Part
-	persistentId = 504089223
-	pos = 1.44885254,8.34332657,4.48018169
+	persistentId = 3217826804
+	pos = 1.44885826,8.34332657,4.48020649
 	attPos = -9.54866409E-05,0.276655197,-5.57899475E-05
 	attPos0 = -1.27869904,-16.8591175,-1.27869892
 	rot = 2.18440341E-08,0.382683545,-9.04809738E-09,0.923879743
@@ -16696,8 +19015,8 @@ PART
 {
 	part = KK.SPX.F9LandingLeg_4293241786
 	partName = Part
-	persistentId = 3347161157
-	pos = 1.44875431,8.34332657,1.92216015
+	persistentId = 2266921166
+	pos = 1.44876194,8.34332657,1.9221735
 	attPos = -5.37633896E-05,0.276655197,9.32216644E-05
 	attPos0 = -1.27869892,-16.8591175,1.27869892
 	rot = 9.04809383E-09,0.923879743,-2.1844027E-08,0.382683545
@@ -16920,8 +19239,8 @@ PART
 {
 	part = KK.SPX.F9LandingLeg_4293241684
 	partName = Part
-	persistentId = 262887505
-	pos = -1.10920978,8.34332657,1.92221975
+	persistentId = 3177287667
+	pos = -1.1092155,8.34332657,1.9222312
 	attPos = 9.40561295E-05,0.276655197,5.3524971E-05
 	attPos0 = 1.27869916,-16.8591175,1.2786988
 	rot = 9.04810182E-09,-0.923879743,2.18440306E-08,0.382683545
@@ -17144,8 +19463,8 @@ PART
 {
 	part = KK.SPX.F9LandingLeg_4293241582
 	partName = Part
-	persistentId = 4278034280
-	pos = -1.10923529,8.34332657,4.48020649
+	persistentId = 1883434846
+	pos = -1.10924101,8.34332657,4.48023129
 	attPos = 5.3524971E-05,0.276655197,-9.67979431E-05
 	attPos0 = 1.2786988,-16.8591175,-1.27869904
 	rot = 2.18440395E-08,-0.382683545,9.04809205E-09,0.923879743
@@ -17368,8 +19687,8 @@ PART
 {
 	part = KK.SpX.FH.SB.attachPart_4291703992
 	partName = Part
-	persistentId = 4061381952
-	pos = 0.169785321,44.1487083,3.20115137
+	persistentId = 70047601
+	pos = 0.169785321,44.1487083,3.20116854
 	attPos = 0,0,0
 	attPos0 = -1.13686784E-13,19.2229195,-1.90734806E-06
 	rot = -8.47032947E-22,1.00000024,-1.85437853E-15,-1.1920929E-07
@@ -17577,8 +19896,8 @@ PART
 {
 	part = KK.SPX.F.nosecone_4291687498
 	partName = Part
-	persistentId = 399371000
-	pos = 0.169785321,46.1624794,3.20115328
+	persistentId = 168502961
+	pos = 0.169785321,46.1624794,3.20117044
 	attPos = 0,0,0
 	attPos0 = 4.54747026E-13,2.01377106,-1.90734772E-06
 	rot = -1.31124374E-15,0.707107067,-1.31124395E-15,0.707106948
@@ -17697,8 +20016,8 @@ PART
 {
 	part = Grid Fin L Titanium_4293506328
 	partName = Part
-	persistentId = 2164719720
-	pos = -0.964479744,44.0989876,1.83876228
+	persistentId = 3404686049
+	pos = -0.964482129,44.0989876,1.83877659
 	attPos = 0,0,0
 	attPos0 = 1.13419199,-0.0497207642,1.36233604
 	rot = 0.412707418,2.30834388E-07,-0.910863996,-5.09462325E-07
@@ -17977,11 +20296,11 @@ PART
 {
 	part = Grid Fin L Titanium_4293506228
 	partName = Part
-	persistentId = 273677260
-	pos = 1.42399168,44.1437721,4.4553051
+	persistentId = 1819005846
+	pos = 1.42399454,44.1437721,4.45532417
 	attPos = -1.43051147E-06,-0.00793075562,-2.38418579E-06
 	attPos0 = -1.2541045,0.00299453735,-1.25410783
-	rot = -0.923879743,5.16744592E-07,-0.382683665,2.14042529E-07
+	rot = -0.923879743,5.16744819E-07,-0.382683665,2.14042515E-07
 	attRot = -0.999999881,0,0,0
 	attRot0 = 0.382683724,-2.14041648E-07,-0.923879445,5.16741864E-07
 	mir = 1,1,1
@@ -18257,8 +20576,8 @@ PART
 {
 	part = Grid Fin L Titanium_4293506004
 	partName = Part
-	persistentId = 1282113995
-	pos = -1.00785208,44.1365891,4.52557182
+	persistentId = 4123428277
+	pos = -1.00785494,44.1365891,4.5255928
 	attPos = 1.43051147E-06,0.0136146545,-2.86102295E-06
 	attPos0 = 1.17755842,-0.0257339478,-1.324314
 	rot = -0.412707448,2.80917654E-08,-0.910863996,6.19997707E-08
@@ -18537,8 +20856,8 @@ PART
 {
 	part = Grid Fin L Titanium_4293505892
 	partName = Part
-	persistentId = 3261891246
-	pos = 1.26375818,44.1355247,1.80340719
+	persistentId = 500281991
+	pos = 1.26376009,44.1355247,1.80342245
 	attPos = -9.53674316E-07,0.0424308777,-9.53674316E-07
 	attPos0 = -1.09390736,-0.0556144714,1.3976661
 	rot = -0.910864711,-6.19981435E-08,0.412705928,2.8090879E-08
@@ -18817,8 +21136,8 @@ PART
 {
 	part = PMB.Rockomax16.BW_4291192474
 	partName = Part
-	persistentId = 3368797908
-	pos = 0.169785321,7.12578583,3.20123672
+	persistentId = 3524631147
+	pos = 0.169785321,7.12578583,3.20125961
 	attPos = 1.02318132E-12,2.0929184,-5.72204408E-06
 	attPos0 = 3.41060432E-13,-19.8929214,-1.90734806E-06
 	rot = 1.89326617E-29,0.707107008,1.49735721E-22,0.707107008
@@ -19704,8 +22023,8 @@ PART
 {
 	part = PMB.batteryBankLarge_4291176224
 	partName = Part
-	persistentId = 847328915
-	pos = 0.169785321,6.09578323,3.20136642
+	persistentId = 1801422139
+	pos = 0.169785321,6.09578323,3.20139503
 	attPos = 0,0,0
 	attPos0 = -1.90734863E-06,-1.03000259,-1.13686865E-13
 	rot = 1.89326617E-29,0.707107008,1.49735721E-22,0.707107008
@@ -19837,8 +22156,8 @@ PART
 {
 	part = KK.SPX.F9.Octaweb_4293243854
 	partName = Part
-	persistentId = 1894071826
-	pos = 0.169785321,4.66537857,3.20149612
+	persistentId = 928164777
+	pos = 0.169785321,4.66537857,3.20153046
 	attPos = 0,0,0
 	attPos0 = -1.90734909E-06,-1.43040466,1.13686865E-13
 	rot = 1.56158348E-22,1.00000036,-1.12301771E-22,0
@@ -20181,8 +22500,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4293243726
 	partName = Part
-	persistentId = 2821373595
-	pos = 0.169785321,3.56107712,3.20168686
+	persistentId = 1888636199
+	pos = 0.169785321,3.56107712,3.20172691
 	attPos = 0,0,0
 	attPos0 = 0,-1.10430145,0
 	rot = 1.56158348E-22,1.00000036,-1.12301771E-22,0
@@ -20483,8 +22802,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4293243576
 	partName = Part
-	persistentId = 1502652487
-	pos = -1.02412319,3.70107651,3.69643974
+	persistentId = 2939069223
+	pos = -1.02413082,3.70107651,3.69648743
 	attPos = 0,0,0
 	attPos0 = 1.19353795,-0.964302063,-0.494379997
 	rot = -7.78784034E-22,0.991445184,-6.87630689E-22,-0.130526453
@@ -20785,8 +23104,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4293243426
 	partName = Part
-	persistentId = 1699994748
-	pos = -0.324791908,3.70107651,4.39552879
+	persistentId = 47764688
+	pos = -0.324795723,3.70107651,4.39557648
 	attPos = 0,0,0
 	attPos0 = 0.494379014,-0.964302063,-1.19353795
 	rot = -4.91297624E-21,0.793353796,4.53991778E-21,-0.608761311
@@ -21087,8 +23406,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4293243276
 	partName = Part
-	persistentId = 2421601568
-	pos = 0.664368272,3.70107651,4.39544582
+	persistentId = 893149360
+	pos = 0.664372087,3.70107651,4.39548969
 	attPos = 0,0,0
 	attPos0 = -0.494379967,-0.964302063,-1.193537
 	rot = 6.20871145E-22,0.499999881,-1.66561859E-22,-0.866025805
@@ -21389,8 +23708,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4293243126
 	partName = Part
-	persistentId = 960488178
-	pos = 1.3637414,3.70107651,3.69630337
+	persistentId = 3062473396
+	pos = 1.36374903,3.70107651,3.69634724
 	attPos = 0,0,0
 	attPos0 = -1.19353795,-0.964302063,-0.494379014
 	rot = -3.94438288E-21,0.130525827,-5.91614377E-22,-0.991445303
@@ -21691,8 +24010,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4293242976
 	partName = Part
-	persistentId = 4219425073
-	pos = 1.36366105,3.70107651,2.70723057
+	persistentId = 3353268482
+	pos = 1.36366677,3.70107651,2.70726871
 	attPos = 0,0,0
 	attPos0 = -1.19353795,-0.964302063,0.494378
 	rot = -1.99402873E-21,-0.258819371,-1.02271613E-22,-0.96592629
@@ -21993,8 +24312,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4293242826
 	partName = Part
-	persistentId = 2587077013
-	pos = 0.664342761,3.70107651,2.00803494
+	persistentId = 1581052616
+	pos = 0.664346576,3.70107651,2.00807309
 	attPos = 0,0,0
 	attPos0 = -0.49438104,-0.964302063,1.193537
 	rot = -1.95473876E-22,0.608761907,-3.83924542E-22,0.793353438
@@ -22295,8 +24614,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4293242676
 	partName = Part
-	persistentId = 967361038
-	pos = -0.324770927,3.70107651,2.00805998
+	persistentId = 2279542602
+	pos = -0.324774742,3.70107651,2.00810003
 	attPos = 0,0,0
 	attPos0 = 0.494379014,-0.964302063,1.19353795
 	rot = 9.33957392E-22,-0.866025805,-1.46524337E-22,-0.499999881
@@ -22597,8 +24916,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4293242526
 	partName = Part
-	persistentId = 3891468208
-	pos = -1.02415967,3.70107651,2.70727444
+	persistentId = 4186206204
+	pos = -1.02416635,3.70107651,2.70731449
 	attPos = 0,0,0
 	attPos0 = 1.193537,-0.964302063,0.494380027
 	rot = 4.79312643E-22,-0.991445303,-9.12234207E-22,-0.130525827
@@ -22899,8 +25218,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4290024614
 	partName = Part
-	persistentId = 1216925125
-	pos = 0.169785321,5.85560226,5.02952814
+	persistentId = 380506486
+	pos = 0.169785321,5.85560226,5.02957487
 	attPos = 0,0,0
 	attPos0 = 8.34450304E-07,1.19022369,-1.82787395
 	rot = 4.62287971E-07,-1.78813934E-07,1.27897692E-13,1.00000048
@@ -23050,8 +25369,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4290023022
 	partName = Part
-	persistentId = 1385244890
-	pos = 0.169785082,5.83037186,1.37641358
+	persistentId = 3433787187
+	pos = 0.169785082,5.83037186,1.37644219
 	attPos = 0,0,0
 	attPos0 = -3.57642335E-07,1.16499329,1.82500672
 	rot = -7.10542736E-14,-1.00000048,-3.6503792E-07,-5.96046448E-08
@@ -23201,8 +25520,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4290027426
 	partName = Part
-	persistentId = 726563045
-	pos = 1.99732256,5.89546204,3.2014966
+	persistentId = 3377697774
+	pos = 1.99732924,5.89546204,3.20153093
 	attPos = 0,0,0
 	attPos0 = -1.82744849,1.23008347,-1.31130162E-06
 	rot = -3.04618396E-07,0.707107365,3.04618624E-07,0.707106769
@@ -23351,8 +25670,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4289968052
 	partName = Part
-	persistentId = 707547972
-	pos = -1.64615893,5.86883926,3.20149946
+	persistentId = 2522785966
+	pos = -1.64616561,5.86883926,3.20153379
 	attPos = 0,0,0
 	attPos0 = 1.81585228,1.20346069,-2.50339394E-06
 	rot = -2.3860315E-07,0.707106769,-2.38603036E-07,-0.707107365
@@ -23501,8 +25820,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4291113052
 	partName = Part
-	persistentId = 2777853615
-	pos = 0.169785321,43.7987175,5.02075005
+	persistentId = 3172281636
+	pos = 0.169785321,43.7987175,5.02077103
 	attPos = 0,0,0
 	attPos0 = 7.91425578E-07,18.8729286,-1.81947994
 	rot = -7.04272151E-15,-1.1920929E-07,-6.3527471E-22,1.00000024
@@ -23652,8 +25971,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4291111108
 	partName = Part
-	persistentId = 1667311428
-	pos = -1.65798306,43.7797813,3.20097494
+	persistentId = 3867340084
+	pos = -1.65798783,43.7797813,3.20098639
 	attPos = 0,0,0
 	attPos0 = 1.82760465,18.8539925,-1.54972008E-06
 	rot = 6.55628753E-16,-0.707107127,6.55629071E-16,0.707106888
@@ -23803,8 +26122,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4291108552
 	partName = Part
-	persistentId = 2788176076
-	pos = 1.99837542,43.789135,3.2009778
+	persistentId = 3989172265
+	pos = 1.99838018,43.789135,3.20098925
 	attPos = 0,0,0
 	attPos0 = -1.82842672,18.8633461,-4.17232332E-06
 	rot = 6.55614195E-16,0.707106888,-6.55613771E-16,0.707107127
@@ -23954,8 +26273,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4291108352
 	partName = Part
-	persistentId = 1995375764
-	pos = 0.169784367,43.7761765,1.38269353
+	persistentId = 474237529
+	pos = 0.169784367,43.7761765,1.38270211
 	attPos = 0,0,0
 	attPos0 = 4.00974784E-07,18.8503876,1.81818962
 	rot = -5.20417043E-18,1.00000024,-2.30966704E-11,-1.78813934E-07
@@ -24105,8 +26424,8 @@ PART
 {
 	part = KK.SPX.F93Heavy.seperator_4294616840
 	partName = Part
-	persistentId = 2630324510
-	pos = 0.169784024,22.976696,-0.97904855
+	persistentId = 609171281
+	pos = 0.169784024,22.976696,-0.979048431
 	attPos = -0.0472025052,-0.401069641,0
 	attPos0 = -0.0130109806,-1.51079941,1.78813977E-07
 	rot = -6.55626E-16,0.707106769,6.55626212E-16,-0.707107008
@@ -24334,8 +26653,8 @@ PART
 {
 	part = KK.SPX.F93.S1tank_4294616764
 	partName = Part
-	persistentId = 2609505977
-	pos = 0.169781983,24.9257889,-5.27950954
+	persistentId = 3970011383
+	pos = 0.169781983,24.9257889,-5.27952099
 	attPos = 0,0,0
 	attPos0 = -4.3000021,1.94909286,1.07288201E-07
 	rot = 0,-1.1920929E-07,-6.66323912E-21,-1.00000024
@@ -24353,8 +26672,8 @@ PART
 	sepI = 5
 	attm = 0
 	sameVesselCollision = False
-	modCost = 1705.17493
-	modMass = -19.8430462
+	modCost = 2557.76245
+	modMass = -29.7645683
 	modSize = 0,0,0
 	link = KK.SPX.Falcon9.FC_4294616716
 	link = KK.SPX.F9LandingLeg_4294614694
@@ -25914,6 +28233,727 @@ PART
 	}
 	MODULE
 	{
+		name = ModuleFuelTanks
+		isEnabled = True
+		type = Cryogenic
+		utilization = 86
+		mass = 12.2784777
+		_numberOfAddedMLILayers = 0
+		partPrevTemperature = -1
+		stagingEnabled = True
+		volume = 388934
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		TANK
+		{
+			name = LqdOxygen
+			note = (has insulation)
+			utilization = 1
+			mass = 1.11999998E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 90.1500015
+			fillable = True
+			techRequired = 
+			amount = 244349
+			maxAmount = 244349
+		}
+		TANK
+		{
+			name = Kerosene
+			note = 
+			utilization = 1
+			mass = 1.20000004E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 144585
+			maxAmount = 144585
+		}
+		TANK
+		{
+			name = LqdHydrogen
+			note = (has insulation)
+			utilization = 1
+			mass = 1.60000002E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 20.1499996
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = NTO
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = UDMH
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Aerozine50
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MMH
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = HTP
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = AvGas
+			note = 
+			utilization = 1
+			mass = 7.99999998E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = IRFNA-III
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = NitrousOxide
+			note = (pressurized)
+			utilization = 100
+			mass = 2.99999992E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Aniline
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethanol75
+			note = 
+			utilization = 1
+			mass = 1.29999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethanol90
+			note = 
+			utilization = 1
+			mass = 1.29999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethanol
+			note = 
+			utilization = 1
+			mass = 1.29999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = LqdAmmonia
+			note = (has insulation)
+			utilization = 1
+			mass = 9.60000034E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 237.649994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = LqdMethane
+			note = (has insulation)
+			utilization = 1
+			mass = 9.60000034E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 111.449997
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = ClF3
+			note = 
+			utilization = 1
+			mass = 3.9999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = ClF5
+			note = 
+			utilization = 1
+			mass = 3.9999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Diborane
+			note = (has insulation)
+			utilization = 1
+			mass = 1.43999996E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 180.649994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Pentaborane
+			note = 
+			utilization = 1
+			mass = 1.80000006E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethane
+			note = (has insulation)
+			utilization = 1
+			mass = 1.28000001E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 184.649994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Ethylene
+			note = (has insulation)
+			utilization = 1
+			mass = 1.28000001E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 169.449997
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = OF2
+			note = (has insulation)
+			utilization = 1
+			mass = 1.43999996E-05
+			cost = 0
+			loss_rate = 1.6E-11
+			temperature = 128.399994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = LqdFluorine
+			note = (has insulation)
+			utilization = 1
+			mass = 3.19999999E-05
+			cost = 0
+			loss_rate = 8.8000000000000006E-11
+			temperature = 85.0400009
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = N2F4
+			note = (has insulation)
+			utilization = 1
+			mass = 7.99999998E-06
+			cost = 0
+			loss_rate = 0
+			temperature = 200.149994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Methanol
+			note = 
+			utilization = 1
+			mass = 1.20000004E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Furfuryl
+			note = 
+			utilization = 1
+			mass = 1.40000002E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = UH25
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Tonka250
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Tonka500
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = FLOX30
+			note = (has insulation)
+			utilization = 1
+			mass = 1.31999996E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 216.149994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = FLOX70
+			note = (has insulation)
+			utilization = 1
+			mass = 3.08000017E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 216.149994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = FLOX88
+			note = (has insulation)
+			utilization = 1
+			mass = 3.87200016E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 216.149994
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = IWFNA
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = IRFNA-IV
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = AK20
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = AK27
+			note = 
+			utilization = 1
+			mass = 1.99999995E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON1
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON3
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON10
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON15
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON20
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = MON25
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Hydyne
+			note = 
+			utilization = 1
+			mass = 1.29999999E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Syntin
+			note = 
+			utilization = 1
+			mass = 1.20000004E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = LiquidFuel
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 14434.200000000001
+		}
+		TANK
+		{
+			name = Oxidizer
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 17641.799999999999
+		}
+		TANK
+		{
+			name = LeadBallast
+			note = 
+			utilization = 1
+			mass = 0
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		TANK
+		{
+			name = Beryllium
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 0
+			maxAmount = 0
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = ModulePartInfo
 		isEnabled = True
 		stagingEnabled = True
@@ -25987,8 +29027,8 @@ PART
 {
 	part = KK.SPX.Falcon9.FC_4294616716
 	partName = Part
-	persistentId = 497056715
-	pos = 0.169781029,44.2962761,-5.27971029
+	persistentId = 373772045
+	pos = 0.169781029,44.2962761,-5.27972746
 	attPos = 0,0,0
 	attPos0 = 0,19.3704872,0
 	rot = -1.12301683E-22,-1.1920929E-07,-6.7755406E-21,-1.00000024
@@ -26229,24 +29269,6 @@ PART
 			{
 				PrtName = KK.SPX.Falcon9.FC
 				PrtTitle = Falcon 9 Flight Control System
-				PrtModuleName = ModuleCommand
-				PrtSubsystem = False
-				PrtPower = 0.15
-				PrtPowerF = 0.150000006
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = False
-				PrtEmergShutDnInclude = False
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4294616716,ModuleCommand
-			}
-			AYPwrPartList
-			{
-				PrtName = KK.SPX.Falcon9.FC
-				PrtTitle = Falcon 9 Flight Control System
 				PrtModuleName = ModuleDataTransmitter
 				PrtSubsystem = False
 				PrtPower = 6
@@ -26260,6 +29282,24 @@ PART
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
 				ConsPartKey = 4294616716,ModuleDataTransmitter
+			}
+			AYPwrPartList
+			{
+				PrtName = KK.SPX.Falcon9.FC
+				PrtTitle = Falcon 9 Flight Control System
+				PrtModuleName = ModuleCommand
+				PrtSubsystem = False
+				PrtPower = 0.15
+				PrtPowerF = 0.150000006
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4294616716,ModuleCommand
 			}
 		}
 		UPGRADESAPPLIED
@@ -26494,8 +29534,8 @@ PART
 {
 	part = KK.SPX.F9LandingLeg_4294614694
 	partName = Part
-	persistentId = 2188423322
-	pos = -1.10928679,8.34332657,-6.55865288
+	persistentId = 3100005373
+	pos = -1.10929251,8.34332657,-6.55867767
 	attPos = -9.54866409E-05,0.276655197,-5.57899475E-05
 	attPos0 = -1.27869904,-16.8591175,-1.27869892
 	rot = -9.04810271E-09,0.923879743,-2.18440395E-08,-0.382683635
@@ -26718,8 +29758,8 @@ PART
 {
 	part = KK.SPX.F9LandingLeg_4294614592
 	partName = Part
-	persistentId = 3164513038
-	pos = -1.1091876,8.34332657,-4.00073242
+	persistentId = 1500725857
+	pos = -1.10919523,8.34332657,-4.00074577
 	attPos = -5.37633896E-05,0.276655197,9.32216644E-05
 	attPos0 = -1.27869892,-16.8591175,1.27869892
 	rot = -2.18440324E-08,0.382683545,-9.0480885E-09,-0.923879743
@@ -26942,8 +29982,8 @@ PART
 {
 	part = KK.SPX.F9LandingLeg_4294614490
 	partName = Part
-	persistentId = 490515156
-	pos = 1.4487958,8.34332657,-4.00076723
+	persistentId = 1388652799
+	pos = 1.44880152,8.34332657,-4.00077868
 	attPos = 9.40561295E-05,0.276655197,5.3524971E-05
 	attPos0 = 1.27869916,-16.8591175,1.2786988
 	rot = 2.18440306E-08,0.382683635,-9.04810182E-09,0.923879743
@@ -27166,8 +30206,8 @@ PART
 {
 	part = KK.SPX.F9LandingLeg_4294614388
 	partName = Part
-	persistentId = 1993149625
-	pos = 1.44880724,8.34332657,-6.55876446
+	persistentId = 1914043288
+	pos = 1.44881296,8.34332657,-6.55878925
 	attPos = 5.3524971E-05,0.276655197,-9.67979431E-05
 	attPos0 = 1.2786988,-16.8591175,-1.27869904
 	rot = 9.0480885E-09,0.923879743,-2.18440324E-08,0.382683545
@@ -27390,8 +30430,8 @@ PART
 {
 	part = KK.SpX.FH.SB.attachPart_4294613934
 	partName = Part
-	persistentId = 572807486
-	pos = 0.169781506,44.1487083,-5.27968931
+	persistentId = 2993600842
+	pos = 0.169781506,44.1487083,-5.27970648
 	attPos = 0,0,0
 	attPos0 = -1.13686784E-13,19.2229195,-1.90734806E-06
 	rot = -1.85437853E-15,-1.78813934E-07,6.3527471E-22,-1.00000024
@@ -27599,8 +30639,8 @@ PART
 {
 	part = KK.SPX.F.nosecone_4294613878
 	partName = Part
-	persistentId = 2568053480
-	pos = 0.169781506,46.1624794,-5.27969122
+	persistentId = 2079871463
+	pos = 0.169781506,46.1624794,-5.27970839
 	attPos = 0,0,0
 	attPos0 = 4.54747026E-13,2.01377106,-1.90734772E-06
 	rot = -1.31124808E-15,0.707106888,1.31124597E-15,-0.707107127
@@ -27719,8 +30759,8 @@ PART
 {
 	part = Grid Fin L Titanium_4293514434
 	partName = Part
-	persistentId = 2812267834
-	pos = 1.30405116,44.0989876,-3.91730452
+	persistentId = 3573113535
+	pos = 1.30405354,44.0989876,-3.91731882
 	attPos = 0,0,0
 	attPos0 = 1.13419092,-0.0497207642,1.36233747
 	rot = -0.910863996,-5.09462097E-07,-0.412707418,-2.30834232E-07
@@ -27999,11 +31039,11 @@ PART
 {
 	part = Grid Fin L Titanium_4293507812
 	partName = Part
-	persistentId = 4148902640
-	pos = -1.08442783,44.1437721,-6.53382492
+	persistentId = 124062706
+	pos = -1.08443069,44.1437721,-6.53384399
 	attPos = -5.24520874E-06,-0.00793075562,-9.53674316E-06
 	attPos0 = -1.2541033,0.00299453735,-1.25410545
-	rot = -0.382683635,2.14042046E-07,0.923879743,-5.16743512E-07
+	rot = -0.382683635,2.14042061E-07,0.923879743,-5.16743569E-07
 	attRot = -0.999999881,0,0,0
 	attRot0 = 0.382683694,-2.14041677E-07,-0.923879504,5.1674192E-07
 	mir = 1,1,1
@@ -28279,8 +31319,8 @@ PART
 {
 	part = Grid Fin L Titanium_4293510372
 	partName = Part
-	persistentId = 2479056047
-	pos = 1.34741879,44.1365891,-6.60409927
+	persistentId = 4074254099
+	pos = 1.34742165,44.1365891,-6.60412025
 	attPos = 4.76837158E-06,0.0136146545,-1.14440918E-05
 	attPos0 = 1.17755687,-0.0257339478,-1.32431102
 	rot = -0.910863757,6.19998914E-08,0.412707567,-2.809184E-08
@@ -28559,8 +31599,8 @@ PART
 {
 	part = Grid Fin L Titanium_4293507622
 	partName = Part
-	persistentId = 15185775
-	pos = -0.924182236,44.1355247,-3.88198137
+	persistentId = 4026490508
+	pos = -0.924184144,44.1355247,-3.88199663
 	attPos = -3.57627869E-06,0.0424308777,-4.29153442E-06
 	attPos0 = -1.09390664,-0.0556144714,1.39766705
 	rot = 0.412706196,2.80908932E-08,0.910864532,6.19981293E-08
@@ -28839,8 +31879,8 @@ PART
 {
 	part = PMB.Rockomax16.BW_4291191376
 	partName = Part
-	persistentId = 966540799
-	pos = 0.169781983,7.12578583,-5.27976894
+	persistentId = 1880049704
+	pos = 0.169781983,7.12578583,-5.27979183
 	attPos = 5.6843408E-13,2.0929184,-1.90734806E-06
 	attPos0 = 7.95807539E-13,-19.8929214,-1.90734806E-06
 	rot = 1.85525191E-22,0.707106948,3.57894644E-23,-0.707107067
@@ -29726,8 +32766,8 @@ PART
 {
 	part = PMB.batteryBankLarge_4291176002
 	partName = Part
-	persistentId = 3031409155
-	pos = 0.169781983,6.09578323,-5.27989864
+	persistentId = 1585777560
+	pos = 0.169781983,6.09578323,-5.27992725
 	attPos = 0,0,0
 	attPos0 = -1.90734863E-06,-1.03000259,-3.41060594E-13
 	rot = 1.85525191E-22,0.707106948,3.57894644E-23,-0.707107067
@@ -29859,8 +32899,8 @@ PART
 {
 	part = KK.SPX.F9.Octaweb_4291146936
 	partName = Part
-	persistentId = 533879691
-	pos = 0.169781983,4.66537857,-5.28002834
+	persistentId = 1033605794
+	pos = 0.169781983,4.66537857,-5.28006268
 	attPos = 0,0,0
 	attPos0 = -1.90734909E-06,-1.43040466,-1.13686865E-13
 	rot = -4.49206934E-22,-1.78813934E-07,-6.81297537E-21,-1.00000024
@@ -30203,8 +33243,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4291146800
 	partName = Part
-	persistentId = 4173713599
-	pos = 0.169781983,3.56107712,-5.28021908
+	persistentId = 2793992716
+	pos = 0.169781983,3.56107712,-5.28025913
 	attPos = 0,0,0
 	attPos0 = 0,-1.10430145,0
 	rot = -4.49206934E-22,-1.78813934E-07,-6.81297537E-21,-1.00000024
@@ -30497,8 +33537,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4291146640
 	partName = Part
-	persistentId = 4126555347
-	pos = 1.36360693,3.70107651,-5.77492142
+	persistentId = 3824009534
+	pos = 1.36361074,3.70107651,-5.7749691
 	attPos = 0,0,0
 	attPos0 = 1.19353795,-0.964302063,-0.494379997
 	rot = 5.98942832E-22,-0.130526304,-2.17116796E-21,-0.991445184
@@ -30791,8 +33831,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4291146480
 	partName = Part
-	persistentId = 492049460
-	pos = 0.664309621,3.70107651,-6.47398043
+	persistentId = 4266872360
+	pos = 0.664313436,3.70107651,-6.4740243
 	attPos = 0,0,0
 	attPos0 = 0.494379014,-0.964302063,-1.19353795
 	rot = -3.13509126E-21,-0.608762383,-7.64588001E-21,-0.793353081
@@ -31085,11 +34125,11 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4291146320
 	partName = Part
-	persistentId = 1445236609
-	pos = -0.324751854,3.70107651,-6.47385693
+	persistentId = 2782259318
+	pos = -0.324755669,3.70107651,-6.47389698
 	attPos = 0,0,0
 	attPos0 = -0.494379967,-0.964302063,-1.193537
-	rot = 5.80225901E-22,-0.866025984,-2.8075441E-22,-0.499999702
+	rot = 4.86641048E-22,-0.866025984,-1.87169657E-22,-0.499999702
 	attRot = 0,0.866025448,0,0.49999997
 	attRot0 = 0,0.866025448,0,0.49999997
 	mir = 1,1,1
@@ -31379,8 +34419,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4291146160
 	partName = Part
-	persistentId = 2446629348
-	pos = -1.02410698,3.70107651,-5.77480412
+	persistentId = 2646985732
+	pos = -1.0241127,3.70107651,-5.77484417
 	attPos = 0,0,0
 	attPos0 = -1.19353795,-0.964302063,-0.494379014
 	rot = 3.21931788E-21,-0.991445184,4.86641058E-21,-0.130525589
@@ -31673,8 +34713,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4291146000
 	partName = Part
-	persistentId = 2209785786
-	pos = -1.02402759,3.70107651,-4.78582907
+	persistentId = 1769578917
+	pos = -1.0240314,3.70107651,-4.78586912
 	attPos = 0,0,0
 	attPos0 = -1.19353795,-0.964302063,0.494378
 	rot = 5.98942781E-22,-0.965926111,5.31561771E-21,0.25881952
@@ -31967,8 +35007,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4291145840
 	partName = Part
-	persistentId = 703415278
-	pos = -0.324759245,3.70107651,-4.08664179
+	persistentId = 2969915793
+	pos = -0.324761152,3.70107651,-4.08668375
 	attPos = 0,0,0
 	attPos0 = -0.49438104,-0.964302063,1.193537
 	rot = -8.46942636E-21,0.793353081,3.65916592E-21,-0.608762383
@@ -32261,11 +35301,11 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4291145680
 	partName = Part
-	persistentId = 482902343
-	pos = 0.664322734,3.70107651,-4.08671331
+	persistentId = 3108124376
+	pos = 0.664324641,3.70107651,-4.08675718
 	attPos = 0,0,0
 	attPos0 = 0.494379014,-0.964302063,1.19353795
-	rot = -5.6150887E-22,-0.499999702,-1.12301734E-22,0.866025984
+	rot = -6.55093724E-22,-0.499999702,-2.05886587E-22,0.866025984
 	attRot = 0,0.50000006,0,-0.866025388
 	attRot0 = 0,0.50000006,0,-0.866025388
 	mir = 1,1,1
@@ -32555,8 +35595,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4291145520
 	partName = Part
-	persistentId = 3420877112
-	pos = 1.36361742,3.70107651,-4.78575802
+	persistentId = 2985094737
+	pos = 1.36362314,3.70107651,-4.78579807
 	attPos = 0,0,0
 	attPos0 = 1.193537,-0.964302063,0.494380027
 	rot = -1.68452706E-21,-0.130525589,3.63109146E-21,0.991445184
@@ -32849,8 +35889,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4290025842
 	partName = Part
-	persistentId = 246335560
-	pos = 1.99187613,5.84570313,-5.28002977
+	persistentId = 3264755581
+	pos = 1.99188185,5.84570313,-5.28006411
 	attPos = 0,0,0
 	attPos0 = 1.82202053,1.18032455,-1.07288338E-06
 	rot = -2.99673218E-07,0.707107008,2.99673218E-07,0.707107008
@@ -33000,8 +36040,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4290025258
 	partName = Part
-	persistentId = 3661570147
-	pos = -1.65231395,5.84570313,-5.28003073
+	persistentId = 369994726
+	pos = -1.65231967,5.84570313,-5.28006506
 	attPos = 0,0,0
 	attPos0 = -1.82202053,1.18032455,-2.74181298E-06
 	rot = 2.99673275E-07,0.707106948,2.99673275E-07,-0.707107067
@@ -33151,8 +36191,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4290025150
 	partName = Part
-	persistentId = 3436014469
-	pos = 0.169781506,5.85560226,-7.10802841
+	persistentId = 2744127938
+	pos = 0.169781506,5.85560226,-7.10807323
 	attPos = 0,0,0
 	attPos0 = 5.96002735E-07,1.19022369,-1.82786763
 	rot = 0,1.00000024,-4.62288E-07,0
@@ -33302,8 +36342,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4290024500
 	partName = Part
-	persistentId = 2404079774
-	pos = 0.16978246,5.83037186,-3.45497131
+	persistentId = 144409088
+	pos = 0.16978246,5.83037186,-3.45500183
 	attPos = 0,0,0
 	attPos0 = -3.57671439E-07,1.16499329,1.82500637
 	rot = -3.65038147E-07,1.1920929E-07,4.26325641E-14,1.00000024
@@ -33453,8 +36493,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4291120698
 	partName = Part
-	persistentId = 1643488137
-	pos = 0.169781506,43.7987175,-7.09928083
+	persistentId = 1145938877
+	pos = 0.169781506,43.7987175,-7.09930182
 	attPos = 0,0,0
 	attPos0 = 6.39934399E-07,18.8729286,-1.8194747
 	rot = -2.54109884E-21,1.00000024,7.0427232E-15,0
@@ -33604,8 +36644,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4291112864
 	partName = Part
-	persistentId = 845842148
-	pos = 1.99754858,43.7797813,-5.27951097
+	persistentId = 2417781167
+	pos = 1.99755335,43.7797813,-5.27952242
 	attPos = 0,0,0
 	attPos0 = 1.82760274,18.8539925,-1.1920924E-07
 	rot = 6.55629706E-16,0.707106829,-6.55634788E-16,0.707107186
@@ -33755,8 +36795,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4291110914
 	partName = Part
-	persistentId = 3786090252
-	pos = -1.65879846,43.789135,-5.27951193
+	persistentId = 1991513998
+	pos = -1.65880227,43.789135,-5.27952337
 	attPos = 0,0,0
 	attPos0 = -1.82842481,18.8633461,-2.74181252E-06
 	rot = -6.55615518E-16,0.707107186,-6.55615518E-16,-0.707106829
@@ -33906,8 +36946,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4291102152
 	partName = Part
-	persistentId = 763312701
-	pos = 0.169783175,43.7761765,-3.46122909
+	persistentId = 2035142229
+	pos = 0.169783175,43.7761765,-3.46123743
 	attPos = 0,0,0
 	attPos0 = 3.14276122E-07,18.8503876,1.81818867
 	rot = -2.30966669E-11,-2.68220901E-07,7.80625564E-18,-1.00000024
@@ -34057,8 +37097,8 @@ PART
 {
 	part = launchClamp1_4290988774
 	partName = Part
-	persistentId = 1012977882
-	pos = 2.80276895,8.8288269,-1.03926682
+	persistentId = 2938855266
+	pos = 2.80277228,8.8288269,-1.03926682
 	attPos = 0,0,0
 	attPos0 = -7.10542939E-14,-16.0597382,2.63290524
 	rot = 4.97995657E-15,0.707106888,4.97995657E-15,-0.707106888
@@ -34268,45 +37308,6 @@ PART
 	}
 	MODULE
 	{
-		name = ModuleAnimateGeneric
-		isEnabled = True
-		aniState = LOCKED
-		animSwitch = True
-		animTime = 0
-		animSpeed = 1
-		deployPercent = 100
-		animationIsDisabled = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		AXISGROUPS
-		{
-			deployPercent
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -34341,7 +37342,7 @@ PART
 {
 	part = PMB.Rockomax16.BW_4291172188
 	partName = Part
-	persistentId = 3210881183
+	persistentId = 3411539809
 	pos = 0.16978389,7.08856201,-1.03926659
 	attPos = 0,2.0929184,0
 	attPos0 = 0,-19.8929214,0
@@ -35227,7 +38228,7 @@ PART
 {
 	part = PMB.batteryBankLarge_4291172124
 	partName = Part
-	persistentId = 3373960366
+	persistentId = 2141473338
 	pos = 0.16978389,6.05855942,-1.03926468
 	attPos = 0,0,0
 	attPos0 = -1.90734863E-06,-1.03000259,-1.13686865E-13
@@ -35359,7 +38360,7 @@ PART
 {
 	part = KK.SPX.F9.Octaweb_4294617648
 	partName = Part
-	persistentId = 1623615245
+	persistentId = 3402540509
 	pos = 0.16978389,4.62815475,-1.03926468
 	attPos = 0,0,0
 	attPos0 = 2.27373675E-13,-1.43040466,2.2737373E-13
@@ -35703,7 +38704,7 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4294615978
 	partName = Part
-	persistentId = 1317315230
+	persistentId = 3607116393
 	pos = 0.16978389,3.5238533,-1.03926468
 	attPos = 0,0,0
 	attPos0 = 0,-1.10430145,0
@@ -36004,8 +39005,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4294615162
 	partName = Part
-	persistentId = 1248738386
-	pos = -0.324676871,3.66385269,-2.23300171
+	persistentId = 3027781430
+	pos = -0.324678779,3.66385269,-2.23300552
 	attPos = 0,0,0
 	attPos0 = 1.19353795,-0.964302063,-0.494379997
 	rot = 0,0.793353498,0,0.608761609
@@ -36305,8 +39306,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4294614724
 	partName = Part
-	persistentId = 2652807970
-	pos = -1.02392268,3.66385269,-1.53372061
+	persistentId = 4017119716
+	pos = -1.02392554,3.66385269,-1.53372204
 	attPos = 0,0,0
 	attPos0 = 0.494379014,-0.964302063,-1.19353795
 	rot = 0,0.991445065,0,0.130526185
@@ -36606,8 +39607,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4294614162
 	partName = Part
-	persistentId = 1551974375
-	pos = -1.02395964,3.66385269,-0.54479301
+	persistentId = 2923288062
+	pos = -1.02396441,3.66385269,-0.544791579
 	attPos = 0,0,0
 	attPos0 = -0.494379967,-0.964302063,-1.193537
 	rot = 0,0.965926111,0,-0.258819282
@@ -36907,8 +39908,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4294613744
 	partName = Part
-	persistentId = 2762827185
-	pos = -0.324676812,3.66385269,0.154496431
+	persistentId = 225714334
+	pos = -0.324678719,3.66385269,0.154500246
 	attPos = 0,0,0
 	attPos0 = -1.19353795,-0.964302063,-0.494379014
 	rot = 0,0.793353438,0,-0.608761668
@@ -37208,8 +40209,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4294613336
 	partName = Part
-	persistentId = 1638104939
-	pos = 0.664242506,3.66385269,0.154474735
+	persistentId = 173350232
+	pos = 0.664244413,3.66385269,0.15447855
 	attPos = 0,0,0
 	attPos0 = -1.19353795,-0.964302063,0.494378
 	rot = 0,0.500000119,0,-0.866025567
@@ -37509,8 +40510,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4294612938
 	partName = Part
-	persistentId = 547295092
-	pos = 1.36353755,3.66385269,-0.544806838
+	persistentId = 3806128885
+	pos = 1.36354041,3.66385269,-0.544805408
 	attPos = 0,0,0
 	attPos0 = -0.49438104,-0.964302063,1.193537
 	rot = 0,-0.130526066,0,0.991445065
@@ -37810,8 +40811,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4294612550
 	partName = Part
-	persistentId = 2563879024
-	pos = 1.36352611,3.66385269,-1.53372717
+	persistentId = 3209208320
+	pos = 1.36353087,3.66385269,-1.5337286
 	attPos = 0,0,0
 	attPos0 = 0.494379014,-0.964302063,1.19353795
 	rot = 0,-0.258819133,0,-0.965926051
@@ -38111,8 +41112,8 @@ PART
 {
 	part = PMB.F9.Merlin1Dplusplus_4294612172
 	partName = Part
-	persistentId = 3456406787
-	pos = 0.664244473,3.66385269,-2.23302317
+	persistentId = 100022454
+	pos = 0.66424638,3.66385269,-2.23302698
 	attPos = 0,0,0
 	attPos0 = 1.193537,-0.964302063,0.494380027
 	rot = 0,-0.608761668,0,-0.793353438
@@ -38412,8 +41413,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4290027118
 	partName = Part
-	persistentId = 277371704
-	pos = 1.98566747,5.81304932,-1.03926492
+	persistentId = 2574907783
+	pos = 1.98567128,5.81304932,-1.03926492
 	attPos = 0,0,0
 	attPos0 = 0,1.18489456,1.81583595
 	rot = -2.92503984E-07,0.707106888,2.92503984E-07,0.707106888
@@ -38565,8 +41566,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4290026108
 	partName = Part
-	persistentId = 3504063784
-	pos = 0.169783771,5.81304932,-2.85514784
+	persistentId = 790511847
+	pos = 0.169783771,5.81304932,-2.85515165
 	attPos = 0,0,0
 	attPos0 = 1.81583583,1.18489456,1.19209318E-07
 	rot = 0,1.00000024,4.13663116E-07,0
@@ -38718,8 +41719,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4290026036
 	partName = Part
-	persistentId = 1223443945
-	pos = -1.64609528,5.81304932,-1.03926432
+	persistentId = 368783935
+	pos = -1.64609861,5.81304932,-1.03926432
 	attPos = 0,0,0
 	attPos0 = -1.19209062E-07,1.18489456,-1.81583595
 	rot = 2.92503984E-07,0.707106829,2.92503984E-07,-0.707106948
@@ -38871,8 +41872,8 @@ PART
 {
 	part = KK.F9demo.S1RCS_4290025964
 	partName = Part
-	persistentId = 20528431
-	pos = 0.169784248,5.81304932,0.776616812
+	persistentId = 196464195
+	pos = 0.169784248,5.81304932,0.776620388
 	attPos = 0,0,0
 	attPos0 = -1.81583583,1.18489456,1.19209318E-07
 	rot = 4.13663116E-07,0,0,-1.00000024
@@ -39024,7 +42025,7 @@ PART
 {
 	part = Vandy.F9_4292493348
 	partName = Part
-	persistentId = 2173582804
+	persistentId = 2124416562
 	pos = 0.16978389,1.12815475,-1.03926468
 	attPos = 0,-0.5,0
 	attPos0 = 0.169799805,1.1282196,-1.03926468
@@ -39293,8 +42294,8 @@ PART
 {
 	part = 4mv.vl.sensor.accelerometer.srf.1_4291678296
 	partName = Part
-	persistentId = 3540156275
-	pos = 0.138168901,8.00856018,-1.05751944
+	persistentId = 1435000236
+	pos = 0.138168782,8.00856018,-1.05751944
 	attPos = 7.10542939E-14,0.00117492676,-0.129804015
 	attPos0 = 0.0182528477,0.919998169,-0.0316148847
 	rot = 0,0.707107067,-0.707106829,1.78813934E-07
@@ -39495,8 +42496,8 @@ PART
 {
 	part = 4mv.vl.sensor.accelerometer.srf.1_4291145302
 	partName = Part
-	persistentId = 932833284
-	pos = 0.169781983,8.045784,-5.23294544
+	persistentId = 1071139232
+	pos = 0.169781983,8.045784,-5.23297405
 	attPos = -0.118420362,0.0487785339,-1.43052512E-06
 	attPos0 = 0.046826385,0.919998169,7.45058149E-09
 	rot = -8.94069672E-08,0.707107067,-0.707106829,-1.78813934E-07
@@ -39697,11 +42698,11 @@ PART
 {
 	part = 4mv.vl.sensor.accelerometer.srf.1_4291678692
 	partName = Part
-	persistentId = 218355154
-	pos = 0.188774899,8.045784,3.22023201
+	persistentId = 2584966244
+	pos = 0.188774899,8.045784,3.22026062
 	attPos = 0.120901346,0.00105285645,-3.33787284E-06
 	attPos0 = -0.0189924203,0.919998169,0.0189895537
-	rot = -2.98023224E-08,0.707107186,-0.707106829,0
+	rot = -2.98023224E-08,0.707107186,-0.707106829,-1.49011612E-07
 	attRot = 0,0,0,1
 	attRot0 = 0.49999994,0.5,-0.49999994,0.500000238
 	mir = 1,1,1
