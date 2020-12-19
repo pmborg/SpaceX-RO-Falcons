@@ -1,18 +1,24 @@
-# RELEASE 1 - On development:
-**[on development]** <br>
--- [KSP] Checking Compatability with KSP1.11<br>
--- [F9+CD2] Improve the Acurancy of ST-1 when latitude is off nominal trajectory.<br>
--- [FH] Landing Both FH ST-1 Boosters at the same time on LZ-1 and LZ-2<br>
+# RELEASE 1 - 
+What is on development [Not Available yet]:
+
+-- [F9+CD2] Improve the Acurancy of ST-1 when latitude is off nominal trajectory. **(Already work! tunning it...)**<br>
+-- [FH] Landing Both FH ST-1 Boosters at the same time on LZ-1 and LZ-2. **(Already work! tunning it...)**<br>
 
 ----
 
 # SpaceX-RO-Falcons
 This KSP (**Kerbal Space Program**) addon, works ontop of [kks-spacex-pack mod](https://forum.kerbalspaceprogram.com/index.php?/topic/193933-1101-kks-spacex-pack-v65-01112020/) for KSP.<br>
-The **SpaceX-RO-Falcons** Mod Introduce a Realistic Performance of SpaceX Falcon Family to KSP users.<br>
+The **SpaceX-RO-Falcons** Mod Introduce: 
+* A realistic Performance of SpaceX Falcon Family to KSP users.<br>
+* WORK on KSP (1.9.x, 1.10.x, and 1.11.x)
+* Expand the physics of KSP to allow multiple ships flying at the same time, but with high performance.<br>
+
 <br>
-**Supported versions are:**
+**Supported versions are:** <br>
+
 - KSP 1.9.1 (include original ISS)<br>
 - KSP 1.10.1 (now with ISS for KSP 1.10.1)<br>
+- KSP 1.11.0<br>
 
 ----
 **CURRENT FLEET:**
@@ -95,6 +101,12 @@ Rename directory:<br>
 <h2>YouTube video demos Playlist:</h2>
 
 [![YouTube video Demos](blob:https://imgur.com/2e364972-9526-46f9-be95-8cb1b43dc7d2)](https://www.youtube.com/playlist?list=PLKyZSZ3Rbi6afgvRnMc2XUgyUA8dcYNkP)
+
+
+# Falcon 9 Mission Video:
+[![Falcon 9 Mission - How it works?](https://i.imgur.com/l2MbG4p.png)](https://www.youtube.com/watch?v=ktnvzGVYlrM)
+
+----
 
 **Crew Dragon Launch:**
 ![!](https://i.imgur.com/AVH8tmX.png)
