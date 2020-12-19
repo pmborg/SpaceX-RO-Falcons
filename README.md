@@ -1,6 +1,5 @@
 # RELEASE 1 - On development:
 **[on development]** <br>
--- [KSP] Checking Compatability with KSP1.11<br>
 -- [F9+CD2] Improve the Acurancy of ST-1 when latitude is off nominal trajectory.<br>
 -- [FH] Landing Both FH ST-1 Boosters at the same time on LZ-1 and LZ-2<br>
 
@@ -13,6 +12,7 @@ The **SpaceX-RO-Falcons** Mod Introduce a Realistic Performance of SpaceX Falcon
 **Supported versions are:**
 - KSP 1.9.1 (include original ISS)<br>
 - KSP 1.10.1 (now with ISS for KSP 1.10.1)<br>
+- KSP 1.11.0<br>
 
 ----
 **CURRENT FLEET:**
