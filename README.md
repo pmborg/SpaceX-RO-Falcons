@@ -10,15 +10,39 @@ What is on development [Not Available yet]:
 This KSP (**Kerbal Space Program**) addon, works ontop of [kks-spacex-pack mod](https://forum.kerbalspaceprogram.com/index.php?/topic/193933-1101-kks-spacex-pack-v65-01112020/) for KSP.<br>
 The **SpaceX-RO-Falcons** Mod Introduce: 
 * A realistic Performance of SpaceX Falcon Family to KSP users.<br>
-* WORK on KSP (1.9.x, 1.10.x, and 1.11.x)
 * Expand the physics of KSP to allow multiple ships flying at the same time, but with high performance.<br>
+* Supported crafts:<br>
+───ISS<br>
+│       PMB ISS HT2 & TANTARES KSP1_10.craft<br>
+│       PMB ISS HT2 & TANTARES.craft<br>
+│<br>
+├───NASA<br>
+│       LEM.craft (not included)<br>
+│       PMBT-SpaceX Falcon Heavy v1_2 Block-5 LEM.craft (not included)<br>
+│<br>
+└───SpaceX<br>
+&nbsp;&nbsp;&nbsp;   ├───Crew Dragon 2<br>
+&nbsp;&nbsp;&nbsp;   │       PMB-SpaceX Crew Dragon 2.craft<br>
+&nbsp;&nbsp;&nbsp;   │<br>
+&nbsp;&nbsp;&nbsp;   ├───Falcon 1 (2006-2010)<br>
+&nbsp;&nbsp;&nbsp;   │       PMBT-SpaceX Falcon 1 (Merlin 1A).craft<br>
+&nbsp;&nbsp;&nbsp;   │       PMBT-SpaceX Falcon 1 (Merlin 1C).craft<br>
+&nbsp;&nbsp;&nbsp;   │<br>
+&nbsp;&nbsp;&nbsp;   ├───Falcon 9 (2010-2018)<br>
+&nbsp;&nbsp;&nbsp;   │       PMBT-SpaceX Falcon 9 v1_0.craft<br>
+&nbsp;&nbsp;&nbsp;   │       PMBT-SpaceX Falcon 9 v1_1 Block-2.craft<br>
+&nbsp;&nbsp;&nbsp;   │       PMBT-SpaceX Falcon 9 v1_2 Block-3.craft<br>
+&nbsp;&nbsp;&nbsp;   │       PMBT-SpaceX Falcon 9 v1_2 Block-4.craft<br>
+&nbsp;&nbsp;&nbsp;   │<br>
+&nbsp;&nbsp;&nbsp;   └───Falcon 9&FH v1.2 Block-5<br>
+&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   PMBT-SpaceX Falcon 9 v1_2 Block-5 Crew Dragon 2.craft<br>
+&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   PMBT-SpaceX Falcon 9 v1_2 Block-5.craft<br>
+&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   PMBT-SpaceX Falcon Heavy v1_2 Block-5.craft<br>
 
-<br>
-**Supported versions are:** <br>
-
-- KSP 1.9.1 (include original ISS)<br>
-- KSP 1.10.1 (now with ISS for KSP 1.10.1)<br>
-- KSP 1.11.0<br>
+**Supported versions are:**
+* KSP 1.9.1 (include original ISS)<br>
+* KSP 1.10.1 (now with ISS for KSP 1.10.1)<br>
+* KSP 1.11.0<br>
 
 ----
 **CURRENT FLEET:**
