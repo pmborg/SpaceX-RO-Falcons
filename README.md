@@ -8,7 +8,11 @@ What is on development [Not Available yet]:
 
 # SpaceX-RO-Falcons
 This KSP (**Kerbal Space Program**) addon, works ontop of [kks-spacex-pack mod](https://forum.kerbalspaceprogram.com/index.php?/topic/193933-1101-kks-spacex-pack-v65-01112020/) for KSP.<br>
-The **SpaceX-RO-Falcons** Mod Introduce a Realistic Performance of SpaceX Falcon Family to KSP users.<br>
+The **SpaceX-RO-Falcons** Mod Introduce: 
+* A realistic Performance of SpaceX Falcon Family to KSP users.<br>
+* WORK on KSP (1.9.x, 1.10.x, and 1.11.x)
+* Expand the physics of KSP to allow multiple ships flying at the same time, but with high performance.<br>
+
 <br>
 **Supported versions are:**
 - KSP 1.9.1 (include original ISS)<br>
