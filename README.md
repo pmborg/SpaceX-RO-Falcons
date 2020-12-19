@@ -1,8 +1,8 @@
 # RELEASE 1 - On development:
 **[on development]** <br>
+-- [KSP] Checking Compatability with KSP1.11
 -- [F9+CD2] Improve the Acurancy of ST-1 when latitude is off nominal trajectory.<br>
 -- [FH] Landing Both FH ST-1 Boosters at the same time on LZ-1 and LZ-2<br>
--- [ISS] New ISS Model for KSP1.10<br>
 
 ----
 
