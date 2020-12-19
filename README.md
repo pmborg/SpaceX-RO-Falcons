@@ -14,7 +14,8 @@ The **SpaceX-RO-Falcons** Mod Introduce:
 * Expand the physics of KSP to allow multiple ships flying at the same time, but with high performance.<br>
 
 <br>
-**Supported versions are:**
+**Supported versions are:** <br>
+
 - KSP 1.9.1 (include original ISS)<br>
 - KSP 1.10.1 (now with ISS for KSP 1.10.1)<br>
 - KSP 1.11.0<br>
