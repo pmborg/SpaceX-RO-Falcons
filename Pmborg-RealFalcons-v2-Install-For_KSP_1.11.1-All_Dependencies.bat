@@ -125,6 +125,9 @@ REM INSTALL: ISS (International SpaceStation) Dep-1:
 	move GameData\FerramAerospaceResearch %NONEED%
 	REM move GameData\EngineGroupController %NONEED%
 
+	REM FIX: TrajectoriesMod for KSP 1.11
+	copy /Y GameData\Trajectories\Plugin\Trajectories110.bin GameData\Trajectories\Plugin\Trajectories111.bin
+
 	PAUSE
 :No
 	EXIT
