@@ -131,6 +131,8 @@ Rename directory:<br>
 [![Falcon 9 Mission - How it works?](https://i.imgur.com/l2MbG4p.png)](https://www.youtube.com/watch?v=ktnvzGVYlrM)
 
 ----
+**Earth with Real Solar System Mod:**
+![!](https://i.imgur.com/7XuzhOa.png)
 
 **Crew Dragon Launch:**
 ![!](https://i.imgur.com/AVH8tmX.png)
