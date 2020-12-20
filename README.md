@@ -40,9 +40,9 @@ The **SpaceX-RO-Falcons** Mod Introduce:
 &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   PMBT-SpaceX Falcon Heavy v1_2 Block-5.craft<br>
 
 **Supported versions are:**
-* KSP 1.9.1 (include original ISS)<br>
-* KSP 1.10.1 (now with ISS for KSP 1.10.1)<br>
-* KSP 1.11.0<br>
+* **KSP 1.9.1** (include original ISS)<br>
+* **KSP 1.10.1** (now with ISS for KSP 1.10.1)<br>
+* KSP 1.11.0 (There is a show stopper **FATAL ERROR** for this release, so not ready yet to USE)<br>
 
 ----
 **CURRENT FLEET:**
