@@ -12,6 +12,7 @@
 // --------------------------------------------------------------------------------------------
 CLEARSCREEN.
 RUNPATH( "boot/sw-version.c" ).
+set STAGE_1_TYPE to "ST-2".
 print "".print "".print "".
 
 function STAGE2_DEORBIT
@@ -50,13 +51,13 @@ function STAGE2_DEORBIT
 	print " ".
 }
 
-update_phase_title("STAGE 2 - Loading...", 0, false).
-WAIT 5.
+update_phase_title("STAGE 2 - Loading...", 0, true).
+WAIT 1.
 
-update_phase_title("STAGE 2 - W8-4-SEP", 0, false).
+update_phase_title("STAGE 2 - WAIT FOR SEP", 0, true).
 WAIT UNTIL STAGE:NUMBER < 2.
 
-update_phase_title("STAGE 2 - RETROGRADE", 0, false).
+update_phase_title("STAGE 2 - RETROGRADE", 0, true).
 SAS OFF.
 RCS ON.
 LOCK STEERING TO SHIP:RETROGRADE.//  + R(0,0,180).

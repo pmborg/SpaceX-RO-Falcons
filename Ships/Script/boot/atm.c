@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used go get more realistic data from Planet Earth Atmosphere.
-// 12/Dez/2020
+// 21/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 // --------------------------------------------------------------------------------------------
@@ -90,6 +90,17 @@ function Pressure						//<=======================================PRESSURE (Pa)do
 	// PRINT h+": Temperature: "+ROUND (Temperature(h),1) + " Pressure: "+( ROUND (Pressure(h)/100,2))+" (hPa)".
 // }
 
+function display_speed_kmh
+{
+	parameter h0.
+	parameter v0.
+	parameter indice.
+	
+	PRINT "Altitude: "		 	at (0,indice+0).	PRINT ROUND(h0/1000,1)+" km   "		 	at (22,indice+0).
+	PRINT "Speed: "				at (0,indice+1).	PRINT ROUND(v0*3.6,1)+" km/h   "		at (22,indice+1).	
+	
+}
+
 // --------------------------------------------------------------------------------------------
 // Algorithm-2:
 // --------------------------------------------------------------------------------------------
@@ -100,8 +111,7 @@ function update_atmosphere
 	parameter v0.
 	set indice to 20.
 	
-	PRINT "Altitude: "		 	at (0,indice+0).	PRINT ROUND(h0/1000,1)+" km   "		 	at (22,indice+0).
-	PRINT "Speed: "				at (0,indice+1).	PRINT ROUND(v0*3.6,1)+" km/h   "		at (22,indice+1).	
+	display_speed_kmh (h0, v0, indice).
 	
 	if ROUND(BODY:ATM:ALTITUDEPRESSURE(h0),4) = 0 and ROUND(BODY:ATM:ALTITUDETEMPERATURE(h0),1) = 0
 	{
@@ -182,7 +192,6 @@ function update_atmosphere
 	PRINT "Mach Number: "		at (0,indice+7).
 	PRINT "Dynamic Pressure: "	at (0,indice+8).
 	
-	//set indice to 22.
 	PRINT ROUND(tempVal,1)+" Cº   "			at (22,indice+3).
 	PRINT ROUND(rhoVal,3)+" kg/m^3   "		at (22,indice+4).
 	PRINT ROUND(pVal,3)+" (hPa)     "		at (22,indice+5).

@@ -163,8 +163,11 @@ function update_phase_title
 	if STAGE_1_TYPE = "ST-1" 		//FH
 		PRINT "(ST-1)" at (44,1).
 	else 
-	if STAGE_1_TYPE = "MAIN" 		//ST-2
+	if STAGE_1_TYPE = "ST-2" 		
 		PRINT "(ST-2)" at (44,1).
+	else 
+	if STAGE_1_TYPE = "MAIN" 		//MAIN CPU
+		PRINT "(MAIN)" at (44,1).
 		
 	if status <> "PRELAUNCH" and play_sound = 1
 	{

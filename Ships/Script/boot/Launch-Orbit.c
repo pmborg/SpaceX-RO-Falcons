@@ -245,12 +245,12 @@ if alt:radar < 100
 	{
 		if machVal > 0.8 and mphase = 0
 		{
-			update_phase_title("[3](Transonic Fligth)", 0, false).
+			update_phase_title("[3] Transonic Fligth", 0, false).
 			set mphase to 1.
 		}
 		if machVal > 1.2 and mphase = 1
 		{
-			update_phase_title("[4](Falcon is SuperSonic)",1, false).
+			update_phase_title("[4] Falcon is SuperSonic",1, false).
 			set mphase to 2.
 		}
 		
@@ -566,10 +566,7 @@ if altitude*1.1 < FINAL_ORBIT2
 		
 		update_orbit_status().
 		set vel to SQRT(Vs2).
-		// if ROUND(BODY:ATM:ALTITUDEPRESSURE(altitude),4) > 0 or ROUND(BODY:ATM:ALTITUDETEMPERATURE(altitude),1) > 0
-		{
-			update_atmosphere (altitude, vel).
-		}
+		update_atmosphere (altitude, vel).
 		log_data (vel).
 		check_if_we_need_new_stage().
 		
