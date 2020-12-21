@@ -9,9 +9,15 @@ What is on development [Not yet Available]<br>
 # SpaceX-RO-Falcons
 This KSP (**Kerbal Space Program**) addon, works ontop of [kks-spacex-pack mod](https://forum.kerbalspaceprogram.com/index.php?/topic/193933-1101-kks-spacex-pack-v65-01112020/) for KSP.<br>
 The **SpaceX-RO-Falcons** Mod Introduce: 
-* A realistic Performance of SpaceX Falcon Family to KSP users.<br>
+* A realistic Performance of SpaceX Falcon family to KSP users.<br>
 * Expand the physics of KSP to allow multiple ships flying at the same time, but with high performance.<br>
-* Supported crafts:<br>
+* All parts to create all the Falcon rocket family are available.
+* LEO and GSO Payloads are allowed.
+* Land or Sea landings is a *User Choise*.
+* Faring separation.
+* ST-2 Deorbit.
+* In resume all types of missions are coded in KOS.
+* **Supported crafts:**<br>
 ───ISS<br>
 │       PMB ISS HT2 & TANTARES KSP1_10.craft<br>
 │       PMB ISS HT2 & TANTARES.craft<br>
