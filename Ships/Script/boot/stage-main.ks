@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used before main.c, to distribute tasks among all Processors.
-// 13/Dez/2020
+// 21/Dez/2020
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 core:doaction("Open Terminal", true).
@@ -16,6 +16,7 @@ CLEARSCREEN.
 
 DELETEPATH("LOG.txt").
 DELETEPATH("MAIN_SHIP.txt").
+DELETEPATH("SLAVE.TXT").
 RUNPATH( "boot/sw-version.c" ).
 LOG  "SET SLAVE_STAGE to 0." to SLAVE.TXT.
 
@@ -60,6 +61,7 @@ PRINT "List CPU Stages:".
 	}
 }
 
+// SELECT LANDING ZONE: -------------------------------------------------------
 if vehicle_type = "Falcon Heavy"
 {
 	// 1=LandZone:    LZ-1
@@ -78,14 +80,14 @@ if vehicle_type = "Falcon Heavy"
 } 
 else if vehicle_type = "Crew Dragon 2"
 {
-	IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(101) //JRTI
-	  WAIT 0.1.	
+	IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(101) WAIT 0.1.	//JRTI
 } 
 else if vehicle_type = "F9v1.2B5"
 {
-	IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(100)	//OCISLY
-	  WAIT 0.1.	
+	if STAGE1_LAND_ON = "LAND"
+		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(1)  WAIT 0.1.	//LZ-1   F9 landing Zone
+	else
+		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(100) WAIT 0.1.	//OCISLY F9 Drone-Ship
 }
-
 
 RUNPATH( "boot/main.c" ).

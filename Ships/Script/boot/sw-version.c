@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------
-// Filename: sw-version.cpp
+// Filename: sw-version.c
 // --------------------------------------------------------------------------------------------
 // KOS Scripts for KSP to be used on SpaceX_Launch_Vehicles Mod with (Pmborg RO Version) 
 // --------------------------------------------------------------------------------------------
@@ -8,11 +8,11 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to specify the SW version and the diferent types of profiles supported.
-// 20/Dez/2020
+// 21/Dez/2020
 // --------------------------------------------------------------------------------------------
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //             #.YY.MM.DD
-PRINT "SW-Ver: 1.20.12.20" at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
+PRINT "SW-Ver: 1.20.12.21" at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 
 //https://ksp-kos.github.io/KOS/structures/misc/loaddistance.html#attribute:SITUATIONLOADDISTANCE:UNLOAD
 //MAGIC LINES! Extend Physics:
@@ -47,6 +47,9 @@ WAIT 0.001.
 SET KUNIVERSE:DEFAULTLOADDISTANCE:SPLASHED:PACK TO 		9999.
 SET KUNIVERSE:DEFAULTLOADDISTANCE:SPLASHED:UNPACK TO 	9000.
 WAIT 0.001.
+
+//This file is to allow Final USER to do some customizations at flight profile:
+runpath("boot/USER-CONFIG.KS").
 
 // GLOBALS:
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -142,7 +145,10 @@ if vehicle_type = "F9v1.2B5"
 {
 	// Data from: SpaceX CRS-16:
 	declare global Qmax 	to 16344/1.2.
-	declare global MECO1 	to 2080^2. //2180*
+	if STAGE1_LAND_ON = "LAND"
+		declare global MECO1 	to 1700^2.
+	else
+		declare global MECO1 	to 2080^2. //2180*
 	declare global FAIRSEP 	to 160*1000.
 }else
 if vehicle_type = "F1-M1"

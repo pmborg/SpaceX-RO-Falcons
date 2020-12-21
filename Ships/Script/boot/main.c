@@ -105,7 +105,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		}
 	}
 	
-	LOG  STAGE_1_TYPE+" REBOOT FIR FUEL" to LOG.TXT.
+	LOG  STAGE_1_TYPE+" REBOOT FOR RE-FUEL" to LOG.TXT.
 	reboot. // Re-Fuel...
 }
 

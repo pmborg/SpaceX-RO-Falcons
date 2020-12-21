@@ -123,7 +123,7 @@ function ReEntryburn
 {
 	parameter safe_alt.
 	parameter safe_power to 1.
-	parameter maxDescendSpeed to 100.	//Due Terminal Speed don't use another above value.
+	parameter maxDescendSpeed to -200.	//Due Terminal Speed don't use another above value.
 	
 	update_phase_title("WAIT4RE-ENTRY BURN", 1).
 	set x to 0.
@@ -148,14 +148,16 @@ function ReEntryburn
 				SET thrust to safe_power .
 			}
 			
-			// if impactDist < 2000
-				// SET thrust to 0.5.
-			
-			if impactDist > 250
+			if STAGE1_LAND_ON = "LAND"
+				steerToTarget(87.5, 0, 0). 				// Minor Correction
+			else
 			{
-				steerToTarget(steeringPitch, 0, 0). // Fast Correction
-			} else {
-				steerToTarget(82.5, 0, 0). 			// Slower Correction
+				if impactDist > 250
+				{
+					steerToTarget(steeringPitch, 0, 0). // Fast Correction
+				} else {
+					steerToTarget(82.5, 0, 0). 			// Slower Correction
+				}
 			}
 		} else {
 			lock steering to retrograde.
@@ -163,7 +165,7 @@ function ReEntryburn
 		}
 		
 		PRINT_STATUS (3).
-		if SHIP:VERTICALSPEED >-200 and (impactDist > prev_impactDist)
+		if SHIP:VERTICALSPEED > maxDescendSpeed and (impactDist > prev_impactDist)
 		{
 			SET thrust to 0.
 			LOCK STEERING TO HEADING(270,0, -270).
@@ -254,12 +256,21 @@ function waitAndDoReEntryburn
 	// Major Correction:
 	PRINT_STATUS(3).
 
-	if mass*1000 > 50000
-		set burnAlt to 35000.
+	if STAGE1_LAND_ON = "LAND"
+	{
+		set burnAlt to 60000.			// Entry Burn Altitude
+		ReEntryburn(burnAlt, 1, -630).	// Speed Goal of Entry Burn
+	}
 	else
-		set burnAlt to 32000.
-	if (SHIP:altitude > burnAlt)
-		ReEntryburn(burnAlt).
+	{
+		if mass*1000 > 50000
+			set burnAlt to 35000.
+		else
+			set burnAlt to 32000.
+		if (SHIP:altitude > burnAlt)
+			ReEntryburn(burnAlt).
+	}
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -270,7 +281,9 @@ function aerodynamic_guidance
 		SET NAVMODE TO "SURFACE".
 
 	RCS ON.	wait 1.
-	until (SHIP:GROUNDSPEED < 1) or(SHIP:ALTITUDE <= (sBurnDist*1.4)) or impactTime <= 15
+	
+	set DO_LANDING to false.
+	until DO_LANDING
 	{
 		PRINT_STATUS (3).
 		
@@ -290,6 +303,15 @@ function aerodynamic_guidance
 		}
 			
 		SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
+		
+		if STAGE1_LAND_ON = "LAND"
+		{
+			if altitude < 2000
+				set DO_LANDING to TRUE.
+		}else{
+			if (SHIP:GROUNDSPEED < 1) or(SHIP:ALTITUDE <= (sBurnDist*1.4)) or impactTime <= 15
+				set DO_LANDING to TRUE.
+		}
 	}
 }
 
@@ -386,7 +408,7 @@ function touchdown
 		else
 			set t to error*((1000*SHIP:MASS*g)/maxthrust)/maxthrust.
 		
-		setHoverDescendSpeed(2+((alt:radar-30)/7.5),t).
+		setHoverDescendSpeed(1+((alt:radar-30)/7.5),t).
 	}
 }
 

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 12/Dez/2020
+// 21/Dez/2020
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 set FINAL_ORBIT2 to FINAL_ORBIT.// For Phase-2 falcon stage-2
@@ -171,6 +171,8 @@ set deltaReduction to 0.
 PRINT "Takeoff MASS: "+ROUND (SHIP:MASS)+" t".
 PRINT "Final Orbit: "+ ROUND(FINAL_ORBIT2/1000)+" km".
 PRINT "Qmax: "+ ROUND(Qmax).
+PRINT "[USER-CONFIG.KS]-STAGE1_LAND_ON: "+STAGE1_LAND_ON.
+
 
 set last_value1 to 0.
 set Aceleration_value1 to 0.
@@ -419,7 +421,9 @@ if altitude*1.1 < FINAL_ORBIT2
 	CLEARSCREEN.
 	PRINT " ".PRINT " ".
 	
-	if (STAGE:NUMBER > 3) and (vehicle_sub_type <> "Falcon Heavy LEM")
+	//if (STAGE:NUMBER > 3) and (vehicle_sub_type <> "Falcon Heavy LEM")
+	// >=3 for F9 - FH ?
+	if (STAGE:NUMBER >= 3) and (vehicle_sub_type <> "Falcon Heavy LEM")
 	{
 		update_phase_title("[6] STAGING...",1,false).
 		PRINT "1st ORBIT: "+FINAL_ORBIT+"km, Done!".
