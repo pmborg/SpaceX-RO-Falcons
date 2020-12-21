@@ -69,6 +69,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		SAS OFF.
 		LOCK STEERING TO prograde.
 		// Confirm?
+		UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 		PRINT "Confirm: START Phase0-Normal? (y/n)" at (0,5). set ch to terminal:input:getchar().
 		if (ch = "y" OR ch = "Y")
 			runpath( "boot/Phase0-Normal.c", mission_target).	// Correct Normal Before Burn
@@ -100,9 +101,11 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			
 			RUNPATH( "boot/PhaseIII-Land.c" ).  	// Auto-Land / Touch-Down
 		}
-		if ch="2"  {
-			stage.
-			wait 1.
+		if ch="2" {
+			//SEND PROCESSOR ID TO BOOSTER
+			IF PROCESSOR_STAGE2:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
+				{ PRINT "PROCESSOR_STAGE1: Message sent!". WAIT 1. }
+			stage. wait 1.
 			reboot.
 		}
 	}

@@ -1,6 +1,6 @@
 GAME
 {
-	version = 1.10.1
+	version = 1.10.0
 	Title = InterStar (CAREER)
 	Description = No description available.
 	linkURL = 
@@ -12,12 +12,12 @@ GAME
 	scene = 5
 	editor = None
 	flag = Launchers Pack/Flags/SpaceX
-	launchID = 77
+	launchID = 78
 	defaultVABLaunchSite = LaunchPad
 	defaultSPHLaunchSite = Runway
 	modded = True
-	envInfo =  - Environment Info - Win32NT 7FFFFFFFFFFFFFFF  Args: KSP_x64.exe  - 
-	versionFull = 1.10.1.2939 (WindowsPlayer x64)
+	envInfo =  - Environment Info - Win32NT 7FFFFFFFFFFFFFFF  Args: KSP_x64.exe -force-d3d11 -nolog - 
+	versionFull = 1.11.0.3045 (WindowsPlayer x64)
 	versionCreated = 1.7.1.2539 (WindowsPlayer x64)
 	RemovedROCs
 	{
@@ -92,6 +92,7 @@ GAME
 			ReentryHeatScale = 1
 			EnableCommNet = True
 			AllowOtherLaunchSites = True
+			persistKerbalInventories = False
 		}
 		CAREER
 		{
@@ -176,6 +177,10 @@ GAME
 		{
 			persistRecolorSelections = False
 		}
+		KURSSettings_2
+		{
+			altOverlay = False
+		}
 		HangerExtender
 		{
 			scalingFactor = 5
@@ -188,7 +193,7 @@ GAME
 		KJRSettings
 		{
 		}
-		KURSSettings
+		KURSSettings_1
 		{
 			_dist2500 = True
 			_dist9999 = False
@@ -286,6 +291,7 @@ GAME
 			PartUpgradesInCareer = True
 			PartUpgradesInMission = False
 			EnableFullSASInSandbox = False
+			EnableFullSASInMissions = False
 		}
 		MissionParamsGeneral
 		{
@@ -321,16 +327,16 @@ GAME
 			facilityLevelTS = 3
 			facilityLevelVAB = 3
 		}
+		PM
+		{
+			EnabledForSave = True
+		}
 		TC
 		{
 			showStockTooltips = True
 			hoverTimeout = 0.5
 			debugMode = False
 			oldDebugMode = False
-		}
-		PM
-		{
-			EnabledForSave = True
 		}
 		SE
 		{
@@ -548,14 +554,17 @@ GAME
 	{
 		name = ContractSystem
 		scene = 7, 8, 5, 6
-		update = 3759927964.122508
-		version = 1.10.1
+		update = 3759928004.7024693
+		version = 1.11.0
 		WEIGHTS
 		{
 			ROCScienceRetrievalContract = 46
 			ROCScienceArmContract = 13
 			DeployedScienceContract = 20
 			CometDetectionContract = 30
+			VesselRepairContract = 30
+			RoverConstructionContract = 30
+			OrbitalConstructionContract = 30
 			RecoverAsset = 10
 			PlantFlag = 30
 			PartTest = 38
@@ -829,7 +838,7 @@ GAME
 	{
 		name = Funding
 		scene = 7, 8, 5, 6
-		funds = 5002233988840.3311
+		funds = 5002234057846.5811
 	}
 	SCENARIO
 	{
@@ -1069,6 +1078,8 @@ GAME
 			part = ROS-HingedSolarPanel
 			part = ROS-FoldingSolarPanel
 			part = 4mv.bucket.heatshield.s0.1
+			part = evaJetpack
+			part = evaChute
 		}
 		Tech
 		{
@@ -1297,6 +1308,7 @@ GAME
 			part = scansat-radar-poseidon-3b-1
 			part = 4mv.v.high.gain.antenna.srf.1
 			part = 1mv.sensor.ultraviolet.light.camera.s0.1
+			part = HighGainAntenna5.v2
 		}
 		Tech
 		{
@@ -1385,6 +1397,7 @@ GAME
 			part = KK.KK.SPX.ITS.booster.gridfin
 			part = KK.SPX.ITS.ship.flapL
 			part = KK.SPX.ITS.ship.flapR
+			part = navLight1
 		}
 		Tech
 		{
@@ -1491,6 +1504,8 @@ GAME
 			part = Tantares.SolarBasic.2.R
 			part = KIS.ghettoblaster
 			part = scansat-radar-seasat-1
+			part = domeLight1
+			part = spotLight3
 		}
 		Tech
 		{
@@ -1550,6 +1565,8 @@ GAME
 			part = Tantares.MOE.5.E
 			part = Tantares.Orbital.1
 			part = sp.star.tracker.srf.2
+			part = RCSblock.01.small
+			part = RCSLinearSmall
 		}
 		Tech
 		{
@@ -1623,6 +1640,10 @@ GAME
 			part = KIS.beer
 			part = scansat-multi-abi-1
 			part = mediumCargoContainer
+			part = evaRepairKit
+			part = ConformalStorageUnit
+			part = groundLight1
+			part = groundLight2
 		}
 		Tech
 		{
@@ -1646,6 +1667,7 @@ GAME
 			part = FASAApolloLFEF1
 			part = FASAApolloLFEJ2
 			part = FASAGerminiSRB175
+			part = Size2LFB.v2
 		}
 		Tech
 		{
@@ -1709,6 +1731,7 @@ GAME
 			part = FASAMercuryMiniSRB
 			part = FASAGeminiMOLEquip1m
 			part = FASAProbeParachute
+			part = evaScienceKit
 		}
 		Tech
 		{
@@ -1823,6 +1846,7 @@ GAME
 			part = KIS.electricScrewdriver
 			part = ampYear.r.largeBatteryPack
 			part = scansat-sar-paz-1
+			part = stripLight1
 		}
 		Tech
 		{
@@ -1845,6 +1869,8 @@ GAME
 			part = KIS.snacks
 			part = KIS.taco
 			part = scansat-resources-crism-1
+			part = evaCylinder
+			part = CargoStorageUnit
 		}
 		Tech
 		{
@@ -11914,8 +11940,8 @@ GAME
 				AutoPilotDisabled = False
 				AutoPilotDisTime = 0
 				AutoPilotDisCounter = 0
-				timeLastElectricity = 0
-				lastUpdate = 0
+				timeLastElectricity = 3759927996.7424769
+				lastUpdate = 3759927996.7424769
 				EmgcyShutOverride = False
 				EmgcyShutOverrideStarted = False
 				Emergencypowerdownactivated = False
@@ -11932,7 +11958,7 @@ GAME
 				ReenableRcs = False
 				ReenableSas = False
 				IsolateReservePower = False
-				Guid = 809ac21d-58be-410d-a381-abfca378dff7
+				Guid = a540d51b-f888-465c-833e-fcf498ba9236
 			}
 		}
 	}
@@ -15638,10 +15664,15 @@ GAME
 		name = ScienceReporter
 		scene = 7, 8, 5
 	}
+	SCENARIO
+	{
+		name = KerbalInventoryScenario
+		scene = 7, 8, 5, 21, 6
+	}
 	FLIGHTSTATE
 	{
-		version = 1.10.1
-		UT = 3759927965.9025064
+		version = 1.11.0
+		UT = 3759928005.022469
 		activeVessel = 18
 		mapViewFiltering = 31740
 		commNetUIModeTracking = Network
@@ -15689,13 +15720,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 1222120.5414283474
+				SMA = 1222120.5414363677
 				ECC = 0.99999999999999989
-				INC = 70.953101106537758
-				LPE = 90.000000000000014
-				LAN = 45.496389370952329
+				INC = 70.953101106667575
+				LPE = 90
+				LAN = 45.497848685125973
 				MNA = 3.1415926207170166
-				EPH = 3759927953.1025186
+				EPH = 3759927973.642499
 				REF = 2
 				IDENT = Mercury
 			}
@@ -15736,6 +15767,9 @@ GAME
 				flag = Squad/Agencies/R&D
 				rTrf = flag (#mun1)
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -15908,13 +15942,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 0
+				SMA = NaN
 				ECC = 1
-				INC = 95.370880967879117
-				LPE = 90.000000000000014
-				LAN = 2.1211669730664084
+				INC = 95.370880967845039
+				LPE = 90
+				LAN = 2.1226262875618431
 				MNA = 0
-				EPH = 3759927953.1025186
+				EPH = 3759927973.642499
 				REF = 2
 				IDENT = Mercury
 			}
@@ -15955,6 +15989,9 @@ GAME
 				flag = Squad/Agencies/R&D
 				rTrf = flag (#Mun2: science)
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -16150,11 +16187,11 @@ GAME
 			{
 				SMA = 0
 				ECC = 1
-				INC = 58.458237336240003
+				INC = 58.45823733643423
 				LPE = 90
-				LAN = 52.008991942729324
+				LAN = 52.057309077926448
 				MNA = 0
-				EPH = 3759927953.1025186
+				EPH = 3759927973.642499
 				REF = 3
 				IDENT = Io
 			}
@@ -16195,6 +16232,9 @@ GAME
 				flag = Squad/Agencies/R&D
 				rTrf = flag(Clone)(Clone)
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -16414,6 +16454,9 @@ GAME
 				flag = 
 				rTrf = PotatoRoid (Ast. NAM-952)
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -17084,13 +17127,13 @@ GAME
 			cMod = -1
 			ORBIT
 			{
-				SMA = 1220614.167055395
-				ECC = 0.99999999999999989
-				INC = 45.605810559910132
+				SMA = NaN
+				ECC = 1
+				INC = 45.605810559887722
 				LPE = 90
-				LAN = 309.89704851017535
-				MNA = 3.1415926207170166
-				EPH = 3759927953.1025186
+				LAN = 309.89850782483512
+				MNA = 0
+				EPH = 3759927973.642499
 				REF = 2
 				IDENT = Mercury
 			}
@@ -17131,6 +17174,9 @@ GAME
 				flag = Squad/Agencies/R&D
 				rTrf = flag(Clone)(Clone)
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -17317,13 +17363,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 1220622.5474896336
-				ECC = 0.99999999999999978
-				INC = 82.938050098764478
-				LPE = 90.000000000000014
-				LAN = 134.5679873256837
-				MNA = 3.1415926303452304
-				EPH = 3759927953.1025186
+				SMA = NaN
+				ECC = 1
+				INC = 82.93805009876607
+				LPE = 90
+				LAN = 134.56944664023877
+				MNA = 0
+				EPH = 3759927973.642499
 				REF = 2
 				IDENT = Mercury
 			}
@@ -17364,6 +17410,9 @@ GAME
 				flag = Squad/Agencies/R&D
 				rTrf = flag (#MunOreSpot)
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -17594,6 +17643,9 @@ GAME
 				flag = 
 				rTrf = 
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 			}
 			ACTIONGROUPS
 			{
@@ -17727,6 +17779,9 @@ GAME
 				flag = 
 				rTrf = 
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 			}
 			ACTIONGROUPS
 			{
@@ -17860,6 +17915,9 @@ GAME
 				flag = 
 				rTrf = 
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 			}
 			ACTIONGROUPS
 			{
@@ -17993,6 +18051,9 @@ GAME
 				flag = 
 				rTrf = 
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 			}
 			ACTIONGROUPS
 			{
@@ -18126,6 +18187,9 @@ GAME
 				flag = 
 				rTrf = 
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 			}
 			ACTIONGROUPS
 			{
@@ -18259,6 +18323,9 @@ GAME
 				flag = 
 				rTrf = 
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 			}
 			ACTIONGROUPS
 			{
@@ -18392,6 +18459,9 @@ GAME
 				flag = 
 				rTrf = 
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 			}
 			ACTIONGROUPS
 			{
@@ -18452,18 +18522,18 @@ GAME
 			landedAt = KSC
 			displaylandedAt = #autoLOC_300900
 			splashed = False
-			met = 3602.2765645980835
+			met = 3641.3965272903442
 			lct = 3759924363.6259418
-			lastUT = 3759927965.9025064
+			lastUT = 3759928005.022469
 			distanceTraveled = 68.264599915025315
 			root = 0
-			lat = 28.612900798918233
-			lon = -80.619701802449086
-			alt = 74.769696108065546
-			hgt = 0.820251346
-			nrm = -1.49011612E-07,1,-1.75205059E-07
-			rot = 0.330945015,-0.554742634,0.388610572,-0.657052398
-			CoM = 0.0673968941,0.622842729,0.0603268296
+			lat = 28.612900691959474
+			lon = -80.619701752973299
+			alt = 74.892878132872283
+			hgt = 0.821757555
+			nrm = 0,0.999999881,-4.1956082E-07
+			rot = 0.331357121,-0.554724157,0.388629347,-0.656849086
+			CoM = 0,0,0
 			stg = 1
 			prst = False
 			ref = 2268576983
@@ -18481,13 +18551,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 3189778.0637811958
-				ECC = 0.9973412773877427
-				INC = 28.612900195543983
+				SMA = 3189777.8126006173
+				ECC = 0.9973412780383637
+				INC = 28.612900691959474
 				LPE = 270
-				LAN = 227.65307115730795
-				MNA = 3.1415926535897869
-				EPH = 3759927965.9025064
+				LAN = 227.81651669128465
+				MNA = -3.1415926535897869
+				EPH = 3759928005.022469
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -18515,10 +18585,10 @@ GAME
 				srfN = , -1
 				mass = 25
 				shielded = False
-				temp = 323.11625132377253
-				tempExt = 323.21132724266067
-				tempExtUnexp = 323.21072942049551
-				staticPressureAtm = 0.99119926657819046
+				temp = 323.27738997335814
+				tempExt = 323.36801251061979
+				tempExtUnexp = 323.36740151271647
+				staticPressureAtm = 0.9911848096944007
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -18528,6 +18598,9 @@ GAME
 				flag = Launchers Pack/Flags/SpaceX
 				rTrf = _default
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -18737,6 +18810,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -18747,6 +18821,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -18904,6 +18979,22 @@ GAME
 					{
 					}
 					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -19815,13 +19906,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 0
+				SMA = NaN
 				ECC = 1
-				INC = 61.387109310472511
-				LPE = 90
-				LAN = 228.62651351617183
+				INC = 61.387109310472979
+				LPE = 90.000000000000014
+				LAN = 228.71233107858714
 				MNA = 0
-				EPH = 3759927953.1025186
+				EPH = 3759927973.642499
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -19862,6 +19953,9 @@ GAME
 				flag = Pmborg/Flags/TARGARYEN
 				rTrf = _default
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -21131,11 +21225,11 @@ GAME
 			{
 				SMA = NaN
 				ECC = 1
-				INC = 61.387109296020959
-				LPE = 90
-				LAN = 230.26318115205933
+				INC = 61.387109296021428
+				LPE = 90.000000000000014
+				LAN = 230.34899871447459
 				MNA = 0
-				EPH = 3759927953.1025186
+				EPH = 3759927973.642499
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -21176,6 +21270,9 @@ GAME
 				flag = Pmborg/Flags/TARGARYEN
 				rTrf = _default
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -22443,13 +22540,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = NaN
+				SMA = 0
 				ECC = 1
-				INC = 61.387109308580527
+				INC = 61.387109308580996
 				LPE = 90
-				LAN = 228.79984758346686
+				LAN = 228.88566514588217
 				MNA = 0
-				EPH = 3759927953.1025186
+				EPH = 3759927973.642499
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -22490,6 +22587,9 @@ GAME
 				flag = Pmborg/Flags/TARGARYEN
 				rTrf = _default
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -23728,18 +23828,18 @@ GAME
 			landedAt = 
 			displaylandedAt = 
 			splashed = False
-			met = 2136.6579623222351
+			met = 2175.7779250144958
 			lct = 3759925829.244544
-			lastUT = 3759927965.9025064
+			lastUT = 3759928005.022469
 			distanceTraveled = 67.281920182084022
 			root = 0
-			lat = 28.612888649521555
-			lon = -80.621612983491644
-			alt = 74.817248967476189
-			hgt = 0.840029776
-			nrm = 0.000190645456,0.99999994,-0.000176552683
-			rot = -0.328868568,0.558476686,-0.390262783,0.653945267
-			CoM = 0.0673699826,0.622804284,0.0601954609
+			lat = 28.612888221108214
+			lon = -80.621612914819607
+			alt = 74.883666393347085
+			hgt = 0.840194583
+			nrm = 0.000189334154,1,-0.000172515865
+			rot = -0.32905969,0.558316886,-0.390470713,0.653861344
+			CoM = 0,0,0
 			stg = 1
 			prst = False
 			ref = 958884826
@@ -23757,13 +23857,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 3189778.0886629345
-				ECC = 0.99734127671289596
-				INC = 28.612888041499129
-				LPE = 270
-				LAN = 227.65115996438405
-				MNA = 3.1415926535897869
-				EPH = 3759927965.9025064
+				SMA = 3189777.8000257411
+				ECC = 0.99734128302468483
+				INC = 28.61288822110842
+				LPE = 270.00000800279042
+				LAN = 227.81459796557959
+				MNA = 3.1415913515954443
+				EPH = 3759928005.022469
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -23791,10 +23891,10 @@ GAME
 				srfN = , -1
 				mass = 25
 				shielded = False
-				temp = 322.64190722264362
-				tempExt = 322.74304161892474
-				tempExtUnexp = 322.74240609705384
-				staticPressureAtm = 0.9911936946542298
+				temp = 320.55103654452989
+				tempExt = 320.36723404306417
+				tempExtUnexp = 320.36818967797416
+				staticPressureAtm = 0.99118593913844677
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -23804,6 +23904,9 @@ GAME
 				flag = Launchers Pack/Flags/SpaceX
 				rTrf = _default
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -24013,6 +24116,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -24023,6 +24127,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -24180,6 +24285,22 @@ GAME
 					{
 					}
 					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -25050,7 +25171,7 @@ GAME
 		}
 		VESSEL
 		{
-			pid = 809ac21d58be410da381abfca378dff7
+			pid = a540d51bf888465c833efcf498ba9236
 			persistentId = 3983080253
 			name = PMBT-SpaceX Falcon 9 v1.2 Block-5
 			type = Probe
@@ -25063,20 +25184,20 @@ GAME
 			displaylandedAt = #autoLOC_6002112
 			splashed = False
 			met = 0
-			lct = 3759927965.9025064
-			lastUT = 3759927965.9025064
+			lct = 3759928005.022469
+			lastUT = 3759928005.022469
 			distanceTraveled = 0
 			root = 0
-			lat = 28.608389766977801
-			lon = -80.599760684789061
-			alt = 144.19309891201556
-			hgt = 62.0277405
-			nrm = 2.20537186E-06,1.00000012,-2.38418579E-07
-			rot = -0.508764982,-0.0704252124,-0.0418077447,0.857001007
-			CoM = -6.77108765E-05,-32.7757721,0.000504493713
+			lat = 28.608387544922774
+			lon = -80.599748526611592
+			alt = 145.13130451925099
+			hgt = 61.9866142
+			nrm = -6.55651093E-07,0.999999881,-1.95205212E-06
+			rot = -0.508764148,-0.0704259053,-0.0418088175,0.857001364
+			CoM = 2.62260437E-05,-32.7757759,0.000569343567
 			stg = 7
 			prst = False
-			ref = 381097328
+			ref = 2908218742
 			ctrl = True
 			PQSMin = 2
 			PQSMax = 10
@@ -25086,18 +25207,18 @@ GAME
 			OverrideAxisControl = 0,0,0,0
 			OverrideGroupNames = ,,,
 			altDispState = ASL
-			cPch = 0.7219999
-			cHdg = 0.6100001
+			cPch = 1.004
+			cHdg = 0.02999998
 			cMod = 0
 			ORBIT
 			{
-				SMA = 3189796.5364840319
-				ECC = 0.99734100418599558
-				INC = 28.608389771410067
-				LPE = 270.00000314681051
-				LAN = 227.67300812479479
-				MNA = 3.1415926249765058
-				EPH = 3759927965.9025064
+				SMA = 3189797.0087523377
+				ECC = 0.9973410025922117
+				INC = 28.608387549430926
+				LPE = 270.00000031005118
+				LAN = 227.8364695983542
+				MNA = 3.1415926450056637
+				EPH = 3759928005.022469
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -25105,10 +25226,10 @@ GAME
 			{
 				name = HECS2.ProbeCore
 				cid = 4294102532
-				uid = 381097328
-				mid = 943363017
+				uid = 2908218742
+				mid = 3070417436
 				persistentId = 713043476
-				launchID = 76
+				launchID = 77
 				parent = 0
 				position = 0,0,0
 				rotation = 0,0,0,1
@@ -25127,10 +25248,10 @@ GAME
 				attN = bottom, 9
 				mass = 0.19577761
 				shielded = False
-				temp = 274.1999355584432
-				tempExt = 274.247120733396
-				tempExtUnexp = 274.24709874784276
-				staticPressureAtm = 0.98308903006839066
+				temp = 274.21740003761255
+				tempExt = 274.26653814088178
+				tempExtUnexp = 274.2665144552098
+				staticPressureAtm = 0.98297985047726988
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -25140,6 +25261,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = _default
 				modCost = 0
+				modMass = 0.045777604
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -25266,6 +25390,23 @@ GAME
 							actionGroup = None
 							wasActiveBeforePartWasAdjusted = False
 						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
 					}
 					UPGRADESAPPLIED
 					{
@@ -27090,15 +27231,15 @@ GAME
 						}
 						MechJebModuleFlightRecorder
 						{
-							markUT = 3759927965.9025064
+							markUT = 3759928005.022469
 							deltaVExpended = 0
 							dragLosses = 0
 							gravityLosses = 0
 							steeringLosses = 0
-							markLAN = 227.67254958106119
-							markLatitude = 28.608390105349354
-							markLongitude = -80.59976160210212
-							markAltitude = 111.41732998723164
+							markLAN = 227.83601240034545
+							markLatitude = 28.60838788337195
+							markLongitude = -80.599749443795673
+							markAltitude = 112.35552691379561
 							markBodyIndex = 1
 							maxDragGees = 0
 							unlockParts = 
@@ -27209,7 +27350,7 @@ GAME
 							file
 							{
 								filename = boot.ks
-								binary = H4sIAHhz318A,72TUW,aMBSFn+FXXPUJHhIDmxiLNFUU1LVqKxhhXadpqm7im8QliS3bIWW,fnZA6qY+t,fN9tV3j4+PGYPgDavv+JeipBoriiCR0oY703+HoTerGOJUC2UNZFLDTbwGKyEhaAxxkDXEClN6eLzFpk6Lx3sqRFqSgTvJoRW2gMG6SqTOYbOCe9JGyHoI76F8ITlBcoAITgICKKxVJmLMXaSpwh3pBEvj5Sstc41VmMqKiZrTc6gKdc7cduZMZ+PPs9l0HKiOwzz8gixCKZFDpmUVQe8F3rZtyLVUiXzueKZgT3wsiymfjabigHbM5vML,IQPifi5zPazrwF++3h32AQWz3n5ZeT5t2jJWFjKtvZTon,E587UJunQJ0HHFwg2q+ASy1TWXTDWjVbSuLD4xX+1LYQ5am81KkUacC8F98+qKSAuLGDNweCeAEHLdEcWnhonx3WkBdY5gS0IUm+wzF7xz3w8mbGYU1ChqM,Amxi6vp6r7z42Pkn+iJXosF2rI3XU07zB8SoQb4MJuO6FphaWGnO3Nxn6meMPbEl,2GQ0Gb15nPrxj+vt4gq2KxiFPcZelpwybEoL6,n2KoJf7nv8ZnEhlGHHX9PXTa3QFoNXrgzDv1Wy0rA0BAAA
+								binary = H4sIAIne4F8A,72TUW,aMBSFn+FXXPUJHhIDmxiLNFUU1LVqKxhhXadpqm7im8QliS3bIWW,fnZA6qY+t,fN9tV3j4+PGYPgDavv+JeipBoriiCR0oY703+HoTerGOJUC2UNZFLDTbwGKyEhaAxxkDXEClN6eLzFpk6Lx3sqRFqSgTvJoRW2gMG6SqTOYbOCe9JGyHoI76F8ITlBcoAITgICKKxVJmLMXaSpwh3pBEvj5Sstc41VmMqKiZrTc6gKdc7cduZMZ+PPs9l0HKiOwzz8gixCKZFDpmUVQe8F3rZtyLVUiXzueKZgT3wsiymfjabigHbM5vML,IQPifi5zPazrwF++3h32AQWz3n5ZeT5t2jJWFjKtvZTon,E587UJunQJ0HHFwg2q+ASy1TWXTDWjVbSuLD4xX+1LYQ5am81KkUacC8F98+qKSAuLGDNweCeAEHLdEcWnhonx3WkBdY5gS0IUm+wzF7xz3w8mbGYU1ChqM,Amxi6vp6r7z42Pkn+iJXosF2rI3XU07zB8SoQb4MJuO6FphaWGnO3Nxn6meMPbEl,2GQ0Gb15nPrxj+vt4gq2KxiFPcZelpwybEoL6,n2KoJf7nv8ZnEhlGHHX9PXTa3QFoNXrgzDv1Wy0rA0BAAA
 							}
 						}
 					}
@@ -27252,10 +27393,10 @@ GAME
 			{
 				name = trussPiece3x
 				cid = 4294102446
-				uid = 578195649
-				mid = 943363017
+				uid = 408480226
+				mid = 3070417436
 				persistentId = 2823692717
-				launchID = 76
+				launchID = 77
 				parent = 0
 				position = 0,0,0
 				rotation = 0.49999994,0.50000006,-0.49999994,0.50000006
@@ -27274,10 +27415,10 @@ GAME
 				attN = top, 2
 				mass = 0.0450000018
 				shielded = False
-				temp = 274.19175515092667
-				tempExt = 274.24557171206561
-				tempExtUnexp = 274.24554465208081
-				staticPressureAtm = 0.98308903006839066
+				temp = 274.19619325841649
+				tempExt = 274.26219638135098
+				tempExtUnexp = 274.26217960273163
+				staticPressureAtm = 0.98297985047726988
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -27287,6 +27428,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = trussPiece3x
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -27310,6 +27454,23 @@ GAME
 				}
 				PARTDATA
 				{
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
 				}
 				MODULE
 				{
@@ -27368,10 +27529,10 @@ GAME
 			{
 				name = strutOcto
 				cid = 4294102416
-				uid = 3996826773
-				mid = 943363017
+				uid = 400754159
+				mid = 3070417436
 				persistentId = 4188927805
-				launchID = 76
+				launchID = 77
 				parent = 1
 				position = 1.6039807796478271,0,-3.5762786865234375E-07
 				rotation = 0,0,-0.707106829,0.707106829
@@ -27390,10 +27551,10 @@ GAME
 				attN = bottom, 1
 				mass = 0.00300000003
 				shielded = False
-				temp = 274.19828932239039
-				tempExt = 274.2752023636566
-				tempExtUnexp = 274.27512778267243
-				staticPressureAtm = 0.98308903006839066
+				temp = 274.21811523530874
+				tempExt = 274.3062918644286
+				tempExtUnexp = 274.3062777161507
+				staticPressureAtm = 0.98297985047726988
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -27403,6 +27564,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = strutOcto
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -27426,6 +27590,23 @@ GAME
 				}
 				PARTDATA
 				{
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
 				}
 				MODULE
 				{
@@ -27484,10 +27665,10 @@ GAME
 			{
 				name = largeSolarPanel
 				cid = 4294102382
-				uid = 3895058683
-				mid = 943363017
+				uid = 2890365909
+				mid = 3070417436
 				persistentId = 759870105
-				launchID = 76
+				launchID = 77
 				parent = 2
 				position = 1.7104346752166748,-0.009490966796875,-3.5762786865234375E-07
 				rotation = 1.34110451E-07,1.00000012,7.4505806E-08,1.1920929E-07
@@ -27504,10 +27685,10 @@ GAME
 				srfN = srfAttach, 2
 				mass = 0.0682500005
 				shielded = False
-				temp = 274.19145975408424
-				tempExt = 274.30473499700793
-				tempExtUnexp = 274.30464951802992
-				staticPressureAtm = 0.98309015951243672
+				temp = 274.19599033251836
+				tempExt = 274.34155521638132
+				tempExtUnexp = 274.3415380494298
+				staticPressureAtm = 0.98298090462504617
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -27517,6 +27698,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = largeSolarPanel
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -27546,7 +27730,7 @@ GAME
 					name = ModuleDeployableSolarPanel
 					isEnabled = True
 					efficiencyMult = 1
-					launchUT = 3759927965.9025064
+					launchUT = 3759928005.022469
 					currentRotation = (0, 0, -0.707106829, 0.707106829)
 					storedAnimationTime = 0
 					storedAnimationSpeed = 1
@@ -27572,6 +27756,23 @@ GAME
 							actionGroup = None
 							wasActiveBeforePartWasAdjusted = False
 						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
 					}
 					UPGRADESAPPLIED
 					{
@@ -27682,6 +27883,24 @@ GAME
 					{
 					}
 				}
+				MODULE
+				{
+					name = KopernicusSolarPanels
+					isEnabled = True
+					trackingBodyName = 
+					_manualTracking = False
+					_relativeSunAoa = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
 				RESOURCE
 				{
 					name = Megajoules
@@ -27720,10 +27939,10 @@ GAME
 			{
 				name = strutOcto
 				cid = 4294102306
-				uid = 948682085
-				mid = 943363017
+				uid = 2729307638
+				mid = 3070417436
 				persistentId = 3316689274
-				launchID = 76
+				launchID = 77
 				parent = 1
 				position = -1.6039803028106689,0,3.5762786865234375E-07
 				rotation = 7.10542736E-15,0,-0.707106769,-0.707106888
@@ -27742,10 +27961,10 @@ GAME
 				attN = bottom, 1
 				mass = 0.00300000003
 				shielded = False
-				temp = 274.19828932211243
-				tempExt = 274.27520236105795
-				tempExtUnexp = 274.27512778007849
-				staticPressureAtm = 0.98308903006839066
+				temp = 274.21811523430245
+				tempExt = 274.30629186186871
+				tempExtUnexp = 274.3062777135919
+				staticPressureAtm = 0.98297985047726988
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -27755,6 +27974,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = strutOcto
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -27778,6 +28000,23 @@ GAME
 				}
 				PARTDATA
 				{
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
 				}
 				MODULE
 				{
@@ -27836,10 +28075,10 @@ GAME
 			{
 				name = largeSolarPanel
 				cid = 4294102272
-				uid = 3799214138
-				mid = 943363017
+				uid = 1515271976
+				mid = 3070417436
 				persistentId = 3799522457
-				launchID = 76
+				launchID = 77
 				parent = 4
 				position = -1.7104434967041016,0.009490966796875,5.0105154514312744E-07
 				rotation = 1.00000024,2.98023224E-07,2.38418579E-07,0
@@ -27856,10 +28095,10 @@ GAME
 				srfN = srfAttach, 4
 				mass = 0.0682500005
 				shielded = False
-				temp = 274.19145975407895
-				tempExt = 274.30473499614413
-				tempExtUnexp = 274.30464951716948
-				staticPressureAtm = 0.98308797592061437
+				temp = 274.19599033247096
+				tempExt = 274.34155521495353
+				tempExtUnexp = 274.34153804800286
+				staticPressureAtm = 0.98297872103322381
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -27869,6 +28108,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = largeSolarPanel
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -27898,7 +28140,7 @@ GAME
 					name = ModuleDeployableSolarPanel
 					isEnabled = True
 					efficiencyMult = 1
-					launchUT = 3759927965.9025064
+					launchUT = 3759928005.022469
 					currentRotation = (0, 0, -0.707106829, 0.707106829)
 					storedAnimationTime = 0
 					storedAnimationSpeed = 1
@@ -27924,6 +28166,23 @@ GAME
 							actionGroup = None
 							wasActiveBeforePartWasAdjusted = False
 						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
 					}
 					UPGRADESAPPLIED
 					{
@@ -28034,6 +28293,24 @@ GAME
 					{
 					}
 				}
+				MODULE
+				{
+					name = KopernicusSolarPanels
+					isEnabled = True
+					trackingBodyName = 
+					_manualTracking = False
+					_relativeSunAoa = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
 				RESOURCE
 				{
 					name = Megajoules
@@ -28072,10 +28349,10 @@ GAME
 			{
 				name = rtg
 				cid = 4294102196
-				uid = 3756893934
-				mid = 943363017
+				uid = 1141065031
+				mid = 3070417436
 				persistentId = 2898175187
-				launchID = 76
+				launchID = 77
 				parent = 0
 				position = -2.9802322387695313E-07,-0.594573974609375,-0.8253253698348999
 				rotation = 0.847866535,-2.98023188E-08,-8.94069601E-08,-0.53020972
@@ -28095,10 +28372,10 @@ GAME
 				attN = bottom, -1
 				mass = 0.0331999995
 				shielded = False
-				temp = 274.20262902970057
-				tempExt = 274.24618540576819
-				tempExtUnexp = 274.24616172867462
-				staticPressureAtm = 0.98315822734028036
+				temp = 274.22361401744968
+				tempExt = 274.26635053619219
+				tempExtUnexp = 274.26632666289026
+				staticPressureAtm = 0.98304904774915958
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28108,6 +28385,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = rtg
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -28137,9 +28417,26 @@ GAME
 					name = ModuleCoreHeat
 					isEnabled = True
 					CoreTempGoalAdjustment = 0
-					CoreThermalEnergy = 9092.9783350691214
+					CoreThermalEnergy = 9092.9872643946946
 					stagingEnabled = True
-					lastUpdateTime = 3759927965.9025064
+					lastUpdateTime = 3759928005.022469
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
 					EVENTS
 					{
 					}
@@ -28227,7 +28524,7 @@ GAME
 					EfficiencyBonus = 1
 					IsActivated = True
 					stagingEnabled = True
-					lastUpdateTime = 3759927965.9025064
+					lastUpdateTime = 3759928005.022469
 					EVENTS
 					{
 					}
@@ -28256,7 +28553,7 @@ GAME
 				RESOURCE
 				{
 					name = Plutonium-238
-					amount = 0.22699999806478513
+					amount = 0.22699999502232507
 					maxAmount = 0.22700000000000001
 					flowState = True
 					isTweakable = True
@@ -28267,7 +28564,7 @@ GAME
 				RESOURCE
 				{
 					name = DepletedFuel
-					amount = 1.9352166282349136E-09
+					amount = 4.9776794427434534E-09
 					maxAmount = 0.22700000000000001
 					flowState = True
 					isTweakable = False
@@ -28280,10 +28577,10 @@ GAME
 			{
 				name = rtg
 				cid = 4294102154
-				uid = 1377705947
-				mid = 943363017
+				uid = 1479150134
+				mid = 3070417436
 				persistentId = 13571385
-				launchID = 76
+				launchID = 77
 				parent = 0
 				position = 3.5762786865234375E-07,-0.594573974609375,0.82532548904418945
 				rotation = -8.94069601E-08,-0.53020972,-0.847866535,2.98023188E-08
@@ -28303,10 +28600,10 @@ GAME
 				attN = bottom, -1
 				mass = 0.0331999995
 				shielded = False
-				temp = 274.20262902970057
-				tempExt = 274.24618540576819
-				tempExtUnexp = 274.24616172867462
-				staticPressureAtm = 0.98315822734028036
+				temp = 274.22361401744968
+				tempExt = 274.26635053619219
+				tempExtUnexp = 274.26632666289026
+				staticPressureAtm = 0.98304904774915958
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28316,6 +28613,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = rtg
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -28345,9 +28645,26 @@ GAME
 					name = ModuleCoreHeat
 					isEnabled = True
 					CoreTempGoalAdjustment = 0
-					CoreThermalEnergy = 9092.9783350691214
+					CoreThermalEnergy = 9092.9872643946946
 					stagingEnabled = True
-					lastUpdateTime = 3759927965.9025064
+					lastUpdateTime = 3759928005.022469
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
 					EVENTS
 					{
 					}
@@ -28435,7 +28752,7 @@ GAME
 					EfficiencyBonus = 1
 					IsActivated = True
 					stagingEnabled = True
-					lastUpdateTime = 3759927965.9025064
+					lastUpdateTime = 3759928005.022469
 					EVENTS
 					{
 					}
@@ -28464,7 +28781,7 @@ GAME
 				RESOURCE
 				{
 					name = Plutonium-238
-					amount = 0.22699999806478513
+					amount = 0.22699999502232507
 					maxAmount = 0.22700000000000001
 					flowState = True
 					isTweakable = True
@@ -28475,7 +28792,7 @@ GAME
 				RESOURCE
 				{
 					name = DepletedFuel
-					amount = 1.9352166282349136E-09
+					amount = 4.9776794427434534E-09
 					maxAmount = 0.22700000000000001
 					flowState = True
 					isTweakable = False
@@ -28488,10 +28805,10 @@ GAME
 			{
 				name = HighGainAntenna
 				cid = 4293738622
-				uid = 3204632241
-				mid = 943363017
+				uid = 1573893623
+				mid = 3070417436
 				persistentId = 2782208232
-				launchID = 76
+				launchID = 77
 				parent = 0
 				position = 0.020395636558532715,0.4000091552734375,-0.0095656588673591614
 				rotation = 8.42937382E-08,1.19209275E-07,-7.09579453E-08,-1
@@ -28508,10 +28825,10 @@ GAME
 				srfN = srfAttach, 0,COL
 				mass = 0.0250000004
 				shielded = False
-				temp = 274.23729568461289
-				tempExt = 274.27217358793064
-				tempExtUnexp = 274.27210003992559
-				staticPressureAtm = 0.98304249697369228
+				temp = 274.30224352709956
+				tempExt = 274.33098518610075
+				tempExtUnexp = 274.33092516949034
+				staticPressureAtm = 0.9829333173825715
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28521,6 +28838,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = HighGainAntenna
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -28549,7 +28869,7 @@ GAME
 				{
 					name = ModuleDeployableAntenna
 					isEnabled = True
-					currentRotation = (2.41819403E-17, -0.999999523, 6.04307451E-17, -0.000996136689)
+					currentRotation = (-7.69639282E-17, -0.999960899, 4.54896596E-17, -0.00884658471)
 					storedAnimationTime = 0
 					storedAnimationSpeed = 1
 					deployState = RETRACTED
@@ -28596,6 +28916,23 @@ GAME
 							actionGroup = None
 							wasActiveBeforePartWasAdjusted = False
 						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
 					}
 					UPGRADESAPPLIED
 					{
@@ -28676,10 +29013,10 @@ GAME
 			{
 				name = batteryBank
 				cid = 4294102718
-				uid = 3980826126
-				mid = 943363017
+				uid = 2695501328
+				mid = 3070417436
 				persistentId = 1482224453
-				launchID = 76
+				launchID = 77
 				parent = 0
 				position = 0,-0.6108551025390625,0
 				rotation = 0,1,0,0
@@ -28698,10 +29035,10 @@ GAME
 				attN = bottom, 14
 				mass = 0.353399992
 				shielded = False
-				temp = 274.19213706544497
-				tempExt = 274.26607487235447
-				tempExtUnexp = 274.26605165240755
-				staticPressureAtm = 0.9831601850432935
+				temp = 274.19619124970785
+				tempExt = 274.27882531107792
+				tempExtUnexp = 274.2788191463041
+				staticPressureAtm = 0.98305093015590295
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28711,6 +29048,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = batteryBank
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -28734,6 +29074,23 @@ GAME
 				}
 				PARTDATA
 				{
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
 				}
 				MODULE
 				{
@@ -28803,10 +29160,10 @@ GAME
 			{
 				name = xenonTankRadial
 				cid = 4294102684
-				uid = 3307010365
-				mid = 943363017
+				uid = 997066723
+				mid = 3070417436
 				persistentId = 78550662
-				launchID = 76
+				launchID = 77
 				parent = 9
 				position = -0.42025274038314819,-0.7023162841796875,5.9604644775390625E-08
 				rotation = 0.70710665,0,0,-0.707106948
@@ -28826,10 +29183,10 @@ GAME
 				srfN = srfAttach, 9
 				mass = 9.99999975E-05
 				shielded = False
-				temp = 274.28164079483997
-				tempExt = 274.45800166593619
-				tempExtUnexp = 274.4579787234448
-				staticPressureAtm = 0.98317080181732663
+				temp = 274.29213329176866
+				tempExt = 274.47074652396759
+				tempExtUnexp = 274.47073842367854
+				staticPressureAtm = 0.98306162222620586
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28839,6 +29196,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = xenonTankRadial
 				modCost = 0
+				modMass = -0.0135000004
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -28862,6 +29222,23 @@ GAME
 				}
 				PARTDATA
 				{
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
 				}
 				MODULE
 				{
@@ -29030,10 +29407,10 @@ GAME
 			{
 				name = xenonTankRadial
 				cid = 4294102646
-				uid = 3227279049
-				mid = 943363017
+				uid = 1545286475
+				mid = 3070417436
 				persistentId = 4291072562
-				launchID = 76
+				launchID = 77
 				parent = 9
 				position = 5.9604644775390625E-08,-0.7023162841796875,0.42025259137153625
 				rotation = 0.499999911,-0.500000119,-0.499999911,-0.500000119
@@ -29053,10 +29430,10 @@ GAME
 				srfN = srfAttach, 9
 				mass = 9.99999975E-05
 				shielded = False
-				temp = 274.28164079483997
-				tempExt = 274.45800166593619
-				tempExtUnexp = 274.4579787234448
-				staticPressureAtm = 0.98317080181732663
+				temp = 274.29213329176866
+				tempExt = 274.47074652396759
+				tempExtUnexp = 274.47073842367854
+				staticPressureAtm = 0.98306162222620586
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -29066,6 +29443,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = xenonTankRadial
 				modCost = 0
+				modMass = -0.0135000004
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -29089,6 +29469,23 @@ GAME
 				}
 				PARTDATA
 				{
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
 				}
 				MODULE
 				{
@@ -29257,10 +29654,10 @@ GAME
 			{
 				name = xenonTankRadial
 				cid = 4294102608
-				uid = 2368941102
-				mid = 943363017
+				uid = 201501251
+				mid = 3070417436
 				persistentId = 914585093
-				launchID = 76
+				launchID = 77
 				parent = 9
 				position = 0.42025297880172729,-0.7023162841796875,-1.1920928955078125E-07
 				rotation = -2.98023188E-08,-0.707107008,-0.70710665,0
@@ -29280,10 +29677,10 @@ GAME
 				srfN = srfAttach, 9
 				mass = 9.99999975E-05
 				shielded = False
-				temp = 274.28164079483997
-				tempExt = 274.45800166593619
-				tempExtUnexp = 274.4579787234448
-				staticPressureAtm = 0.98317080181732663
+				temp = 274.29213329176866
+				tempExt = 274.47074652396759
+				tempExtUnexp = 274.47073842367854
+				staticPressureAtm = 0.98306162222620586
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -29293,6 +29690,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = xenonTankRadial
 				modCost = 0
+				modMass = -0.0135000004
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -29316,6 +29716,23 @@ GAME
 				}
 				PARTDATA
 				{
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
 				}
 				MODULE
 				{
@@ -29484,10 +29901,10 @@ GAME
 			{
 				name = xenonTankRadial
 				cid = 4294102570
-				uid = 1150574909
-				mid = 943363017
+				uid = 3120954197
+				mid = 3070417436
 				persistentId = 4018265504
-				launchID = 76
+				launchID = 77
 				parent = 9
 				position = -5.9604644775390625E-08,-0.7023162841796875,-0.42025262117385864
 				rotation = -0.499999911,-0.500000119,-0.499999911,0.500000119
@@ -29507,10 +29924,10 @@ GAME
 				srfN = srfAttach, 9
 				mass = 9.99999975E-05
 				shielded = False
-				temp = 274.28164079483997
-				tempExt = 274.45800166593619
-				tempExtUnexp = 274.4579787234448
-				staticPressureAtm = 0.98317080181732663
+				temp = 274.29213329176866
+				tempExt = 274.47074652396759
+				tempExtUnexp = 274.47073842367854
+				staticPressureAtm = 0.98306162222620586
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -29520,6 +29937,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = xenonTankRadial
 				modCost = 0
+				modMass = -0.0135000004
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -29543,6 +29963,23 @@ GAME
 				}
 				PARTDATA
 				{
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
 				}
 				MODULE
 				{
@@ -29711,10 +30148,10 @@ GAME
 			{
 				name = ionEngine
 				cid = 4294102796
-				uid = 2506171027
-				mid = 943363017
+				uid = 670482907
+				mid = 3070417436
 				persistentId = 1032177011
-				launchID = 76
+				launchID = 77
 				parent = 9
 				position = 0,-0.935272216796875,0
 				rotation = 0,1,0,0
@@ -29733,10 +30170,10 @@ GAME
 				attN = bottom, 15
 				mass = 0.0494999997
 				shielded = False
-				temp = 274.19251199290312
-				tempExt = 274.23762566096332
-				tempExtUnexp = 274.2376154047866
-				staticPressureAtm = 0.98319790847443245
+				temp = 274.19579653006116
+				tempExt = 274.24305792630179
+				tempExtUnexp = 274.24305384471205
+				staticPressureAtm = 0.98308872888331167
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -29746,6 +30183,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = ionEngine
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -29819,6 +30259,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -29829,6 +30270,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -29883,6 +30325,23 @@ GAME
 				}
 				MODULE
 				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
 					name = Driftless
 					isEnabled = True
 					stagingEnabled = True
@@ -29911,6 +30370,22 @@ GAME
 					{
 					}
 					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -29968,10 +30443,10 @@ GAME
 			{
 				name = Decoupler.2
 				cid = 4294102876
-				uid = 1355234600
-				mid = 943363017
+				uid = 1352605259
+				mid = 3070417436
 				persistentId = 3340465589
-				launchID = 76
+				launchID = 77
 				parent = 14
 				position = 0,-1.1237983703613281,0
 				rotation = 0,1,0,0
@@ -29990,10 +30465,10 @@ GAME
 				attN = bottom, 16
 				mass = 0.349999994
 				shielded = False
-				temp = 274.192075705138
-				tempExt = 274.21538477548523
-				tempExtUnexp = 274.21538202261701
-				staticPressureAtm = 0.98321989498519613
+				temp = 274.19411298517281
+				tempExt = 274.21607612157368
+				tempExtUnexp = 274.21607424699101
+				staticPressureAtm = 0.98311064009780558
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -30003,6 +30478,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = Decoupler.2
 				modCost = 0
+				modMass = 0
+				moduleVariantName = Basic
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -30113,6 +30591,23 @@ GAME
 				}
 				MODULE
 				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
 					name = Driftless
 					isEnabled = True
 					stagingEnabled = True
@@ -30183,10 +30678,10 @@ GAME
 			{
 				name = KK.SPX.F9.1875mmPA
 				cid = 4294102924
-				uid = 3737435754
-				mid = 943363017
+				uid = 1690688132
+				mid = 3070417436
 				persistentId = 1652662431
-				launchID = 76
+				launchID = 77
 				parent = 15
 				position = 0,-1.5881118774414063,0
 				rotation = 0,1,0,0
@@ -30206,10 +30701,10 @@ GAME
 				attN = top, -1
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18933532769177
-				tempExt = 274.18969394856674
-				tempExtUnexp = 274.18969394856674
-				staticPressureAtm = 0.98327395770686832
+				temp = 274.18787115409771
+				tempExt = 274.18823021150968
+				tempExtUnexp = 274.18823021150968
+				staticPressureAtm = 0.98316470281947776
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -30219,6 +30714,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = KK.SPX.F9.1875mmPA
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -30330,7 +30828,7 @@ GAME
 							file
 							{
 								filename = boot-st2.ks
-								binary = H4sIAHhz318A,71T0W7aMBR9hq+44gkeHJNoYzTSVEFR16mtYIR1naapcmIHuyS5lu00ZV8,G5C6as,tfYqd63POPT6mFMgbVt,jX6pKNKwWKeSIjliXRDvbfwfi62UGWWGUdhZKNHCdrcAh5AJaKzhgA5lmhbh,uGFtU8iHOyFVUQkLt8ihU07CcFXnaLawXsKdMFZhM4L3UH6BXEC+hxROAghI57RNKfWDtHW0EyZnlQ3ytcGtYXVUYE1Vw8VzpKU+p3679MbT+Gw6ncREH3BoAJ8Lx6BCxqE0WKfQewHvui7iBnWOzwc8K+kjj1FO+HQ8UXvmYjqbzdkndp+rn4vyafqFsG8fbvdr4tg5rz6PA,4Nc8I6WGDXBJb0H,Fbb2qbH6BPgo43QNZLcsmqAptDMFat0Wh9YMLiVW2kskftnWFaCwPsCRUP12oEEVw5YA0Hy54EMDBY7ISDx9bL8R2FZM1WgJMCimAwlv,hD0JEqXVsK0gygOBg5Jt6vr6HzHA8HOcCTe65sIRTb,gMf06Uw+M0cAZxlMC88rsfIduQZBQo4wldiD80GSfjN09TP,vxdXNxBZsljKMepS9LLkrWVg5Ws81VCr,86,hNM6m0pcdH0zdto5mTw1emkNPsUTEYRX8Bjmb2hT4EAAA=
+								binary = H4sIAIne4F8A,71T0W7aMBR9hq+44gkeHJNoYzTSVEFR16mtYIR1naapcmIHuyS5lu00ZV8,G5C6as,tfYqd63POPT6mFMgbVt,jX6pKNKwWKeSIjliXRDvbfwfi62UGWWGUdhZKNHCdrcAh5AJaKzhgA5lmhbh,uGFtU8iHOyFVUQkLt8ihU07CcFXnaLawXsKdMFZhM4L3UH6BXEC+hxROAghI57RNKfWDtHW0EyZnlQ3ytcGtYXVUYE1Vw8VzpKU+p3679MbT+Gw6ncREH3BoAJ8Lx6BCxqE0WKfQewHvui7iBnWOzwc8K+kjj1FO+HQ8UXvmYjqbzdkndp+rn4vyafqFsG8fbvdr4tg5rz6PA,4Nc8I6WGDXBJb0H,Fbb2qbH6BPgo43QNZLcsmqAptDMFat0Wh9YMLiVW2kskftnWFaCwPsCRUP12oEEVw5YA0Hy54EMDBY7ISDx9bL8R2FZM1WgJMCimAwlv,hD0JEqXVsK0gygOBg5Jt6vr6HzHA8HOcCTe65sIRTb,gMf06Uw+M0cAZxlMC88rsfIduQZBQo4wldiD80GSfjN09TP,vxdXNxBZsljKMepS9LLkrWVg5Ws81VCr,86,hNM6m0pcdH0zdto5mTw1emkNPsUTEYRX8Bjmb2hT4EAAA=
 							}
 						}
 					}
@@ -30437,10 +30935,10 @@ GAME
 			{
 				name = KK.SPX.F93.S2tank
 				cid = 4294654148
-				uid = 1000588435
-				mid = 943363017
+				uid = 2636119633
+				mid = 3070417436
 				persistentId = 579348422
-				launchID = 76
+				launchID = 77
 				parent = 16
 				position = 0,-6.1132736206054688,0
 				rotation = 0,0,0,1
@@ -30466,7 +30964,7 @@ GAME
 				temp = 90.150001525878906
 				tempExt = 90.150001525878906
 				tempExtUnexp = 90.150001525878906
-				staticPressureAtm = 0.98380088100249807
+				staticPressureAtm = 0.98369162611510763
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -30476,6 +30974,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = _default
 				modCost = 613.888916
+				modMass = -2.27185249
+				moduleVariantName = Basic
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -32548,10 +33049,10 @@ GAME
 			{
 				name = KK.SPX.Falcon9.FC
 				cid = 4294629322
-				uid = 3057152094
-				mid = 943363017
+				uid = 2445232972
+				mid = 3070417436
 				persistentId = 1629889608
-				launchID = 76
+				launchID = 77
 				parent = 17
 				position = 0,-1.6044540405273438,0
 				rotation = 0,0,0,1
@@ -32569,10 +33070,10 @@ GAME
 				attN = bottom, 17
 				mass = 0.150000006
 				shielded = False
-				temp = 274.1893352318458
-				tempExt = 274.18970007941829
-				tempExtUnexp = 274.18970007941829
-				staticPressureAtm = 0.9832758401136118
+				temp = 274.18787105825805
+				tempExt = 274.18823634025904
+				tempExtUnexp = 274.18823634025904
+				staticPressureAtm = 0.98316658522622125
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -32582,6 +33083,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = _default
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -33058,10 +33562,10 @@ GAME
 			{
 				name = linearRcs
 				cid = 4293521798
-				uid = 169641168
-				mid = 943363017
+				uid = 2855359473
+				mid = 3070417436
 				persistentId = 2964429061
-				launchID = 76
+				launchID = 77
 				parent = 17
 				position = 1.8293502330780029,-9.2882156372070313,-2.384185791015625E-07
 				rotation = 0.5,0.5,-0.5,0.5
@@ -33081,10 +33585,10 @@ GAME
 				srfN = srfAttach, 17,collider
 				mass = 0.00855772011
 				shielded = False
-				temp = 274.18933948662277
-				tempExt = 274.18958887077639
-				tempExtUnexp = 274.18958887077639
-				staticPressureAtm = 0.9841707362794534
+				temp = 274.18787531275626
+				tempExt = 274.18812513890276
+				tempExtUnexp = 274.18812513890276
+				staticPressureAtm = 0.98406140609579318
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -33094,6 +33598,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = linearRcs
 				modCost = -7.14300013
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 2
 				EVENTS
 				{
 				}
@@ -33155,6 +33662,23 @@ GAME
 					isEnabled = True
 					stagingEnabled = True
 					animStates = 0
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
 					EVENTS
 					{
 					}
@@ -33241,10 +33765,10 @@ GAME
 			{
 				name = linearRcs
 				cid = 4293521074
-				uid = 935483641
-				mid = 943363017
+				uid = 2550569757
+				mid = 3070417436
 				persistentId = 4128989997
-				launchID = 76
+				launchID = 77
 				parent = 17
 				position = -1.1920928955078125E-07,-9.2882156372070313,-1.8293499946594238
 				rotation = 0,0.707106829,-0.707106829,0
@@ -33264,10 +33788,10 @@ GAME
 				srfN = srfAttach, 17,collider
 				mass = 0.00855772011
 				shielded = False
-				temp = 274.18933948662277
-				tempExt = 274.18958887077639
-				tempExtUnexp = 274.18958887077639
-				staticPressureAtm = 0.9841707362794534
+				temp = 274.18787531275626
+				tempExt = 274.18812513890276
+				tempExtUnexp = 274.18812513890276
+				staticPressureAtm = 0.98406140609579318
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -33277,6 +33801,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = linearRcs
 				modCost = -7.14300013
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 2
 				EVENTS
 				{
 				}
@@ -33338,6 +33865,23 @@ GAME
 					isEnabled = True
 					stagingEnabled = True
 					animStates = 0
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
 					EVENTS
 					{
 					}
@@ -33424,10 +33968,10 @@ GAME
 			{
 				name = linearRcs
 				cid = 4293520988
-				uid = 286902167
-				mid = 943363017
+				uid = 3780930242
+				mid = 3070417436
 				persistentId = 886154520
-				launchID = 76
+				launchID = 77
 				parent = 17
 				position = -1.8293502330780029,-9.2882156372070313,3.5762786865234375E-07
 				rotation = -0.5,0.5,-0.5,-0.5
@@ -33447,10 +33991,10 @@ GAME
 				srfN = srfAttach, 17,collider
 				mass = 0.00855772011
 				shielded = False
-				temp = 274.18933948662277
-				tempExt = 274.18958887077639
-				tempExtUnexp = 274.18958887077639
-				staticPressureAtm = 0.9841707362794534
+				temp = 274.18787531275626
+				tempExt = 274.18812513890276
+				tempExtUnexp = 274.18812513890276
+				staticPressureAtm = 0.98406140609579318
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -33460,6 +34004,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = linearRcs
 				modCost = -7.14300013
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 2
 				EVENTS
 				{
 				}
@@ -33521,6 +34068,23 @@ GAME
 					isEnabled = True
 					stagingEnabled = True
 					animStates = 0
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
 					EVENTS
 					{
 					}
@@ -33607,10 +34171,10 @@ GAME
 			{
 				name = linearRcs
 				cid = 4293520902
-				uid = 625554768
-				mid = 943363017
+				uid = 1251662122
+				mid = 3070417436
 				persistentId = 1844144608
-				launchID = 76
+				launchID = 77
 				parent = 17
 				position = 3.5762786865234375E-07,-9.2882156372070313,1.8293502330780029
 				rotation = -0.707106829,0,0,-0.707106829
@@ -33630,10 +34194,10 @@ GAME
 				srfN = srfAttach, 17,collider
 				mass = 0.00855772011
 				shielded = False
-				temp = 274.18933948662277
-				tempExt = 274.18958887077639
-				tempExtUnexp = 274.18958887077639
-				staticPressureAtm = 0.9841707362794534
+				temp = 274.18787531275626
+				tempExt = 274.18812513890276
+				tempExtUnexp = 274.18812513890276
+				staticPressureAtm = 0.98406140609579318
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -33643,6 +34207,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = linearRcs
 				modCost = -7.14300013
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 2
 				EVENTS
 				{
 				}
@@ -33704,6 +34271,23 @@ GAME
 					isEnabled = True
 					stagingEnabled = True
 					animStates = 0
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
 					EVENTS
 					{
 					}
@@ -33790,10 +34374,10 @@ GAME
 			{
 				name = asasmodule1-2
 				cid = 4293515306
-				uid = 4209051279
-				mid = 943363017
+				uid = 2900941460
+				mid = 3070417436
 				persistentId = 1866841011
-				launchID = 76
+				launchID = 77
 				parent = 17
 				position = 0,-9.9902267456054688,0
 				rotation = 0,1,0,0
@@ -33812,10 +34396,10 @@ GAME
 				attN = bottom, 24
 				mass = 0.200000003
 				shielded = False
-				temp = 274.18933729330939
-				tempExt = 274.18948733662199
-				tempExtUnexp = 274.18948733662199
-				staticPressureAtm = 0.98425250802838937
+				temp = 274.18787311958653
+				tempExt = 274.18802362062257
+				tempExtUnexp = 274.18802362062257
+				staticPressureAtm = 0.98414317784472916
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -33825,6 +34409,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = asasmodule1-2
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -33883,6 +34470,23 @@ GAME
 							actionGroup = None
 							wasActiveBeforePartWasAdjusted = False
 						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
 					}
 					UPGRADESAPPLIED
 					{
@@ -33963,10 +34567,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1DVplus
 				cid = 4294633406
-				uid = 2880371966
-				mid = 943363017
+				uid = 2317024585
+				mid = 3070417436
 				persistentId = 3958460647
-				launchID = 76
+				launchID = 77
 				parent = 23
 				position = 0,-12.068458557128906,0
 				rotation = 0,1,0,0
@@ -33986,10 +34590,10 @@ GAME
 				attN = bottom, -1
 				mass = 0.469999999
 				shielded = False
-				temp = 274.21100927157704
-				tempExt = 274.25959207163584
-				tempExtUnexp = 274.25955704505481
-				staticPressureAtm = 0.98449473612813809
+				temp = 274.24222248936303
+				tempExt = 274.28703105662078
+				tempExtUnexp = 274.28700276115472
+				staticPressureAtm = 0.98438540594447776
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -33999,6 +34603,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = PMB.F9.Merlin1DVplus
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -34072,6 +34679,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -34082,6 +34690,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -34093,11 +34702,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999937089459103
-							ullageHeightMax = 0.99999980654298781
-							ullageRadialMin = 4.3232202944891534E-07
-							ullageRadialMax = 0.99999999952002949
-							UT = 3759927965.9025064
+							ullageHeightMin = 0.8999993621299115
+							ullageHeightMax = 0.99999981811984917
+							ullageRadialMin = 4.6937319133916407E-07
+							ullageRadialMax = 0.99999999761032377
+							UT = 3759928005.022469
 						}
 					}
 					UPGRADESAPPLIED
@@ -34225,6 +34834,22 @@ GAME
 				}
 				MODULE
 				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -34255,10 +34880,10 @@ GAME
 			{
 				name = KK.SpX.Mvac.skirt
 				cid = 4293871078
-				uid = 262045826
-				mid = 943363017
+				uid = 2066888998
+				mid = 3070417436
 				persistentId = 3403875740
-				launchID = 76
+				launchID = 77
 				parent = 24
 				position = 0,-10.918464660644531,0
 				rotation = 0,-0.707106829,0,-0.707106829
@@ -34276,10 +34901,10 @@ GAME
 				attN = top, 24
 				mass = 0.0149999997
 				shielded = False
-				temp = 274.25073179760415
-				tempExt = 274.29645524452826
-				tempExtUnexp = 274.29641434662551
-				staticPressureAtm = 0.98436070876800363
+				temp = 274.28205224285171
+				tempExt = 274.32597614410179
+				tempExtUnexp = 274.32594637818949
+				staticPressureAtm = 0.98425137858434331
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -34289,6 +34914,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = KK.SpX.Mvac.skirt
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -34370,10 +34998,10 @@ GAME
 			{
 				name = Decoupler.3
 				cid = 4294107994
-				uid = 3761539104
-				mid = 943363017
+				uid = 3154275455
+				mid = 3070417436
 				persistentId = 1785055232
-				launchID = 76
+				launchID = 77
 				parent = 17
 				position = 0,-9.7052764892578125,0
 				rotation = 0,0,1,0
@@ -34392,10 +35020,10 @@ GAME
 				attN = bottom, 17
 				mass = 0.5
 				shielded = False
-				temp = 274.18933971689597
-				tempExt = 274.18968010103862
-				tempExtUnexp = 274.18968010103862
-				staticPressureAtm = 0.9842193023734348
+				temp = 274.18787554301394
+				tempExt = 274.18821636315505
+				tempExtUnexp = 274.18821636315505
+				staticPressureAtm = 0.98411004748604425
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -34405,6 +35033,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = Decoupler.3
 				modCost = 0
+				modMass = 0
+				moduleVariantName = Basic
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -34585,10 +35216,10 @@ GAME
 			{
 				name = KK.SPX.F93.interstage
 				cid = 4294631684
-				uid = 4037093389
-				mid = 943363017
+				uid = 2582002790
+				mid = 3070417436
 				persistentId = 2832985031
-				launchID = 76
+				launchID = 77
 				parent = 26
 				position = 0,-12.982749938964844,0
 				rotation = 0,0,0,1
@@ -34607,10 +35238,10 @@ GAME
 				attN = top, 26
 				mass = 0.589999974
 				shielded = False
-				temp = 274.18933977204512
-				tempExt = 274.18975579284432
-				tempExtUnexp = 274.18975579284432
-				staticPressureAtm = 0.98460128034981798
+				temp = 274.18787559815991
+				tempExt = 274.18829205044568
+				tempExtUnexp = 274.18829205044568
+				staticPressureAtm = 0.98449195016615776
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -34620,6 +35251,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = KK.SPX.F93.interstage
 				modCost = 0
+				modMass = 0
+				moduleVariantName = block5new
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -34786,10 +35420,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294256998
-				uid = 2926397979
-				mid = 943363017
+				uid = 65568037
+				mid = 3070417436
 				persistentId = 3012762193
-				launchID = 76
+				launchID = 77
 				parent = 27
 				position = 1.8293530941009521,-16.255756378173828,-2.384185791015625E-07
 				rotation = 2.08931503E-08,0.707106769,-2.08931503E-08,0.707106888
@@ -34809,10 +35443,10 @@ GAME
 				srfN = srfAttach, 27,collider_F912_Interstage
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18947806746564
-				tempExt = 274.2122670907309
-				tempExtUnexp = 274.21226608301384
-				staticPressureAtm = 0.98498280654858283
+				temp = 274.18823671503657
+				tempExt = 274.21115685673362
+				tempExtUnexp = 274.21115663744297
+				staticPressureAtm = 0.98487340106865284
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -34822,6 +35456,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = KK.F9demo.S1RCS
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -34934,10 +35571,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294256346
-				uid = 4243014642
-				mid = 943363017
+				uid = 348040259
+				mid = 3070417436
 				persistentId = 1163188947
-				launchID = 76
+				launchID = 77
 				parent = 27
 				position = -1.1920928955078125E-07,-16.255756378173828,-1.8293533325195313
 				rotation = 1.77635663E-15,1,-2.95473725E-08,1.19209275E-07
@@ -34957,10 +35594,10 @@ GAME
 				srfN = srfAttach, 27,collider_F912_Interstage
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18947806746564
-				tempExt = 274.2122670907309
-				tempExtUnexp = 274.21226608301384
-				staticPressureAtm = 0.98498280654858283
+				temp = 274.18823671503657
+				tempExt = 274.21115685673362
+				tempExtUnexp = 274.21115663744297
+				staticPressureAtm = 0.98487347636492251
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -34970,6 +35607,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = KK.F9demo.S1RCS
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -35082,10 +35722,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294256276
-				uid = 3797456375
-				mid = 943363017
+				uid = 381639694
+				mid = 3070417436
 				persistentId = 2107624888
-				launchID = 76
+				launchID = 77
 				parent = 27
 				position = -1.8293530941009521,-16.255756378173828,3.5762786865234375E-07
 				rotation = -2.08931485E-08,0.707106829,-2.0893145E-08,-0.707106829
@@ -35105,10 +35745,10 @@ GAME
 				srfN = srfAttach, 27,collider_F912_Interstage
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18947806746564
-				tempExt = 274.2122670907309
-				tempExtUnexp = 274.21226608301384
-				staticPressureAtm = 0.9849828818448525
+				temp = 274.18823671503657
+				tempExt = 274.21115685673362
+				tempExtUnexp = 274.21115663744297
+				staticPressureAtm = 0.98487347636492251
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -35118,6 +35758,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = KK.F9demo.S1RCS
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -35230,10 +35873,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294256206
-				uid = 1086090798
-				mid = 943363017
+				uid = 2439797367
+				mid = 3070417436
 				persistentId = 308245408
-				launchID = 76
+				launchID = 77
 				parent = 27
 				position = 3.5762786865234375E-07,-16.255756378173828,1.8293530941009521
 				rotation = -2.95473725E-08,1.19209275E-07,-1.77635663E-15,-1
@@ -35253,10 +35896,10 @@ GAME
 				srfN = srfAttach, 27,collider_F912_Interstage
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18947806746564
-				tempExt = 274.2122670907309
-				tempExtUnexp = 274.21226608301384
-				staticPressureAtm = 0.98498280654858283
+				temp = 274.18823671503657
+				tempExt = 274.21115685673362
+				tempExtUnexp = 274.21115663744297
+				staticPressureAtm = 0.98487347636492251
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -35266,6 +35909,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = KK.F9demo.S1RCS
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -35378,10 +36024,10 @@ GAME
 			{
 				name = KK.SPX.F93.S1tank
 				cid = 4294625744
-				uid = 959059609
-				mid = 943363017
+				uid = 2130892302
+				mid = 3070417436
 				persistentId = 526792388
-				launchID = 76
+				launchID = 77
 				parent = 27
 				position = 0,-35.430072784423828,0
 				rotation = 0,0,0,1
@@ -35405,7 +36051,7 @@ GAME
 				temp = 90.150001525878906
 				tempExt = 90.150001525878906
 				tempExtUnexp = 90.150001525878906
-				staticPressureAtm = 0.98722076227774946
+				staticPressureAtm = 0.98711113090901026
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -35415,6 +36061,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = KK.SPX.F93.S1tank
 				modCost = 2437.98853
+				modMass = -20.8109283
+				moduleVariantName = block5new
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -36993,10 +37642,10 @@ GAME
 			{
 				name = KK.SPX.Falcon9.FC
 				cid = 4294622098
-				uid = 2623192318
-				mid = 943363017
+				uid = 3992703478
+				mid = 3070417436
 				persistentId = 1208775091
-				launchID = 76
+				launchID = 77
 				parent = 32
 				position = 0,-16.059593200683594,0
 				rotation = 0,0,0,1
@@ -37014,10 +37663,10 @@ GAME
 				attN = bottom, 32
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18933535365915
-				tempExt = 274.18970077731313
-				tempExtUnexp = 274.18970077731313
-				staticPressureAtm = 0.98495999177885207
+				temp = 274.18787118006338
+				tempExt = 274.18823703810818
+				tempExtUnexp = 274.18823703810818
+				staticPressureAtm = 0.98485058629892208
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -37027,6 +37676,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = _default
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -37116,13 +37768,13 @@ GAME
 							file
 							{
 								filename = boot-boosters.ks
-								binary = H4sIAHhz318A,71TUU,bMBB+bn,FiSd4SNwg1HWRJlTKGAhYuyZjTNOELrFTmyY5y3Ya+u9nt0gwTXuEe7B09um77777zBhEbxhDj3+hatFiI1IoiFzkD+uEsfHaDt+h+,U8g6w0SjsLFRm4zhbgCAoBnRUcqIVMYynuH26wa0v5cCekKmth4ZY49MpJOFw0BZkVLOdw53krao,gPZjPiAsotpDCM4EIpHPapoz5QbomXgtTYG0DfW1oZbCJS2qYarl4irXUp8xfV159lnycTMZJpHc4LICfCYdQE3KoDDUpDF7A+76PuSFd0NMOz0r2yBOSYz4ZjdUWXcKm0zP8gPeF+nlebSZfIvx2crtdRg5Pef1pFPBv0Anr4Jz6NnRJX5FfeVG7Ygf9TGi,gWg5jy6wLqndGWPRGU3WuyYkf0Uuld1z7w1qLQzghhQPazUiElw5wJaDxY0ABEPlWjh47DwdX1FKbFcCnBRQBoGp+gf,IPiUWYcr8dqtBxC0jH35wMf34J5gqCyPEpjNl5,DCyQn7Ctt2PHoePTmHhlmP67y2SXkcxjFA8ZeUi4q7GoHi2l+mcIv7,nfLJNKW7b,CkPTtRqdPPzfqEfxH+kD2sUZBAAA
+								binary = H4sIAIne4F8A,71TUU,bMBB+bn,FiSd4SNwg1HWRJlTKGAhYuyZjTNOELrFTmyY5y3Ya+u9nt0gwTXuEe7B09um77777zBhEbxhDj3+hatFiI1IoiFzkD+uEsfHaDt+h+,U8g6w0SjsLFRm4zhbgCAoBnRUcqIVMYynuH26wa0v5cCekKmth4ZY49MpJOFw0BZkVLOdw53krao,gPZjPiAsotpDCM4EIpHPapoz5QbomXgtTYG0DfW1oZbCJS2qYarl4irXUp8xfV159lnycTMZJpHc4LICfCYdQE3KoDDUpDF7A+76PuSFd0NMOz0r2yBOSYz4ZjdUWXcKm0zP8gPeF+nlebSZfIvx2crtdRg5Pef1pFPBv0Anr4Jz6NnRJX5FfeVG7Ygf9TGi,gWg5jy6wLqndGWPRGU3WuyYkf0Uuld1z7w1qLQzghhQPazUiElw5wJaDxY0ABEPlWjh47DwdX1FKbFcCnBRQBoGp+gf,IPiUWYcr8dqtBxC0jH35wMf34J5gqCyPEpjNl5,DCyQn7Ctt2PHoePTmHhlmP67y2SXkcxjFA8ZeUi4q7GoHi2l+mcIv7,nfLJNKW7b,CkPTtRqdPPzfqEfxH+kD2sUZBAAA
 							}
 						}
 						file
 						{
 							filename = STAGE1_TARGET_FILE.c
-							binary = H4sIAHhz318A,0tJTc5JLEpVSM,JT0rMUfBJzEvJzEuPys9LVQjxVwhzDQ529dHwiYo31NTjAgCP0W4vLAAAAA==
+							binary = H4sIAIne4F8A,0tJTc5JLEpVSM,JT0rMUfBJzEvJzEuPys9LVQjxVwhzDQ529dHwiYo31NTjAgCP0W4vLAAAAA==
 						}
 					}
 					UPGRADESAPPLIED
@@ -37517,10 +38169,10 @@ GAME
 			{
 				name = KK.SPX.F9LandingLeg
 				cid = 4294581646
-				uid = 649266786
-				mid = 943363017
+				uid = 427224267
+				mid = 3070417436
 				persistentId = 3738723664
-				launchID = 76
+				launchID = 77
 				parent = 32
 				position = -1.2787079811096191,-52.026679992675781,-1.2787065505981445
 				rotation = -9.04808761E-09,0.923879564,-2.18440128E-08,-0.382683396
@@ -37540,10 +38192,10 @@ GAME
 				srfN = srfAttach, 32,collider_F912_S1FuelTank
 				mass = 0.150000006
 				shielded = False
-				temp = 274.1893412877638
-				tempExt = 274.18982801042148
-				tempExtUnexp = 274.18982801042148
-				staticPressureAtm = 0.98916144833398867
+				temp = 274.18787711377928
+				tempExt = 274.18836462119646
+				tempExtUnexp = 274.18836462119646
+				staticPressureAtm = 0.98905166637271003
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -37553,6 +38205,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = KK.SPX.F9LandingLeg
 				modCost = 0
+				modMass = 0
+				moduleVariantName = black
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -37605,6 +38260,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -37736,10 +38392,10 @@ GAME
 			{
 				name = KK.SPX.F9LandingLeg
 				cid = 4294581174
-				uid = 3467507518
-				mid = 943363017
+				uid = 1074492913
+				mid = 3070417436
 				persistentId = 1326950246
-				launchID = 76
+				launchID = 77
 				parent = 32
 				position = -1.2787070274353027,-52.026679992675781,1.2787072658538818
 				rotation = -2.1844011E-08,0.382683396,-9.04808495E-09,-0.923879564
@@ -37759,10 +38415,10 @@ GAME
 				srfN = srfAttach, 32,collider_F912_S1FuelTank
 				mass = 0.150000006
 				shielded = False
-				temp = 274.1893412877638
-				tempExt = 274.18982801042148
-				tempExtUnexp = 274.18982801042148
-				staticPressureAtm = 0.98916144833398867
+				temp = 274.18787711377928
+				tempExt = 274.18836462119646
+				tempExtUnexp = 274.18836462119646
+				staticPressureAtm = 0.98905166637271003
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -37772,6 +38428,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = KK.SPX.F9LandingLeg
 				modCost = 0
+				modMass = 0
+				moduleVariantName = black
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -37824,6 +38483,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 						}
 					}
@@ -37951,10 +38611,10 @@ GAME
 			{
 				name = KK.SPX.F9LandingLeg
 				cid = 4294581056
-				uid = 965557806
-				mid = 943363017
+				uid = 798049662
+				mid = 3070417436
 				persistentId = 1754682138
-				launchID = 76
+				launchID = 77
 				parent = 32
 				position = 1.27870774269104,-52.026679992675781,1.2787063121795654
 				rotation = -2.1844011E-08,-0.382683396,9.04808495E-09,-0.923879564
@@ -37974,10 +38634,10 @@ GAME
 				srfN = srfAttach, 32,collider_F912_S1FuelTank
 				mass = 0.150000006
 				shielded = False
-				temp = 274.1893412877638
-				tempExt = 274.18982801042148
-				tempExtUnexp = 274.18982801042148
-				staticPressureAtm = 0.98916144833398867
+				temp = 274.18787711377928
+				tempExt = 274.18836462119646
+				tempExtUnexp = 274.18836462119646
+				staticPressureAtm = 0.98905166637271003
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -37987,6 +38647,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = KK.SPX.F9LandingLeg
 				modCost = 0
+				modMass = 0
+				moduleVariantName = black
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -38039,6 +38702,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 						}
 					}
@@ -38166,10 +38830,10 @@ GAME
 			{
 				name = KK.SPX.F9LandingLeg
 				cid = 4294580938
-				uid = 2128062530
-				mid = 943363017
+				uid = 3385897505
+				mid = 3070417436
 				persistentId = 2447077189
-				launchID = 76
+				launchID = 77
 				parent = 32
 				position = 1.2787063121795654,-52.026679992675781,-1.27870774269104
 				rotation = -9.04808495E-09,-0.923879564,2.1844011E-08,-0.382683396
@@ -38189,10 +38853,10 @@ GAME
 				srfN = srfAttach, 32,collider_F912_S1FuelTank
 				mass = 0.150000006
 				shielded = False
-				temp = 274.1893412877638
-				tempExt = 274.18982801042148
-				tempExtUnexp = 274.18982801042148
-				staticPressureAtm = 0.98916144833398867
+				temp = 274.18787711377928
+				tempExt = 274.18836462119646
+				tempExtUnexp = 274.18836462119646
+				staticPressureAtm = 0.98905166637271003
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -38202,6 +38866,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = KK.SPX.F9LandingLeg
 				modCost = 0
+				modMass = 0
+				moduleVariantName = black
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -38254,6 +38921,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 						}
 					}
@@ -38381,10 +39049,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4289609260
-				uid = 2790732268
-				mid = 943363017
+				uid = 2740088597
+				mid = 3070417436
 				persistentId = 597995376
-				launchID = 76
+				launchID = 77
 				parent = 32
 				position = 1.8293955326080322,-54.393383026123047,-2.384185791015625E-07
 				rotation = -6.55626106E-16,0.707106769,6.55626E-16,0.707106888
@@ -38404,10 +39072,10 @@ GAME
 				srfN = srfAttach, 32,collider_F913_S1FuelTank_collider
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18934134802083
-				tempExt = 274.18956609239819
-				tempExtUnexp = 274.18956609239819
-				staticPressureAtm = 0.98943846331035645
+				temp = 274.18787717403234
+				tempExt = 274.18810251655771
+				tempExtUnexp = 274.18810251655771
+				staticPressureAtm = 0.98932860605280804
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -38417,6 +39085,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = KK.F9demo.S1RCS
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -38529,10 +39200,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294247630
-				uid = 1592191750
-				mid = 943363017
+				uid = 234229166
+				mid = 3070417436
 				persistentId = 1401641660
-				launchID = 76
+				launchID = 77
 				parent = 32
 				position = -1.1920928955078125E-07,-54.393383026123047,-1.8293957710266113
 				rotation = -1.05879106E-22,1,9.27195192E-16,1.19209275E-07
@@ -38552,10 +39223,10 @@ GAME
 				srfN = srfAttach, 32,collider_F913_S1FuelTank_collider
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18934134802083
-				tempExt = 274.18956609239819
-				tempExtUnexp = 274.18956609239819
-				staticPressureAtm = 0.98943846331035645
+				temp = 274.18787717403234
+				tempExt = 274.18810251655771
+				tempExtUnexp = 274.18810251655771
+				staticPressureAtm = 0.98932860605280804
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -38565,6 +39236,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = KK.F9demo.S1RCS
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -38677,10 +39351,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294247566
-				uid = 2894078308
-				mid = 943363017
+				uid = 907925642
+				mid = 3070417436
 				persistentId = 3380630310
-				launchID = 76
+				launchID = 77
 				parent = 32
 				position = -1.8293955326080322,-54.393383026123047,3.5762786865234375E-07
 				rotation = 6.55626E-16,0.707106829,6.55626E-16,-0.707106829
@@ -38700,10 +39374,10 @@ GAME
 				srfN = srfAttach, 32,collider_F913_S1FuelTank_collider
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18934134802083
-				tempExt = 274.18956609239819
-				tempExtUnexp = 274.18956609239819
-				staticPressureAtm = 0.98943846331035645
+				temp = 274.18787717403234
+				tempExt = 274.18810251655771
+				tempExtUnexp = 274.18810251655771
+				staticPressureAtm = 0.98932868134907781
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -38713,6 +39387,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = KK.F9demo.S1RCS
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -38825,10 +39502,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294247502
-				uid = 3997904571
-				mid = 943363017
+				uid = 4005454496
+				mid = 3070417436
 				persistentId = 789697671
-				launchID = 76
+				launchID = 77
 				parent = 32
 				position = 3.5762786865234375E-07,-54.393383026123047,1.8293955326080322
 				rotation = 9.27195192E-16,1.19209275E-07,1.05879106E-22,-1
@@ -38848,10 +39525,10 @@ GAME
 				srfN = srfAttach, 32,collider_F913_S1FuelTank_collider
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18934134802083
-				tempExt = 274.18956609239819
-				tempExtUnexp = 274.18956609239819
-				staticPressureAtm = 0.98943846331035645
+				temp = 274.18787717403234
+				tempExt = 274.18810251655771
+				tempExtUnexp = 274.18810251655771
+				staticPressureAtm = 0.98932860605280804
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -38861,6 +39538,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = KK.F9demo.S1RCS
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -38973,10 +39653,10 @@ GAME
 			{
 				name = miniFuelTank
 				cid = 4290370112
-				uid = 3069823639
-				mid = 943363017
+				uid = 1295903064
+				mid = 3070417436
 				persistentId = 3140562807
-				launchID = 76
+				launchID = 77
 				parent = 32
 				position = 0,-54.577266693115234,0
 				rotation = 0,0,0,1
@@ -38995,10 +39675,10 @@ GAME
 				attN = bottom, 43
 				mass = 0.00216278993
 				shielded = False
-				temp = 274.189337153586
-				tempExt = 274.18822381360957
-				tempExtUnexp = 274.18822381360957
-				staticPressureAtm = 0.98945999804350171
+				temp = 274.18787297987234
+				tempExt = 274.18676021111344
+				tempExtUnexp = 274.18676021111344
+				staticPressureAtm = 0.98935014078595329
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -39008,6 +39688,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = miniFuelTank
 				modCost = 0.050673075
+				modMass = -0.0228372104
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -39031,6 +39714,23 @@ GAME
 				}
 				PARTDATA
 				{
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
 				}
 				MODULE
 				{
@@ -39837,10 +40537,10 @@ GAME
 			{
 				name = PMB.batteryBankLarge
 				cid = 4289602948
-				uid = 2390106763
-				mid = 943363017
+				uid = 2638906713
+				mid = 3070417436
 				persistentId = 471182658
-				launchID = 76
+				launchID = 77
 				parent = 42
 				position = 0,-54.200977325439453,0
 				rotation = 0,0,0,1
@@ -39859,10 +40559,10 @@ GAME
 				attN = bottom, 44
 				mass = 9.99999975E-05
 				shielded = False
-				temp = 274.6245043310293
-				tempExt = 275.49582862984812
-				tempExtUnexp = 275.4958241020924
-				staticPressureAtm = 0.98941602502197445
+				temp = 274.62426704992924
+				tempExt = 275.49770362445003
+				tempExtUnexp = 275.49770102474866
+				staticPressureAtm = 0.98930616776442604
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -39872,6 +40572,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = PMB.batteryBankLarge
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -39964,10 +40667,10 @@ GAME
 			{
 				name = PMB.Rockomax16.BW
 				cid = 4293210738
-				uid = 2018248190
-				mid = 943363017
+				uid = 3347093087
+				mid = 3070417436
 				persistentId = 1156320785
-				launchID = 76
+				launchID = 77
 				parent = 43
 				position = 0,-53.478553771972656,0
 				rotation = 0,0,0,1
@@ -39986,10 +40689,10 @@ GAME
 				attN = bottom, 45
 				mass = 0.281160057
 				shielded = False
-				temp = 274.21928106656628
-				tempExt = 274.45851254039064
-				tempExtUnexp = 274.45809825617806
-				staticPressureAtm = 0.98933146731105814
+				temp = 274.21673581383067
+				tempExt = 274.83089571043308
+				tempExtUnexp = 274.83050293266433
+				staticPressureAtm = 0.98922161005350973
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -39999,6 +40702,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = PMB.Rockomax16.BW
 				modCost = 69.5284653
+				modMass = 0.28106007
+				moduleVariantName = Basic
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -40844,10 +41550,10 @@ GAME
 			{
 				name = PMB.Rockomax16.BW
 				cid = 4289908726
-				uid = 521934732
-				mid = 943363017
+				uid = 766903855
+				mid = 3070417436
 				persistentId = 2893874595
-				launchID = 76
+				launchID = 77
 				parent = 44
 				position = 0,-53.478553771972656,0
 				rotation = 0,0,0,1
@@ -40866,10 +41572,10 @@ GAME
 				attN = bottom, 46
 				mass = 0.281160057
 				shielded = False
-				temp = 274.18934138897686
-				tempExt = 274.4583118166405
-				tempExtUnexp = 274.45789784621581
-				staticPressureAtm = 0.98933146731105814
+				temp = 274.18787740280135
+				tempExt = 274.83046385492855
+				tempExtUnexp = 274.83007126460569
+				staticPressureAtm = 0.98922161005350973
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -40879,6 +41585,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = PMB.Rockomax16.BW
 				modCost = 69.5284653
+				modMass = 0.28106007
+				moduleVariantName = Basic
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -41724,10 +42433,10 @@ GAME
 			{
 				name = KK.SPX.F9.Octaweb
 				cid = 4294617648
-				uid = 3515675621
-				mid = 943363017
+				uid = 917248566
+				mid = 3070417436
 				persistentId = 4161287128
-				launchID = 76
+				launchID = 77
 				parent = 45
 				position = 0,-55.686958312988281,0
 				rotation = 0,0,0,1
@@ -41755,10 +42464,10 @@ GAME
 				attN = bottom, 56
 				mass = 0.5
 				shielded = False
-				temp = 274.27423141671312
-				tempExt = 274.42326425930787
-				tempExtUnexp = 274.42299634844375
-				staticPressureAtm = 0.98958988410880055
+				temp = 274.51603231332706
+				tempExt = 274.6904426955835
+				tempExtUnexp = 274.69013408962172
+				staticPressureAtm = 0.98948002685125214
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -41768,6 +42477,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = KK.SPX.F9.Octaweb
 				modCost = 0
+				modMass = 0
+				moduleVariantName = block5new
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -42050,10 +42762,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294615978
-				uid = 2106799464
-				mid = 943363017
+				uid = 2215400173
+				mid = 3070417436
 				persistentId = 2460599543
-				launchID = 76
+				launchID = 77
 				parent = 46
 				position = 0,-56.791263580322266,0
 				rotation = 0,0,0,1
@@ -42071,10 +42783,10 @@ GAME
 				attN = top, 46
 				mass = 0.469999999
 				shielded = False
-				temp = 274.19648175856474
-				tempExt = 274.31655499330702
-				tempExtUnexp = 274.31643307316108
-				staticPressureAtm = 0.98971916780394142
+				temp = 274.21904876400328
+				tempExt = 274.44099665638356
+				tempExtUnexp = 274.44084828098221
+				staticPressureAtm = 0.98960931054639301
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -42084,6 +42796,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = PMB.F9.Merlin1Dplusplus
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -42157,6 +42872,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -42167,6 +42883,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -42178,11 +42895,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999942537459066
-							ullageHeightMax = 0.99999988500005377
-							ullageRadialMin = 5.5200180223349082E-07
-							ullageRadialMax = 0.99999999441990373
-							UT = 3759927965.9025064
+							ullageHeightMin = 0.89999680815252769
+							ullageHeightMax = 0.99999773734028585
+							ullageRadialMin = 0
+							ullageRadialMax = 0.99999993703347212
+							UT = 3759928005.022469
 						}
 					}
 					UPGRADESAPPLIED
@@ -42302,6 +43019,22 @@ GAME
 					{
 					}
 					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -42340,10 +43073,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294615162
-				uid = 1120287120
-				mid = 943363017
+				uid = 1265008327
+				mid = 3070417436
 				persistentId = 1114045749
-				launchID = 76
+				launchID = 77
 				parent = 46
 				position = 1.1935441493988037,-56.651264190673828,-0.49438327550888062
 				rotation = 0,0.13052617,0,0.991444945
@@ -42361,10 +43094,10 @@ GAME
 				attN = top, 46
 				mass = 0.469999999
 				shielded = False
-				temp = 274.19648175866604
-				tempExt = 274.31655499516728
-				tempExtUnexp = 274.31643307501849
-				staticPressureAtm = 0.98970275321713852
+				temp = 274.219048764673
+				tempExt = 274.44099666112578
+				tempExtUnexp = 274.44084828572107
+				staticPressureAtm = 0.98959297125585977
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -42374,6 +43107,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = PMB.F9.Merlin1Dplusplus
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -42447,6 +43183,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -42457,6 +43194,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -42468,11 +43206,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999942515018816
-							ullageHeightMax = 0.99999987972038762
-							ullageRadialMin = 5.3308393182461577E-07
-							ullageRadialMax = 0.99999999407428597
-							UT = 3759927965.9025064
+							ullageHeightMin = 0.89999936373967782
+							ullageHeightMax = 0.99999978671531486
+							ullageRadialMin = 3.8360150491345602E-07
+							ullageRadialMax = 0.99999999980779464
+							UT = 3759928005.022469
 						}
 					}
 					UPGRADESAPPLIED
@@ -42592,6 +43330,22 @@ GAME
 					{
 					}
 					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -42630,10 +43384,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294614724
-				uid = 3931614062
-				mid = 943363017
+				uid = 348504145
+				mid = 3070417436
 				persistentId = 2202196946
-				launchID = 76
+				launchID = 77
 				parent = 46
 				position = 0.49438190460205078,-56.651264190673828,-1.1935462951660156
 				rotation = 0,0.608761489,0,0.793353319
@@ -42651,10 +43405,10 @@ GAME
 				attN = top, 46
 				mass = 0.469999999
 				shielded = False
-				temp = 274.19648175856474
-				tempExt = 274.31655499330702
-				tempExtUnexp = 274.31643307316108
-				staticPressureAtm = 0.98970282851340818
+				temp = 274.21904876400328
+				tempExt = 274.44099665638356
+				tempExtUnexp = 274.44084828098221
+				staticPressureAtm = 0.98959297125585977
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -42664,6 +43418,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = PMB.F9.Merlin1Dplusplus
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -42737,6 +43494,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -42747,6 +43505,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -42758,11 +43517,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999946434181222
-							ullageHeightMax = 0.9999999197403816
-							ullageRadialMin = 5.9962231561126302E-07
-							ullageRadialMax = 0.99999999476309176
-							UT = 3759927965.9025064
+							ullageHeightMin = 0.89999905763395127
+							ullageHeightMax = 0.99999948182394638
+							ullageRadialMin = 0
+							ullageRadialMax = 0.99999999862844224
+							UT = 3759928005.022469
 						}
 					}
 					UPGRADESAPPLIED
@@ -42882,6 +43641,22 @@ GAME
 					{
 					}
 					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -42920,10 +43695,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294614162
-				uid = 3197071356
-				mid = 943363017
+				uid = 3249508857
+				mid = 3070417436
 				persistentId = 78093436
-				launchID = 76
+				launchID = 77
 				parent = 46
 				position = -0.49438327550888062,-56.651264190673828,-1.1935434341430664
 				rotation = 0,0.866025448,0,0.49999994
@@ -42941,10 +43716,10 @@ GAME
 				attN = top, 46
 				mass = 0.469999999
 				shielded = False
-				temp = 274.19648175856474
-				tempExt = 274.31655499330702
-				tempExtUnexp = 274.31643307316108
-				staticPressureAtm = 0.98970282851340818
+				temp = 274.219048764673
+				tempExt = 274.44099666112578
+				tempExtUnexp = 274.44084828572107
+				staticPressureAtm = 0.98959297125585977
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -42954,6 +43729,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = PMB.F9.Merlin1Dplusplus
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -43027,6 +43805,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -43037,6 +43816,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -43048,11 +43828,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999950453254185
-							ullageHeightMax = 0.99999995314698131
-							ullageRadialMin = 6.6824424451582633E-07
-							ullageRadialMax = 0.99999999876861734
-							UT = 3759927965.9025064
+							ullageHeightMin = 0.89999930075406798
+							ullageHeightMax = 0.9999997133989228
+							ullageRadialMin = 2.4671795021506612E-07
+							ullageRadialMax = 0.99999999850601895
+							UT = 3759928005.022469
 						}
 					}
 					UPGRADESAPPLIED
@@ -43172,6 +43952,22 @@ GAME
 					{
 					}
 					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -43210,10 +44006,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294613744
-				uid = 1405220907
-				mid = 943363017
+				uid = 2094633516
+				mid = 3070417436
 				persistentId = 1253440327
-				launchID = 76
+				launchID = 77
 				parent = 46
 				position = -1.1935455799102783,-56.651264190673828,-0.49438267946243286
 				rotation = 0,0.991444945,0,0.130526051
@@ -43231,10 +44027,10 @@ GAME
 				attN = top, 46
 				mass = 0.469999999
 				shielded = False
-				temp = 274.19648175866604
-				tempExt = 274.31655499516728
-				tempExtUnexp = 274.31643307501849
-				staticPressureAtm = 0.98970282851340818
+				temp = 274.219048764673
+				tempExt = 274.44099666112578
+				tempExtUnexp = 274.44084828572107
+				staticPressureAtm = 0.98959297125585977
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -43244,6 +44040,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = PMB.F9.Merlin1Dplusplus
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -43317,6 +44116,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -43327,6 +44127,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -43338,11 +44139,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999940332404327
-							ullageHeightMax = 0.99999985370402711
-							ullageRadialMin = 5.1897474699596136E-07
-							ullageRadialMax = 0.99999999835923281
-							UT = 3759927965.9025064
+							ullageHeightMin = 0.89999620141426051
+							ullageHeightMax = 0.99999704025137914
+							ullageRadialMin = 0
+							ullageRadialMax = 0.99999993293726985
+							UT = 3759928005.022469
 						}
 					}
 					UPGRADESAPPLIED
@@ -43462,6 +44263,22 @@ GAME
 					{
 					}
 					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -43500,10 +44317,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294613336
-				uid = 4257886148
-				mid = 943363017
+				uid = 1671642382
+				mid = 3070417436
 				persistentId = 222593185
-				launchID = 76
+				launchID = 77
 				parent = 46
 				position = -1.1935453414916992,-56.651264190673828,0.49438118934631348
 				rotation = 0,0.965925813,0,-0.258819073
@@ -43521,10 +44338,10 @@ GAME
 				attN = top, 46
 				mass = 0.469999999
 				shielded = False
-				temp = 274.19648175876682
-				tempExt = 274.31655499702651
-				tempExtUnexp = 274.316433076875
-				staticPressureAtm = 0.98970282851340818
+				temp = 274.219048764673
+				tempExt = 274.44099666112578
+				tempExtUnexp = 274.44084828572107
+				staticPressureAtm = 0.98959297125585977
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -43534,6 +44351,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = PMB.F9.Merlin1Dplusplus
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -43607,6 +44427,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -43617,6 +44438,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -43628,11 +44450,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999940395040778
-							ullageHeightMax = 0.99999985982873429
-							ullageRadialMin = 5.2706714459462341E-07
-							ullageRadialMax = 0.99999999698121622
-							UT = 3759927965.9025064
+							ullageHeightMin = 0.89999944601529391
+							ullageHeightMax = 0.9999999275337802
+							ullageRadialMin = 6.0778530174234314E-07
+							ullageRadialMax = 0.99999998844155813
+							UT = 3759928005.022469
 						}
 					}
 					UPGRADESAPPLIED
@@ -43752,6 +44574,22 @@ GAME
 					{
 					}
 					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -43790,10 +44628,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294612938
-				uid = 1183587813
-				mid = 943363017
+				uid = 1045073247
+				mid = 3070417436
 				persistentId = 2882520202
-				launchID = 76
+				launchID = 77
 				parent = 46
 				position = -0.49438399076461792,-56.651264190673828,1.1935451030731201
 				rotation = 0,-0.79335326,0,0.608761549
@@ -43811,10 +44649,10 @@ GAME
 				attN = top, 46
 				mass = 0.469999999
 				shielded = False
-				temp = 274.19648175856474
-				tempExt = 274.31655499330702
-				tempExtUnexp = 274.31643307316108
-				staticPressureAtm = 0.98970282851340818
+				temp = 274.219048764673
+				tempExt = 274.44099666112578
+				tempExtUnexp = 274.44084828572107
+				staticPressureAtm = 0.98959297125585977
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -43824,6 +44662,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = PMB.F9.Merlin1Dplusplus
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -43897,6 +44738,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -43907,6 +44749,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -43918,11 +44761,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999944155860667
-							ullageHeightMax = 0.99999989572705061
-							ullageRadialMin = 5.933157890775016E-07
-							ullageRadialMax = 0.9999999990298547
-							UT = 3759927965.9025064
+							ullageHeightMin = 0.89999935386190988
+							ullageHeightMax = 0.99999975359861193
+							ullageRadialMin = 2.9201470953199944E-07
+							ullageRadialMax = 0.99999999938060591
+							UT = 3759928005.022469
 						}
 					}
 					UPGRADESAPPLIED
@@ -44042,6 +44885,22 @@ GAME
 					{
 					}
 					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -44080,10 +44939,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294612550
-				uid = 3778559198
-				mid = 943363017
+				uid = 1622037474
+				mid = 3070417436
 				persistentId = 1278813865
-				launchID = 76
+				launchID = 77
 				parent = 46
 				position = 0.49438238143920898,-56.651264190673828,1.1935441493988037
 				rotation = 0,0.500000119,0,-0.866025388
@@ -44101,10 +44960,10 @@ GAME
 				attN = top, 46
 				mass = 0.469999999
 				shielded = False
-				temp = 274.19648175866604
-				tempExt = 274.31655499516728
-				tempExtUnexp = 274.31643307501849
-				staticPressureAtm = 0.98970282851340818
+				temp = 274.21904876400328
+				tempExt = 274.44099665638356
+				tempExtUnexp = 274.44084828098221
+				staticPressureAtm = 0.98959297125585977
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -44114,6 +44973,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = PMB.F9.Merlin1Dplusplus
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -44187,6 +45049,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -44197,6 +45060,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -44208,11 +45072,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999934124575109
-							ullageHeightMax = 0.99999980710371228
-							ullageRadialMin = 4.3895107749941929E-07
-							ullageRadialMax = 0.99999999353418156
-							UT = 3759927965.9025064
+							ullageHeightMin = 0.89999883243931855
+							ullageHeightMax = 0.99999929612094451
+							ullageRadialMin = 0
+							ullageRadialMax = 0.99999996207221642
+							UT = 3759928005.022469
 						}
 					}
 					UPGRADESAPPLIED
@@ -44340,6 +45204,22 @@ GAME
 				}
 				MODULE
 				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -44370,10 +45250,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294612172
-				uid = 744505502
-				mid = 943363017
+				uid = 461091660
+				mid = 3070417436
 				persistentId = 3738231478
-				launchID = 76
+				launchID = 77
 				parent = 46
 				position = 1.1935436725616455,-56.651264190673828,0.49438291788101196
 				rotation = 0,0.130526111,0,-0.991444886
@@ -44391,10 +45271,10 @@ GAME
 				attN = top, 46
 				mass = 0.469999999
 				shielded = False
-				temp = 274.19648175856474
-				tempExt = 274.31655499330702
-				tempExtUnexp = 274.31643307316108
-				staticPressureAtm = 0.98970275321713852
+				temp = 274.21904876534018
+				tempExt = 274.44099666586703
+				tempExtUnexp = 274.44084829045892
+				staticPressureAtm = 0.98959297125585977
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -44404,6 +45284,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = PMB.F9.Merlin1Dplusplus
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -44477,6 +45360,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -44487,6 +45371,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -44498,11 +45383,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999941450997323
-							ullageHeightMax = 0.99999990114188064
-							ullageRadialMin = 5.4738314731077544E-07
-							ullageRadialMax = 0.99999998450081085
-							UT = 3759927965.9025064
+							ullageHeightMin = 0.89999916542401859
+							ullageHeightMax = 0.99999958519884624
+							ullageRadialMin = 0
+							ullageRadialMax = 0.99999998595621842
+							UT = 3759928005.022469
 						}
 					}
 					UPGRADESAPPLIED
@@ -44630,6 +45515,22 @@ GAME
 				}
 				MODULE
 				{
+					name = EngineGroupModule
+					isEnabled = True
+					EngineGroupId = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -44660,10 +45561,10 @@ GAME
 			{
 				name = Vandy.F9
 				cid = 4290141218
-				uid = 3552301479
-				mid = 943363017
+				uid = 694524837
+				mid = 3070417436
 				persistentId = 2417303758
-				launchID = 76
+				launchID = 77
 				parent = 46
 				position = 0,-59.186958312988281,0
 				rotation = 0,0,0,-1
@@ -44681,10 +45582,10 @@ GAME
 				attN = top, 46
 				mass = 5
 				shielded = False
-				temp = 274.56925578123975
-				tempExt = 274.88072088107356
-				tempExtUnexp = 274.8800488071833
-				staticPressureAtm = 0.98999972170498696
+				temp = 275.17866275749901
+				tempExt = 275.47991005350639
+				tempExtUnexp = 275.47924545519373
+				staticPressureAtm = 0.98988986444743854
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -44694,6 +45595,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = Vandy.F9
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -44781,6 +45685,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -44940,10 +45845,10 @@ GAME
 			{
 				name = 1mv.sensor.accelerometer.srf.1
 				cid = 4292396350
-				uid = 1578739196
-				mid = 943363017
+				uid = 52324866
+				mid = 3070417436
 				persistentId = 2991313796
-				launchID = 76
+				launchID = 77
 				parent = 46
 				position = 1.8292410373687744,-55.423107147216797,1.1175870895385742E-07
 				rotation = 2.75255729E-09,0.707106829,-2.75255729E-09,0.707106829
@@ -44961,10 +45866,10 @@ GAME
 				srfN = srfAttach, 46,collider_Octaweb
 				mass = 0.00499999989
 				shielded = False
-				temp = 274.1963650293215
-				tempExt = 274.40059700879209
-				tempExtUnexp = 274.40036546867765
-				staticPressureAtm = 0.98955901263820778
+				temp = 274.22299811225093
+				tempExt = 274.62905251549591
+				tempExtUnexp = 274.62878631737209
+				staticPressureAtm = 0.98944915538065936
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -44974,6 +45879,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = 1mv.sensor.accelerometer.srf.1
 				modCost = 0
+				modMass = 0
+				moduleVariantName = variant1
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -45138,10 +46046,10 @@ GAME
 			{
 				name = 1mv.sensor.accelerometer.srf.1
 				cid = 4292396304
-				uid = 373867254
-				mid = 943363017
+				uid = 3998199944
+				mid = 3070417436
 				persistentId = 4039797537
-				launchID = 76
+				launchID = 77
 				parent = 46
 				position = -1.8292410373687744,-55.423107147216797,4.4703483581542969E-08
 				rotation = -2.75255752E-09,0.707106769,-2.75255707E-09,-0.707106888
@@ -45159,10 +46067,10 @@ GAME
 				srfN = srfAttach, 46,collider_Octaweb
 				mass = 0.00499999989
 				shielded = False
-				temp = 274.1963650293215
-				tempExt = 274.40059700879209
-				tempExtUnexp = 274.40036546867765
-				staticPressureAtm = 0.98955901263820778
+				temp = 274.22299811225093
+				tempExt = 274.62905251549591
+				tempExtUnexp = 274.62878631737209
+				staticPressureAtm = 0.98944915538065936
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -45172,6 +46080,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = 1mv.sensor.accelerometer.srf.1
 				modCost = 0
+				modMass = 0
+				moduleVariantName = variant1
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -45336,10 +46247,10 @@ GAME
 			{
 				name = launchClamp1
 				cid = 4288280982
-				uid = 1959570878
-				mid = 943363017
+				uid = 1658155754
+				mid = 3070417436
 				persistentId = 3000955265
-				launchID = 76
+				launchID = 77
 				parent = 32
 				position = 0,-51.631290435791016,2.6251838207244873
 				rotation = 2.61119207E-23,1,7.04271897E-15,-3.70764774E-09
@@ -45356,10 +46267,10 @@ GAME
 				srfN = srfAttach, 32,collider_F913_S1FuelTank_collider
 				mass = 0.100000001
 				shielded = False
-				temp = 274.18933669132156
-				tempExt = 274.18972779322559
-				tempExtUnexp = 274.18972779322559
-				staticPressureAtm = 0.98911514112809951
+				temp = 274.1878725176382
+				tempExt = 274.18826405225076
+				tempExtUnexp = 274.18826405225076
+				staticPressureAtm = 0.98900535916682086
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -45369,6 +46280,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = launchClamp1
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -45397,7 +46311,7 @@ GAME
 				{
 					name = LaunchClamp
 					isEnabled = True
-					scaleFactor = 4.34615564
+					scaleFactor = 4.3461504
 					height = 10.966197
 					stagingEnabled = True
 					towerRot = -2.61119207E-23,-1,-7.04271897E-15,-3.70764774E-09
@@ -45591,10 +46505,10 @@ GAME
 			{
 				name = Grid Fin L Titanium
 				cid = 4293607304
-				uid = 2058363956
-				mid = 943363017
+				uid = 52399787
+				mid = 3070417436
 				persistentId = 2328081720
-				launchID = 76
+				launchID = 77
 				parent = 27
 				position = -1.3529086112976074,-15.369880676269531,1.1285436153411865
 				rotation = 0.321438849,1.23223515E-07,0.946930349,3.63005512E-07
@@ -45614,10 +46528,10 @@ GAME
 				srfN = srfAttach, 27,collider_F912_Interstage
 				mass = 0.140000001
 				shielded = False
-				temp = 274.18978303277532
-				tempExt = 274.20949397679072
-				tempExtUnexp = 274.20949059722926
-				staticPressureAtm = 0.98487957536277138
+				temp = 274.18916542830806
+				tempExt = 274.20888165686887
+				tempExtUnexp = 274.20888131166379
+				staticPressureAtm = 0.98477016988284138
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -45627,6 +46541,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = Grid Fin L Titanium
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -45679,6 +46596,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -45787,6 +46705,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -45797,6 +46716,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -45880,10 +46800,10 @@ GAME
 			{
 				name = Grid Fin L Titanium
 				cid = 4293603000
-				uid = 2620958846
-				mid = 943363017
+				uid = 1469157815
+				mid = 3070417436
 				persistentId = 2086285366
-				launchID = 76
+				launchID = 77
 				parent = 27
 				position = 1.128543496131897,-15.369880676269531,1.3529086112976074
 				rotation = 0.896872461,3.43815827E-07,0.442289263,1.6955147E-07
@@ -45903,10 +46823,10 @@ GAME
 				srfN = srfAttach, 27,collider_F912_Interstage
 				mass = 0.140000001
 				shielded = False
-				temp = 274.18978303277532
-				tempExt = 274.20949397679072
-				tempExtUnexp = 274.20949059722926
-				staticPressureAtm = 0.98487957536277138
+				temp = 274.18916542830806
+				tempExt = 274.20888165686887
+				tempExtUnexp = 274.20888131166379
+				staticPressureAtm = 0.98477016988284138
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -45916,6 +46836,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = Grid Fin L Titanium
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -45968,6 +46891,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 						}
 					}
@@ -46072,12 +46996,14 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 						}
 						authorityLimiter
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 						}
 					}
@@ -46157,10 +47083,10 @@ GAME
 			{
 				name = Grid Fin L Titanium
 				cid = 4293602924
-				uid = 2984777327
-				mid = 943363017
+				uid = 4259302961
+				mid = 3070417436
 				persistentId = 4066078995
-				launchID = 76
+				launchID = 77
 				parent = 27
 				position = 1.3529084920883179,-15.369880676269531,-1.1285436153411865
 				rotation = 0.946930349,3.63005512E-07,-0.321438879,-1.23223529E-07
@@ -46180,10 +47106,10 @@ GAME
 				srfN = srfAttach, 27,collider_F912_Interstage
 				mass = 0.140000001
 				shielded = False
-				temp = 274.18978303277532
-				tempExt = 274.20949397679072
-				tempExtUnexp = 274.20949059722926
-				staticPressureAtm = 0.9848795000665016
+				temp = 274.18916542830806
+				tempExt = 274.20888165686887
+				tempExtUnexp = 274.20888131166379
+				staticPressureAtm = 0.98477016988284138
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -46193,6 +47119,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = Grid Fin L Titanium
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -46245,6 +47174,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 						}
 					}
@@ -46349,12 +47279,14 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 						}
 						authorityLimiter
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 						}
 					}
@@ -46434,10 +47366,10 @@ GAME
 			{
 				name = Grid Fin L Titanium
 				cid = 4293602848
-				uid = 3319787322
-				mid = 943363017
+				uid = 9046352
+				mid = 3070417436
 				persistentId = 3320852100
-				launchID = 76
+				launchID = 77
 				parent = 27
 				position = -1.1285436153411865,-15.369880676269531,-1.3529083728790283
 				rotation = 0.442289263,1.6955147E-07,-0.896872461,-3.43815827E-07
@@ -46457,10 +47389,10 @@ GAME
 				srfN = srfAttach, 27,collider_F912_Interstage
 				mass = 0.140000001
 				shielded = False
-				temp = 274.18978303277532
-				tempExt = 274.20949397679072
-				tempExtUnexp = 274.20949059722926
-				staticPressureAtm = 0.98487957536277138
+				temp = 274.18916542830806
+				tempExt = 274.20888165686887
+				tempExtUnexp = 274.20888131166379
+				staticPressureAtm = 0.98477016988284138
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -46470,6 +47402,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = Grid Fin L Titanium
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -46522,6 +47457,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 						}
 					}
@@ -46626,12 +47562,14 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 						}
 						authorityLimiter
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 						}
 					}
@@ -46711,10 +47649,10 @@ GAME
 			{
 				name = KK.SPX.FalconPayloadFairing
 				cid = 4293981642
-				uid = 3786855128
-				mid = 943363017
+				uid = 1167237421
+				mid = 3070417436
 				persistentId = 2615176020
-				launchID = 76
+				launchID = 77
 				parent = 17
 				position = 0,5.7186431884765625,0
 				rotation = 0,0,0,1
@@ -46733,10 +47671,10 @@ GAME
 				attN = bottom, 17
 				mass = 1.70000005
 				shielded = False
-				temp = 274.18934001776506
-				tempExt = 274.18965898422118
-				tempExtUnexp = 274.18965898422118
-				staticPressureAtm = 0.98242356163644207
+				temp = 274.18787584386376
+				tempExt = 274.18819524818736
+				tempExtUnexp = 274.18819524818736
+				staticPressureAtm = 0.98231445734159106
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -46746,6 +47684,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = KK.SPX.FalconPayloadFairing
 				modCost = 0
+				modMass = 0
+				moduleVariantName = america
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -46938,10 +47879,10 @@ GAME
 			{
 				name = KK.SpX.FRH
 				cid = 4293834884
-				uid = 3553530935
-				mid = 943363017
+				uid = 3023932638
+				mid = 3070417436
 				persistentId = 1817341965
-				launchID = 76
+				launchID = 77
 				parent = 64
 				position = 0,5.7186431884765625,0
 				rotation = 0,0.707106829,0,0.707106829
@@ -46959,10 +47900,10 @@ GAME
 				attN = bottom, 64
 				mass = 0.200000003
 				shielded = False
-				temp = 274.18944944999885
-				tempExt = 274.20986794563294
-				tempExtUnexp = 274.20986783873354
-				staticPressureAtm = 0.98242356163644207
+				temp = 274.18815124572535
+				tempExt = 274.20851341151285
+				tempExtUnexp = 274.20851330721695
+				staticPressureAtm = 0.98231445734159106
 				expt = 0
 				state = 0
 				PreFailState = 0
@@ -46972,6 +47913,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = _default
 				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -47142,6 +48086,7 @@ GAME
 						{
 							axisGroup = None
 							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
 							axisInverted = None
 							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
@@ -47590,10 +48535,10 @@ GAME
 			{
 				name = KK.SPX.FalconPayloadFairing
 				cid = 4293733208
-				uid = 805958059
-				mid = 943363017
+				uid = 2685960163
+				mid = 3070417436
 				persistentId = 617151093
-				launchID = 76
+				launchID = 77
 				parent = 17
 				position = 0,5.7186431884765625,0
 				rotation = 0,1,0,0
@@ -47612,10 +48557,10 @@ GAME
 				attN = bottom, 17
 				mass = 1.70000005
 				shielded = False
-				temp = 274.18934001635932
-				tempExt = 274.18966026008218
-				tempExtUnexp = 274.18966026008218
-				staticPressureAtm = 0.98242356163644207
+				temp = 274.18787584245774
+				tempExt = 274.18819652351806
+				tempExtUnexp = 274.18819652351806
+				staticPressureAtm = 0.98231445734159106
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -47625,6 +48570,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = KK.SPX.FalconPayloadFairing
 				modCost = 0
+				modMass = 0
+				moduleVariantName = Basic
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -47746,7 +48694,7 @@ GAME
 					{
 						DecoupleAction
 						{
-							actionGroup = None
+							actionGroup = Custom03
 							wasActiveBeforePartWasAdjusted = False
 						}
 					}
@@ -47805,10 +48753,10 @@ GAME
 			{
 				name = 1mv.sensor.accelerometer.srf.1
 				cid = 4293537238
-				uid = 1274807425
-				mid = 943363017
+				uid = 2065003088
+				mid = 3070417436
 				persistentId = 1803750239
-				launchID = 76
+				launchID = 77
 				parent = 0
 				position = 0,0.24139404296875,0.72796446084976196
 				rotation = 1.11758652E-07,2.48352563E-07,2.77555485E-14,-1
@@ -47825,10 +48773,10 @@ GAME
 				srfN = srfAttach, 0,COL
 				mass = 0.00499999989
 				shielded = False
-				temp = 274.19344202744065
-				tempExt = 274.30096951357132
-				tempExtUnexp = 274.30093566750827
-				staticPressureAtm = 0.98306094455977822
+				temp = 274.20075542456584
+				tempExt = 274.30525455119476
+				tempExtUnexp = 274.30523827490345
+				staticPressureAtm = 0.98295176496865744
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -47838,6 +48786,9 @@ GAME
 				flag = Squad/Flags/default
 				rTrf = 1mv.sensor.accelerometer.srf.1
 				modCost = 0
+				modMass = 0
+				moduleVariantName = variant1
+				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
 				}
@@ -48015,7 +48966,7 @@ GAME
 				Custom06 = False, 0
 				Custom07 = False, 0
 				Custom08 = False, 0
-				Custom09 = True, 3759927958.76251
+				Custom09 = False, 0
 				Custom10 = False, 0
 			}
 			DISCOVERY
@@ -48464,7 +49415,7 @@ GAME
 		InterstellarFuelSwitch v3.12.1.5 = False
 		KSPe.Light.TweakScale v2.1.0.16 = False
 		Scale v2.4.3.7 = False
-		ModularFlightIntegrator v1.0.0.0 / v1.2.7.0 = True
+		ModularFlightIntegrator v1.0.0.0 / v1.2.7.0 = False
 		MiniAVC v1.4.0.2 = False
 		ClickThroughBlocker v0.1.9.3 / v1.0.0.0 = False
 		FilterExtensions v3.2.4.0 / v1.0.0.0 = False
@@ -48719,8 +49670,8 @@ GAME
 		PersistentThrust v1.4.2.0 = False
 		RetractableLiftingSurface v0.2.1.1 / v1.0.0.0 = True
 		Kartoffelkuchen = True
-		SolverEngines v3.3.0.0 / v3.7.5.0 = True
-		RealFuels v12.8.4.11 / v12.8.4.11-c9fa = True
+		SolverEngines v3.3.0.0 / v3.7.5.0 = False
+		RealFuels v12.8.4.11 / v12.8.4.11-c9fa = False
 		RealFuels = True
 		SolverEngines = True
 		PersistentThrust v1.4.4.0 = False
@@ -48741,8 +49692,8 @@ GAME
 		ModuleManager v4.1.4.0 = True
 		ClickThroughBlocker v0.1.10.11 / v1.0.0.0 = False
 		AJE v2.15.0.0 = True
-		EngineGroupController v1.0.0.0 = False
-		UnityGUIFramework v1.0.0.0 = False
+		EngineGroupController v1.0.0.0 = True
+		UnityGUIFramework v1.0.0.0 = True
 		Atmosphere v1.10.1.2 = True
 		CelestialShadows v0.0.0.0 = True
 		CityLights v1.10.1.2 = True
@@ -48766,7 +49717,7 @@ GAME
 		RealSolarSystem v0.18.1.3 = True
 		ShipEffectsContinued v1.0.11.0 / v1.0.8.4 = True
 		AJE = True
-		EngineGroupController = False
+		EngineGroupController = True
 		FerramAerospaceResearch = False
 		RealChute = False
 		RealHeat = True
@@ -48810,7 +49761,7 @@ GAME
 		KSPe.Light.TweakScale v2.2.0.2 = False
 		Scale v2.4.3.21 = False
 		000-Pmborg-RealFalcons = True
-		BahaSP = False
+		BahaSP = True
 		DockingCamKURS = True
 		ROCapsules = False
 		ROLib = True
@@ -48818,28 +49769,28 @@ GAME
 		ROTanks = True
 		list.txt = False
 		ClickThroughBlocker v0.1.10.14 / v1.0.0.0 = True
-		DockingCamera v1.3.7.6 / v1.0.0.0 = True
+		DockingCamera v1.3.7.6 / v1.0.0.0 = False
 		VesselMover v1.9.0.0 = False
-		VesselMover = False
+		VesselMover = True
 		Pmborg-RealFalcons v1.0.0.0 = True
 		clouds.txt = False
 		B9PartSwitch v2.17.0.0 / vv2.17.0 = True
-		BDAnimationModules v0.6.6.0 = False
-		RNModules v1.1.9.0 = False
+		BDAnimationModules v0.6.6.0 = True
+		RNModules v1.1.9.0 = True
 		DockingCamera v1.3.7.9 / v1.0.0.0 = False
 		MechJeb2 v2.5.1.0 / v / v2.11.0.0 = True
-		RealFuels v12.8.5.0 / v12.8.5-dirty / v12.8.5 = False
+		RealFuels v12.8.5.0 / v12.8.5-dirty / v12.8.5 = True
 		AmpYear v1.5.8.0 = True
 		BackgroundResources v1.10.0.0 = True
-		scatterer v0.632.0.0 = True
+		scatterer v0.632.0.0 = False
 		SimpleAdjustableFairings v1.11.0.0 / vv1.11.0 = False
 		TextureReplacer v4.2.1.21267 = True
 		TacLifeSupport v0.16.0.0 / v0.16.0 = True
-		VesselMover v1.10.0.0 = False
+		VesselMover v1.10.0.0 = True
 		SimpleAdjustableFairings = False
 		ckan.exe = False
 		file = False
-		mk-pmborg-link.bat = False
+		mk-pmborg-link.bat = True
 		version.txt = False
 		BDB v1.7.0.0 = False
 		ContractConfigurator v1.0.0.0 / v1.30.5 = False
@@ -48850,7 +49801,13 @@ GAME
 		ModuleManager.ConfigCache.pmborg = False
 		ori.txt = False
 		pmborg.txt = False
-		ModuleManager - Copy.ConfigCache = True
+		ModuleManager - Copy.ConfigCache = False
+		SolverEngines v3.3.0.0 / v3.8.0.0 = True
+		DockingCamera v1.3.8.0 / v1.0.0.0 = True
+		ModularFlightIntegrator v1.0.0.0 / v1.2.7.1 = True
+		scatterer v0.722.0.0 = True
+		ShowFPS v0.2.3.0 / v1.0.0.0 = True
+		ShowFPS = True
 	}
 	ROSTER
 	{
@@ -48875,6 +49832,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -49535,6 +50493,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -50086,6 +51045,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -50629,6 +51589,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = True
 			hasNeckRingOn = True
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -51184,6 +52145,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = True
 			hasNeckRingOn = True
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -51819,6 +52781,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = True
 			hasNeckRingOn = True
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -52347,6 +53310,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -52846,6 +53810,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -53324,6 +54289,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -53841,6 +54807,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -54314,6 +55281,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -54785,6 +55753,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -55267,6 +56236,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -55739,6 +56709,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -56210,6 +57181,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -56681,6 +57653,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -57152,6 +58125,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -57623,6 +58597,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -58094,6 +59069,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -58565,6 +59541,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -59036,6 +60013,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -59507,6 +60485,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -59978,6 +60957,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -60449,6 +61429,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -60493,6 +61474,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -60537,6 +61519,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -60573,6 +61556,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -60609,6 +61593,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -60645,6 +61630,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -60681,6 +61667,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -60717,6 +61704,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -60753,6 +61741,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -60789,6 +61778,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -60825,6 +61815,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -60861,6 +61852,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -60897,6 +61889,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -60933,6 +61926,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -60969,6 +61963,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -61005,6 +62000,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -61041,6 +62037,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -61077,6 +62074,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -61113,6 +62111,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -61149,6 +62148,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -61185,6 +62185,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -61221,6 +62222,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -61257,6 +62259,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -61293,6 +62296,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0
@@ -61329,6 +62333,7 @@ GAME
 			extraXP = 0
 			hasHelmetOn = False
 			hasNeckRingOn = False
+			hasVisorDown = False
 			lightR = 1
 			lightG = 0.5176
 			lightB = 0

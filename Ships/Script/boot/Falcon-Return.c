@@ -74,7 +74,7 @@ function boostback_burn
 		if(impactDist < 5000)
 		{
 			PRINT "OP3: impactDist < 3km   " at (0,2).
-			SET thrust TO 0.01.	// 0.0025. Near? for high precision, do it in lower thrust
+			SET thrust TO 0.025.	// 0.0025. Near? for high precision, do it in lower thrust
 			RCS ON.
 			if STAGE_1_TYPE = "SLAVE" and impactDist < 2500
 			{
@@ -149,7 +149,7 @@ function ReEntryburn
 			}
 			
 			if STAGE1_LAND_ON = "LAND"
-				steerToTarget(87.5, 0, 0). 				// Minor Correction
+				steerToTarget(86, 0, 0). 				// Minor Correction
 			else
 			{
 				if impactDist > 250
@@ -491,9 +491,14 @@ function main_falcon_return
 	activate3engines().
 	
 	prepare_boostback_burn().
-	
+
+	until (altitude > BODY:ATM:HEIGHT) or (VERTICALSPEED < 0) //BODY:ATM:HEIGHT=140000m (EARTH)
+	{
+		WAIT 0.1.
+		PRINT_STATUS (3).
+	}
 	if MAIN_SHIP_NAME <> "PMBT-SpaceX Falcon 9 v1.2 Block-5 Crew Dragon 2"
-		activateMainVessel(). //ST-2
+		activateMainVessel(). //need to be out of ATM
 			
 	guide_falcon_core().
 }

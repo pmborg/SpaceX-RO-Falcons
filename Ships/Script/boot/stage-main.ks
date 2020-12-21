@@ -30,30 +30,37 @@ declare global PROCESSOR_MAINID to ALL_PROCESSORS[0].
 declare global PROCESSOR_STAGE1 to ALL_PROCESSORS[0].
 declare global PROCESSOR_STAGE1L to ALL_PROCESSORS[0].
 declare global PROCESSOR_STAGE1R to ALL_PROCESSORS[0].
+declare global PROCESSOR_STAGE2 to ALL_PROCESSORS[0].
 
 PRINT "List CPU Stages:".
  FROM {local counter is 0.} UNTIL counter = ALL_PROCESSORS:LENGTH STEP {SET counter to counter + 1.} DO {
 	LOG "BOOTFILENAME: "+ALL_PROCESSORS[counter]:BOOTFILENAME to LOG.txt.
 	
-	if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-boosters.ks") <> -1 // STAGE-1:
+	if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-boosters.ks") <> -1 	// STAGE-1:
 	{
 		PRINT "- STAGE1-ID: "+counter.
 		LOG   "- STAGE1-ID: "+counter to LOG.txt.
 		set PROCESSOR_STAGE1 to ALL_PROCESSORS[counter].
 	} 
-	if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-boosters-L.ks") <> -1 // STAGE-1L:
+	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-boosters-L.ks") <> -1 // STAGE-1L:
 	{
 		PRINT "- STAGE1L-ID: "+counter.
 		LOG   "- STAGE1L-ID: "+counter to LOG.txt.
 		set PROCESSOR_STAGE1L to ALL_PROCESSORS[counter].
 	}
-	if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-boosters-R.ks") <> -1 // STAGE-1R:
+	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-boosters-R.ks") <> -1 // STAGE-1R:
 	{
 		PRINT "- STAGE1R-ID: "+counter.
 		LOG   "- STAGE1R-ID: "+counter to LOG.txt.
 		set PROCESSOR_STAGE1R to ALL_PROCESSORS[counter].
 	}
-	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot.ks") <> -1 // STAGE-2:
+	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-st2.ks") <> -1 	// STAGE-2:
+	{
+		PRINT "- MAIN-ID: "+counter.
+		LOG   "- MAIN-ID: "+counter to LOG.txt.
+		set PROCESSOR_STAGE2 to ALL_PROCESSORS[counter].
+	}
+	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot.ks") <> -1 		// MAIN:
 	{
 		PRINT "- MAIN-ID: "+counter.
 		LOG   "- MAIN-ID: "+counter to LOG.txt.

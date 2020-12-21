@@ -55,8 +55,14 @@ update_phase_title("STAGE 2 - Loading...", 0, true).
 WAIT 1.
 
 update_phase_title("STAGE 2 - WAIT FOR SEP", 0, true).
-WAIT UNTIL STAGE:NUMBER < 2.
+WAIT UNTIL NOT CORE:MESSAGES:EMPTY.
+SET RECEIVED TO CORE:MESSAGES:POP.
+set TARGET_N to RECEIVED:CONTENT.
+PRINT "TARGET_N: "+TARGET_N.
 
+wait 5.
+	
+core:doaction("Open Terminal", true).
 update_phase_title("STAGE 2 - RETROGRADE", 0, true).
 SAS OFF.
 RCS ON.
@@ -73,5 +79,4 @@ PRINT "Thankyou ST-2!".
 set warp to 2.
 WAIT 1.
 
-// KEEP: STEERING
-until FALSE WAIT 1.
+until FALSE WAIT 1.	// KEEP: STEERING
