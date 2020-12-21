@@ -137,7 +137,7 @@ Rename directory:<br>
 [![Falcon 9 Mission - How it works?](https://i.imgur.com/l2MbG4p.png)](https://www.youtube.com/watch?v=ktnvzGVYlrM)
 
 ----
-**Earth with Real Solar System Mod:**
+**Earth with Real Solar System Mod: (NOW also on KSP 1.11)**
 ![!](https://i.imgur.com/7XuzhOa.png)
 
 **Crew Dragon Launch:**
