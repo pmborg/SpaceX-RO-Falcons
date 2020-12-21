@@ -99,7 +99,9 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			RUNPATH( "boot/PhaseIII-Land.c" ).  	// Auto-Land / Touch-Down
 		}
 		if ch="2"  {
-			
+			stage.
+			wait 1.
+			reboot.
 		}
 	}
 	

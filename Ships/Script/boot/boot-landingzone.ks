@@ -8,12 +8,9 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This load wrapper avoid to re-edit and save a rocket just to change the code of
-//              "boot/iss-landingzone.ks" file.
+//              "boot-landingzone.ks" file.
 //				Used for potencionally load code on landingzone (LZ-1 or LZ-2)
-// 09/Dez/2020
+// 20/Dez/2020
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
-CLEARSCREEN.
-RUNPATH( "boot/sw-version.c" ).
-
-PRINT "Landingzone: "+SHIP_NAME.
+runpath("boot/stage-droneship.ks").
