@@ -19,47 +19,40 @@ set phase to 0.
 function main_lifoff
 {
 	if vehicle_type = "Falcon Heavy" 
-	{
-		PRINT "Press [ENTER] to START". set ch to terminal:input:getchar().
-		CLEARSCREEN.
+		set str_vehicle to vehicle_type.
+	else
+		set str_vehicle to "Falcon".
 	
-		PRINT "Vehicle Release Auto Sequence".
-		PRINT " ".
-		PRINT "T-04:15 MVac and M1D fuel bleed has started. ".
-		PRINT "T-04:10 ST-1 LOX throttling to close up".
-		PRINT "T-03:40 M1D LOX load complete".
-		PRINT "T-03:30 P-1&LOX throttling to close up".
-		PRINT "T-03:25 P-1&LOX load completed".
-		PRINT "T-03:15 ST-2 TVC motions nominal".
-		PRINT "T-02:55 POGO bleed verification".
-		PRINT "T-02:50 Center-core LOX load complete".
-		PRINT "T-02:00 ST-2 LOX load complete".
-		PRINT "T-01:50 Falcon decouple is complete".
-		PRINT "T-01:40 FalconHeavy is on internal power".
+	// Vehicle Release Auto Sequence:
+	PRINT " ".
+	PRINT "T-04:15 MVac and M1D fuel bleed has started. ".
+	PRINT "T-04:10 ST-1 LOX throttling to close up".
+	PRINT "T-03:40 M1D LOX load complete".
+	PRINT "T-03:30 P-1&LOX throttling to close up".
+	PRINT "T-03:25 P-1&LOX load completed".
+	PRINT "T-03:15 ST-2 TVC motions nominal".
+	PRINT "T-02:55 POGO bleed verification".
+	PRINT "T-02:50 Center-core LOX load complete".
+	PRINT "T-02:00 ST-2 LOX load complete".
+	PRINT "T-01:50 Falcon decouple is complete".
+	PRINT "T-01:40 "+str_vehicle+" is on internal power".
+	if vehicle_type = "Falcon Heavy" 
 		PRINT "T-01:30 Vehicles in self alignment".
-		PRINT "T-01:25 FalconHeavy gas load complete".
-		PRINT "T-01:15 M1D-Fuel bleed complete".
+	PRINT "T-01:25 "+str_vehicle+" gas load complete".
+	PRINT "T-01:15 M1D-Fuel bleed complete".
+	if vehicle_type = "Falcon Heavy" 
 		PRINT "T-01:15 M1D Engine shells is complete".
-		PRINT "T-01:00 (Final FTS): READY FOR LAUNCH".
-		PRINT "T-00:55 FalconHeavy (computer) is on start-up".
-		PRINT "T-00:45 STAGE-1&2 Pressurization for flight".
-		PRINT "T-00:30 (T-30 Seconds)".
-		PRINT "T-00:30 [Launch Director]: GO FOR LAUNCH".
-		PRINT "T-00:15 FalconHeavy is configured for flight".
-		PRINT "T-00:15 (T-15 Seconds)".
-		PRINT "T-00:14 Standby for Turnarround Count".
-		PRINT "T-00:05 Side Boosters Ignition".
-	}
-
-	// if vehicle_type = "F9v1.2B5"
-	// {
-		// PRINT "Press [ENTER] to START". set ch to terminal:input:getchar().
-		// CLEARSCREEN.
-	// }
+	PRINT "T-01:00 (Final FTS): READY FOR LAUNCH".
+	PRINT "T-00:55 "+str_vehicle+" (computer) is on start-up".
+	PRINT "T-00:45 STAGE-1&2 Pressurization for flight".
+	PRINT "T-00:30 (T-30 Seconds)".
+	PRINT "T-00:30 [Launch Director]: GO FOR LAUNCH".
+	PRINT "T-00:15 "+str_vehicle+" is configured for flight".
+	PRINT "T-00:15 (T-15 Seconds)".
+	PRINT "T-00:14 Standby for Turnarround Count".
+	PRINT "T-00:05 Side Boosters Ignition".
 
 	PRINT " ".
-	PRINT "Press [ENTER] to START". set ch to terminal:input:getchar().
-	CLEARSCREEN. PRINT " ".PRINT " ".	
 	
 	if vehicle_type = "Crew Dragon 2"
 	{
@@ -76,13 +69,13 @@ function main_lifoff
 	
 	if status = "PRELAUNCH" 
 	{
-		update_phase_title("[ ] COUNTING DOWN...", 0, false).
 		AG1 ON. //TOGGLE
 		Print "(Release Tower Clamp)".
 		
 		FROM {local countdown is 5.} UNTIL countdown = 0 STEP {SET countdown to countdown - 1.} 
 		DO { PRINT "..." + countdown. WAIT 1. }
 
+		CLEARSCREEN. PRINT " ".PRINT " ".	
 		update_phase_title("[ ] IGNITION...", 0, false).
 		set thrust to 1. //ALL ENGINES START IGNITION...
 		////////////////////////////////////////////////////////////////////////////////////////////////
@@ -252,12 +245,12 @@ if alt:radar < 100
 	{
 		if machVal > 0.8 and mphase = 0
 		{
-			update_phase_title("[3](Vehicle Transonic)", 0, false).
+			update_phase_title("[3](Transonic Fligth)", 0, false).
 			set mphase to 1.
 		}
 		if machVal > 1.2 and mphase = 1
 		{
-			update_phase_title("[4](Vehicle SuperSonic)",1, false).
+			update_phase_title("[4](Falcon is SuperSonic)",1, false).
 			set mphase to 2.
 		}
 		
@@ -421,8 +414,7 @@ if altitude*1.1 < FINAL_ORBIT2
 	CLEARSCREEN.
 	PRINT " ".PRINT " ".
 	
-	//if (STAGE:NUMBER > 3) and (vehicle_sub_type <> "Falcon Heavy LEM")
-	// >=3 for F9 - FH ?
+	// OK: >=3 for F9 - CHECK: FH...
 	if (STAGE:NUMBER >= 3) and (vehicle_sub_type <> "Falcon Heavy LEM")
 	{
 		update_phase_title("[6] STAGING...",1,false).
@@ -483,18 +475,17 @@ if altitude*1.1 < FINAL_ORBIT2
 	function print_orbit_status 
 	{
 		set y to 3.
-		//PRINT "Launch Site Distance:   "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,9).
-		PRINT "Periapsis: " at (0,y+0). 	 //PRINT ROUND(periapsis/1000,1)+" km    " 	at (22,y+0).
-		PRINT "Apoapsis: " at (0,y+1). 		 //PRINT ROUND(apoapsis/1000,1)+" km    " 	at (22,y+1).
-		PRINT "Eta:apoapsis: " at (0,y+2). 	 //PRINT ROUND(eta:apoapsis,1)+" s    " 		at (22,y+2).
-		PRINT "Eccentricity: " at (0,y+3). 	 //PRINT ROUND(SHIP:ORBIT:ECCENTRICITY,3)+"" 	at (22,y+3).
-		PRINT "Altitude: " at (0,y+4). 		 //PRINT ROUND(Altitude/1000,1)+" km    "  	at (22,y+4).
-		PRINT "Phase: " at (0,y+5). 		 //PRINT phase 								at (22,y+5).
-		PRINT "mphase: " at (0,y+6).		 //PRINT mphase 								at (22,y+6).
-		PRINT "deltaReduction: " at (0,y+7). //PRINT deltaReduction 						at (22,y+7).
-		PRINT "throttle(maxthrust): " at (0,y+8). //PRINT ROUND(throttle,2) + " ("+ROUND(maxthrust)+")     " at (22,y+8).
-		PRINT "HEADING: " at (0,y+9). 	 	//PRINT ROUND (HEADING,1)+" deg.   " 	at (22,y+9).
-		PRINT "PITCH: " at (0,y+10). 	 	//PRINT ROUND (SHIP:FACING:PITCH,1)+"   " at (22,y+10).
+		PRINT "Periapsis: " at (0,y+0). 	 
+		PRINT "Apoapsis: " at (0,y+1). 		 
+		PRINT "Eta:apoapsis: " at (0,y+2). 	 
+		PRINT "Eccentricity: " at (0,y+3). 	 
+		PRINT "Altitude: " at (0,y+4). 		 
+		PRINT "Phase: " at (0,y+5). 		 
+		PRINT "mphase: " at (0,y+6).		 
+		PRINT "deltaReduction: " at (0,y+7). 
+		PRINT "throttle(maxthrust): " at (0,y+8). 
+		PRINT "HEADING: " at (0,y+9). 	 	
+		PRINT "PITCH: " at (0,y+10). 	 	
 	}
 	
 	print_orbit_status ().
@@ -632,10 +623,7 @@ if altitude*1.1 < FINAL_ORBIT2
 		
 		update_orbit_status().
 		set vel to SQRT(Vs2).
-		// if ROUND(BODY:ATM:ALTITUDEPRESSURE(altitude),4) > 0 or ROUND(BODY:ATM:ALTITUDETEMPERATURE(altitude),1) > 0
-		{
-			update_atmosphere (altitude, vel).
-		}
+		update_atmosphere (altitude, vel).
 		log_data (vel).
 		check_if_we_need_new_stage().
 	}

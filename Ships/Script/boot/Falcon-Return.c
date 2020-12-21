@@ -74,7 +74,7 @@ function boostback_burn
 		if(impactDist < 5000)
 		{
 			PRINT "OP3: impactDist < 3km   " at (0,2).
-			SET thrust TO 0.0025.	// Near? for high precision, do it in lower thrust
+			SET thrust TO 0.01.	// 0.0025. Near? for high precision, do it in lower thrust
 			RCS ON.
 			if STAGE_1_TYPE = "SLAVE" and impactDist < 2500
 			{
@@ -161,11 +161,10 @@ function ReEntryburn
 			}
 		} else {
 			lock steering to retrograde.
-			//SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
 		}
 		
 		PRINT_STATUS (3).
-		if SHIP:VERTICALSPEED > maxDescendSpeed and (impactDist > prev_impactDist)
+		if SHIP:VERTICALSPEED > maxDescendSpeed and (impactDist > prev_impactDist or STAGE1_LAND_ON = "LAND")
 		{
 			SET thrust to 0.
 			LOCK STEERING TO HEADING(270,0, -270).
@@ -216,12 +215,10 @@ function waitAndDoReEntryburn
 			PRINT_STATUS (3).
 		}
 		
-		// if impactDist > 2000
-			// prepare_boostback_burn().
-		
 		if SHIP:altitude > BODY:ATM:HEIGHT 
 		{
-			RCS OFF.
+			if STAGE1_LAND_ON <> "LAND"
+				RCS OFF.
 			wait 1.
 		}
 				
@@ -306,10 +303,10 @@ function aerodynamic_guidance
 		
 		if STAGE1_LAND_ON = "LAND"
 		{
-			if altitude < 2000
+			if impactTime <= 15
 				set DO_LANDING to TRUE.
 		}else{
-			if (SHIP:GROUNDSPEED < 1) or(SHIP:ALTITUDE <= (sBurnDist*1.4)) or impactTime <= 15
+			if (SHIP:GROUNDSPEED < 1) or (SHIP:ALTITUDE <= (sBurnDist*1.4)) or impactTime <= 15
 				set DO_LANDING to TRUE.
 		}
 	}

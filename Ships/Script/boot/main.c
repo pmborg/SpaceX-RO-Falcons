@@ -73,6 +73,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		if (ch = "y" OR ch = "Y")
 			runpath( "boot/Phase0-Normal.c", mission_target).	// Correct Normal Before Burn
 		LOG "Normal" to normal.txt.
+		CLEARSCREEN.
 	}
 	else
 		PRINT "SKIP: Normal".
@@ -87,9 +88,10 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 	//ACTION: Break & LAND! -------------------------------------------
 	if status <> "LANDED" and status <> "SPLASHED"
 	{
+		UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 		PRINT "Press: 1 - Land Anywhere!". 
 		PRINT "Press: 2 - Stage Satellite". 
-		PRINT "Press: 3 - Escape(Abort) and Return!".
+		//PRINT "Press: 3 - Escape(Abort) and Return!".
 		set ch to terminal:input:getchar(). PRINT "selected: "+ch.
 		if ch="1" or ch =""  {
 			PRINT "Confirm: SPEED-BREAK? (y/n)". set ch to terminal:input:getchar().

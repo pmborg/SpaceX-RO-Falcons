@@ -146,7 +146,7 @@ if vehicle_type = "F9v1.2B5"
 	// Data from: SpaceX CRS-16:
 	declare global Qmax 	to 16344/1.2.
 	if STAGE1_LAND_ON = "LAND"
-		declare global MECO1 	to 1700^2.
+		declare global MECO1 	to 1635^2.
 	else
 		declare global MECO1 	to 2080^2. //2180*
 	declare global FAIRSEP 	to 160*1000.
@@ -199,9 +199,16 @@ function set_max_delta_curve
 		if delta < (-80)					//MAX. Keep: 10 deg nose up
 			set delta to (-80).
 	} else {
-		set delta to (1*(e^I)*(-1)).		//Normal Rotation
-		if delta < (-50)					//MAX. Keep: 40 deg nose up
-			set delta to (-50).
+		if STAGE1_LAND_ON <> "LAND"
+		{
+			set delta to (1*(e^I)*(-1)).		//Normal Rotation
+			if delta < (-50)					//MAX. Keep: 40 deg nose up
+				set delta to (-50).
+		} else {
+			set delta to (1*(e^I)*(-1))*1.4.		//Normal Rotation
+			if delta < (-70)					//MAX. Keep: 40 deg nose up
+				set delta to (-70).			
+		}
 	}
 	
 	return delta.
