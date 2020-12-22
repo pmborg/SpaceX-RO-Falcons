@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Deorbit ST-2
-// 19/Dez/2020
+// 22/Dez/2020
 // --------------------------------------------------------------------------------------------
 CLEARSCREEN.
 RUNPATH( "boot/sw-version.c" ).
@@ -41,7 +41,7 @@ function STAGE2_DEORBIT
 	WAIT 10. print "3".
 	WAIT 10. print "2".
 	WAIT 10. print "1".
-	print "Deorbiting...".
+	update_phase_title("STAGE 2 - Deorbiting...", 0, true).
 	lock throttle to thrust.
 	set thrust to 0.5.
 	until periapsis < 50000 WAIT 0.1.

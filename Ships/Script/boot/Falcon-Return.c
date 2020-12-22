@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 13/Dez/2020
+// 22/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
@@ -149,7 +149,7 @@ function ReEntryburn
 			}
 			
 			if STAGE1_LAND_ON = "LAND"
-				steerToTarget(86, 0, 0). 				// Minor Correction
+				steerToTarget(85, 0, 0). 				// Minor Correction
 			else
 			{
 				if impactDist > 250
@@ -166,6 +166,18 @@ function ReEntryburn
 		PRINT_STATUS (3).
 		if SHIP:VERTICALSPEED > maxDescendSpeed and (impactDist > prev_impactDist or STAGE1_LAND_ON = "LAND")
 		{
+			
+			set LAST_TOUCH to false.
+			UNTIL LAST_TOUCH
+			{
+				SET prev_impactDist to impactDist.
+				steerToTarget(steeringPitch, 0, 0). // Fast Correction	
+				WAIT 0.1.
+				PRINT_STATUS (3).
+				if impactDist > prev_impactDist
+					set LAST_TOUCH to true.
+			}
+			
 			SET thrust to 0.
 			LOCK STEERING TO HEADING(270,0, -270).
 			SET thrust to 0.01.
@@ -182,7 +194,6 @@ function ReEntryburn
 				{
 					LOCK STEERING TO up + R(0,0,180). //UP
 					wait 1.
-					//SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
 					PRINT_STATUS (3).
 				}
 			}
@@ -405,7 +416,7 @@ function touchdown
 		else
 			set t to error*((1000*SHIP:MASS*g)/maxthrust)/maxthrust.
 		
-		setHoverDescendSpeed(1+((alt:radar-30)/7.5),t).
+		setHoverDescendSpeed(2+((alt:radar-30)/7.5),t).
 	}
 }
 
@@ -463,7 +474,7 @@ function prepare_boostback_burn
 	PRINT_STATUS (3). // Calculate: impactDist
 	if (impactDist > default_max_distance) and (SHIP:altitude > 50000)
 	{
-		if STAGE_1_TYPE = "CORE"
+		if (STAGE_1_TYPE = "CORE") and (STAGE1_LAND_ON = "SEA")
 			boostback_burn(true).
 		else{
 			boostback_burn().

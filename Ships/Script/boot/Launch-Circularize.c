@@ -8,13 +8,13 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Circularize an orbit after Launch-Orbit.c
-// 20/Dez/2020
+// 22/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
 
 CLEARSCREEN.
-update_phase_title("W8-4 Circularize",1, false).
+update_phase_title("W8 to Circularize",1, false).
 if KUniverse:ActiveVessel = SHIP
 	SET MAPVIEW TO TRUE.	// map view on
 SAS OFF.
@@ -30,20 +30,26 @@ function wait_for_AP
 	parameter w.
 
 	set warp to 0.
+	LOCK STEERING TO SHIP:PROGRADE  + R(0,0,180).
 	WAIT 1.
 	if eta:apoapsis > 3000
 		if vehicle_type <> "Crew Dragon 2"
-			set warp to 3.
+			if KUniverse:ActiveVessel = SHIP
+				set warp to 3.
+	
 	WAIT until eta:apoapsis < 3000.
 	if vehicle_type <> "Crew Dragon 2"
 		set warp to 2.
-		
+	update_phase_title("Circularize T-3000",1, false).	
+	
 	WAIT until eta:apoapsis < 200.
 	if vehicle_type <> "Crew Dragon 2"
 		set warp to 1.
-		
+	update_phase_title("Circularize T-200",1, false).	
+	
 	WAIT until eta:apoapsis < w.
 	set warp to 0.
+	update_phase_title("Circularize T-"+w,1, false).
 	
 	LOCK STEERING TO SHIP:PROGRADE  + R(0,0,180).
 }

@@ -111,8 +111,15 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			//SEND PROCESSOR ID TO BOOSTER
 			IF PROCESSOR_STAGE2:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
 				{ PRINT "PROCESSOR_STAGE1: Message sent!". WAIT 1. }
-			stage. wait 1.
-			reboot.
+			stage. 
+			wait 1.
+			
+			RCS OFF.
+			SAS OFF.
+			LOCK STEERING TO prograde.
+			wait 1.
+			exit.
+			UNTIL FALSE WAIT 1.
 		}
 	}
 	

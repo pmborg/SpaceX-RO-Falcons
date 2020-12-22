@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to control (ST-1) Boosters and waiting phases and prepare them to land.
-// 19/Dez/2020
+// 22/Dez/2020
 // --------------------------------------------------------------------------------------------
 RCS OFF.
 RUNPATH( "boot/sw-version.c" ).
@@ -205,14 +205,11 @@ if STAGE_1_TYPE = "SLAVE"
 } 
 else 
 {
-	 // if STAGE_1_TYPE <> "SLAVE" 
-	 // {
-		if KUniverse:ActiveVessel <> SHIP
-			update_phase_title("(W8 TO BE ACTIVE)", 0, true).
-		
-		UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
-			SET TARGET TO LandingZone.
-	 // }
+	if KUniverse:ActiveVessel <> SHIP
+		update_phase_title("(W8 TO BE ACTIVE)", 0, true).
+	
+	UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
+		SET TARGET TO LandingZone.
 }
 
 //FALCON-RETURN:
