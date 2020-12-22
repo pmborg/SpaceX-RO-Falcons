@@ -25166,6 +25166,18 @@ GAME
 				}
 				MODULE
 				{
+					name = ModuleReactionWheel
+					PitchTorque = 1.5
+					YawTorque = 1.5
+					RollTorque = 1.5
+					RESOURCE
+					{
+						name = ElectricCharge
+						rate = 0.075
+					}
+				}
+				MODULE
+				{
 					name = ModuleDataTransmitter
 					isEnabled = True
 					xmitIncomplete = False

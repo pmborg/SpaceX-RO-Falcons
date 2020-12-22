@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestre all mission phases.
-// 19/Dez/2020
+// 22/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 // Reset Engine settings before all, ("migth be a reboot")
@@ -69,7 +69,10 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		SAS OFF.
 		LOCK STEERING TO prograde.
 		// Confirm?
-		UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
+		if KUniverse:ActiveVessel <> SHIP {
+			update_phase_title("(W8 TO BE ACTIVE)", 0, true).
+			UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
+		}
 		PRINT "Confirm: START Phase0-Normal? (y/n)" at (0,5). set ch to terminal:input:getchar().
 		if (ch = "y" OR ch = "Y")
 			runpath( "boot/Phase0-Normal.c", mission_target).	// Correct Normal Before Burn
@@ -89,7 +92,10 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 	//ACTION: Break & LAND! -------------------------------------------
 	if status <> "LANDED" and status <> "SPLASHED"
 	{
-		UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
+		if KUniverse:ActiveVessel <> SHIP {
+			update_phase_title("(W8 TO BE ACTIVE)", 0, true).
+			UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
+		}
 		PRINT "Press: 1 - Land Anywhere!". 
 		PRINT "Press: 2 - Stage Satellite". 
 		//PRINT "Press: 3 - Escape(Abort) and Return!".
