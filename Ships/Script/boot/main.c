@@ -118,8 +118,6 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			SAS OFF.
 			LOCK STEERING TO prograde.
 			wait 1.
-			exit.
-			UNTIL FALSE WAIT 1.
 		}
 	}
 	
