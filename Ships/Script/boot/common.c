@@ -240,7 +240,7 @@ function PRINT_STATUS
 	
 	set val_1at to ADDONS_TR_IMPACTPOS:LAT.
 	set val_lng to ADDONS_TR_IMPACTPOS:LNG.
-	PRINT "[ImpactTarget]: "+ROUND (val_1at,3)+"  " +ROUND (val_lng,3)+"  "m  at (0,y+2).
+	PRINT "[ImpactTarget]: "+ROUND (val_1at,3)+"  " +ROUND (val_lng,3)+"  "  at (0,y+2).
 
 	PRINT "LandingTarget:DISTANCE: "+ROUND(LandingTarget:DISTANCE/1000,3)+" km   " at (0,y+3).
 	PRINT "LandingTarget:TERRAINHEIGHT: "+ROUND (landingAltitude,1)+" m   " at (0,y+4).

@@ -37,7 +37,10 @@ function STAGE2_DEORBIT
 	set warp to 0.
 	
 	RCS ON.
+	LOCK STEERING TO SHIP:RETROGRADE.//  + R(0,0,180).
 	print "[".print " ".
+	WAIT 10. print "5".
+	WAIT 10. print "4".
 	WAIT 10. print "3".
 	WAIT 10. print "2".
 	WAIT 10. print "1".
