@@ -92,7 +92,7 @@ The **SpaceX-RO-Falcons** Mod Introduce:
  --or--(depending of your case)<br>
  **Pmborg-RealFalcons-v2-Install-For_KSP_1.10.1-All_Dependencies.bat**<br>
  
-![!](https://i.imgur.com/uNntmol.png)
+![!](https://i.imgur.com/XtxincO.png)
 
 You can also check the videos about HOW TO INSTALL in Wiki page:
 
