@@ -118,7 +118,8 @@ WHEN ALL_PROCESSORS:LENGTH > 1 THEN
 
 // Boosters still on main rocket attached? -> WAIT for the call...
 LIST PROCESSORS IN ALL_PROCESSORS.
-if ALL_PROCESSORS:LENGTH > 1	
+LOG  "["+STAGE_1_TYPE+"] - ALL_PROCESSORS:LENGTH: "+ALL_PROCESSORS:LENGTH to LOG.txt.
+if ALL_PROCESSORS:LENGTH > 2	//Stage-1 (Have two processors)
 {
 	//WAIT for all processors...
 	update_phase_title("WAIT4ALL PROCESSORS", 0, true).

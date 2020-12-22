@@ -65,7 +65,6 @@ declare global COM_altitude to 0.
 declare global SHIP_NAME to SHIP:NAME.
 
 declare global MAIN_SHIP_NAME to SHIP_NAME:REPLACE(" probe", "").
-LOG  "MAIN_SHIP_NAME: "+MAIN_SHIP_NAME to LOG.txt.
 
 //DEBUG:
 // PRINT "MODEL: "+SHIP_NAME.
@@ -117,6 +116,8 @@ if CORE:BOOTFILENAME:FIND("boot.ks") > -1 				// STAGE-2 (General ST-2)
 
 if STAGE_1_TYPE <> ""
 	PRINT "INIT CODE FOR: "+STAGE_1_TYPE.
+
+LOG  "["+STAGE_1_TYPE+"] SHIP_NAME: "+MAIN_SHIP_NAME to LOG.txt.
 
 // Defaults for Fligth Profile:
 ////////////////////////////////////////////////////////////////////////////////////////////////
