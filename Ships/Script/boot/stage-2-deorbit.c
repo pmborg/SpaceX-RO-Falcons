@@ -44,7 +44,7 @@ function STAGE2_DEORBIT
 	WAIT 10. print "3".
 	WAIT 10. print "2".
 	WAIT 10. print "1".
-	update_phase_title("STAGE 2 - Deorbiting...", 0, true).
+	update_phase_title("STAGE 2 - Deorbiting.", 0, true).
 	lock throttle to thrust.
 	set thrust to 0.5.
 	until periapsis < 50000 WAIT 0.1.

@@ -22,6 +22,7 @@ runpath("boot/declare-globals.c").
 if mission_origin <> DEFAULT_KSC //mission_target //ORIGIN = TARGET
 {
 	//CLEARSCREEN.
+	update_phase_title("Confirm: START Refuel?", 0, false).
 	PRINT "Confirm: START Refuel? (y/n)". set ch to terminal:input:getchar().
 	if (ch = "y" OR ch = "Y") {
 		traversePartsForResources("fuel").
@@ -70,10 +71,11 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		LOCK STEERING TO prograde.
 		// Confirm?
 		if KUniverse:ActiveVessel <> SHIP {
-			update_phase_title("(W8 TO BE ACTIVE)", 0, true).
+			update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
 			UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 		}
-		PRINT "Confirm: START Phase0-Normal? (y/n)" at (0,5). set ch to terminal:input:getchar().
+		update_phase_title("Confirm: Phase-Normal?", 0, false).
+		PRINT "Confirm: Phase-Normal? (y/n)" at (0,5). set ch to terminal:input:getchar().
 		if (ch = "y" OR ch = "Y")
 			runpath( "boot/Phase0-Normal.c", mission_target).	// Correct Normal Before Burn
 		LOG "Normal" to normal.txt.
@@ -93,14 +95,14 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 	if status <> "LANDED" and status <> "SPLASHED"
 	{
 		if KUniverse:ActiveVessel <> SHIP {
-			update_phase_title("(W8 TO BE ACTIVE)", 0, true).
+			update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
 			UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 		}
-		PRINT "Press: 1 - Land Anywhere!". 
+		PRINT "Press: 1 - Abort/Land Anywhere!". 
 		PRINT "Press: 2 - Stage Satellite". 
-		//PRINT "Press: 3 - Escape(Abort) and Return!".
 		set ch to terminal:input:getchar(). PRINT "selected: "+ch.
 		if ch="1" or ch =""  {
+			update_phase_title("Confirm: SPEED-BREAK?", 0, false).
 			PRINT "Confirm: SPEED-BREAK? (y/n)". set ch to terminal:input:getchar().
 			if (ch = "y" OR ch = "Y")
 				RUNPATH( "boot/PhaseII-Break.c", mission_target ).	 // Burn Capture & Burn Circularize: [NOW5]
@@ -118,50 +120,55 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			SAS OFF.
 			LOCK STEERING TO prograde.
 			wait 1.
+			SAS ON.
+			wait 1.
+			SET SASMODE TO "RADIALIN".
+			wait 1.
 		}
 	}
 	
 	LOG  STAGE_1_TYPE+" REBOOT FOR RE-FUEL" to LOG.TXT.
-	reboot. // Re-Fuel...
 }
 
 //INBOUND ---------------------------------------------------------
-CLEARSCREEN.
-PRINT "Press [y/n] y to Confirm the Kerbin Return, n to new target!".set ch to terminal:input:getchar().
-if (ch = "y" OR ch = "Y")
-{
-	runpath("boot/lib_body_travel_data_return.c").
-
-	if (CrewOnBoard) and BODY:name <> DEFAULT_KSC
+if BODY:name <> DEFAULT_KSC {
+	CLEARSCREEN.
+	PRINT "Press [y/n] y to Confirm the Kerbin Return, n to new target!".set ch to terminal:input:getchar().
+	if (ch = "y" OR ch = "Y")
 	{
-		if (IS_INTER_PLANETARY_MISSION)						// INTER-PLANETARY Mission ?
-			RUNPATH( "boot/Phase Angle.c", BODY(DEFAULT_KSC)).	// Warp to the correct: Phase Angle
+		runpath("boot/lib_body_travel_data_return.c").
+
+		if BODY:name <> DEFAULT_KSC
+		{
+			if (IS_INTER_PLANETARY_MISSION)						// INTER-PLANETARY Mission ?
+				RUNPATH( "boot/Phase Angle.c", BODY(DEFAULT_KSC)).	// Warp to the correct: Phase Angle
+				
+			activateAllEngines().
+			if body:atm:height > 0 {
+				print"ATM: Launch-Orbit".
+				runpath("boot/GOUP.c", true).		// ATM: "Launch-Orbit"
+				runpath("boot/GOORBIT.c").			// (Prograde) + (Moons)"Phase0-Normal"
+			} else {
+				print"NOATM: Launch-Orbit".
+				RUNPATH( "boot/PhaseIV-Orbit.c" ).					// Re-Launch to TARGET Orbit
+				activateAllEngines(). WAIT 1.
+				RUNPATH( "boot/Launch-Circularize.c", apoapsis ).
+				activateVesselProbe().
+			}
 			
-		activateAllEngines().
-		if body:atm:height > 0 {
-			print"ATM: Launch-Orbit".
-			runpath("boot/GOUP.c", true).		// ATM: "Launch-Orbit"
-			runpath("boot/GOORBIT.c").			// (Prograde) + (Moons)"Phase0-Normal"
-		} else {
-			print"NOATM: Launch-Orbit".
-			RUNPATH( "boot/PhaseIV-Orbit.c" ).					// Re-Launch to TARGET Orbit
-			activateAllEngines(). WAIT 1.
-			RUNPATH( "boot/Launch-Circularize.c", apoapsis ).
-			activateVesselProbe().
+			RUNPATH( "boot/PhaseV-Return.c" ).					// Return: Burn to "Kerbin SOI"
 		}
-		
-		RUNPATH( "boot/PhaseV-Return.c" ).					// Return: Burn to "Kerbin SOI"
-	}
 
-	if (IS_INTER_PLANETARY_MISSION) {
-		RUNPATH( "boot/PhaseI-Transfer.c", "RETROGRADE" ).	
-		RUNPATH( "boot/PhaseII-Break.c", DEFAULT_KSC ). 		
-	}
+		if (IS_INTER_PLANETARY_MISSION) {
+			RUNPATH( "boot/PhaseI-Transfer.c", "RETROGRADE" ).	
+			RUNPATH( "boot/PhaseII-Break.c", DEFAULT_KSC ). 		
+		}
 
-	PRINT "Press [ENTER] to LAND!".set ch to terminal:input:getchar().
-	RUNPATH( "boot/PhaseVI-Land.c", true ).		 			// Kerbin Reentry & Touch Down
-} else {
-	ResetMission(). // Re-define Target
-	reboot.
-	LOG  STAGE_1_TYPE+" MISSION END" to LOG.TXT.
+		PRINT "Press [ENTER] to LAND!".set ch to terminal:input:getchar().
+		RUNPATH( "boot/PhaseVI-Land.c", true ).		 			// Kerbin Reentry & Touch Down
+	} else {
+		ResetMission(). // Re-define Target
+		reboot.
+		LOG  STAGE_1_TYPE+" MISSION END" to LOG.TXT.
+	}
 }

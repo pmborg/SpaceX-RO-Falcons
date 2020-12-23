@@ -152,7 +152,7 @@ set in_sync to true.
 
 // SEPARATION
 ////////////////////////////////////////////////////////////////////////////////////////////////
-if (SHIP:VERTICALSPEED > 1) //and KUniverse:ActiveVessel = SHIP
+if (SHIP:VERTICALSPEED > 1) 
 {
 	set present_heading to SHIP:HEADING.
 	
@@ -206,7 +206,7 @@ if STAGE_1_TYPE = "SLAVE"
 else 
 {
 	if KUniverse:ActiveVessel <> SHIP
-		update_phase_title("(W8 TO BE ACTIVE)", 0, true).
+		update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
 	
 	UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 		SET TARGET TO LandingZone.

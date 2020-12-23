@@ -209,7 +209,7 @@ function ReEntryburn
 ////////////////////////////////////////////////////////////////////////////////////////////////
 function waitAndDoReEntryburn 
 {
-	update_phase_title("STEERING PROGRADE", 0).
+	update_phase_title("STEERING VERTICALLY", 0).
 	
 	if altitude > 100000 and VERTICALSPEED > 0
 	{
@@ -240,11 +240,15 @@ function waitAndDoReEntryburn
 			SET KUniverse:ACTIVEVESSEL TO SLAVE_BOOSTER.
 
 		// Warp until re-enter in atmosphere:
-		update_phase_title("W8 4 RE-ENTER", 0).
+		update_phase_title("WAIT FOR RE-ENTER", 0).
+		set counter to 0.
 		until (SHIP:altitude < BODY:ATM:HEIGHT )  //warp = 0
 		{
 			WAIT 0.1.  // Wait until return again to ATM...
 			PRINT_STATUS(3).
+			set counter to counter+1.
+			if counter > 100
+				RCS OFF.
 		}
 	}
 
