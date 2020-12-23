@@ -15,7 +15,7 @@ RUNPATH( "boot/sw-version.c" ).
 set STAGE_1_TYPE to "ST-2".
 print "".print "".print "".
 
-function STAGE2_DEORBIT
+function DEORBIT
 { 
 	parameter y to 6.
 	parameter deorbit_lng to 100.
@@ -39,6 +39,7 @@ function STAGE2_DEORBIT
 	RCS ON.
 	LOCK STEERING TO SHIP:RETROGRADE.//  + R(0,0,180).
 	print "[".print " ".
+	WAIT 10.
 	WAIT 10. print "5".
 	WAIT 10. print "4".
 	WAIT 10. print "3".
@@ -67,19 +68,19 @@ wait 5.
 	
 core:doaction("Open Terminal", true).
 update_phase_title("STAGE 2 - RETROGRADE", 0, true).
-SAS OFF.
-RCS ON.
-LOCK STEERING TO SHIP:RETROGRADE.//  + R(0,0,180).
+SAS OFF. wait 1.
+RCS ON. wait 1.
+LOCK STEERING TO SHIP:RETROGRADE. wait 1.
 
 PRINT "Confirm: - Deorbit ST-2 (y/n)". 
 set ch to terminal:input:getchar(). PRINT "selected: "+ch.
 if (ch = "y" OR ch = "Y")  
-	STAGE2_DEORBIT().
-
+	DEORBIT().
 
 PRINT "Thankyou ST-2!". 
 
-set warp to 2.
-WAIT 1.
+set warp to 2. WAIT 1. //WARP TO ATM
+wait 5.
+set warp to 3. WAIT 1. //WARP IN ATM
 
 until FALSE WAIT 1.	// KEEP: STEERING

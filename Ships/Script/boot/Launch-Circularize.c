@@ -30,8 +30,9 @@ function wait_for_AP
 	parameter w.
 
 	set warp to 0.
-	LOCK STEERING TO SHIP:PROGRADE  + R(0,0,180).
-	WAIT 1.
+	LOCK STEERING TO SHIP:PROGRADE.//  + R(0,0,180).
+	//SAS ON. wait 1.
+	//set sasmode TO "PROGRADE". wait 1.
 	if eta:apoapsis > 3000
 		if vehicle_type <> "Crew Dragon 2"
 			if KUniverse:ActiveVessel = SHIP
@@ -51,7 +52,7 @@ function wait_for_AP
 	set warp to 0.
 	update_phase_title("Circularize T-"+w,1, false).
 	
-	LOCK STEERING TO SHIP:PROGRADE  + R(0,0,180).
+	LOCK STEERING TO SHIP:PROGRADE.//  + R(0,0,180).
 }
 
 function do_circle_step
@@ -185,6 +186,13 @@ function do_circle_step
 ////////////////////////////////////////////////////////////////////////////////////////////////
 if ship:verticalspeed > 0 and eta:apoapsis > 60
 	wait_for_AP(60).
+
+WAIT 5. print "5".
+WAIT 5. print "4".
+WAIT 5. print "3".
+WAIT 5. print "2".
+WAIT 5. print "1".
+
 
 update_phase_title("Circularize-I",1, false).
 PRINT "Vertical Speed" 	at (0,2).

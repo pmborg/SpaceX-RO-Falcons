@@ -15,8 +15,13 @@ CLEARSCREEN.
 RUNPATH( "boot/sw-version.c" ).
 
 update_phase_title("WAIT to Deploy",1, false).
-UNTIL (mass < 3) and (altitude < 3000)
+UNTIL (mass < 3) WAIT 1.
+
+SAS OFF. WAIT 1.
+RCS OFF. WAIT 1.
+UNTIL (altitude < 3000)
 {
+	LOCK STEERING TO UP + R(0,-90-10,180+25). //UP
 	PRINT "Altitude: "		 	at (0,5).	PRINT ROUND(altitude/1000,1)+" km   "		 	at (22,5).	
 	WAIT 1.
 }
@@ -24,4 +29,9 @@ UNTIL (mass < 3) and (altitude < 3000)
 update_phase_title("Deploy Chute",1, false).
 AG4 ON.
 
+SAS OFF. WAIT 1.
+RCS OFF. WAIT 1.
+LOCK STEERING TO UP + R(0,-90-10,180+25). //UP
+
 PRINT "Good Luck!".
+UNTIL (SHIP:q = 0) WAIT 1.
