@@ -47,9 +47,11 @@ if not exist buildID64.txt (
 	ckan.exe install --headless --allow-incompatible --no-recommends Kopernicus-BE
 
 	REM General Base Stuff:
-	ckan.exe install --headless --allow-incompatible --no-recommends KerbalXMod CraftManager KSP-AVC HangerExtenderExtended MoarFEConfigs DraggableNavball DraggableAltimeter VesselMoverContinued
+	ckan.exe install --headless --allow-incompatible --no-recommends KerbalXMod CraftManager KSP-AVC HangerExtenderExtended MoarFEConfigs DraggableNavball DraggableAltimeter 
+	REM VesselMoverContinued
 	ckan.exe install --headless --allow-incompatible --no-recommends AntennaHelper BetterCrewAssignment KerbalAlarmClock SCANsat Trajectories PatchManager 
-	ckan.exe install --headless --allow-incompatible --no-recommends AmpYearPowerManager DMagicScienceAnimate DockingCamKURS EasyVesselSwitch 
+	ckan.exe install --headless --allow-incompatible --no-recommends AmpYearPowerManager DMagicScienceAnimate DockingCamKURS 
+	REM EasyVesselSwitch 
 	ckan.exe install --headless --allow-incompatible --no-recommends CommunityTechTree 
 	ckan.exe install --headless --allow-incompatible --no-recommends B9PartSwitch KSP-Recall 
 	ckan.exe install --headless --allow-incompatible --no-recommends KerbalJointReinforcementContinued
@@ -123,7 +125,8 @@ REM INSTALL: ISS (International SpaceStation) Dep-1:
 	mkdir %NONEED%
 	move GameData\RealChute %NONEED%
 	move GameData\FerramAerospaceResearch %NONEED%
-	REM move GameData\EngineGroupController %NONEED%
+	move GameData\AJE %NONEED%
+	move GameData\EngineGroupController %NONEED%
 
 	REM FIX: TrajectoriesMod for KSP 1.11
 	copy /Y GameData\Trajectories\Plugin\Trajectories110.bin GameData\Trajectories\Plugin\Trajectories111.bin

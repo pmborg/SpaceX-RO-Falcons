@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 22/Dez/2020
+// 23/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
@@ -97,7 +97,7 @@ function boostback_burn
 			if (impactDist < 1000) and SHIP:GROUNDSPEED < do_reverse_max_speed or (SHIP:GROUNDSPEED < 350 and impactDist > prev_impactDist)
 				break.
 		}else{
-			if (impactDist < 1000) and (impactDist > prev_impactDist)
+			if impactDist > prev_impactDist and impactDist < 5000
 				break.
 		}
 	}
@@ -301,7 +301,7 @@ function aerodynamic_guidance
 		
 		if SHIP:ALTITUDE > 7000
 			set aerodynamic_target to 100.
-		else if SHIP:ALTITUDE > 3000 
+		else //if SHIP:ALTITUDE > 3000 
 			set aerodynamic_target to 50.
 	
 		if (impactDist < aerodynamic_target) and SHIP:ALTITUDE > 3500

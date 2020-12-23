@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestre all mission phases.
-// 22/Dez/2020
+// 23/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 // Reset Engine settings before all, ("migth be a reboot")
@@ -124,6 +124,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			wait 1.
 			SET SASMODE TO "RADIALIN".
 			wait 1.
+			CLEARSCREEN.
 		}
 	}
 	

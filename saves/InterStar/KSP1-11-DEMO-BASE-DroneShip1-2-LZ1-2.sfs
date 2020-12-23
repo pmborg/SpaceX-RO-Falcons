@@ -12,7 +12,7 @@ GAME
 	scene = 7
 	editor = None
 	flag = Launchers Pack/Flags/SpaceX
-	launchID = 78
+	launchID = 80
 	defaultVABLaunchSite = LaunchPad
 	defaultSPHLaunchSite = Runway
 	modded = True
@@ -554,7 +554,7 @@ GAME
 	{
 		name = ContractSystem
 		scene = 7, 8, 5, 6
-		update = 3759927984.6624885
+		update = 3759928146.1223345
 		version = 1.11.0
 		WEIGHTS
 		{
@@ -838,7 +838,7 @@ GAME
 	{
 		name = Funding
 		scene = 7, 8, 5, 6
-		funds = 5002234057846.5811
+		funds = 5002234195540.0889
 	}
 	SCENARIO
 	{
@@ -1492,7 +1492,6 @@ GAME
 			part = solarPanels5HiTech
 			part = RO.EarlyMediumSolarPanel
 			part = RO.EarlyTinySolarPanel
-			part = aje.solarPanels
 			part = FASAAgenaAnt
 			part = FASAAgenaProbe
 			part = FASAGeminiAntenna
@@ -2693,9 +2692,6 @@ GAME
 			part = wingStrake
 			part = mk2Cockpit.Inline
 			part = mk2CrewCabin
-			part = aje.j75
-			part = aje.ramjet
-			part = aje.al31
 			part = mk2.1m.Bicoupler.Structural
 			part = FASAStrS1BWing
 		}
@@ -11940,8 +11936,8 @@ GAME
 				AutoPilotDisabled = False
 				AutoPilotDisTime = 0
 				AutoPilotDisCounter = 0
-				timeLastElectricity = 3759927986.7224865
-				lastUpdate = 3759927986.7224865
+				timeLastElectricity = 0
+				lastUpdate = 0
 				EmgcyShutOverride = False
 				EmgcyShutOverrideStarted = False
 				Emergencypowerdownactivated = False
@@ -11958,7 +11954,7 @@ GAME
 				ReenableRcs = False
 				ReenableSas = False
 				IsolateReservePower = False
-				Guid = a540d51b-f888-465c-833e-fcf498ba9236
+				Guid = 32e33286-9c23-490e-b2f2-4ac51fb4539d
 			}
 		}
 	}
@@ -15672,7 +15668,7 @@ GAME
 	FLIGHTSTATE
 	{
 		version = 1.11.0
-		UT = 3759927992.2624812
+		UT = 3759928146.1223345
 		activeVessel = 18
 		mapViewFiltering = 31740
 		commNetUIModeTracking = Network
@@ -15720,13 +15716,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 1222120.5414363677
-				ECC = 0.99999999999999989
-				INC = 70.953101106667575
+				SMA = 0
+				ECC = 1
+				INC = 70.953101106604294
 				LPE = 90
-				LAN = 45.497848685125973
-				MNA = 3.1415926207170166
-				EPH = 3759927973.642499
+				LAN = 45.509854282567858
+				MNA = 0
+				EPH = 3759928142.6223378
 				REF = 2
 				IDENT = Mercury
 			}
@@ -15882,9 +15878,6 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
@@ -15892,6 +15885,9 @@ GAME
 				{
 				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
@@ -15944,11 +15940,11 @@ GAME
 			{
 				SMA = NaN
 				ECC = 1
-				INC = 95.370880967845039
+				INC = 95.370880967875451
 				LPE = 90
-				LAN = 2.1226262875618431
+				LAN = 2.1346318849500676
 				MNA = 0
-				EPH = 3759927973.642499
+				EPH = 3759928142.6223378
 				REF = 2
 				IDENT = Mercury
 			}
@@ -16125,9 +16121,6 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
@@ -16135,6 +16128,9 @@ GAME
 				{
 				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
@@ -16185,13 +16181,13 @@ GAME
 			cMod = -1
 			ORBIT
 			{
-				SMA = 0
+				SMA = NaN
 				ECC = 1
-				INC = 58.45823733643423
+				INC = 58.458237335242842
 				LPE = 90
-				LAN = 52.057309077926448
+				LAN = 52.454808088338098
 				MNA = 0
-				EPH = 3759927973.642499
+				EPH = 3759928142.6223378
 				REF = 3
 				IDENT = Io
 			}
@@ -16347,9 +16343,6 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
@@ -16357,6 +16350,9 @@ GAME
 				{
 				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
@@ -17067,9 +17063,6 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
@@ -17077,6 +17070,9 @@ GAME
 				{
 				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
@@ -17129,11 +17125,11 @@ GAME
 			{
 				SMA = NaN
 				ECC = 1
-				INC = 45.605810559887722
+				INC = 45.605810559970543
 				LPE = 90
-				LAN = 309.89850782483512
+				LAN = 309.91051342242861
 				MNA = 0
-				EPH = 3759927973.642499
+				EPH = 3759928142.6223378
 				REF = 2
 				IDENT = Mercury
 			}
@@ -17303,9 +17299,6 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
@@ -17313,6 +17306,9 @@ GAME
 				{
 				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
@@ -17365,11 +17361,11 @@ GAME
 			{
 				SMA = NaN
 				ECC = 1
-				INC = 82.93805009876607
-				LPE = 90
-				LAN = 134.56944664023877
+				INC = 82.938050098796168
+				LPE = 90.000000000000014
+				LAN = 134.58145223761187
 				MNA = 0
-				EPH = 3759927973.642499
+				EPH = 3759928142.6223378
 				REF = 2
 				IDENT = Mercury
 			}
@@ -17539,9 +17535,6 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
@@ -17549,6 +17542,9 @@ GAME
 				{
 				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
@@ -17675,9 +17671,6 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
@@ -17685,6 +17678,9 @@ GAME
 				{
 				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
@@ -17811,9 +17807,6 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
@@ -17821,6 +17814,9 @@ GAME
 				{
 				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
@@ -17947,9 +17943,6 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
@@ -17957,6 +17950,9 @@ GAME
 				{
 				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
@@ -18083,9 +18079,6 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
@@ -18093,6 +18086,9 @@ GAME
 				{
 				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
@@ -18219,9 +18215,6 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
@@ -18229,6 +18222,9 @@ GAME
 				{
 				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
@@ -18355,9 +18351,6 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
@@ -18365,6 +18358,9 @@ GAME
 				{
 				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
@@ -18491,9 +18487,6 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
@@ -18501,6 +18494,9 @@ GAME
 				{
 				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
@@ -18522,17 +18518,17 @@ GAME
 			landedAt = KSC
 			displaylandedAt = #autoLOC_300900
 			splashed = False
-			met = 3628.6365394592285
+			met = 3782.4963927268982
 			lct = 3759924363.6259418
-			lastUT = 3759927992.2624812
+			lastUT = 3759928146.1223345
 			distanceTraveled = 68.264599915025315
 			root = 0
-			lat = 28.612900691959474
-			lon = -80.619701752973299
-			alt = 74.892878132872283
-			hgt = 0.821757555
-			nrm = -2.98023224E-08,1,-4.26312909E-07
-			rot = 0.331357121,-0.554724216,0.388629347,-0.656849146
+			lat = 28.612839773300283
+			lon = -80.619694456021506
+			alt = 75.430540595203638
+			hgt = 0.821366549
+			nrm = -8.94069672E-08,0.99999994,-3.33879143E-07
+			rot = 0.331100672,-0.55469054,0.388417512,-0.657132149
 			CoM = 0,0,0
 			stg = 1
 			prst = False
@@ -18551,13 +18547,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 3189777.8126006173
-				ECC = 0.9973412780383637
-				INC = 28.612900691959471
-				LPE = 270
-				LAN = 227.76320451444613
-				MNA = 3.1415926535897869
-				EPH = 3759927992.2624812
+				SMA = 3189777.8734553047
+				ECC = 0.99734140849117126
+				INC = 28.612840052628663
+				LPE = 270.0076613557157
+				LAN = 228.39732400103412
+				MNA = 3.1415914312249464
+				EPH = 3759928146.1223345
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -18585,10 +18581,10 @@ GAME
 				srfN = , -1
 				mass = 25
 				shielded = False
-				temp = 322.89541458673312
-				tempExt = 322.99437169176656
-				tempExtUnexp = 322.99375553200144
-				staticPressureAtm = 0.9911848096944007
+				temp = 323.79166208173524
+				tempExt = 323.66370445103496
+				tempExtUnexp = 323.66172603464042
+				staticPressureAtm = 0.99112186201289931
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -18936,21 +18932,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYCrewPart
 					isEnabled = True
 					stagingEnabled = True
@@ -18979,22 +18960,6 @@ GAME
 					{
 					}
 					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -19846,9 +19811,6 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
@@ -19856,6 +19818,9 @@ GAME
 				{
 				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
@@ -19906,13 +19871,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = NaN
+				SMA = 0
 				ECC = 1
-				INC = 61.387109310472979
-				LPE = 90.000000000000014
-				LAN = 228.71233107858714
+				INC = 61.387109310469405
+				LPE = 90
+				LAN = 229.41834138670512
 				MNA = 0
-				EPH = 3759927973.642499
+				EPH = 3759928142.6223378
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -21163,9 +21128,6 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
@@ -21173,6 +21135,9 @@ GAME
 				{
 				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
@@ -21223,13 +21188,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = NaN
-				ECC = 1
-				INC = 61.387109296021428
-				LPE = 90.000000000000014
-				LAN = 230.34899871447459
-				MNA = 0
-				EPH = 3759927973.642499
+				SMA = 3185499.753602664
+				ECC = 0.99999999999999989
+				INC = 61.387109296017869
+				LPE = 90
+				LAN = 231.05500902259271
+				MNA = 3.1415926207170166
+				EPH = 3759928142.6223378
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -22480,9 +22445,6 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
@@ -22490,6 +22452,9 @@ GAME
 				{
 				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
@@ -22540,13 +22505,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 0
+				SMA = NaN
 				ECC = 1
-				INC = 61.387109308580996
-				LPE = 90
-				LAN = 228.88566514588217
+				INC = 61.387109308577422
+				LPE = 89.999999999999986
+				LAN = 229.59167545400015
 				MNA = 0
-				EPH = 3759927973.642499
+				EPH = 3759928142.6223378
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -23797,9 +23762,6 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
@@ -23807,6 +23769,9 @@ GAME
 				{
 				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
@@ -23828,17 +23793,17 @@ GAME
 			landedAt = 
 			displaylandedAt = 
 			splashed = False
-			met = 2163.0179371833801
+			met = 2316.8777904510498
 			lct = 3759925829.244544
-			lastUT = 3759927992.2624812
+			lastUT = 3759928146.1223345
 			distanceTraveled = 67.281920182084022
 			root = 0
-			lat = 28.612888383479781
-			lon = -80.621612948002351
-			alt = 74.883769812993705
-			hgt = 0.840401292
-			nrm = 0.000194370747,1,-0.000167916995
-			rot = -0.329050988,0.558333337,-0.390475154,0.653849006
+			lat = 28.612831098030089
+			lon = -80.621608436673242
+			alt = 75.409164369106293
+			hgt = 0.830688059
+			nrm = 0.000111877918,1,-9.86177474E-05
+			rot = -0.329233855,0.558144391,-0.389938086,0.654238701
 			CoM = 0,0,0
 			stg = 1
 			prst = False
@@ -23857,13 +23822,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 3189777.7924396596
-				ECC = 0.99734128780818188
-				INC = 28.612888383479905
-				LPE = 270.00000198822863
-				LAN = 227.76128749457607
-				MNA = -3.1415896674810662
-				EPH = 3759927992.2624812
+				SMA = 3189777.9752600878
+				ECC = 0.99734133804358061
+				INC = 28.612831259142933
+				LPE = 270.0058144325638
+				LAN = 228.39750885825515
+				MNA = -3.141589667108585
+				EPH = 3759928146.1223345
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -23891,10 +23856,10 @@ GAME
 				srfN = , -1
 				mass = 25
 				shielded = False
-				temp = 321.27290529273029
-				tempExt = 321.08639151161935
-				tempExtUnexp = 321.08782392969118
-				staticPressureAtm = 0.991185863842177
+				temp = 322.2097422754195
+				tempExt = 322.00986266624665
+				tempExtUnexp = 322.00715457725028
+				staticPressureAtm = 0.99112427149353099
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -24242,21 +24207,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYCrewPart
 					isEnabled = True
 					stagingEnabled = True
@@ -24285,22 +24235,6 @@ GAME
 					{
 					}
 					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -25152,9 +25086,6 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
@@ -25164,6 +25095,9 @@ GAME
 				kOSVesselModule
 				{
 				}
+				SolverFlightSys
+				{
+				}
 				UllageModule
 				{
 				}
@@ -25171,7 +25105,7 @@ GAME
 		}
 		VESSEL
 		{
-			pid = a540d51bf888465c833efcf498ba9236
+			pid = 32e332869c23490eb2f24ac51fb4539d
 			persistentId = 3983080253
 			name = PMBT-SpaceX Falcon 9 v1.2 Block-5
 			type = Probe
@@ -25184,20 +25118,20 @@ GAME
 			displaylandedAt = #autoLOC_6002112
 			splashed = False
 			met = 0
-			lct = 3759927992.2624812
-			lastUT = 3759927992.2624812
+			lct = 3759928146.1223345
+			lastUT = 3759928146.1223345
 			distanceTraveled = 0
 			root = 0
-			lat = 28.60838754495289
-			lon = -80.599748526611592
-			alt = 145.13130634650588
-			hgt = 61.9866142
-			nrm = -4.47034836E-07,1,-3.06963921E-06
-			rot = -0.508763671,-0.0704259425,-0.0418087207,0.857001662
-			CoM = 1.95503235E-05,-32.7757797,0.000602245331
+			lat = 28.608384929638628
+			lon = -80.599756615377856
+			alt = 145.25624549854547
+			hgt = 61.9010277
+			nrm = 0.00036136806,0.99999994,-0.000188961625
+			rot = -0.508697689,-0.0703568235,-0.0416358151,0.857054949
+			CoM = -0.0119590759,-32.7152061,0.00650310516
 			stg = 7
 			prst = False
-			ref = 2908218742
+			ref = 902843035
 			ctrl = True
 			PQSMin = 2
 			PQSMax = 10
@@ -25207,18 +25141,18 @@ GAME
 			OverrideAxisControl = 0,0,0,0
 			OverrideGroupNames = ,,,
 			altDispState = ASL
-			cPch = 1.004
-			cHdg = 0.02999998
+			cPch = 0.548
+			cHdg = 0.322
 			cMod = 0
 			ORBIT
 			{
-				SMA = 3189797.0086321752
-				ECC = 0.99734100266744685
-				INC = 28.608387549434063
-				LPE = 269.99999460385209
-				LAN = 227.783163919787
-				MNA = 3.1415926462300741
-				EPH = 3759927992.2624812
+				SMA = 3189797.1024089069
+				ECC = 0.99734100210598153
+				INC = 28.608384932478209
+				LPE = 269.99998391575502
+				LAN = 228.42600634389001
+				MNA = 3.1415922652628701
+				EPH = 3759928146.1223345
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -25226,10 +25160,10 @@ GAME
 			{
 				name = HECS2.ProbeCore
 				cid = 4294102532
-				uid = 2908218742
-				mid = 3070417436
+				uid = 902843035
+				mid = 2259949158
 				persistentId = 713043476
-				launchID = 77
+				launchID = 79
 				parent = 0
 				position = 0,0,0
 				rotation = 0,0,0,1
@@ -25248,10 +25182,10 @@ GAME
 				attN = bottom, 9
 				mass = 0.19577761
 				shielded = False
-				temp = 274.20429246075446
-				tempExt = 274.25186439013976
-				tempExtUnexp = 274.25184306799417
-				staticPressureAtm = 0.98297985047726988
+				temp = 274.22502891246006
+				tempExt = 274.261827620703
+				tempExtUnexp = 274.26172752270287
+				staticPressureAtm = 0.98296531829721034
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -25287,18 +25221,6 @@ GAME
 				}
 				PARTDATA
 				{
-				}
-				MODULE
-				{
-					name = ModuleReactionWheel
-					PitchTorque = 1.5
-					YawTorque = 1.5
-					RollTorque = 1.5
-					RESOURCE
-					{
-						name = ElectricCharge
-						rate = 0.075
-					}
 				}
 				MODULE
 				{
@@ -25426,21 +25348,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYCrewPart
 					isEnabled = True
 					stagingEnabled = True
@@ -25541,6 +25448,24 @@ GAME
 							PrtPreEmergShutDnStateActive = False
 							PrtEmergShutDnPriority = 2
 							ConsPartKey = 4294102532,SAS
+						}
+						AYPwrPartList
+						{
+							PrtName = HECS2.ProbeCore
+							PrtTitle = 1t Satellite Bus
+							PrtModuleName = ModuleReactionWheel
+							PrtSubsystem = False
+							PrtPower = 0
+							PrtPowerF = 0
+							PrtActive = False
+							PrtSolarDependant = False
+							PrtEditorInclude = True
+							PrtUserEditorInclude = True
+							PrtValidprtEmergShutDn = True
+							PrtEmergShutDnInclude = True
+							PrtPreEmergShutDnStateActive = False
+							PrtEmergShutDnPriority = 2
+							ConsPartKey = 4294102532,ModuleReactionWheel
 						}
 					}
 					UPGRADESAPPLIED
@@ -27243,15 +27168,15 @@ GAME
 						}
 						MechJebModuleFlightRecorder
 						{
-							markUT = 3759927992.2624812
+							markUT = 3759928146.1223345
 							deltaVExpended = 0
 							dragLosses = 0
 							gravityLosses = 0
 							steeringLosses = 0
-							markLAN = 227.78269972325847
-							markLatitude = 28.608387883371613
-							markLongitude = -80.59974944379492
-							markAltitude = 112.35552698597311
+							markLAN = 228.42554672307901
+							markLatitude = 28.608385266415382
+							markLongitude = -80.599757534089662
+							markAltitude = 112.54277328690515
 							markBodyIndex = 1
 							maxDragGees = 0
 							unlockParts = 
@@ -27322,7 +27247,7 @@ GAME
 					baseModuleMass = 0
 					additionalCost = 0
 					MaxPartId = 100
-					RequiredPower = 0.00219999999
+					RequiredPower = 0.0384785719
 					stagingEnabled = True
 					activated = True
 					EVENTS
@@ -27362,8 +27287,47 @@ GAME
 							file
 							{
 								filename = boot.ks
-								binary = H4sIAHXe4F8A,72TUW,aMBSFn+FXXPUJHhIDmxiLNFUU1LVqKxhhXadpqm7im8QliS3bIWW,fnZA6qY+t,fN9tV3j4+PGYPgDavv+JeipBoriiCR0oY703+HoTerGOJUC2UNZFLDTbwGKyEhaAxxkDXEClN6eLzFpk6Lx3sqRFqSgTvJoRW2gMG6SqTOYbOCe9JGyHoI76F8ITlBcoAITgICKKxVJmLMXaSpwh3pBEvj5Sstc41VmMqKiZrTc6gKdc7cduZMZ+PPs9l0HKiOwzz8gixCKZFDpmUVQe8F3rZtyLVUiXzueKZgT3wsiymfjabigHbM5vML,IQPifi5zPazrwF++3h32AQWz3n5ZeT5t2jJWFjKtvZTon,E587UJunQJ0HHFwg2q+ASy1TWXTDWjVbSuLD4xX+1LYQ5am81KkUacC8F98+qKSAuLGDNweCeAEHLdEcWnhonx3WkBdY5gS0IUm+wzF7xz3w8mbGYU1ChqM,Amxi6vp6r7z42Pkn+iJXosF2rI3XU07zB8SoQb4MJuO6FphaWGnO3Nxn6meMPbEl,2GQ0Gb15nPrxj+vt4gq2KxiFPcZelpwybEoL6,n2KoJf7nv8ZnEhlGHHX9PXTa3QFoNXrgzDv1Wy0rA0BAAA
+								binary = H4sIADJk418A,72TUW,aMBSFn+FXXPUJHhIDmxiLNFUU1LVqKxhhXadpqm7im8QliS3bIWW,fnZA6qY+t,fN9tV3j4+PGYPgDavv+JeipBoriiCR0oY703+HoTerGOJUC2UNZFLDTbwGKyEhaAxxkDXEClN6eLzFpk6Lx3sqRFqSgTvJoRW2gMG6SqTOYbOCe9JGyHoI76F8ITlBcoAITgICKKxVJmLMXaSpwh3pBEvj5Sstc41VmMqKiZrTc6gKdc7cduZMZ+PPs9l0HKiOwzz8gixCKZFDpmUVQe8F3rZtyLVUiXzueKZgT3wsiymfjabigHbM5vML,IQPifi5zPazrwF++3h32AQWz3n5ZeT5t2jJWFjKtvZTon,E587UJunQJ0HHFwg2q+ASy1TWXTDWjVbSuLD4xX+1LYQ5am81KkUacC8F98+qKSAuLGDNweCeAEHLdEcWnhonx3WkBdY5gS0IUm+wzF7xz3w8mbGYU1ChqM,Amxi6vp6r7z42Pkn+iJXosF2rI3XU07zB8SoQb4MJuO6FphaWGnO3Nxn6meMPbEl,2GQ0Gb15nPrxj+vt4gq2KxiFPcZelpwybEoL6,n2KoJf7nv8ZnEhlGHHX9PXTa3QFoNXrgzDv1Wy0rA0BAAA
 							}
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleReactionWheel
+					isEnabled = True
+					actuatorModeCycle = 0
+					authorityLimiter = 100
+					stateString = Idle
+					stagingEnabled = True
+					WheelState = Active
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						CycleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						Activate
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						Deactivate
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						Toggle
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
 						}
 					}
 					UPGRADESAPPLIED
@@ -27405,10 +27369,10 @@ GAME
 			{
 				name = trussPiece3x
 				cid = 4294102446
-				uid = 408480226
-				mid = 3070417436
+				uid = 988036933
+				mid = 2259949158
 				persistentId = 2823692717
-				launchID = 77
+				launchID = 79
 				parent = 0
 				position = 0,0,0
 				rotation = 0.49999994,0.50000006,-0.49999994,0.50000006
@@ -27427,10 +27391,10 @@ GAME
 				attN = top, 2
 				mass = 0.0450000018
 				shielded = False
-				temp = 274.1919747889674
-				tempExt = 274.25070294604416
-				tempExtUnexp = 274.25068294702055
-				staticPressureAtm = 0.98297985047726988
+				temp = 274.22366756859816
+				tempExt = 274.25249887588916
+				tempExtUnexp = 274.25240244836669
+				staticPressureAtm = 0.9829641135568945
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -27486,21 +27450,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -27541,10 +27490,10 @@ GAME
 			{
 				name = strutOcto
 				cid = 4294102416
-				uid = 400754159
-				mid = 3070417436
+				uid = 1133249975
+				mid = 2259949158
 				persistentId = 4188927805
-				launchID = 77
+				launchID = 79
 				parent = 1
 				position = 1.6039807796478271,0,-3.5762786865234375E-07
 				rotation = 0,0,-0.707106829,0.707106829
@@ -27563,10 +27512,10 @@ GAME
 				attN = bottom, 1
 				mass = 0.00300000003
 				shielded = False
-				temp = 274.20354962590318
-				tempExt = 274.29015386071603
-				tempExtUnexp = 274.29011123769897
-				staticPressureAtm = 0.98297985047726988
+				temp = 274.22412182405361
+				tempExt = 274.25326738441214
+				tempExtUnexp = 274.25302192832595
+				staticPressureAtm = 0.98296433944570372
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -27622,21 +27571,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -27677,10 +27611,10 @@ GAME
 			{
 				name = largeSolarPanel
 				cid = 4294102382
-				uid = 2890365909
-				mid = 3070417436
+				uid = 1372126684
+				mid = 2259949158
 				persistentId = 759870105
-				launchID = 77
+				launchID = 79
 				parent = 2
 				position = 1.7104346752166748,-0.009490966796875,-3.5762786865234375E-07
 				rotation = 1.34110451E-07,1.00000012,7.4505806E-08,1.1920929E-07
@@ -27697,10 +27631,10 @@ GAME
 				srfN = srfAttach, 2
 				mass = 0.0682500005
 				shielded = False
-				temp = 274.19168426849222
-				tempExt = 274.32236242423159
-				tempExtUnexp = 274.32231252014941
-				staticPressureAtm = 0.98298090462504617
+				temp = 274.22356121145106
+				tempExt = 274.27283644605319
+				tempExtUnexp = 274.27261617587448
+				staticPressureAtm = 0.9829646406307827
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -27742,7 +27676,7 @@ GAME
 					name = ModuleDeployableSolarPanel
 					isEnabled = True
 					efficiencyMult = 1
-					launchUT = 3759927992.2624812
+					launchUT = 3759928146.1223345
 					currentRotation = (0, 0, -0.707106829, 0.707106829)
 					storedAnimationTime = 0
 					storedAnimationSpeed = 1
@@ -27760,7 +27694,7 @@ GAME
 						}
 						ExtendAction
 						{
-							actionGroup = None
+							actionGroup = Custom04
 							wasActiveBeforePartWasAdjusted = False
 						}
 						RetractAction
@@ -27779,21 +27713,6 @@ GAME
 					isEnabled = True
 					beingAttached = False
 					beingSettled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
 					stagingEnabled = True
 					EVENTS
 					{
@@ -27951,10 +27870,10 @@ GAME
 			{
 				name = strutOcto
 				cid = 4294102306
-				uid = 2729307638
-				mid = 3070417436
+				uid = 996300262
+				mid = 2259949158
 				persistentId = 3316689274
-				launchID = 77
+				launchID = 79
 				parent = 1
 				position = -1.6039803028106689,0,3.5762786865234375E-07
 				rotation = 7.10542736E-15,0,-0.707106769,-0.707106888
@@ -27973,10 +27892,10 @@ GAME
 				attN = bottom, 1
 				mass = 0.00300000003
 				shielded = False
-				temp = 274.20354962557559
-				tempExt = 274.29015385905888
-				tempExtUnexp = 274.29011123604346
-				staticPressureAtm = 0.98297985047726988
+				temp = 274.22412182405361
+				tempExt = 274.25326738441214
+				tempExtUnexp = 274.25302192832595
+				staticPressureAtm = 0.98296449003824327
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28032,21 +27951,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -28087,12 +27991,12 @@ GAME
 			{
 				name = largeSolarPanel
 				cid = 4294102272
-				uid = 1515271976
-				mid = 3070417436
+				uid = 3047609163
+				mid = 2259949158
 				persistentId = 3799522457
-				launchID = 77
+				launchID = 79
 				parent = 4
-				position = -1.7104434967041016,0.009490966796875,5.0105154514312744E-07
+				position = -1.7104470729827881,0.009490966796875,5.289912223815918E-07
 				rotation = 1.00000024,2.98023224E-07,2.38418579E-07,0
 				mirror = 1,1,1
 				symMethod = Radial
@@ -28107,10 +28011,10 @@ GAME
 				srfN = srfAttach, 4
 				mass = 0.0682500005
 				shielded = False
-				temp = 274.19168426848165
-				tempExt = 274.32236242347403
-				tempExtUnexp = 274.32231251939311
-				staticPressureAtm = 0.98297872103322381
+				temp = 274.22356121145106
+				tempExt = 274.27283644605319
+				tempExtUnexp = 274.27261617587448
+				staticPressureAtm = 0.98296313470538799
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28152,7 +28056,7 @@ GAME
 					name = ModuleDeployableSolarPanel
 					isEnabled = True
 					efficiencyMult = 1
-					launchUT = 3759927992.2624812
+					launchUT = 3759928146.1223345
 					currentRotation = (0, 0, -0.707106829, 0.707106829)
 					storedAnimationTime = 0
 					storedAnimationSpeed = 1
@@ -28170,7 +28074,7 @@ GAME
 						}
 						ExtendAction
 						{
-							actionGroup = None
+							actionGroup = Custom04
 							wasActiveBeforePartWasAdjusted = False
 						}
 						RetractAction
@@ -28189,21 +28093,6 @@ GAME
 					isEnabled = True
 					beingAttached = False
 					beingSettled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
 					stagingEnabled = True
 					EVENTS
 					{
@@ -28361,10 +28250,10 @@ GAME
 			{
 				name = rtg
 				cid = 4294102196
-				uid = 1141065031
-				mid = 3070417436
+				uid = 3547178078
+				mid = 2259949158
 				persistentId = 2898175187
-				launchID = 77
+				launchID = 79
 				parent = 0
 				position = -2.9802322387695313E-07,-0.594573974609375,-0.8253253698348999
 				rotation = 0.847866535,-2.98023188E-08,-8.94069601E-08,-0.53020972
@@ -28384,10 +28273,10 @@ GAME
 				attN = bottom, -1
 				mass = 0.0331999995
 				shielded = False
-				temp = 274.2081719287724
-				tempExt = 274.25137880545662
-				tempExtUnexp = 274.2513560378336
-				staticPressureAtm = 0.98304904774915958
+				temp = 274.22545373497934
+				tempExt = 274.26124324632599
+				tempExtUnexp = 274.26114531293695
+				staticPressureAtm = 0.98303451556910004
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28429,9 +28318,9 @@ GAME
 					name = ModuleCoreHeat
 					isEnabled = True
 					CoreTempGoalAdjustment = 0
-					CoreThermalEnergy = 9092.9872395003804
+					CoreThermalEnergy = 8955.9373265636859
 					stagingEnabled = True
-					lastUpdateTime = 3759927992.2624812
+					lastUpdateTime = 3759928146.1223345
 					EVENTS
 					{
 					}
@@ -28448,21 +28337,6 @@ GAME
 					isEnabled = True
 					beingAttached = False
 					beingSettled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
 					stagingEnabled = True
 					EVENTS
 					{
@@ -28536,7 +28410,7 @@ GAME
 					EfficiencyBonus = 1
 					IsActivated = True
 					stagingEnabled = True
-					lastUpdateTime = 3759927992.2624812
+					lastUpdateTime = 3759928146.1223345
 					EVENTS
 					{
 					}
@@ -28562,10 +28436,25 @@ GAME
 					{
 					}
 				}
+				MODULE
+				{
+					name = USI_ModuleFieldRepair
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
 				RESOURCE
 				{
 					name = Plutonium-238
-					amount = 0.22699999711853405
+					amount = 0.22699999960244313
 					maxAmount = 0.22700000000000001
 					flowState = True
 					isTweakable = True
@@ -28576,7 +28465,7 @@ GAME
 				RESOURCE
 				{
 					name = DepletedFuel
-					amount = 2.8814685619049562E-09
+					amount = 3.975572360210943E-10
 					maxAmount = 0.22700000000000001
 					flowState = True
 					isTweakable = False
@@ -28589,10 +28478,10 @@ GAME
 			{
 				name = rtg
 				cid = 4294102154
-				uid = 1479150134
-				mid = 3070417436
+				uid = 3370366002
+				mid = 2259949158
 				persistentId = 13571385
-				launchID = 77
+				launchID = 79
 				parent = 0
 				position = 3.5762786865234375E-07,-0.594573974609375,0.82532548904418945
 				rotation = -8.94069601E-08,-0.53020972,-0.847866535,2.98023188E-08
@@ -28612,10 +28501,10 @@ GAME
 				attN = bottom, -1
 				mass = 0.0331999995
 				shielded = False
-				temp = 274.2081719287724
-				tempExt = 274.25137880545662
-				tempExtUnexp = 274.2513560378336
-				staticPressureAtm = 0.98304904774915958
+				temp = 274.22545373497934
+				tempExt = 274.26124324632599
+				tempExtUnexp = 274.26114531293695
+				staticPressureAtm = 0.98303391319894207
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28657,9 +28546,9 @@ GAME
 					name = ModuleCoreHeat
 					isEnabled = True
 					CoreTempGoalAdjustment = 0
-					CoreThermalEnergy = 9092.9872395003804
+					CoreThermalEnergy = 8955.9373265636859
 					stagingEnabled = True
-					lastUpdateTime = 3759927992.2624812
+					lastUpdateTime = 3759928146.1223345
 					EVENTS
 					{
 					}
@@ -28676,21 +28565,6 @@ GAME
 					isEnabled = True
 					beingAttached = False
 					beingSettled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
 					stagingEnabled = True
 					EVENTS
 					{
@@ -28764,7 +28638,7 @@ GAME
 					EfficiencyBonus = 1
 					IsActivated = True
 					stagingEnabled = True
-					lastUpdateTime = 3759927992.2624812
+					lastUpdateTime = 3759928146.1223345
 					EVENTS
 					{
 					}
@@ -28790,10 +28664,25 @@ GAME
 					{
 					}
 				}
+				MODULE
+				{
+					name = USI_ModuleFieldRepair
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
 				RESOURCE
 				{
 					name = Plutonium-238
-					amount = 0.22699999711853405
+					amount = 0.22699999960244313
 					maxAmount = 0.22700000000000001
 					flowState = True
 					isTweakable = True
@@ -28804,7 +28693,7 @@ GAME
 				RESOURCE
 				{
 					name = DepletedFuel
-					amount = 2.8814685619049562E-09
+					amount = 3.975572360210943E-10
 					maxAmount = 0.22700000000000001
 					flowState = True
 					isTweakable = False
@@ -28817,10 +28706,10 @@ GAME
 			{
 				name = HighGainAntenna
 				cid = 4293738622
-				uid = 1573893623
-				mid = 3070417436
+				uid = 2573070657
+				mid = 2259949158
 				persistentId = 2782208232
-				launchID = 77
+				launchID = 79
 				parent = 0
 				position = 0.020395636558532715,0.4000091552734375,-0.0095656588673591614
 				rotation = 8.42937382E-08,1.19209275E-07,-7.09579453E-08,-1
@@ -28837,10 +28726,10 @@ GAME
 				srfN = srfAttach, 0,COL
 				mass = 0.0250000004
 				shielded = False
-				temp = 274.25802457709017
-				tempExt = 274.29107233057817
-				tempExtUnexp = 274.29100477510133
-				staticPressureAtm = 0.9829333173825715
+				temp = 274.23389367175207
+				tempExt = 274.26722311223142
+				tempExtUnexp = 274.26711573707979
+				staticPressureAtm = 0.98291886049878174
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28881,7 +28770,7 @@ GAME
 				{
 					name = ModuleDeployableAntenna
 					isEnabled = True
-					currentRotation = (-7.69639282E-17, -0.999960899, 4.54896596E-17, -0.00884658471)
+					currentRotation = (-9.00598583E-17, -0.999940813, 4.16551811E-17, -0.0108788991)
 					storedAnimationTime = 0
 					storedAnimationSpeed = 1
 					deployState = RETRACTED
@@ -28939,21 +28828,6 @@ GAME
 					isEnabled = True
 					beingAttached = False
 					beingSettled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
 					stagingEnabled = True
 					EVENTS
 					{
@@ -29025,10 +28899,10 @@ GAME
 			{
 				name = batteryBank
 				cid = 4294102718
-				uid = 2695501328
-				mid = 3070417436
+				uid = 2210153446
+				mid = 2259949158
 				persistentId = 1482224453
-				launchID = 77
+				launchID = 79
 				parent = 0
 				position = 0,-0.6108551025390625,0
 				rotation = 0,1,0,0
@@ -29044,13 +28918,13 @@ GAME
 				sameVesselCollision = False
 				srfN = , -1
 				attN = top, 0
-				attN = bottom, 14
+				attN = bottom, 10
 				mass = 0.353399992
 				shielded = False
-				temp = 274.19232925738663
-				tempExt = 274.27085156550424
-				tempExtUnexp = 274.27083109239192
-				staticPressureAtm = 0.98305093015590295
+				temp = 274.22358822888407
+				tempExt = 274.26035921720205
+				tempExtUnexp = 274.26028458924827
+				staticPressureAtm = 0.98303662386465263
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -29093,21 +28967,6 @@ GAME
 					isEnabled = True
 					beingAttached = False
 					beingSettled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
 					stagingEnabled = True
 					EVENTS
 					{
@@ -29170,1000 +29029,12 @@ GAME
 			}
 			PART
 			{
-				name = xenonTankRadial
-				cid = 4294102684
-				uid = 997066723
-				mid = 3070417436
-				persistentId = 78550662
-				launchID = 77
-				parent = 9
-				position = -0.42025274038314819,-0.7023162841796875,5.9604644775390625E-08
-				rotation = 0.70710665,0,0,-0.707106948
-				mirror = 1,1,1
-				symMethod = Radial
-				istg = -1
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = -1
-				sidx = -1
-				attm = 1
-				sameVesselCollision = False
-				sym = 11
-				sym = 12
-				sym = 13
-				srfN = srfAttach, 9
-				mass = 9.99999975E-05
-				shielded = False
-				temp = 274.28424016713376
-				tempExt = 274.46229190159278
-				tempExtUnexp = 274.46227420348634
-				staticPressureAtm = 0.98306162222620586
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = Squad/Flags/default
-				rTrf = xenonTankRadial
-				modCost = 0
-				modMass = -0.0135000004
-				moduleVariantName = 
-				moduleCargoStackableQuantity = 1
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-					ToggleSameVesselInteraction
-					{
-						actionGroup = None
-						wasActiveBeforePartWasAdjusted = False
-					}
-					SetSameVesselInteraction
-					{
-						actionGroup = None
-						wasActiveBeforePartWasAdjusted = False
-					}
-					RemoveSameVesselInteraction
-					{
-						actionGroup = None
-						wasActiveBeforePartWasAdjusted = False
-					}
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = ModuleCargoPart
-					isEnabled = True
-					beingAttached = False
-					beingSettled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleFuelTanks
-					isEnabled = True
-					type = ElectricPropulsion
-					utilization = 86
-					mass = 0
-					_numberOfAddedMLILayers = 0
-					partPrevTemperature = -1
-					stagingEnabled = True
-					volume = 0
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					TANK
-					{
-						name = ArgonGas
-						note = (pressurized)
-						utilization = 100
-						mass = 2.99999992E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = KryptonGas
-						note = (pressurized)
-						utilization = 100
-						mass = 2.99999992E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Hydrogen
-						note = (pressurized)
-						utilization = 100
-						mass = 2.99999992E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = XenonGas
-						note = (pressurized)
-						utilization = 100
-						mass = 2.99999992E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = ElectricCharge
-						note = (pressurized)
-						utilization = 1000
-						mass = 0.00288999989
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = LeadBallast
-						note = (pressurized)
-						utilization = 1
-						mass = 6.50000002E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					UPGRADESAPPLIED
-					{
-						upgrade = MLI.Upgrade1
-						upgrade = MLI.Upgrade2
-						upgrade = MLI.Upgrade3
-						upgrade = MLI.Upgrade4
-						upgrade = MLI.Upgrade5
-					}
-				}
-			}
-			PART
-			{
-				name = xenonTankRadial
-				cid = 4294102646
-				uid = 1545286475
-				mid = 3070417436
-				persistentId = 4291072562
-				launchID = 77
-				parent = 9
-				position = 5.9604644775390625E-08,-0.7023162841796875,0.42025259137153625
-				rotation = 0.499999911,-0.500000119,-0.499999911,-0.500000119
-				mirror = 1,1,1
-				symMethod = Radial
-				istg = -1
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = -1
-				sidx = -1
-				attm = 1
-				sameVesselCollision = False
-				sym = 10
-				sym = 12
-				sym = 13
-				srfN = srfAttach, 9
-				mass = 9.99999975E-05
-				shielded = False
-				temp = 274.28424016713376
-				tempExt = 274.46229190159278
-				tempExtUnexp = 274.46227420348634
-				staticPressureAtm = 0.98306162222620586
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = Squad/Flags/default
-				rTrf = xenonTankRadial
-				modCost = 0
-				modMass = -0.0135000004
-				moduleVariantName = 
-				moduleCargoStackableQuantity = 1
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-					ToggleSameVesselInteraction
-					{
-						actionGroup = None
-						wasActiveBeforePartWasAdjusted = False
-					}
-					SetSameVesselInteraction
-					{
-						actionGroup = None
-						wasActiveBeforePartWasAdjusted = False
-					}
-					RemoveSameVesselInteraction
-					{
-						actionGroup = None
-						wasActiveBeforePartWasAdjusted = False
-					}
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = ModuleCargoPart
-					isEnabled = True
-					beingAttached = False
-					beingSettled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleFuelTanks
-					isEnabled = True
-					type = ElectricPropulsion
-					utilization = 86
-					mass = 0
-					_numberOfAddedMLILayers = 0
-					partPrevTemperature = -1
-					stagingEnabled = True
-					volume = 0
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					TANK
-					{
-						name = ArgonGas
-						note = (pressurized)
-						utilization = 100
-						mass = 2.99999992E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = KryptonGas
-						note = (pressurized)
-						utilization = 100
-						mass = 2.99999992E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Hydrogen
-						note = (pressurized)
-						utilization = 100
-						mass = 2.99999992E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = XenonGas
-						note = (pressurized)
-						utilization = 100
-						mass = 2.99999992E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = ElectricCharge
-						note = (pressurized)
-						utilization = 1000
-						mass = 0.00288999989
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = LeadBallast
-						note = (pressurized)
-						utilization = 1
-						mass = 6.50000002E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					UPGRADESAPPLIED
-					{
-						upgrade = MLI.Upgrade1
-						upgrade = MLI.Upgrade2
-						upgrade = MLI.Upgrade3
-						upgrade = MLI.Upgrade4
-						upgrade = MLI.Upgrade5
-					}
-				}
-			}
-			PART
-			{
-				name = xenonTankRadial
-				cid = 4294102608
-				uid = 201501251
-				mid = 3070417436
-				persistentId = 914585093
-				launchID = 77
-				parent = 9
-				position = 0.42025297880172729,-0.7023162841796875,-1.1920928955078125E-07
-				rotation = -2.98023188E-08,-0.707107008,-0.70710665,0
-				mirror = 1,1,1
-				symMethod = Radial
-				istg = -1
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = -1
-				sidx = -1
-				attm = 1
-				sameVesselCollision = False
-				sym = 10
-				sym = 11
-				sym = 13
-				srfN = srfAttach, 9
-				mass = 9.99999975E-05
-				shielded = False
-				temp = 274.28424016713376
-				tempExt = 274.46229190159278
-				tempExtUnexp = 274.46227420348634
-				staticPressureAtm = 0.98306162222620586
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = Squad/Flags/default
-				rTrf = xenonTankRadial
-				modCost = 0
-				modMass = -0.0135000004
-				moduleVariantName = 
-				moduleCargoStackableQuantity = 1
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-					ToggleSameVesselInteraction
-					{
-						actionGroup = None
-						wasActiveBeforePartWasAdjusted = False
-					}
-					SetSameVesselInteraction
-					{
-						actionGroup = None
-						wasActiveBeforePartWasAdjusted = False
-					}
-					RemoveSameVesselInteraction
-					{
-						actionGroup = None
-						wasActiveBeforePartWasAdjusted = False
-					}
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = ModuleCargoPart
-					isEnabled = True
-					beingAttached = False
-					beingSettled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleFuelTanks
-					isEnabled = True
-					type = ElectricPropulsion
-					utilization = 86
-					mass = 0
-					_numberOfAddedMLILayers = 0
-					partPrevTemperature = -1
-					stagingEnabled = True
-					volume = 0
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					TANK
-					{
-						name = ArgonGas
-						note = (pressurized)
-						utilization = 100
-						mass = 2.99999992E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = KryptonGas
-						note = (pressurized)
-						utilization = 100
-						mass = 2.99999992E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Hydrogen
-						note = (pressurized)
-						utilization = 100
-						mass = 2.99999992E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = XenonGas
-						note = (pressurized)
-						utilization = 100
-						mass = 2.99999992E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = ElectricCharge
-						note = (pressurized)
-						utilization = 1000
-						mass = 0.00288999989
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = LeadBallast
-						note = (pressurized)
-						utilization = 1
-						mass = 6.50000002E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					UPGRADESAPPLIED
-					{
-						upgrade = MLI.Upgrade1
-						upgrade = MLI.Upgrade2
-						upgrade = MLI.Upgrade3
-						upgrade = MLI.Upgrade4
-						upgrade = MLI.Upgrade5
-					}
-				}
-			}
-			PART
-			{
-				name = xenonTankRadial
-				cid = 4294102570
-				uid = 3120954197
-				mid = 3070417436
-				persistentId = 4018265504
-				launchID = 77
-				parent = 9
-				position = -5.9604644775390625E-08,-0.7023162841796875,-0.42025262117385864
-				rotation = -0.499999911,-0.500000119,-0.499999911,0.500000119
-				mirror = 1,1,1
-				symMethod = Radial
-				istg = -1
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = -1
-				sidx = -1
-				attm = 1
-				sameVesselCollision = False
-				sym = 10
-				sym = 11
-				sym = 12
-				srfN = srfAttach, 9
-				mass = 9.99999975E-05
-				shielded = False
-				temp = 274.28424016713376
-				tempExt = 274.46229190159278
-				tempExtUnexp = 274.46227420348634
-				staticPressureAtm = 0.98306162222620586
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = Squad/Flags/default
-				rTrf = xenonTankRadial
-				modCost = 0
-				modMass = -0.0135000004
-				moduleVariantName = 
-				moduleCargoStackableQuantity = 1
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-					ToggleSameVesselInteraction
-					{
-						actionGroup = None
-						wasActiveBeforePartWasAdjusted = False
-					}
-					SetSameVesselInteraction
-					{
-						actionGroup = None
-						wasActiveBeforePartWasAdjusted = False
-					}
-					RemoveSameVesselInteraction
-					{
-						actionGroup = None
-						wasActiveBeforePartWasAdjusted = False
-					}
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = ModuleCargoPart
-					isEnabled = True
-					beingAttached = False
-					beingSettled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleFuelTanks
-					isEnabled = True
-					type = ElectricPropulsion
-					utilization = 86
-					mass = 0
-					_numberOfAddedMLILayers = 0
-					partPrevTemperature = -1
-					stagingEnabled = True
-					volume = 0
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					TANK
-					{
-						name = ArgonGas
-						note = (pressurized)
-						utilization = 100
-						mass = 2.99999992E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = KryptonGas
-						note = (pressurized)
-						utilization = 100
-						mass = 2.99999992E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = Hydrogen
-						note = (pressurized)
-						utilization = 100
-						mass = 2.99999992E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = XenonGas
-						note = (pressurized)
-						utilization = 100
-						mass = 2.99999992E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = ElectricCharge
-						note = (pressurized)
-						utilization = 1000
-						mass = 0.00288999989
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					TANK
-					{
-						name = LeadBallast
-						note = (pressurized)
-						utilization = 1
-						mass = 6.50000002E-05
-						cost = 0
-						loss_rate = 0
-						temperature = 300
-						fillable = True
-						techRequired = 
-						amount = 0
-						maxAmount = 0
-					}
-					UPGRADESAPPLIED
-					{
-						upgrade = MLI.Upgrade1
-						upgrade = MLI.Upgrade2
-						upgrade = MLI.Upgrade3
-						upgrade = MLI.Upgrade4
-						upgrade = MLI.Upgrade5
-					}
-				}
-			}
-			PART
-			{
 				name = ionEngine
 				cid = 4294102796
-				uid = 670482907
-				mid = 3070417436
+				uid = 1542418088
+				mid = 2259949158
 				persistentId = 1032177011
-				launchID = 77
+				launchID = 79
 				parent = 9
 				position = 0,-0.935272216796875,0
 				rotation = 0,1,0,0
@@ -30174,18 +29045,18 @@ GAME
 				dstg = 0
 				sqor = 0
 				sepI = -1
-				sidx = 2
+				sidx = 3
 				attm = 0
 				sameVesselCollision = False
 				srfN = srfAttach, -1
 				attN = top, 9
-				attN = bottom, 15
+				attN = bottom, 11
 				mass = 0.0494999997
 				shielded = False
-				temp = 274.19263230442294
-				tempExt = 274.23891964757519
-				tempExtUnexp = 274.23891065454416
-				staticPressureAtm = 0.98308872888331167
+				temp = 274.22385728670059
+				tempExt = 274.25618643683941
+				tempExtUnexp = 274.2561328134247
+				staticPressureAtm = 0.98307427199952191
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -30354,21 +29225,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -30382,22 +29238,6 @@ GAME
 					{
 					}
 					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -30455,11 +29295,11 @@ GAME
 			{
 				name = Decoupler.2
 				cid = 4294102876
-				uid = 1352605259
-				mid = 3070417436
+				uid = 2378006130
+				mid = 2259949158
 				persistentId = 3340465589
-				launchID = 77
-				parent = 14
+				launchID = 79
+				parent = 10
 				position = 0,-1.1237983703613281,0
 				rotation = 0,1,0,0
 				mirror = 1,1,1
@@ -30473,14 +29313,14 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = , -1
-				attN = top, 14
-				attN = bottom, 16
+				attN = top, 10
+				attN = bottom, 12
 				mass = 0.349999994
 				shielded = False
-				temp = 274.1918054361069
-				tempExt = 274.21468442222459
-				tempExtUnexp = 274.21468194761422
-				staticPressureAtm = 0.98311064009780558
+				temp = 274.223937890245
+				tempExt = 274.24659436273777
+				tempExtUnexp = 274.2465708527622
+				staticPressureAtm = 0.98309625851028559
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -30620,21 +29460,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -30690,11 +29515,11 @@ GAME
 			{
 				name = KK.SPX.F9.1875mmPA
 				cid = 4294102924
-				uid = 1690688132
-				mid = 3070417436
+				uid = 3218660220
+				mid = 2259949158
 				persistentId = 1652662431
-				launchID = 77
-				parent = 15
+				launchID = 79
+				parent = 11
 				position = 0,-1.5881118774414063,0
 				rotation = 0,1,0,0
 				mirror = 1,1,1
@@ -30704,19 +29529,19 @@ GAME
 				dstg = 3
 				sqor = 0
 				sepI = 0
-				sidx = 1
+				sidx = 2
 				attm = 0
 				sameVesselCollision = False
 				srfN = , -1
-				attN = bottom, 17
+				attN = bottom, 13
 				attN = top, -1
 				attN = top, -1
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18787115409771
-				tempExt = 274.18823021150968
-				tempExtUnexp = 274.18823021150968
-				staticPressureAtm = 0.98316470281947776
+				temp = 274.22334683023928
+				tempExt = 274.22370802240516
+				tempExtUnexp = 274.22370802240516
+				staticPressureAtm = 0.98315032123195778
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -30777,21 +29602,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = kOSProcessor
 					isEnabled = True
 					bootFile = /boot/boot-st2.ks
@@ -30800,7 +29610,7 @@ GAME
 					baseModuleMass = 0
 					additionalCost = 0
 					MaxPartId = 100
-					RequiredPower = 0.00140000007
+					RequiredPower = 0.000200000009
 					stagingEnabled = True
 					activated = True
 					EVENTS
@@ -30840,7 +29650,7 @@ GAME
 							file
 							{
 								filename = boot-st2.ks
-								binary = H4sIAHXe4F8A,71T0W7aMBR9hq+44gkeHJNoYzTSVEFR16mtYIR1naapcmIHuyS5lu00ZV8,G5C6as,tfYqd63POPT6mFMgbVt,jX6pKNKwWKeSIjliXRDvbfwfi62UGWWGUdhZKNHCdrcAh5AJaKzhgA5lmhbh,uGFtU8iHOyFVUQkLt8ihU07CcFXnaLawXsKdMFZhM4L3UH6BXEC+hxROAghI57RNKfWDtHW0EyZnlQ3ytcGtYXVUYE1Vw8VzpKU+p3679MbT+Gw6ncREH3BoAJ8Lx6BCxqE0WKfQewHvui7iBnWOzwc8K+kjj1FO+HQ8UXvmYjqbzdkndp+rn4vyafqFsG8fbvdr4tg5rz6PA,4Nc8I6WGDXBJb0H,Fbb2qbH6BPgo43QNZLcsmqAptDMFat0Wh9YMLiVW2kskftnWFaCwPsCRUP12oEEVw5YA0Hy54EMDBY7ISDx9bL8R2FZM1WgJMCimAwlv,hD0JEqXVsK0gygOBg5Jt6vr6HzHA8HOcCTe65sIRTb,gMf06Uw+M0cAZxlMC88rsfIduQZBQo4wldiD80GSfjN09TP,vxdXNxBZsljKMepS9LLkrWVg5Ws81VCr,86,hNM6m0pcdH0zdto5mTw1emkNPsUTEYRX8Bjmb2hT4EAAA=
+								binary = H4sIADJk418A,71T0W7aMBR9hq+44gkeHJNoYzTSVEFR16mtYIR1naapcmIHuyS5lu00ZV8,G5C6as,tfYqd63POPT6mFMgbVt,jX6pKNKwWKeSIjliXRDvbfwfi62UGWWGUdhZKNHCdrcAh5AJaKzhgA5lmhbh,uGFtU8iHOyFVUQkLt8ihU07CcFXnaLawXsKdMFZhM4L3UH6BXEC+hxROAghI57RNKfWDtHW0EyZnlQ3ytcGtYXVUYE1Vw8VzpKU+p3679MbT+Gw6ncREH3BoAJ8Lx6BCxqE0WKfQewHvui7iBnWOzwc8K+kjj1FO+HQ8UXvmYjqbzdkndp+rn4vyafqFsG8fbvdr4tg5rz6PA,4Nc8I6WGDXBJb0H,Fbb2qbH6BPgo43QNZLcsmqAptDMFat0Wh9YMLiVW2kskftnWFaCwPsCRUP12oEEVw5YA0Hy54EMDBY7ISDx9bL8R2FZM1WgJMCimAwlv,hD0JEqXVsK0gygOBg5Jt6vr6HzHA8HOcCTe65sIRTb,gMf06Uw+M0cAZxlMC88rsfIduQZBQo4wldiD80GSfjN09TP,vxdXNxBZsljKMepS9LLkrWVg5Ws81VCr,86,hNM6m0pcdH0zdto5mTw1emkNPsUTEYRX8Bjmb2hT4EAAA=
 							}
 						}
 					}
@@ -30947,11 +29757,11 @@ GAME
 			{
 				name = KK.SPX.F93.S2tank
 				cid = 4294654148
-				uid = 2636119633
-				mid = 3070417436
+				uid = 2806817176
+				mid = 2259949158
 				persistentId = 579348422
-				launchID = 77
-				parent = 16
+				launchID = 79
+				parent = 12
 				position = 0,-6.1132736206054688,0
 				rotation = 0,0,0,1
 				mirror = 1,1,1
@@ -30965,18 +29775,18 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = srfAttach, -1
-				attN = top, 16
-				attN = fc, 18
-				attN = f01, 64
-				attN = f02, 66
-				attN = bottom, 26
-				attN = bottom02, 23
+				attN = top, 12
+				attN = fc, 14
+				attN = f01, 60
+				attN = f02, 62
+				attN = bottom, 22
+				attN = bottom02, 19
 				mass = 1.6281476
 				shielded = False
 				temp = 90.150001525878906
 				tempExt = 90.150001525878906
 				tempExtUnexp = 90.150001525878906
-				staticPressureAtm = 0.98369162611510763
+				staticPressureAtm = 0.98367724452758754
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -31049,21 +29859,6 @@ GAME
 					name = ModulePartVariants
 					isEnabled = True
 					useVariantMass = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
 					stagingEnabled = True
 					EVENTS
 					{
@@ -33061,11 +31856,11 @@ GAME
 			{
 				name = KK.SPX.Falcon9.FC
 				cid = 4294629322
-				uid = 2445232972
-				mid = 3070417436
+				uid = 3176094023
+				mid = 2259949158
 				persistentId = 1629889608
-				launchID = 77
-				parent = 17
+				launchID = 79
+				parent = 13
 				position = 0,-1.6044540405273438,0
 				rotation = 0,0,0,1
 				mirror = 1,1,1
@@ -33079,13 +31874,13 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = , -1
-				attN = bottom, 17
+				attN = bottom, 13
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18787105825805
-				tempExt = 274.18823634025904
-				tempExtUnexp = 274.18823634025904
-				staticPressureAtm = 0.98316658522622125
+				temp = 274.22334673438689
+				tempExt = 274.22371414426357
+				tempExtUnexp = 274.22371414426357
+				staticPressureAtm = 0.98315227893497092
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -33269,21 +32064,6 @@ GAME
 							active = False
 							wasActiveBeforePartWasAdjusted = False
 						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
 					}
 					UPGRADESAPPLIED
 					{
@@ -33574,11 +32354,11 @@ GAME
 			{
 				name = linearRcs
 				cid = 4293521798
-				uid = 2855359473
-				mid = 3070417436
+				uid = 1595354591
+				mid = 2259949158
 				persistentId = 2964429061
-				launchID = 77
-				parent = 17
+				launchID = 79
+				parent = 13
 				position = 1.8293502330780029,-9.2882156372070313,-2.384185791015625E-07
 				rotation = 0.5,0.5,-0.5,0.5
 				mirror = 1,1,1
@@ -33591,16 +32371,16 @@ GAME
 				sidx = 0
 				attm = 1
 				sameVesselCollision = False
-				sym = 20
-				sym = 21
-				sym = 22
-				srfN = srfAttach, 17,collider
+				sym = 16
+				sym = 17
+				sym = 18
+				srfN = srfAttach, 13,collider
 				mass = 0.00855772011
 				shielded = False
-				temp = 274.18787531275626
-				tempExt = 274.18812513890276
-				tempExtUnexp = 274.18812513890276
-				staticPressureAtm = 0.98406140609579318
+				temp = 274.22335098944927
+				tempExt = 274.22360292816364
+				tempExtUnexp = 274.22360292816364
+				staticPressureAtm = 0.98404709980454286
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -33690,21 +32470,6 @@ GAME
 					isEnabled = True
 					beingAttached = False
 					beingSettled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
 					stagingEnabled = True
 					EVENTS
 					{
@@ -33777,11 +32542,11 @@ GAME
 			{
 				name = linearRcs
 				cid = 4293521074
-				uid = 2550569757
-				mid = 3070417436
+				uid = 1739663483
+				mid = 2259949158
 				persistentId = 4128989997
-				launchID = 77
-				parent = 17
+				launchID = 79
+				parent = 13
 				position = -1.1920928955078125E-07,-9.2882156372070313,-1.8293499946594238
 				rotation = 0,0.707106829,-0.707106829,0
 				mirror = 1,1,1
@@ -33794,16 +32559,16 @@ GAME
 				sidx = 0
 				attm = 1
 				sameVesselCollision = False
-				sym = 19
-				sym = 21
-				sym = 22
-				srfN = srfAttach, 17,collider
+				sym = 15
+				sym = 17
+				sym = 18
+				srfN = srfAttach, 13,collider
 				mass = 0.00855772011
 				shielded = False
-				temp = 274.18787531275626
-				tempExt = 274.18812513890276
-				tempExtUnexp = 274.18812513890276
-				staticPressureAtm = 0.98406140609579318
+				temp = 274.22335098944927
+				tempExt = 274.22360292816364
+				tempExtUnexp = 274.22360292816364
+				staticPressureAtm = 0.98404709980454286
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -33893,21 +32658,6 @@ GAME
 					isEnabled = True
 					beingAttached = False
 					beingSettled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
 					stagingEnabled = True
 					EVENTS
 					{
@@ -33980,11 +32730,11 @@ GAME
 			{
 				name = linearRcs
 				cid = 4293520988
-				uid = 3780930242
-				mid = 3070417436
+				uid = 1870472548
+				mid = 2259949158
 				persistentId = 886154520
-				launchID = 77
-				parent = 17
+				launchID = 79
+				parent = 13
 				position = -1.8293502330780029,-9.2882156372070313,3.5762786865234375E-07
 				rotation = -0.5,0.5,-0.5,-0.5
 				mirror = 1,1,1
@@ -33997,16 +32747,16 @@ GAME
 				sidx = 0
 				attm = 1
 				sameVesselCollision = False
-				sym = 19
-				sym = 20
-				sym = 22
-				srfN = srfAttach, 17,collider
+				sym = 15
+				sym = 16
+				sym = 18
+				srfN = srfAttach, 13,collider
 				mass = 0.00855772011
 				shielded = False
-				temp = 274.18787531275626
-				tempExt = 274.18812513890276
-				tempExtUnexp = 274.18812513890276
-				staticPressureAtm = 0.98406140609579318
+				temp = 274.22335098944927
+				tempExt = 274.22360292816364
+				tempExtUnexp = 274.22360292816364
+				staticPressureAtm = 0.98404709980454286
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -34096,21 +32846,6 @@ GAME
 					isEnabled = True
 					beingAttached = False
 					beingSettled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
 					stagingEnabled = True
 					EVENTS
 					{
@@ -34183,11 +32918,11 @@ GAME
 			{
 				name = linearRcs
 				cid = 4293520902
-				uid = 1251662122
-				mid = 3070417436
+				uid = 2656500707
+				mid = 2259949158
 				persistentId = 1844144608
-				launchID = 77
-				parent = 17
+				launchID = 79
+				parent = 13
 				position = 3.5762786865234375E-07,-9.2882156372070313,1.8293502330780029
 				rotation = -0.707106829,0,0,-0.707106829
 				mirror = 1,1,1
@@ -34200,16 +32935,16 @@ GAME
 				sidx = 0
 				attm = 1
 				sameVesselCollision = False
-				sym = 19
-				sym = 20
-				sym = 21
-				srfN = srfAttach, 17,collider
+				sym = 15
+				sym = 16
+				sym = 17
+				srfN = srfAttach, 13,collider
 				mass = 0.00855772011
 				shielded = False
-				temp = 274.18787531275626
-				tempExt = 274.18812513890276
-				tempExtUnexp = 274.18812513890276
-				staticPressureAtm = 0.98406140609579318
+				temp = 274.22335098944927
+				tempExt = 274.22360292816364
+				tempExtUnexp = 274.22360292816364
+				staticPressureAtm = 0.98404709980454286
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -34312,21 +33047,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -34386,11 +33106,11 @@ GAME
 			{
 				name = asasmodule1-2
 				cid = 4293515306
-				uid = 2900941460
-				mid = 3070417436
+				uid = 4218926362
+				mid = 2259949158
 				persistentId = 1866841011
-				launchID = 77
-				parent = 17
+				launchID = 79
+				parent = 13
 				position = 0,-9.9902267456054688,0
 				rotation = 0,1,0,0
 				mirror = 1,1,1
@@ -34404,14 +33124,14 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = , -1
-				attN = top, 17
-				attN = bottom, 24
+				attN = top, 13
+				attN = bottom, 20
 				mass = 0.200000003
 				shielded = False
-				temp = 274.18787311958653
-				tempExt = 274.18802362062257
-				tempExtUnexp = 274.18802362062257
-				staticPressureAtm = 0.98414317784472916
+				temp = 274.22334879598873
+				tempExt = 274.22350143887911
+				tempExtUnexp = 274.22350143887911
+				staticPressureAtm = 0.98412887155347883
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -34506,21 +33226,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -34579,11 +33284,11 @@ GAME
 			{
 				name = PMB.F9.Merlin1DVplus
 				cid = 4294633406
-				uid = 2317024585
-				mid = 3070417436
+				uid = 1861794685
+				mid = 2259949158
 				persistentId = 3958460647
-				launchID = 77
-				parent = 23
+				launchID = 79
+				parent = 19
 				position = 0,-12.068458557128906,0
 				rotation = 0,1,0,0
 				mirror = 1,1,1
@@ -34597,15 +33302,15 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = srfAttach, -1
-				attN = top, 23
-				attN = skirt, 25
+				attN = top, 19
+				attN = skirt, 21
 				attN = bottom, -1
 				mass = 0.469999999
 				shielded = False
-				temp = 274.22033391240075
-				tempExt = 274.26780276284626
-				tempExtUnexp = 274.26777060883944
-				staticPressureAtm = 0.98438540594447776
+				temp = 274.22718816547393
+				tempExt = 274.27067947365708
+				tempExtUnexp = 274.27057369161736
+				staticPressureAtm = 0.98437094906068801
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -34714,11 +33419,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999953632860297
-							ullageHeightMax = 0.99999998936054013
-							ullageRadialMin = 7.3105254350294168E-07
-							ullageRadialMax = 0.99999999891979907
-							UT = 3759927992.2624812
+							ullageHeightMin = 0.89999584333931615
+							ullageHeightMax = 0.99999608624649128
+							ullageRadialMin = 0
+							ullageRadialMax = 0.9999999701058887
+							UT = 3759928146.1223345
 						}
 					}
 					UPGRADESAPPLIED
@@ -34810,21 +33515,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -34838,22 +33528,6 @@ GAME
 					{
 					}
 					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -34892,11 +33566,11 @@ GAME
 			{
 				name = KK.SpX.Mvac.skirt
 				cid = 4293871078
-				uid = 2066888998
-				mid = 3070417436
+				uid = 600850213
+				mid = 2259949158
 				persistentId = 3403875740
-				launchID = 77
-				parent = 24
+				launchID = 79
+				parent = 20
 				position = 0,-10.918464660644531,0
 				rotation = 0,-0.707106829,0,-0.707106829
 				mirror = 1,1,1
@@ -34910,13 +33584,13 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = srfAttach, -1
-				attN = top, 24
+				attN = top, 20
 				mass = 0.0149999997
 				shielded = False
-				temp = 274.26057716464112
-				tempExt = 274.30568040356434
-				tempExtUnexp = 274.30564606106918
-				staticPressureAtm = 0.98425137858434331
+				temp = 274.24738044114702
+				tempExt = 274.29215249706215
+				tempExtUnexp = 274.29194396822913
+				staticPressureAtm = 0.98423646992293512
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -34952,21 +33626,6 @@ GAME
 				}
 				PARTDATA
 				{
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
 				}
 				MODULE
 				{
@@ -35010,11 +33669,11 @@ GAME
 			{
 				name = Decoupler.3
 				cid = 4294107994
-				uid = 3154275455
-				mid = 3070417436
+				uid = 984230201
+				mid = 2259949158
 				persistentId = 1785055232
-				launchID = 77
-				parent = 17
+				launchID = 79
+				parent = 13
 				position = 0,-9.7052764892578125,0
 				rotation = 0,0,1,0
 				mirror = 1,1,1
@@ -35028,14 +33687,14 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = , -1
-				attN = top, 27
-				attN = bottom, 17
+				attN = top, 23
+				attN = bottom, 13
 				mass = 0.5
 				shielded = False
-				temp = 274.18787554301394
-				tempExt = 274.18821636315505
-				tempExtUnexp = 274.18821636315505
-				staticPressureAtm = 0.98411004748604425
+				temp = 274.22335121973748
+				tempExt = 274.2236941645109
+				tempExtUnexp = 274.2236941645109
+				staticPressureAtm = 0.98409551530598471
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -35158,21 +33817,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -35228,11 +33872,11 @@ GAME
 			{
 				name = KK.SPX.F93.interstage
 				cid = 4294631684
-				uid = 2582002790
-				mid = 3070417436
+				uid = 1846197148
+				mid = 2259949158
 				persistentId = 2832985031
-				launchID = 77
-				parent = 26
+				launchID = 79
+				parent = 22
 				position = 0,-12.982749938964844,0
 				rotation = 0,0,0,1
 				mirror = 1,1,1
@@ -35246,14 +33890,14 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = , -1
-				attN = bottom, 32
-				attN = top, 26
+				attN = bottom, 28
+				attN = top, 22
 				mass = 0.589999974
 				shielded = False
-				temp = 274.18787559815991
-				tempExt = 274.18829205044568
-				tempExtUnexp = 274.18829205044568
-				staticPressureAtm = 0.98449195016615776
+				temp = 274.22335127489077
+				tempExt = 274.22376986372058
+				tempExtUnexp = 274.22376986372058
+				staticPressureAtm = 0.98447741798609822
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -35319,21 +33963,6 @@ GAME
 					useVariantMass = True
 					stagingEnabled = True
 					selectedVariant = block5new
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
 					EVENTS
 					{
 					}
@@ -35432,11 +34061,11 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294256998
-				uid = 65568037
-				mid = 3070417436
+				uid = 3951859866
+				mid = 2259949158
 				persistentId = 3012762193
-				launchID = 77
-				parent = 27
+				launchID = 79
+				parent = 23
 				position = 1.8293530941009521,-16.255756378173828,-2.384185791015625E-07
 				rotation = 2.08931503E-08,0.707106769,-2.08931503E-08,0.707106888
 				mirror = 1,1,1
@@ -35449,16 +34078,16 @@ GAME
 				sidx = 0
 				attm = 1
 				sameVesselCollision = False
-				sym = 29
-				sym = 30
-				sym = 31
-				srfN = srfAttach, 27,collider_F912_Interstage
+				sym = 25
+				sym = 26
+				sym = 27
+				srfN = srfAttach, 23,collider_F912_Interstage
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18808316142349
-				tempExt = 274.21099357457041
-				tempExtUnexp = 274.21099320654162
-				staticPressureAtm = 0.98487340106865284
+				temp = 274.22338062764021
+				tempExt = 274.24422445225832
+				tempExtUnexp = 274.24420656504935
+				staticPressureAtm = 0.98485886888859331
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -35521,21 +34150,6 @@ GAME
 							actionGroup = None
 							wasActiveBeforePartWasAdjusted = False
 						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
 					}
 					UPGRADESAPPLIED
 					{
@@ -35583,11 +34197,11 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294256346
-				uid = 348040259
-				mid = 3070417436
+				uid = 3340365095
+				mid = 2259949158
 				persistentId = 1163188947
-				launchID = 77
-				parent = 27
+				launchID = 79
+				parent = 23
 				position = -1.1920928955078125E-07,-16.255756378173828,-1.8293533325195313
 				rotation = 1.77635663E-15,1,-2.95473725E-08,1.19209275E-07
 				mirror = 1,1,1
@@ -35600,16 +34214,16 @@ GAME
 				sidx = 0
 				attm = 1
 				sameVesselCollision = False
-				sym = 28
-				sym = 30
-				sym = 31
-				srfN = srfAttach, 27,collider_F912_Interstage
+				sym = 24
+				sym = 26
+				sym = 27
+				srfN = srfAttach, 23,collider_F912_Interstage
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18808316142349
-				tempExt = 274.21099357457041
-				tempExtUnexp = 274.21099320654162
-				staticPressureAtm = 0.98487347636492251
+				temp = 274.22338062764021
+				tempExt = 274.24422445225832
+				tempExtUnexp = 274.24420656504935
+				staticPressureAtm = 0.98485909477740252
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -35672,21 +34286,6 @@ GAME
 							actionGroup = None
 							wasActiveBeforePartWasAdjusted = False
 						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
 					}
 					UPGRADESAPPLIED
 					{
@@ -35734,11 +34333,11 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294256276
-				uid = 381639694
-				mid = 3070417436
+				uid = 1618981095
+				mid = 2259949158
 				persistentId = 2107624888
-				launchID = 77
-				parent = 27
+				launchID = 79
+				parent = 23
 				position = -1.8293530941009521,-16.255756378173828,3.5762786865234375E-07
 				rotation = -2.08931485E-08,0.707106829,-2.0893145E-08,-0.707106829
 				mirror = 1,1,1
@@ -35751,16 +34350,16 @@ GAME
 				sidx = 0
 				attm = 1
 				sameVesselCollision = False
-				sym = 28
-				sym = 29
-				sym = 31
-				srfN = srfAttach, 27,collider_F912_Interstage
+				sym = 24
+				sym = 25
+				sym = 27
+				srfN = srfAttach, 23,collider_F912_Interstage
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18808316142349
-				tempExt = 274.21099357457041
-				tempExtUnexp = 274.21099320654162
-				staticPressureAtm = 0.98487347636492251
+				temp = 274.22338062764021
+				tempExt = 274.24422445225832
+				tempExtUnexp = 274.24420656504935
+				staticPressureAtm = 0.98485901948113275
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -35823,21 +34422,6 @@ GAME
 							actionGroup = None
 							wasActiveBeforePartWasAdjusted = False
 						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
 					}
 					UPGRADESAPPLIED
 					{
@@ -35885,11 +34469,11 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294256206
-				uid = 2439797367
-				mid = 3070417436
+				uid = 1974272077
+				mid = 2259949158
 				persistentId = 308245408
-				launchID = 77
-				parent = 27
+				launchID = 79
+				parent = 23
 				position = 3.5762786865234375E-07,-16.255756378173828,1.8293530941009521
 				rotation = -2.95473725E-08,1.19209275E-07,-1.77635663E-15,-1
 				mirror = 1,1,1
@@ -35902,16 +34486,16 @@ GAME
 				sidx = 0
 				attm = 1
 				sameVesselCollision = False
-				sym = 28
-				sym = 29
-				sym = 30
-				srfN = srfAttach, 27,collider_F912_Interstage
+				sym = 24
+				sym = 25
+				sym = 26
+				srfN = srfAttach, 23,collider_F912_Interstage
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18808316142349
-				tempExt = 274.21099357457041
-				tempExtUnexp = 274.21099320654162
-				staticPressureAtm = 0.98487347636492251
+				temp = 274.22338062764021
+				tempExt = 274.24422445225832
+				tempExtUnexp = 274.24420656504935
+				staticPressureAtm = 0.98485901948113275
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -35981,21 +34565,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -36036,11 +34605,11 @@ GAME
 			{
 				name = KK.SPX.F93.S1tank
 				cid = 4294625744
-				uid = 2130892302
-				mid = 3070417436
+				uid = 1680822482
+				mid = 2259949158
 				persistentId = 526792388
-				launchID = 77
-				parent = 27
+				launchID = 79
+				parent = 23
 				position = 0,-35.430072784423828,0
 				rotation = 0,0,0,1
 				mirror = 1,1,1
@@ -36054,16 +34623,16 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = srfAttach, -1
-				attN = top, 27
-				attN = fc, 33
+				attN = top, 23
+				attN = fc, 29
 				attN = mid, -1
-				attN = bottom, 42
+				attN = bottom, 38
 				mass = 1.38907242
 				shielded = False
 				temp = 90.150001525878906
 				tempExt = 90.150001525878906
 				tempExtUnexp = 90.150001525878906
-				staticPressureAtm = 0.98711113090901026
+				staticPressureAtm = 0.98709674932149016
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -36107,21 +34676,6 @@ GAME
 					useVariantMass = True
 					stagingEnabled = True
 					selectedVariant = block5new
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
 					EVENTS
 					{
 					}
@@ -37654,11 +36208,11 @@ GAME
 			{
 				name = KK.SPX.Falcon9.FC
 				cid = 4294622098
-				uid = 3992703478
-				mid = 3070417436
+				uid = 3109557199
+				mid = 2259949158
 				persistentId = 1208775091
-				launchID = 77
-				parent = 32
+				launchID = 79
+				parent = 28
 				position = 0,-16.059593200683594,0
 				rotation = 0,0,0,1
 				mirror = 1,1,1
@@ -37672,13 +36226,13 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = , -1
-				attN = bottom, 32
+				attN = bottom, 28
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18787118006338
-				tempExt = 274.18823703810818
-				tempExtUnexp = 274.18823703810818
-				staticPressureAtm = 0.98485058629892208
+				temp = 274.22334685620842
+				tempExt = 274.2237148422052
+				tempExtUnexp = 274.2237148422052
+				staticPressureAtm = 0.98483612941513221
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -37740,7 +36294,7 @@ GAME
 					baseModuleMass = 0
 					additionalCost = 0
 					MaxPartId = 100
-					RequiredPower = 0.00110714289
+					RequiredPower = 0.000200000009
 					stagingEnabled = True
 					activated = True
 					EVENTS
@@ -37780,13 +36334,8 @@ GAME
 							file
 							{
 								filename = boot-boosters.ks
-								binary = H4sIAHXe4F8A,71TUU,bMBB+bn,FiSd4SNwg1HWRJlTKGAhYuyZjTNOELrFTmyY5y3Ya+u9nt0gwTXuEe7B09um77777zBhEbxhDj3+hatFiI1IoiFzkD+uEsfHaDt+h+,U8g6w0SjsLFRm4zhbgCAoBnRUcqIVMYynuH26wa0v5cCekKmth4ZY49MpJOFw0BZkVLOdw53krao,gPZjPiAsotpDCM4EIpHPapoz5QbomXgtTYG0DfW1oZbCJS2qYarl4irXUp8xfV159lnycTMZJpHc4LICfCYdQE3KoDDUpDF7A+76PuSFd0NMOz0r2yBOSYz4ZjdUWXcKm0zP8gPeF+nlebSZfIvx2crtdRg5Pef1pFPBv0Anr4Jz6NnRJX5FfeVG7Ygf9TGi,gWg5jy6wLqndGWPRGU3WuyYkf0Uuld1z7w1qLQzghhQPazUiElw5wJaDxY0ABEPlWjh47DwdX1FKbFcCnBRQBoGp+gf,IPiUWYcr8dqtBxC0jH35wMf34J5gqCyPEpjNl5,DCyQn7Ctt2PHoePTmHhlmP67y2SXkcxjFA8ZeUi4q7GoHi2l+mcIv7,nfLJNKW7b,CkPTtRqdPPzfqEfxH+kD2sUZBAAA
+								binary = H4sIADJk418A,71TUU,bMBB+bn,FiSd4SNwg1HWRJlTKGAhYuyZjTNOELrFTmyY5y3Ya+u9nt0gwTXuEe7B09um77777zBhEbxhDj3+hatFiI1IoiFzkD+uEsfHaDt+h+,U8g6w0SjsLFRm4zhbgCAoBnRUcqIVMYynuH26wa0v5cCekKmth4ZY49MpJOFw0BZkVLOdw53krao,gPZjPiAsotpDCM4EIpHPapoz5QbomXgtTYG0DfW1oZbCJS2qYarl4irXUp8xfV159lnycTMZJpHc4LICfCYdQE3KoDDUpDF7A+76PuSFd0NMOz0r2yBOSYz4ZjdUWXcKm0zP8gPeF+nlebSZfIvx2crtdRg5Pef1pFPBv0Anr4Jz6NnRJX5FfeVG7Ygf9TGi,gWg5jy6wLqndGWPRGU3WuyYkf0Uuld1z7w1qLQzghhQPazUiElw5wJaDxY0ABEPlWjh47DwdX1FKbFcCnBRQBoGp+gf,IPiUWYcr8dqtBxC0jH35wMf34J5gqCyPEpjNl5,DCyQn7Ctt2PHoePTmHhlmP67y2SXkcxjFA8ZeUi4q7GoHi2l+mcIv7,nfLJNKW7b,CkPTtRqdPPzfqEfxH+kD2sUZBAAA
 							}
-						}
-						file
-						{
-							filename = STAGE1_TARGET_FILE.c
-							binary = H4sIAHXe4F8A,0tJTc5JLEpVSM,JT0rMUfBJzEvJzEuPys9LVQjxVwhzDQ529dHwiYo31NTjAgCP0W4vLAAAAA==
 						}
 					}
 					UPGRADESAPPLIED
@@ -37876,21 +36425,6 @@ GAME
 							active = False
 							wasActiveBeforePartWasAdjusted = False
 						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
 					}
 					UPGRADESAPPLIED
 					{
@@ -38157,7 +36691,7 @@ GAME
 				RESOURCE
 				{
 					name = ElectricCharge
-					amount = 800
+					amount = 799.99999827993611
 					maxAmount = 800
 					flowState = True
 					isTweakable = True
@@ -38181,11 +36715,11 @@ GAME
 			{
 				name = KK.SPX.F9LandingLeg
 				cid = 4294581646
-				uid = 427224267
-				mid = 3070417436
+				uid = 2139519099
+				mid = 2259949158
 				persistentId = 3738723664
-				launchID = 77
-				parent = 32
+				launchID = 79
+				parent = 28
 				position = -1.2787079811096191,-52.026679992675781,-1.2787065505981445
 				rotation = -9.04808761E-09,0.923879564,-2.18440128E-08,-0.382683396
 				mirror = 1,1,1
@@ -38198,16 +36732,16 @@ GAME
 				sidx = -1
 				attm = 1
 				sameVesselCollision = False
-				sym = 35
-				sym = 36
-				sym = 37
-				srfN = srfAttach, 32,collider_F912_S1FuelTank
+				sym = 31
+				sym = 32
+				sym = 33
+				srfN = srfAttach, 28,collider_F912_S1FuelTank
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18787711377928
-				tempExt = 274.18836462119646
-				tempExtUnexp = 274.18836462119646
-				staticPressureAtm = 0.98905166637271003
+				temp = 274.22335279071109
+				tempExt = 274.22384412425197
+				tempExtUnexp = 274.22384412425197
+				staticPressureAtm = 0.98903728478518993
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -38303,21 +36837,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -38399,16 +36918,31 @@ GAME
 					{
 					}
 				}
+				MODULE
+				{
+					name = ModuleDragModifier
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
 			}
 			PART
 			{
 				name = KK.SPX.F9LandingLeg
 				cid = 4294581174
-				uid = 1074492913
-				mid = 3070417436
+				uid = 3072956653
+				mid = 2259949158
 				persistentId = 1326950246
-				launchID = 77
-				parent = 32
+				launchID = 79
+				parent = 28
 				position = -1.2787070274353027,-52.026679992675781,1.2787072658538818
 				rotation = -2.1844011E-08,0.382683396,-9.04808495E-09,-0.923879564
 				mirror = 1,1,1
@@ -38421,16 +36955,16 @@ GAME
 				sidx = -1
 				attm = 1
 				sameVesselCollision = False
-				sym = 34
-				sym = 36
-				sym = 37
-				srfN = srfAttach, 32,collider_F912_S1FuelTank
+				sym = 30
+				sym = 32
+				sym = 33
+				srfN = srfAttach, 28,collider_F912_S1FuelTank
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18787711377928
-				tempExt = 274.18836462119646
-				tempExtUnexp = 274.18836462119646
-				staticPressureAtm = 0.98905166637271003
+				temp = 274.22335279071109
+				tempExt = 274.22384412425197
+				tempExtUnexp = 274.22384412425197
+				staticPressureAtm = 0.98903720948892015
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -38522,21 +37056,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -38618,16 +37137,31 @@ GAME
 					{
 					}
 				}
+				MODULE
+				{
+					name = ModuleDragModifier
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
 			}
 			PART
 			{
 				name = KK.SPX.F9LandingLeg
 				cid = 4294581056
-				uid = 798049662
-				mid = 3070417436
+				uid = 3885044921
+				mid = 2259949158
 				persistentId = 1754682138
-				launchID = 77
-				parent = 32
+				launchID = 79
+				parent = 28
 				position = 1.27870774269104,-52.026679992675781,1.2787063121795654
 				rotation = -2.1844011E-08,-0.382683396,9.04808495E-09,-0.923879564
 				mirror = 1,1,1
@@ -38640,16 +37174,16 @@ GAME
 				sidx = -1
 				attm = 1
 				sameVesselCollision = False
-				sym = 34
-				sym = 35
-				sym = 37
-				srfN = srfAttach, 32,collider_F912_S1FuelTank
+				sym = 30
+				sym = 31
+				sym = 33
+				srfN = srfAttach, 28,collider_F912_S1FuelTank
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18787711377928
-				tempExt = 274.18836462119646
-				tempExtUnexp = 274.18836462119646
-				staticPressureAtm = 0.98905166637271003
+				temp = 274.22335279071109
+				tempExt = 274.22384412425197
+				tempExtUnexp = 274.22384412425197
+				staticPressureAtm = 0.98903720948892015
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -38729,21 +37263,6 @@ GAME
 					useVariantMass = True
 					stagingEnabled = True
 					selectedVariant = black
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
 					EVENTS
 					{
 					}
@@ -38837,16 +37356,31 @@ GAME
 					{
 					}
 				}
+				MODULE
+				{
+					name = ModuleDragModifier
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
 			}
 			PART
 			{
 				name = KK.SPX.F9LandingLeg
 				cid = 4294580938
-				uid = 3385897505
-				mid = 3070417436
+				uid = 2159236164
+				mid = 2259949158
 				persistentId = 2447077189
-				launchID = 77
-				parent = 32
+				launchID = 79
+				parent = 28
 				position = 1.2787063121795654,-52.026679992675781,-1.27870774269104
 				rotation = -9.04808495E-09,-0.923879564,2.1844011E-08,-0.382683396
 				mirror = 1,1,1
@@ -38859,16 +37393,16 @@ GAME
 				sidx = -1
 				attm = 1
 				sameVesselCollision = False
-				sym = 34
-				sym = 35
-				sym = 36
-				srfN = srfAttach, 32,collider_F912_S1FuelTank
+				sym = 30
+				sym = 31
+				sym = 32
+				srfN = srfAttach, 28,collider_F912_S1FuelTank
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18787711377928
-				tempExt = 274.18836462119646
-				tempExtUnexp = 274.18836462119646
-				staticPressureAtm = 0.98905166637271003
+				temp = 274.22335279071109
+				tempExt = 274.22384412425197
+				tempExtUnexp = 274.22384412425197
+				staticPressureAtm = 0.98903720948892015
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -38948,21 +37482,6 @@ GAME
 					useVariantMass = True
 					stagingEnabled = True
 					selectedVariant = black
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
 					EVENTS
 					{
 					}
@@ -39056,16 +37575,31 @@ GAME
 					{
 					}
 				}
+				MODULE
+				{
+					name = ModuleDragModifier
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
 			}
 			PART
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4289609260
-				uid = 2740088597
-				mid = 3070417436
+				uid = 738609533
+				mid = 2259949158
 				persistentId = 597995376
-				launchID = 77
-				parent = 32
+				launchID = 79
+				parent = 28
 				position = 1.8293955326080322,-54.393383026123047,-2.384185791015625E-07
 				rotation = -6.55626106E-16,0.707106769,6.55626E-16,0.707106888
 				mirror = 1,1,1
@@ -39078,16 +37612,16 @@ GAME
 				sidx = 1
 				attm = 1
 				sameVesselCollision = False
-				sym = 39
-				sym = 40
-				sym = 41
-				srfN = srfAttach, 32,collider_F913_S1FuelTank_collider
+				sym = 35
+				sym = 36
+				sym = 37
+				srfN = srfAttach, 28,collider_F913_S1FuelTank_collider
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18787717403234
-				tempExt = 274.18810251655771
-				tempExtUnexp = 274.18810251655771
-				staticPressureAtm = 0.98932860605280804
+				temp = 274.22335285097216
+				tempExt = 274.22358104627278
+				tempExtUnexp = 274.22358104627278
+				staticPressureAtm = 0.98931422446528805
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -39150,21 +37684,6 @@ GAME
 							actionGroup = Custom08
 							wasActiveBeforePartWasAdjusted = False
 						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
 					}
 					UPGRADESAPPLIED
 					{
@@ -39212,11 +37731,11 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294247630
-				uid = 234229166
-				mid = 3070417436
+				uid = 280219375
+				mid = 2259949158
 				persistentId = 1401641660
-				launchID = 77
-				parent = 32
+				launchID = 79
+				parent = 28
 				position = -1.1920928955078125E-07,-54.393383026123047,-1.8293957710266113
 				rotation = -1.05879106E-22,1,9.27195192E-16,1.19209275E-07
 				mirror = 1,1,1
@@ -39229,16 +37748,16 @@ GAME
 				sidx = 1
 				attm = 1
 				sameVesselCollision = False
-				sym = 38
-				sym = 40
-				sym = 41
-				srfN = srfAttach, 32,collider_F913_S1FuelTank_collider
+				sym = 34
+				sym = 36
+				sym = 37
+				srfN = srfAttach, 28,collider_F913_S1FuelTank_collider
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18787717403234
-				tempExt = 274.18810251655771
-				tempExtUnexp = 274.18810251655771
-				staticPressureAtm = 0.98932860605280804
+				temp = 274.22335285097216
+				tempExt = 274.22358104627278
+				tempExtUnexp = 274.22358104627278
+				staticPressureAtm = 0.9893140738727485
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -39301,21 +37820,6 @@ GAME
 							actionGroup = Custom08
 							wasActiveBeforePartWasAdjusted = False
 						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
 					}
 					UPGRADESAPPLIED
 					{
@@ -39363,11 +37867,11 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294247566
-				uid = 907925642
-				mid = 3070417436
+				uid = 1100359174
+				mid = 2259949158
 				persistentId = 3380630310
-				launchID = 77
-				parent = 32
+				launchID = 79
+				parent = 28
 				position = -1.8293955326080322,-54.393383026123047,3.5762786865234375E-07
 				rotation = 6.55626E-16,0.707106829,6.55626E-16,-0.707106829
 				mirror = 1,1,1
@@ -39380,16 +37884,16 @@ GAME
 				sidx = 1
 				attm = 1
 				sameVesselCollision = False
-				sym = 38
-				sym = 39
-				sym = 41
-				srfN = srfAttach, 32,collider_F913_S1FuelTank_collider
+				sym = 34
+				sym = 35
+				sym = 37
+				srfN = srfAttach, 28,collider_F913_S1FuelTank_collider
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18787717403234
-				tempExt = 274.18810251655771
-				tempExtUnexp = 274.18810251655771
-				staticPressureAtm = 0.98932868134907781
+				temp = 274.22335285097216
+				tempExt = 274.22358104627278
+				tempExtUnexp = 274.22358104627278
+				staticPressureAtm = 0.98931392328020906
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -39452,21 +37956,6 @@ GAME
 							actionGroup = Custom08
 							wasActiveBeforePartWasAdjusted = False
 						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
 					}
 					UPGRADESAPPLIED
 					{
@@ -39514,11 +38003,11 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294247502
-				uid = 4005454496
-				mid = 3070417436
+				uid = 1596482135
+				mid = 2259949158
 				persistentId = 789697671
-				launchID = 77
-				parent = 32
+				launchID = 79
+				parent = 28
 				position = 3.5762786865234375E-07,-54.393383026123047,1.8293955326080322
 				rotation = 9.27195192E-16,1.19209275E-07,1.05879106E-22,-1
 				mirror = 1,1,1
@@ -39531,16 +38020,16 @@ GAME
 				sidx = 1
 				attm = 1
 				sameVesselCollision = False
-				sym = 38
-				sym = 39
-				sym = 40
-				srfN = srfAttach, 32,collider_F913_S1FuelTank_collider
+				sym = 34
+				sym = 35
+				sym = 36
+				srfN = srfAttach, 28,collider_F913_S1FuelTank_collider
 				mass = 0.150000006
 				shielded = False
-				temp = 274.18787717403234
-				tempExt = 274.18810251655771
-				tempExtUnexp = 274.18810251655771
-				staticPressureAtm = 0.98932860605280804
+				temp = 274.22335285097216
+				tempExt = 274.22358104627278
+				tempExtUnexp = 274.22358104627278
+				staticPressureAtm = 0.98931347150259064
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -39610,21 +38099,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -39665,11 +38139,11 @@ GAME
 			{
 				name = miniFuelTank
 				cid = 4290370112
-				uid = 1295903064
-				mid = 3070417436
+				uid = 432013102
+				mid = 2259949158
 				persistentId = 3140562807
-				launchID = 77
-				parent = 32
+				launchID = 79
+				parent = 28
 				position = 0,-54.577266693115234,0
 				rotation = 0,0,0,1
 				mirror = 1,1,1
@@ -39683,14 +38157,14 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = srfAttach, -1
-				attN = top, 32
-				attN = bottom, 43
+				attN = top, 28
+				attN = bottom, 39
 				mass = 0.00216278993
 				shielded = False
-				temp = 274.18787297987234
-				tempExt = 274.18676021111344
-				tempExtUnexp = 274.18676021111344
-				staticPressureAtm = 0.98935014078595329
+				temp = 274.22334865625601
+				tempExt = 274.22223800037574
+				tempExtUnexp = 274.22223800037574
+				staticPressureAtm = 0.9893357591984332
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -39733,21 +38207,6 @@ GAME
 					isEnabled = True
 					beingAttached = False
 					beingSettled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
 					stagingEnabled = True
 					EVENTS
 					{
@@ -40549,11 +39008,11 @@ GAME
 			{
 				name = PMB.batteryBankLarge
 				cid = 4289602948
-				uid = 2638906713
-				mid = 3070417436
+				uid = 1088185754
+				mid = 2259949158
 				persistentId = 471182658
-				launchID = 77
-				parent = 42
+				launchID = 79
+				parent = 38
 				position = 0,-54.200977325439453,0
 				rotation = 0,0,0,1
 				mirror = 1,1,1
@@ -40567,14 +39026,14 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = , -1
-				attN = top, 42
-				attN = bottom, 44
+				attN = top, 38
+				attN = bottom, 40
 				mass = 9.99999975E-05
 				shielded = False
-				temp = 274.62371256519555
-				tempExt = 275.49604757076969
-				tempExtUnexp = 275.49604493226246
-				staticPressureAtm = 0.98930616776442604
+				temp = 274.57593185131958
+				tempExt = 275.45292808609196
+				tempExtUnexp = 275.45170467307076
+				staticPressureAtm = 0.98929012965897167
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -40610,21 +39069,6 @@ GAME
 				}
 				PARTDATA
 				{
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
 				}
 				MODULE
 				{
@@ -40666,7 +39110,7 @@ GAME
 				RESOURCE
 				{
 					name = ElectricCharge
-					amount = 375000
+					amount = 374999.99919372005
 					maxAmount = 375000
 					flowState = True
 					isTweakable = True
@@ -40679,11 +39123,11 @@ GAME
 			{
 				name = PMB.Rockomax16.BW
 				cid = 4293210738
-				uid = 3347093087
-				mid = 3070417436
+				uid = 501158695
+				mid = 2259949158
 				persistentId = 1156320785
-				launchID = 77
-				parent = 43
+				launchID = 79
+				parent = 39
 				position = 0,-53.478553771972656,0
 				rotation = 0,0,0,1
 				mirror = 1,1,1
@@ -40697,14 +39141,14 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = srfAttach, -1
-				attN = top, 43
-				attN = bottom, 45
+				attN = top, 39
+				attN = bottom, 41
 				mass = 0.281160057
 				shielded = False
-				temp = 274.21673566105403
-				tempExt = 274.57559649867511
-				tempExtUnexp = 274.57518885330171
-				staticPressureAtm = 0.98922161005350973
+				temp = 274.22640952315544
+				tempExt = 274.29642945492503
+				tempExtUnexp = 274.29600121534008
+				staticPressureAtm = 0.98920557194805536
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -40746,21 +39190,6 @@ GAME
 					name = ModulePartVariants
 					isEnabled = True
 					useVariantMass = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
 					stagingEnabled = True
 					EVENTS
 					{
@@ -41481,7 +39910,7 @@ GAME
 						temperature = 300
 						fillable = True
 						techRequired = 
-						amount = 3599.9999046325684
+						amount = 2499.9999366700649
 						maxAmount = 3599.9999046325684
 					}
 					TANK
@@ -41495,7 +39924,7 @@ GAME
 						temperature = 300
 						fillable = True
 						techRequired = 
-						amount = 4400.0000953674316
+						amount = 2900.0000320374966
 						maxAmount = 4400.0000953674316
 					}
 					TANK
@@ -41538,7 +39967,7 @@ GAME
 				RESOURCE
 				{
 					name = LiquidFuel
-					amount = 3599.9999046325684
+					amount = 2499.9999366700649
 					maxAmount = 3599.9999046325684
 					flowState = True
 					isTweakable = True
@@ -41549,7 +39978,7 @@ GAME
 				RESOURCE
 				{
 					name = Oxidizer
-					amount = 4400.0000953674316
+					amount = 2900.0000320374966
 					maxAmount = 4400.0000953674316
 					flowState = True
 					isTweakable = True
@@ -41562,11 +39991,11 @@ GAME
 			{
 				name = PMB.Rockomax16.BW
 				cid = 4289908726
-				uid = 766903855
-				mid = 3070417436
+				uid = 4090445605
+				mid = 2259949158
 				persistentId = 2893874595
-				launchID = 77
-				parent = 44
+				launchID = 79
+				parent = 40
 				position = 0,-53.478553771972656,0
 				rotation = 0,0,0,1
 				mirror = 1,1,1
@@ -41580,14 +40009,14 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = srfAttach, -1
-				attN = top, 44
-				attN = bottom, 46
+				attN = top, 40
+				attN = bottom, 42
 				mass = 0.281160057
 				shielded = False
-				temp = 274.1878772559632
-				tempExt = 274.57531116328977
-				tempExtUnexp = 274.57490379090876
-				staticPressureAtm = 0.98922161005350973
+				temp = 274.22335285823965
+				tempExt = 274.29638644146235
+				tempExtUnexp = 274.29595854366437
+				staticPressureAtm = 0.98920557194805536
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -41629,21 +40058,6 @@ GAME
 					name = ModulePartVariants
 					isEnabled = True
 					useVariantMass = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
 					stagingEnabled = True
 					EVENTS
 					{
@@ -42445,11 +40859,11 @@ GAME
 			{
 				name = KK.SPX.F9.Octaweb
 				cid = 4294617648
-				uid = 917248566
-				mid = 3070417436
+				uid = 4138276389
+				mid = 2259949158
 				persistentId = 4161287128
-				launchID = 77
-				parent = 45
+				launchID = 79
+				parent = 41
 				position = 0,-55.686958312988281,0
 				rotation = 0,0,0,1
 				mirror = 1,1,1
@@ -42463,23 +40877,23 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = , -1
-				attN = top, 45
-				attN = engine, 47
-				attN = engine01, 51
-				attN = engine02, 50
-				attN = engine03, 49
-				attN = engine04, 48
-				attN = engine05, 55
-				attN = engine06, 54
-				attN = engine07, 53
-				attN = engine08, 52
-				attN = bottom, 56
+				attN = top, 41
+				attN = engine, 43
+				attN = engine01, 47
+				attN = engine02, 46
+				attN = engine03, 45
+				attN = engine04, 44
+				attN = engine05, 51
+				attN = engine06, 50
+				attN = engine07, 49
+				attN = engine08, 48
+				attN = bottom, 52
 				mass = 0.5
 				shielded = False
-				temp = 274.33780105583998
-				tempExt = 274.49997043174847
-				tempExtUnexp = 274.49968561425402
-				staticPressureAtm = 0.98948002685125214
+				temp = 274.23189606028808
+				tempExt = 274.31992340456367
+				tempExtUnexp = 274.31948687934795
+				staticPressureAtm = 0.98946383815325833
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -42719,21 +41133,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -42774,11 +41173,11 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294615978
-				uid = 2215400173
-				mid = 3070417436
+				uid = 2232880332
+				mid = 2259949158
 				persistentId = 2460599543
-				launchID = 77
-				parent = 46
+				launchID = 79
+				parent = 42
 				position = 0,-56.791263580322266,0
 				rotation = 0,0,0,1
 				mirror = 1,1,1
@@ -42792,13 +41191,13 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = srfAttach, -1
-				attN = top, 46
+				attN = top, 42
 				mass = 0.469999999
 				shielded = False
-				temp = 274.20075133130553
-				tempExt = 274.35093336091256
-				tempExtUnexp = 274.35080180445777
-				staticPressureAtm = 0.98960931054639301
+				temp = 274.22417988754017
+				tempExt = 274.28429990874582
+				tempExtUnexp = 274.2840698808983
+				staticPressureAtm = 0.98959199240435325
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -42907,11 +41306,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999677924856814
-							ullageHeightMax = 0.99999770810725885
+							ullageHeightMin = 0.89998471106920164
+							ullageHeightMax = 0.99999161512082269
 							ullageRadialMin = 0
-							ullageRadialMax = 0.99999993694154432
-							UT = 3759927992.2624812
+							ullageRadialMax = 0.99999978405356837
+							UT = 3759928146.1223345
 						}
 					}
 					UPGRADESAPPLIED
@@ -43003,21 +41402,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -43031,22 +41415,6 @@ GAME
 					{
 					}
 					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -43085,11 +41453,11 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294615162
-				uid = 1265008327
-				mid = 3070417436
+				uid = 1386141015
+				mid = 2259949158
 				persistentId = 1114045749
-				launchID = 77
-				parent = 46
+				launchID = 79
+				parent = 42
 				position = 1.1935441493988037,-56.651264190673828,-0.49438327550888062
 				rotation = 0,0.13052617,0,0.991444945
 				mirror = 1,1,1
@@ -43103,13 +41471,13 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = srfAttach, -1
-				attN = top, 46
+				attN = top, 42
 				mass = 0.469999999
 				shielded = False
-				temp = 274.20075133152511
-				tempExt = 274.35093336359586
-				tempExtUnexp = 274.35080180713817
-				staticPressureAtm = 0.98959297125585977
+				temp = 274.22417988754017
+				tempExt = 274.28429990874582
+				tempExtUnexp = 274.2840698808983
+				staticPressureAtm = 0.98957753552056338
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -43218,11 +41586,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999934692059125
-							ullageHeightMax = 0.99999977418915897
-							ullageRadialMin = 3.6486895982777183E-07
-							ullageRadialMax = 0.99999999885430568
-							UT = 3759927992.2624812
+							ullageHeightMin = 0.89977564675280342
+							ullageHeightMax = 0.99979171483909968
+							ullageRadialMin = 0
+							ullageRadialMax = 0.99999747750641033
+							UT = 3759928146.1223345
 						}
 					}
 					UPGRADESAPPLIED
@@ -43314,21 +41682,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -43342,22 +41695,6 @@ GAME
 					{
 					}
 					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -43396,11 +41733,11 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294614724
-				uid = 348504145
-				mid = 3070417436
+				uid = 1277324112
+				mid = 2259949158
 				persistentId = 2202196946
-				launchID = 77
-				parent = 46
+				launchID = 79
+				parent = 42
 				position = 0.49438190460205078,-56.651264190673828,-1.1935462951660156
 				rotation = 0,0.608761489,0,0.793353319
 				mirror = 1,1,1
@@ -43414,13 +41751,13 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = srfAttach, -1
-				attN = top, 46
+				attN = top, 42
 				mass = 0.469999999
 				shielded = False
-				temp = 274.20075133130553
-				tempExt = 274.35093336091256
-				tempExtUnexp = 274.35080180445777
-				staticPressureAtm = 0.98959297125585977
+				temp = 274.22417988754825
+				tempExt = 274.28429990966464
+				tempExtUnexp = 274.28406988180899
+				staticPressureAtm = 0.98957821318699102
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -43529,11 +41866,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999927969929006
-							ullageHeightMax = 0.99999970744049027
-							ullageRadialMin = 2.6183027155430179E-07
-							ullageRadialMax = 0.99999999835683318
-							UT = 3759927992.2624812
+							ullageHeightMin = 0.89998652718507277
+							ullageHeightMax = 0.99999101686234659
+							ullageRadialMin = 0
+							ullageRadialMax = 0.99999862130047246
+							UT = 3759928146.1223345
 						}
 					}
 					UPGRADESAPPLIED
@@ -43625,21 +41962,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -43653,22 +41975,6 @@ GAME
 					{
 					}
 					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -43707,11 +42013,11 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294614162
-				uid = 3249508857
-				mid = 3070417436
+				uid = 1325174643
+				mid = 2259949158
 				persistentId = 78093436
-				launchID = 77
-				parent = 46
+				launchID = 79
+				parent = 42
 				position = -0.49438327550888062,-56.651264190673828,-1.1935434341430664
 				rotation = 0,0.866025448,0,0.49999994
 				mirror = 1,1,1
@@ -43725,13 +42031,13 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = srfAttach, -1
-				attN = top, 46
+				attN = top, 42
 				mass = 0.469999999
 				shielded = False
-				temp = 274.20075133152511
-				tempExt = 274.35093336359586
-				tempExtUnexp = 274.35080180713817
-				staticPressureAtm = 0.98959297125585977
+				temp = 274.22417988754404
+				tempExt = 274.28429990920523
+				tempExtUnexp = 274.28406988135367
+				staticPressureAtm = 0.98957806259445158
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -43840,11 +42146,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999949137902435
-							ullageHeightMax = 0.99999990397568572
-							ullageRadialMin = 5.3723083168962167E-07
-							ullageRadialMax = 0.99999999914113147
-							UT = 3759927992.2624812
+							ullageHeightMin = 0.89998489456514963
+							ullageHeightMax = 0.99998848496867632
+							ullageRadialMin = 0
+							ullageRadialMax = 0.99999999450512378
+							UT = 3759928146.1223345
 						}
 					}
 					UPGRADESAPPLIED
@@ -43936,21 +42242,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -43964,22 +42255,6 @@ GAME
 					{
 					}
 					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -44018,11 +42293,11 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294613744
-				uid = 2094633516
-				mid = 3070417436
+				uid = 4287051102
+				mid = 2259949158
 				persistentId = 1253440327
-				launchID = 77
-				parent = 46
+				launchID = 79
+				parent = 42
 				position = -1.1935455799102783,-56.651264190673828,-0.49438267946243286
 				rotation = 0,0.991444945,0,0.130526051
 				mirror = 1,1,1
@@ -44036,13 +42311,13 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = srfAttach, -1
-				attN = top, 46
+				attN = top, 42
 				mass = 0.469999999
 				shielded = False
-				temp = 274.20075133152511
-				tempExt = 274.35093336359586
-				tempExtUnexp = 274.35080180713817
-				staticPressureAtm = 0.98959297125585977
+				temp = 274.22417988754017
+				tempExt = 274.28429990874582
+				tempExtUnexp = 274.2840698808983
+				staticPressureAtm = 0.98957791200191214
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -44151,11 +42426,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999564979478985
-							ullageHeightMax = 0.99999648950530673
+							ullageHeightMin = 0.89999508841184406
+							ullageHeightMax = 0.99999718320332076
 							ullageRadialMin = 0
-							ullageRadialMax = 0.99999993294692957
-							UT = 3759927992.2624812
+							ullageRadialMax = 0.99999997174073874
+							UT = 3759928146.1223345
 						}
 					}
 					UPGRADESAPPLIED
@@ -44247,21 +42522,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -44275,22 +42535,6 @@ GAME
 					{
 					}
 					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -44329,11 +42573,11 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294613336
-				uid = 1671642382
-				mid = 3070417436
+				uid = 3875166701
+				mid = 2259949158
 				persistentId = 222593185
-				launchID = 77
-				parent = 46
+				launchID = 79
+				parent = 42
 				position = -1.1935453414916992,-56.651264190673828,0.49438118934631348
 				rotation = 0,0.965925813,0,-0.258819073
 				mirror = 1,1,1
@@ -44347,13 +42591,13 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = srfAttach, -1
-				attN = top, 46
+				attN = top, 42
 				mass = 0.469999999
 				shielded = False
-				temp = 274.20075133152511
-				tempExt = 274.35093336359586
-				tempExtUnexp = 274.35080180713817
-				staticPressureAtm = 0.98959297125585977
+				temp = 274.22417988754017
+				tempExt = 274.28429990874582
+				tempExtUnexp = 274.2840698808983
+				staticPressureAtm = 0.98957813789072135
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -44462,11 +42706,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999946897533889
-							ullageHeightMax = 0.99999995499632199
-							ullageRadialMin = 6.4441809210108227E-07
-							ullageRadialMax = 0.99999998682086166
-							UT = 3759927992.2624812
+							ullageHeightMin = 0.89999271294578065
+							ullageHeightMax = 0.99999583716025986
+							ullageRadialMin = 0
+							ullageRadialMax = 0.99999996595810969
+							UT = 3759928146.1223345
 						}
 					}
 					UPGRADESAPPLIED
@@ -44558,21 +42802,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -44586,22 +42815,6 @@ GAME
 					{
 					}
 					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -44640,11 +42853,11 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294612938
-				uid = 1045073247
-				mid = 3070417436
+				uid = 1775626878
+				mid = 2259949158
 				persistentId = 2882520202
-				launchID = 77
-				parent = 46
+				launchID = 79
+				parent = 42
 				position = -0.49438399076461792,-56.651264190673828,1.1935451030731201
 				rotation = 0,-0.79335326,0,0.608761549
 				mirror = 1,1,1
@@ -44658,13 +42871,13 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = srfAttach, -1
-				attN = top, 46
+				attN = top, 42
 				mass = 0.469999999
 				shielded = False
-				temp = 274.20075133152511
-				tempExt = 274.35093336359586
-				tempExtUnexp = 274.35080180713817
-				staticPressureAtm = 0.98959297125585977
+				temp = 274.22417988754404
+				tempExt = 274.28429990920523
+				tempExtUnexp = 274.28406988135367
+				staticPressureAtm = 0.98957828848326079
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -44773,11 +42986,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999949043300487
-							ullageHeightMax = 0.9999998924848752
-							ullageRadialMin = 5.0081820464647185E-07
-							ullageRadialMax = 0.99999999892596969
-							UT = 3759927992.2624812
+							ullageHeightMin = 0.89999118473425377
+							ullageHeightMax = 0.9999925872678771
+							ullageRadialMin = 0
+							ullageRadialMax = 0.99999996637359756
+							UT = 3759928146.1223345
 						}
 					}
 					UPGRADESAPPLIED
@@ -44869,21 +43082,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -44897,22 +43095,6 @@ GAME
 					{
 					}
 					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -44951,11 +43133,11 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294612550
-				uid = 1622037474
-				mid = 3070417436
+				uid = 3865816469
+				mid = 2259949158
 				persistentId = 1278813865
-				launchID = 77
-				parent = 46
+				launchID = 79
+				parent = 42
 				position = 0.49438238143920898,-56.651264190673828,1.1935441493988037
 				rotation = 0,0.500000119,0,-0.866025388
 				mirror = 1,1,1
@@ -44969,13 +43151,13 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = srfAttach, -1
-				attN = top, 46
+				attN = top, 42
 				mass = 0.469999999
 				shielded = False
-				temp = 274.20075133130553
-				tempExt = 274.35093336091256
-				tempExtUnexp = 274.35080180445777
-				staticPressureAtm = 0.98959297125585977
+				temp = 274.22417988754404
+				tempExt = 274.28429990920523
+				tempExtUnexp = 274.28406988135367
+				staticPressureAtm = 0.98957663196532653
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -45084,11 +43266,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999865469466434
-							ullageHeightMax = 0.99999911473394132
+							ullageHeightMin = 0.8999613930045216
+							ullageHeightMax = 0.99999498816024646
 							ullageRadialMin = 0
-							ullageRadialMax = 0.99999996412860215
-							UT = 3759927992.2624812
+							ullageRadialMax = 0.999991291812523
+							UT = 3759928146.1223345
 						}
 					}
 					UPGRADESAPPLIED
@@ -45180,21 +43362,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -45208,22 +43375,6 @@ GAME
 					{
 					}
 					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -45262,11 +43413,11 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294612172
-				uid = 461091660
-				mid = 3070417436
+				uid = 1612336186
+				mid = 2259949158
 				persistentId = 3738231478
-				launchID = 77
-				parent = 46
+				launchID = 79
+				parent = 42
 				position = 1.1935436725616455,-56.651264190673828,0.49438291788101196
 				rotation = 0,0.130526111,0,-0.991444886
 				mirror = 1,1,1
@@ -45280,13 +43431,13 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = srfAttach, -1
-				attN = top, 46
+				attN = top, 42
 				mass = 0.469999999
 				shielded = False
-				temp = 274.20075133174299
-				tempExt = 274.35093336627773
-				tempExtUnexp = 274.35080180981697
-				staticPressureAtm = 0.98959297125585977
+				temp = 274.22417988754404
+				tempExt = 274.28429990920523
+				tempExtUnexp = 274.28406988135367
+				staticPressureAtm = 0.98957821318699102
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -45395,11 +43546,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.8999987783683997
-							ullageHeightMax = 0.99999919971427331
+							ullageHeightMin = 0.89999615953879264
+							ullageHeightMax = 0.99999846904447987
 							ullageRadialMin = 0
-							ullageRadialMax = 0.9999999863812945
-							UT = 3759927992.2624812
+							ullageRadialMax = 0.99999944575660371
+							UT = 3759928146.1223345
 						}
 					}
 					UPGRADESAPPLIED
@@ -45491,21 +43642,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -45519,22 +43655,6 @@ GAME
 					{
 					}
 					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
 					{
 					}
 					UPGRADESAPPLIED
@@ -45573,11 +43693,11 @@ GAME
 			{
 				name = Vandy.F9
 				cid = 4290141218
-				uid = 694524837
-				mid = 3070417436
+				uid = 2040493772
+				mid = 2259949158
 				persistentId = 2417303758
-				launchID = 77
-				parent = 46
+				launchID = 79
+				parent = 42
 				position = 0,-59.186958312988281,0
 				rotation = 0,0,0,-1
 				mirror = 1,1,1
@@ -45591,13 +43711,13 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = , -1
-				attN = top, 46
+				attN = top, 42
 				mass = 5
 				shielded = False
-				temp = 274.7583167706814
-				tempExt = 275.06748678900891
-				tempExtUnexp = 275.0668254954698
-				staticPressureAtm = 0.98988986444743854
+				temp = 274.28872584506331
+				tempExt = 274.55788696302227
+				tempExtUnexp = 274.55673733988368
+				staticPressureAtm = 0.98987081449119474
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -45734,21 +43854,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = RefuelingPump
 					isEnabled = True
 					enablePump = True
@@ -45857,11 +43962,11 @@ GAME
 			{
 				name = 1mv.sensor.accelerometer.srf.1
 				cid = 4292396350
-				uid = 52324866
-				mid = 3070417436
+				uid = 2962828897
+				mid = 2259949158
 				persistentId = 2991313796
-				launchID = 77
-				parent = 46
+				launchID = 79
+				parent = 42
 				position = 1.8292410373687744,-55.423107147216797,1.1175870895385742E-07
 				rotation = 2.75255729E-09,0.707106829,-2.75255729E-09,0.707106829
 				mirror = 1,1,1
@@ -45874,14 +43979,14 @@ GAME
 				sidx = -1
 				attm = 1
 				sameVesselCollision = False
-				sym = 58
-				srfN = srfAttach, 46,collider_Octaweb
+				sym = 54
+				srfN = srfAttach, 42,collider_Octaweb
 				mass = 0.00499999989
 				shielded = False
-				temp = 274.20139665405998
-				tempExt = 274.46577646902938
-				tempExtUnexp = 274.46553445430084
-				staticPressureAtm = 0.98944915538065936
+				temp = 274.22389321733436
+				tempExt = 274.29772566711659
+				tempExtUnexp = 274.29728154706788
+				staticPressureAtm = 0.98943371964536297
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -45972,21 +44077,6 @@ GAME
 					name = ModulePartVariants
 					isEnabled = True
 					useVariantMass = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
-					isEnabled = True
 					stagingEnabled = True
 					EVENTS
 					{
@@ -46058,11 +44148,11 @@ GAME
 			{
 				name = 1mv.sensor.accelerometer.srf.1
 				cid = 4292396304
-				uid = 3998199944
-				mid = 3070417436
+				uid = 4018271919
+				mid = 2259949158
 				persistentId = 4039797537
-				launchID = 77
-				parent = 46
+				launchID = 79
+				parent = 42
 				position = -1.8292410373687744,-55.423107147216797,4.4703483581542969E-08
 				rotation = -2.75255752E-09,0.707106769,-2.75255707E-09,-0.707106888
 				mirror = 1,1,1
@@ -46075,14 +44165,14 @@ GAME
 				sidx = -1
 				attm = 1
 				sameVesselCollision = False
-				sym = 57
-				srfN = srfAttach, 46,collider_Octaweb
+				sym = 53
+				srfN = srfAttach, 42,collider_Octaweb
 				mass = 0.00499999989
 				shielded = False
-				temp = 274.20139665405998
-				tempExt = 274.46577646902938
-				tempExtUnexp = 274.46553445430084
-				staticPressureAtm = 0.98944915538065936
+				temp = 274.22389321733436
+				tempExt = 274.29772566711659
+				tempExtUnexp = 274.29728154706788
+				staticPressureAtm = 0.98943296668266556
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -46186,21 +44276,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -46259,11 +44334,11 @@ GAME
 			{
 				name = launchClamp1
 				cid = 4288280982
-				uid = 1658155754
-				mid = 3070417436
+				uid = 4190031701
+				mid = 2259949158
 				persistentId = 3000955265
-				launchID = 77
-				parent = 32
+				launchID = 79
+				parent = 28
 				position = 0,-51.631290435791016,2.6251838207244873
 				rotation = 2.61119207E-23,1,7.04271897E-15,-3.70764774E-09
 				mirror = 1,1,1
@@ -46276,13 +44351,13 @@ GAME
 				sidx = 3
 				attm = 1
 				sameVesselCollision = False
-				srfN = srfAttach, 32,collider_F913_S1FuelTank_collider
+				srfN = srfAttach, 28,collider_F913_S1FuelTank_collider
 				mass = 0.100000001
 				shielded = False
-				temp = 274.1878725176382
-				tempExt = 274.18826405225076
-				tempExtUnexp = 274.18826405225076
-				staticPressureAtm = 0.98900535916682086
+				temp = 274.22334819396053
+				tempExt = 274.22374185992942
+				tempExtUnexp = 274.22374185992942
+				staticPressureAtm = 0.98898133965677426
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -46323,7 +44398,7 @@ GAME
 				{
 					name = LaunchClamp
 					isEnabled = True
-					scaleFactor = 4.3461504
+					scaleFactor = 4.34615374
 					height = 10.966197
 					stagingEnabled = True
 					towerRot = -2.61119207E-23,-1,-7.04271897E-15,-3.70764774E-09
@@ -46380,21 +44455,6 @@ GAME
 				MODULE
 				{
 					name = ModuleTestSubject
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
 					isEnabled = True
 					stagingEnabled = True
 					EVENTS
@@ -46517,11 +44577,11 @@ GAME
 			{
 				name = Grid Fin L Titanium
 				cid = 4293607304
-				uid = 52399787
-				mid = 3070417436
+				uid = 3349887135
+				mid = 2259949158
 				persistentId = 2328081720
-				launchID = 77
-				parent = 27
+				launchID = 79
+				parent = 23
 				position = -1.3529086112976074,-15.369880676269531,1.1285436153411865
 				rotation = 0.321438849,1.23223515E-07,0.946930349,3.63005512E-07
 				mirror = 1,1,1
@@ -46534,16 +44594,16 @@ GAME
 				sidx = -1
 				attm = 1
 				sameVesselCollision = False
-				sym = 61
-				sym = 62
-				sym = 63
-				srfN = srfAttach, 27,collider_F912_Interstage
+				sym = 57
+				sym = 58
+				sym = 59
+				srfN = srfAttach, 23,collider_F912_Interstage
 				mass = 0.140000001
 				shielded = False
-				temp = 274.18858393892822
-				tempExt = 274.20856961912722
-				tempExtUnexp = 274.20856869764452
-				staticPressureAtm = 0.98477016988284138
+				temp = 274.22341125688519
+				tempExt = 274.23623635531055
+				tempExtUnexp = 274.23619125760126
+				staticPressureAtm = 0.98475571299905162
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -46743,21 +44803,6 @@ GAME
 				MODULE
 				{
 					name = ModuleDeployableAero
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
 					isEnabled = True
 					stagingEnabled = True
 					EVENTS
@@ -46812,11 +44857,11 @@ GAME
 			{
 				name = Grid Fin L Titanium
 				cid = 4293603000
-				uid = 1469157815
-				mid = 3070417436
+				uid = 2745777106
+				mid = 2259949158
 				persistentId = 2086285366
-				launchID = 77
-				parent = 27
+				launchID = 79
+				parent = 23
 				position = 1.128543496131897,-15.369880676269531,1.3529086112976074
 				rotation = 0.896872461,3.43815827E-07,0.442289263,1.6955147E-07
 				mirror = 1,1,1
@@ -46829,16 +44874,16 @@ GAME
 				sidx = -1
 				attm = 1
 				sameVesselCollision = False
-				sym = 60
-				sym = 62
-				sym = 63
-				srfN = srfAttach, 27,collider_F912_Interstage
+				sym = 56
+				sym = 58
+				sym = 59
+				srfN = srfAttach, 23,collider_F912_Interstage
 				mass = 0.140000001
 				shielded = False
-				temp = 274.18858393892822
-				tempExt = 274.20856961912722
-				tempExtUnexp = 274.20856869764452
-				staticPressureAtm = 0.98477016988284138
+				temp = 274.22341125688519
+				tempExt = 274.23623635531055
+				tempExtUnexp = 274.23619125760126
+				staticPressureAtm = 0.98475578829532129
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -47026,21 +45071,6 @@ GAME
 				MODULE
 				{
 					name = ModuleDeployableAero
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
 					isEnabled = True
 					stagingEnabled = True
 					EVENTS
@@ -47095,11 +45125,11 @@ GAME
 			{
 				name = Grid Fin L Titanium
 				cid = 4293602924
-				uid = 4259302961
-				mid = 3070417436
+				uid = 1965456345
+				mid = 2259949158
 				persistentId = 4066078995
-				launchID = 77
-				parent = 27
+				launchID = 79
+				parent = 23
 				position = 1.3529084920883179,-15.369880676269531,-1.1285436153411865
 				rotation = 0.946930349,3.63005512E-07,-0.321438879,-1.23223529E-07
 				mirror = 1,1,1
@@ -47112,16 +45142,16 @@ GAME
 				sidx = -1
 				attm = 1
 				sameVesselCollision = False
-				sym = 60
-				sym = 61
-				sym = 63
-				srfN = srfAttach, 27,collider_F912_Interstage
+				sym = 56
+				sym = 57
+				sym = 59
+				srfN = srfAttach, 23,collider_F912_Interstage
 				mass = 0.140000001
 				shielded = False
-				temp = 274.18858393892822
-				tempExt = 274.20856961912722
-				tempExtUnexp = 274.20856869764452
-				staticPressureAtm = 0.98477016988284138
+				temp = 274.22341125688519
+				tempExt = 274.23623635531055
+				tempExtUnexp = 274.23619125760126
+				staticPressureAtm = 0.98475563770278185
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -47309,21 +45339,6 @@ GAME
 				MODULE
 				{
 					name = ModuleDeployableAero
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
 					isEnabled = True
 					stagingEnabled = True
 					EVENTS
@@ -47378,11 +45393,11 @@ GAME
 			{
 				name = Grid Fin L Titanium
 				cid = 4293602848
-				uid = 9046352
-				mid = 3070417436
+				uid = 3266990251
+				mid = 2259949158
 				persistentId = 3320852100
-				launchID = 77
-				parent = 27
+				launchID = 79
+				parent = 23
 				position = -1.1285436153411865,-15.369880676269531,-1.3529083728790283
 				rotation = 0.442289263,1.6955147E-07,-0.896872461,-3.43815827E-07
 				mirror = 1,1,1
@@ -47395,16 +45410,16 @@ GAME
 				sidx = -1
 				attm = 1
 				sameVesselCollision = False
-				sym = 60
-				sym = 61
-				sym = 62
-				srfN = srfAttach, 27,collider_F912_Interstage
+				sym = 56
+				sym = 57
+				sym = 58
+				srfN = srfAttach, 23,collider_F912_Interstage
 				mass = 0.140000001
 				shielded = False
-				temp = 274.18858393892822
-				tempExt = 274.20856961912722
-				tempExtUnexp = 274.20856869764452
-				staticPressureAtm = 0.98477016988284138
+				temp = 274.22341125688519
+				tempExt = 274.23623635531055
+				tempExtUnexp = 274.23619125760126
+				staticPressureAtm = 0.98475571299905162
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -47606,21 +45621,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -47661,11 +45661,11 @@ GAME
 			{
 				name = KK.SPX.FalconPayloadFairing
 				cid = 4293981642
-				uid = 1167237421
-				mid = 3070417436
+				uid = 342263831
+				mid = 2259949158
 				persistentId = 2615176020
-				launchID = 77
-				parent = 17
+				launchID = 79
+				parent = 13
 				position = 0,5.7186431884765625,0
 				rotation = 0,0,0,1
 				mirror = 1,1,1
@@ -47679,14 +45679,14 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = , -1
-				attN = frh, 65
-				attN = bottom, 17
-				mass = 1.70000005
+				attN = frh, 61
+				attN = bottom, 13
+				mass = 1.05999994
 				shielded = False
-				temp = 274.18787584386376
-				tempExt = 274.18819524818736
-				tempExtUnexp = 274.18819524818736
-				staticPressureAtm = 0.98231445734159106
+				temp = 274.22335069870951
+				tempExt = 274.22367304870568
+				tempExtUnexp = 274.22367304870568
+				staticPressureAtm = 0.98230015105034074
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -47757,21 +45757,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -47821,7 +45806,7 @@ GAME
 					{
 						DecoupleAction
 						{
-							actionGroup = None
+							actionGroup = Custom03
 							wasActiveBeforePartWasAdjusted = False
 						}
 					}
@@ -47891,11 +45876,11 @@ GAME
 			{
 				name = KK.SpX.FRH
 				cid = 4293834884
-				uid = 3023932638
-				mid = 3070417436
+				uid = 1982040842
+				mid = 2259949158
 				persistentId = 1817341965
-				launchID = 77
-				parent = 64
+				launchID = 79
+				parent = 60
 				position = 0,5.7186431884765625,0
 				rotation = 0,0.707106829,0,0.707106829
 				mirror = 1,1,1
@@ -47909,13 +45894,13 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = , -1
-				attN = bottom, 64
+				attN = bottom, 60
 				mass = 0.200000003
 				shielded = False
-				temp = 274.18803742100033
-				tempExt = 274.20844669438304
-				tempExtUnexp = 274.20844658922618
-				staticPressureAtm = 0.98231445734159106
+				temp = 274.22337580353565
+				tempExt = 274.24340824446659
+				tempExtUnexp = 274.24339634377998
+				staticPressureAtm = 0.98230015105034074
 				expt = 0
 				state = 0
 				PreFailState = 0
@@ -48088,7 +46073,7 @@ GAME
 					{
 						ToggleAction
 						{
-							actionGroup = None
+							actionGroup = Custom04
 							wasActiveBeforePartWasAdjusted = False
 						}
 					}
@@ -48151,21 +46136,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = RetractableLiftingSurface
 					isEnabled = True
 					retractedDeflectionLiftCoeff = 0
@@ -48219,24 +46189,6 @@ GAME
 						{
 							PrtName = KK.SpX.FRH
 							PrtTitle = non RO - SpaceX Fairing Recovery Hardware
-							PrtModuleName = ModuleDataTransmitter
-							PrtSubsystem = False
-							PrtPower = 0
-							PrtPowerF = 0
-							PrtActive = False
-							PrtSolarDependant = False
-							PrtEditorInclude = True
-							PrtUserEditorInclude = True
-							PrtValidprtEmergShutDn = True
-							PrtEmergShutDnInclude = True
-							PrtPreEmergShutDnStateActive = False
-							PrtEmergShutDnPriority = 2
-							ConsPartKey = 4293834884,ModuleDataTransmitter
-						}
-						AYPwrPartList
-						{
-							PrtName = KK.SpX.FRH
-							PrtTitle = non RO - SpaceX Fairing Recovery Hardware
 							PrtModuleName = ModuleReactionWheel
 							PrtSubsystem = False
 							PrtPower = 0
@@ -48250,6 +46202,24 @@ GAME
 							PrtPreEmergShutDnStateActive = False
 							PrtEmergShutDnPriority = 2
 							ConsPartKey = 4293834884,ModuleReactionWheel
+						}
+						AYPwrPartList
+						{
+							PrtName = KK.SpX.FRH
+							PrtTitle = non RO - SpaceX Fairing Recovery Hardware
+							PrtModuleName = ModuleDataTransmitter
+							PrtSubsystem = False
+							PrtPower = 0
+							PrtPowerF = 0
+							PrtActive = False
+							PrtSolarDependant = False
+							PrtEditorInclude = True
+							PrtUserEditorInclude = True
+							PrtValidprtEmergShutDn = True
+							PrtEmergShutDnInclude = True
+							PrtPreEmergShutDnStateActive = False
+							PrtEmergShutDnPriority = 2
+							ConsPartKey = 4293834884,ModuleDataTransmitter
 						}
 						AYPwrPartList
 						{
@@ -48445,7 +46415,7 @@ GAME
 				{
 					name = kOSProcessor
 					isEnabled = True
-					bootFile = None
+					bootFile = /boot/boot-fairings.ks
 					diskSpace = 5000
 					baseDiskSpace = 5000
 					baseModuleMass = 0
@@ -48485,6 +46455,15 @@ GAME
 						dirname = 
 						capacity = 5000
 						volumeName = 
+						directory
+						{
+							dirname = boot
+							file
+							{
+								filename = boot-fairings.ks
+								binary = H4sIADJk418A,72T0U,bMBDGn9u,4tQneEjcdqjrIk2oUDEmQO2ajjFNCF3iS2yaxJbtNHR,,eyWiU3THuEeLJ19+t3n82fGIHrF6Hv+hayowZoSyJRykV+sI2Pjje2,QferRQppbqR2Fgpl4CpdglOQEbSWOKgGUo053T1cY9vk4uGWhMwrsnCjOHTSCTha1pkyJawWcOt1S9Ucw1soP1ecINtBAs8CIhDOaZsw5i,S1vGGTIaVDfK1UaXBOs5VzWTD6SnWQp8yv1346bPRh+l0Mor0nsMC,IwcQqWQQ2FUnUDvBd51XcyN0pl62vOsYI98pMSET4cTuUM3YrPZGb7Hu0x+nxfb6acIv5zc7FaRw1NefRwG,jU6sg7mqmtCl+QP8aUfapvt0c+CDi8QrRbRBVa5avbGWLZGK+tdE5K,Yi2kPWjvDGpNBnCrJA,PaigiLh1gw8HilgDBqHxDDh5bL8dX5AKbksAJgjwMWBX,8AfBp8w6LCkqUBrZlMGtAwizjH15z8fX4B7PG1S+lz,6XRdo43dsTj,ZeDgevrpR+um3z+vzS1gvYBj3GHtJORXYVg6Ws,VlAj+88e9ZKqS27PAf+qZtNDpx9L,7Hse,AJK78PoeBAAA
+							}
+						}
 					}
 					UPGRADESAPPLIED
 					{
@@ -48546,12 +46525,12 @@ GAME
 			PART
 			{
 				name = KK.SPX.FalconPayloadFairing
-				cid = 4293733208
-				uid = 2685960163
-				mid = 3070417436
-				persistentId = 617151093
-				launchID = 77
-				parent = 17
+				cid = 4292233102
+				uid = 2931386266
+				mid = 2259949158
+				persistentId = 3728534034
+				launchID = 79
+				parent = 13
 				position = 0,5.7186431884765625,0
 				rotation = 0,1,0,0
 				mirror = 1,1,1
@@ -48565,14 +46544,14 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = , -1
-				attN = frh, -1
-				attN = bottom, 17
-				mass = 1.70000005
+				attN = frh, 63
+				attN = bottom, 13
+				mass = 1.05999994
 				shielded = False
-				temp = 274.18787584245774
-				tempExt = 274.18819652351806
-				tempExtUnexp = 274.18819652351806
-				staticPressureAtm = 0.98231445734159106
+				temp = 274.22335069870951
+				tempExt = 274.22367304870568
+				tempExtUnexp = 274.22367304870568
+				staticPressureAtm = 0.98230015105034074
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -48583,7 +46562,7 @@ GAME
 				rTrf = KK.SPX.FalconPayloadFairing
 				modCost = 0
 				modMass = 0
-				moduleVariantName = Basic
+				moduleVariantName = america
 				moduleCargoStackableQuantity = 1
 				EVENTS
 				{
@@ -48615,6 +46594,7 @@ GAME
 					isEnabled = True
 					useVariantMass = True
 					stagingEnabled = True
+					selectedVariant = america
 					EVENTS
 					{
 					}
@@ -48628,21 +46608,6 @@ GAME
 				MODULE
 				{
 					name = ModuleCargoBay
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Driftless
 					isEnabled = True
 					stagingEnabled = True
 					EVENTS
@@ -48760,15 +46725,672 @@ GAME
 					{
 					}
 				}
+				RESOURCE
+				{
+					name = SolidFuel
+					amount = 0.69999999999999996
+					maxAmount = 0.69999999999999996
+					flowState = True
+					isTweakable = True
+					hideFlow = False
+					isVisible = True
+					flowMode = Both
+				}
+			}
+			PART
+			{
+				name = KK.SpX.FRH
+				cid = 4292232992
+				uid = 4068672148
+				mid = 2259949158
+				persistentId = 277475472
+				launchID = 79
+				parent = 62
+				position = 0,5.7186431884765625,0
+				rotation = 0,0.707106829,0,-0.707106829
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 0
+				resPri = 0
+				dstg = 6
+				sqor = 0
+				sepI = 2
+				sidx = 1
+				attm = 0
+				sameVesselCollision = False
+				srfN = , -1
+				attN = bottom, 62
+				mass = 0.200000003
+				shielded = False
+				temp = 274.22337580353565
+				tempExt = 274.24340824446659
+				tempExtUnexp = 274.24339634377998
+				staticPressureAtm = 0.98230015105034074
+				expt = 0
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Flags/default
+				rTrf = _default
+				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+					ToggleSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					SetSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					RemoveSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleCommand
+					isEnabled = True
+					hibernation = False
+					hibernateOnWarp = False
+					activeControlPointName = _default
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						MakeReferenceToggle
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						HibernateToggle
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleSAS
+					isEnabled = True
+					standaloneToggle = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleKerbNetAccess
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						OpenKerbNetAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleDataTransmitter
+					isEnabled = True
+					xmitIncomplete = False
+					stagingEnabled = True
+					canComm = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						StartTransmissionAction
+						{
+							actionGroup = None
+							active = False
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleRCSFX
+					isEnabled = True
+					rcsEnabled = True
+					thrustPercentage = 100
+					currentShowToggles = False
+					enableYaw = True
+					enablePitch = True
+					enableRoll = True
+					enableX = True
+					enableY = True
+					enableZ = True
+					useThrottle = False
+					fullThrust = False
+					stagingEnabled = False
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleAnimateGeneric
+					isEnabled = True
+					aniState = LOCKED
+					animSwitch = True
+					animTime = 0
+					animSpeed = 1
+					deployPercent = 100
+					animationIsDisabled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = Custom04
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					AXISGROUPS
+					{
+						deployPercent
+						{
+							axisGroup = None
+							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
+							axisInverted = None
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleReactionWheel
+					isEnabled = True
+					actuatorModeCycle = 0
+					authorityLimiter = 100
+					stateString = Idle
+					stagingEnabled = True
+					WheelState = Active
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						CycleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						Activate
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						Deactivate
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						Toggle
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = RetractableLiftingSurface
+					isEnabled = True
+					retractedDeflectionLiftCoeff = 0
+					extendedDeflectionLiftCoeff = 7.80000019
+					retracted = 0
+					retractedCtlSfcDeflectionLiftCoeff = 0
+					extendedCtlSfcDeflectionLiftCoeff = 1
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYCrewPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+						AYPwrPartList
+						{
+							PrtName = KK.SpX.FRH
+							PrtTitle = non RO - SpaceX Fairing Recovery Hardware
+							PrtModuleName = ModuleDataTransmitter
+							PrtSubsystem = False
+							PrtPower = 0
+							PrtPowerF = 0
+							PrtActive = False
+							PrtSolarDependant = False
+							PrtEditorInclude = True
+							PrtUserEditorInclude = True
+							PrtValidprtEmergShutDn = True
+							PrtEmergShutDnInclude = True
+							PrtPreEmergShutDnStateActive = False
+							PrtEmergShutDnPriority = 2
+							ConsPartKey = 4292232992,ModuleDataTransmitter
+						}
+						AYPwrPartList
+						{
+							PrtName = KK.SpX.FRH
+							PrtTitle = non RO - SpaceX Fairing Recovery Hardware
+							PrtModuleName = ModuleCommand
+							PrtSubsystem = False
+							PrtPower = 0.02
+							PrtPowerF = 0.0199999996
+							PrtActive = True
+							PrtSolarDependant = False
+							PrtEditorInclude = True
+							PrtUserEditorInclude = True
+							PrtValidprtEmergShutDn = False
+							PrtEmergShutDnInclude = False
+							PrtPreEmergShutDnStateActive = True
+							PrtEmergShutDnPriority = 2
+							ConsPartKey = 4292232992,ModuleCommand
+						}
+						AYPwrPartList
+						{
+							PrtName = KK.SpX.FRH
+							PrtTitle = non RO - SpaceX Fairing Recovery Hardware
+							PrtModuleName = ModuleReactionWheel
+							PrtSubsystem = False
+							PrtPower = 0
+							PrtPowerF = 0
+							PrtActive = False
+							PrtSolarDependant = False
+							PrtEditorInclude = True
+							PrtUserEditorInclude = True
+							PrtValidprtEmergShutDn = True
+							PrtEmergShutDnInclude = True
+							PrtPreEmergShutDnStateActive = False
+							PrtEmergShutDnPriority = 2
+							ConsPartKey = 4292232992,ModuleReactionWheel
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = MechJebCore
+					isEnabled = True
+					running = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						OnOrbitProgradeAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnOrbitRetrogradeAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnOrbitNormalAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnOrbitAntinormalAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnOrbitRadialInAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnOrbitRadialOutAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnKillRotationAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnDeactivateSmartASSAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnLandsomewhereAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnLandTargetAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnPanicAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnTranslatronOffAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnTranslatronKeepVertAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnTranslatronZeroSpeedAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnTranslatronPlusOneSpeedAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnTranslatronMinusOneSpeedAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnTranslatronToggleHSAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnAscentAPToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FlightEngineerModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = TrajectoriesVesselSettings
+					isEnabled = True
+					Initialized = False
+					EntryAngle = 3.1415926535897931
+					EntryHorizon = False
+					HighAngle = 3.1415926535897931
+					HighHorizon = False
+					LowAngle = 3.1415926535897931
+					LowHorizon = False
+					GroundAngle = 3.1415926535897931
+					GroundHorizon = False
+					RetrogradeEntry = True
+					TargetBody = 
+					TargetPosition_x = 0
+					TargetPosition_y = 0
+					TargetPosition_z = 0
+					ManualTargetTxt = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = kOSProcessor
+					isEnabled = True
+					bootFile = /boot/boot-fairings.ks
+					diskSpace = 5000
+					baseDiskSpace = 5000
+					baseModuleMass = 0
+					additionalCost = 0
+					MaxPartId = 100
+					RequiredPower = 0.000200000009
+					stagingEnabled = True
+					activated = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						Activate
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						Deactivate
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						Toggle
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						TogglePower
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					harddisk
+					{
+						dirname = 
+						capacity = 5000
+						volumeName = 
+						directory
+						{
+							dirname = boot
+							file
+							{
+								filename = boot-fairings.ks
+								binary = H4sIADJk418A,72T0U,bMBDGn9u,4tQneEjcdqjrIk2oUDEmQO2ajjFNCF3iS2yaxJbtNHR,,eyWiU3THuEeLJ19+t3n82fGIHrF6Hv+hayowZoSyJRykV+sI2Pjje2,QferRQppbqR2Fgpl4CpdglOQEbSWOKgGUo053T1cY9vk4uGWhMwrsnCjOHTSCTha1pkyJawWcOt1S9Ucw1soP1ecINtBAs8CIhDOaZsw5i,S1vGGTIaVDfK1UaXBOs5VzWTD6SnWQp8yv1346bPRh+l0Mor0nsMC,IwcQqWQQ2FUnUDvBd51XcyN0pl62vOsYI98pMSET4cTuUM3YrPZGb7Hu0x+nxfb6acIv5zc7FaRw1NefRwG,jU6sg7mqmtCl+QP8aUfapvt0c+CDi8QrRbRBVa5avbGWLZGK+tdE5K,Yi2kPWjvDGpNBnCrJA,PaigiLh1gw8HilgDBqHxDDh5bL8dX5AKbksAJgjwMWBX,8AfBp8w6LCkqUBrZlMGtAwizjH15z8fX4B7PG1S+lz,6XRdo43dsTj,ZeDgevrpR+um3z+vzS1gvYBj3GHtJORXYVg6Ws,VlAj+88e9ZKqS27PAf+qZtNDpx9L,7Hse,AJK78PoeBAAA
+							}
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleTripLogger
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					Log
+					{
+						flight = 0
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				RESOURCE
+				{
+					name = ElectricCharge
+					amount = 100
+					maxAmount = 100
+					flowState = True
+					isTweakable = True
+					hideFlow = False
+					isVisible = True
+					flowMode = Both
+				}
+				RESOURCE
+				{
+					name = MonoPropellant
+					amount = 550
+					maxAmount = 550
+					flowState = True
+					isTweakable = True
+					hideFlow = False
+					isVisible = True
+					flowMode = Both
+				}
+				RESOURCE
+				{
+					name = ReservePower
+					amount = 1000
+					maxAmount = 1000
+					flowState = True
+					isTweakable = True
+					hideFlow = False
+					isVisible = True
+					flowMode = Both
+				}
 			}
 			PART
 			{
 				name = 1mv.sensor.accelerometer.srf.1
 				cid = 4293537238
-				uid = 2065003088
-				mid = 3070417436
+				uid = 3464819029
+				mid = 2259949158
 				persistentId = 1803750239
-				launchID = 77
+				launchID = 79
 				parent = 0
 				position = 0,0.24139404296875,0.72796446084976196
 				rotation = 1.11758652E-07,2.48352563E-07,2.77555485E-14,-1
@@ -48785,10 +47407,10 @@ GAME
 				srfN = srfAttach, 0,COL
 				mass = 0.00499999989
 				shielded = False
-				temp = 274.19476859525651
-				tempExt = 274.30305171677577
-				tempExtUnexp = 274.30305213733055
-				staticPressureAtm = 0.98295176496865744
+				temp = 274.22377145245713
+				tempExt = 274.27434547329267
+				tempExtUnexp = 274.2741262331578
+				staticPressureAtm = 0.9829372327885979
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -48892,21 +47514,6 @@ GAME
 				}
 				MODULE
 				{
-					name = Driftless
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = AYPart
 					isEnabled = True
 					stagingEnabled = True
@@ -48959,6 +47566,978 @@ GAME
 					UPGRADESAPPLIED
 					{
 					}
+				}
+			}
+			PART
+			{
+				name = xenonTankRadial
+				cid = 4293952634
+				uid = 3796573544
+				mid = 2259949158
+				persistentId = 2117410303
+				launchID = 79
+				parent = 0
+				position = 0.400816410779953,-0.36487579345703125,-0.40081632137298584
+				rotation = 8.25153113E-10,0.382683426,3.41789597E-10,-0.923879564
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = -1
+				resPri = 0
+				dstg = 0
+				sqor = -1
+				sepI = -1
+				sidx = -1
+				attm = 1
+				sameVesselCollision = False
+				sym = 66
+				sym = 67
+				sym = 68
+				srfN = srfAttach, 0,COL
+				mass = 0.00133953523
+				shielded = False
+				temp = 274.23134482688312
+				tempExt = 274.2699015463113
+				tempExtUnexp = 274.2697849291917
+				staticPressureAtm = 0.98300793598588232
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Flags/default
+				rTrf = xenonTankRadial
+				modCost = 0.235760003
+				modMass = -0.0121604651
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+					ToggleSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					SetSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					RemoveSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleFuelTanks
+					isEnabled = True
+					type = ElectricPropulsion
+					utilization = 86
+					mass = 0.00133953488
+					_numberOfAddedMLILayers = 0
+					partPrevTemperature = -1
+					stagingEnabled = True
+					volume = 40
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					TANK
+					{
+						name = ArgonGas
+						note = (pressurized)
+						utilization = 100
+						mass = 2.99999992E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = KryptonGas
+						note = (pressurized)
+						utilization = 100
+						mass = 2.99999992E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Hydrogen
+						note = (pressurized)
+						utilization = 100
+						mass = 2.99999992E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = XenonGas
+						note = (pressurized)
+						utilization = 100
+						mass = 2.99999992E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 4000
+						maxAmount = 4000
+					}
+					TANK
+					{
+						name = ElectricCharge
+						note = (pressurized)
+						utilization = 1000
+						mass = 0.00288999989
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = LeadBallast
+						note = (pressurized)
+						utilization = 1
+						mass = 6.50000002E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					UPGRADESAPPLIED
+					{
+						upgrade = MLI.Upgrade1
+						upgrade = MLI.Upgrade2
+						upgrade = MLI.Upgrade3
+						upgrade = MLI.Upgrade4
+						upgrade = MLI.Upgrade5
+					}
+				}
+				RESOURCE
+				{
+					name = XenonGas
+					amount = 4000
+					maxAmount = 4000
+					flowState = True
+					isTweakable = True
+					hideFlow = False
+					isVisible = True
+					flowMode = Both
+				}
+			}
+			PART
+			{
+				name = xenonTankRadial
+				cid = 4293950514
+				uid = 358872433
+				mid = 2259949158
+				persistentId = 149040257
+				launchID = 79
+				parent = 0
+				position = -0.40081626176834106,-0.36487579345703125,-0.400816410779953
+				rotation = 8.25153113E-10,-0.382683456,-3.41789624E-10,-0.923879564
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = -1
+				resPri = 0
+				dstg = 0
+				sqor = -1
+				sepI = -1
+				sidx = -1
+				attm = 1
+				sameVesselCollision = False
+				sym = 65
+				sym = 67
+				sym = 68
+				srfN = srfAttach, 0,COL
+				mass = 0.00133953523
+				shielded = False
+				temp = 274.23134482688312
+				tempExt = 274.2699015463113
+				tempExtUnexp = 274.2697849291917
+				staticPressureAtm = 0.98300778539334288
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Flags/default
+				rTrf = xenonTankRadial
+				modCost = 0.235760003
+				modMass = -0.0121604651
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+					ToggleSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					SetSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					RemoveSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleFuelTanks
+					isEnabled = True
+					type = ElectricPropulsion
+					utilization = 86
+					mass = 0.00133953488
+					_numberOfAddedMLILayers = 0
+					partPrevTemperature = -1
+					stagingEnabled = True
+					volume = 40
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					TANK
+					{
+						name = ArgonGas
+						note = (pressurized)
+						utilization = 100
+						mass = 2.99999992E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = KryptonGas
+						note = (pressurized)
+						utilization = 100
+						mass = 2.99999992E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Hydrogen
+						note = (pressurized)
+						utilization = 100
+						mass = 2.99999992E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = XenonGas
+						note = (pressurized)
+						utilization = 100
+						mass = 2.99999992E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 4000
+						maxAmount = 4000
+					}
+					TANK
+					{
+						name = ElectricCharge
+						note = (pressurized)
+						utilization = 1000
+						mass = 0.00288999989
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = LeadBallast
+						note = (pressurized)
+						utilization = 1
+						mass = 6.50000002E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					UPGRADESAPPLIED
+					{
+						upgrade = MLI.Upgrade1
+						upgrade = MLI.Upgrade2
+						upgrade = MLI.Upgrade3
+						upgrade = MLI.Upgrade4
+						upgrade = MLI.Upgrade5
+					}
+				}
+				RESOURCE
+				{
+					name = XenonGas
+					amount = 4000
+					maxAmount = 4000
+					flowState = True
+					isTweakable = True
+					hideFlow = False
+					isVisible = True
+					flowMode = Both
+				}
+			}
+			PART
+			{
+				name = xenonTankRadial
+				cid = 4293950474
+				uid = 4160473518
+				mid = 2259949158
+				persistentId = 2656523746
+				launchID = 79
+				parent = 0
+				position = -0.40081638097763062,-0.36487579345703125,0.40081635117530823
+				rotation = 3.41789569E-10,-0.923879564,-8.25153113E-10,-0.382683396
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = -1
+				resPri = 0
+				dstg = 0
+				sqor = -1
+				sepI = -1
+				sidx = -1
+				attm = 1
+				sameVesselCollision = False
+				sym = 65
+				sym = 66
+				sym = 68
+				srfN = srfAttach, 0,COL
+				mass = 0.00133953523
+				shielded = False
+				temp = 274.23134482688312
+				tempExt = 274.2699015463113
+				tempExtUnexp = 274.2697849291917
+				staticPressureAtm = 0.98300778539334288
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Flags/default
+				rTrf = xenonTankRadial
+				modCost = 0.235760003
+				modMass = -0.0121604651
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+					ToggleSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					SetSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					RemoveSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleFuelTanks
+					isEnabled = True
+					type = ElectricPropulsion
+					utilization = 86
+					mass = 0.00133953488
+					_numberOfAddedMLILayers = 0
+					partPrevTemperature = -1
+					stagingEnabled = True
+					volume = 40
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					TANK
+					{
+						name = ArgonGas
+						note = (pressurized)
+						utilization = 100
+						mass = 2.99999992E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = KryptonGas
+						note = (pressurized)
+						utilization = 100
+						mass = 2.99999992E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Hydrogen
+						note = (pressurized)
+						utilization = 100
+						mass = 2.99999992E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = XenonGas
+						note = (pressurized)
+						utilization = 100
+						mass = 2.99999992E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 4000
+						maxAmount = 4000
+					}
+					TANK
+					{
+						name = ElectricCharge
+						note = (pressurized)
+						utilization = 1000
+						mass = 0.00288999989
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = LeadBallast
+						note = (pressurized)
+						utilization = 1
+						mass = 6.50000002E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					UPGRADESAPPLIED
+					{
+						upgrade = MLI.Upgrade1
+						upgrade = MLI.Upgrade2
+						upgrade = MLI.Upgrade3
+						upgrade = MLI.Upgrade4
+						upgrade = MLI.Upgrade5
+					}
+				}
+				RESOURCE
+				{
+					name = XenonGas
+					amount = 4000
+					maxAmount = 4000
+					flowState = True
+					isTweakable = True
+					hideFlow = False
+					isVisible = True
+					flowMode = Both
+				}
+			}
+			PART
+			{
+				name = xenonTankRadial
+				cid = 4293950434
+				uid = 907403347
+				mid = 2259949158
+				persistentId = 2909101823
+				launchID = 79
+				parent = 0
+				position = 0.40081632137298584,-0.36487579345703125,0.40081635117530823
+				rotation = -3.41789624E-10,-0.923879564,-8.25153113E-10,0.382683456
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = -1
+				resPri = 0
+				dstg = 0
+				sqor = -1
+				sepI = -1
+				sidx = -1
+				attm = 1
+				sameVesselCollision = False
+				sym = 65
+				sym = 66
+				sym = 67
+				srfN = srfAttach, 0,COL
+				mass = 0.00133953523
+				shielded = False
+				temp = 274.23134482688312
+				tempExt = 274.2699015463113
+				tempExtUnexp = 274.2697849291917
+				staticPressureAtm = 0.98300771009707311
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Flags/default
+				rTrf = xenonTankRadial
+				modCost = 0.235760003
+				modMass = -0.0121604651
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+					ToggleSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					SetSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					RemoveSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleFuelTanks
+					isEnabled = True
+					type = ElectricPropulsion
+					utilization = 86
+					mass = 0.00133953488
+					_numberOfAddedMLILayers = 0
+					partPrevTemperature = -1
+					stagingEnabled = True
+					volume = 40
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					TANK
+					{
+						name = ArgonGas
+						note = (pressurized)
+						utilization = 100
+						mass = 2.99999992E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = KryptonGas
+						note = (pressurized)
+						utilization = 100
+						mass = 2.99999992E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = Hydrogen
+						note = (pressurized)
+						utilization = 100
+						mass = 2.99999992E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = XenonGas
+						note = (pressurized)
+						utilization = 100
+						mass = 2.99999992E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 4000
+						maxAmount = 4000
+					}
+					TANK
+					{
+						name = ElectricCharge
+						note = (pressurized)
+						utilization = 1000
+						mass = 0.00288999989
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					TANK
+					{
+						name = LeadBallast
+						note = (pressurized)
+						utilization = 1
+						mass = 6.50000002E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 0
+						maxAmount = 0
+					}
+					UPGRADESAPPLIED
+					{
+						upgrade = MLI.Upgrade1
+						upgrade = MLI.Upgrade2
+						upgrade = MLI.Upgrade3
+						upgrade = MLI.Upgrade4
+						upgrade = MLI.Upgrade5
+					}
+				}
+				RESOURCE
+				{
+					name = XenonGas
+					amount = 4000
+					maxAmount = 4000
+					flowState = True
+					isTweakable = True
+					hideFlow = False
+					isVisible = True
+					flowMode = Both
 				}
 			}
 			ACTIONGROUPS
@@ -49018,9 +48597,6 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
@@ -49028,6 +48604,9 @@ GAME
 				{
 				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
@@ -49402,7 +48981,7 @@ GAME
 		BetterBurnTime = False
 		BLO = False
 		CivilianPopulation = False
-		EasyVesselSwitch = True
+		EasyVesselSwitch = False
 		ExperimentTracker = False
 		Grounded = False
 		IDFlags = False
@@ -49436,7 +49015,7 @@ GAME
 		BetterTimeWarp v2.3.12.3 = False
 		CCK v4.3.0.0 / v4.1.0.0 for KSP 1.6.0 = False
 		EasyVesselSwitch v2.0.7235.25545 / v2.0 for KSP v1.8 = False
-		KSPDev_Utils.2.0 v2.0.7231.38433 / v2.0 for KSP v1.8+ = True
+		KSPDev_Utils.2.0 v2.0.7231.38433 / v2.0 for KSP v1.8+ = False
 		KIS v1.23.7234.41726 / v1.23 for KSP 1.8+ = False
 		RemoteTech v1.9.0.0 / v1.9.4 = False
 		SmokeScreen v2.8.7.0 = False
@@ -49703,9 +49282,9 @@ GAME
 		WaypointManager v2.8.2.3 / v2.8.1 = False
 		ModuleManager v4.1.4.0 = True
 		ClickThroughBlocker v0.1.10.11 / v1.0.0.0 = False
-		AJE v2.15.0.0 = True
-		EngineGroupController v1.0.0.0 = True
-		UnityGUIFramework v1.0.0.0 = True
+		AJE v2.15.0.0 = False
+		EngineGroupController v1.0.0.0 = False
+		UnityGUIFramework v1.0.0.0 = False
 		Atmosphere v1.10.1.2 = True
 		CelestialShadows v0.0.0.0 = True
 		CityLights v1.10.1.2 = True
@@ -49728,8 +49307,8 @@ GAME
 		RealismOverhaul v0.12.8.1 = True
 		RealSolarSystem v0.18.1.3 = True
 		ShipEffectsContinued v1.0.11.0 / v1.0.8.4 = True
-		AJE = True
-		EngineGroupController = True
+		AJE = False
+		EngineGroupController = False
 		FerramAerospaceResearch = False
 		RealChute = False
 		RealHeat = True
@@ -49752,14 +49331,14 @@ GAME
 		Tantares = True
 		Scale_Redist v1.0.0.0 / v2.4.3.21 = False
 		ClickThroughBlocker v0.1.10.13 / v1.0.0.0 = False
-		Driftless v0.0.4.4 = True
-		KSP-Recall v0.0.4.4 = True
-		KSPe.Light.Recall v2.2.0.3 = True
-		Resourceful v0.0.4.4 = True
+		Driftless v0.0.4.4 = False
+		KSP-Recall v0.0.4.4 = False
+		KSPe.Light.Recall v2.2.0.3 = False
+		Resourceful v0.0.4.4 = False
 		BDAnimationModules v0.6.5.9 = False
 		RNModules v1.1.8.0 = False
 		DockingCamera v1.3.7.5 / v1.0.0.0 = False
-		EasyVesselSwitch v2.1.7366.39779 / v2.1 for KSP v1.* = True
+		EasyVesselSwitch v2.1.7366.39779 / v2.1 for KSP v1.* = False
 		KAS v1.7.7516.37663 / v1.7 for KSP v1 = True
 		KSPDev_Utils.2.4 v2.4.7504.27510 / v2.4 for KSP v1 = True
 		MiniAVC-V2 v2.0.0.0 = True
@@ -49783,7 +49362,7 @@ GAME
 		ClickThroughBlocker v0.1.10.14 / v1.0.0.0 = True
 		DockingCamera v1.3.7.6 / v1.0.0.0 = False
 		VesselMover v1.9.0.0 = False
-		VesselMover = True
+		VesselMover = False
 		Pmborg-RealFalcons v1.0.0.0 = True
 		clouds.txt = False
 		B9PartSwitch v2.17.0.0 / vv2.17.0 = True
@@ -49796,9 +49375,9 @@ GAME
 		BackgroundResources v1.10.0.0 = True
 		scatterer v0.632.0.0 = False
 		SimpleAdjustableFairings v1.11.0.0 / vv1.11.0 = False
-		TextureReplacer v4.2.1.21267 = True
+		TextureReplacer v4.2.1.21267 = False
 		TacLifeSupport v0.16.0.0 / v0.16.0 = True
-		VesselMover v1.10.0.0 = True
+		VesselMover v1.10.0.0 = False
 		SimpleAdjustableFairings = False
 		ckan.exe = False
 		file = False
@@ -49814,12 +49393,18 @@ GAME
 		ori.txt = False
 		pmborg.txt = False
 		ModuleManager - Copy.ConfigCache = False
-		SolverEngines v3.3.0.0 / v3.8.0.0 = True
+		SolverEngines v3.3.0.0 / v3.8.0.0 = False
 		DockingCamera v1.3.8.0 / v1.0.0.0 = True
 		ModularFlightIntegrator v1.0.0.0 / v1.2.7.1 = True
 		scatterer v0.722.0.0 = True
 		ShowFPS v0.2.3.0 / v1.0.0.0 = True
 		ShowFPS = True
+		Driftless v0.0.5.0 = True
+		KSP-Recall v0.0.5.0 = True
+		KSPe.Light.Recall v2.2.2.1 = True
+		Resourceful v0.0.5.0 = True
+		SolverEngines v3.3.0.0 / v3.9.0.0 = True
+		TextureReplacer v4.2.1.7489 = True
 	}
 	ROSTER
 	{
