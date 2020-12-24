@@ -49,8 +49,8 @@ if not exist buildID64.txt (
 	ckan.exe install --headless --allow-incompatible --no-recommends KerbalXMod CraftManager KSP-AVC HangerExtenderExtended MoarFEConfigs DraggableNavball 
 	REM VesselMoverContinued DraggableAltimeter 
 	ckan.exe install --headless --allow-incompatible --no-recommends AntennaHelper BetterCrewAssignment KerbalAlarmClock Trajectories PatchManager 
-	ckan.exe install --headless --allow-incompatible --no-recommends AmpYearPowerManager DMagicScienceAnimate DockingCamKURS 
-	REM EasyVesselSwitch SCANsat
+	ckan.exe install --headless --allow-incompatible --no-recommends AmpYearPowerManager DMagicScienceAnimate
+	REM EasyVesselSwitch SCANsat DockingCamKURS 
 	ckan.exe install --headless --allow-incompatible --no-recommends CommunityTechTree 
 	ckan.exe install --headless --allow-incompatible --no-recommends B9PartSwitch KSP-Recall 
 	ckan.exe install --headless --allow-incompatible --no-recommends KerbalJointReinforcementContinued
@@ -75,9 +75,9 @@ if not exist buildID64.txt (
 	ckan.exe install --headless --allow-incompatible --no-recommends KOS
 
 	REM DEPS:
-	ckan.exe install --headless --allow-incompatible --no-recommends AlternateResourcePanel AnimatedDecouplers BackgroundResources FASA HeatControl KerbalEngineerRedux 
-	REM MechJeb2
-	ckan.exe install --headless --allow-incompatible --no-recommends RetractableLiftingSurface SpaceXLaunchVehicles TACLS USITools WorldStabilizer SpaceXLegs
+	ckan.exe install --headless --allow-incompatible --no-recommends AnimatedDecouplers BackgroundResources FASA HeatControl KerbalEngineerRedux 
+	REM MechJeb2 AlternateResourcePanel TACLS
+	ckan.exe install --headless --allow-incompatible --no-recommends RetractableLiftingSurface SpaceXLaunchVehicles USITools WorldStabilizer SpaceXLegs
 	ckan.exe install --headless --allow-incompatible --no-recommends BDAnimationModules DockingPortAlignmentIndicator REPOSoftTech-Agencies TextureReplacer
 
 	REM Acelerometers needed to Falcons:
