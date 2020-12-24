@@ -113,13 +113,13 @@ REM INSTALL: ISS (International SpaceStation) Dep-1:
 	move SpaceX_Launch_Towers-1.7.3.zip %KSPTEMP%
 
 	REM INSTALL: KopernicusBE_111
-	powershell -command "& { iwr https://github.com/R-T-B/Kopernicus/releases/download/UBE-release-57/KopernicusBE_111_Release57.zip -OutFile KopernicusBE_111_Release57.zip }"
-	powershell.exe -NoP -NonI -Command "Expand-Archive 'KopernicusBE_111_Release57.zip' '%KSPTEMP%'"
-	mkdir GameData\Kopernicus
-	mkdir GameData\ModularFlightIntegrator
-	xcopy /S /Y %KSPTEMP%\GameData\Kopernicus GameData\Kopernicus
-	xcopy /S /Y %KSPTEMP%\GameData\ModularFlightIntegrator GameData\ModularFlightIntegrator
-	move KopernicusBE_111_Release57.zip %KSPTEMP%
+	REM powershell -command "& { iwr https://github.com/R-T-B/Kopernicus/releases/download/UBE-release-57/KopernicusBE_111_Release57.zip -OutFile KopernicusBE_111_Release57.zip }"
+	REM powershell.exe -NoP -NonI -Command "Expand-Archive 'KopernicusBE_111_Release57.zip' '%KSPTEMP%'"
+	REM mkdir GameData\Kopernicus
+	REM mkdir GameData\ModularFlightIntegrator
+	REM xcopy /S /Y %KSPTEMP%\GameData\Kopernicus GameData\Kopernicus
+	REM xcopy /S /Y %KSPTEMP%\GameData\ModularFlightIntegrator GameData\ModularFlightIntegrator
+	REM move KopernicusBE_111_Release57.zip %KSPTEMP%
 
 	REM Move Not Needed/Incompatible Stuff to "NONEED" directory:
 	set NONEED=noneed~%RANDOM%.todelete

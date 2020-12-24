@@ -26,6 +26,7 @@ powershell -command "& { $latestRelease = (Invoke-WebRequest https://github.com/
 
 echo "Setup CKAN for KSP 1.11:"
 ckan.exe ksp default auto
+ckan.exe repo add Kopernicus_BE http://glacialsoftware.net/CKAN/Kopernicus_BE.tar.gz
 ckan.exe update
 ckan.exe cache reset
 ckan.exe compat add 1.11
@@ -34,20 +35,10 @@ ckan.exe compat add 1.10.0
 ckan.exe compat add 1.9.0
 
 echo "Install (Parallax+EVE):"
+ckan.exe install --headless --allow-incompatible --no-recommends Kopernicus-BE
 ckan.exe install --headless --allow-incompatible --no-recommends Parallax-StockTextures Parallax 
 ckan.exe install --headless --allow-incompatible --no-recommends Scatterer-config Scatterer-sunflare Scatterer
 ckan.exe install --headless --allow-incompatible --no-recommends EnvironmentalVisualEnhancements EnvironmentalVisualEnhancements-HR
-
-echo "INSTALL: KopernicusBE_111"
-set KSPTEMP=%TEMP%\ksp~%RANDOM%.tmp
-MKDIR %KSPTEMP%
-powershell -command "& { iwr https://github.com/R-T-B/Kopernicus/releases/download/UBE-release-56/KopernicusBE_111_Release57.zip -OutFile KopernicusBE_111_Release57.zip }"
-powershell.exe -NoP -NonI -Command "Expand-Archive 'KopernicusBE_111_Release57.zip' '%KSPTEMP%'"
-mkdir GameData\Kopernicus
-mkdir GameData\ModularFlightIntegrator
-xcopy /S /Y %KSPTEMP%\GameData\Kopernicus GameData\Kopernicus
-xcopy /S /Y %KSPTEMP%\GameData\ModularFlightIntegrator GameData\ModularFlightIntegrator
-move KopernicusBE_111_Release57.zip %KSPTEMP%
 
 :No
 	EXIT
