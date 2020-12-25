@@ -71,8 +71,8 @@ if not exist buildID64.txt (
 
 	REM DEPS:
 	ckan.exe install --headless --allow-incompatible --no-recommends AnimatedDecouplers BackgroundResources FASA HeatControl KerbalEngineerRedux
-	REM MechJeb2 AlternateResourcePanel TACLS
-	ckan.exe install --headless --allow-incompatible --no-recommends RetractableLiftingSurface SpaceXLaunchVehicles USITools WorldStabilizer SpaceXLegs
+	REM MechJeb2 AlternateResourcePanel TACLS WorldStabilizer
+	ckan.exe install --headless --allow-incompatible --no-recommends RetractableLiftingSurface SpaceXLaunchVehicles USITools SpaceXLegs
 	ckan.exe install --headless --allow-incompatible --no-recommends BDAnimationModules DockingPortAlignmentIndicator REPOSoftTech-Agencies TextureReplacer
 
 	REM Acelerometers needed to Falcons:

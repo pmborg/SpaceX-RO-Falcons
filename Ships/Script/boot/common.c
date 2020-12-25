@@ -161,9 +161,8 @@ function updateHoverSteering
 	LOCAL eastPlusNorth is MAX(ABS(eastVelPIDOut), ABS(northVelPIDOut)).
 	if STAGE_1_TYPE = "SLAVE" and KUniverse:ActiveVessel <> SHIP
 		SET steeringPitch TO COM_steeringDir.
-	else {
+	else
 		SET steeringPitch TO 90 - eastPlusNorth.
-	}
 	
 	LOCAL steeringDirNonNorm IS ARCTAN2(eastVelPID:OUTPUT, northVelPID:OUTPUT).
 	if steeringDirNonNorm >= 0
@@ -269,7 +268,6 @@ function PRINT_STATUS
 	PRINT "impactTime: "+ROUND(impactTime,1)+" s  " at (0, y+21).
 	PRINT "burnAlt: "+ROUND(burnAlt)+" m   " at (0, y+22).
 	PRINT "[t]: "+ROUND(t,2)+"   " at (0, y+23).
-	//PRINT "ST-2 Distance: " + +ROUND(VESSEL(MAIN_SHIP_NAME):GEOPOSITION:DISTANCE/1000)+" km  " at (0,y+23).
 	PRINT "Altitude: "+ROUND(ALTITUDE/1000,3)+" km " at (0, y+24).
 	
 	if KUniverse:ActiveVessel = SHIP //or STAGE_1_TYPE = "ST-1"
@@ -279,12 +277,8 @@ function PRINT_STATUS
 	
 	if STAGE_1_TYPE = "MASTER"
 	{
-		// if KUniverse:ActiveVessel = SHIP
-			// if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT 
-			{
-				set local_ADDONS_TR_IMPACTPOS to ADDONS_TR_IMPACTPOS.	// To avoid crash on VESSEL switch...
-				SLAVE_CONNECTION:SENDMESSAGE(list(throttle,steeringDir,shipPitch, local_ADDONS_TR_IMPACTPOS, altitude)).
-			}
+		set local_ADDONS_TR_IMPACTPOS to ADDONS_TR_IMPACTPOS.	// To avoid crash on VESSEL switch...
+		SLAVE_CONNECTION:SENDMESSAGE(list(throttle,steeringDir,shipPitch, local_ADDONS_TR_IMPACTPOS, altitude)).
 	}
 }
 

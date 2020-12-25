@@ -15,6 +15,13 @@ RUNPATH( "boot/sw-version.c" ).
 set STAGE_1_TYPE to "ST-2".
 print "".print "".print "".
 
+update_phase_title("STAGE 2 - Loading...", 0, true).
+WAIT 1.
+
+update_phase_title("STAGE 2 - WAIT FOR SEP", 0, true).
+WAIT UNTIL NOT CORE:MESSAGES:EMPTY.
+SET RECEIVED TO CORE:MESSAGES:POP.
+
 function DEORBIT
 { 
 	parameter y to 6.
@@ -38,7 +45,7 @@ function DEORBIT
 	
 	RCS ON.
 	LOCK STEERING TO SHIP:RETROGRADE.//  + R(0,0,180).
-	print "[".print " ".
+	print " ".
 	WAIT 10.
 	WAIT 10. print "5".
 	WAIT 10. print "4".
@@ -55,17 +62,7 @@ function DEORBIT
 	print " ".
 }
 
-update_phase_title("STAGE 2 - Loading...", 0, true).
-WAIT 1.
-
-update_phase_title("STAGE 2 - WAIT FOR SEP", 0, true).
-WAIT UNTIL NOT CORE:MESSAGES:EMPTY.
-SET RECEIVED TO CORE:MESSAGES:POP.
-set TARGET_N to RECEIVED:CONTENT.
-PRINT "TARGET_N: "+TARGET_N.
-
 wait 5.
-	
 core:doaction("Open Terminal", true).
 update_phase_title("STAGE 2 - RETROGRADE", 0, true).
 SAS OFF. wait 1.

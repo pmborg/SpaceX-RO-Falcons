@@ -31,20 +31,20 @@ function wait_for_AP
 
 	set warp to 0.
 	LOCK STEERING TO SHIP:PROGRADE.//  + R(0,0,180).
+	//UNLOCK STEERING.
 	//SAS ON. wait 1.
 	//set sasmode TO "PROGRADE". wait 1.
 	if eta:apoapsis > 3000
-		if vehicle_type <> "Crew Dragon 2"
-			if KUniverse:ActiveVessel = SHIP
-				set warp to 3.
+		if vehicle_type <> "Crew Dragon 2" and KUniverse:ActiveVessel = SHIP
+			set warp to 3.
 	
 	WAIT until eta:apoapsis < 3000.
-	if vehicle_type <> "Crew Dragon 2"
+	if vehicle_type <> "Crew Dragon 2" and KUniverse:ActiveVessel = SHIP
 		set warp to 2.
 	update_phase_title("Circularize T-3000",1, false).	
 	
 	WAIT until eta:apoapsis < 200.
-	if vehicle_type <> "Crew Dragon 2"
+	if vehicle_type <> "Crew Dragon 2" and KUniverse:ActiveVessel = SHIP
 		set warp to 1.
 	update_phase_title("Circularize T-200",1, false).	
 	

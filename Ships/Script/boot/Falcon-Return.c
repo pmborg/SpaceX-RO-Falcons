@@ -428,7 +428,7 @@ function touchdown
 function rocketshutdown
 {
 	SAS OFF.
-	update_phase_title("SECURE ROCKET",1).
+	update_phase_title("SECURE ROCKET",0).
 	SET thrust to 0.
 	unlock throttle.							//Auto Throttle
 	SET SHIP:CONTROL:PILOTMAINTHROTTLE TO 0.	//Pilot Throttle Lever
