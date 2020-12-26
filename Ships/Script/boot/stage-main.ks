@@ -8,12 +8,15 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used before main.c, to distribute tasks among all Processors.
-// 22/Dez/2020
+// 26/Dez/2020
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 core:doaction("Open Terminal", true).
 CLEARSCREEN.
 
+if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
+	DELETEPATH("CIRCULARIZE.txt").
+	
 DELETEPATH("LOG.txt").
 DELETEPATH("MAIN_SHIP.txt").
 DELETEPATH("SLAVE.TXT").

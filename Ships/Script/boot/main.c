@@ -94,8 +94,12 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		PRINT "SKIP: BURN".
 
 	//ACTION: Break & LAND! -------------------------------------------
+	
 	if status <> "LANDED" and status <> "SPLASHED"
 	{
+		if EXISTS("CIRCULARIZE.txt"))
+			RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
+			
 		if KUniverse:ActiveVessel <> SHIP {
 			update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
 			UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.

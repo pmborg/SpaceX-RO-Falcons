@@ -29,19 +29,31 @@ function wait_for_AP
 {
 	parameter w.
 
+	update_phase_title("WAIT FOR APOAPSIS",1, true).	
 	set warp to 0.
 	LOCK STEERING TO SHIP:PROGRADE.//  + R(0,0,180).
-	//UNLOCK STEERING.
-	//SAS ON. wait 1.
-	//set sasmode TO "PROGRADE". wait 1.
 	if eta:apoapsis > 3000
 		if vehicle_type <> "Crew Dragon 2" and KUniverse:ActiveVessel = SHIP
 			set warp to 3.
 	
-	WAIT until eta:apoapsis < 3000.
+	set saved to false.
+	until eta:apoapsis < 3000 and saved
+	{
+		WAIT 1.
+		if (KUniverse:ActiveVessel = SHIP) and (vehicle_type = "F9v1.2B5") and (NOT EXISTS("CIRCULARIZE.txt"))
+		{
+			update_phase_title("RESUME CIRCULARIZE",1, true).	//WA: to KSP bug.
+			kuniverse:QUICKSAVETO("RESUME-CIRCULARIZE").
+			wait 1.
+			LOG  "Done" to CIRCULARIZE.txt.
+			wait 1.
+			kuniverse:QUICKLOADFROM("RESUME-CIRCULARIZE").
+			set saved to true.
+		}
+	}
 	if vehicle_type <> "Crew Dragon 2" and KUniverse:ActiveVessel = SHIP
 		set warp to 2.
-	update_phase_title("Circularize T-3000",1, false).	
+	update_phase_title("Circularize T-3000",1, true).	
 	
 	WAIT until eta:apoapsis < 200.
 	if vehicle_type <> "Crew Dragon 2" and KUniverse:ActiveVessel = SHIP
@@ -49,12 +61,12 @@ function wait_for_AP
 		set kuniverse:timewarp:MODE to "PHYSICS". //WARP with PHYSICS
 		set warp to 3.
 	}
-	update_phase_title("Circularize T-200",1, false).	
+	update_phase_title("Circularize T-200",1, true).	
 	
 	WAIT until eta:apoapsis < w.
 	set kuniverse:timewarp:MODE to "RAILS".	//RESET
 	set warp to 0.
-	update_phase_title("Circularize T-"+w,1, false).
+	update_phase_title("Circularize T-"+w,1, true).
 }
 
 function do_circle_step
@@ -196,7 +208,7 @@ WAIT 5. print "3".
 WAIT 5. print "2".
 WAIT 5. print "1".
 
-update_phase_title("Circularize-I",1, false).
+update_phase_title("Circularize-I",1, true).
 PRINT "Vertical Speed" 	at (0,2).
 PRINT "Orbital Speed" 	at (0,3).
 PRINT "Target (Vcir)" 	at (0,4).
@@ -213,7 +225,7 @@ do_circle_step().
 RCS OFF.
 wait 5.
 CLEARSCREEN.
-update_phase_title("Craft in Parking Orbit", 1, false).
+update_phase_title("Craft in Parking Orbit", 1, true).
 set e to (apoapsis-periapsis)/(apoapsis+periapsis).
 PRINT "Eccentricity Error: " at (0,2). PRINT ROUND(e,2) at (20,2).
 WAIT 5.
