@@ -145,7 +145,7 @@ if vehicle_type = "Crew Dragon 2"
 if vehicle_type = "F9v1.2B5"
 {
 	// Data from: SpaceX CRS-16:
-	declare global Qmax 	to 16344/1.2.
+	declare global Qmax 	to 16920/1.2.
 	if STAGE1_LAND_ON = "LAND"
 		declare global MECO1 	to 1835^2. //AP:160
 	else

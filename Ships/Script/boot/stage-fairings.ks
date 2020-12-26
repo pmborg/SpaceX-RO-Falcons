@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used for potencionally "land" fairings
-// 23/Dez/2020
+// 26/Dez/2020
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 CLEARSCREEN.
@@ -16,6 +16,8 @@ RUNPATH( "boot/sw-version.c" ).
 
 update_phase_title("WAIT to Deploy",1, false).
 UNTIL (mass < 3) WAIT 1.
+
+core:doaction("Open Terminal", true).
 
 SAS OFF. WAIT 1.
 RCS OFF. WAIT 1.
@@ -34,4 +36,11 @@ RCS OFF. WAIT 1.
 LOCK STEERING TO UP + R(0,-90-10,180+25). //UP
 
 PRINT "Good Luck!".
-UNTIL (SHIP:q = 0) WAIT 1.
+UNTIL (SHIP:q = 0) 
+{
+	LOCK STEERING TO UP + R(0,-90-10,180+25). //UP
+	PRINT "Altitude: "		 	at (0,5).	PRINT ROUND(altitude/1000,1)+" km   "		 	at (22,5).	
+	WAIT 1.
+}
+
+core:doaction("Open Terminal", false).

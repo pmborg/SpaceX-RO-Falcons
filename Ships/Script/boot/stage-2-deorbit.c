@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Deorbit ST-2
-// 23/Dez/2020
+// 26/Dez/2020
 // --------------------------------------------------------------------------------------------
 CLEARSCREEN.
 RUNPATH( "boot/sw-version.c" ).
@@ -27,6 +27,7 @@ function DEORBIT
 	parameter y to 6.
 	parameter deorbit_lng to 100.
 	
+	core:doaction("Open Terminal", true).
 	UNTIL (STAGE:NUMBER = 0)
 	{
 		STAGE.
