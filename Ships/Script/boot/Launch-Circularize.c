@@ -55,13 +55,13 @@ function wait_for_AP
 		set warp to 2.
 	update_phase_title("Circularize T-3000",1, true).	
 	
-	WAIT until eta:apoapsis < 200.
+	WAIT until eta:apoapsis < 100.
 	if vehicle_type <> "Crew Dragon 2" and KUniverse:ActiveVessel = SHIP
 	{
 		set kuniverse:timewarp:MODE to "PHYSICS". //WARP with PHYSICS
 		set warp to 3.
 	}
-	update_phase_title("Circularize T-200",1, true).	
+	update_phase_title("Circularize T-100",1, true).	
 	
 	WAIT until eta:apoapsis < w.
 	set kuniverse:timewarp:MODE to "RAILS".	//RESET
@@ -208,7 +208,8 @@ WAIT 5. print "3".
 WAIT 5. print "2".
 WAIT 5. print "1".
 
-update_phase_title("Circularize-I",1, true).
+clearscreen.
+update_phase_title("Circularize",1, true).
 PRINT "Vertical Speed" 	at (0,2).
 PRINT "Orbital Speed" 	at (0,3).
 PRINT "Target (Vcir)" 	at (0,4).
