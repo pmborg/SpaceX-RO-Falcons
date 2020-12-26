@@ -35,8 +35,8 @@ function wait_for_AP
 	if eta:apoapsis > 3000
 		if vehicle_type <> "Crew Dragon 2" and KUniverse:ActiveVessel = SHIP
 			set warp to 3.
-	
-	set saved to false.
+
+	set saved to EXISTS("CIRCULARIZE.txt").
 	until eta:apoapsis < 3000 and saved
 	{
 		WAIT 1.
@@ -235,4 +235,4 @@ lock throttle to 0.		//set thrust to 0.
 SAS ON.
 WAIT 1.
 set sasmode TO "PROGRADE".
-
+DELETEPATH("CIRCULARIZE.txt").
