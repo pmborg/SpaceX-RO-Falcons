@@ -97,7 +97,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 	
 	if status <> "LANDED" and status <> "SPLASHED"
 	{
-		if EXISTS("CIRCULARIZE.txt"))
+		if EXISTS("CIRCULARIZE.txt")
 			RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
 			
 		if KUniverse:ActiveVessel <> SHIP {
