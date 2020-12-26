@@ -13,7 +13,7 @@
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
 
-CLEARSCREEN.
+CLEARSCREEN. print " ".print " ".
 update_phase_title("W8 to Circularize",1, false).
 if KUniverse:ActiveVessel = SHIP
 	SET MAPVIEW TO TRUE.	// map view on
@@ -187,6 +187,7 @@ function do_circle_step
 if ship:verticalspeed > 0 and eta:apoapsis > 60
 	wait_for_AP(60).
 
+RCS ON.
 WAIT 5. print "5".
 WAIT 5. print "4".
 WAIT 5. print "3".

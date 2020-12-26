@@ -150,8 +150,6 @@ function check_fairing_sep
 
 // Vehicle Release Auto Sequence:
 ////////////////////////////////////////////////////////////////////////////////////////////////
-runpath("boot/atm.c").
-
 set thrust to 0.
 lock throttle to thrust.
 LOCK STEERING TO up + R(0,0,180). //UP

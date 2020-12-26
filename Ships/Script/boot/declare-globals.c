@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor @start, to init or restart the all Mission.
-// 29/Nov/2020
+// 26/Dez/2020
 // --------------------------------------------------------------------------------------------
 function ResetMission 
 {
@@ -83,14 +83,15 @@ if ( RealSolarSystemMod )
 if status = "PRELAUNCH" and BODY:name = DEFAULT_KSC // first reboot? Reset State  
 {
 	ResetMission().
-} else {
-	if STATUS <> "FLYING" and STATUS <> "SUB_ORBITAL"
-	{
-		PRINT "Confirm: RESET Mission? (y/n)". set ch to terminal:input:getchar().
-		if (ch = "y" OR ch = "Y")
-			ResetMission().
-	}
-}
+} 
+// else {
+	// if STATUS <> "FLYING" and STATUS <> "SUB_ORBITAL"
+	// {
+		// PRINT "Confirm: RESET Mission? (y/n)". set ch to terminal:input:getchar().
+		// if (ch = "y" OR ch = "Y")
+			// ResetMission().
+	// }
+// }
 
 //Note: After ResetMission()
 LIST PARTS IN partsList.

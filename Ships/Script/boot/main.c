@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestre all mission phases.
-// 23/Dez/2020
+// 26/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 // Reset Engine settings before all, ("migth be a reboot")
@@ -17,6 +17,7 @@ lock throttle to thrust.
 WAIT 0.
 
 runpath("boot/declare-globals.c").
+runpath("boot/atm.c").
 
 //ACTION: REFUEL ----------------------------------------------
 if mission_origin <> DEFAULT_KSC //mission_target //ORIGIN = TARGET
@@ -50,7 +51,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		if (BODY:name = mission_origin) and (apoapsis < LEOrbit or periapsis < body:atm:height) or orbit_type = "GSO"
 		{
 			if body:atm:height > 0
-				RUNPATH( "boot/Launch-Circularize.c", LEOrbit ). // [2] runpath("boot/GOORBIT.c")
+				RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
 			else
 				RUNPATH( "boot/Launch-Circularize.c", apoapsis ).
 			
@@ -68,7 +69,8 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		// Just reaction-wheels Stability:
 		RCS OFF.
 		SAS OFF.
-		LOCK STEERING TO prograde.
+		LOCK STEERING TO SHIP:prograde.
+		wait 1.
 		// Confirm?
 		if KUniverse:ActiveVessel <> SHIP {
 			update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
@@ -98,8 +100,13 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
 			UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 		}
+		RCS OFF.
+		SAS OFF.
+		LOCK STEERING TO SHIP:prograde.
+		wait 1.
 		PRINT "Press: 1 - Abort/Land Anywhere!". 
 		PRINT "Press: 2 - Stage Satellite". 
+		PRINT "Press: 3 - Circularize". 
 		set ch to terminal:input:getchar(). PRINT "selected: "+ch.
 		if ch="1" or ch =""  {
 			update_phase_title("Confirm: SPEED-BREAK?", 0, false).
@@ -109,22 +116,28 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			
 			RUNPATH( "boot/PhaseIII-Land.c" ).  	// Auto-Land / Touch-Down
 		}
-		if ch="2" {
+		else if ch="2" {
 			//SEND PROCESSOR ID TO BOOSTER
 			IF PROCESSOR_STAGE2:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
 				{ PRINT "PROCESSOR_STAGE1: Message sent!". WAIT 1. }
-			stage. 
-			wait 1.
-			
+				
 			RCS OFF.
 			SAS OFF.
 			LOCK STEERING TO prograde.
 			wait 1.
-			SAS ON.
-			wait 1.
-			SET SASMODE TO "RADIALIN".
-			wait 1.
+			
+			stage. wait 1.
+			SAS ON. wait 1.
+			SET SASMODE TO "RADIALIN". wait 1.
+			AG4 ON.
 			CLEARSCREEN.
+		}
+		else if ch="3" {
+			if body:atm:height > 0
+				RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
+			else
+				RUNPATH( "boot/Launch-Circularize.c", apoapsis ).
+			reboot.
 		}
 	}
 	
