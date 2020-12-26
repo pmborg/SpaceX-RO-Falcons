@@ -131,7 +131,7 @@ REM INSTALL: ISS (International SpaceStation) Dep-1:
 
 	REM FIX: TrajectoriesMod for KSP 1.11
 	copy /Y GameData\Trajectories\Plugin\Trajectories110.bin GameData\Trajectories\Plugin\Trajectories111.bin
-
+	echo "declare global kspver to 1.11." > Ships\Script\kspver.c.
 	PAUSE
 :No
 	EXIT
