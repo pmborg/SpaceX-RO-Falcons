@@ -12,7 +12,7 @@ GAME
 	scene = 7
 	editor = None
 	flag = Launchers Pack/Flags/SpaceX
-	launchID = 86
+	launchID = 87
 	defaultVABLaunchSite = LaunchPad
 	defaultSPHLaunchSite = Runway
 	modded = True
@@ -534,7 +534,7 @@ GAME
 	{
 		name = ContractSystem
 		scene = 7, 8, 5, 6
-		update = 3759928331.1221581
+		update = 3759928368.1421227
 		version = 1.11.0
 		WEIGHTS
 		{
@@ -818,7 +818,7 @@ GAME
 	{
 		name = Funding
 		scene = 7, 8, 5, 6
-		funds = 5002234539325.8828
+		funds = 5002234608570.4063
 	}
 	SCENARIO
 	{
@@ -11856,8 +11856,8 @@ GAME
 				AutoPilotDisabled = False
 				AutoPilotDisTime = 0
 				AutoPilotDisCounter = 0
-				timeLastElectricity = 0
-				lastUpdate = 0
+				timeLastElectricity = 3759928370.1421208
+				lastUpdate = 3759928370.1421208
 				EmgcyShutOverride = False
 				EmgcyShutOverrideStarted = False
 				Emergencypowerdownactivated = False
@@ -11874,7 +11874,7 @@ GAME
 				ReenableRcs = False
 				ReenableSas = False
 				IsolateReservePower = False
-				Guid = 70a499c3-1366-484b-b5e4-628e852d0d1b
+				Guid = 00de518e-80a6-4ca6-bd8f-cd4a8a5e4534
 			}
 		}
 	}
@@ -15588,7 +15588,7 @@ GAME
 	FLIGHTSTATE
 	{
 		version = 1.11.0
-		UT = 3759928331.1221581
+		UT = 3759928370.8421202
 		activeVessel = 18
 		mapViewFiltering = 31740
 		commNetUIModeTracking = Network
@@ -15636,13 +15636,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 1222120.5414277851
+				SMA = 1222120.54143734
 				ECC = 0.99999999999999989
-				INC = 70.953101106528649
+				INC = 70.953101106683306
 				LPE = 90
-				LAN = 45.522723817029032
+				LAN = 45.525093959722881
 				MNA = 3.1415926207170166
-				EPH = 3759928323.7621651
+				EPH = 3759928357.1221333
 				REF = 2
 				IDENT = Mercury
 			}
@@ -15858,13 +15858,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 0
+				SMA = NaN
 				ECC = 1
-				INC = 95.37088096785277
-				LPE = 90.000000000000014
-				LAN = 2.1475014191960895
+				INC = 95.370880967832761
+				LPE = 90
+				LAN = 2.1498715622030886
 				MNA = 0
-				EPH = 3759928323.7621651
+				EPH = 3759928357.1221333
 				REF = 2
 				IDENT = Mercury
 			}
@@ -16101,13 +16101,13 @@ GAME
 			cMod = -1
 			ORBIT
 			{
-				SMA = 905650.18708579789
-				ECC = 0.99999999999999989
-				INC = 58.45823733573625
+				SMA = NaN
+				ECC = 1
+				INC = 58.458237336566185
 				LPE = 90
-				LAN = 52.880911595797727
-				MNA = 3.1415926207170166
-				EPH = 3759928323.7621651
+				LAN = 52.959385776870135
+				MNA = 0
+				EPH = 3759928357.1221333
 				REF = 3
 				IDENT = Io
 			}
@@ -17043,13 +17043,13 @@ GAME
 			cMod = -1
 			ORBIT
 			{
-				SMA = NaN
-				ECC = 1
-				INC = 45.605810559857602
-				LPE = 90
-				LAN = 309.92338295704872
-				MNA = 0
-				EPH = 3759928323.7621651
+				SMA = 1220614.1670522618
+				ECC = 0.99999999999999989
+				INC = 45.605810559766148
+				LPE = 90.000000000000014
+				LAN = 309.92575309982578
+				MNA = 3.1415926207170166
+				EPH = 3759928357.1221333
 				REF = 2
 				IDENT = Mercury
 			}
@@ -17279,13 +17279,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 1220622.5474883709
-				ECC = 0.99999999999999989
-				INC = 82.938050098757131
+				SMA = 0
+				ECC = 1
+				INC = 82.938050098774539
 				LPE = 90
-				LAN = 134.59432177174199
-				MNA = 3.1415926207170166
-				EPH = 3759928323.7621651
+				LAN = 134.59669191453429
+				MNA = 0
+				EPH = 3759928357.1221333
 				REF = 2
 				IDENT = Mercury
 			}
@@ -18438,17 +18438,17 @@ GAME
 			landedAt = KSC
 			displaylandedAt = #autoLOC_300900
 			splashed = False
-			met = 3967.4962162971497
+			met = 4007.2161784172058
 			lct = 3759924363.6259418
-			lastUT = 3759928331.1221581
+			lastUT = 3759928370.8421202
 			distanceTraveled = 68.264599915025315
 			root = 0
-			lat = 28.612841669565423
-			lon = -80.619694376043455
-			alt = 74.427475094795227
-			hgt = 0.821514845
-			nrm = -3.27825546E-07,0.99999994,-1.29453838E-07
-			rot = 0.331271082,-0.554571867,0.38836652,-0.657176435
+			lat = 28.612835538231202
+			lon = -80.619693387970344
+			alt = 75.203147772699594
+			hgt = 0.82143563
+			nrm = -2.68220901E-07,1,-2.42143869E-07
+			rot = 0.331082493,-0.554433584,0.388570458,-0.657267749
 			CoM = 0,0,0
 			stg = 1
 			prst = False
@@ -18467,13 +18467,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 3189777.5912368232
-				ECC = 0.99734127074853285
-				INC = 28.612841670496326
-				LPE = 269.99955227958236
-				LAN = 229.17949649779462
-				MNA = -3.1415873881039902
-				EPH = 3759928331.1221581
+				SMA = 3189778.1531172092
+				ECC = 0.99734116209022927
+				INC = 28.612835563178749
+				LPE = 270.00228415436163
+				LAN = 229.34233901455491
+				MNA = -3.1415878034523503
+				EPH = 3759928370.8421202
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -18501,10 +18501,10 @@ GAME
 				srfN = , -1
 				mass = 25
 				shielded = False
-				temp = 319.09441835722646
-				tempExt = 318.79154635797232
-				tempExtUnexp = 318.79416671695355
-				staticPressureAtm = 0.99123939948996109
+				temp = 319.60396637046307
+				tempExt = 319.75012608988033
+				tempExtUnexp = 319.74921459168706
+				staticPressureAtm = 0.99114844159611704
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -19121,11 +19121,11 @@ GAME
 			{
 				SMA = NaN
 				ECC = 1
-				INC = 61.387109310472482
-				LPE = 90
-				LAN = 230.17515702882338
+				INC = 61.387109310470628
+				LPE = 90.000000000000014
+				LAN = 230.3145374521755
 				MNA = 0
-				EPH = 3759928323.7621651
+				EPH = 3759928357.1221333
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -20438,11 +20438,11 @@ GAME
 			{
 				SMA = NaN
 				ECC = 1
-				INC = 61.387109296020931
+				INC = 61.387109296019091
 				LPE = 90
-				LAN = 231.81182466471085
+				LAN = 231.95120508806306
 				MNA = 0
-				EPH = 3759928323.7621651
+				EPH = 3759928357.1221333
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -21753,13 +21753,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 0
-				ECC = 1
-				INC = 61.387109308580484
+				SMA = 3185499.754882745
+				ECC = 0.99999999999999989
+				INC = 61.387109308578651
 				LPE = 90
-				LAN = 230.34849109611841
-				MNA = 0
-				EPH = 3759928323.7621651
+				LAN = 230.48787151947056
+				MNA = 3.1415926207170166
+				EPH = 3759928357.1221333
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -23042,8 +23042,8 @@ GAME
 			displaylandedAt = #autoLOC_300899
 			splashed = False
 			met = 0
-			lct = 3759928331.1221581
-			lastUT = 3759928331.1221581
+			lct = 3759928370.8421202
+			lastUT = 3759928370.8421202
 			distanceTraveled = 0
 			root = 0
 			lat = 28.612888458373995
@@ -23052,7 +23052,7 @@ GAME
 			hgt = 0.861177266
 			nrm = 0.000434488058,0.999999881,-0.000381779857
 			rot = 0.330135345,-0.556595922,0.389287472,-0.655489862
-			CoM = 0.0674028397,0.622797787,0.0603816994
+			CoM = 0.0674501657,0.622820616,0.0602219179
 			stg = 1
 			prst = False
 			ref = 1682765883
@@ -23070,13 +23070,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 3189778.1573644145
-				ECC = 0.99734127653222915
-				INC = 28.61288785192918
+				SMA = 3189778.1573800994
+				ECC = 0.99734127653217852
+				INC = 28.61288785169813
 				LPE = 270
-				LAN = 229.17707462025373
+				LAN = 229.34302756659667
 				MNA = -3.1415926535897869
-				EPH = 3759928331.1221581
+				EPH = 3759928370.8421202
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -23104,9 +23104,9 @@ GAME
 				srfN = , -1
 				mass = 25
 				shielded = False
-				temp = 299.61419181478533
-				tempExt = 299.99267815596244
-				tempExtUnexp = 299.99031662124048
+				temp = 302.40023410322055
+				tempExt = 302.74904174485243
+				tempExtUnexp = 302.74686857953253
 				staticPressureAtm = 0.99117765654877554
 				expt = 0.5
 				state = 0
@@ -23679,7 +23679,7 @@ GAME
 		}
 		VESSEL
 		{
-			pid = 70a499c31366484bb5e4628e852d0d1b
+			pid = 00de518e80a64ca6bd8fcd4a8a5e4534
 			persistentId = 3983080253
 			name = PMBT-SpaceX Falcon 9 v1.2 Block-5
 			type = Probe
@@ -23692,20 +23692,20 @@ GAME
 			displaylandedAt = #autoLOC_6002112
 			splashed = False
 			met = 0
-			lct = 3759928331.1221581
-			lastUT = 3759928331.1221581
+			lct = 3759928370.8421202
+			lastUT = 3759928370.8421202
 			distanceTraveled = 0
 			root = 0
-			lat = 28.60838713094693
-			lon = -80.599752373809878
-			alt = 144.49578794371337
-			hgt = 62.0106316
-			nrm = -2.08616257E-07,1.00000012,-2.5331974E-07
-			rot = -0.508764863,-0.070425719,-0.0418087468,0.857001007
-			CoM = 1.43051147E-05,-32.774868,0.000504016876
+			lat = 28.608386861353658
+			lon = -80.599751391566372
+			alt = 144.62733796797693
+			hgt = 61.986599
+			nrm = 1.56462193E-06,1.00000012,-6.55651093E-07
+			rot = -0.508764803,-0.0704253837,-0.0418079868,0.857001126
+			CoM = -4.43458557E-05,-32.8161278,0.000520706177
 			stg = 7
 			prst = False
-			ref = 127828793
+			ref = 2120589753
 			ctrl = True
 			PQSMin = 2
 			PQSMax = 10
@@ -23715,18 +23715,18 @@ GAME
 			OverrideAxisControl = 0,0,0,0
 			OverrideGroupNames = ,,,
 			altDispState = ASL
-			cPch = 0.502
-			cHdg = 0.314
+			cPch = 0.6159998
+			cHdg = 0.346
 			cMod = 0
 			ORBIT
 			{
-				SMA = 3189796.6895045629
-				ECC = 0.99734100354674793
-				INC = 28.608387135337981
-				LPE = 269.99998605230661
-				LAN = 229.19895071445953
-				MNA = 3.1415926281556108
-				EPH = 3759928331.1221581
+				SMA = 3189796.7350124684
+				ECC = 0.9973410033577127
+				INC = 28.608386865800966
+				LPE = 270.00000009378772
+				LAN = 229.36488862906802
+				MNA = 3.1415926468672692
+				EPH = 3759928370.8421202
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -23734,10 +23734,10 @@ GAME
 			{
 				name = HECS2.ProbeCore
 				cid = 4294102532
-				uid = 127828793
-				mid = 745071305
+				uid = 2120589753
+				mid = 2068142176
 				persistentId = 713043476
-				launchID = 85
+				launchID = 86
 				parent = 0
 				position = 0,0,0
 				rotation = 0,0,0,1
@@ -23756,10 +23756,10 @@ GAME
 				attN = bottom, 9
 				mass = 0.19577761
 				shielded = False
-				temp = 274.22280198573924
-				tempExt = 274.26842142914336
-				tempExtUnexp = 274.26838140019458
-				staticPressureAtm = 0.98305379141415306
+				temp = 274.22790927812866
+				tempExt = 274.27706936558241
+				tempExtUnexp = 274.27704141319185
+				staticPressureAtm = 0.98303850627139611
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -25189,7 +25189,7 @@ GAME
 							file
 							{
 								filename = boot.ks
-								binary = H4sIAAJu5l8A,72TUW,aMBSFn+FXXPUJHhIDmxiLNFUU1LVqKxhhXadpqm7im8QliS3bIWW,fnZA6qY+t,fN9tV3j4+PGYPgDavv+JeipBoriiCR0oY703+HoTerGOJUC2UNZFLDTbwGKyEhaAxxkDXEClN6eLzFpk6Lx3sqRFqSgTvJoRW2gMG6SqTOYbOCe9JGyHoI76F8ITlBcoAITgICKKxVJmLMXaSpwh3pBEvj5Sstc41VmMqKiZrTc6gKdc7cduZMZ+PPs9l0HKiOwzz8gixCKZFDpmUVQe8F3rZtyLVUiXzueKZgT3wsiymfjabigHbM5vML,IQPifi5zPazrwF++3h32AQWz3n5ZeT5t2jJWFjKtvZTon,E587UJunQJ0HHFwg2q+ASy1TWXTDWjVbSuLD4xX+1LYQ5am81KkUacC8F98+qKSAuLGDNweCeAEHLdEcWnhonx3WkBdY5gS0IUm+wzF7xz3w8mbGYU1ChqM,Amxi6vp6r7z42Pkn+iJXosF2rI3XU07zB8SoQb4MJuO6FphaWGnO3Nxn6meMPbEl,2GQ0Gb15nPrxj+vt4gq2KxiFPcZelpwybEoL6,n2KoJf7nv8ZnEhlGHHX9PXTa3QFoNXrgzDv1Wy0rA0BAAA
+								binary = H4sIAGk0518A,72TUW,aMBSFn+FXXPUJHhIDmxiLNFUU1LVqKxhhXadpqm7im8QliS3bIWW,fnZA6qY+t,fN9tV3j4+PGYPgDavv+JeipBoriiCR0oY703+HoTerGOJUC2UNZFLDTbwGKyEhaAxxkDXEClN6eLzFpk6Lx3sqRFqSgTvJoRW2gMG6SqTOYbOCe9JGyHoI76F8ITlBcoAITgICKKxVJmLMXaSpwh3pBEvj5Sstc41VmMqKiZrTc6gKdc7cduZMZ+PPs9l0HKiOwzz8gixCKZFDpmUVQe8F3rZtyLVUiXzueKZgT3wsiymfjabigHbM5vML,IQPifi5zPazrwF++3h32AQWz3n5ZeT5t2jJWFjKtvZTon,E587UJunQJ0HHFwg2q+ASy1TWXTDWjVbSuLD4xX+1LYQ5am81KkUacC8F98+qKSAuLGDNweCeAEHLdEcWnhonx3WkBdY5gS0IUm+wzF7xz3w8mbGYU1ChqM,Amxi6vp6r7z42Pkn+iJXosF2rI3XU07zB8SoQb4MJuO6FphaWGnO3Nxn6meMPbEl,2GQ0Gb15nPrxj+vt4gq2KxiFPcZelpwybEoL6,n2KoJf7nv8ZnEhlGHHX9PXTa3QFoNXrgzDv1Wy0rA0BAAA
 							}
 						}
 					}
@@ -25271,10 +25271,10 @@ GAME
 			{
 				name = trussPiece3x
 				cid = 4294102446
-				uid = 910281536
-				mid = 745071305
+				uid = 4083796403
+				mid = 2068142176
 				persistentId = 2823692717
-				launchID = 85
+				launchID = 86
 				parent = 0
 				position = 0,0,0
 				rotation = 0.49999994,0.50000006,-0.49999994,0.50000006
@@ -25293,10 +25293,10 @@ GAME
 				attN = top, 2
 				mass = 0.0450000018
 				shielded = False
-				temp = 274.21861264670537
-				tempExt = 274.26344781444988
-				tempExtUnexp = 274.26337855145835
-				staticPressureAtm = 0.98305379141415306
+				temp = 274.21890154166391
+				tempExt = 274.27506842966045
+				tempExtUnexp = 274.27504013517614
+				staticPressureAtm = 0.98303850627139611
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -25392,10 +25392,10 @@ GAME
 			{
 				name = strutOcto
 				cid = 4294102416
-				uid = 793748877
-				mid = 745071305
+				uid = 2153148325
+				mid = 2068142176
 				persistentId = 4188927805
-				launchID = 85
+				launchID = 86
 				parent = 1
 				position = 1.6039807796478271,0,-3.5762786865234375E-07
 				rotation = 0,0,-0.707106829,0.707106829
@@ -25414,10 +25414,10 @@ GAME
 				attN = bottom, 1
 				mass = 0.00300000003
 				shielded = False
-				temp = 274.22113382155857
-				tempExt = 274.27857002304626
-				tempExtUnexp = 274.27845875857884
-				staticPressureAtm = 0.98305379141415306
+				temp = 274.22639355038331
+				tempExt = 274.30720554530444
+				tempExtUnexp = 274.3071382657364
+				staticPressureAtm = 0.98303850627139611
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -25513,10 +25513,10 @@ GAME
 			{
 				name = largeSolarPanel
 				cid = 4294102382
-				uid = 2662553434
-				mid = 745071305
+				uid = 974223880
+				mid = 2068142176
 				persistentId = 759870105
-				launchID = 85
+				launchID = 86
 				parent = 2
 				position = 1.7104346752166748,-0.009490966796875,-3.5762786865234375E-07
 				rotation = 1.34110451E-07,1.00000012,7.4505806E-08,1.1920929E-07
@@ -25533,10 +25533,10 @@ GAME
 				srfN = srfAttach, 2
 				mass = 0.0682500005
 				shielded = False
-				temp = 274.21841118423271
-				tempExt = 274.30450164392107
-				tempExtUnexp = 274.30435338233121
-				staticPressureAtm = 0.98305492085819912
+				temp = 274.2186047369234
+				tempExt = 274.33834230795151
+				tempExtUnexp = 274.33826256327205
+				staticPressureAtm = 0.98303956041917251
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -25578,7 +25578,7 @@ GAME
 					name = ModuleDeployableSolarPanel
 					isEnabled = True
 					efficiencyMult = 1
-					launchUT = 3759928331.1221581
+					launchUT = 3759928370.8421202
 					currentRotation = (0, 0, -0.707106829, 0.707106829)
 					storedAnimationTime = 0
 					storedAnimationSpeed = 1
@@ -25757,10 +25757,10 @@ GAME
 			{
 				name = strutOcto
 				cid = 4294102306
-				uid = 1432575075
-				mid = 745071305
+				uid = 961322511
+				mid = 2068142176
 				persistentId = 3316689274
-				launchID = 85
+				launchID = 86
 				parent = 1
 				position = -1.6039803028106689,0,3.5762786865234375E-07
 				rotation = 7.10542736E-15,0,-0.707106769,-0.707106888
@@ -25779,10 +25779,10 @@ GAME
 				attN = bottom, 1
 				mass = 0.00300000003
 				shielded = False
-				temp = 274.22113382154822
-				tempExt = 274.27857002270719
-				tempExtUnexp = 274.2784587582542
-				staticPressureAtm = 0.98305386671042283
+				temp = 274.22639355002002
+				tempExt = 274.3072055423263
+				tempExtUnexp = 274.3071382627632
+				staticPressureAtm = 0.98303850627139611
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -25878,10 +25878,10 @@ GAME
 			{
 				name = largeSolarPanel
 				cid = 4294102272
-				uid = 1079985983
-				mid = 745071305
+				uid = 2669130549
+				mid = 2068142176
 				persistentId = 3799522457
-				launchID = 85
+				launchID = 86
 				parent = 4
 				position = -1.7104475498199463,0.009490966796875,5.3271651268005371E-07
 				rotation = 1.00000024,2.98023224E-07,2.38418579E-07,0
@@ -25898,10 +25898,10 @@ GAME
 				srfN = srfAttach, 4
 				mass = 0.0682500005
 				shielded = False
-				temp = 274.21841118423271
-				tempExt = 274.30450164391237
-				tempExtUnexp = 274.30435338232337
-				staticPressureAtm = 0.98305273726637676
+				temp = 274.21860473691487
+				tempExt = 274.33834230686119
+				tempExtUnexp = 274.33826256218515
+				staticPressureAtm = 0.98303745212361981
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -25943,7 +25943,7 @@ GAME
 					name = ModuleDeployableSolarPanel
 					isEnabled = True
 					efficiencyMult = 1
-					launchUT = 3759928331.1221581
+					launchUT = 3759928370.8421202
 					currentRotation = (0, 0, -0.707106829, 0.707106829)
 					storedAnimationTime = 0
 					storedAnimationSpeed = 1
@@ -26122,10 +26122,10 @@ GAME
 			{
 				name = rtg
 				cid = 4294102196
-				uid = 3003797869
-				mid = 745071305
+				uid = 740301565
+				mid = 2068142176
 				persistentId = 2898175187
-				launchID = 85
+				launchID = 86
 				parent = 0
 				position = -2.9802322387695313E-07,-0.594573974609375,-0.8253253698348999
 				rotation = 0.847866535,-2.98023188E-08,-8.94069601E-08,-0.53020972
@@ -26145,10 +26145,10 @@ GAME
 				attN = bottom, -1
 				mass = 0.0331999995
 				shielded = False
-				temp = 274.22427261934354
-				tempExt = 274.26737706578291
-				tempExtUnexp = 274.2673398357727
-				staticPressureAtm = 0.98312298868604275
+				temp = 274.23067952827461
+				tempExt = 274.27549246094725
+				tempExtUnexp = 274.27546595119145
+				staticPressureAtm = 0.9831077035432858
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -26190,9 +26190,9 @@ GAME
 					name = ModuleCoreHeat
 					isEnabled = True
 					CoreTempGoalAdjustment = 0
-					CoreThermalEnergy = 9090.5746780585614
+					CoreThermalEnergy = 9092.9907780173999
 					stagingEnabled = True
-					lastUpdateTime = 3759928331.1221581
+					lastUpdateTime = 3759928370.8421202
 					EVENTS
 					{
 					}
@@ -26282,7 +26282,7 @@ GAME
 					EfficiencyBonus = 1
 					IsActivated = True
 					stagingEnabled = True
-					lastUpdateTime = 3759928331.1221581
+					lastUpdateTime = 3759928370.8421202
 					EVENTS
 					{
 					}
@@ -26326,7 +26326,7 @@ GAME
 				RESOURCE
 				{
 					name = Plutonium-238
-					amount = 0.2269999989584667
+					amount = 0.22699999791364781
 					maxAmount = 0.22700000000000001
 					flowState = True
 					isTweakable = True
@@ -26337,7 +26337,7 @@ GAME
 				RESOURCE
 				{
 					name = DepletedFuel
-					amount = 1.0415342464354289E-09
+					amount = 2.0863540898627676E-09
 					maxAmount = 0.22700000000000001
 					flowState = True
 					isTweakable = False
@@ -26350,10 +26350,10 @@ GAME
 			{
 				name = rtg
 				cid = 4294102154
-				uid = 1241216876
-				mid = 745071305
+				uid = 119826346
+				mid = 2068142176
 				persistentId = 13571385
-				launchID = 85
+				launchID = 86
 				parent = 0
 				position = 3.5762786865234375E-07,-0.594573974609375,0.82532548904418945
 				rotation = -8.94069601E-08,-0.53020972,-0.847866535,2.98023188E-08
@@ -26373,10 +26373,10 @@ GAME
 				attN = bottom, -1
 				mass = 0.0331999995
 				shielded = False
-				temp = 274.22427261934354
-				tempExt = 274.26737706578291
-				tempExtUnexp = 274.2673398357727
-				staticPressureAtm = 0.98312306398231242
+				temp = 274.23067952827461
+				tempExt = 274.27549246094725
+				tempExtUnexp = 274.27546595119145
+				staticPressureAtm = 0.9831077035432858
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -26418,9 +26418,9 @@ GAME
 					name = ModuleCoreHeat
 					isEnabled = True
 					CoreTempGoalAdjustment = 0
-					CoreThermalEnergy = 9090.5746780585614
+					CoreThermalEnergy = 9092.9907780173999
 					stagingEnabled = True
-					lastUpdateTime = 3759928331.1221581
+					lastUpdateTime = 3759928370.8421202
 					EVENTS
 					{
 					}
@@ -26510,7 +26510,7 @@ GAME
 					EfficiencyBonus = 1
 					IsActivated = True
 					stagingEnabled = True
-					lastUpdateTime = 3759928331.1221581
+					lastUpdateTime = 3759928370.8421202
 					EVENTS
 					{
 					}
@@ -26554,7 +26554,7 @@ GAME
 				RESOURCE
 				{
 					name = Plutonium-238
-					amount = 0.2269999989584667
+					amount = 0.22699999791364781
 					maxAmount = 0.22700000000000001
 					flowState = True
 					isTweakable = True
@@ -26565,7 +26565,7 @@ GAME
 				RESOURCE
 				{
 					name = DepletedFuel
-					amount = 1.0415342464354289E-09
+					amount = 2.0863540898627676E-09
 					maxAmount = 0.22700000000000001
 					flowState = True
 					isTweakable = False
@@ -26578,10 +26578,10 @@ GAME
 			{
 				name = HighGainAntenna
 				cid = 4293738622
-				uid = 974739096
-				mid = 745071305
+				uid = 1504568928
+				mid = 2068142176
 				persistentId = 2782208232
-				launchID = 85
+				launchID = 86
 				parent = 0
 				position = 0.020395636558532715,0.4000091552734375,-0.0095656588673591614
 				rotation = 8.42937382E-08,1.19209275E-07,-7.09579453E-08,-1
@@ -26598,10 +26598,10 @@ GAME
 				srfN = srfAttach, 0,COL
 				mass = 0.0250000004
 				shielded = False
-				temp = 274.24389452866302
-				tempExt = 274.27966023791225
-				tempExtUnexp = 274.27958001880285
-				staticPressureAtm = 0.98300725831945468
+				temp = 274.2679490655492
+				tempExt = 274.30240248142422
+				tempExtUnexp = 274.3023300463725
+				staticPressureAtm = 0.98299197317669773
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -26642,7 +26642,7 @@ GAME
 				{
 					name = ModuleDeployableAntenna
 					isEnabled = True
-					currentRotation = (3.603747E-17, -0.999999881, 6.08837422E-17, -0.00061321148)
+					currentRotation = (3.65961214E-17, -0.999999881, 6.09002263E-17, -0.000596799946)
 					storedAnimationTime = 0
 					storedAnimationSpeed = 1
 					deployState = RETRACTED
@@ -26771,10 +26771,10 @@ GAME
 			{
 				name = batteryBank
 				cid = 4294102718
-				uid = 2867279431
-				mid = 745071305
+				uid = 1306742825
+				mid = 2068142176
 				persistentId = 1482224453
-				launchID = 85
+				launchID = 86
 				parent = 0
 				position = 0,-0.6108551025390625,0
 				rotation = 0,1,0,0
@@ -26793,10 +26793,10 @@ GAME
 				attN = bottom, 10
 				mass = 0.353399992
 				shielded = False
-				temp = 274.21824431186099
-				tempExt = 274.26228232658383
-				tempExtUnexp = 274.2622650408062
-				staticPressureAtm = 0.9831249463890559
+				temp = 274.21765421569427
+				tempExt = 274.26447958435926
+				tempExtUnexp = 274.26447095023872
+				staticPressureAtm = 0.98310958595002929
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -26903,10 +26903,10 @@ GAME
 			{
 				name = ionEngine
 				cid = 4294102796
-				uid = 2731188415
-				mid = 745071305
+				uid = 1083644943
+				mid = 2068142176
 				persistentId = 1032177011
-				launchID = 85
+				launchID = 86
 				parent = 9
 				position = 0,-0.935272216796875,0
 				rotation = 0,1,0,0
@@ -26925,10 +26925,10 @@ GAME
 				attN = bottom, 11
 				mass = 0.0494999997
 				shielded = False
-				temp = 274.21900960469884
-				tempExt = 274.25542259712302
-				tempExtUnexp = 274.25541263669498
-				staticPressureAtm = 0.98316266982019485
+				temp = 274.21920832840738
+				tempExt = 274.256169855287
+				tempExtUnexp = 274.25616466981018
+				staticPressureAtm = 0.98314738467743801
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -27167,10 +27167,10 @@ GAME
 			{
 				name = Decoupler.2
 				cid = 4294102876
-				uid = 253849241
-				mid = 745071305
+				uid = 3567187221
+				mid = 2068142176
 				persistentId = 3340465589
-				launchID = 85
+				launchID = 86
 				parent = 10
 				position = 0,-1.1237983703613281,0
 				rotation = 0,1,0,0
@@ -27189,10 +27189,10 @@ GAME
 				attN = bottom, 12
 				mass = 0.349999994
 				shielded = False
-				temp = 274.21908658498205
-				tempExt = 274.24281886877435
-				tempExtUnexp = 274.24281531430336
-				staticPressureAtm = 0.98318465633095853
+				temp = 274.21911127537675
+				tempExt = 274.24234763367701
+				tempExtUnexp = 274.24234524166025
+				staticPressureAtm = 0.9831692958919318
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -27387,10 +27387,10 @@ GAME
 			{
 				name = KK.SPX.F9.1875mmPA
 				cid = 4294102924
-				uid = 2835223370
-				mid = 745071305
+				uid = 3408248240
+				mid = 2068142176
 				persistentId = 1652662431
-				launchID = 85
+				launchID = 86
 				parent = 11
 				position = 0,-1.5881118774414063,0
 				rotation = 0,1,0,0
@@ -27410,10 +27410,10 @@ GAME
 				attN = top, -1
 				mass = 0.150000006
 				shielded = False
-				temp = 274.21755501292284
-				tempExt = 274.21792157849546
-				tempExtUnexp = 274.21792157849546
-				staticPressureAtm = 0.98323871905263072
+				temp = 274.21616867608412
+				tempExt = 274.21653604740806
+				tempExtUnexp = 274.21653604740806
+				staticPressureAtm = 0.9832233586136041
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -27522,7 +27522,7 @@ GAME
 							file
 							{
 								filename = boot-st2.ks
-								binary = H4sIAAJu5l8A,71T0W7aMBR9hq+44gkeHJNoYzTSVEFR16mtYIR1naapcmIHuyS5lu00ZV8,G5C6as,tfYqd63POPT6mFMgbVt,jX6pKNKwWKeSIjliXRDvbfwfi62UGWWGUdhZKNHCdrcAh5AJaKzhgA5lmhbh,uGFtU8iHOyFVUQkLt8ihU07CcFXnaLawXsKdMFZhM4L3UH6BXEC+hxROAghI57RNKfWDtHW0EyZnlQ3ytcGtYXVUYE1Vw8VzpKU+p3679MbT+Gw6ncREH3BoAJ8Lx6BCxqE0WKfQewHvui7iBnWOzwc8K+kjj1FO+HQ8UXvmYjqbzdkndp+rn4vyafqFsG8fbvdr4tg5rz6PA,4Nc8I6WGDXBJb0H,Fbb2qbH6BPgo43QNZLcsmqAptDMFat0Wh9YMLiVW2kskftnWFaCwPsCRUP12oEEVw5YA0Hy54EMDBY7ISDx9bL8R2FZM1WgJMCimAwlv,hD0JEqXVsK0gygOBg5Jt6vr6HzHA8HOcCTe65sIRTb,gMf06Uw+M0cAZxlMC88rsfIduQZBQo4wldiD80GSfjN09TP,vxdXNxBZsljKMepS9LLkrWVg5Ws81VCr,86,hNM6m0pcdH0zdto5mTw1emkNPsUTEYRX8Bjmb2hT4EAAA=
+								binary = H4sIAGk0518A,71T0W7aMBR9hq+44gkeHJNoYzTSVEFR16mtYIR1naapcmIHuyS5lu00ZV8,G5C6as,tfYqd63POPT6mFMgbVt,jX6pKNKwWKeSIjliXRDvbfwfi62UGWWGUdhZKNHCdrcAh5AJaKzhgA5lmhbh,uGFtU8iHOyFVUQkLt8ihU07CcFXnaLawXsKdMFZhM4L3UH6BXEC+hxROAghI57RNKfWDtHW0EyZnlQ3ytcGtYXVUYE1Vw8VzpKU+p3679MbT+Gw6ncREH3BoAJ8Lx6BCxqE0WKfQewHvui7iBnWOzwc8K+kjj1FO+HQ8UXvmYjqbzdkndp+rn4vyafqFsG8fbvdr4tg5rz6PA,4Nc8I6WGDXBJb0H,Fbb2qbH6BPgo43QNZLcsmqAptDMFat0Wh9YMLiVW2kskftnWFaCwPsCRUP12oEEVw5YA0Hy54EMDBY7ISDx9bL8R2FZM1WgJMCimAwlv,hD0JEqXVsK0gygOBg5Jt6vr6HzHA8HOcCTe65sIRTb,gMf06Uw+M0cAZxlMC88rsfIduQZBQo4wldiD80GSfjN09TP,vxdXNxBZsljKMepS9LLkrWVg5Ws81VCr,86,hNM6m0pcdH0zdto5mTw1emkNPsUTEYRX8Bjmb2hT4EAAA=
 							}
 						}
 					}
@@ -27686,10 +27686,10 @@ GAME
 			{
 				name = KK.SPX.F93.S2tank
 				cid = 4294654148
-				uid = 2619678583
-				mid = 745071305
+				uid = 2046127738
+				mid = 2068142176
 				persistentId = 579348422
-				launchID = 85
+				launchID = 86
 				parent = 12
 				position = 0,-6.1132736206054688,0
 				rotation = 0,0,0,1
@@ -27715,7 +27715,7 @@ GAME
 				temp = 90.150001525878906
 				tempExt = 90.150001525878906
 				tempExtUnexp = 90.150001525878906
-				staticPressureAtm = 0.98376564234826047
+				staticPressureAtm = 0.98375028190923386
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -29679,10 +29679,10 @@ GAME
 			{
 				name = KK.SPX.Falcon9.FC
 				cid = 4294629322
-				uid = 3226864544
-				mid = 745071305
+				uid = 1443695749
+				mid = 2068142176
 				persistentId = 1629889608
-				launchID = 85
+				launchID = 86
 				parent = 13
 				position = 0,-1.6044540405273438,0
 				rotation = 0,0,0,1
@@ -29700,10 +29700,10 @@ GAME
 				attN = bottom, 13
 				mass = 0.150000006
 				shielded = False
-				temp = 274.21755491702231
-				tempExt = 274.2179276849518
-				tempExtUnexp = 274.2179276849518
-				staticPressureAtm = 0.9832406014593742
+				temp = 274.21616858018837
+				tempExt = 274.21654215051831
+				tempExtUnexp = 274.21654215051831
+				staticPressureAtm = 0.98322524102034758
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -30071,10 +30071,10 @@ GAME
 			{
 				name = linearRcs
 				cid = 4293521798
-				uid = 25727376
-				mid = 745071305
+				uid = 2598395320
+				mid = 2068142176
 				persistentId = 2964429061
-				launchID = 85
+				launchID = 86
 				parent = 13
 				position = 1.8293502330780029,-9.2882156372070313,-2.384185791015625E-07
 				rotation = 0.5,0.5,-0.5,0.5
@@ -30094,10 +30094,10 @@ GAME
 				srfN = srfAttach, 13,collider
 				mass = 0.00855772011
 				shielded = False
-				temp = 274.21755917102416
-				tempExt = 274.21781645002096
-				tempExtUnexp = 274.21781645002096
-				staticPressureAtm = 0.98413542232894613
+				temp = 274.21617283397774
+				tempExt = 274.21643092114329
+				tempExtUnexp = 274.21643092114329
+				staticPressureAtm = 0.98412013718618918
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -30259,10 +30259,10 @@ GAME
 			{
 				name = linearRcs
 				cid = 4293521074
-				uid = 1573105435
-				mid = 745071305
+				uid = 3484906064
+				mid = 2068142176
 				persistentId = 4128989997
-				launchID = 85
+				launchID = 86
 				parent = 13
 				position = -1.1920928955078125E-07,-9.2882156372070313,-1.8293499946594238
 				rotation = 0,0.707106829,-0.707106829,0
@@ -30282,10 +30282,10 @@ GAME
 				srfN = srfAttach, 13,collider
 				mass = 0.00855772011
 				shielded = False
-				temp = 274.21755917102416
-				tempExt = 274.21781645002096
-				tempExtUnexp = 274.21781645002096
-				staticPressureAtm = 0.98413549762521579
+				temp = 274.21617283397774
+				tempExt = 274.21643092114329
+				tempExtUnexp = 274.21643092114329
+				staticPressureAtm = 0.98412013718618918
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -30447,10 +30447,10 @@ GAME
 			{
 				name = linearRcs
 				cid = 4293520988
-				uid = 148331387
-				mid = 745071305
+				uid = 3831633115
+				mid = 2068142176
 				persistentId = 886154520
-				launchID = 85
+				launchID = 86
 				parent = 13
 				position = -1.8293502330780029,-9.2882156372070313,3.5762786865234375E-07
 				rotation = -0.5,0.5,-0.5,-0.5
@@ -30470,10 +30470,10 @@ GAME
 				srfN = srfAttach, 13,collider
 				mass = 0.00855772011
 				shielded = False
-				temp = 274.21755917102416
-				tempExt = 274.21781645002096
-				tempExtUnexp = 274.21781645002096
-				staticPressureAtm = 0.98413549762521579
+				temp = 274.21617283397774
+				tempExt = 274.21643092114329
+				tempExtUnexp = 274.21643092114329
+				staticPressureAtm = 0.98412013718618918
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -30635,10 +30635,10 @@ GAME
 			{
 				name = linearRcs
 				cid = 4293520902
-				uid = 2984984119
-				mid = 745071305
+				uid = 1700052507
+				mid = 2068142176
 				persistentId = 1844144608
-				launchID = 85
+				launchID = 86
 				parent = 13
 				position = 3.5762786865234375E-07,-9.2882156372070313,1.8293502330780029
 				rotation = -0.707106829,0,0,-0.707106829
@@ -30658,10 +30658,10 @@ GAME
 				srfN = srfAttach, 13,collider
 				mass = 0.00855772011
 				shielded = False
-				temp = 274.21755917102416
-				tempExt = 274.21781645002096
-				tempExtUnexp = 274.21781645002096
-				staticPressureAtm = 0.98413549762521579
+				temp = 274.21617283397774
+				tempExt = 274.21643092114329
+				tempExtUnexp = 274.21643092114329
+				staticPressureAtm = 0.98412013718618918
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -30823,10 +30823,10 @@ GAME
 			{
 				name = asasmodule1-2
 				cid = 4293515306
-				uid = 1449623201
-				mid = 745071305
+				uid = 2708721536
+				mid = 2068142176
 				persistentId = 1866841011
-				launchID = 85
+				launchID = 86
 				parent = 13
 				position = 0,-9.9902267456054688,0
 				rotation = 0,1,0,0
@@ -30845,10 +30845,10 @@ GAME
 				attN = bottom, 20
 				mass = 0.200000003
 				shielded = False
-				temp = 274.21755697820129
-				tempExt = 274.21771510330086
-				tempExtUnexp = 274.21771510330086
-				staticPressureAtm = 0.98421726937415177
+				temp = 274.21617064126445
+				tempExt = 274.21632959607399
+				tempExtUnexp = 274.21632959607399
+				staticPressureAtm = 0.98420190893512516
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -31001,10 +31001,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1DVplus
 				cid = 4294633406
-				uid = 1409896751
-				mid = 745071305
+				uid = 2490013738
+				mid = 2068142176
 				persistentId = 3958460647
-				launchID = 85
+				launchID = 86
 				parent = 19
 				position = 0,-12.068458557128906,0
 				rotation = 0,1,0,0
@@ -31024,10 +31024,10 @@ GAME
 				attN = bottom, -1
 				mass = 0.469999999
 				shielded = False
-				temp = 274.22892111350353
-				tempExt = 274.27860476250629
-				tempExtUnexp = 274.27855823003512
-				staticPressureAtm = 0.98445942217763072
+				temp = 274.24017337125258
+				tempExt = 274.28979386139457
+				tempExtUnexp = 274.28975864318505
+				staticPressureAtm = 0.98444413703487377
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -31136,11 +31136,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999901317948394
-							ullageHeightMax = 0.99999946930841399
-							ullageRadialMin = 0
-							ullageRadialMax = 0.99999999644121496
-							UT = 3759928331.1221581
+							ullageHeightMin = 0.89999948466470681
+							ullageHeightMax = 0.99999994212829557
+							ullageRadialMin = 6.6918073560368343E-07
+							ullageRadialMax = 0.99999999913344473
+							UT = 3759928370.8421202
 						}
 					}
 					UPGRADESAPPLIED
@@ -31283,10 +31283,10 @@ GAME
 			{
 				name = KK.SpX.Mvac.skirt
 				cid = 4293871078
-				uid = 3837870546
-				mid = 745071305
+				uid = 13602948
+				mid = 2068142176
 				persistentId = 3403875740
-				launchID = 85
+				launchID = 86
 				parent = 20
 				position = 0,-10.918464660644531,0
 				rotation = 0,-0.707106829,0,-0.707106829
@@ -31304,10 +31304,10 @@ GAME
 				attN = top, 20
 				mass = 0.0149999997
 				shielded = False
-				temp = 274.26462502255168
-				tempExt = 274.31214251625511
-				tempExtUnexp = 274.31206565047285
-				staticPressureAtm = 0.98432539481749626
+				temp = 274.28097121150017
+				tempExt = 274.32759659940052
+				tempExtUnexp = 274.32755656337213
+				staticPressureAtm = 0.98431010967473931
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -31386,10 +31386,10 @@ GAME
 			{
 				name = Decoupler.3
 				cid = 4294107994
-				uid = 1920137735
-				mid = 745071305
+				uid = 380461446
+				mid = 2068142176
 				persistentId = 1785055232
-				launchID = 85
+				launchID = 86
 				parent = 13
 				position = 0,-9.7052764892578125,0
 				rotation = 0,0,1,0
@@ -31408,10 +31408,10 @@ GAME
 				attN = bottom, 13
 				mass = 0.5
 				shielded = False
-				temp = 274.21755940136296
-				tempExt = 274.21790771758822
-				tempExtUnexp = 274.21790771758822
-				staticPressureAtm = 0.9841840637191972
+				temp = 274.21617306430505
+				tempExt = 274.21652218415204
+				tempExtUnexp = 274.21652218415204
+				staticPressureAtm = 0.98416870328017048
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -31589,10 +31589,10 @@ GAME
 			{
 				name = KK.SPX.F93.interstage
 				cid = 4294631684
-				uid = 191155947
-				mid = 745071305
+				uid = 3622112986
+				mid = 2068142176
 				persistentId = 2832985031
-				launchID = 85
+				launchID = 86
 				parent = 22
 				position = 0,-12.982749938964844,0
 				rotation = 0,0,0,1
@@ -31611,10 +31611,10 @@ GAME
 				attN = top, 22
 				mass = 0.589999974
 				shielded = False
-				temp = 274.21755945564951
-				tempExt = 274.21798339446138
-				tempExtUnexp = 274.21798339446138
-				staticPressureAtm = 0.9845659663993106
+				temp = 274.21617311858887
+				tempExt = 274.21659785798306
+				tempExtUnexp = 274.21659785798306
+				staticPressureAtm = 0.98455068125655376
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -31778,10 +31778,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294256998
-				uid = 3190622544
-				mid = 745071305
+				uid = 1977189490
+				mid = 2068142176
 				persistentId = 3012762193
-				launchID = 85
+				launchID = 86
 				parent = 23
 				position = 1.8293530941009521,-16.255756378173828,-2.384185791015625E-07
 				rotation = 2.08931503E-08,0.707106769,-2.08931503E-08,0.707106888
@@ -31801,10 +31801,10 @@ GAME
 				srfN = srfAttach, 23,collider_F912_Interstage
 				mass = 0.150000006
 				shielded = False
-				temp = 274.21763484454493
-				tempExt = 274.24041285484179
-				tempExtUnexp = 274.2404087478979
-				staticPressureAtm = 0.98494749259807546
+				temp = 274.2163261323081
+				tempExt = 274.23971777325812
+				tempExtUnexp = 274.23971692949976
+				staticPressureAtm = 0.98493220745531851
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -31914,10 +31914,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294256346
-				uid = 2284670219
-				mid = 745071305
+				uid = 2774630538
+				mid = 2068142176
 				persistentId = 1163188947
-				launchID = 85
+				launchID = 86
 				parent = 23
 				position = -1.1920928955078125E-07,-16.255756378173828,-1.8293533325195313
 				rotation = 1.77635663E-15,1,-2.95473725E-08,1.19209275E-07
@@ -31937,10 +31937,10 @@ GAME
 				srfN = srfAttach, 23,collider_F912_Interstage
 				mass = 0.150000006
 				shielded = False
-				temp = 274.21763484454493
-				tempExt = 274.24041285484179
-				tempExtUnexp = 274.2404087478979
-				staticPressureAtm = 0.98494756789434523
+				temp = 274.2163261323081
+				tempExt = 274.23971777325812
+				tempExtUnexp = 274.23971692949976
+				staticPressureAtm = 0.98493220745531851
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -32050,10 +32050,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294256276
-				uid = 1249641056
-				mid = 745071305
+				uid = 292786107
+				mid = 2068142176
 				persistentId = 2107624888
-				launchID = 85
+				launchID = 86
 				parent = 23
 				position = -1.8293530941009521,-16.255756378173828,3.5762786865234375E-07
 				rotation = -2.08931485E-08,0.707106829,-2.0893145E-08,-0.707106829
@@ -32073,10 +32073,10 @@ GAME
 				srfN = srfAttach, 23,collider_F912_Interstage
 				mass = 0.150000006
 				shielded = False
-				temp = 274.21763484454493
-				tempExt = 274.24041285484179
-				tempExtUnexp = 274.2404087478979
-				staticPressureAtm = 0.98494756789434523
+				temp = 274.2163261323081
+				tempExt = 274.23971777325812
+				tempExtUnexp = 274.23971692949976
+				staticPressureAtm = 0.98493220745531851
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -32186,10 +32186,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294256206
-				uid = 2624738333
-				mid = 745071305
+				uid = 1652730789
+				mid = 2068142176
 				persistentId = 308245408
-				launchID = 85
+				launchID = 86
 				parent = 23
 				position = 3.5762786865234375E-07,-16.255756378173828,1.8293530941009521
 				rotation = -2.95473725E-08,1.19209275E-07,-1.77635663E-15,-1
@@ -32209,10 +32209,10 @@ GAME
 				srfN = srfAttach, 23,collider_F912_Interstage
 				mass = 0.150000006
 				shielded = False
-				temp = 274.21763484454493
-				tempExt = 274.24041285484179
-				tempExtUnexp = 274.2404087478979
-				staticPressureAtm = 0.98494756789434523
+				temp = 274.2163261323081
+				tempExt = 274.23971777325812
+				tempExtUnexp = 274.23971692949976
+				staticPressureAtm = 0.98493220745531851
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -32322,10 +32322,10 @@ GAME
 			{
 				name = KK.SPX.F93.S1tank
 				cid = 4294625744
-				uid = 2255502907
-				mid = 745071305
+				uid = 2734952854
+				mid = 2068142176
 				persistentId = 526792388
-				launchID = 85
+				launchID = 86
 				parent = 23
 				position = 0,-35.430072784423828,0
 				rotation = 0,0,0,1
@@ -32349,7 +32349,7 @@ GAME
 				temp = 90.150001525878906
 				tempExt = 90.150001525878906
 				tempExtUnexp = 90.150001525878906
-				staticPressureAtm = 0.98718537303097242
+				staticPressureAtm = 0.9871700125919457
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -33925,10 +33925,10 @@ GAME
 			{
 				name = KK.SPX.Falcon9.FC
 				cid = 4294622098
-				uid = 1929377630
-				mid = 745071305
+				uid = 637468010
+				mid = 2068142176
 				persistentId = 1208775091
-				launchID = 85
+				launchID = 86
 				parent = 28
 				position = 0,-16.059593200683594,0
 				rotation = 0,0,0,1
@@ -33946,10 +33946,10 @@ GAME
 				attN = bottom, 28
 				mass = 0.150000006
 				shielded = False
-				temp = 274.21755503547371
-				tempExt = 274.21792836353575
-				tempExtUnexp = 274.21792836353575
-				staticPressureAtm = 0.9849246778283447
+				temp = 274.21616869863385
+				tempExt = 274.21654282906837
+				tempExtUnexp = 274.21654282906837
+				staticPressureAtm = 0.98490931738931808
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -34051,13 +34051,13 @@ GAME
 							file
 							{
 								filename = boot-boosters.ks
-								binary = H4sIAAJu5l8A,71TUU,bMBB+bn,FiSd4SNwg1HWRJlTKGAhYuyZjTNOELrFTmyY5y3Ya+u9nt0gwTXuEe7B09um77777zBhEbxhDj3+hatFiI1IoiFzkD+uEsfHaDt+h+,U8g6w0SjsLFRm4zhbgCAoBnRUcqIVMYynuH26wa0v5cCekKmth4ZY49MpJOFw0BZkVLOdw53krao,gPZjPiAsotpDCM4EIpHPapoz5QbomXgtTYG0DfW1oZbCJS2qYarl4irXUp8xfV159lnycTMZJpHc4LICfCYdQE3KoDDUpDF7A+76PuSFd0NMOz0r2yBOSYz4ZjdUWXcKm0zP8gPeF+nlebSZfIvx2crtdRg5Pef1pFPBv0Anr4Jz6NnRJX5FfeVG7Ygf9TGi,gWg5jy6wLqndGWPRGU3WuyYkf0Uuld1z7w1qLQzghhQPazUiElw5wJaDxY0ABEPlWjh47DwdX1FKbFcCnBRQBoGp+gf,IPiUWYcr8dqtBxC0jH35wMf34J5gqCyPEpjNl5,DCyQn7Ctt2PHoePTmHhlmP67y2SXkcxjFA8ZeUi4q7GoHi2l+mcIv7,nfLJNKW7b,CkPTtRqdPPzfqEfxH+kD2sUZBAAA
+								binary = H4sIAGk0518A,71TUU,bMBB+bn,FiSd4SNwg1HWRJlTKGAhYuyZjTNOELrFTmyY5y3Ya+u9nt0gwTXuEe7B09um77777zBhEbxhDj3+hatFiI1IoiFzkD+uEsfHaDt+h+,U8g6w0SjsLFRm4zhbgCAoBnRUcqIVMYynuH26wa0v5cCekKmth4ZY49MpJOFw0BZkVLOdw53krao,gPZjPiAsotpDCM4EIpHPapoz5QbomXgtTYG0DfW1oZbCJS2qYarl4irXUp8xfV159lnycTMZJpHc4LICfCYdQE3KoDDUpDF7A+76PuSFd0NMOz0r2yBOSYz4ZjdUWXcKm0zP8gPeF+nlebSZfIvx2crtdRg5Pef1pFPBv0Anr4Jz6NnRJX5FfeVG7Ygf9TGi,gWg5jy6wLqndGWPRGU3WuyYkf0Uuld1z7w1qLQzghhQPazUiElw5wJaDxY0ABEPlWjh47DwdX1FKbFcCnBRQBoGp+gf,IPiUWYcr8dqtBxC0jH35wMf34J5gqCyPEpjNl5,DCyQn7Ctt2PHoePTmHhlmP67y2SXkcxjFA8ZeUi4q7GoHi2l+mcIv7,nfLJNKW7b,CkPTtRqdPPzfqEfxH+kD2sUZBAAA
 							}
 						}
 						file
 						{
 							filename = STAGE1_TARGET_FILE.c
-							binary = H4sIAAJu5l8A,0tJTc5JLEpVSM,JT0rMUfBJzEvJzEuPys9LVQjxVwhzDQ529dHwiYo31NTjAgCP0W4vLAAAAA==
+							binary = H4sIAGk0518A,0tJTc5JLEpVSM,JT0rMUfBJzEvJzEuPys9LVQjxVwhzDQ529dHwiYo31NTjAgCP0W4vLAAAAA==
 						}
 					}
 					UPGRADESAPPLIED
@@ -34331,10 +34331,10 @@ GAME
 			{
 				name = KK.SPX.F9LandingLeg
 				cid = 4294581646
-				uid = 796321852
-				mid = 745071305
+				uid = 2611573699
+				mid = 2068142176
 				persistentId = 3738723664
-				launchID = 85
+				launchID = 86
 				parent = 28
 				position = -1.2787079811096191,-52.026679992675781,-1.2787065505981445
 				rotation = -9.04808761E-09,0.923879564,-2.18440128E-08,-0.382683396
@@ -34354,10 +34354,10 @@ GAME
 				srfN = srfAttach, 28,collider_F912_S1FuelTank
 				mass = 0.150000006
 				shielded = False
-				temp = 274.21756097195237
-				tempExt = 274.21806191278262
-				tempExtUnexp = 274.21806191278262
-				staticPressureAtm = 0.98912605908721163
+				temp = 274.21617463481607
+				tempExt = 274.21667702153479
+				tempExtUnexp = 274.21667702153479
+				staticPressureAtm = 0.98911062335191524
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -34554,10 +34554,10 @@ GAME
 			{
 				name = KK.SPX.F9LandingLeg
 				cid = 4294581174
-				uid = 392202637
-				mid = 745071305
+				uid = 1822383074
+				mid = 2068142176
 				persistentId = 1326950246
-				launchID = 85
+				launchID = 86
 				parent = 28
 				position = -1.2787070274353027,-52.026679992675781,1.2787072658538818
 				rotation = -2.1844011E-08,0.382683396,-9.04808495E-09,-0.923879564
@@ -34577,10 +34577,10 @@ GAME
 				srfN = srfAttach, 28,collider_F912_S1FuelTank
 				mass = 0.150000006
 				shielded = False
-				temp = 274.21756097195237
-				tempExt = 274.21806191278262
-				tempExtUnexp = 274.21806191278262
-				staticPressureAtm = 0.98912605908721163
+				temp = 274.21617463481607
+				tempExt = 274.21667702153479
+				tempExtUnexp = 274.21667702153479
+				staticPressureAtm = 0.98911062335191524
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -34773,10 +34773,10 @@ GAME
 			{
 				name = KK.SPX.F9LandingLeg
 				cid = 4294581056
-				uid = 1826687437
-				mid = 745071305
+				uid = 491935668
+				mid = 2068142176
 				persistentId = 1754682138
-				launchID = 85
+				launchID = 86
 				parent = 28
 				position = 1.27870774269104,-52.026679992675781,1.2787063121795654
 				rotation = -2.1844011E-08,-0.382683396,9.04808495E-09,-0.923879564
@@ -34796,10 +34796,10 @@ GAME
 				srfN = srfAttach, 28,collider_F912_S1FuelTank
 				mass = 0.150000006
 				shielded = False
-				temp = 274.21756097195237
-				tempExt = 274.21806191278262
-				tempExtUnexp = 274.21806191278262
-				staticPressureAtm = 0.98912598379094185
+				temp = 274.21617463481607
+				tempExt = 274.21667702153479
+				tempExtUnexp = 274.21667702153479
+				staticPressureAtm = 0.98911062335191524
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -34992,10 +34992,10 @@ GAME
 			{
 				name = KK.SPX.F9LandingLeg
 				cid = 4294580938
-				uid = 4113710537
-				mid = 745071305
+				uid = 1108263507
+				mid = 2068142176
 				persistentId = 2447077189
-				launchID = 85
+				launchID = 86
 				parent = 28
 				position = 1.2787063121795654,-52.026679992675781,-1.27870774269104
 				rotation = -9.04808495E-09,-0.923879564,2.1844011E-08,-0.382683396
@@ -35015,10 +35015,10 @@ GAME
 				srfN = srfAttach, 28,collider_F912_S1FuelTank
 				mass = 0.150000006
 				shielded = False
-				temp = 274.21756097195237
-				tempExt = 274.21806191278262
-				tempExtUnexp = 274.21806191278262
-				staticPressureAtm = 0.98912598379094185
+				temp = 274.21617463481607
+				tempExt = 274.21667702153479
+				tempExtUnexp = 274.21667702153479
+				staticPressureAtm = 0.98911062335191524
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -35211,10 +35211,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4289609260
-				uid = 182387850
-				mid = 745071305
+				uid = 593358987
+				mid = 2068142176
 				persistentId = 597995376
-				launchID = 85
+				launchID = 86
 				parent = 28
 				position = 1.8293955326080322,-54.393383026123047,-2.384185791015625E-07
 				rotation = -6.55626106E-16,0.707106769,6.55626E-16,0.707106888
@@ -35234,10 +35234,10 @@ GAME
 				srfN = srfAttach, 28,collider_F913_S1FuelTank_collider
 				mass = 0.150000006
 				shielded = False
-				temp = 274.21756103221583
-				tempExt = 274.21779643041242
-				tempExtUnexp = 274.21779643041242
-				staticPressureAtm = 0.98940299876730964
+				temp = 274.21617469507646
+				tempExt = 274.21641118545045
+				tempExtUnexp = 274.21641118545045
+				staticPressureAtm = 0.98938763832828303
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -35347,10 +35347,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294247630
-				uid = 3133318600
-				mid = 745071305
+				uid = 3111829168
+				mid = 2068142176
 				persistentId = 1401641660
-				launchID = 85
+				launchID = 86
 				parent = 28
 				position = -1.1920928955078125E-07,-54.393383026123047,-1.8293957710266113
 				rotation = -1.05879106E-22,1,9.27195192E-16,1.19209275E-07
@@ -35370,10 +35370,10 @@ GAME
 				srfN = srfAttach, 28,collider_F913_S1FuelTank_collider
 				mass = 0.150000006
 				shielded = False
-				temp = 274.21756103221583
-				tempExt = 274.21779643041242
-				tempExtUnexp = 274.21779643041242
-				staticPressureAtm = 0.98940299876730964
+				temp = 274.21617469507646
+				tempExt = 274.21641118545045
+				tempExtUnexp = 274.21641118545045
+				staticPressureAtm = 0.98938763832828303
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -35483,10 +35483,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294247566
-				uid = 3904195537
-				mid = 745071305
+				uid = 1322061809
+				mid = 2068142176
 				persistentId = 3380630310
-				launchID = 85
+				launchID = 86
 				parent = 28
 				position = -1.8293955326080322,-54.393383026123047,3.5762786865234375E-07
 				rotation = 6.55626E-16,0.707106829,6.55626E-16,-0.707106829
@@ -35506,10 +35506,10 @@ GAME
 				srfN = srfAttach, 28,collider_F913_S1FuelTank_collider
 				mass = 0.150000006
 				shielded = False
-				temp = 274.21756103221583
-				tempExt = 274.21779643041242
-				tempExtUnexp = 274.21779643041242
-				staticPressureAtm = 0.98940307406357941
+				temp = 274.21617469507646
+				tempExt = 274.21641118545045
+				tempExtUnexp = 274.21641118545045
+				staticPressureAtm = 0.98938763832828303
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -35619,10 +35619,10 @@ GAME
 			{
 				name = KK.F9demo.S1RCS
 				cid = 4294247502
-				uid = 1842756907
-				mid = 745071305
+				uid = 3973907019
+				mid = 2068142176
 				persistentId = 789697671
-				launchID = 85
+				launchID = 86
 				parent = 28
 				position = 3.5762786865234375E-07,-54.393383026123047,1.8293955326080322
 				rotation = 9.27195192E-16,1.19209275E-07,1.05879106E-22,-1
@@ -35642,10 +35642,10 @@ GAME
 				srfN = srfAttach, 28,collider_F913_S1FuelTank_collider
 				mass = 0.150000006
 				shielded = False
-				temp = 274.21756103221583
-				tempExt = 274.21779643041242
-				tempExtUnexp = 274.21779643041242
-				staticPressureAtm = 0.98940299876730964
+				temp = 274.21617469507646
+				tempExt = 274.21641118545045
+				tempExtUnexp = 274.21641118545045
+				staticPressureAtm = 0.98938763832828303
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -35755,10 +35755,10 @@ GAME
 			{
 				name = miniFuelTank
 				cid = 4290370112
-				uid = 3009751758
-				mid = 745071305
+				uid = 1942066200
+				mid = 2068142176
 				persistentId = 3140562807
-				launchID = 85
+				launchID = 86
 				parent = 28
 				position = 0,-54.577266693115234,0
 				rotation = 0,0,0,1
@@ -35777,10 +35777,10 @@ GAME
 				attN = bottom, 39
 				mass = 0.00216278993
 				shielded = False
-				temp = 274.21755683616021
-				tempExt = 274.21645185266766
-				tempExtUnexp = 274.21645185266766
-				staticPressureAtm = 0.98942453350045489
+				temp = 274.21617049923043
+				tempExt = 274.21506646337338
+				tempExtUnexp = 274.21506646337338
+				staticPressureAtm = 0.98940917306142817
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -36624,10 +36624,10 @@ GAME
 			{
 				name = PMB.batteryBankLarge
 				cid = 4289602948
-				uid = 2455258698
-				mid = 745071305
+				uid = 1543275564
+				mid = 2068142176
 				persistentId = 471182658
-				launchID = 85
+				launchID = 86
 				parent = 38
 				position = 0,-54.200977325439453,0
 				rotation = 0,0,0,1
@@ -36646,10 +36646,10 @@ GAME
 				attN = bottom, 40
 				mass = 9.99999975E-05
 				shielded = False
-				temp = 274.65421023498078
-				tempExt = 275.54175823960782
-				tempExtUnexp = 275.54167918567884
-				staticPressureAtm = 0.98938048518265787
+				temp = 274.66032258570488
+				tempExt = 275.549472734983
+				tempExtUnexp = 275.5494690474714
+				staticPressureAtm = 0.98936512474363125
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -36739,10 +36739,10 @@ GAME
 			{
 				name = PMB.Rockomax16.BW
 				cid = 4293210738
-				uid = 2642380448
-				mid = 745071305
+				uid = 644705494
+				mid = 2068142176
 				persistentId = 1156320785
-				launchID = 85
+				launchID = 86
 				parent = 39
 				position = 0,-53.478553771972656,0
 				rotation = 0,0,0,1
@@ -36761,10 +36761,10 @@ GAME
 				attN = bottom, 41
 				mass = 0.281159908
 				shielded = False
-				temp = 274.23427372660655
-				tempExt = 274.37602136883532
-				tempExtUnexp = 274.37559274956192
-				staticPressureAtm = 0.98929592747174155
+				temp = 274.24619692026442
+				tempExt = 274.51027911144058
+				tempExtUnexp = 274.50985746576248
+				staticPressureAtm = 0.98928056703271494
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -37526,7 +37526,7 @@ GAME
 						temperature = 300
 						fillable = True
 						techRequired = 
-						amount = 3271.9999194145203
+						amount = 3599.9999046325684
 						maxAmount = 3599.9999046325684
 					}
 					TANK
@@ -37540,7 +37540,7 @@ GAME
 						temperature = 300
 						fillable = True
 						techRequired = 
-						amount = 3672.0000147819519
+						amount = 4400.0000953674316
 						maxAmount = 4400.0000953674316
 					}
 					TANK
@@ -37583,7 +37583,7 @@ GAME
 				RESOURCE
 				{
 					name = LiquidFuel
-					amount = 3271.9999194145203
+					amount = 3599.9999046325684
 					maxAmount = 3599.9999046325684
 					flowState = True
 					isTweakable = True
@@ -37594,7 +37594,7 @@ GAME
 				RESOURCE
 				{
 					name = Oxidizer
-					amount = 3672.0000147819519
+					amount = 4400.0000953674316
 					maxAmount = 4400.0000953674316
 					flowState = True
 					isTweakable = True
@@ -37607,10 +37607,10 @@ GAME
 			{
 				name = PMB.Rockomax16.BW
 				cid = 4289908726
-				uid = 1873644751
-				mid = 745071305
+				uid = 4088193596
+				mid = 2068142176
 				persistentId = 2893874595
-				launchID = 85
+				launchID = 86
 				parent = 40
 				position = 0,-53.478553771972656,0
 				rotation = 0,0,0,1
@@ -37629,10 +37629,10 @@ GAME
 				attN = bottom, 42
 				mass = 0.281159908
 				shielded = False
-				temp = 274.21756104889295
-				tempExt = 274.37590862099484
-				tempExtUnexp = 274.37548035340217
-				staticPressureAtm = 0.98929592747174155
+				temp = 274.21617474235222
+				tempExt = 274.51005961795573
+				tempExtUnexp = 274.50963828563266
+				staticPressureAtm = 0.98928056703271494
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -38475,10 +38475,10 @@ GAME
 			{
 				name = KK.SPX.F9.Octaweb
 				cid = 4294617648
-				uid = 3937593018
-				mid = 745071305
+				uid = 102292057
+				mid = 2068142176
 				persistentId = 4161287128
-				launchID = 85
+				launchID = 86
 				parent = 41
 				position = 0,-55.686958312988281,0
 				rotation = 0,0,0,1
@@ -38506,10 +38506,10 @@ GAME
 				attN = bottom, 52
 				mass = 0.5
 				shielded = False
-				temp = 274.25195720946442
-				tempExt = 274.38029344953486
-				tempExtUnexp = 274.38001082553063
-				staticPressureAtm = 0.9895544948620234
+				temp = 274.31142230231535
+				tempExt = 274.46395104736871
+				tempExtUnexp = 274.46367962797905
+				staticPressureAtm = 0.98953905912672702
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -38789,10 +38789,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294615978
-				uid = 1641499458
-				mid = 745071305
+				uid = 4004183171
+				mid = 2068142176
 				persistentId = 2460599543
-				launchID = 85
+				launchID = 86
 				parent = 42
 				position = 0,-56.791263580322266,0
 				rotation = 0,0,0,1
@@ -38810,10 +38810,10 @@ GAME
 				attN = top, 42
 				mass = 0.469999999
 				shielded = False
-				temp = 274.2205574848565
-				tempExt = 274.31248813509922
-				tempExtUnexp = 274.31235345269732
-				staticPressureAtm = 0.98968377855716438
+				temp = 274.22425063694067
+				tempExt = 274.3504693792209
+				tempExtUnexp = 274.35034562829065
+				staticPressureAtm = 0.989668342821868
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -38922,11 +38922,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999945723913477
-							ullageHeightMax = 0.99999990977050723
-							ullageRadialMin = 5.9340408149603476E-07
-							ullageRadialMax = 0.99999999657857164
-							UT = 3759928331.1221581
+							ullageHeightMin = 0.89999954626504619
+							ullageHeightMax = 0.99999999399197037
+							ullageRadialMin = 7.3605651908204124E-07
+							ullageRadialMax = 0.99999999984646581
+							UT = 3759928370.8421202
 						}
 					}
 					UPGRADESAPPLIED
@@ -39069,10 +39069,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294615162
-				uid = 610693793
-				mid = 745071305
+				uid = 3839442227
+				mid = 2068142176
 				persistentId = 1114045749
-				launchID = 85
+				launchID = 86
 				parent = 42
 				position = 1.1935441493988037,-56.651264190673828,-0.49438327550888062
 				rotation = 0,0.13052617,0,0.991444945
@@ -39090,10 +39090,10 @@ GAME
 				attN = top, 42
 				mass = 0.469999999
 				shielded = False
-				temp = 274.2205574848565
-				tempExt = 274.31248813509922
-				tempExtUnexp = 274.31235345269732
-				staticPressureAtm = 0.98966736397036137
+				temp = 274.22425063705805
+				tempExt = 274.35046938121116
+				tempExtUnexp = 274.35034563027818
+				staticPressureAtm = 0.98965192823506498
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -39202,11 +39202,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999908950728191
-							ullageHeightMax = 0.99999956338634621
-							ullageRadialMin = 0
-							ullageRadialMax = 0.99999996764842047
-							UT = 3759928331.1221581
+							ullageHeightMin = 0.89999891627729511
+							ullageHeightMax = 0.99999958439799497
+							ullageRadialMin = 6.0058968403174354E-08
+							ullageRadialMax = 0.99999994222906397
+							UT = 3759928370.8421202
 						}
 					}
 					UPGRADESAPPLIED
@@ -39349,10 +39349,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294614724
-				uid = 587290982
-				mid = 745071305
+				uid = 3572537689
+				mid = 2068142176
 				persistentId = 2202196946
-				launchID = 85
+				launchID = 86
 				parent = 42
 				position = 0.49438190460205078,-56.651264190673828,-1.1935462951660156
 				rotation = 0,0.608761489,0,0.793353319
@@ -39370,10 +39370,10 @@ GAME
 				attN = top, 42
 				mass = 0.469999999
 				shielded = False
-				temp = 274.22055748491664
-				tempExt = 274.31248813732384
-				tempExtUnexp = 274.31235345491621
-				staticPressureAtm = 0.98966736397036137
+				temp = 274.22425063694067
+				tempExt = 274.3504693792209
+				tempExtUnexp = 274.35034562829065
+				staticPressureAtm = 0.98965192823506498
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -39482,11 +39482,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999892713218288
-							ullageHeightMax = 0.99999940115521568
-							ullageRadialMin = 0
-							ullageRadialMax = 0.99999996639551869
-							UT = 3759928331.1221581
+							ullageHeightMin = 0.89999923970932705
+							ullageHeightMax = 0.99999972104942147
+							ullageRadialMin = 3.8359205782771171E-07
+							ullageRadialMax = 0.9999999999710435
+							UT = 3759928370.8421202
 						}
 					}
 					UPGRADESAPPLIED
@@ -39629,10 +39629,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294614162
-				uid = 2375585115
-				mid = 745071305
+				uid = 2330034818
+				mid = 2068142176
 				persistentId = 78093436
-				launchID = 85
+				launchID = 86
 				parent = 42
 				position = -0.49438327550888062,-56.651264190673828,-1.1935434341430664
 				rotation = 0,0.866025448,0,0.49999994
@@ -39650,10 +39650,10 @@ GAME
 				attN = top, 42
 				mass = 0.469999999
 				shielded = False
-				temp = 274.2205574848565
-				tempExt = 274.31248813509922
-				tempExtUnexp = 274.31235345269732
-				staticPressureAtm = 0.98966736397036137
+				temp = 274.22425063705805
+				tempExt = 274.35046938121116
+				tempExtUnexp = 274.35034563027818
+				staticPressureAtm = 0.98965192823506498
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -39762,11 +39762,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999934035160722
-							ullageHeightMax = 0.99999976757646336
-							ullageRadialMin = 3.1202202008498581E-07
-							ullageRadialMax = 0.99999999309765797
-							UT = 3759928331.1221581
+							ullageHeightMin = 0.89999912513007185
+							ullageHeightMax = 0.99999968343410184
+							ullageRadialMin = 2.6096494774185965E-07
+							ullageRadialMax = 0.99999997384721939
+							UT = 3759928370.8421202
 						}
 					}
 					UPGRADESAPPLIED
@@ -39909,10 +39909,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294613744
-				uid = 1270218793
-				mid = 745071305
+				uid = 3582994999
+				mid = 2068142176
 				persistentId = 1253440327
-				launchID = 85
+				launchID = 86
 				parent = 42
 				position = -1.1935455799102783,-56.651264190673828,-0.49438267946243286
 				rotation = 0,0.991444945,0,0.130526051
@@ -39930,10 +39930,10 @@ GAME
 				attN = top, 42
 				mass = 0.469999999
 				shielded = False
-				temp = 274.2205574848565
-				tempExt = 274.31248813509922
-				tempExtUnexp = 274.31235345269732
-				staticPressureAtm = 0.98966736397036137
+				temp = 274.22425063694067
+				tempExt = 274.3504693792209
+				tempExtUnexp = 274.35034562829065
+				staticPressureAtm = 0.98965192823506498
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -40042,11 +40042,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999907071038965
-							ullageHeightMax = 0.99999948554238671
-							ullageRadialMin = 0
-							ullageRadialMax = 0.99999998852467575
-							UT = 3759928331.1221581
+							ullageHeightMin = 0.8999992552656505
+							ullageHeightMax = 0.99999983972183515
+							ullageRadialMin = 4.8513755167239654E-07
+							ullageRadialMax = 0.99999996661418533
+							UT = 3759928370.8421202
 						}
 					}
 					UPGRADESAPPLIED
@@ -40189,10 +40189,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294613336
-				uid = 4236244466
-				mid = 745071305
+				uid = 2297354698
+				mid = 2068142176
 				persistentId = 222593185
-				launchID = 85
+				launchID = 86
 				parent = 42
 				position = -1.1935453414916992,-56.651264190673828,0.49438118934631348
 				rotation = 0,0.965925813,0,-0.258819073
@@ -40210,10 +40210,10 @@ GAME
 				attN = top, 42
 				mass = 0.469999999
 				shielded = False
-				temp = 274.22055748488685
-				tempExt = 274.31248813621147
-				tempExtUnexp = 274.31235345380668
-				staticPressureAtm = 0.98966736397036137
+				temp = 274.22425063705805
+				tempExt = 274.35046938121116
+				tempExtUnexp = 274.35034563027818
+				staticPressureAtm = 0.98965192823506498
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -40322,11 +40322,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999930005973117
-							ullageHeightMax = 0.9999997419596911
-							ullageRadialMin = 3.0133543727654005E-07
-							ullageRadialMax = 0.99999999353826419
-							UT = 3759928331.1221581
+							ullageHeightMin = 0.89999874224731446
+							ullageHeightMax = 0.99999930260295988
+							ullageRadialMin = 0
+							ullageRadialMax = 0.99999996974432936
+							UT = 3759928370.8421202
 						}
 					}
 					UPGRADESAPPLIED
@@ -40469,10 +40469,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294612938
-				uid = 2988574283
-				mid = 745071305
+				uid = 465318575
+				mid = 2068142176
 				persistentId = 2882520202
-				launchID = 85
+				launchID = 86
 				parent = 42
 				position = -0.49438399076461792,-56.651264190673828,1.1935451030731201
 				rotation = 0,-0.79335326,0,0.608761549
@@ -40490,10 +40490,10 @@ GAME
 				attN = top, 42
 				mass = 0.469999999
 				shielded = False
-				temp = 274.22055748491664
-				tempExt = 274.31248813732384
-				tempExtUnexp = 274.31235345491621
-				staticPressureAtm = 0.98966736397036137
+				temp = 274.22425063705805
+				tempExt = 274.35046938121116
+				tempExtUnexp = 274.35034563027818
+				staticPressureAtm = 0.98965192823506498
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -40602,11 +40602,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999910192516819
-							ullageHeightMax = 0.99999955649669181
-							ullageRadialMin = 7.3698624330038516E-08
-							ullageRadialMax = 0.99999999749267798
-							UT = 3759928331.1221581
+							ullageHeightMin = 0.89999902616386029
+							ullageHeightMax = 0.99999987651060085
+							ullageRadialMin = 5.1249553839832781E-07
+							ullageRadialMax = 0.99999990334874067
+							UT = 3759928370.8421202
 						}
 					}
 					UPGRADESAPPLIED
@@ -40749,10 +40749,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294612550
-				uid = 3684221960
-				mid = 745071305
+				uid = 1942894332
+				mid = 2068142176
 				persistentId = 1278813865
-				launchID = 85
+				launchID = 86
 				parent = 42
 				position = 0.49438238143920898,-56.651264190673828,1.1935441493988037
 				rotation = 0,0.500000119,0,-0.866025388
@@ -40770,10 +40770,10 @@ GAME
 				attN = top, 42
 				mass = 0.469999999
 				shielded = False
-				temp = 274.2205574848565
-				tempExt = 274.31248813509922
-				tempExtUnexp = 274.31235345269732
-				staticPressureAtm = 0.98966736397036137
+				temp = 274.22425063705805
+				tempExt = 274.35046938121116
+				tempExtUnexp = 274.35034563027818
+				staticPressureAtm = 0.98965192823506498
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -40882,11 +40882,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.89999923016399119
-							ullageHeightMax = 0.99999969053364846
-							ullageRadialMin = 2.202690827985212E-07
-							ullageRadialMax = 0.99999998887571095
-							UT = 3759928331.1221581
+							ullageHeightMin = 0.89999614680365692
+							ullageHeightMax = 0.99999709521197178
+							ullageRadialMin = 0
+							ullageRadialMax = 0.99999987105442101
+							UT = 3759928370.8421202
 						}
 					}
 					UPGRADESAPPLIED
@@ -41029,10 +41029,10 @@ GAME
 			{
 				name = PMB.F9.Merlin1Dplusplus
 				cid = 4294612172
-				uid = 1262534260
-				mid = 745071305
+				uid = 2679615358
+				mid = 2068142176
 				persistentId = 3738231478
-				launchID = 85
+				launchID = 86
 				parent = 42
 				position = 1.1935436725616455,-56.651264190673828,0.49438291788101196
 				rotation = 0,0.130526111,0,-0.991444886
@@ -41050,10 +41050,10 @@ GAME
 				attN = top, 42
 				mass = 0.469999999
 				shielded = False
-				temp = 274.22055748491664
-				tempExt = 274.31248813732384
-				tempExtUnexp = 274.31235345491621
-				staticPressureAtm = 0.98966736397036137
+				temp = 274.22425063694067
+				tempExt = 274.3504693792209
+				tempExtUnexp = 274.35034562829065
+				staticPressureAtm = 0.98965192823506498
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -41162,11 +41162,11 @@ GAME
 					{
 						UllageSim
 						{
-							ullageHeightMin = 0.8999991742172615
-							ullageHeightMax = 0.99999961823997385
-							ullageRadialMin = 1.9437476245623544E-08
-							ullageRadialMax = 0.99999998012473057
-							UT = 3759928331.1221581
+							ullageHeightMin = 0.89999861278608784
+							ullageHeightMax = 0.99999910302143402
+							ullageRadialMin = 0
+							ullageRadialMax = 0.9999999979507973
+							UT = 3759928370.8421202
 						}
 					}
 					UPGRADESAPPLIED
@@ -41309,10 +41309,10 @@ GAME
 			{
 				name = Vandy.F9
 				cid = 4290141218
-				uid = 1373358647
-				mid = 745071305
+				uid = 159792975
+				mid = 2068142176
 				persistentId = 2417303758
-				launchID = 85
+				launchID = 86
 				parent = 42
 				position = 0,-59.186958312988281,0
 				rotation = 0,0,0,-1
@@ -41330,10 +41330,10 @@ GAME
 				attN = top, 42
 				mass = 5
 				shielded = False
-				temp = 274.41155067813673
-				tempExt = 274.72483819384058
-				tempExtUnexp = 274.72407527577076
-				staticPressureAtm = 0.98996433245820992
+				temp = 274.62836789544019
+				tempExt = 274.94009394198656
+				tempExtUnexp = 274.93942317530224
+				staticPressureAtm = 0.98994889672291353
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -41578,10 +41578,10 @@ GAME
 			{
 				name = 1mv.sensor.accelerometer.srf.1
 				cid = 4292396350
-				uid = 2819940682
-				mid = 745071305
+				uid = 2216574169
+				mid = 2068142176
 				persistentId = 2991313796
-				launchID = 85
+				launchID = 86
 				parent = 42
 				position = 1.8292410373687744,-55.423107147216797,1.1175870895385742E-07
 				rotation = 2.75255729E-09,0.707106829,-2.75255729E-09,0.707106829
@@ -41599,10 +41599,10 @@ GAME
 				srfN = srfAttach, 42,collider_Octaweb
 				mass = 0.00499999989
 				shielded = False
-				temp = 274.22011859351124
-				tempExt = 274.36313467111529
-				tempExtUnexp = 274.3628460861251
-				staticPressureAtm = 0.98952354809516097
+				temp = 274.22421636703223
+				tempExt = 274.44011566438149
+				tempExtUnexp = 274.43988299344915
+				staticPressureAtm = 0.98950811235986458
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -41764,10 +41764,10 @@ GAME
 			{
 				name = 1mv.sensor.accelerometer.srf.1
 				cid = 4292396304
-				uid = 529258818
-				mid = 745071305
+				uid = 4231004722
+				mid = 2068142176
 				persistentId = 4039797537
-				launchID = 85
+				launchID = 86
 				parent = 42
 				position = -1.8292410373687744,-55.423107147216797,4.4703483581542969E-08
 				rotation = -2.75255752E-09,0.707106769,-2.75255707E-09,-0.707106888
@@ -41785,10 +41785,10 @@ GAME
 				srfN = srfAttach, 42,collider_Octaweb
 				mass = 0.00499999989
 				shielded = False
-				temp = 274.22011859351124
-				tempExt = 274.36313467111529
-				tempExtUnexp = 274.3628460861251
-				staticPressureAtm = 0.98952354809516097
+				temp = 274.22421636703223
+				tempExt = 274.44011566438149
+				tempExtUnexp = 274.43988299344915
+				staticPressureAtm = 0.98950818765613435
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -41950,10 +41950,10 @@ GAME
 			{
 				name = launchClamp1
 				cid = 4288280982
-				uid = 1345310939
-				mid = 745071305
+				uid = 2525223031
+				mid = 2068142176
 				persistentId = 3000955265
-				launchID = 85
+				launchID = 86
 				parent = 28
 				position = 0,-51.631290435791016,2.6251838207244873
 				rotation = 2.61119207E-23,1,7.04271897E-15,-3.70764774E-09
@@ -41970,10 +41970,10 @@ GAME
 				srfN = srfAttach, 28,collider_F913_S1FuelTank_collider
 				mass = 0.100000001
 				shielded = False
-				temp = 274.21755637541162
-				tempExt = 274.21795538808391
-				tempExtUnexp = 274.21795538808391
-				staticPressureAtm = 0.98907975188132247
+				temp = 274.21617003850486
+				tempExt = 274.21656985226673
+				tempExtUnexp = 274.21656985226673
+				staticPressureAtm = 0.98906431614602608
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -42014,7 +42014,7 @@ GAME
 				{
 					name = LaunchClamp
 					isEnabled = True
-					scaleFactor = 4.34615183
+					scaleFactor = 4.34614801
 					height = 10.966197
 					stagingEnabled = True
 					towerRot = -2.61119207E-23,-1,-7.04271897E-15,-3.70764774E-09
@@ -42193,10 +42193,10 @@ GAME
 			{
 				name = Grid Fin L Titanium
 				cid = 4293607304
-				uid = 2056449262
-				mid = 745071305
+				uid = 2190790171
+				mid = 2068142176
 				persistentId = 2328081720
-				launchID = 85
+				launchID = 86
 				parent = 23
 				position = -1.3529086112976074,-15.369880676269531,1.1285436153411865
 				rotation = 0.321438849,1.23223515E-07,0.946930349,3.63005512E-07
@@ -42216,10 +42216,10 @@ GAME
 				srfN = srfAttach, 23,collider_F912_Interstage
 				mass = 0.140000001
 				shielded = False
-				temp = 274.21776711116189
-				tempExt = 274.23603069890169
-				tempExtUnexp = 274.23601558938662
-				staticPressureAtm = 0.984844261412264
+				temp = 274.21667015084876
+				tempExt = 274.23695817965847
+				tempExtUnexp = 274.23695544044404
+				staticPressureAtm = 0.98482890097323739
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -42473,10 +42473,10 @@ GAME
 			{
 				name = Grid Fin L Titanium
 				cid = 4293603000
-				uid = 1355681646
-				mid = 745071305
+				uid = 1387426814
+				mid = 2068142176
 				persistentId = 2086285366
-				launchID = 85
+				launchID = 86
 				parent = 23
 				position = 1.128543496131897,-15.369880676269531,1.3529086112976074
 				rotation = 0.896872461,3.43815827E-07,0.442289263,1.6955147E-07
@@ -42496,10 +42496,10 @@ GAME
 				srfN = srfAttach, 23,collider_F912_Interstage
 				mass = 0.140000001
 				shielded = False
-				temp = 274.21776711116189
-				tempExt = 274.23603069890169
-				tempExtUnexp = 274.23601558938662
-				staticPressureAtm = 0.984844261412264
+				temp = 274.21667015084876
+				tempExt = 274.23695817965847
+				tempExtUnexp = 274.23695544044404
+				staticPressureAtm = 0.98482890097323739
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -42741,10 +42741,10 @@ GAME
 			{
 				name = Grid Fin L Titanium
 				cid = 4293602924
-				uid = 146020329
-				mid = 745071305
+				uid = 636977142
+				mid = 2068142176
 				persistentId = 4066078995
-				launchID = 85
+				launchID = 86
 				parent = 23
 				position = 1.3529084920883179,-15.369880676269531,-1.1285436153411865
 				rotation = 0.946930349,3.63005512E-07,-0.321438879,-1.23223529E-07
@@ -42764,10 +42764,10 @@ GAME
 				srfN = srfAttach, 23,collider_F912_Interstage
 				mass = 0.140000001
 				shielded = False
-				temp = 274.21776711116189
-				tempExt = 274.23603069890169
-				tempExtUnexp = 274.23601558938662
-				staticPressureAtm = 0.984844261412264
+				temp = 274.21667015084876
+				tempExt = 274.23695817965847
+				tempExtUnexp = 274.23695544044404
+				staticPressureAtm = 0.98482890097323739
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -43009,10 +43009,10 @@ GAME
 			{
 				name = Grid Fin L Titanium
 				cid = 4293602848
-				uid = 3626553179
-				mid = 745071305
+				uid = 1631282744
+				mid = 2068142176
 				persistentId = 3320852100
-				launchID = 85
+				launchID = 86
 				parent = 23
 				position = -1.1285436153411865,-15.369880676269531,-1.3529083728790283
 				rotation = 0.442289263,1.6955147E-07,-0.896872461,-3.43815827E-07
@@ -43032,10 +43032,10 @@ GAME
 				srfN = srfAttach, 23,collider_F912_Interstage
 				mass = 0.140000001
 				shielded = False
-				temp = 274.21776711116189
-				tempExt = 274.23603069890169
-				tempExtUnexp = 274.23601558938662
-				staticPressureAtm = 0.984844261412264
+				temp = 274.21667015084876
+				tempExt = 274.23695817965847
+				tempExtUnexp = 274.23695544044404
+				staticPressureAtm = 0.98482890097323739
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -43277,10 +43277,10 @@ GAME
 			{
 				name = KK.SPX.FalconPayloadFairing
 				cid = 4293981642
-				uid = 970081316
-				mid = 745071305
+				uid = 3232680646
+				mid = 2068142176
 				persistentId = 2615176020
-				launchID = 85
+				launchID = 86
 				parent = 13
 				position = 0,5.7186431884765625,0
 				rotation = 0,0,0,1
@@ -43299,10 +43299,10 @@ GAME
 				attN = bottom, 13
 				mass = 1.05999994
 				shielded = False
-				temp = 274.21755887989781
-				tempExt = 274.21788657837283
-				tempExtUnexp = 274.21788657837283
-				staticPressureAtm = 0.98238839827847424
+				temp = 274.21617254286593
+				tempExt = 274.21650114649742
+				tempExtUnexp = 274.21650114649742
+				staticPressureAtm = 0.98237311313571729
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -43538,10 +43538,10 @@ GAME
 			{
 				name = KK.SpX.FRH
 				cid = 4293834884
-				uid = 2396712159
-				mid = 745071305
+				uid = 382301585
+				mid = 2068142176
 				persistentId = 1817341965
-				launchID = 85
+				launchID = 86
 				parent = 60
 				position = 0,5.7186431884765625,0
 				rotation = 0,0.707106829,0,0.707106829
@@ -43559,10 +43559,10 @@ GAME
 				attN = bottom, 60
 				mass = 0.200000003
 				shielded = False
-				temp = 274.21762065280461
-				tempExt = 274.2384283247593
-				tempExtUnexp = 274.2384280318127
-				staticPressureAtm = 0.98238839827847424
+				temp = 274.2163223538177
+				tempExt = 274.24228335975852
+				tempExtUnexp = 274.24228297543868
+				staticPressureAtm = 0.98237311313571729
 				expt = 0
 				state = 0
 				PreFailState = 0
@@ -44017,7 +44017,7 @@ GAME
 							file
 							{
 								filename = boot-fairings.ks
-								binary = H4sIAAJu5l8A,72T0U,bMBDGn9u,4tQneEjcdqjrIk2oUDEmQO2ajjFNCF3iS2yaxJbtNHR,,eyWiU3THuEeLJ19+t3n82fGIHrF6Hv+hayowZoSyJRykV+sI2Pjje2,QferRQppbqR2Fgpl4CpdglOQEbSWOKgGUo053T1cY9vk4uGWhMwrsnCjOHTSCTha1pkyJawWcOt1S9Ucw1soP1ecINtBAs8CIhDOaZsw5i,S1vGGTIaVDfK1UaXBOs5VzWTD6SnWQp8yv1346bPRh+l0Mor0nsMC,IwcQqWQQ2FUnUDvBd51XcyN0pl62vOsYI98pMSET4cTuUM3YrPZGb7Hu0x+nxfb6acIv5zc7FaRw1NefRwG,jU6sg7mqmtCl+QP8aUfapvt0c+CDi8QrRbRBVa5avbGWLZGK+tdE5K,Yi2kPWjvDGpNBnCrJA,PaigiLh1gw8HilgDBqHxDDh5bL8dX5AKbksAJgjwMWBX,8AfBp8w6LCkqUBrZlMGtAwizjH15z8fX4B7PG1S+lz,6XRdo43dsTj,ZeDgevrpR+um3z+vzS1gvYBj3GHtJORXYVg6Ws,VlAj+88e9ZKqS27PAf+qZtNDpx9L,7Hse,AJK78PoeBAAA
+								binary = H4sIAGk0518A,72T0U,bMBDGn9u,4tQneEjcdqjrIk2oUDEmQO2ajjFNCF3iS2yaxJbtNHR,,eyWiU3THuEeLJ19+t3n82fGIHrF6Hv+hayowZoSyJRykV+sI2Pjje2,QferRQppbqR2Fgpl4CpdglOQEbSWOKgGUo053T1cY9vk4uGWhMwrsnCjOHTSCTha1pkyJawWcOt1S9Ucw1soP1ecINtBAs8CIhDOaZsw5i,S1vGGTIaVDfK1UaXBOs5VzWTD6SnWQp8yv1346bPRh+l0Mor0nsMC,IwcQqWQQ2FUnUDvBd51XcyN0pl62vOsYI98pMSET4cTuUM3YrPZGb7Hu0x+nxfb6acIv5zc7FaRw1NefRwG,jU6sg7mqmtCl+QP8aUfapvt0c+CDi8QrRbRBVa5avbGWLZGK+tdE5K,Yi2kPWjvDGpNBnCrJA,PaigiLh1gw8HilgDBqHxDDh5bL8dX5AKbksAJgjwMWBX,8AfBp8w6LCkqUBrZlMGtAwizjH15z8fX4B7PG1S+lz,6XRdo43dsTj,ZeDgevrpR+um3z+vzS1gvYBj3GHtJORXYVg6Ws,VlAj+88e9ZKqS27PAf+qZtNDpx9L,7Hse,AJK78PoeBAAA
 							}
 						}
 					}
@@ -44082,10 +44082,10 @@ GAME
 			{
 				name = KK.SPX.FalconPayloadFairing
 				cid = 4292233102
-				uid = 1218886037
-				mid = 745071305
+				uid = 3304589586
+				mid = 2068142176
 				persistentId = 3728534034
-				launchID = 85
+				launchID = 86
 				parent = 13
 				position = 0,5.7186431884765625,0
 				rotation = 0,1,0,0
@@ -44104,10 +44104,10 @@ GAME
 				attN = bottom, 13
 				mass = 1.05999994
 				shielded = False
-				temp = 274.21755887989781
-				tempExt = 274.21788657837283
-				tempExtUnexp = 274.21788657837283
-				staticPressureAtm = 0.98238839827847424
+				temp = 274.21617254286593
+				tempExt = 274.21650104676701
+				tempExtUnexp = 274.21650104676701
+				staticPressureAtm = 0.98237311313571729
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -44343,10 +44343,10 @@ GAME
 			{
 				name = KK.SpX.FRH
 				cid = 4292232992
-				uid = 534257632
-				mid = 745071305
+				uid = 3039138790
+				mid = 2068142176
 				persistentId = 277475472
-				launchID = 85
+				launchID = 86
 				parent = 62
 				position = 0,5.7186431884765625,0
 				rotation = 0,0.707106829,0,-0.707106829
@@ -44364,10 +44364,10 @@ GAME
 				attN = bottom, 62
 				mass = 0.200000003
 				shielded = False
-				temp = 274.21762065280461
-				tempExt = 274.2384283247593
-				tempExtUnexp = 274.2384280318127
-				staticPressureAtm = 0.98238839827847424
+				temp = 274.21629351847491
+				tempExt = 274.23712832002371
+				tempExtUnexp = 274.23712821202923
+				staticPressureAtm = 0.98237311313571729
 				expt = 0
 				state = 0
 				PreFailState = 0
@@ -44818,7 +44818,7 @@ GAME
 							file
 							{
 								filename = boot-fairings.ks
-								binary = H4sIAAJu5l8A,72T0U,bMBDGn9u,4tQneEjcdqjrIk2oUDEmQO2ajjFNCF3iS2yaxJbtNHR,,eyWiU3THuEeLJ19+t3n82fGIHrF6Hv+hayowZoSyJRykV+sI2Pjje2,QferRQppbqR2Fgpl4CpdglOQEbSWOKgGUo053T1cY9vk4uGWhMwrsnCjOHTSCTha1pkyJawWcOt1S9Ucw1soP1ecINtBAs8CIhDOaZsw5i,S1vGGTIaVDfK1UaXBOs5VzWTD6SnWQp8yv1346bPRh+l0Mor0nsMC,IwcQqWQQ2FUnUDvBd51XcyN0pl62vOsYI98pMSET4cTuUM3YrPZGb7Hu0x+nxfb6acIv5zc7FaRw1NefRwG,jU6sg7mqmtCl+QP8aUfapvt0c+CDi8QrRbRBVa5avbGWLZGK+tdE5K,Yi2kPWjvDGpNBnCrJA,PaigiLh1gw8HilgDBqHxDDh5bL8dX5AKbksAJgjwMWBX,8AfBp8w6LCkqUBrZlMGtAwizjH15z8fX4B7PG1S+lz,6XRdo43dsTj,ZeDgevrpR+um3z+vzS1gvYBj3GHtJORXYVg6Ws,VlAj+88e9ZKqS27PAf+qZtNDpx9L,7Hse,AJK78PoeBAAA
+								binary = H4sIAGk0518A,72T0U,bMBDGn9u,4tQneEjcdqjrIk2oUDEmQO2ajjFNCF3iS2yaxJbtNHR,,eyWiU3THuEeLJ19+t3n82fGIHrF6Hv+hayowZoSyJRykV+sI2Pjje2,QferRQppbqR2Fgpl4CpdglOQEbSWOKgGUo053T1cY9vk4uGWhMwrsnCjOHTSCTha1pkyJawWcOt1S9Ucw1soP1ecINtBAs8CIhDOaZsw5i,S1vGGTIaVDfK1UaXBOs5VzWTD6SnWQp8yv1346bPRh+l0Mor0nsMC,IwcQqWQQ2FUnUDvBd51XcyN0pl62vOsYI98pMSET4cTuUM3YrPZGb7Hu0x+nxfb6acIv5zc7FaRw1NefRwG,jU6sg7mqmtCl+QP8aUfapvt0c+CDi8QrRbRBVa5avbGWLZGK+tdE5K,Yi2kPWjvDGpNBnCrJA,PaigiLh1gw8HilgDBqHxDDh5bL8dX5AKbksAJgjwMWBX,8AfBp8w6LCkqUBrZlMGtAwizjH15z8fX4B7PG1S+lz,6XRdo43dsTj,ZeDgevrpR+um3z+vzS1gvYBj3GHtJORXYVg6Ws,VlAj+88e9ZKqS27PAf+qZtNDpx9L,7Hse,AJK78PoeBAAA
 							}
 						}
 					}
@@ -44883,10 +44883,10 @@ GAME
 			{
 				name = 1mv.sensor.accelerometer.srf.1
 				cid = 4293537238
-				uid = 762302254
-				mid = 745071305
+				uid = 2517497163
+				mid = 2068142176
 				persistentId = 1803750239
-				launchID = 85
+				launchID = 86
 				parent = 0
 				position = 0,0.24139404296875,0.72796446084976196
 				rotation = 1.11758652E-07,2.48352563E-07,2.77555485E-14,-1
@@ -44903,10 +44903,10 @@ GAME
 				srfN = srfAttach, 0,COL
 				mass = 0.00499999989
 				shielded = False
-				temp = 274.21916437372374
-				tempExt = 274.2991706932844
-				tempExtUnexp = 274.29907197610908
-				staticPressureAtm = 0.98302570590554061
+				temp = 274.22032460086547
+				tempExt = 274.31661108114918
+				tempExtUnexp = 274.31657575129202
+				staticPressureAtm = 0.98301042076278367
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -45068,10 +45068,10 @@ GAME
 			{
 				name = xenonTankRadial
 				cid = 4293952634
-				uid = 2492850065
-				mid = 745071305
+				uid = 3908747202
+				mid = 2068142176
 				persistentId = 2117410303
-				launchID = 85
+				launchID = 86
 				parent = 0
 				position = 0.400816410779953,-0.36487579345703125,-0.40081632137298584
 				rotation = 8.25153113E-10,0.382683426,3.41789597E-10,-0.923879564
@@ -45091,10 +45091,10 @@ GAME
 				srfN = srfAttach, 0,COL
 				mass = 0.00133953523
 				shielded = False
-				temp = 274.23955188244162
-				tempExt = 274.28121722896685
-				tempExtUnexp = 274.28114956021642
-				staticPressureAtm = 0.98309625851028559
+				temp = 274.26026482130635
+				tempExt = 274.29912947912436
+				tempExtUnexp = 274.29907355544248
+				staticPressureAtm = 0.98308097336752864
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -45311,10 +45311,10 @@ GAME
 			{
 				name = xenonTankRadial
 				cid = 4293950514
-				uid = 2596333511
-				mid = 745071305
+				uid = 3427494524
+				mid = 2068142176
 				persistentId = 149040257
-				launchID = 85
+				launchID = 86
 				parent = 0
 				position = -0.40081626176834106,-0.36487579345703125,-0.400816410779953
 				rotation = 8.25153113E-10,-0.382683456,-3.41789624E-10,-0.923879564
@@ -45334,10 +45334,10 @@ GAME
 				srfN = srfAttach, 0,COL
 				mass = 0.00133953523
 				shielded = False
-				temp = 274.23955188244162
-				tempExt = 274.28121722896685
-				tempExtUnexp = 274.28114956021642
-				staticPressureAtm = 0.98309633380655526
+				temp = 274.26026482130635
+				tempExt = 274.29912947912436
+				tempExtUnexp = 274.29907355544248
+				staticPressureAtm = 0.98308097336752864
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -45554,10 +45554,10 @@ GAME
 			{
 				name = xenonTankRadial
 				cid = 4293950474
-				uid = 3738693825
-				mid = 745071305
+				uid = 3767873219
+				mid = 2068142176
 				persistentId = 2656523746
-				launchID = 85
+				launchID = 86
 				parent = 0
 				position = -0.40081638097763062,-0.36487579345703125,0.40081635117530823
 				rotation = 3.41789569E-10,-0.923879564,-8.25153113E-10,-0.382683396
@@ -45577,10 +45577,10 @@ GAME
 				srfN = srfAttach, 0,COL
 				mass = 0.00133953523
 				shielded = False
-				temp = 274.23955188244162
-				tempExt = 274.28121722896685
-				tempExtUnexp = 274.28114956021642
-				staticPressureAtm = 0.98309625851028559
+				temp = 274.26026482130635
+				tempExt = 274.29912947912436
+				tempExtUnexp = 274.29907355544248
+				staticPressureAtm = 0.98308097336752864
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -45797,10 +45797,10 @@ GAME
 			{
 				name = xenonTankRadial
 				cid = 4293950434
-				uid = 1530952200
-				mid = 745071305
+				uid = 1851697695
+				mid = 2068142176
 				persistentId = 2909101823
-				launchID = 85
+				launchID = 86
 				parent = 0
 				position = 0.40081632137298584,-0.36487579345703125,0.40081635117530823
 				rotation = -3.41789624E-10,-0.923879564,-8.25153113E-10,0.382683456
@@ -45820,10 +45820,10 @@ GAME
 				srfN = srfAttach, 0,COL
 				mass = 0.00133953523
 				shielded = False
-				temp = 274.23955188244162
-				tempExt = 274.28121722896685
-				tempExtUnexp = 274.28114956021642
-				staticPressureAtm = 0.98309625851028559
+				temp = 274.26026482130635
+				tempExt = 274.29912947912436
+				tempExtUnexp = 274.29907355544248
+				staticPressureAtm = 0.98308097336752864
 				expt = 0.5
 				state = 0
 				PreFailState = 0
