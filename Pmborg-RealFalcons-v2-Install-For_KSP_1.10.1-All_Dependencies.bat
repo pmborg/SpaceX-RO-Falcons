@@ -119,7 +119,7 @@ REM INSTALL: ISS (International SpaceStation) Dep-1:
 	move GameData\AJE %NONEED%
 	move GameData\EngineGroupController %NONEED%
 
-	echo "declare global kspver to 1.10." > Ships\Script\kspver.c.
+	echo set kspver to 1.10. > Ships\Script\kspver.c.
 	PAUSE
 :No
 	EXIT

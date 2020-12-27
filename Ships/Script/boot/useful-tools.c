@@ -150,6 +150,8 @@ function update_phase_title
 	}
 	//ORI
 	PRINT "--------------------------------------------------"at (0,1). 
+	if kspver > 0
+		PRINT "ksp "+kspver at (20,1). 
 	
 	if STAGE_1_TYPE = "MASTER"		//FH
 		PRINT "(Mast)" at (44,1).
