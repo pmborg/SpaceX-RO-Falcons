@@ -186,7 +186,7 @@ function do_circle_step
 		set Vroll to -270.			// Zero Rotation
 		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).	//LOCK STEERING TO heading (90, PlanetOuter*theta).
 
-		//wait 0.25.
+		wait 0.025.
 		if SHIP:ORBIT:ECCENTRICITY > last_ecc and SHIP:ORBIT:ECCENTRICITY < 0.1 and periapsis > BODY:ATM:HEIGHT
 		{
 			LOCK THROTTLE TO 0.
