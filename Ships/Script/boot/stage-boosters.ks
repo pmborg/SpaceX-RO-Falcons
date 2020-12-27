@@ -12,7 +12,7 @@
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 CLEARSCREEN.
-
+WAIT 1.
 //Define Offline (defautl) Values: https://www.fcc.gov/media/radio/dms-decimal
 declare global offline_LandingZone1 to latlng(28.612903098335448, -80.619702431884079).
 declare global offline_LandingZone2 to latlng(28.612890963687462, -80.621613149083217).
@@ -31,6 +31,7 @@ declare global LandingTarget TO LandingZone:GEOPOSITION.	// Landing Target Geopo
 
 if CORE:BOOTFILENAME:FIND("boot-boosters-L.ks") > -1 		// STAGE-1L
 {
+	WAIT 1.
 	runpath("SLAVE.TXT"). 	// Get "SLAVE_STAGE" Phase
 	runpath("boot/"+SLAVE_STAGE+".c").
 } else {

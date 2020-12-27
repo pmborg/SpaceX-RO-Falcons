@@ -14,14 +14,15 @@ SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 core:doaction("Open Terminal", true).
 CLEARSCREEN.
 
+DELETEPATH("SLAVE.TXT").
+LOG  "SET SLAVE_STAGE to 0." to SLAVE.TXT.
+
 if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 	DELETEPATH("CIRCULARIZE.txt").
 	
 DELETEPATH("LOG.txt").
 DELETEPATH("MAIN_SHIP.txt").
-DELETEPATH("SLAVE.TXT").
 RUNPATH( "boot/sw-version.c" ).
-LOG  "["+STAGE_1_TYPE+"SET SLAVE_STAGE to 0." to SLAVE.TXT.
 
 LIST PROCESSORS IN ALL_PROCESSORS.
 PRINT  "TOTAL CPU PROCESSORS: "+ALL_PROCESSORS:LENGTH.
