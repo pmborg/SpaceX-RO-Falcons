@@ -12,7 +12,7 @@ The **SpaceX-RO-Falcons** Mod Introduce:
 * Expand the physics of KSP to allow multiple ships flying at the same time, but with high performance.<br>
 * All parts to create all the Falcon rocket family are available.
 * LEO and GSO Payloads are allowed.
-* Land or Sea landings is a *User Choise*.
+* Land or Sea landings is a *User Choise* ([KSP-ROOT-DIR]/Ships/Script/boot/**USER-CONFIG.KS**).
 * Faring separation.
 * ST-2 Deorbit.
 * In resume all types of missions are coded in KOS.
