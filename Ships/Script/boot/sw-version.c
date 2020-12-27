@@ -102,6 +102,8 @@ if SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" or
    SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
 	set vehicle_sub_type to "Falcon Heavy LEM".
 
+if CORE:BOOTFILENAME:FIND("boot-fairings.ks") > -1
+	set vehicle_type to "Fairing".
 
 //STAGE_1_TYPE:
 ////////////////////////////////////////////////////////////////////////////////////////////////

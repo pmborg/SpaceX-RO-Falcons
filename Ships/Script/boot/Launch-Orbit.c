@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 21/Dez/2020
+// 27/Dez/2020
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 set FINAL_ORBIT2 to FINAL_ORBIT.// For Phase-2 falcon stage-2
@@ -16,7 +16,7 @@ set FINAL_ORBIT  to 150000. 	//(FINAL_ORBIT/2) - For Phase-1 falcon stage-1
 set phase to 0.
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-function main_lifoff
+function main_liftoff
 {
 	if vehicle_type = "Falcon Heavy" 
 		set str_vehicle to vehicle_type.
@@ -179,7 +179,7 @@ if alt:radar < 100
 {
 	//WAIT for the GO!
 	////////////////////////////////////////////////////////////////////////////////////////////////
-	main_lifoff().
+	main_liftoff().
 	
 	//LIFTOFF...
 	////////////////////////////////////////////////////////////////////////////////////////////////	

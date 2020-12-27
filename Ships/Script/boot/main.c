@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestre all mission phases.
-// 26/Dez/2020
+// 27/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 // Reset Engine settings before all, ("migth be a reboot")
@@ -104,6 +104,8 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
 			UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 		}
+		CLEARSCREEN.
+		print " ".print " ".print " ".
 		RCS OFF.
 		SAS OFF.
 		LOCK STEERING TO SHIP:prograde.
