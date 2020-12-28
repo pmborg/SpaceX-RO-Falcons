@@ -20,9 +20,9 @@
 // [ok] F9 ST-2 LEO ORBIT				1.20.12.27 ("LAND") 1.20.12.28 ("SEA")
 // [ok] F9 ST-2 DE-ORBIT				1.20.12.27 ("LAND") 1.20.12.28 ("SEA")
 
-// [ok] Crew Dragon 2 QMAX				1.20.12.10
-// [ok] Crew Dragon 2 STAGE				1.20.12.10
-// [ok] Crew Dragon 2 ST-1 LANDING		1.20.12.10
+// [ok] Crew Dragon 2 QMAX				1.20.12.28 ("LAND")
+// [ok] Crew Dragon 2 STAGE				1.20.12.28 ("LAND")
+// [ok] Crew Dragon 2 ST-1 LANDING		1.20.12.28 ("LAND")
 // [ok] Crew Dragon 2 DRAGON LEO ORBIT	1.20.11.21
 
 // [ok] FH ST1 QMAX						1.20.12.07

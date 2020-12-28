@@ -29,7 +29,7 @@ function wait_for_AP
 {
 	parameter w.
 
-	update_phase_title("WAIT FOR APOAPSIS",1, true).	
+	update_phase_title("C-WAIT FOR APOAPSIS",1, true).	
 	set warp to 0.
 	LOCK STEERING TO SHIP:PROGRADE.//  + R(0,0,180).
 	if eta:apoapsis > 3000
@@ -40,9 +40,9 @@ function wait_for_AP
 	until eta:apoapsis < 3000 and saved
 	{
 		WAIT 1.
-		if (KUniverse:ActiveVessel = SHIP) and (vehicle_type = "F9v1.2B5") and (NOT EXISTS("CIRCULARIZE.txt"))
+		if (KUniverse:ActiveVessel = SHIP) and (NOT EXISTS("CIRCULARIZE.txt")) //and (vehicle_type = "F9v1.2B5")
 		{
-			update_phase_title("RESUME CIRCULARIZE",1, true).	//WA: to KSP bug.
+			update_phase_title("C-RESUME CIRCULARIZE",1, true).	//WA: to KSP bug.
 			kuniverse:QUICKSAVETO("RESUME-CIRCULARIZE").
 			wait 1.
 			LOG  "Done" to CIRCULARIZE.txt.
@@ -53,7 +53,7 @@ function wait_for_AP
 	}
 	if vehicle_type <> "Crew Dragon 2" and KUniverse:ActiveVessel = SHIP
 		set warp to 2.
-	update_phase_title("Circularize T-3000",1, true).	
+	update_phase_title("C-Circularize T-3000",1, true).	
 	
 	WAIT until eta:apoapsis < 100.
 	if vehicle_type <> "Crew Dragon 2" and KUniverse:ActiveVessel = SHIP
@@ -61,12 +61,12 @@ function wait_for_AP
 		set kuniverse:timewarp:MODE to "PHYSICS". wait 1.//WARP with PHYSICS
 		set warp to 3.
 	}
-	update_phase_title("Circularize T-100",1, true).	
+	update_phase_title("C-Circularize T-100",1, true).	
 	
 	WAIT until eta:apoapsis < w.
 	set kuniverse:timewarp:MODE to "RAILS".	//RESET
 	set warp to 0.
-	update_phase_title("Circularize T-"+w,1, true).
+	update_phase_title("C-Circularize T-"+w,1, true).
 }
 
 function do_circle_step
@@ -209,7 +209,7 @@ WAIT 5. print "2".
 WAIT 5. print "1".
 
 clearscreen.
-update_phase_title("Circularize",1, true).
+update_phase_title("C-Circularize",1, true).
 PRINT "Vertical Speed" 	at (0,2).
 PRINT "Orbital Speed" 	at (0,3).
 PRINT "Target (Vcir)" 	at (0,4).
@@ -226,7 +226,7 @@ do_circle_step().
 RCS OFF.
 wait 5.
 CLEARSCREEN.
-update_phase_title("Craft in Parking Orbit", 1, true).
+update_phase_title("C-In Parking Orbit", 1, true).
 set e to (apoapsis-periapsis)/(apoapsis+periapsis).
 PRINT "Eccentricity Error: " at (0,2). PRINT ROUND(e,2) at (20,2).
 WAIT 5.
