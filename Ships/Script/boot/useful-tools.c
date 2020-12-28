@@ -291,19 +291,21 @@ function flip_maneuver
 			set steeringDir TO steeringDir-45.
 			
 		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).//steering_falcon(Vdeg).
-		//WAIT 5. // wait for SEP
 	} else {
 		update_phase_title("STAGE-1 SEPARATION...   ", 0, true).
 		LOCK STEERING TO SHIP:PROGRADE  + R(0,0,180).
-		//WAIT 7. // wait for SEP
 	}
 	
-	WAIT 5. // wait for SEP
+	if vehicle_type = "Crew Dragon 2"
+		WAIT 1.
+	else
+		WAIT 5. // wait for SEP
 	PRINT_STATUS (3).
 	
+	//FLIP MANEUVER -------------------------------------------------------
 	CLEARSCREEN.
-	RCS ON.
 	update_phase_title("FLIP MANEUVER   ", 0, true).
+	RCS ON.
 	set wait_max_sec to 25.
 	FROM {local x is wait_max_sec.} UNTIL x = 0 STEP {set x to x-1.} DO 
 	{

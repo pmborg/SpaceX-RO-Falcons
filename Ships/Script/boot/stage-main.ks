@@ -24,7 +24,7 @@ if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 	DELETEPATH("LOG.txt").
 	DELETEPATH("MAIN_SHIP.txt").
 }
-
+DELETEPATH("FLIP.txt"). 				//Reload, maybe?
 
 // DEFINE MISSION PROFILE: -------------------------------------------------------
 RUNPATH( "boot/sw-version.c" ).

@@ -29,7 +29,7 @@ set in_sync to false.
 if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 {
 	DELETEPATH("1:/STAGE1_TARGET_FILE.c"). 	//KOS local HD
-	DELETEPATH("FLIP.txt"). 				//Real HD
+	//DELETEPATH("FLIP.txt"). 				//Real HD
 
 	//WAIT until signal received:
 	update_phase_title("WAIT TO STARTUP SIGNAL", 0, true).
@@ -151,13 +151,10 @@ runpath("boot/common.c").
 ////////////////////////////////////////////////////////////////////////////////////////////////
 set in_sync to true.
 
-// SEPARATION
-////////////////////////////////////////////////////////////////////////////////////////////////
+// SEPARATION -------------------------------------------------------
 if (SHIP:VERTICALSPEED > 1) and NOT EXISTS("flip.txt")
 {
 	set present_heading to SHIP:HEADING.
-	
-	//FLIP MANEUVER:
 	flip_maneuver().
 	
 	if STAGE_1_TYPE = "MASTER" or STAGE_1_TYPE = "SLAVE"
@@ -174,7 +171,7 @@ if (SHIP:VERTICALSPEED > 1) and NOT EXISTS("flip.txt")
 	LOG "Done" to flip.txt.
 } 
 
-// Open Inf. Thread to read values from Master:
+// Read values from Master -------------------------------------------------------
 if STAGE_1_TYPE = "SLAVE" 
 {
 	set y to 3.

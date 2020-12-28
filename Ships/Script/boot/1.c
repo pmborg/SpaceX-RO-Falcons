@@ -30,7 +30,7 @@ wait 10.
 
 if KUniverse:ActiveVessel <> SHIP 
 {
-	update_phase_title("W8-2  ", 0).
+	update_phase_title("WAIT-2  ", 0).
 	wait 10.
 }
 
