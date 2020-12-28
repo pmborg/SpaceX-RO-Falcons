@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used before main.c, to distribute tasks among all Processors.
-// 27/Dez/2020
+// 28/Dez/2020
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 core:doaction("Open Terminal", true).
@@ -31,7 +31,7 @@ RUNPATH( "boot/sw-version.c" ).
 
 LIST PROCESSORS IN ALL_PROCESSORS.
 PRINT  "TOTAL CPU PROCESSORS: "+ALL_PROCESSORS:LENGTH.
-LOG  "["+STAGE_1_TYPE+"TOTAL CPU PROCESSORS: "+ALL_PROCESSORS:LENGTH to LOG.txt.
+LOG  "["+STAGE_1_TYPE+"] TOTAL CPU PROCESSORS: "+ALL_PROCESSORS:LENGTH to LOG.txt.
 if ALL_PROCESSORS:LENGTH = 0 { WAIT 5. reboot. }
 
 // Identify other processors from (Booster(s), Stage-1 and Stage-2) ----------------
@@ -85,14 +85,9 @@ if vehicle_type = "Falcon Heavy"
 	// 100=DroneShip: OCISLY
 	// 101=DroneShip: JRTI
 	// 102=DroneShip: OCISLY-FAROUT
-	IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(102)	//OCISLY_FAROUT
-	  WAIT 0.1.
-
-	IF PROCESSOR_STAGE1L:CONNECTION:SENDMESSAGE(1) //LZ-1(Slave)
-	  WAIT 0.1.
-
-	IF PROCESSOR_STAGE1R:CONNECTION:SENDMESSAGE(2) //LZ-2(Master)
-	  WAIT 0.1.
+	IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(102)	WAIT 0.1. //OCISLY_FAROUT
+	IF PROCESSOR_STAGE1L:CONNECTION:SENDMESSAGE(1)  WAIT 0.1.//LZ-1(Slave)
+	IF PROCESSOR_STAGE1R:CONNECTION:SENDMESSAGE(2)  WAIT 0.1. //LZ-2(Master)
 } 
 else if vehicle_type = "Crew Dragon 2"
 {
@@ -100,10 +95,11 @@ else if vehicle_type = "Crew Dragon 2"
 } 
 else if vehicle_type = "F9v1.2B5"
 {
-	if STAGE1_LAND_ON = "LAND"
-		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(1)  WAIT 0.1.	//LZ-1   F9 LandingZone
-	else
+	if STAGE1_LAND_ON = "LAND" {
+		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(1)   WAIT 0.1.	//LZ-1   F9 LandingZone
+	} else {
 		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(100) WAIT 0.1.	//OCISLY F9 DroneShip
+	}
 }
 
 RUNPATH( "boot/main.c" ).

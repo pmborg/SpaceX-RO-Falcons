@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to control (ST-1) Booster from FH
-// 09/Dez/2020
+// 28/Dez/2020
 // --------------------------------------------------------------------------------------------
 RCS OFF.
 RUNPATH( "boot/sw-version.c" ).
@@ -17,4 +17,4 @@ runpath("boot/lib_activateVessel.c").
 set STAGE_1_TYPE to "ST-1".
 runpath("boot/common.c").
 RUNPATH( "boot/Falcon-Return.c").
-falcon_core ().
+guide_falcon_core ().

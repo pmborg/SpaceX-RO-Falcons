@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to control (ST-1) Boosters and waiting phases and prepare them to land.
-// 23/Dez/2020
+// 28/Dez/2020
 // --------------------------------------------------------------------------------------------
 RCS OFF.
 RUNPATH( "boot/sw-version.c" ).
@@ -28,8 +28,8 @@ set in_sync to false.
 // first reboot on LAUNCHPAD ? -> Reset/Init State:
 if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 {
-	DELETEPATH("1:/STAGE1_TARGET_FILE.c"). //KOS local HD
-	DELETEPATH("FLIP.txt"). //Real HD
+	DELETEPATH("1:/STAGE1_TARGET_FILE.c"). 	//KOS local HD
+	DELETEPATH("FLIP.txt"). 				//Real HD
 
 	//WAIT until signal received:
 	update_phase_title("WAIT TO STARTUP SIGNAL", 0, true).

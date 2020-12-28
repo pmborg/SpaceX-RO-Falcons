@@ -8,15 +8,17 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 23/Dez/2020
+// 28/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
 // ------------------------------------------------------------
-// [ok] F9 QMAX							1.20.12.16
-// [ok] F9 ST-1 STAGE					1.20.12.16
-// [ok] F9 ST-1 LANDING					1.20.12.16
-// [ok] F9 ST-2 LEO ORBIT				1.20.12.16
+// [ok] F9 QMAX							1.20.12.27 ("LAND") 1.20.12.28 ("SEA")
+// [ok] F9 ST-1 STAGE					1.20.12.27 ("LAND") 1.20.12.28 ("SEA")
+// [ok] F9 ST-1 LANDING					1.20.12.27 ("LAND") 1.20.12.28 ("SEA")
+// [ok] F9 ST-1 FARING RECOVER			1.20.12.27 ("LAND") 1.20.12.28 ("SEA")
+// [ok] F9 ST-2 LEO ORBIT				1.20.12.27 ("LAND") 1.20.12.28 ("SEA")
+// [ok] F9 ST-2 DE-ORBIT				1.20.12.27 ("LAND") 1.20.12.28 ("SEA")
 
 // [ok] Crew Dragon 2 QMAX				1.20.12.10
 // [ok] Crew Dragon 2 STAGE				1.20.12.10

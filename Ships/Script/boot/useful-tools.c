@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 13/Dez/2020
+// 28/Dez/2020
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
 
@@ -90,7 +90,7 @@ function shutDownAllEngines
 	FOR eng IN enginesList {
 		if eng:typename() = "Engine"
 			eng:SHUTDOWN.
-	}.
+	}
 }
 
 function activateOneEngine 
@@ -103,7 +103,7 @@ function activateOneEngine
 			eng:ACTIVATE.
 		if eng:POSSIBLETHRUST > 710
 			set n to n+1.
-	}.
+	}
 }
 
 function activateAllEngines 
@@ -112,16 +112,14 @@ function activateAllEngines
 	FOR eng IN enginesList {
 		if eng:typename() = "Engine"
 			eng:ACTIVATE.
-	}.
+	}
 }
 
 function activate3engines
 {
 	shutDownAllEngines().
-	AG2 OFF. 	//Reset 3 main engines
-	wait 1.
-	AG2 ON. 	//Activate 3 main engines
-	wait 1.
+	AG2 OFF. wait 1.	//Reset 3 main engines
+	AG2 ON.  wait 1.	//Activate 3 main engines
 }
 
 function engines_thrustlimit_to 
@@ -131,7 +129,7 @@ function engines_thrustlimit_to
 	LIST ENGINES IN myVariable.
 	FOR eng IN myVariable {
 		set eng:THRUSTLIMIT to LIMIT.
-	}.
+	}
 }
 
 function update_phase_title

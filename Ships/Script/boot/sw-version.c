@@ -107,6 +107,15 @@ if CORE:BOOTFILENAME:FIND("boot-fairings.ks") > -1
 	set vehicle_type to "Fairing".
 
 //STAGE_1_TYPE:
+// boot-boosters-L.ks
+// boot-boosters-R.ks
+// boot-boosters.ks
+// boot-droneship.ks
+// boot-fairings.ks
+// boot-iss.ks
+// boot-landingzone.ks
+// boot-st2.ks
+// boot.ks
 ////////////////////////////////////////////////////////////////////////////////////////////////
 declare global STAGE_1_TYPE to "".
 if CORE:BOOTFILENAME:FIND("boot-boosters-L.ks") > -1 	// STAGE-1L	(if vehicle_type = "Falcon Heavy")
@@ -119,12 +128,16 @@ if CORE:BOOTFILENAME:FIND("boot-boosters.ks") > -1 		// STAGE-1 (General ST-1)
 	set STAGE_1_TYPE to "CORE".
 else 
 if CORE:BOOTFILENAME:FIND("boot.ks") > -1 				// STAGE-2 (General ST-2)
+{
 	set STAGE_1_TYPE to "MAIN".
+	LOG "SW-Ver: 1.20.12.27" to LOG.txt.
+}
 
 if STAGE_1_TYPE <> ""
+{
 	PRINT "INIT CODE FOR: "+STAGE_1_TYPE.
-
-LOG  "["+STAGE_1_TYPE+"] SHIP_NAME: "+MAIN_SHIP_NAME to LOG.txt.
+	LOG  "["+STAGE_1_TYPE+"] SHIP_NAME: "+MAIN_SHIP_NAME to LOG.txt.
+}
 
 // Defaults for Fligth Profile:
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -177,6 +190,7 @@ else
 	declare global FAIRSEP 	to BODY:ATM:HEIGHT.
 }
 
+// PROFILE FUNCTIONS: -------------------------------------------------------
 function set_max_delta_curve
 {
 	set e to constant:e.
