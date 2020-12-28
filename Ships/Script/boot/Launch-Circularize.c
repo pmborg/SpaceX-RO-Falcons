@@ -58,7 +58,7 @@ function wait_for_AP
 	WAIT until eta:apoapsis < 100.
 	if vehicle_type <> "Crew Dragon 2" and KUniverse:ActiveVessel = SHIP
 	{
-		set kuniverse:timewarp:MODE to "PHYSICS". //WARP with PHYSICS
+		set kuniverse:timewarp:MODE to "PHYSICS". wait 1.//WARP with PHYSICS
 		set warp to 3.
 	}
 	update_phase_title("Circularize T-100",1, true).	

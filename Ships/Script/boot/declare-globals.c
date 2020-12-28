@@ -22,7 +22,8 @@ function ResetMission
 	WAIT 1.
 }
 
-update_phase_title("[ ] PRE-LAUNCH",0, false).
+if status = "PRELAUNCH" and BODY:name = DEFAULT_KSC // first reboot? Reset State  
+	update_phase_title("PRE-LAUNCH",0, false).
 
 // For Kerbin:
 set BilliardSolarSystem to false.	// Default: False
@@ -81,9 +82,8 @@ if ( RealSolarSystemMod )
 	set DEFAULT_KSC to "Earth".	
 	
 if status = "PRELAUNCH" and BODY:name = DEFAULT_KSC // first reboot? Reset State  
-{
 	ResetMission().
-} 
+
 // else {
 	// if STATUS <> "FLYING" and STATUS <> "SUB_ORBITAL"
 	// {

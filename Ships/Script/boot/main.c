@@ -110,9 +110,10 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		SAS OFF.
 		LOCK STEERING TO SHIP:prograde.
 		wait 1.
+		update_phase_title("Mandatory Confirmation", 0, false).
 		PRINT "Press: 1 - Abort/Land Anywhere!". 
-		PRINT "Press: 2 - Stage Satellite". 
-		PRINT "Press: 3 - Circularize". 
+		PRINT "Press: 2 - Stage: Customer Payload". 
+		PRINT "Press: 3 - Circularize(or Stablize ST-2)". 
 		set ch to terminal:input:getchar(). PRINT "selected: "+ch.
 		if ch="1" or ch =""  {
 			update_phase_title("Confirm: SPEED-BREAK?", 0, false).

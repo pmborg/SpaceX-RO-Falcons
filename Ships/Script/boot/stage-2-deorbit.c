@@ -79,6 +79,7 @@ PRINT "Thankyou ST-2!".
 
 set warp to 2. WAIT 1. //WARP TO ATM
 wait 5.
+set kuniverse:timewarp:MODE to "PHYSICS". WAIT 1.
 set warp to 3. WAIT 1. //WARP IN ATM
 
 until FALSE WAIT 1.	// KEEP: STEERING
