@@ -8,20 +8,25 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used before main.c, to distribute tasks among all Processors.
-// 26/Dez/2020
+// 27/Dez/2020
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 core:doaction("Open Terminal", true).
 CLEARSCREEN.
 
-DELETEPATH("SLAVE.TXT").
-LOG  "SET SLAVE_STAGE to 0." to SLAVE.TXT.
-
+// URGENT/RESET STUFF:
 if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
+{
+	DELETEPATH("SLAVE.TXT").
+	LOG  "SET SLAVE_STAGE to 0." to SLAVE.TXT.
+
 	DELETEPATH("CIRCULARIZE.txt").
-	
-DELETEPATH("LOG.txt").
-DELETEPATH("MAIN_SHIP.txt").
+	DELETEPATH("LOG.txt").
+	DELETEPATH("MAIN_SHIP.txt").
+}
+
+
+// DEFINE MISSION PROFILE: -------------------------------------------------------
 RUNPATH( "boot/sw-version.c" ).
 
 LIST PROCESSORS IN ALL_PROCESSORS.
@@ -40,31 +45,31 @@ PRINT "List CPU Stages:".
  FROM {local counter is 0.} UNTIL counter = ALL_PROCESSORS:LENGTH STEP {SET counter to counter + 1.} DO {
 	LOG  "["+STAGE_1_TYPE+"] BOOTFILENAME: "+ALL_PROCESSORS[counter]:BOOTFILENAME to LOG.txt.
 	
-	if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-boosters.ks") <> -1 	// STAGE-1:
+	if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-boosters.ks") <> -1 			// STAGE-1: CORE
 	{
 		PRINT "- STAGE1-ID: "+counter.
 		LOG  "["+STAGE_1_TYPE+"] - STAGE1-ID: "+counter to LOG.txt.
 		set PROCESSOR_STAGE1 to ALL_PROCESSORS[counter].
 	} 
-	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-boosters-L.ks") <> -1 // STAGE-1L:
+	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-boosters-L.ks") <> -1 	// STAGE-1L:
 	{
 		PRINT "- STAGE1L-ID: "+counter.
 		LOG  "["+STAGE_1_TYPE+"] - STAGE1L-ID: "+counter to LOG.txt.
 		set PROCESSOR_STAGE1L to ALL_PROCESSORS[counter].
 	}
-	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-boosters-R.ks") <> -1 // STAGE-1R:
+	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-boosters-R.ks") <> -1 	// STAGE-1R:
 	{
 		PRINT "- STAGE1R-ID: "+counter.
 		LOG  "["+STAGE_1_TYPE+"] - STAGE1R-ID: "+counter to LOG.txt.
 		set PROCESSOR_STAGE1R to ALL_PROCESSORS[counter].
 	}
-	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-st2.ks") <> -1 	// STAGE-2:
+	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-st2.ks") <> -1 			// STAGE-2: (Deorbit)
 	{
 		PRINT "- MAIN-ID: "+counter.
 		LOG  "["+STAGE_1_TYPE+"] - MAIN-ID: "+counter to LOG.txt.
 		set PROCESSOR_STAGE2 to ALL_PROCESSORS[counter].
 	}
-	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot.ks") <> -1 		// MAIN:
+	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot.ks") <> -1 				// MAIN MISSION (Launch, Orbit & Deploy)
 	{
 		PRINT "- MAIN-ID: "+counter.
 		LOG  "["+STAGE_1_TYPE+"] - MAIN-ID: "+counter to LOG.txt.
@@ -96,9 +101,9 @@ else if vehicle_type = "Crew Dragon 2"
 else if vehicle_type = "F9v1.2B5"
 {
 	if STAGE1_LAND_ON = "LAND"
-		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(1)  WAIT 0.1.	//LZ-1   F9 landing Zone
+		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(1)  WAIT 0.1.	//LZ-1   F9 LandingZone
 	else
-		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(100) WAIT 0.1.	//OCISLY F9 Drone-Ship
+		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(100) WAIT 0.1.	//OCISLY F9 DroneShip
 }
 
 RUNPATH( "boot/main.c" ).

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to specify the SW version and the diferent types of profiles supported.
-// 27/Dez/2020
+// 28/Dez/2020
 // --------------------------------------------------------------------------------------------
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //             #.YY.MM.DD
@@ -75,7 +75,8 @@ declare global MAIN_SHIP_NAME to SHIP_NAME:REPLACE(" probe", "").
 // PRINT "BOOT: " + CORE:BOOTFILENAME.
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-if SHIP_NAME = "PMBT-SpaceX Falcon 1 (Merlin 1A)" or SHIP_NAME = "PMBT-SpaceX Falcon 1 (Merlin 1C)"
+if SHIP_NAME = "PMBT-SpaceX Falcon 1 (Merlin 1A)" or 
+   SHIP_NAME = "PMBT-SpaceX Falcon 1 (Merlin 1C)"
 	declare global vehicle_type to "F1-M1".					// BASE: Falcon 1 (Merlin 1A)
 else
 if SHIP_NAME = "PMBT-SpaceX Falcon 9 v1.2 Block-5"
@@ -108,10 +109,10 @@ if CORE:BOOTFILENAME:FIND("boot-fairings.ks") > -1
 //STAGE_1_TYPE:
 ////////////////////////////////////////////////////////////////////////////////////////////////
 declare global STAGE_1_TYPE to "".
-if CORE:BOOTFILENAME:FIND("boot-boosters-L.ks") > -1 	// STAGE-1L	if vehicle_type = "Falcon Heavy" 
+if CORE:BOOTFILENAME:FIND("boot-boosters-L.ks") > -1 	// STAGE-1L	(if vehicle_type = "Falcon Heavy")
 	set STAGE_1_TYPE to "SLAVE".
 else 
-if CORE:BOOTFILENAME:FIND("boot-boosters-R.ks") > -1 	// STAGE-1R	if vehicle_type = "Falcon Heavy" 
+if CORE:BOOTFILENAME:FIND("boot-boosters-R.ks") > -1 	// STAGE-1R	(if vehicle_type = "Falcon Heavy")
 	set STAGE_1_TYPE to "MASTER".
 else 
 if CORE:BOOTFILENAME:FIND("boot-boosters.ks") > -1 		// STAGE-1 (General ST-1)
@@ -131,7 +132,7 @@ if vehicle_type = "Falcon Heavy"
 {
 	// Data from: FH Demo 1:
 	declare global Qmax 	to 15238/1.1.
-	declare global MECO1 	to 1750^2.  //1545* (BOOST SEP)
+	declare global MECO1 	to 1545^2.  //1545* (BOOST SEP)
 	declare global MECO2 	to 2950^2.  //3060.	(CORE STAGE)
 	declare global FAIRSEP  to 160*1000.//		(FAIRING STAGE)
 	
@@ -202,8 +203,8 @@ function set_max_delta_curve
 	} else
 	if vehicle_type = "F1-M1"
 	{
-		set delta to (1*(e^I)*(-1))*1.3.	//Rotate 30% Faster
-		if delta < (-80)					//MAX. Keep: 10 deg nose up
+		set delta to (1*(e^I)*(-1))*1.3.		//Rotate 30% Faster
+		if delta < (-80)						//MAX. Keep: 10 deg nose up
 			set delta to (-80).
 	} else {
 		if STAGE1_LAND_ON <> "LAND"
@@ -212,8 +213,8 @@ function set_max_delta_curve
 			if delta < (-50)					//MAX. Keep: 40 deg nose up
 				set delta to (-50).
 		} else {
-			set delta to (1*(e^I)*(-1))*1.4.		//Normal Rotation
-			if delta < (-70)					//MAX. Keep: 40 deg nose up
+			set delta to (1*(e^I)*(-1))*1.4.	//Rotate 40% Faster
+			if delta < (-70)					//MAX. Keep: 20 deg nose up
 				set delta to (-70).			
 		}
 	}
