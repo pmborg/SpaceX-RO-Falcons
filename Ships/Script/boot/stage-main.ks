@@ -14,7 +14,7 @@ SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 core:doaction("Open Terminal", true).
 CLEARSCREEN.
 
-// URGENT/RESET STUFF:
+// URGENT/RESET STUFF: -------------------------------------------------------
 if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 {
 	DELETEPATH("SLAVE.TXT").
@@ -91,7 +91,11 @@ if vehicle_type = "Falcon Heavy"
 } 
 else if vehicle_type = "Crew Dragon 2"
 {
-	IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(101) WAIT 0.1.	//JRTI
+	if STAGE1_LAND_ON = "LAND" {
+		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(1)   WAIT 0.1.	//LZ-1   F9 LandingZone
+	} else {
+		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(101) WAIT 0.1.	//JRTI
+	}
 } 
 else if vehicle_type = "F9v1.2B5"
 {
