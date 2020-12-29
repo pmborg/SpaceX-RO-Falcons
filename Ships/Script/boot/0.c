@@ -26,7 +26,7 @@ set in_sync to false.
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 // first reboot on LAUNCHPAD ? -> Reset/Init State:
-if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
+if (status = "PRELAUNCH" or status = "LANDED") and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 {
 	DELETEPATH("1:/STAGE1_TARGET_FILE.c"). 	//KOS local HD
 	//DELETEPATH("FLIP.txt"). 				//Real HD
