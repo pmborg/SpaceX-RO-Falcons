@@ -61,7 +61,7 @@ function wait_for_AP
 		set kuniverse:timewarp:MODE to "PHYSICS". wait 1.//WARP with PHYSICS
 		set warp to 3.
 	}
-	update_phase_title("C-Circularize T-100",1, true).	
+	update_phase_title("C-Circularize T-100",1, true).
 	
 	WAIT until eta:apoapsis < w.
 	set kuniverse:timewarp:MODE to "RAILS".	//RESET
@@ -208,8 +208,8 @@ WAIT 2.5. print "3".
 WAIT 2.5. print "2".
 WAIT 2.5. print "1".
 
-clearscreen.
-update_phase_title("C-Circularize",1, true).
+CLEARSCREEN.
+update_phase_title("C-Circularize",1, false).
 PRINT "Vertical Speed" 	at (0,2).
 PRINT "Orbital Speed" 	at (0,3).
 PRINT "Target (Vcir)" 	at (0,4).

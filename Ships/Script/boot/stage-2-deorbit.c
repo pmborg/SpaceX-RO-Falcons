@@ -91,16 +91,17 @@ else
 		{ STAGE. WAIT 1.}
 }
 
-set kuniverse:timewarp:MODE to "RAILS". WAIT 2.
+set warp to 0. WAIT 1.
+set kuniverse:timewarp:MODE to "RAILS". WAIT 1.
 set warp to 2. WAIT 1. //WARP TO ATM
 wait 5.
-set kuniverse:timewarp:MODE to "PHYSICS". WAIT 2.
+set kuniverse:timewarp:MODE to "PHYSICS". WAIT 1.
 set warp to 3. WAIT 1. //WARP IN ATM
 
 if vehicle_type <> "Crew Dragon 2"
 {
 	until FALSE WAIT 1.	// KEEP: STEERING
-} else{
+} else {
 	wait until altitude < 5000.
 	UNTIL (STAGE:NUMBER = 2)
 		{ STAGE. WAIT 1.}

@@ -190,6 +190,9 @@ else
 	declare global FAIRSEP 	to BODY:ATM:HEIGHT.
 }
 
+if  Qmax <> .5*1.2*(250^2)
+	LOG "Normal" to normal.txt.
+
 // PROFILE FUNCTIONS: -------------------------------------------------------
 function set_max_delta_curve
 {

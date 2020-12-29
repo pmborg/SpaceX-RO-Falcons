@@ -529,9 +529,9 @@ if altitude*1.1 < FINAL_ORBIT2
 		set Vsz to vorb:z.
 		set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).
 		
-		if vehicle_type = "Crew Dragon 2" and verticalspeed<0
+		if vehicle_type = "Crew Dragon 2" and verticalspeed < 0
 			activateVesselProbe().	//Time to Switch to ST-1
-		
+			
 		if vehicle_sub_type = "Falcon Heavy" and phase=0 and (Vs2 > MECO2 or altitude > FAIRSEP)
 		{	// FH:CORE Booster SEP:
 			RCS ON.
@@ -579,6 +579,9 @@ if altitude*1.1 < FINAL_ORBIT2
 			break.
 	}
 
+	if vehicle_type = "F9v1.2B5"
+		activateVesselProbe().	//Time to Switch to ST-1
+			
 	// Maximizing Apoapsis Increase:
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	update_phase_title("[7] ORBIT PHASE II",1,false). 

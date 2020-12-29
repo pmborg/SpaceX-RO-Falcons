@@ -73,7 +73,7 @@ function activateMainVessel
 	}
 	
 	// Booster Landed, return now FOCUS-VIEW to main VESSEL:
-	LOG "Activate VESSEL: "+nearby_vessels[0]:name to LOG.TXT.
-	
-	SET KUniverse:ACTIVEVESSEL TO VESSEL(nearby_vessels[0]:name). WAIT 2.
+	LOG "Activate MAIN VESSEL: "+nearby_vessels[0]:name to LOG.TXT.
+	kuniverse:forceactive(VESSEL(nearby_vessels[0]:name)). //SET KUniverse:ACTIVEVESSEL TO VESSEL(nearby_vessels[0]:name). 
+	WAIT 2.
 }
