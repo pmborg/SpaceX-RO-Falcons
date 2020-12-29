@@ -24,7 +24,7 @@
 // [ok] Crew Dragon 2 STAGE				1.20.12.29 ("LAND")
 // [ok] Crew Dragon 2 ST-1 LANDING		1.20.12.29 ("LAND")
 // [ok] Crew Dragon 2 DRAGON LEO ORBIT	1.20.11.29 ("LAND")
-
+// [ok] Crew Dragon 2 DRAGON DE-ORBIT	1.20.11.29 ("LAND")
 
 // [ok] FH ST1 QMAX						1.20.12.07
 // [ok] FH ST1 STAGE					1.20.12.07
