@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Activate or get near by VESSEL.
-// 28/Dez/2020
+// 29/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 declare global g_OtherBooster to SHIP.
@@ -56,7 +56,7 @@ function activateVesselProbe
 	set vessel_near_vessel to "".
 	set vessel_near_vessel to getNearbyProbe().
 	if vessel_near_vessel <> ""
-		SET KUniverse:ACTIVEVESSEL TO VESSEL(vessel_near_vessel:NAME).
+		kuniverse:forceactive(VESSEL(vessel_near_vessel:NAME)). //SET KUniverse:ACTIVEVESSEL TO VESSEL(vessel_near_vessel:NAME).
 }
 
 function activateMainVessel 

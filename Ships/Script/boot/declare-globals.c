@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor @start, to init or restart the all Mission.
-// 26/Dez/2020
+// 29/Dez/2020
 // --------------------------------------------------------------------------------------------
 function ResetMission 
 {
@@ -99,7 +99,7 @@ FOR part IN partsList {
 	//if part:MASS > 1 
 	{
 		//PRINT part:name + " , " + round(part:MASS,1).
-		LOG part:name + " , " + round(part:MASS,1) to shipmass.txt.
+		LOG part:name + " , " + round(part:MASS,2) to shipmass.txt.
 	}
 }
 

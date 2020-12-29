@@ -20,10 +20,11 @@
 // [ok] F9 ST-2 LEO ORBIT				1.20.12.27 ("LAND") 1.20.12.28 ("SEA")
 // [ok] F9 ST-2 DE-ORBIT				1.20.12.27 ("LAND") 1.20.12.28 ("SEA")
 
-// [ok] Crew Dragon 2 QMAX				1.20.12.28 ("LAND")
-// [ok] Crew Dragon 2 STAGE				1.20.12.28 ("LAND")
-// [ok] Crew Dragon 2 ST-1 LANDING		1.20.12.28 ("LAND")
-// [ok] Crew Dragon 2 DRAGON LEO ORBIT	1.20.11.21
+// [ok] Crew Dragon 2 QMAX				1.20.12.29 ("LAND")
+// [ok] Crew Dragon 2 STAGE				1.20.12.29 ("LAND")
+// [ok] Crew Dragon 2 ST-1 LANDING		1.20.12.29 ("LAND")
+// [ok] Crew Dragon 2 DRAGON LEO ORBIT	1.20.11.29 ("LAND")
+
 
 // [ok] FH ST1 QMAX						1.20.12.07
 // [ok] FH ST1 STAGE					1.20.12.07
@@ -117,7 +118,7 @@ function boostback_burn
 		reboot.
 	}
 
-	update_phase_title("BOOSTBACK BURN END", 1).
+	update_phase_title("BOOSTBACK BURN END", 0, false).
 	LOG  STAGE_1_TYPE + " " + we_are_done + " - boostback_burn() - END" to LOG.txt.
 }
 
@@ -446,6 +447,7 @@ function rocketshutdown
 	WAIT 5.
 	SAS OFF.
 	RCS OFF.
+	BREAK OFF.
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -517,8 +519,9 @@ function main_falcon_return
 		WAIT 0.1.
 		PRINT_STATUS (3).
 	}
-	if MAIN_SHIP_NAME <> "PMBT-SpaceX Falcon 9 v1.2 Block-5 Crew Dragon 2"
-		activateMainVessel(). //need to be out of ATM
+	activateMainVessel(). //Better switch out of ATM
 			
 	guide_falcon_core().
+	
+	activateMainVessel(). //After landing go to ST-1
 }

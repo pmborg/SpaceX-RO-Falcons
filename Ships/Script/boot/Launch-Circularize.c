@@ -33,7 +33,7 @@ function wait_for_AP
 	set warp to 0.
 	LOCK STEERING TO SHIP:PROGRADE.//  + R(0,0,180).
 	if eta:apoapsis > 3000
-		if vehicle_type <> "Crew Dragon 2" and KUniverse:ActiveVessel = SHIP
+		if KUniverse:ActiveVessel = SHIP //and vehicle_type <> "Crew Dragon 2"
 			set warp to 3.
 
 	set saved to EXISTS("CIRCULARIZE.txt").
@@ -51,12 +51,12 @@ function wait_for_AP
 			set saved to true.
 		}
 	}
-	if vehicle_type <> "Crew Dragon 2" and KUniverse:ActiveVessel = SHIP
+	if KUniverse:ActiveVessel = SHIP //and vehicle_type <> "Crew Dragon 2"
 		set warp to 2.
 	update_phase_title("C-Circularize T-3000",1, true).	
 	
 	WAIT until eta:apoapsis < 100.
-	if vehicle_type <> "Crew Dragon 2" and KUniverse:ActiveVessel = SHIP
+	if KUniverse:ActiveVessel = SHIP //and vehicle_type <> "Crew Dragon 2"
 	{
 		set kuniverse:timewarp:MODE to "PHYSICS". wait 1.//WARP with PHYSICS
 		set warp to 3.
@@ -203,10 +203,10 @@ if ship:verticalspeed > 0 and eta:apoapsis > 60
 
 RCS ON.
 print "5".
-WAIT 5. print "4".
-WAIT 5. print "3".
-WAIT 5. print "2".
-WAIT 5. print "1".
+WAIT 2.5. print "4".
+WAIT 2.5. print "3".
+WAIT 2.5. print "2".
+WAIT 2.5. print "1".
 
 clearscreen.
 update_phase_title("C-Circularize",1, true).

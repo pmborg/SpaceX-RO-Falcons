@@ -134,9 +134,9 @@ function engines_thrustlimit_to
 
 function update_phase_title
 {
-	parameter phase.
-	parameter play_sound.
-	parameter stack_phases is true.
+	parameter phase.					//Title
+	parameter play_sound.				//0 or 1
+	parameter stack_phases is true.		//true = STACK
 	
 	PRINT phase+"          " at (0,0). 
 	if (stack_phases)

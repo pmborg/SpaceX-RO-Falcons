@@ -38,7 +38,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 
 	//ACTION:  --------------------------------------------------------
 	if (  (BODY:name = DEFAULT_KSC and periapsis < body:atm:height) or
-	      (BODY:name <> DEFAULT_KSC and (status = "LANDED" or status = "SPLASHED"))  )
+	      (BODY:name <> DEFAULT_KSC and (status = "LANDED" or status = "SPLASHED"))  ) and (not EXISTS("CIRCULARIZE.txt"))
 	{
 		if periapsis < 0
 		{
@@ -112,8 +112,11 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		wait 1.
 		update_phase_title("Mandatory Confirmation", 0, false).
 		PRINT "Press: 1 - Abort/Land Anywhere!". 
-		PRINT "Press: 2 - Stage: Customer Payload". 
-		PRINT "Press: 3 - Circularize(or Stablize ST-2)". 
+		PRINT "Press: 2 - Circularize(or Stablize ST-2)". 
+		if vehicle_type <> "Crew Dragon 2"
+			PRINT "Press: 3 - Stage: Customer Payload". 
+		else
+			PRINT "Press: 4 - Deorbit". 
 		set ch to terminal:input:getchar(). PRINT "selected: "+ch.
 		if ch="1" or ch =""  {
 			update_phase_title("Confirm: SPEED-BREAK?", 0, false).
@@ -124,6 +127,13 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			RUNPATH( "boot/PhaseIII-Land.c" ).  	// Auto-Land / Touch-Down
 		}
 		else if ch="2" {
+			if body:atm:height > 0
+				RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
+			else
+				RUNPATH( "boot/Launch-Circularize.c", apoapsis ).
+			reboot.
+		}
+		else if ch="3" {
 			//SEND PROCESSOR ID TO BOOSTER
 			IF PROCESSOR_STAGE2:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
 				{ PRINT "PROCESSOR_STAGE1: Message sent!". WAIT 1. }
@@ -139,12 +149,8 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			AG4 ON.
 			CLEARSCREEN.
 		}
-		else if ch="3" {
-			if body:atm:height > 0
-				RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
-			else
-				RUNPATH( "boot/Launch-Circularize.c", apoapsis ).
-			reboot.
+		else if ch="4" {
+			runpath("boot/stage-2-deorbit.c").
 		}
 	}
 	

@@ -99,7 +99,7 @@ function main_liftoff
 function do_stage
 {
 	if vehicle_type = "Crew Dragon 2" and KUniverse:ActiveVessel <> SHIP
-		AG7 ON.
+		AG7 ON. //Decouple and Activate Engine
 	else
 	{
 		UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
@@ -413,7 +413,7 @@ if altitude*1.1 < FINAL_ORBIT2
 	PRINT " ".PRINT " ".
 	
 	// OK: >=3 for F9 - CHECK: FH...
-	if (STAGE:NUMBER >= 3) and (vehicle_sub_type <> "Falcon Heavy LEM")
+	if (STAGE:NUMBER >= 3) and (MECO1 < 9999^2)  //A Recovery Mission ?
 	{
 		update_phase_title("[6] STAGING...",1,false).
 		PRINT "1st ORBIT: "+FINAL_ORBIT+"km, Done!".
@@ -421,20 +421,20 @@ if altitude*1.1 < FINAL_ORBIT2
 		//BOOSTER WAKE MSG UP! --------------------------------------------------------
 		if vehicle_type = "Falcon Heavy" 
 		{
-			//SEND PROCESSOR ID TO BOOSTER
+			//[FH]:SEND PROCESSOR ID TO BOOSTER
 			IF PROCESSOR_STAGE1L:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
 			{
 			  PRINT "PROCESSOR_STAGE1: Message sent!".
 			  WAIT 1.
 			}
-			//SEND PROCESSOR ID TO BOOSTER
+			//[FH]:SEND PROCESSOR ID TO BOOSTER
 			IF PROCESSOR_STAGE1R:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
 			{
 			  PRINT "PROCESSOR_STAGE1: Message sent!".
 			  WAIT 1.
 			}
 		} else {
-			//SEND PROCESSOR ID TO BOOSTER
+			//[F9]:SEND PROCESSOR ID TO BOOSTER
 			IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
 			{
 			  PRINT "PROCESSOR_STAGE1: Message sent!".
@@ -443,15 +443,18 @@ if altitude*1.1 < FINAL_ORBIT2
 		}
 
 		//STAGE BOOSTERS --------------------------------------------------------------
+		//DEBUG:
+		//KUniverse:PAUSE().
+		
 		RCS ON.
 		if vehicle_type = "Falcon Heavy" 
 		{
-			AG6 ON. //Toggle: FH Boosters separator
+			AG6 ON. //(Toggle: FH Boosters separator)
 			WAIT 0.5.
-			if (KUniverse:ActiveVessel = SHIP) STAGE.	//FH
+			if (KUniverse:ActiveVessel = SHIP) STAGE.	//[FH]
 			WAIT 5.
 		} else {
-			st1_stage().								//F9
+			st1_stage().								//[F9]
 		}
 		
 		activateVesselProbe().
@@ -524,8 +527,10 @@ if altitude*1.1 < FINAL_ORBIT2
 		set Vsx to vorb:x.
 		set Vsy to vorb:y.
 		set Vsz to vorb:z.
-		set velocity_orbit to (Vsx^2)+(Vsy^2)+(Vsz^2).
-		set Vs2 to (velocity_orbit).	//km/h
+		set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).
+		
+		if vehicle_type = "Crew Dragon 2" and verticalspeed<0
+			activateVesselProbe().	//Time to Switch to ST-1
 		
 		if vehicle_sub_type = "Falcon Heavy" and phase=0 and (Vs2 > MECO2 or altitude > FAIRSEP)
 		{	// FH:CORE Booster SEP:
@@ -549,7 +554,8 @@ if altitude*1.1 < FINAL_ORBIT2
 			}
 		}
 
-		check_fairing_sep().
+		if vehicle_type <> "Crew Dragon 2"
+			check_fairing_sep().
 		
 		if (Aceleration_value1 > 30.75)
 		{
@@ -614,7 +620,8 @@ if altitude*1.1 < FINAL_ORBIT2
 				WAIT 1.
 			}
 		}
-		check_fairing_sep().
+		if vehicle_type <> "Crew Dragon 2"
+			check_fairing_sep().
 		
 		update_orbit_status().
 		set vel to SQRT(Vs2).
