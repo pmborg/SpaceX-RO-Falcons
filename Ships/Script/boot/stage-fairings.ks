@@ -12,7 +12,6 @@
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 CLEARSCREEN.
-core:doaction("Open Terminal", true).
 RUNPATH( "boot/sw-version.c" ).
 
 function display_altitude
@@ -26,6 +25,7 @@ function faring_wait_for_separation
 {
 	update_phase_title("WAIT FOR SEP",1, false).
 	UNTIL (mass < 3) WAIT 1.
+	core:doaction("Open Terminal", true).
 }
 
 function faring_descend
