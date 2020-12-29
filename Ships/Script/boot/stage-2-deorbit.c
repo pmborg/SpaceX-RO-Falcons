@@ -70,6 +70,10 @@ SAS OFF. wait 1.
 RCS ON. wait 1.
 LOCK STEERING TO SHIP:RETROGRADE. wait 1.
 
+if KUniverse:ActiveVessel <> SHIP {
+	update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
+	UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
+}
 // PRINT "Confirm: - Deorbit (y/n)". 
 // set ch to terminal:input:getchar(). PRINT "selected: "+ch.
 // if (ch = "y" OR ch = "Y")  
