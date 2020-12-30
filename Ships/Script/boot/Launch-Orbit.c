@@ -62,7 +62,7 @@ function main_liftoff
 	}
 
 	RCS ON.
-	if vehicle_type = "F1-M1" or vehicle_sub_type = "Falcon Heavy LEM" //or vehicle_type = "Crew Dragon 2"
+	if vehicle_type = "F1-M1" or vehicle_sub_type = "Falcon Heavy LEM" or vehicle_type = "Crew Dragon 2"
 		SAS OFF.
 	else
 		SAS ON.
@@ -237,10 +237,6 @@ if alt:radar < 100
 	PRINT "Throttle" at (0,1+index2).
 	PRINT "Maxthrust: " at (0,2+index2).
 	PRINT "delta: " at (0,3+index2).
-	
-	//PRINT "HEADING: " at (0,16).
-	PRINT "[GEOPOSITION]: " at (0,17).
-	
 	set x to 0.
 	set phase to 0.
 	until altitude > 30000 
@@ -358,9 +354,6 @@ if alt:radar < 100
 	PRINT "mphase: " 			at (0,9).
 	PRINT "phase: " 			at (0,10).
 	PRINT "deltaReduction: " 	at (0,11).
-	
-	//PRINT "HEADING: " at (0,16).
-	PRINT "[GEOPOSITION]: " at (0,17).
 	
 	until (Vs2 >= MECO1) or (apoapsis >= FINAL_ORBIT2) or phase = 3 //(Reusable) or (Non Reusable Mission) or (on stage-2 burn)
 	{ 
@@ -563,9 +556,6 @@ if altitude*1.1 < FINAL_ORBIT2
 
 		if vehicle_type <> "Crew Dragon 2"
 			check_fairing_sep().
-		else
-			if maxthrust <900
-				break.
 		
 		if (Aceleration_value1 > 30.75)
 		{
@@ -582,8 +572,7 @@ if altitude*1.1 < FINAL_ORBIT2
 		set vel to SQRT(Vs2).
 		update_atmosphere (altitude, vel).
 		log_data (vel).
-		if vehicle_type <> "Crew Dragon 2"
-			check_if_we_need_new_stage().
+		check_if_we_need_new_stage().
 		
 		set dx to eta:apoapsis.
 		if dx > eta_apoapsis and stage:number < 7
@@ -636,16 +625,12 @@ if altitude*1.1 < FINAL_ORBIT2
 		}
 		if vehicle_type <> "Crew Dragon 2"
 			check_fairing_sep().
-		else
-			if maxthrust <900
-				break.
 		
 		update_orbit_status().
 		set vel to SQRT(Vs2).
 		update_atmosphere (altitude, vel).
 		log_data (vel).
-		if vehicle_type <> "Crew Dragon 2"
-			check_if_we_need_new_stage().
+		check_if_we_need_new_stage().
 	}
 
 	UNLOCK STEERING.
