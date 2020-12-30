@@ -40,5 +40,14 @@ ckan.exe install --headless --allow-incompatible --no-recommends Parallax-StockT
 ckan.exe install --headless --allow-incompatible --no-recommends Scatterer-config Scatterer-sunflare Scatterer
 ckan.exe install --headless --allow-incompatible --no-recommends EnvironmentalVisualEnhancements EnvironmentalVisualEnhancements-HR
 
+REM INSTALL: KopernicusBE_111
+powershell -command "& { iwr https://github.com/R-T-B/Kopernicus/releases/download/UBE-release-58/KopernicusBE_1110_Release58.zip -OutFile KopernicusBE_1110_Release58.zip }"
+powershell.exe -NoP -NonI -Command "Expand-Archive 'KopernicusBE_1110_Release58.zip' '%KSPTEMP%'"
+mkdir GameData\Kopernicus
+mkdir GameData\ModularFlightIntegrator
+xcopy /S /Y %KSPTEMP%\GameData\Kopernicus GameData\Kopernicus
+xcopy /S /Y %KSPTEMP%\GameData\ModularFlightIntegrator GameData\ModularFlightIntegrator
+move KopernicusBE_111_Release57.zip %KSPTEMP%
+	
 :No
 	EXIT
