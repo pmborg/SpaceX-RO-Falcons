@@ -233,7 +233,8 @@ WAIT 5.
 
 SET MAPVIEW TO FALSE.  	// map view off
 lock throttle to 0.		//set thrust to 0.
-SAS ON.
-WAIT 1.
-set sasmode TO "PROGRADE".
+LOCK STEERING TO SHIP:PROGRADE.//  + R(0,0,180).
+// SAS ON.
+// WAIT 1.
+// set sasmode TO "PROGRADE".
 DELETEPATH("CIRCULARIZE.txt").

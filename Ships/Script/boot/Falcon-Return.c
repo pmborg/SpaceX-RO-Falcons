@@ -412,6 +412,9 @@ function touchdown
 		if GROUNDSPEED < 5 and impactDist < 50
 			set rate to 85.				//SLOW correction
 
+		if (alt:radar-30) < 100
+			set rate to 89.95.			//"zero" correction
+			
 		updateHoverSteering().
 		steerToTarget(rate).
 
@@ -422,7 +425,7 @@ function touchdown
 		else
 			set t to error*((1000*SHIP:MASS*g)/maxthrust)/maxthrust.
 		
-		setHoverDescendSpeed(0.5+((alt:radar-30)/7.5),t).
+		setHoverDescendSpeed(0.05+((alt:radar-30)/7.5),t).
 	}
 }
 
@@ -458,6 +461,8 @@ function after_landing
 		PRINT "GRATZ: Another Booster landed safely!".
 	else
 		PRINT "INTEGRITY: "+(AFTER_LAND_TOTAL_PARTS/TOTAL_PARTS)*100+"%".
+
+	WAIT 5.
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

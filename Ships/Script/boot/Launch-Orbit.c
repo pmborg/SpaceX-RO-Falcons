@@ -465,10 +465,6 @@ if altitude*1.1 < FINAL_ORBIT2
 		}
 		
 		activateVesselProbe().
-		
-		if vehicle_type = "Crew Dragon 2"
-			set MECO1 to 9999^2.			//Stop Lat. Correction
-		
 	}
 	
 	// Maximizing: Horizontal Aceleration:
@@ -567,6 +563,9 @@ if altitude*1.1 < FINAL_ORBIT2
 
 		if vehicle_type <> "Crew Dragon 2"
 			check_fairing_sep().
+		else
+			if maxthrust <900
+				break.
 		
 		if (Aceleration_value1 > 30.75)
 		{
@@ -583,7 +582,8 @@ if altitude*1.1 < FINAL_ORBIT2
 		set vel to SQRT(Vs2).
 		update_atmosphere (altitude, vel).
 		log_data (vel).
-		check_if_we_need_new_stage().
+		if vehicle_type <> "Crew Dragon 2"
+			check_if_we_need_new_stage().
 		
 		set dx to eta:apoapsis.
 		if dx > eta_apoapsis and stage:number < 7
@@ -636,12 +636,16 @@ if altitude*1.1 < FINAL_ORBIT2
 		}
 		if vehicle_type <> "Crew Dragon 2"
 			check_fairing_sep().
+		else
+			if maxthrust <900
+				break.
 		
 		update_orbit_status().
 		set vel to SQRT(Vs2).
 		update_atmosphere (altitude, vel).
 		log_data (vel).
-		check_if_we_need_new_stage().
+		if vehicle_type <> "Crew Dragon 2"
+			check_if_we_need_new_stage().
 	}
 
 	UNLOCK STEERING.

@@ -18,7 +18,7 @@ function steering_falcon
 	
 	set lat_correction to 0.
 	if KUniverse:ActiveVessel = SHIP
-		if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT and MECO1 < 9999^2 //and altitude > 30000
+		if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT //and MECO1 < 9999^2 //and altitude > 30000
 			set lat_correction to (VESSEL("Landingzone1"):GEOPOSITION:LAT - ADDONS:TR:IMPACTPOS:LAT)*50.
 
 	//PRINT ROUND (HEADING,3)+"  " at (22,16).
