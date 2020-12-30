@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Circularize an orbit after Launch-Orbit.c
-// 22/Dez/2020
+// 30/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
@@ -30,7 +30,7 @@ function wait_for_AP
 	parameter w.
 
 	update_phase_title("C-WAIT FOR APOAPSIS",1, true).	
-	set warp to 0.
+	//set warp to 0.
 	LOCK STEERING TO SHIP:PROGRADE.//  + R(0,0,180).
 	if eta:apoapsis > 3000
 		if KUniverse:ActiveVessel = SHIP //and vehicle_type <> "Crew Dragon 2"
@@ -64,7 +64,7 @@ function wait_for_AP
 	update_phase_title("C-Circularize T-100",1, true).
 	
 	WAIT until eta:apoapsis < w.
-	set kuniverse:timewarp:MODE to "RAILS".	//RESET
+	set kuniverse:timewarp:MODE to "RAILS".	wait 1. //RESET
 	set warp to 0.
 	update_phase_title("C-Circularize T-"+w,1, true).
 }
@@ -186,7 +186,7 @@ function do_circle_step
 		set Vroll to -270.			// Zero Rotation
 		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).	//LOCK STEERING TO heading (90, PlanetOuter*theta).
 
-		wait 0.025.
+		wait 0.010.
 		if SHIP:ORBIT:ECCENTRICITY > last_ecc and SHIP:ORBIT:ECCENTRICITY < 0.1 and periapsis > BODY:ATM:HEIGHT
 		{
 			LOCK THROTTLE TO 0.

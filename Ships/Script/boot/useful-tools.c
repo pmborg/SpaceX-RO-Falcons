@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 28/Dez/2020
+// 30/Dez/2020
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
 
@@ -18,10 +18,10 @@ function steering_falcon
 	
 	set lat_correction to 0.
 	if KUniverse:ActiveVessel = SHIP
-		if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT and vehicle_sub_type <> "Falcon Heavy LEM"
-	set lat_correction to (VESSEL("Landingzone1"):GEOPOSITION:LAT - ADDONS:TR:IMPACTPOS:LAT)*50.
+		if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT and MECO1 < 9999^2 //and altitude > 30000
+			set lat_correction to (VESSEL("Landingzone1"):GEOPOSITION:LAT - ADDONS:TR:IMPACTPOS:LAT)*50.
 
-	PRINT "[GEOPOSITION]: " at (0,17).
+	//PRINT ROUND (HEADING,3)+"  " at (22,16).
 	PRINT ROUND (GEOPOSITION:LAT,3)+", " +ROUND (GEOPOSITION:LNG,3)+"   " at (22,17).
 	PRINT "lat.correction: " at (0,18). PRINT ROUND(lat_correction,2) at (22,18).
 	SET steeringDir TO (-90-lat_correction).	// W/E

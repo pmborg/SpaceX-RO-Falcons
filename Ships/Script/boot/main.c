@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestre all mission phases.
-// 27/Dez/2020
+// 30/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 // Reset Engine settings before all, ("migth be a reboot")
@@ -18,6 +18,30 @@ WAIT 0.
 
 runpath("boot/declare-globals.c").
 runpath("boot/atm.c").
+
+function change_inclination 
+{
+		parameter mission_target.
+		
+		clearscreen.
+		// Just reaction-wheels Stability:
+		RCS OFF.
+		SAS OFF.
+		LOCK STEERING TO SHIP:prograde.
+		wait 1.
+		// Confirm?
+		if KUniverse:ActiveVessel <> SHIP {
+			update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
+			UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
+		}
+		update_phase_title("Confirm: Change-Inclination?", 0, false).
+		PRINT "Please make sure that TARGET is selected".
+		// PRINT "Confirm: Change-Inclination? (y/n)" at (0,5). set ch to terminal:input:getchar().
+		// if (ch = "y" OR ch = "Y")
+		runpath( "boot/Phase0-Normal.c", mission_target).	// Correct Normal Before Burn
+		LOG "Normal" to normal.txt.
+		CLEARSCREEN.	
+}
 
 //ACTION: REFUEL ----------------------------------------------
 if mission_origin <> DEFAULT_KSC //mission_target //ORIGIN = TARGET
@@ -64,25 +88,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 
 	// Adjust mission inclination?
 	if NOT EXISTS("normal.txt")
-	{
-		clearscreen.
-		// Just reaction-wheels Stability:
-		RCS OFF.
-		SAS OFF.
-		LOCK STEERING TO SHIP:prograde.
-		wait 1.
-		// Confirm?
-		if KUniverse:ActiveVessel <> SHIP {
-			update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
-			UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
-		}
-		update_phase_title("Confirm: Phase-Normal?", 0, false).
-		PRINT "Confirm: Phase-Normal? (y/n)" at (0,5). set ch to terminal:input:getchar().
-		if (ch = "y" OR ch = "Y")
-			runpath( "boot/Phase0-Normal.c", mission_target).	// Correct Normal Before Burn
-		LOG "Normal" to normal.txt.
-		CLEARSCREEN.
-	}
+		change_inclination().
 	else
 		PRINT "SKIP: Normal".
 
@@ -117,6 +123,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			PRINT "Press: 3 - Stage: Customer Payload". 
 		else
 			PRINT "Press: 4 - Deorbit". 
+			PRINT "Press: 5 - Change Inclination".
 		set ch to terminal:input:getchar(). PRINT "selected: "+ch.
 		if ch="1" or ch =""  {
 			update_phase_title("Confirm: SPEED-BREAK?", 0, false).
@@ -151,6 +158,10 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		}
 		else if ch="4" {
 			runpath("boot/stage-2-deorbit.c").
+		}
+		else if ch="5" {
+			if vehicle_type = "Crew Dragon 2" 
+				change_inclination (VESSEL("PMB ISS HT2 & TANTARES KSP1.10")).
 		}
 	}
 	

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 28/Dez/2020
+// 30/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
@@ -60,7 +60,6 @@ function boostback_burn
 	set impactDist to 999999.
 	LOG  STAGE_1_TYPE + " - boostback_burn("+do_reverse_max_speed+") - START" to LOG.txt.
 
-	//set lat_correction to 0.	
 	set we_are_done to FALSE.
 	until we_are_done
 	{
@@ -68,8 +67,6 @@ function boostback_burn
 
 		if STAGE_1_TYPE = "CORE"
 		{
-			//set lat_correction to (LandingTarget:LAT - ADDONS_TR_IMPACTPOS:LAT)*50.
-			//LOCK STEERING TO HEADING(270+lat_correction,0, -270).
 			LOCK STEERING TO HEADING(LandingTarget:HEADING,0, -270).
 			SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
 		} else
@@ -95,7 +92,6 @@ function boostback_burn
 		}
 		
 		PRINT_STATUS (3). //impactDist
-		//PRINT "lat.correct. "+ROUND(lat_correction,2) at (32, 4).
 		if (do_reverse)
 		{
 			if (impactDist < 1000) and SHIP:GROUNDSPEED < do_reverse_max_speed or (SHIP:GROUNDSPEED < 350 and impactDist > prev_impactDist)
@@ -426,25 +422,25 @@ function touchdown
 		else
 			set t to error*((1000*SHIP:MASS*g)/maxthrust)/maxthrust.
 		
-		setHoverDescendSpeed(2+((alt:radar-30)/7.5),t).
+		setHoverDescendSpeed(0.5+((alt:radar-30)/7.5),t).
 	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 function rocketshutdown
 {
-	SAS OFF.
+	UNLOCK STEERING. wait 1.
+	SAS ON. wait 1.//SAS OFF.
 	update_phase_title("SECURE ROCKET",0).
 	SET thrust to 0.
 	unlock throttle.							//Auto Throttle
 	SET SHIP:CONTROL:PILOTMAINTHROTTLE TO 0.	//Pilot Throttle Lever
-	UNLOCK STEERING.
 	shutDownAllEngines().
 	if KUniverse:ActiveVessel = SHIP
 		set target to BODY("Earth").
 	// Final Stability:
 	SAS ON.
-	WAIT 5.
+	WAIT 10.
 	SAS OFF.
 	RCS OFF.
 	BREAKS OFF.

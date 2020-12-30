@@ -62,7 +62,7 @@ function main_liftoff
 	}
 
 	RCS ON.
-	if vehicle_type = "F1-M1" or vehicle_sub_type = "Falcon Heavy LEM" or vehicle_type = "Crew Dragon 2"
+	if vehicle_type = "F1-M1" or vehicle_sub_type = "Falcon Heavy LEM" //or vehicle_type = "Crew Dragon 2"
 		SAS OFF.
 	else
 		SAS ON.
@@ -237,6 +237,10 @@ if alt:radar < 100
 	PRINT "Throttle" at (0,1+index2).
 	PRINT "Maxthrust: " at (0,2+index2).
 	PRINT "delta: " at (0,3+index2).
+	
+	//PRINT "HEADING: " at (0,16).
+	PRINT "[GEOPOSITION]: " at (0,17).
+	
 	set x to 0.
 	set phase to 0.
 	until altitude > 30000 
@@ -355,6 +359,9 @@ if alt:radar < 100
 	PRINT "phase: " 			at (0,10).
 	PRINT "deltaReduction: " 	at (0,11).
 	
+	//PRINT "HEADING: " at (0,16).
+	PRINT "[GEOPOSITION]: " at (0,17).
+	
 	until (Vs2 >= MECO1) or (apoapsis >= FINAL_ORBIT2) or phase = 3 //(Reusable) or (Non Reusable Mission) or (on stage-2 burn)
 	{ 
 		set delta to set_max_delta_curve().
@@ -458,6 +465,10 @@ if altitude*1.1 < FINAL_ORBIT2
 		}
 		
 		activateVesselProbe().
+		
+		if vehicle_type = "Crew Dragon 2"
+			set MECO1 to 9999^2.			//Stop Lat. Correction
+		
 	}
 	
 	// Maximizing: Horizontal Aceleration:
