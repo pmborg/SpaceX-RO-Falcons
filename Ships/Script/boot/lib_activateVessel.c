@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Activate or get near by VESSEL.
-// 30/Dez/2020
+// 29/Dez/2020
 // --------------------------------------------------------------------------------------------
 
 declare global g_OtherBooster to SHIP.
@@ -16,8 +16,6 @@ declare global g_OtherBooster to SHIP.
 function getNearbyProbe // The other Booster 
 {
 	parameter do_activation to 0.
-	parameter nearby to "Probe".
-	
 	WAIT 2. // Give time to check main VESSEL state.
 	LOCAL all_vessels IS LIST().
 	LIST TARGETS IN all_vessels.
@@ -27,7 +25,7 @@ function getNearbyProbe // The other Booster
 	LOCAL nearby_vessels IS LIST().
 	FOR ves IN all_vessels {
 		LOG "VES: "+ves:name to LOG.txt.
-		if ves:name:find(nearby) > 0
+		if ves:name:find("Probe") > 0
 		{
 			// DEBUG:
 			// PRINT "["+STAGE_1_TYPE+"] name: "+ves:name.
@@ -59,7 +57,6 @@ function activateVesselProbe
 	set vessel_near_vessel to getNearbyProbe().
 	if vessel_near_vessel <> ""
 		kuniverse:forceactive(VESSEL(vessel_near_vessel:NAME)). //SET KUniverse:ACTIVEVESSEL TO VESSEL(vessel_near_vessel:NAME).
-	WAIT 1.
 }
 
 function activateMainVessel 
@@ -78,5 +75,5 @@ function activateMainVessel
 	// Booster Landed, return now FOCUS-VIEW to main VESSEL:
 	LOG "Activate MAIN VESSEL: "+nearby_vessels[0]:name to LOG.TXT.
 	kuniverse:forceactive(VESSEL(nearby_vessels[0]:name)). //SET KUniverse:ACTIVEVESSEL TO VESSEL(nearby_vessels[0]:name). 
-	WAIT 1.
+	WAIT 2.
 }

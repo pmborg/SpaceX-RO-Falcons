@@ -15,7 +15,7 @@ core:doaction("Open Terminal", true).
 CLEARSCREEN.
 
 // URGENT/RESET STUFF: -------------------------------------------------------
-if status = "PRELAUNCH" and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
+if (status = "PRELAUNCH" or status = "LANDED") and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 {
 	DELETEPATH("SLAVE.TXT").
 	LOG  "SET SLAVE_STAGE to 0." to SLAVE.TXT.

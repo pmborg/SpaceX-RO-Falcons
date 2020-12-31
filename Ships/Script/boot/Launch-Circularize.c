@@ -19,6 +19,10 @@ if KUniverse:ActiveVessel = SHIP
 	SET MAPVIEW TO TRUE.	// map view on
 SAS OFF.
 
+//Kill KSP spin bugs, of a out of focus vessel:
+set kuniverse:timewarp:MODE to "RAILS".	wait 1. //RESET
+warp 1. wait 1. warp 0.
+
 // Calculate circular velocity (vcir) at apoapsis altitude:
 set x to 1.
 set circle_error to 0.
@@ -30,7 +34,7 @@ function wait_for_AP
 	parameter w.
 
 	update_phase_title("C-WAIT FOR APOAPSIS",1, true).	
-	//set warp to 0.
+	set warp to 0.
 	LOCK STEERING TO SHIP:PROGRADE.//  + R(0,0,180).
 	if eta:apoapsis > 3000
 		if KUniverse:ActiveVessel = SHIP //and vehicle_type <> "Crew Dragon 2"
@@ -201,6 +205,7 @@ function do_circle_step
 if ship:verticalspeed > 0 and eta:apoapsis > 60
 	wait_for_AP(60).
 
+LOCK STEERING TO SHIP:PROGRADE.//  + R(0,0,180).
 RCS ON.
 print "5".
 WAIT 2.5. print "4".
@@ -238,3 +243,7 @@ LOCK STEERING TO SHIP:PROGRADE.//  + R(0,0,180).
 // WAIT 1.
 // set sasmode TO "PROGRADE".
 DELETEPATH("CIRCULARIZE.txt").
+
+//Kill KSP spin bugs, of a out of focus vessel:
+set kuniverse:timewarp:MODE to "RAILS".	wait 1. //RESET
+warp 1. wait 1. warp 0.

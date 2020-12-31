@@ -97,8 +97,7 @@ function display_speed_kmh
 	parameter indice.
 	
 	PRINT "Altitude: "		 	at (0,indice+0).	PRINT ROUND(h0/1000,1)+" km   "		 	at (22,indice+0).
-	PRINT "Speed: "				at (0,indice+1).	PRINT ROUND(v0*3.6,1)+" km/h   "		at (22,indice+1).	
-	
+	PRINT "Speed: "				at (0,indice+1).	PRINT ROUND(v0*3.6,1)+" km/h   "		at (22,indice+1).
 }
 
 // --------------------------------------------------------------------------------------------

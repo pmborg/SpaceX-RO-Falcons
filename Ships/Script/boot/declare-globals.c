@@ -22,7 +22,7 @@ function ResetMission
 	WAIT 1.
 }
 
-if status = "PRELAUNCH"
+if (status = "PRELAUNCH" or status = "LANDED")
 	update_phase_title("PRE-LAUNCH",0, false).
 
 // For Kerbin:
@@ -81,17 +81,8 @@ FROM { local counter is 0. } UNTIL counter = bodylist:LENGTH STEP {SET counter t
 if ( RealSolarSystemMod )
 	set DEFAULT_KSC to "Earth".	
 	
-if status = "PRELAUNCH" and BODY:name = DEFAULT_KSC // first reboot? Reset State  
+if (status = "PRELAUNCH" or status = "LANDED") and BODY:name = DEFAULT_KSC // first reboot? Reset State  
 	ResetMission().
-
-// else {
-	// if STATUS <> "FLYING" and STATUS <> "SUB_ORBITAL"
-	// {
-		// PRINT "Confirm: RESET Mission? (y/n)". set ch to terminal:input:getchar().
-		// if (ch = "y" OR ch = "Y")
-			// ResetMission().
-	// }
-// }
 
 //Note: After ResetMission()
 LIST PARTS IN partsList.

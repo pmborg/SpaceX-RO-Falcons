@@ -97,7 +97,7 @@ function boostback_burn
 			if (impactDist < 1000) and SHIP:GROUNDSPEED < do_reverse_max_speed or (SHIP:GROUNDSPEED < 350 and impactDist > prev_impactDist)
 				break.
 		}else{
-			if impactDist > prev_impactDist and impactDist < 5000
+			if impactDist > prev_impactDist and impactDist < 10000
 				break.
 		}
 	}
@@ -412,8 +412,8 @@ function touchdown
 		if GROUNDSPEED < 5 and impactDist < 50
 			set rate to 85.				//SLOW correction
 
-		if (alt:radar-30) < 100
-			set rate to 89.95.			//"zero" correction
+		if (alt:radar-30) < 30
+			set rate to 89.9.			//"zero" correction
 			
 		updateHoverSteering().
 		steerToTarget(rate).

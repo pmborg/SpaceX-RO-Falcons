@@ -67,7 +67,7 @@ function main_liftoff
 	else
 		SAS ON.
 	
-	if status = "PRELAUNCH" 
+	if (status = "PRELAUNCH" or status = "LANDED")
 	{
 		AG1 ON. //TOGGLE
 		Print "(Release Tower Clamp)".
@@ -114,8 +114,11 @@ function do_stage
 ////////////////////////////////////////////////////////////////////////////////////////////////
 function check_if_we_need_new_stage
 {
-	if throttle > 0 and maxthrust = 0 
+	if throttle > 0 and maxthrust = 0
+	{
 		do_stage().
+		PRINT "(Staging...)" at (0,2).
+	}
 	
 	if alt:radar > 1000 and SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" and maxthrust < 10000 and stage:number = 8
 		do_stage().
