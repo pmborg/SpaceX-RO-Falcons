@@ -425,7 +425,7 @@ function touchdown
 		else
 			set t to error*((1000*SHIP:MASS*g)/maxthrust)/maxthrust.
 		
-		setHoverDescendSpeed(0.05+((alt:radar-30)/7.5),t).
+		setHoverDescendSpeed(0.01+((alt:radar-30)/8),t). //setHoverDescendSpeed(0.01+((alt:radar-30)/7.5),t).
 	}
 }
 
@@ -443,7 +443,7 @@ function rocketshutdown
 		set target to BODY("Earth").
 	// Final Stability:
 	SAS ON.
-	WAIT 10.
+	WAIT 2.
 	SAS OFF.
 	RCS OFF.
 	BREAKS OFF.

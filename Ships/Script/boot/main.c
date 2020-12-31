@@ -36,8 +36,6 @@ function change_inclination
 		}
 		update_phase_title("Confirm: Change-Inclination?", 0, false).
 		PRINT "Please make sure that TARGET is selected".
-		// PRINT "Confirm: Change-Inclination? (y/n)" at (0,5). set ch to terminal:input:getchar().
-		// if (ch = "y" OR ch = "Y")
 		runpath( "boot/Phase0-Normal.c", mission_target).	// Correct Normal Before Burn
 		LOG "Normal" to normal.txt.
 		CLEARSCREEN.	
@@ -72,15 +70,12 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 				RUNPATH( "boot/PhaseIV-Orbit.c" ).			// NO-ATM-Launch: "PhaseIV-Orbit.c"
 		}
 		
-		if (BODY:name = mission_origin) and (apoapsis < LEOrbit or periapsis < body:atm:height) or orbit_type = "GSO"
+		if (BODY:name = mission_origin) and (apoapsis < LEOrbit or periapsis < body:atm:height) or orbit_type = "GSO" or vehicle_type = "Crew Dragon 2"
 		{
 			if body:atm:height > 0
 				RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
 			else
 				RUNPATH( "boot/Launch-Circularize.c", apoapsis ).
-			
-			//SET ON SATELITE Solar Panels:
-			//AG3 ON. //Toggle
 		} else
 			PRINT "SKIP: Launch-Circularize".
 	} else
@@ -116,7 +111,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		SAS OFF.
 		LOCK STEERING TO SHIP:prograde.
 		wait 1.
-		update_phase_title("Mandatory Confirmation", 0, false).
+		update_phase_title("Mission Command", 0, false).
 		PRINT "Press: 1 - Abort/Land Anywhere!". 
 		PRINT "Press: 2 - Circularize(or Stablize ST-2)". 
 		if vehicle_type <> "Crew Dragon 2"

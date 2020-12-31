@@ -21,7 +21,7 @@ SAS OFF.
 
 //Kill KSP spin bugs, of a out of focus vessel:
 set kuniverse:timewarp:MODE to "RAILS".	wait 1. //RESET
-warp 1. wait 1. warp 0.
+set warp to 1. wait 1. set warp to  0.
 
 // Calculate circular velocity (vcir) at apoapsis altitude:
 set x to 1.
@@ -246,4 +246,4 @@ DELETEPATH("CIRCULARIZE.txt").
 
 //Kill KSP spin bugs, of a out of focus vessel:
 set kuniverse:timewarp:MODE to "RAILS".	wait 1. //RESET
-warp 1. wait 1. warp 0.
+set warp to  1. wait 1. set warp to  0.
