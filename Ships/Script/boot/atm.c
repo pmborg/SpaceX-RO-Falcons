@@ -116,10 +116,10 @@ function update_atmosphere
 	{
 		PRINT "--- Cº   "		at (22,indice+3).
 		PRINT "--- kg/m^3   "	at (22,indice+4).
-		PRINT "--- (hPa)   "	at (22,indice+5).
+		PRINT "--- (hPa)      "	at (22,indice+5).
 		PRINT "--- m/sec   "	at (22,indice+6).
 		PRINT "---   "			at (22,indice+7).
-		PRINT "--- N/m^2   "	at (22,indice+8).
+		PRINT "--- N/m^2      "	at (22,indice+8).
 		PRINT "--- K     "		at (22,indice+11).
 		PRINT ROUND(SHIP:Q,3)+"     " at (22,indice+12).
 		return.

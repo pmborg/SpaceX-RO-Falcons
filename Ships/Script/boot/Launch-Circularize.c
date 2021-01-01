@@ -13,22 +13,6 @@
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
 
-CLEARSCREEN. print " ".print " ".
-update_phase_title("W8 to Circularize",1, false).
-if KUniverse:ActiveVessel = SHIP
-	SET MAPVIEW TO TRUE.	// map view on
-SAS OFF.
-
-//Kill KSP spin bugs, of a out of focus vessel:
-set kuniverse:timewarp:MODE to "RAILS".	wait 1. //RESET
-set warp to 1. wait 1. set warp to  0.
-
-// Calculate circular velocity (vcir) at apoapsis altitude:
-set x to 1.
-set circle_error to 0.
-set GM to BODY:mu.
-set v to 0.
-
 function wait_for_AP
 {
 	parameter w.
@@ -37,8 +21,11 @@ function wait_for_AP
 	set warp to 0.
 	LOCK STEERING TO SHIP:PROGRADE.//  + R(0,0,180).
 	if eta:apoapsis > 3000
-		if KUniverse:ActiveVessel = SHIP //and vehicle_type <> "Crew Dragon 2"
+		if KUniverse:ActiveVessel = SHIP
+		{
+			set kuniverse:timewarp:MODE to "RAILS".	wait 1. //RESET
 			set warp to 3.
+		}
 
 	set saved to EXISTS("CIRCULARIZE.txt").
 	until eta:apoapsis < 3000 and saved
@@ -55,12 +42,12 @@ function wait_for_AP
 			set saved to true.
 		}
 	}
-	if KUniverse:ActiveVessel = SHIP //and vehicle_type <> "Crew Dragon 2"
+	if KUniverse:ActiveVessel = SHIP
 		set warp to 2.
 	update_phase_title("C-Circularize T-3000",1, true).	
 	
 	WAIT until eta:apoapsis < 100.
-	if KUniverse:ActiveVessel = SHIP //and vehicle_type <> "Crew Dragon 2"
+	if KUniverse:ActiveVessel = SHIP
 	{
 		set kuniverse:timewarp:MODE to "PHYSICS". wait 1.//WARP with PHYSICS
 		set warp to 3.
@@ -82,7 +69,7 @@ function do_circle_step
 	set x to 1. //x=Throttle.
 
 	RCS ON.
-	until (periapsis >= FINAL_ORBIT)// (vcir-Vo < .001 and periapsis >= FINAL_ORBIT) 
+	until (periapsis >= FINAL_ORBIT)
 	{
 		set last_ecc to SHIP:ORBIT:ECCENTRICITY.
 		
@@ -95,9 +82,9 @@ function do_circle_step
 		set Vo to ((Vox^2)+(Voy^2)+(Voz^2))^.5.
 		
 		set r to max(apoapsis,periapsis)+BODY:radius. //apoapsis+BODY:radius. BODY("Kerbin")=600000.
-		set vcir to (GM/r)^.5.
-		set r to FINAL_ORBIT+BODY:radius. //apoapsis+BODY:radius. BODY("Kerbin")=600000.
-		set per to periapsis+BODY:radius. //periapsis+BODY:radius. BODY("Kerbin")=600000.
+		set vcir to (GM/r)^.5.				// Calculate circular velocity (vcir) at apoapsis altitude:
+		set r to FINAL_ORBIT+BODY:radius. 	//apoapsis+BODY:radius. BODY("Kerbin")=600000.
+		set per to periapsis+BODY:radius. 	//periapsis+BODY:radius. BODY("Kerbin")=600000.
 		set a to (r+per)/2.
 		set e to (r-per)/(r+per).
 		set h to (GM*a*(1-(e^2)))^.5.
@@ -129,16 +116,10 @@ function do_circle_step
 			set A to 1.
 			set y to y+1.
 		}.
-		// if (Vcir-Vo) < 1 and y < 3{
-			// set err to 8.
-			// set A to .1.
-			// set y to y+1.
-		// }.
 		
 		//In theory we should have it...
 		if throttle > 0 and maxthrust = 0 
 		{
-			//CLEARSCREEN.
 			confirm_stage().
 			WAIT 2.
 		}.
@@ -200,11 +181,31 @@ function do_circle_step
 	LOCK THROTTLE TO 0.
 }
 
-// DO CIRCULARIZATION:
-////////////////////////////////////////////////////////////////////////////////////////////////
-if ship:verticalspeed > 0 and eta:apoapsis > 60
+// SETUP CIRCULARIZATION:
+// --------------------------------------------------------------------------------------------
+set x to 1.
+set circle_error to 0.
+set GM to BODY:mu.
+set v to 0.
+
+CLEARSCREEN. print " ".print " ".
+update_phase_title("WAIT TO CIRCULARIZE",1, false).
+if KUniverse:ActiveVessel = SHIP
+	SET MAPVIEW TO TRUE.	// map view on
+	
+SAS OFF. //Hands off..
+
+//Kill KSP spin bugs, of a out of focus vessel:
+set kuniverse:timewarp:MODE to "RAILS".	wait 1. //RESET
+set warp to 1. wait 1. set warp to  0.
+
+// WAIT FOR PE/AP:
+// --------------------------------------------------------------------------------------------
+if ship:verticalspeed > 0 and eta:apoapsis > 60	//AP
 	wait_for_AP(60).
 
+// FINAL COUNT DOWN:
+// --------------------------------------------------------------------------------------------
 LOCK STEERING TO SHIP:PROGRADE.//  + R(0,0,180).
 RCS ON.
 print "5".
@@ -227,7 +228,7 @@ PRINT "Eccentricity: " 	at (0,11).
 do_circle_step().
 
 // ITS DONE:
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 RCS OFF.
 wait 5.
 CLEARSCREEN.
@@ -239,9 +240,6 @@ WAIT 5.
 SET MAPVIEW TO FALSE.  	// map view off
 lock throttle to 0.		//set thrust to 0.
 LOCK STEERING TO SHIP:PROGRADE.//  + R(0,0,180).
-// SAS ON.
-// WAIT 1.
-// set sasmode TO "PROGRADE".
 DELETEPATH("CIRCULARIZE.txt").
 
 //Kill KSP spin bugs, of a out of focus vessel:

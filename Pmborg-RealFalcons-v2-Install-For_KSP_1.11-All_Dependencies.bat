@@ -74,7 +74,7 @@ if not exist buildID64.txt (
 	REM ckan.exe install --headless --allow-incompatible --no-recommends KIS KAS
 
 	REM KOS:
-	ckan.exe install --headless --allow-incompatible --no-recommends KOS
+	ckan.exe install --headless --allow-incompatible --no-recommends KOS MechJeb2
 
 	REM DEPS:
 	ckan.exe install --headless --allow-incompatible --no-recommends AnimatedDecouplers BackgroundResources FASA HeatControl KerbalEngineerRedux 

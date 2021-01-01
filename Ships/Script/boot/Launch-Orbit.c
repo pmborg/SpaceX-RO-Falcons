@@ -15,7 +15,7 @@ set FINAL_ORBIT2 to FINAL_ORBIT.// For Phase-2 falcon stage-2
 set FINAL_ORBIT  to 150000. 	//(FINAL_ORBIT/2) - For Phase-1 falcon stage-1
 set phase to 0.
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 function main_liftoff
 {
 	if vehicle_type = "Falcon Heavy" 
@@ -78,7 +78,7 @@ function main_liftoff
 		CLEARSCREEN. PRINT " ".PRINT " ".	
 		update_phase_title("[ ] IGNITION...", 0, false).
 		set thrust to 1. //ALL ENGINES START IGNITION...
-		////////////////////////////////////////////////////////////////////////////////////////////////
+		// --------------------------------------------------------------------------------------------
 		
 		if vehicle_type = "Crew Dragon 2" or vehicle_type = "Falcon Heavy"
 			WAIT 1.
@@ -95,7 +95,7 @@ function main_liftoff
 	}
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 function do_stage
 {
 	if vehicle_type = "Crew Dragon 2" and KUniverse:ActiveVessel <> SHIP
@@ -111,7 +111,7 @@ function do_stage
 	wait 3.	
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 function check_if_we_need_new_stage
 {
 	if throttle > 0 and maxthrust = 0
@@ -129,7 +129,7 @@ function check_if_we_need_new_stage
 	}
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 function check_fairing_sep 
 {
 	if (((vehicle_type = "F9v1.2B5") or (vehicle_type = "F1-M1")) and altitude > FAIRSEP and phase = 0) or
@@ -152,7 +152,7 @@ function check_fairing_sep
 
 
 // Vehicle Release Auto Sequence:
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 set thrust to 0.
 lock throttle to thrust.
 LOCK STEERING TO up + R(0,0,180). //UP
@@ -181,11 +181,11 @@ set TakeOffTime to TIME:SECONDS. //(define: Secure for reboots)
 if alt:radar < 100
 {
 	//WAIT for the GO!
-	////////////////////////////////////////////////////////////////////////////////////////////////
+	// --------------------------------------------------------------------------------------------
 	main_liftoff().
 	
 	//LIFTOFF...
-	////////////////////////////////////////////////////////////////////////////////////////////////	
+	// --------------------------------------------------------------------------------------------	
 	CLEARSCREEN.
 	update_phase_title("[1] LIFTOFF...",0, false).
 	
@@ -200,12 +200,13 @@ if alt:radar < 100
 	PRINT "Dynamic Pressure" 	at (0,3).
 	PRINT "q/Qmax" 				at (0,4).
 	set index2 to 6.
-	
+
+	set thrust to 1.	
+
 	// LOOP: UNTIL HALF Qmax
-	////////////////////////////////////////////////////////////////////////////////////////////////
+	// --------------------------------------------------------------------------------------------
 	until q > Qmax*.50
 	{ 
-		set thrust to 1.
 		set H to altitude/(-5000).
 		set p to p0*(e^H).
 		set q to .5*p*(verticalspeed^2). // pd = 1/2 ρ v^2
@@ -235,7 +236,7 @@ if alt:radar < 100
 	}.
 
 	// Throttle is reduced to maintain a constant terminal velocity.
-	////////////////////////////////////////////////////////////////////////////////////////////////
+	// --------------------------------------------------------------------------------------------
 	update_phase_title("[2] LAUNCH-Trusting",1, false).
 	PRINT "Throttle" at (0,1+index2).
 	PRINT "Maxthrust: " at (0,2+index2).
@@ -336,7 +337,7 @@ if alt:radar < 100
 		log_data (vel).
 	}.
 
-	////////////////////////////////////////////////////////////////////////////////////////////////
+	// --------------------------------------------------------------------------------------------
 	SAS OFF.
 	CLEARSCREEN.
 	PRINT " ".PRINT " ".
@@ -409,7 +410,7 @@ if alt:radar < 100
 }
 
 //F9/FH: STAGE-1/BOOSTER SEP
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 if altitude*1.1 < FINAL_ORBIT2 
 {
 	CLEARSCREEN.
@@ -464,7 +465,7 @@ if altitude*1.1 < FINAL_ORBIT2
 	}
 	
 	// Maximizing: Horizontal Aceleration:
-	////////////////////////////////////////////////////////////////////////////////////////////////
+	// --------------------------------------------------------------------------------------------
 	CLEARSCREEN.
 	update_phase_title("[7] ORBIT PHASE I",1,false).
 	UNLOCK STEERING.
@@ -586,7 +587,7 @@ if altitude*1.1 < FINAL_ORBIT2
 		activateVesselProbe().	//Time to Switch to ST-1
 			
 	// Maximizing Apoapsis Increase:
-	////////////////////////////////////////////////////////////////////////////////////////////////
+	// --------------------------------------------------------------------------------------------
 	update_phase_title("[7] ORBIT PHASE II",1,false). 
 	UNTIL (apoapsis >= FINAL_ORBIT2) 
 	{
@@ -636,7 +637,7 @@ if altitude*1.1 < FINAL_ORBIT2
 		check_if_we_need_new_stage().
 	}
 
-	UNLOCK STEERING.
+	//UNLOCK STEERING.
 	set thrust to 0.
 	PRINT "Orbit insertion completed".
 	WAIT 5.

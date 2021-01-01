@@ -29,9 +29,9 @@ SET shipPitch TO 0.
 
 declare global ADDONS_TR_IMPACTPOS to LandingTarget. //ADDONS:TR:IMPACTPOS.
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 // INIT: (Before COMMON)
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 if STAGE_1_TYPE = "MASTER" and mass < 1000
 {
 	set near_vessel to getNearbyProbe().
@@ -43,7 +43,7 @@ if STAGE_1_TYPE = "MASTER" and mass < 1000
 	}
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 function setHoverPIDLOOPS
 {
 	// KP=The proportional gain factor
@@ -83,7 +83,7 @@ function horizontalDistance
 	return (geo1:POSITION - geo2:POSITION):MAG.
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 function steerToTarget
 {
 	parameter pitch is 1. parameter overshootLatModifier is 0 .parameter overshootLngModifier is 0. parameter do_reverse to false.
@@ -148,7 +148,7 @@ function cVel
 	RETURN V(eComp, uComp, nComp).
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 function updateHoverSteering
 {
 	SET cVelLast TO cVel().
@@ -171,7 +171,7 @@ function updateHoverSteering
 		SET steeringDir TO 360 + steeringDirNonNorm.
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 function setHoverDescendSpeed
 {
 	parameter a. parameter minThrott is 0.
@@ -190,7 +190,7 @@ function setHoverDescendSpeed
 	SET thrust TO calcThrott.	
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 function updateLandingVars  //Scalar projection of two vectors. Find component of a along b. a(dot)b/||b||
 {
 	updateVars().
@@ -222,7 +222,7 @@ function updateLandingVars  //Scalar projection of two vectors. Find component o
 	SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 function PRINT_STATUS 
 {
 	parameter y.
@@ -285,8 +285,8 @@ function PRINT_STATUS
 
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 // START:
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 update_phase_title("(INIT PIDLOOPS)", 0, false).
 setHoverPIDLOOPS().

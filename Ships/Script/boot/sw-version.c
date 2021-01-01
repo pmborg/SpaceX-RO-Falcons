@@ -8,11 +8,11 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to specify the SW version and the diferent types of profiles supported.
-// 31/Dez/2020
+// 01/Jan/2021
 // --------------------------------------------------------------------------------------------
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //             #.YY.MM.DD
-PRINT "SW-Ver: 1.20.12.31" at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
+PRINT "SW-Ver: 1.21.01.01" at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 
 //https://ksp-kos.github.io/KOS/structures/misc/loaddistance.html#attribute:SITUATIONLOADDISTANCE:UNLOAD
 //MAGIC LINES! Extend Physics:
@@ -56,7 +56,7 @@ if EXISTS("kspver.c")
 	runpath ("kspver.c").
 
 // GLOBALS:
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 declare global r to 0.
 declare global GM to 0.
 declare global g to 0.
@@ -73,7 +73,7 @@ declare global MAIN_SHIP_NAME to SHIP_NAME:REPLACE(" probe", "").
 //DEBUG:
 // PRINT "MODEL: "+SHIP_NAME.
 // PRINT "BOOT: " + CORE:BOOTFILENAME.
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 
 if SHIP_NAME = "PMBT-SpaceX Falcon 1 (Merlin 1A)" or 
    SHIP_NAME = "PMBT-SpaceX Falcon 1 (Merlin 1C)"
@@ -116,7 +116,7 @@ if CORE:BOOTFILENAME:FIND("boot-fairings.ks") > -1
 // boot-landingzone.ks
 // boot-st2.ks
 // boot.ks
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 declare global STAGE_1_TYPE to "".
 if CORE:BOOTFILENAME:FIND("boot-boosters-L.ks") > -1 	// STAGE-1L	(if vehicle_type = "Falcon Heavy")
 	set STAGE_1_TYPE to "SLAVE".
@@ -140,7 +140,7 @@ if STAGE_1_TYPE <> ""
 }
 
 // Defaults for Fligth Profile:
-////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------------------------------------------
 if vehicle_type = "Falcon Heavy" 
 {
 	// Data from: FH Demo 1:

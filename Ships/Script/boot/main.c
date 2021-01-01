@@ -72,6 +72,10 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		
 		if (BODY:name = mission_origin) and (apoapsis < LEOrbit or periapsis < body:atm:height) or orbit_type = "GSO" or vehicle_type = "Crew Dragon 2"
 		{
+			if KUniverse:ActiveVessel <> SHIP {
+				update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
+				UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
+			}
 			if body:atm:height > 0
 				RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
 			else
