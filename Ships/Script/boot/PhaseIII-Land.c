@@ -9,7 +9,7 @@
 // Purpose: 
 //              	- Used to land any where near by, (sample: after de-orbit on Mun or Moon)
 //                    used in missions (Beyond Earth)
-// 28/Nov/2020
+// 01/Jan/2020
 // --------------------------------------------------------------------------------------------
 
 CLEARSCREEN.

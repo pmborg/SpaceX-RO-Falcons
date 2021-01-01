@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 30/Dez/2020
+// 01/Jan/2020
 // --------------------------------------------------------------------------------------------
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
@@ -117,8 +117,8 @@ function boostback_burn
 		reboot.
 	}
 
-	update_phase_title("BOOSTBACK BURN END", 0, false).
-	LOG  STAGE_1_TYPE + " " + we_are_done + " - boostback_burn() - END" to LOG.txt.
+	// update_phase_title("BOOSTBACK BURN END", 0, false).
+	// LOG  STAGE_1_TYPE + " " + we_are_done + " - boostback_burn() - END" to LOG.txt.
 }
 
 // --------------------------------------------------------------------------------------------

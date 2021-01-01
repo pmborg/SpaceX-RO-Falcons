@@ -9,7 +9,7 @@
 // Purpose: 
 //              This is used in orbital (de-orbit) mechanics.
 //              to land without precision (land any where near by)
-// 28/Nov/2020
+// 01/Jan/2020
 // --------------------------------------------------------------------------------------------
 
 parameter goto_mission_target.

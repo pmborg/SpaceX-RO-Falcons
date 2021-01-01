@@ -49,8 +49,8 @@ if not exist buildID64.txt (
 
 	REM General Base Stuff:
 	ckan.exe install --headless --allow-incompatible --no-recommends KerbalXMod CraftManager KSP-AVC HangerExtenderExtended MoarFEConfigs DraggableNavball
-	REM VesselMoverContinued DraggableAltimeter 
-	ckan.exe install --headless --allow-incompatible --no-recommends AntennaHelper BetterCrewAssignment KerbalAlarmClock Trajectories PatchManager 
+	REM VesselMoverContinued DraggableAltimeter AntennaHelper
+	ckan.exe install --headless --allow-incompatible --no-recommends BetterCrewAssignment KerbalAlarmClock Trajectories PatchManager 
 	ckan.exe install --headless --allow-incompatible --no-recommends AmpYearPowerManager DMagicScienceAnimate 
 	REM EasyVesselSwitch SCANsat DockingCamKURS 
 	ckan.exe install --headless --allow-incompatible --no-recommends CommunityTechTree 
