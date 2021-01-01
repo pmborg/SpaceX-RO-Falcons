@@ -14,7 +14,12 @@ CLEARSCREEN.
 
 PRINT "fixing iss orbit:".
 
-LOCK STEERING TO HEADING(180, 90)+ R(0,0,0).
+
+if SHIP:name = "SpaceY-GateWay"
+	LOCK STEERING TO HEADING(180, -90)+ R(0,0,0).
+else
+	LOCK STEERING TO HEADING(180, 90)+ R(0,0,0).
+	
 UNTIL FALSE
 {
 	WAIT 10.
