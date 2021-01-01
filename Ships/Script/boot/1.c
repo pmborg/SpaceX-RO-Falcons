@@ -22,9 +22,9 @@ runpath("boot/common.c").
 
 //Closer:
 SET steeringDir TO 90.	// W/E
-SET Vdeg to 90.
-set Vroll to -270.		// -270 = Zero Rotation
-LOCK STEERING TO HEADING(steeringDir, Vdeg, Vroll).
+SET steeringVdeg to 90.
+set steeringVroll to -270.		// -270 = Zero Rotation
+LOCK STEERING TO HEADING(steeringDir, steeringVdeg, steeringVroll).
 update_phase_title("W8-1  ", 0).
 wait 10.
 

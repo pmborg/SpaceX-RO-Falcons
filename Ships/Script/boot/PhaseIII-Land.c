@@ -74,7 +74,7 @@ UNLOCK STEERING.
 SET thrust TO 0.1.
 if altitude > 100000 //100km
 {
-	lock steering to retrograde. //steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset).
+	lock steering to retrograde.
 	
 	set warp to 3.
 	set Vo to 0.
@@ -100,18 +100,9 @@ set t to 0.
 SET Vdown TO 1.
 // if body:atm:height > 0
 	// BRAKES ON.
+lock steering to retrograde. 
 until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 {
-	//if alt:radar > 500
-	lock steering to retrograde. //
-	
-	//else
-	//	steerToTarget(87.5, 0, 0).
-	
-	// if alt:radar < 200000
-		// set max to 600.
-	// if alt:radar < 100000
-		// set max to 550.
 	if alt:radar < 100000
 		set max to 500.
 	if alt:radar < 60000
@@ -214,12 +205,6 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 	PRINT "maxthrust: " + ROUND(maxthrust,1) + "kN     " at (0,11).
 	PRINT "t: " + ROUND(t,1) + "     " at (0,12).
 	PRINT "x: " + x + "     " at (0,13).
-	
-	// if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT 
-	// {
-		// SET impactDist TO calcDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS:TR:IMPACTPOS).
-		// PRINT_STATUS (15).
-	// }
 }
 
 //WAIT 5.
@@ -233,5 +218,4 @@ RCS OFF.
 SAS OFF.
 BRAKES OFF.	// Air Breaks off
 shutDownAllEngines().
-//CLEARSCREEN.
 PRINT "All engines, secure and shutdown" at (0,26).

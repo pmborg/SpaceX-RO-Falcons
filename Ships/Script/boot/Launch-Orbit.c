@@ -107,7 +107,8 @@ function do_stage
 		
 		if vehicle_type = "Falcon Heavy" 
 			AG6 ON. //Toggle: FH Boosters separator
-	}		
+	}
+	LOCK STEERING TO PROGRADE.
 	wait 3.	
 }
 
@@ -243,6 +244,12 @@ if alt:radar < 100
 	PRINT "delta: " at (0,3+index2).
 	set x to 0.
 	set phase to 0.
+	
+	//SETUP Steering:
+	steering_falcon(90).
+	LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
+	
+	//LAUNCH-Trusting:
 	until altitude > 30000 
 	{
 		if machVal > 0.8 and mphase = 0
@@ -359,6 +366,7 @@ if alt:radar < 100
 	PRINT "phase: " 			at (0,10).
 	PRINT "deltaReduction: " 	at (0,11).
 	
+	LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
 	until (Vs2 >= MECO1) or (apoapsis >= FINAL_ORBIT2) or phase = 3 //(Reusable) or (Non Reusable Mission) or (on stage-2 burn)
 	{ 
 		set delta to set_max_delta_curve().
@@ -468,7 +476,7 @@ if altitude*1.1 < FINAL_ORBIT2
 	// --------------------------------------------------------------------------------------------
 	CLEARSCREEN.
 	update_phase_title("[7] ORBIT PHASE I",1,false).
-	UNLOCK STEERING.
+	//UNLOCK STEERING.
 	set thrust to 0.25.	// Stage-2 Initial Slow Burn:
 	if vehicle_type = "Crew Dragon 2" or vehicle_type = "Falcon Heavy"
 		WAIT 1.
@@ -519,12 +527,13 @@ if altitude*1.1 < FINAL_ORBIT2
 	RCS OFF.
 	set phase to 0.
 	set deltaReduction to 0.
+	LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
 	UNTIL periapsis > 0 and apoapsis < FINAL_ORBIT2
 	{
-		SET Vdeg to set_Vdeg().
-		SET steeringDir TO 90.	// W/E
-		set Vroll to -270.		// -270 = Zero Rotation
-		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).//steering_falcon(Vdeg).
+		SET steeringVdeg to set_Vdeg().
+		SET steeringDir TO 90.			// W/E
+		set steeringVroll to -270.		// -270 = Zero Rotation
+		//LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).//steering_falcon(Vdeg).
 	
 		set eta_apoapsis to eta:apoapsis.
 		set vorb to velocity:orbit.
@@ -592,12 +601,12 @@ if altitude*1.1 < FINAL_ORBIT2
 	UNTIL (apoapsis >= FINAL_ORBIT2) 
 	{
 		if verticalspeed < 0 
-			SET Vdeg to (-verticalspeed/8).	// UP/DOWN: Vertical = 90 (magical number: 8 tune precision)
+			SET steeringVdeg to (-verticalspeed/8).	// UP/DOWN: Vertical = 90 (magical number: 8 tune precision)
 		else
-			SET Vdeg to set_Vdeg().
-		set Vroll to -270.			// Zero Rotation
+			SET steeringVdeg to set_Vdeg().
+		set steeringVroll to -270.			// Zero Rotation
 		SET steeringDir TO 90.	// W/E
-		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).//steering_falcon(Vdeg).
+		//LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).//steering_falcon(Vdeg).
 		
 		set vorb to velocity:orbit.
 		set Vsx to vorb:x.
@@ -637,8 +646,8 @@ if altitude*1.1 < FINAL_ORBIT2
 		check_if_we_need_new_stage().
 	}
 
-	//UNLOCK STEERING.
 	set thrust to 0.
+	LOCK STEERING TO PROGRADE. 	//UNLOCK STEERING.
 	PRINT "Orbit insertion completed".
 	WAIT 5.
 

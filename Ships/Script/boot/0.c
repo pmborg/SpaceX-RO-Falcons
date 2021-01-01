@@ -164,7 +164,7 @@ if (SHIP:VERTICALSPEED > 1) and NOT EXISTS("flip.txt")
 		if STAGE_1_TYPE = "SLAVE"
 			set steeringDir TO steeringDir-45.
 			
-		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).//steering_falcon(Vdeg).
+		LOCK STEERING TO HEADING(steeringDir,0,-270).//steering_falcon(Vdeg).
 		WAIT 4. // wait for SEP
 	}
 	SET thrust TO 0.

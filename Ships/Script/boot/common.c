@@ -105,10 +105,12 @@ function steerToTarget
 	SET targetDir TO horizontalDirection(ADDONS_TR_IMPACTPOS,overshootLatLng).
 	
 	SET steeringDir TO targetDir - 180.
+	SET steeringVdeg to pitch.
+	set steeringVroll to -270.
 	if (do_reverse)
-		LOCK STEERING TO HEADING(steeringDir+180,pitch, -270).
-	else
-		LOCK STEERING TO HEADING(steeringDir,pitch, -270).
+		SET steeringDir TO steeringDir + 180.
+		
+	//LOCK STEERING TO HEADING(steeringDir, steeringVdeg, steeringVroll).
 }
 
 function setHoverMaxSteerAngle

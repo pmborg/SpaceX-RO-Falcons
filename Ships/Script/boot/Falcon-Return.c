@@ -67,7 +67,10 @@ function boostback_burn
 
 		if STAGE_1_TYPE = "CORE"
 		{
-			LOCK STEERING TO HEADING(LandingTarget:HEADING,0, -270).
+			set steeringDir to LandingTarget:HEADING.
+			set steeringVdeg to 0.
+			set steeringVroll to -270.
+			//LOCK STEERING TO HEADING(LandingTarget:HEADING,0, -270).
 			SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
 		} else
 			steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset, do_reverse).
@@ -129,6 +132,7 @@ function ReEntryburn
 	set x to 0.
 	
 	sas off.
+	lock steering to retrograde.
 	until SHIP:ALTITUDE < 3000
 	{
 		SET prev_impactDist to impactDist.
@@ -145,6 +149,7 @@ function ReEntryburn
 				RCS ON.
 				SAS OFF.
 				
+				LOCK STEERING TO HEADING(steeringDir, steeringVdeg, steeringVroll).
 				SET thrust to safe_power .
 			}
 			
@@ -161,9 +166,10 @@ function ReEntryburn
 					steerToTarget(82.5, 0, 0). 			// Slower Correction
 				}
 			}
-		} else {
-			lock steering to retrograde.
-		}
+		} 
+		// else {
+			// lock steering to retrograde.
+		// }
 		
 		PRINT_STATUS (3).
 		if SHIP:VERTICALSPEED > maxDescendSpeed and (impactDist > prev_impactDist or STAGE1_LAND_ON = "LAND")
@@ -192,9 +198,9 @@ function ReEntryburn
 				update_phase_title("(vertical stability)", 0).
 				SET thrust to 0.
 				RCS ON.
+				LOCK STEERING TO up + R(0,0,180). //UP
 				FROM {local x is 5.} UNTIL x = 0 STEP {set x to x-1.} DO 
 				{
-					LOCK STEERING TO up + R(0,0,180). //UP
 					wait 1.
 					PRINT_STATUS (3).
 				}
@@ -218,7 +224,7 @@ function waitAndDoReEntryburn
 		SAS ON. wait 1.
 		SAS OFF.
 		RCS ON.
-		LOCK STEERING TO UP + R(0,0,180).
+		steering_falcon(90). //LOCK STEERING TO UP + R(0,0,180).
 		wait 10.
 		
 		// Wait until out ATM...
@@ -255,10 +261,10 @@ function waitAndDoReEntryburn
 	}
 
 	update_phase_title("FOCUS ON TARGET", 0).
-	UNLOCK STEERING.
-	WAIT 2.
-	SAS OFF.
-	WAIT 2.
+	// UNLOCK STEERING.
+	// WAIT 2.
+	// SAS OFF.
+	// WAIT 2.
 
 	if STAGE_1_TYPE = "SLAVE"
 		set LandingTarget TO offline_LandingZone1.
@@ -297,6 +303,7 @@ function aerodynamic_guidance
 	RCS ON.	wait 1.
 	
 	set DO_LANDING to false.
+	LOCK STEERING TO HEADING(steeringDir, steeringVdeg, steeringVroll).
 	until DO_LANDING
 	{
 		PRINT_STATUS (3).
@@ -308,7 +315,7 @@ function aerodynamic_guidance
 	
 		if (impactDist < aerodynamic_target) and SHIP:ALTITUDE > 3500
 		{
-			LOCK STEERING TO UP + R(0,0,180).
+			steering_falcon(90). //LOCK STEERING TO UP + R(0,0,180).
 		} else 
 		{
 			SAS OFF.
@@ -338,6 +345,7 @@ function landingBurn
 	update_phase_title("LANDING BURN", 1).
 	SAS OFF.
 	RCS ON.
+	LOCK STEERING TO HEADING(steeringDir, steeringVdeg, steeringVroll).
 	until (alt:radar<100 and Verticalspeed=0)
 	{
 		// set error for min. thrust
@@ -389,6 +397,7 @@ function touchdown
 	update_phase_title("TOUCHDOWN",1).
 	SET step to TRUE.
 	set checkgear to 0.
+	LOCK STEERING TO HEADING(steeringDir, steeringVdeg, steeringVroll).
 	until (SHIP:STATUS="LANDED" or sBurnDist <= 0.1) and alt:radar < 100
 	{
 		PRINT_STATUS (3, t). 
@@ -425,7 +434,7 @@ function touchdown
 		else
 			set t to error*((1000*SHIP:MASS*g)/maxthrust)/maxthrust.
 		
-		setHoverDescendSpeed(0.01+((alt:radar-30)/8),t). //setHoverDescendSpeed(0.01+((alt:radar-30)/7.5),t).
+		setHoverDescendSpeed(0.01+((alt:radar-30)/7.5),t).
 	}
 }
 
@@ -501,6 +510,11 @@ function main_falcon_return
 {
 	CLEARSCREEN.
 	update_phase_title("(Return Home)",0).
+
+	set steeringDir to LandingTarget:HEADING.
+	set steeringVdeg to 0.
+	set steeringVroll to -270.
+	LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
 
 	//Back to 100% now:
 	if CORE:BOOTFILENAME:FIND("boot-boosters.ks") > -1

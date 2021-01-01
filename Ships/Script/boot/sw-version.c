@@ -61,14 +61,21 @@ declare global r to 0.
 declare global GM to 0.
 declare global g to 0.
 
+//steering_falcon()
+declare global steeringDir to 0.
+declare global steeringVdeg to 0.
+declare global steeringVroll to 0.
+
+//FH:
 declare global COM_thrust to 0.
 declare global COM_steeringDir to 0.
 declare global COM_pitch to 0.
 declare global COM_ADDONS_TR_IMPACTPOS to SHIP:GEOPOSITION.
 declare global COM_altitude to 0.
-declare global SHIP_NAME to SHIP:NAME.
 
-declare global MAIN_SHIP_NAME to SHIP_NAME:REPLACE(" probe", "").
+//SHIP NAMES: (For vessel switch)
+declare global SHIP_NAME to SHIP:NAME.								//["NAME"]_probe
+declare global MAIN_SHIP_NAME to SHIP_NAME:REPLACE(" probe", "").	//["NAME"]		 (Original name)
 
 //DEBUG:
 // PRINT "MODEL: "+SHIP_NAME.

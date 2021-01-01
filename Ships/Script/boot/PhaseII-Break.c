@@ -23,7 +23,7 @@ function break_velocity {
 	set thrust to 1.
 	lock throttle to thrust. WAIT 1.
 	LOCK STEERING TO retrograde.
-	LOCK STEERING TO SHIP:RETROGRADE.
+	// LOCK STEERING TO SHIP:RETROGRADE.
 		
 	CLEARSCREEN.
 	SAS OFF.
@@ -56,7 +56,7 @@ set Voy to vorbit:y.
 set Voz to vorbit:z.
 set Vo to ((Vox^2)+(Voy^2)+(Voz^2))^.5.
 
-LOCK STEERING TO SHIP:RETROGRADE.
+// LOCK STEERING TO SHIP:RETROGRADE.
 RCS ON.
 WAIT 12.5.
 RCS OFF.

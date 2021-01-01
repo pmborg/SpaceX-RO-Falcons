@@ -55,7 +55,7 @@ function wait_for_AP
 	update_phase_title("C-Circularize T-100",1, true).
 	
 	WAIT until eta:apoapsis < w.
-	set kuniverse:timewarp:MODE to "RAILS".	wait 1. //RESET
+	set kuniverse:timewarp:MODE to "RAILS".	wait 1.
 	set warp to 0.
 	update_phase_title("C-Circularize T-"+w,1, true).
 }
@@ -69,6 +69,13 @@ function do_circle_step
 	set x to 1. //x=Throttle.
 
 	RCS ON.
+
+	//SETUP:
+	// SET steeringDir TO 90.		// W/E
+	// SET steeringVdeg to 0.			// UP/DOWN: Vertical = 90
+	// set steeringVroll to -270.			// Zero Rotation
+	// LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//LOCK STEERING TO heading (90, PlanetOuter*theta).
+	
 	until (periapsis >= FINAL_ORBIT)
 	{
 		set last_ecc to SHIP:ORBIT:ECCENTRICITY.
@@ -165,11 +172,11 @@ function do_circle_step
 		
 		SET steeringDir TO 90.		// W/E
 		if verticalspeed < 0 
-			SET Vdeg to (-verticalspeed/8).	// UP/DOWN: Vertical = 90 (magical number: 8 tune precision)
+			SET steeringVdeg to (-verticalspeed/8).	// UP/DOWN: Vertical = 90 (magical number: 8 tune precision)
 		else
-			SET Vdeg to 0.			// UP/DOWN: Vertical = 90
-		set Vroll to -270.			// Zero Rotation
-		LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).	//LOCK STEERING TO heading (90, PlanetOuter*theta).
+			SET steeringVdeg to 0.			// UP/DOWN: Vertical = 90
+		set steeringVroll to -270.			// Zero Rotation
+		//LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//LOCK STEERING TO heading (90, PlanetOuter*theta).
 
 		wait 0.010.
 		if SHIP:ORBIT:ECCENTRICITY > last_ecc and SHIP:ORBIT:ECCENTRICITY < 0.1 and periapsis > BODY:ATM:HEIGHT
@@ -194,14 +201,21 @@ if KUniverse:ActiveVessel = SHIP
 	SET MAPVIEW TO TRUE.	// map view on
 	
 SAS OFF. //Hands off..
-
-//Kill KSP spin bugs, of a out of focus vessel:
-set kuniverse:timewarp:MODE to "RAILS".	wait 1. //RESET
-set warp to 1. wait 1. set warp to  0.
+set kuniverse:timewarp:MODE to "RAILS".	wait 1.
+set warp to  0.
 
 // WAIT FOR PE/AP:
 // --------------------------------------------------------------------------------------------
-if ship:verticalspeed > 0 and eta:apoapsis > 60	//AP
+if KUniverse:ActiveVessel <> SHIP {
+	update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
+	UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
+}
+if periapsis > BODY:atm:height and verticalspeed < 0 //means moving to PE and not to AP
+{
+	set warp to 2.
+	wait until verticalspeed > 0.
+}
+if ship:verticalspeed > 0 and eta:apoapsis > 60		//Move closer to AP
 	wait_for_AP(60).
 
 // FINAL COUNT DOWN:
@@ -244,4 +258,4 @@ DELETEPATH("CIRCULARIZE.txt").
 
 //Kill KSP spin bugs, of a out of focus vessel:
 set kuniverse:timewarp:MODE to "RAILS".	wait 1. //RESET
-set warp to  1. wait 1. set warp to  0.
+set warp to  0.
