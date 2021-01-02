@@ -108,8 +108,8 @@ function do_stage
 		if vehicle_type = "Falcon Heavy" 
 			AG6 ON. //Toggle: FH Boosters separator
 	}
-	LOCK STEERING TO PROGRADE.
-	wait 3.	
+	// LOCK STEERING TO PROGRADE.
+	// wait 3.	
 }
 
 // --------------------------------------------------------------------------------------------
@@ -121,13 +121,16 @@ function check_if_we_need_new_stage
 		PRINT "(Staging...)" at (0,2).
 	}
 	
-	if alt:radar > 1000 and SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" and maxthrust < 10000 and stage:number = 8
-		do_stage().
-	if alt:radar > 1000 and SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2" and maxthrust < 10000 and stage:number = 6
+	if alt:radar > 1000 and SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" and maxthrust < 10000 and stage:number = 10
 	{
 		do_stage().
-		set phase to 3.
+		engines_thrustlimit_to (100).	//Main Core back to 100% now
 	}
+	// if alt:radar > 1000 and SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2" and maxthrust < 10000 and stage:number = 6
+	// {
+		// do_stage().
+		// set phase to 3.
+	// }
 }
 
 // --------------------------------------------------------------------------------------------
@@ -476,7 +479,6 @@ if altitude*1.1 < FINAL_ORBIT2
 	// --------------------------------------------------------------------------------------------
 	CLEARSCREEN.
 	update_phase_title("[7] ORBIT PHASE I",1,false).
-	//UNLOCK STEERING.
 	set thrust to 0.25.	// Stage-2 Initial Slow Burn:
 	if vehicle_type = "Crew Dragon 2" or vehicle_type = "Falcon Heavy"
 		WAIT 1.
@@ -518,6 +520,11 @@ if altitude*1.1 < FINAL_ORBIT2
 		PRINT ROUND(throttle*100) + "% ("+ROUND(maxthrust)+")     " at (22,y+8).
 		PRINT ROUND (vessel_compass(),1)+" deg.   " 	at (22,y+9).
 		PRINT ROUND (vessel_pitch(),1)+" deg.   " at (22,y+10).
+		
+		//DEBUG:
+		print ROUND (steeringDir) at   (40,3).
+		print ROUND (steeringVdeg) at  (40,4).
+		print ROUND (steeringVroll) at (40,5).
 	}
 
 	if vehicle_type = "Falcon Heavy"
@@ -527,13 +534,15 @@ if altitude*1.1 < FINAL_ORBIT2
 	RCS OFF.
 	set phase to 0.
 	set deltaReduction to 0.
-	LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
+	// UNLOCK STEERING. wait 0.1.
+	// LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll). wait 0.1.
+	
 	UNTIL periapsis > 0 and apoapsis < FINAL_ORBIT2
 	{
-		SET steeringVdeg to set_Vdeg().
 		SET steeringDir TO 90.			// W/E
+		SET steeringVdeg to set_Vdeg().
 		set steeringVroll to -270.		// -270 = Zero Rotation
-		//LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).//steering_falcon(Vdeg).
+		LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
 	
 		set eta_apoapsis to eta:apoapsis.
 		set vorb to velocity:orbit.

@@ -141,7 +141,8 @@ if ALL_PROCESSORS:LENGTH > 2	//Stage-1 (Have two processors)
 	reboot.
 }
 else
-	core:doaction("Open Terminal", true).
+	if MECO1 < 9999^2
+		core:doaction("Open Terminal", true).
 
 // Init Common (After "LOADED - LandingZone"):
 runpath("boot/common.c").

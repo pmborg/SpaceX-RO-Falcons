@@ -251,9 +251,8 @@ function set_Vdeg
 	if vehicle_type = "Crew Dragon 2"
 		return 90-74.	// Vertical = 90
 	else
-	if 	SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" or
-		SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
-		return 90-74.	// Vertical = 90
+	if 	SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" //or SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
+		return 90-76.	// Vertical = 90
 	else
 	if vehicle_type = "Falcon Heavy"
 		return 90-85.	// Vertical = 90
@@ -269,8 +268,8 @@ declare global LEOrbit to 300000.			// Default: Orbit Target at Launch
 if vehicle_sub_type = "Falcon Heavy"
 	set orbit_type to "GSO".
 
-if SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
-	declare global LEOrbit to 500000.		// Default: Orbit Target at Launch
+if SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM"
+	declare global LEOrbit to 300000.		// Default: Orbit Target at Launch
 	
 if orbit_type = "GSO" 
 	set LEOrbit to 33000000.				// 1st step for (stage-2)
