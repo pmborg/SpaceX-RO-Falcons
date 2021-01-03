@@ -4,7 +4,7 @@ What is on development [Not yet Available]<br>
 -- [FH] Landing Both FH ST-1 Boosters at the same time on LZ-1 and LZ-2. **(Already work! tunning it...)**<br>
 
 
-**Testing all Moon Mission code with SaturnV:**
+**Testing all Moon Mission code with SaturnV, (before use FH+LEM)**
 ![!](https://i.imgur.com/OXC7pUn.png)
 
 
