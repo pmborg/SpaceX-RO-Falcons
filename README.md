@@ -1,8 +1,8 @@
 # WHAT WILL BE ON RELEASE 1 ?
 What is on development [Not yet Available]<br>
--- [F9+CD2] Working to Crew Misson 2 before next step. **(Already work! tunning it...)**<br>
+-- [FH+LEM] On the Moon?<br>
 -- [FH] Landing Both FH ST-1 Boosters at the same time on LZ-1 and LZ-2. **(Already work! tunning it...)**<br>
--- [FH] On the Moon<br>
+
 
 **Testing all Moon Mission code with SaturnV:**
 ![!](https://i.imgur.com/OXC7pUn.png)
