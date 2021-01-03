@@ -161,7 +161,9 @@ if vehicle_type = "SaturnV"
 	// Data: SaturnV
 	declare global Qmax 	to 14600.
 	declare global MECO1 	to 9999^2.// 1875*
-	declare global FAIRSEP 	to 160*1000.
+	declare global FAIRSEP 	to 110*1000.
+	SET TARGET TO "Moon". 	wait 1.
+	LOG "Normal" to normal.txt.
 }else
 if vehicle_type = "Falcon Heavy" 
 {
@@ -221,6 +223,13 @@ function set_max_delta_curve
 	set e to constant:e.
 	set I to altitude/(15000).
 	
+	if vehicle_type = "SaturnV"
+	{
+		set delta to (1*(e^I)*(-1))*1.4.	//Rotate 40% Faster
+		if delta < (-75)					//MAX. Keep: 10 deg nose up
+			set delta to (-75).
+	}
+	else
 	if vehicle_type = "Falcon Heavy"
 	{
 		set delta to (1*(e^I)*(-1))*1.2.	//Rotate 20% Faster

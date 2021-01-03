@@ -42,23 +42,28 @@ function wait_for_AP
 				set saved to true.
 			}
 		}
-	}
-	if KUniverse:ActiveVessel = SHIP
-		set warp to 2.
-	update_phase_title("C-Circularize T-3000",1, true).	
 	
-	WAIT until eta:apoapsis < 100.
-	if KUniverse:ActiveVessel = SHIP
-	{
-		set kuniverse:timewarp:MODE to "PHYSICS". wait 1.//WARP with PHYSICS
-		set warp to 3.
+		if KUniverse:ActiveVessel = SHIP
+		{
+			set kuniverse:timewarp:MODE to "RAILS".	wait 1. //RESET
+			set warp to 2.
+		}
+
+		update_phase_title("C-Circularize T-3000",1, true).	
+		
+		WAIT until eta:apoapsis < 100.
+		if KUniverse:ActiveVessel = SHIP
+		{
+			set kuniverse:timewarp:MODE to "PHYSICS". wait 1.//WARP with PHYSICS
+			set warp to 3.
+		}
+		update_phase_title("C-Circularize T-100",1, true).
+		
+		WAIT until eta:apoapsis < w.
+		set kuniverse:timewarp:MODE to "RAILS".	wait 1.
+		set warp to 0.
+		update_phase_title("C-Circularize T-"+w,1, true).
 	}
-	update_phase_title("C-Circularize T-100",1, true).
-	
-	WAIT until eta:apoapsis < w.
-	set kuniverse:timewarp:MODE to "RAILS".	wait 1.
-	set warp to 0.
-	update_phase_title("C-Circularize T-"+w,1, true).
 }
 
 function do_circle_step

@@ -27,8 +27,8 @@ function DO_BURN {
 		set ch to terminal:input:getchar(). print "selected: "+ch.
 		if (ch = "n" OR ch = "N")
 			 return.
-		//shutDownAllEngines(). activateNucEngine().
-		RUNPATH( "boot/PhaseI-Burn.c", mission_target:name ). // 1st Burn
+
+		RUNPATH( "boot/PhaseI-Burn.c", mission_target:name ). // MAIN BURN (to target BODY Mission)
 		shutDownAllEngines().
 	}
 
@@ -44,12 +44,13 @@ function DO_BURN {
 	if (Orbit:periapsis > MAX(40000, 1.5*BODY:atm:height)) // 40,000m safe altitude (periapsis wait) in all planets.
 		wait_until_periapsis().
 
-	RCS ON.
-	wait 15.
-	RCS OFF.
+	if vehicle_type <> "SaturnV"
+	{
+		RCS ON.
+		wait 15.
+		RCS OFF.
+	}
 		
-	// shutDownAllEngines().
-	// activateNucEngine().
 	RUNPATH( "boot/PhaseII-Circularize.c", mission_target ).
 }
 

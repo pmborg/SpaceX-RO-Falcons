@@ -21,7 +21,7 @@ runpath("boot/atm.c").
 
 function change_inclination 
 {
-		parameter mission_target.
+		//parameter mission_target.
 		
 		clearscreen.
 		// Just reaction-wheels Stability:

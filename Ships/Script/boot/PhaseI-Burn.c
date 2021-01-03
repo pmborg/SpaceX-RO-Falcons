@@ -25,7 +25,7 @@ wait 1.
 set GM to originBody:mu. 			//GM = 3.5316*(10^12). for Kerbin
 set target to goto_mission_target.	//"Mun"/"Moon", etc
 runpath("boot/lib_trajectory.c").
-set warp to 2. wait 1.
+set warp to 1. wait 1.
 get_rendevous_nodes().
 set warp to 0. wait 1.
 set target to goto_mission_target.	//"Mun"/"Moon", etc
@@ -105,7 +105,9 @@ print "LAUNCH: "+LAUNCH.
 //-------------------------------------------------------------------------------
 {
 	clearscreen.
-	print "PhaseI-Rotate to "+goto_mission_target+" Burn" at (0,0).
+	update_phase_title("PhaseI-Rotate", 0, false).
+	print " ".print " ".
+	print "PhaseI-Rotate to "+goto_mission_target+" Burn" at (0,2).
 	RCS ON.
 	wait 15.
 	RCS OFF.
@@ -114,22 +116,25 @@ print "LAUNCH: "+LAUNCH.
 //-------------------------------------------------------------------------------
 clearscreen.
 RCS OFF.
-print "[PhaseI-Burn] to escaping "+body:name at (0,0).
-
+update_phase_title("PhaseI-Rotate", 0, false).
+print " ".print " ".
+print "[PhaseI-Burn] to escaping "+body:name.
 set thrust to 1.
-if vehicle_type = 3 
-	{AG2 ON. AG1 OFF. AG1 ON. wait 1.}
-	
-print "[PhaseI-Burn] to "+goto_mission_target+" Intercept: "+goto_mission_target at (0,0).
-print "Orbital Speed(V)" at (0,1).
-print "Desired Speed (Vp)" at (0,2). 
-print "Current Apoapsis*" at (0,3).
-print "Desired Apoapsis" at (0,4). print ROUND(Ra - BODY(goto_mission_target):RADIUS) at (25,4).
-print "Target [(Vp-V) < 0]:" at (0,5).
-print "Vo: (phase) " 		 at (0,6). 		
-print "Y: (phase) " 		 at (0,7). 		
-print "X: (power)" 			 at (0,8).
+// update_phase_title("[PhaseI-Burn]", 0, false).	
+// print " ".print " ".
+print "[PhaseI-Burn] to "+goto_mission_target+" Intercept: "+goto_mission_target.
 
+set py to 4.
+print "Orbital Speed(V)" at (0,py+1).
+print "Desired Speed (Vp)" at (0,py+2). 
+print "Current Apoapsis*" at (0,py+3).
+print "Desired Apoapsis" at (0,py+4). print ROUND(Ra - BODY(goto_mission_target):RADIUS) at (25,py+4).
+print "Target [(Vp-V) < 0]:" at (0,py+5).
+print "Vo: (phase) " 		 at (0,py+6). 		
+print "Y: (phase) " 		 at (0,py+7). 		
+print "X: (power)" 			 at (0,py+8).
+
+//MAIN BURN:
 set x to 1.		//thrust
 set y to .5.	//Burn-Phase
 set V to 0.		//Initial relative speed.
@@ -213,21 +218,18 @@ until (Vp-V) < 0.001 {
 		}
 	}
 	
-	print ROUND(V)+"    " 		 at	(25,1).//Orbital Speed
-	print ROUND(apoapsis)+"    " at	(25,3).//Current Apoapsis
-	print ROUND(Vp-V)+"    " 	 at	(25,5).
-	print ROUND(Vo)+"    "  	 at (25,6).
-	print y 					 at (25,7).
-	print x 					 at (25,8).
+	print ROUND(V)+"    " 		 at	(25,py+1).//Orbital Speed
+	print ROUND(apoapsis)+"    " at	(25,py+3).//Current Apoapsis
+	print ROUND(Vp-V)+"    " 	 at	(25,py+5).
+	print ROUND(Vo)+"    "  	 at (25,py+6).
+	print y 					 at (25,py+7).
+	print x 					 at (25,py+8).
 	print "ship:Orbit:TRANSITION: "+ship:Orbit:TRANSITION+"     " at (0,10). //FINAL
 	print "maxthrust: "+maxthrust+"     " 					 	  at (0,11).
 
 	if apoapsis > (Ra - BODY(goto_mission_target):RADIUS)*0.7 {
-		if (maxthrust > 5000) {
-			//shutDownAllEngines().
-			//activateLiquidEngine().
+		if (maxthrust > 5000)
 			set x to max(0.3,(mass*5)/maxthrust).
-		}
 	}
 
 	if HaveEncounter {
@@ -246,15 +248,10 @@ until (Vp-V) < 0.001 {
 }.
 
 set thrust to 0.
-
-// if vehicle_type = 3 
-	// { AG2 ON. wait 1.}
-//shutDownAllEngines().	
-//SAS OFF.
-
 print "BURN-I END!" at (0,25).
 wait 1.
-PRINT "Press [ENTER] to Confirm: Warp             "at (0,26)..set ch to terminal:input:getchar().
+PRINT "Press [ENTER] to Confirm: Warp             "at (0,26).
+set ch to terminal:input:getchar().
 clearscreen.
 
 REMOVE nd.  
@@ -264,11 +261,12 @@ REMOVE ned2.
 clearscreen.
 print "PhaseI-Burn: Warp Out of Kerbin SOI".
 set x to 0.
-set warp to 6.
+set warp to 6.	//*
 until x = 1 {
 	
 	if body:name <> DEFAULT_KSC {
-		if warp < 6 {
+		if warp < 6 //*
+		{
 			set warp to 0.
 			set x to 1.
 		}

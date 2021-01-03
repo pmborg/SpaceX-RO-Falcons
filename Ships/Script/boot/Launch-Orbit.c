@@ -161,7 +161,7 @@ function check_fairing_sep
 		AG3 ON. //Special: Faring Decouple
 		set phase to 2.	//fairing-sep
 	}
-	if vehicle_type = "SaturnV" and altitude > 140000 and phase < 1
+	if vehicle_type = "SaturnV" and altitude > 100000 and phase < 1
 	{
 		stage. 		 	//LES: launch escape system
 		set phase to 1.	 
