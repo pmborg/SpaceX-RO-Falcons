@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Circularize an orbit after Launch-Orbit.c
-// 01/Jan/2020
+// 03/Jan/2021
 // --------------------------------------------------------------------------------------------
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
@@ -28,16 +28,19 @@ function wait_for_AP
 		}
 
 	set saved to EXISTS("CIRCULARIZE.txt").
-	until eta:apoapsis < 3000 and saved
+	if vehicle_type <> "SaturnV"
 	{
-		WAIT 1.
-		if (KUniverse:ActiveVessel = SHIP) and (NOT EXISTS("CIRCULARIZE.txt")) //and (vehicle_type = "F9v1.2B5")
+		until eta:apoapsis < 3000 and saved
 		{
-			update_phase_title("C-RESUME CIRCULARIZE",1, true).	//WA: to KSP bug.
-			kuniverse:QUICKSAVETO("RESUME-CIRCULARIZE"). wait 1.
-			LOG  "Done" to CIRCULARIZE.txt. wait 1.
-			kuniverse:QUICKLOADFROM("RESUME-CIRCULARIZE").
-			set saved to true.
+			WAIT 1.
+			if (KUniverse:ActiveVessel = SHIP) and (NOT EXISTS("CIRCULARIZE.txt")) //and (vehicle_type = "F9v1.2B5")
+			{
+				update_phase_title("C-RESUME CIRCULARIZE",1, true).	//WA: to KSP bug.
+				kuniverse:QUICKSAVETO("RESUME-CIRCULARIZE"). wait 1.
+				LOG  "Done" to CIRCULARIZE.txt. wait 1.
+				kuniverse:QUICKLOADFROM("RESUME-CIRCULARIZE").
+				set saved to true.
+			}
 		}
 	}
 	if KUniverse:ActiveVessel = SHIP
@@ -125,7 +128,7 @@ function do_circle_step
 		//In theory we should have it...
 		if throttle > 0 and maxthrust = 0 
 		{
-			confirm_stage().
+			stage. //confirm_stage().
 			WAIT 2.
 		}.
 		
@@ -174,7 +177,9 @@ function do_circle_step
 		else
 			SET steeringVdeg to 0.			// UP/DOWN: Vertical = 90
 		set steeringVroll to -270.			// Zero Rotation
-		//LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//LOCK STEERING TO heading (90, PlanetOuter*theta).
+		
+		update_steering_status().
+		LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//LOCK STEERING TO heading (90, PlanetOuter*theta).
 
 		wait 0.010.
 		if SHIP:ORBIT:ECCENTRICITY > last_ecc and SHIP:ORBIT:ECCENTRICITY < 0.1 and periapsis > BODY:ATM:HEIGHT

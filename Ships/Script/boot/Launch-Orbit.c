@@ -8,69 +8,78 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 01/Jan/2020
+// 03/Jan/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 set FINAL_ORBIT2 to FINAL_ORBIT.// For Phase-2 falcon stage-2
 set FINAL_ORBIT  to 150000. 	//(FINAL_ORBIT/2) - For Phase-1 falcon stage-1
 set phase to 0.
-
+set str_vehicle to "".
 // --------------------------------------------------------------------------------------------
 function main_liftoff
 {
-	if vehicle_type = "Falcon Heavy" 
-		set str_vehicle to vehicle_type.
-	else
-		set str_vehicle to "Falcon".
-	
-	// Vehicle Release Auto Sequence:
-	PRINT " ".
-	PRINT "T-04:15 MVac and M1D fuel bleed has started. ".
-	PRINT "T-04:10 ST-1 LOX throttling to close up".
-	PRINT "T-03:40 M1D LOX load complete".
-	PRINT "T-03:30 P-1&LOX throttling to close up".
-	PRINT "T-03:25 P-1&LOX load completed".
-	PRINT "T-03:15 ST-2 TVC motions nominal".
-	PRINT "T-02:55 POGO bleed verification".
-	PRINT "T-02:50 Center-core LOX load complete".
-	PRINT "T-02:00 ST-2 LOX load complete".
-	PRINT "T-01:50 Falcon decouple is complete".
-	PRINT "T-01:40 "+str_vehicle+" is on internal power".
-	if vehicle_type = "Falcon Heavy" 
-		PRINT "T-01:30 Vehicles in self alignment".
-	PRINT "T-01:25 "+str_vehicle+" gas load complete".
-	PRINT "T-01:15 M1D-Fuel bleed complete".
-	if vehicle_type = "Falcon Heavy" 
-		PRINT "T-01:15 M1D Engine shells is complete".
-	PRINT "T-01:00 (Final FTS): READY FOR LAUNCH".
-	PRINT "T-00:55 "+str_vehicle+" (computer) is on start-up".
-	PRINT "T-00:45 STAGE-1&2 Pressurization for flight".
-	PRINT "T-00:30 (T-30 Seconds)".
-	PRINT "T-00:30 [Launch Director]: GO FOR LAUNCH".
-	PRINT "T-00:15 "+str_vehicle+" is configured for flight".
-	PRINT "T-00:15 (T-15 Seconds)".
-	PRINT "T-00:14 Standby for Turnarround Count".
-	PRINT "T-00:05 Side Boosters Ignition".
-
-	PRINT " ".
-	
-	if vehicle_type = "Crew Dragon 2"
+	if vehicle_company = "SpaceX"
 	{
-		set thrust to 1.
-		AG3 ON. //Retract Crew Tower
-		if (KUniverse:ActiveVessel = SHIP) STAGE.	//Water run...
-	}
+		if vehicle_type = "Falcon Heavy" 
+			set str_vehicle to vehicle_type.
+		else
+			set str_vehicle to "Falcon".
+		
+		// Vehicle Release Auto Sequence:
+		PRINT " ".
+		PRINT "T-04:15 MVac and M1D fuel bleed has started. ".
+		PRINT "T-04:10 ST-1 LOX throttling to close up".
+		PRINT "T-03:40 M1D LOX load complete".
+		PRINT "T-03:30 P-1&LOX throttling to close up".
+		PRINT "T-03:25 P-1&LOX load completed".
+		PRINT "T-03:15 ST-2 TVC motions nominal".
+		PRINT "T-02:55 POGO bleed verification".
+		PRINT "T-02:50 Center-core LOX load complete".
+		PRINT "T-02:00 ST-2 LOX load complete".
+		PRINT "T-01:50 Falcon decouple is complete".
+		PRINT "T-01:40 "+str_vehicle+" is on internal power".
+		if vehicle_type = "Falcon Heavy" 
+			PRINT "T-01:30 Vehicles in self alignment".
+		PRINT "T-01:25 "+str_vehicle+" gas load complete".
+		PRINT "T-01:15 M1D-Fuel bleed complete".
+		if vehicle_type = "Falcon Heavy" 
+			PRINT "T-01:15 M1D Engine shells is complete".
+		PRINT "T-01:00 (Final FTS): READY FOR LAUNCH".
+		PRINT "T-00:55 "+str_vehicle+" (computer) is on start-up".
+		PRINT "T-00:45 STAGE-1&2 Pressurization for flight".
+		PRINT "T-00:30 (T-30 Seconds)".
+		PRINT "T-00:30 [Launch Director]: GO FOR LAUNCH".
+		PRINT "T-00:15 "+str_vehicle+" is configured for flight".
+		PRINT "T-00:15 (T-15 Seconds)".
+		PRINT "T-00:14 Standby for Turnarround Count".
+		PRINT "T-00:05 Side Boosters Ignition".
 
-	RCS ON.
-	if vehicle_type = "F1-M1" or vehicle_sub_type = "Falcon Heavy LEM" or vehicle_type = "Crew Dragon 2"
-		SAS OFF.
-	else
-		SAS ON.
+		PRINT " ".
+		
+		if vehicle_type = "Crew Dragon 2"
+		{
+			set thrust to 1.
+			AG3 ON. //Retract Crew Tower
+			if (KUniverse:ActiveVessel = SHIP) STAGE.	//Water run...
+		}
+
+		if vehicle_type <> "SaturnV"
+			RCS ON.
+
+		if vehicle_type = "F1-M1" or 
+		   vehicle_sub_type = "Falcon Heavy LEM" or 
+		   vehicle_type = "Crew Dragon 2" or
+		   vehicle_type = "SaturnV"
+			SAS OFF.
+		else
+			SAS ON.
+	} else
+		set str_vehicle to vehicle_type.
 	
-	if (status = "PRELAUNCH" or status = "LANDED")
+	if (status = "PRELAUNCH" or status = "LANDED" or status = "SPLASHED") //KSP have so many bugs...
 	{
 		AG1 ON. //TOGGLE
-		Print "(Release Tower Clamp)".
+		if vehicle_company = "SpaceX" Print "(Release Tower Clamp)".
 		
 		FROM {local countdown is 5.} UNTIL countdown = 0 STEP {SET countdown to countdown - 1.} 
 		DO { PRINT "..." + countdown. WAIT 1. }
@@ -84,7 +93,7 @@ function main_liftoff
 			WAIT 1.
 			
 		if (KUniverse:ActiveVessel = SHIP) STAGE.	//Liftoff
-		Print "(Strongback Retracted)".
+		if vehicle_company = "SpaceX" Print "(Strongback Retracted)".
 
 		if vehicle_type = "Crew Dragon 2"
 			WAIT 1.
@@ -152,6 +161,16 @@ function check_fairing_sep
 		AG3 ON. //Special: Faring Decouple
 		set phase to 2.	//fairing-sep
 	}
+	if vehicle_type = "SaturnV" and altitude > 140000 and phase < 1
+	{
+		stage. 		 	//LES: launch escape system
+		set phase to 1.	 
+	}
+	if vehicle_type = "SaturnV" and altitude > FAIRSEP and phase < 2
+	{
+		AG7 ON. 		 //Special: Farings
+		set phase to 2.	 //fairing-sep
+	}
 }
 
 
@@ -182,7 +201,7 @@ set q to 0.
 set mphase to 0.
 set TakeOffTime to TIME:SECONDS. //(define: Secure for reboots)
 
-if alt:radar < 100
+if alt:radar < 200
 {
 	//WAIT for the GO!
 	// --------------------------------------------------------------------------------------------
@@ -218,7 +237,8 @@ if alt:radar < 100
 		PRINT ROUND(Qmax) at (22,2).
 		PRINT ROUND(q) at (22,3).
 		PRINT ROUND(q/Qmax*100,2)+ " %       " at (22,4).
-		PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,6).
+		if vehicle_company = "SpaceX"
+			PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,6).
 		
 		if alt:radar > 130 and alt:radar < 1000
 		{
@@ -262,7 +282,7 @@ if alt:radar < 100
 		}
 		if machVal > 1.2 and mphase = 1
 		{
-			update_phase_title("[4] Falcon is SuperSonic",1, false).
+			update_phase_title("("+str_vehicle+" is SuperSonic)",1, false).
 			set mphase to 2.
 		}
 		
@@ -334,7 +354,9 @@ if alt:radar < 100
 			set x to x+1.
 		}.
 		
-		PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,index2).
+		if vehicle_company = "SpaceX"
+			PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,index2).
+			
 		PRINT ROUND(tThrust*100,1)+"%                " 	at (22,1+index2).	
 		PRINT ROUND(Qmax)+"  " 							at (22,2).
 		PRINT ROUND(q)+"  " 							at (22,3).
@@ -381,7 +403,9 @@ if alt:radar < 100
 		set Vsz to vorb:z.
 		set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).
 		
-		PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,3).
+		if vehicle_company = "SpaceX"
+			PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,3).
+			
 		PRINT ROUND(mass)+" t   " 			 at (22,4).
 		PRINT thrust*100+" %   " 			 at (22,5).
 		PRINT ROUND(apoapsis/1000)+" km    " at (22,6).
@@ -401,7 +425,9 @@ if alt:radar < 100
 			set thrust to (thrust-deltaReduction).
 		}
 		
-		if vehicle_type = "F1-M1" or vehicle_sub_type = "Falcon Heavy LEM"
+		if vehicle_type = "F1-M1" or 
+		   vehicle_sub_type = "Falcon Heavy LEM" or
+		   vehicle_type = "SaturnV"
 			check_fairing_sep().
 
 		set vel to SQRT(Vs2).
@@ -520,11 +546,6 @@ if altitude*1.1 < FINAL_ORBIT2
 		PRINT ROUND(throttle*100) + "% ("+ROUND(maxthrust)+")     " at (22,y+8).
 		PRINT ROUND (vessel_compass(),1)+" deg.   " 	at (22,y+9).
 		PRINT ROUND (vessel_pitch(),1)+" deg.   " at (22,y+10).
-		
-		//DEBUG:
-		print ROUND (steeringDir) at   (40,3).
-		print ROUND (steeringVdeg) at  (40,4).
-		print ROUND (steeringVroll) at (40,5).
 	}
 
 	if vehicle_type = "Falcon Heavy"

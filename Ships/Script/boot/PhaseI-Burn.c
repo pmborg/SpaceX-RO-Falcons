@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to todo the Manouver in prograde to the: mission_target
-// 28/Nov/2020
+// 03/Jan/2021
 // --------------------------------------------------------------------------------------------
 
 parameter goto_mission_target.
@@ -16,8 +16,7 @@ parameter goto_mission_target.
 set originBody to BODY.
 set thrust to 0.
 set warp to 0.
-lock steering to prograde.
-//lock steering to up + R(0,-90,180).
+lock steering to prograde. //lock steering to up + R(0,-90,180).
 lock throttle to thrust.
 wait 1.
 
@@ -26,7 +25,7 @@ wait 1.
 set GM to originBody:mu. 			//GM = 3.5316*(10^12). for Kerbin
 set target to goto_mission_target.	//"Mun"/"Moon", etc
 runpath("boot/lib_trajectory.c").
-set warp to 3. wait 1.
+set warp to 2. wait 1.
 get_rendevous_nodes().
 set warp to 0. wait 1.
 set target to goto_mission_target.	//"Mun"/"Moon", etc

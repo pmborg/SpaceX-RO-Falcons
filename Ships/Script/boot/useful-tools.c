@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 01/Jan/2020
+// 03/Jan/2021
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
 
@@ -18,9 +18,12 @@ function steering_falcon
 	set steeringVdeg to Vdeg.
 	 
 	set lat_correction to 0.
-	if KUniverse:ActiveVessel = SHIP
-		if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT and vehicle_sub_type <> "Falcon Heavy LEM"
-	set lat_correction to (VESSEL("Landingzone1"):GEOPOSITION:LAT - ADDONS:TR:IMPACTPOS:LAT)*50.
+	if vehicle_company = "SpaceX"
+	{
+		if KUniverse:ActiveVessel = SHIP
+			if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT and vehicle_sub_type <> "Falcon Heavy LEM"
+		set lat_correction to (VESSEL("Landingzone1"):GEOPOSITION:LAT - ADDONS:TR:IMPACTPOS:LAT)*50.
+	}
 
 	PRINT "[GEOPOSITION]: " at (0,17).
 	PRINT ROUND (GEOPOSITION:LAT,3)+", " +ROUND (GEOPOSITION:LNG,3)+"   " at (22,17).
@@ -324,3 +327,11 @@ function flip_maneuver
 	}
 	print "wait: --" at (42,2).
 }
+
+	function update_steering_status
+	{
+		//DEBUG:
+		print ROUND (steeringDir) at   (40,3).
+		print ROUND (steeringVdeg) at  (40,4).
+		print ROUND (steeringVroll) at (40,5).
+	}

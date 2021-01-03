@@ -8,11 +8,11 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to specify the SW version and the diferent types of profiles supported.
-// 01/Jan/2021
+// 03/Jan/2021
 // --------------------------------------------------------------------------------------------
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //             #.YY.MM.DD
-PRINT "SW-Ver: 1.21.01.01" at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
+PRINT "SW-Ver: 1.21.01.03" at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 
 //https://ksp-kos.github.io/KOS/structures/misc/loaddistance.html#attribute:SITUATIONLOADDISTANCE:UNLOAD
 //MAGIC LINES! Extend Physics:
@@ -82,6 +82,14 @@ declare global MAIN_SHIP_NAME to SHIP_NAME:REPLACE(" probe", "").	//["NAME"]		 (
 // PRINT "BOOT: " + CORE:BOOTFILENAME.
 // --------------------------------------------------------------------------------------------
 
+declare global vehicle_company to "SpaceX".	
+
+if SHIP_NAME = "Apollo11-4KSP1.11"
+{
+	declare global vehicle_type to "SaturnV".				// BASE: Falcon-9 v1.2Blk:5 
+	set vehicle_company to "NASA".
+}
+else
 if SHIP_NAME = "PMBT-SpaceX Falcon 1 (Merlin 1A)" or 
    SHIP_NAME = "PMBT-SpaceX Falcon 1 (Merlin 1C)"
 	declare global vehicle_type to "F1-M1".					// BASE: Falcon 1 (Merlin 1A)
@@ -148,6 +156,13 @@ if STAGE_1_TYPE <> ""
 
 // Defaults for Fligth Profile:
 // --------------------------------------------------------------------------------------------
+if vehicle_type = "SaturnV"
+{
+	// Data: SaturnV
+	declare global Qmax 	to 14600.
+	declare global MECO1 	to 9999^2.// 1875*
+	declare global FAIRSEP 	to 160*1000.
+}else
 if vehicle_type = "Falcon Heavy" 
 {
 	// Data from: FH Demo 1:

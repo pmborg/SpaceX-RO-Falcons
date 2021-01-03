@@ -8,11 +8,10 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Control the Manouver and prograde burn into: mission_target
-// 28/Nov/2020
+// 03/Jan/2021
 // --------------------------------------------------------------------------------------------
 
-
-print "|BURN.c| "+STATUS.
+update_phase_title("MAIN BURN", 0, false). //print "|BURN.c| "+STATUS.
 
 function DO_BURN {
 	
@@ -29,7 +28,7 @@ function DO_BURN {
 		if (ch = "n" OR ch = "N")
 			 return.
 		//shutDownAllEngines(). activateNucEngine().
-		RUNPATH( "boot/PhaseI-Burn.c", mission_target:name ). // 1st Burn: [NOW2]
+		RUNPATH( "boot/PhaseI-Burn.c", mission_target:name ). // 1st Burn
 		shutDownAllEngines().
 	}
 
