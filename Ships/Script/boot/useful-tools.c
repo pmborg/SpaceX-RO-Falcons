@@ -109,6 +109,23 @@ function activateOneEngine
 	}
 }
 
+// function get_current_max_thrust
+// {
+	// LIST ENGINES IN enginesList.
+	// set n to 0.
+	// set max_th to 0.
+	// FOR eng IN enginesList {
+		// if eng:typename() = "Engine" and eng:AVAILABLETHRUST > 100
+		// {
+			// print eng:AVAILABLETHRUST.
+			// set max_th to eng:AVAILABLETHRUST.
+		// }
+	// }
+	
+	// return max_th.
+// }
+// print "get_current_max_thrust: "+get_current_max_thrust.
+
 function activateAllEngines 
 {
 	LIST ENGINES IN enginesList.

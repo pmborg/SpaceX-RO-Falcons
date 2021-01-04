@@ -163,7 +163,6 @@ if vehicle_type = "SaturnV"
 	declare global MECO1 	to 9999^2.// 1875*
 	declare global FAIRSEP 	to 110*1000.
 	SET TARGET TO "Moon". 	wait 1.
-	LOG "Normal" to normal.txt.
 }else
 if vehicle_type = "Falcon Heavy" 
 {

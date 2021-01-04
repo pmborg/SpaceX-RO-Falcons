@@ -25,10 +25,12 @@ wait 1.
 set GM to originBody:mu. 			//GM = 3.5316*(10^12). for Kerbin
 set target to goto_mission_target.	//"Mun"/"Moon", etc
 runpath("boot/lib_trajectory.c").
-set warp to 1. wait 1.
+set warp to 2. wait 1.
 get_rendevous_nodes().
 set warp to 0. wait 1.
 set target to goto_mission_target.	//"Mun"/"Moon", etc
+SAS ON. WAIT 1.
+set sasmode to "maneuver".
 
 
 //-------------------------------------------------------------------------------
@@ -103,38 +105,34 @@ print "target: "+target.
 print "LAUNCH: "+LAUNCH.
 
 //-------------------------------------------------------------------------------
-{
-	clearscreen.
-	update_phase_title("PhaseI-Rotate", 0, false).
-	print " ".print " ".
-	print "PhaseI-Rotate to "+goto_mission_target+" Burn" at (0,2).
-	RCS ON.
-	wait 15.
-	RCS OFF.
-}.
+clearscreen.
+print " ".print " ".
+update_phase_title("PhaseI-Rotate", 0, false).
+print "PhaseI-Rotate to "+goto_mission_target+" Burn" at (0,2).
+RCS ON.
+wait 15.
+RCS OFF.
+
 
 //-------------------------------------------------------------------------------
 clearscreen.
-RCS OFF.
-update_phase_title("PhaseI-Rotate", 0, false).
 print " ".print " ".
-print "[PhaseI-Burn] to escaping "+body:name.
+update_phase_title("[PhaseI-Burn]", 0, false).
 set thrust to 1.
-// update_phase_title("[PhaseI-Burn]", 0, false).	
-// print " ".print " ".
-print "[PhaseI-Burn] to "+goto_mission_target+" Intercept: "+goto_mission_target.
 
 set py to 4.
-print "Orbital Speed(V)" at (0,py+1).
-print "Desired Speed (Vp)" at (0,py+2). 
-print "Current Apoapsis*" at (0,py+3).
-print "Desired Apoapsis" at (0,py+4). print ROUND(Ra - BODY(goto_mission_target):RADIUS) at (25,py+4).
-print "Target [(Vp-V) < 0]:" at (0,py+5).
-print "Vo: (phase) " 		 at (0,py+6). 		
-print "Y: (phase) " 		 at (0,py+7). 		
-print "X: (power)" 			 at (0,py+8).
+print "Escaping "+body:name at (0,py+0).
+print "To "+goto_mission_target+" Intercept: "+goto_mission_target at (0,py+1).
+// print "Orbital Speed(V)" at (0,py+2).
+// print "Desired Speed (Vp)" at (0,py+3). 
+// print "Current Apoapsis*" at (0,py+4).
+// print "Desired Apoapsis" at (0,py+5). print ROUND(Ra - BODY(goto_mission_target):RADIUS) at (25,py+5).
+// print "Target [(Vp-V) < 0]:" at (0,py+6).
+// print "Vo: (phase) " 		 at (0,py+7). 		
+// print "Y: (phase) " 		 at (0,py+8). 		
+// print "X: (power)" 			 at (0,py+9).
 
-//MAIN BURN:
+//SETUP MAIN BURN:
 set x to 1.		//thrust
 set y to .5.	//Burn-Phase
 set V to 0.		//Initial relative speed.
@@ -144,10 +142,11 @@ set Vy to vec:y.
 set Vz to vec:z.
 set Vo to ((Vx^2)+(Vy^2)+(Vz^2))^.5. //Original Speed.
 set Vp to Vo + burn_dV.
-print  ROUND(Vp) at (25,2).
-	
+
+//DO MAIN BURN:
 set HaveEncounter to False.
-until (Vp-V) < 0.001 {
+until HaveEncounter //(Vp-V) < 0.001 
+{
 	set vec to velocity:orbit.
 	set Vx to vec:x.
 	set Vy to vec:y.
@@ -181,9 +180,8 @@ until (Vp-V) < 0.001 {
 	set thrust to x.
 	lock throttle to thrust. //wait 1.
 	
-	if maxthrust = 0 and vehicle_type < 3 {
-		confirm_stage(). wait 5. // Decouple
-	}
+	if maxthrust = 0 
+		{ confirm_stage(). wait 5. }
 	
 	// if apoapsis > originBody:SOIRADIUS + 1000000
 		// if ship:Orbit:TRANSITION = "ENCOUNTER" 
@@ -208,9 +206,11 @@ until (Vp-V) < 0.001 {
 			FROM {local i is 0.} UNTIL i = thesepatches:length-1 STEP {SET i to i + 1.} DO 
 			{
 				print "thesepatches[i] "+thesepatches[i]+"        " at (0,14+i).
-				if thesepatches[i]:name = goto_mission_target {
+				if thesepatches[i]:name = goto_mission_target 
+				{
+					wait 5. //Safty Margin
 					set thrust to 0.
-					PRINT ("####COND 2") at (0,20).
+					PRINT ("####COND 2") at (0,24).
 					set HaveEncounter to True.
 					break.
 				}
@@ -218,14 +218,16 @@ until (Vp-V) < 0.001 {
 		}
 	}
 	
-	print ROUND(V)+"    " 		 at	(25,py+1).//Orbital Speed
-	print ROUND(apoapsis)+"    " at	(25,py+3).//Current Apoapsis
-	print ROUND(Vp-V)+"    " 	 at	(25,py+5).
-	print ROUND(Vo)+"    "  	 at (25,py+6).
-	print y 					 at (25,py+7).
-	print x 					 at (25,py+8).
-	print "ship:Orbit:TRANSITION: "+ship:Orbit:TRANSITION+"     " at (0,10). //FINAL
-	print "maxthrust: "+maxthrust+"     " 					 	  at (0,11).
+	print "Orbital Speed(V)" at (0,py+2).	print ROUND(V)+" m/s   " 		 at	(25,py+2).//Orbital Speed
+	print "Desired Speed (Vp)" at (0,py+3). print ROUND(Vp)+" m/s   " 			at (25,py+3).
+	print "Current Apoapsis*" at (0,py+4).  print ROUND(apoapsis/1000)+" km    " at	(25,py+4).//Current Apoapsis
+	print "Desired Apoapsis" at (0,py+5). 	print ROUND((Ra - BODY(goto_mission_target):RADIUS)/1000)+ " km   " at (25,py+5).
+	print "Target [(Vp-V) < 0]:" at (0,py+6). print ROUND(Vp-V)+"    " 	 at	(25,py+6).
+	print "Vo: (phase) " 		 at (0,py+7). print ROUND(Vo)+"    "  	 at (25,py+7).
+	print "Y: (phase) " 		 at (0,py+8). print y 					 at (25,py+8).
+	print "X: (power)" 			 at (0,py+9). print x 					 at (25,py+9).
+	print "ship:Orbit:TRANSITION: "+ship:Orbit:TRANSITION+"     " at (0,20). //FINAL
+	print "maxthrust: "+maxthrust+"     " 					 	  at (0,21).
 
 	if apoapsis > (Ra - BODY(goto_mission_target):RADIUS)*0.7 {
 		if (maxthrust > 5000)
@@ -238,14 +240,16 @@ until (Vp-V) < 0.001 {
 	}
 	if body:name = goto_mission_target and apoapsis > (Ra - BODY(goto_mission_target):RADIUS) {
 		print "#### break1" at (0,22).
+		set HaveEncounter to True.
 		break.
 	}
 	//and body:name = goto_mission_target
 	if (SHIP:PERIAPSIS < body:atm:height) {
 		print "#### break2" at (0,23).
+		set HaveEncounter to True.
 		break.
 	}
-}.
+}
 
 set thrust to 0.
 print "BURN-I END!" at (0,25).

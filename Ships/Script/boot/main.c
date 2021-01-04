@@ -19,6 +19,9 @@ WAIT 0.
 runpath("boot/declare-globals.c").
 runpath("boot/atm.c").
 
+if vehicle_type = "SaturnV"
+	LOG "Normal" to normal.txt. //Skip normal/correction
+
 function change_inclination 
 {
 		//parameter mission_target.

@@ -182,20 +182,24 @@ function get_rendevous_nodes
     add ned2.
 
 	set warp to 0.
+	CLEARSCREEN.	
 	PRINT "FOUND!    " at (0, 35).
-	
-	set warp to 4.
+
+	set max_acc to ship:maxthrust/ship:mass.
+	print "maxthrust: " + round(maxthrust) + " ".
+	print "ship:mass: " + round(ship:mass) + " ".
+	print "max_acc: " + round(max_acc) + " ".
+	print "deltav: " + round(nd:deltav:mag) + " ".
+	set burn_duration to nd:deltav:mag/max_acc.
+	print "Crude Estimated burn duration: " + round(burn_duration) + "s".
+
+	set warp to 2.
 	until false {
-		if (nd:ETA < 30)
-		//	set warp to 1.
-		//if (nd:ETA < 15) 
+		if (nd:ETA <= (burn_duration/2) + 60 + 15)
 		{
 			set warp to 0.
 			break.
 		}.
-		PRINT "nd:ETA "+nd:ETA + "        " at (0, 35).
+		PRINT "nd:ETA "+ROUND(nd:ETA) + "        " at (0, 35).
 	}.
-	
-	//PRINT "START: Wait: 5s    " at (0, 35).
-	//WAIT 5.
 }
