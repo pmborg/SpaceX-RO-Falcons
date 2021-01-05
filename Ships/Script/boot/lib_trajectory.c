@@ -10,7 +10,7 @@
 // Purpose: 
 //              	- Used to calculate orbit position to do a hohmann transfer orbit in
 //                    missions (Beyond Earth)
-// 14/Nov/2020
+// 04/Jan/2021
 // --------------------------------------------------------------------------------------------
 
 function get_rendevous_nodes
@@ -190,7 +190,10 @@ function get_rendevous_nodes
 	print "ship:mass: " + round(ship:mass) + " ".
 	print "max_acc: " + round(max_acc) + " ".
 	print "deltav: " + round(nd:deltav:mag) + " ".
-	set burn_duration to nd:deltav:mag/max_acc.
+	if max_acc > 0
+		set burn_duration to nd:deltav:mag/max_acc.
+	else
+		set burn_duration to 300.
 	print "Crude Estimated burn duration: " + round(burn_duration) + "s".
 
 	set warp to 2.

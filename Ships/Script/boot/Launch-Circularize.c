@@ -230,11 +230,14 @@ if ship:verticalspeed > 0 and eta:apoapsis > 60		//Move closer to AP
 // --------------------------------------------------------------------------------------------
 LOCK STEERING TO SHIP:PROGRADE.//  + R(0,0,180).
 RCS ON.
-print "5".
-WAIT 2.5. print "4".
-WAIT 2.5. print "3".
-WAIT 2.5. print "2".
-WAIT 2.5. print "1".
+if vehicle_type <> "SaturnV"
+{
+	print "5".
+	WAIT 2.5. print "4".
+	WAIT 2.5. print "3".
+	WAIT 2.5. print "2".
+	WAIT 2.5. print "1".
+}
 
 CLEARSCREEN.
 update_phase_title("C-Circularize",1, false).

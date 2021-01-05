@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to todo the Manouver in prograde to the: mission_target
-// 03/Jan/2021
+// 04/Jan/2021
 // --------------------------------------------------------------------------------------------
 
 parameter goto_mission_target.
@@ -208,8 +208,11 @@ until HaveEncounter //(Vp-V) < 0.001
 				print "thesepatches[i] "+thesepatches[i]+"        " at (0,14+i).
 				if thesepatches[i]:name = goto_mission_target 
 				{
-					wait 5. //Safty Margin
+					set thrust to 0.1. wait 0.1.
+					set SASMODE to "STABILITY". wait 0.1.
+					set thrust to 1. wait 0.1. //Safty Margin
 					set thrust to 0.
+					set warp to 0.
 					PRINT ("####COND 2") at (0,24).
 					set HaveEncounter to True.
 					break.
@@ -265,11 +268,11 @@ REMOVE ned2.
 clearscreen.
 print "PhaseI-Burn: Warp Out of Kerbin SOI".
 set x to 0.
-set warp to 6.	//*
+set warp to 3.	//*
 until x = 1 {
 	
 	if body:name <> DEFAULT_KSC {
-		if warp < 6 //*
+		if warp < 3 //*
 		{
 			set warp to 0.
 			set x to 1.

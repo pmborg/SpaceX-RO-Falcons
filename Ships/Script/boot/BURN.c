@@ -10,8 +10,8 @@
 //				Used to Control the Manouver and prograde burn into: mission_target
 // 03/Jan/2021
 // --------------------------------------------------------------------------------------------
-
-update_phase_title("MAIN BURN", 0, false). //print "|BURN.c| "+STATUS.
+CLEARSCREEN. print " ". print " ".
+update_phase_title("MAIN BURN", 0, false).
 
 function DO_BURN {
 	

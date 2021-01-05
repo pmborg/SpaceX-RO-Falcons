@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestre all mission phases.
-// 30/Dez/2020
+// 04/Jan/2021
 // --------------------------------------------------------------------------------------------
 
 // Reset Engine settings before all, ("migth be a reboot")
@@ -26,7 +26,7 @@ function change_inclination
 {
 		//parameter mission_target.
 		
-		clearscreen.
+		CLEARSCREEN. print " ". print " ".
 		// Just reaction-wheels Stability:
 		RCS OFF.
 		SAS OFF.
@@ -37,17 +37,18 @@ function change_inclination
 			update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
 			UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 		}
+		CLEARSCREEN. print " ". print " ".
 		update_phase_title("Confirm: Change-Inclination?", 0, false).
-		PRINT "Please make sure that TARGET is selected".
+		//PRINT "Please make sure that TARGET is selected".
 		runpath( "boot/Phase0-Normal.c", mission_target).	// Correct Normal Before Burn
 		LOG "Normal" to normal.txt.
-		CLEARSCREEN.	
+		CLEARSCREEN. print " ". print " ".
 }
 
 //ACTION: REFUEL ----------------------------------------------
 if mission_origin <> DEFAULT_KSC //mission_target //ORIGIN = TARGET
 {
-	//CLEARSCREEN.
+	CLEARSCREEN. print " ". print " ".
 	update_phase_title("Confirm: START Refuel?", 0, false).
 	PRINT "Confirm: START Refuel? (y/n)". set ch to terminal:input:getchar().
 	if (ch = "y" OR ch = "Y") {
@@ -84,22 +85,38 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			else
 				RUNPATH( "boot/Launch-Circularize.c", apoapsis ).
 		} else
-			PRINT "SKIP: Launch-Circularize".
+			LOG  "SKIP: Launch-Circularize" to LOG.txt.
 	} else
-		PRINT "SKIP: Launch".
+		LOG  "SKIP: Launch" to LOG.txt.
 
 	// Adjust mission inclination?
 	if NOT EXISTS("normal.txt")
 		change_inclination().
 	else
-		PRINT "SKIP: Normal".
+		LOG  "SKIP: Normal" to LOG.txt.
 
 	//ACTION: BURN ----------------------------------------------------
 	if STATUS = "ORBITING" and apoapsis > body:atm:height and periapsis > body:atm:height and BODY:name = mission_origin
-		if BODY:name <> mission_target:name
+		if BODY:name <> mission_target:name 
+		{
+			CLEARSCREEN. print " ". print " ".
+			update_phase_title("Confirm: MAIN STAGE?", 0, false).
+			PRINT "Confirm: MAIN STAGE? (y/n)". set ch to terminal:input:getchar().
+			if (ch = "y" OR ch = "Y") {
+				if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
+				if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
+			}
+			if (ch = "n" OR ch = "N") {
+				CLEARSCREEN. print " ". print " ".
+				update_phase_title("Confirm: Circularize?", 0, false).
+				PRINT "Confirm: Circularize? (y/n)". set ch to terminal:input:getchar().
+				if (ch = "y" OR ch = "Y")
+					RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
+			}
 			runpath("boot/BURN.c").
+		}
 	else
-		PRINT "SKIP: BURN".
+		LOG  "SKIP: BURN" to LOG.txt.
 
 	//ACTION: Break & LAND! -------------------------------------------
 	
@@ -112,8 +129,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
 			UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 		}
-		CLEARSCREEN.
-		print " ".print " ".print " ".
+		CLEARSCREEN. print " ". print " ".
 		RCS OFF.
 		SAS OFF.
 		LOCK STEERING TO SHIP:prograde.
@@ -125,9 +141,10 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			PRINT "Press: 3 - Stage: Customer Payload". 
 		else
 			PRINT "Press: 4 - Deorbit". 
-			PRINT "Press: 5 - Change Inclination".
+		PRINT "Press: 5 - Change Inclination".
 		set ch to terminal:input:getchar(). PRINT "selected: "+ch.
 		if ch="1" or ch =""  {
+			CLEARSCREEN. print " ". print " ".
 			update_phase_title("Confirm: SPEED-BREAK?", 0, false).
 			PRINT "Confirm: SPEED-BREAK? (y/n)". set ch to terminal:input:getchar().
 			if (ch = "y" OR ch = "Y")
@@ -156,7 +173,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			SAS ON. wait 1.
 			SET SASMODE TO "RADIALIN". wait 1.
 			AG4 ON.
-			CLEARSCREEN.
+			CLEARSCREEN. print " ". print " ".
 		}
 		else if ch="4" {
 			runpath("boot/stage-2-deorbit.c").
@@ -172,7 +189,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 
 //INBOUND ---------------------------------------------------------
 if BODY:name <> DEFAULT_KSC {
-	CLEARSCREEN.
+	CLEARSCREEN. print " ". print " ".
 	PRINT "Press [y/n] y to Confirm the Kerbin Return, n to new target!".set ch to terminal:input:getchar().
 	if (ch = "y" OR ch = "Y")
 	{

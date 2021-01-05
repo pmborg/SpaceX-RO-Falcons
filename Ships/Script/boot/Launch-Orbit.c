@@ -92,14 +92,16 @@ function main_liftoff
 		if vehicle_type = "Crew Dragon 2" or vehicle_type = "Falcon Heavy"
 			WAIT 1.
 			
-		if (KUniverse:ActiveVessel = SHIP) STAGE.	//Liftoff
+		if (KUniverse:ActiveVessel = SHIP) STAGE.		//TOWER
 		if vehicle_company = "SpaceX" Print "(Strongback Retracted)".
 
 		if vehicle_type = "Crew Dragon 2"
-			WAIT 1.
+			WAIT 1.										//TOWER+Liftoff
 		else {
 			WAIT 3.
-			if (KUniverse:ActiveVessel = SHIP) STAGE.
+			if vehicle_type = "SaturnV"
+				WAIT 5.
+			if (KUniverse:ActiveVessel = SHIP) STAGE.	//Liftoff
 		}
 	}
 }
@@ -272,7 +274,8 @@ if alt:radar < 200
 	steering_falcon(90).
 	LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
 	
-	//LAUNCH-Trusting:
+	// LOOP: LAUNCH-Trusting:
+	// --------------------------------------------------------------------------------------------
 	until altitude > 30000 
 	{
 		if machVal > 0.8 and mphase = 0
@@ -392,8 +395,10 @@ if alt:radar < 200
 	PRINT "deltaReduction: " 	at (0,11).
 	
 	LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
+	// LOOP: ASCENT:
+	// --------------------------------------------------------------------------------------------
 	until (Vs2 >= MECO1) or (apoapsis >= FINAL_ORBIT2) or phase = 3 //(Reusable) or (Non Reusable Mission) or (on stage-2 burn)
-	{ 
+	{
 		set delta to set_max_delta_curve().
 		steering_falcon(90-delta).
 
@@ -439,7 +444,8 @@ if alt:radar < 200
 	RCS ON.
 	SAS OFF.
     if SHIP_NAME <> "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" and 
-      SHIP_NAME <> "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
+      SHIP_NAME <> "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2" and
+	  vehicle_type <> "SaturnV"
     { 
 	    set thrust to 0.01.
 	    WAIT 1.
@@ -501,7 +507,7 @@ if altitude*1.1 < FINAL_ORBIT2
 		activateVesselProbe().
 	}
 	
-	// Maximizing: Horizontal Aceleration:
+	// ORBIT SETUP 
 	// --------------------------------------------------------------------------------------------
 	CLEARSCREEN.
 	update_phase_title("[7] ORBIT PHASE I",1,false).
@@ -558,6 +564,8 @@ if altitude*1.1 < FINAL_ORBIT2
 	// UNLOCK STEERING. wait 0.1.
 	// LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll). wait 0.1.
 	
+	// LOOP: ORBIT PHASE I (Maximizing: Horizontal Aceleration)
+	// --------------------------------------------------------------------------------------------
 	UNTIL periapsis > 0 and apoapsis < FINAL_ORBIT2
 	{
 		SET steeringDir TO 90.			// W/E
@@ -625,9 +633,9 @@ if altitude*1.1 < FINAL_ORBIT2
 	if vehicle_type = "F9v1.2B5"
 		activateVesselProbe().	//Time to Switch to ST-1
 			
-	// Maximizing Apoapsis Increase:
-	// --------------------------------------------------------------------------------------------
 	update_phase_title("[7] ORBIT PHASE II",1,false). 
+	// LOOP: ORBIT PHASE II (Maximizing Apoapsis Increase)
+	// --------------------------------------------------------------------------------------------
 	UNTIL (apoapsis >= FINAL_ORBIT2) 
 	{
 		if verticalspeed < 0 

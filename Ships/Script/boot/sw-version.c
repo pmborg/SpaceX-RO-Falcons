@@ -8,11 +8,11 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to specify the SW version and the diferent types of profiles supported.
-// 03/Jan/2021
+// 05/Jan/2021
 // --------------------------------------------------------------------------------------------
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //             #.YY.MM.DD
-PRINT "SW-Ver: 1.21.01.03" at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
+PRINT "SW-Ver: 1.21.01.05" at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 
 //https://ksp-kos.github.io/KOS/structures/misc/loaddistance.html#attribute:SITUATIONLOADDISTANCE:UNLOAD
 //MAGIC LINES! Extend Physics:
@@ -160,7 +160,7 @@ if vehicle_type = "SaturnV"
 {
 	// Data: SaturnV
 	declare global Qmax 	to 14600.
-	declare global MECO1 	to 9999^2.// 1875*
+	declare global MECO1 	to 9999^2.
 	declare global FAIRSEP 	to 110*1000.
 	SET TARGET TO "Moon". 	wait 1.
 }else
@@ -225,7 +225,7 @@ function set_max_delta_curve
 	if vehicle_type = "SaturnV"
 	{
 		set delta to (1*(e^I)*(-1))*1.4.	//Rotate 40% Faster
-		if delta < (-75)					//MAX. Keep: 10 deg nose up
+		if delta < (-75)					//MAX. Keep: 14 deg nose up
 			set delta to (-75).
 	}
 	else
