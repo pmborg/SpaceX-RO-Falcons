@@ -15,32 +15,38 @@ update_phase_title("MAIN BURN", 0, false).
 
 function DO_BURN {
 	
-	set SASMODE to "STABILITY".
+	//set SASMODE to "STABILITY".
 	SAS OFF.	//!
-	AG5 ON.		
 	GEAR OFF.	// Make sure: gear retracted
 	BRAKES OFF.	// Air Breaks off
 
+	//BURN -------------------------------------------------------
 	if STATUS = "ORBITING" {
-		PRINT "Press: y to to Confirm the BURN!". 
-		PRINT "Press: n to SKIT IT".
-		set ch to terminal:input:getchar(). print "selected: "+ch.
-		if (ch = "n" OR ch = "N")
-			 return.
+		if vehicle_type <> "SaturnV"
+		{
+			PRINT "Press: y to to Confirm the BURN!". 
+			PRINT "Press: n to SKIT IT".
+			set ch to terminal:input:getchar(). print "selected: "+ch.
+			if (ch = "n" OR ch = "N")
+				 return.
+		}
 
 		RUNPATH( "boot/PhaseI-Burn.c", mission_target:name ). // MAIN BURN (to target BODY Mission)
 		shutDownAllEngines().
+		RCS OFF.
 	}
 
+	//WARP -------------------------------------------------------
 	if IS_INTER_PLANETARY_MISSION {
 		RUNPATH( "boot/PhaseI-Warp.c" ).	 			 // Warp out of "Kerbin" and all Moons...
 		
 		PRINT "Press [ENTER] to Confirm STEP!!!!!". set ch to terminal:input:getchar().
 		RUNPATH( "boot/PhaseI-Transfer.c", "RADIALIN" ). // Fine Tune: [NOW4]
-		shutDownAllEngines().
 	}
 
+	//PE -------------------------------------------------------
 	shutDownAllEngines().
+	AG5 ON. //Turn on Generators
 	if (Orbit:periapsis > MAX(40000, 1.5*BODY:atm:height)) // 40,000m safe altitude (periapsis wait) in all planets.
 		wait_until_periapsis().
 
@@ -51,7 +57,11 @@ function DO_BURN {
 		RCS OFF.
 	}
 		
+	//CIRCULARIZE TARGET -------------------------------------------------------
 	RUNPATH( "boot/PhaseII-Circularize.c", mission_target ).
 }
 
 DO_BURN().
+
+if vehicle_type = "SaturnV"
+	AG7 ON. 		 //Special: Farings

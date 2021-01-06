@@ -35,11 +35,12 @@ LOG  "["+STAGE_1_TYPE+"] TOTAL CPU PROCESSORS: "+ALL_PROCESSORS:LENGTH to LOG.tx
 if ALL_PROCESSORS:LENGTH = 0 { WAIT 5. reboot. }
 
 // Identify other processors from (Booster(s), Stage-1 and Stage-2) ----------------
-declare global PROCESSOR_MAINID to ALL_PROCESSORS[0].
 declare global PROCESSOR_STAGE1 to ALL_PROCESSORS[0].
 declare global PROCESSOR_STAGE1L to ALL_PROCESSORS[0].
 declare global PROCESSOR_STAGE1R to ALL_PROCESSORS[0].
 declare global PROCESSOR_STAGE2 to ALL_PROCESSORS[0].
+declare global PROCESSOR_MAINID to ALL_PROCESSORS[0].
+declare global PROCESSOR_LEMID to ALL_PROCESSORS[0].
 
 PRINT "List CPU Stages:".
  FROM {local counter is 0.} UNTIL counter = ALL_PROCESSORS:LENGTH STEP {SET counter to counter + 1.} DO {
@@ -65,8 +66,8 @@ PRINT "List CPU Stages:".
 	}
 	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-st2.ks") <> -1 			// STAGE-2: (Deorbit)
 	{
-		PRINT "- MAIN-ID: "+counter.
-		LOG  "["+STAGE_1_TYPE+"] - MAIN-ID: "+counter to LOG.txt.
+		PRINT "- ST2-ID: "+counter.
+		LOG  "["+STAGE_1_TYPE+"] - ST2-ID: "+counter to LOG.txt.
 		set PROCESSOR_STAGE2 to ALL_PROCESSORS[counter].
 	}
 	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot.ks") <> -1 				// MAIN MISSION (Launch, Orbit & Deploy)
@@ -74,6 +75,12 @@ PRINT "List CPU Stages:".
 		PRINT "- MAIN-ID: "+counter.
 		LOG  "["+STAGE_1_TYPE+"] - MAIN-ID: "+counter to LOG.txt.
 		set PROCESSOR_MAINID to ALL_PROCESSORS[counter].
+	}
+	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-lem.ks") <> -1 				// MAIN MISSION (Launch, Orbit & Deploy)
+	{
+		PRINT "- LEM-ID: "+counter.
+		LOG  "["+STAGE_1_TYPE+"] - LEM-ID: "+counter to LOG.txt.
+		set PROCESSOR_LEMID to ALL_PROCESSORS[counter].
 	}
 }
 

@@ -100,19 +100,20 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		if BODY:name <> mission_target:name 
 		{
 			CLEARSCREEN. print " ". print " ".
-			update_phase_title("Confirm: MAIN STAGE?", 0, false).
-			PRINT "Confirm: MAIN STAGE? (y/n)". set ch to terminal:input:getchar().
-			if (ch = "y" OR ch = "Y") {
+			update_phase_title("MAIN STAGE", 0, false).
+			// PRINT "Confirm: MAIN STAGE? (y/n)". set ch to terminal:input:getchar().
+			// if (ch = "y" OR ch = "Y") {
 				if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
 				if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
-			}
-			if (ch = "n" OR ch = "N") {
-				CLEARSCREEN. print " ". print " ".
-				update_phase_title("Confirm: Circularize?", 0, false).
-				PRINT "Confirm: Circularize? (y/n)". set ch to terminal:input:getchar().
-				if (ch = "y" OR ch = "Y")
-					RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
-			}
+				if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
+			// }
+			// if (ch = "n" OR ch = "N") {
+				// CLEARSCREEN. print " ". print " ".
+				// update_phase_title("Confirm: Circularize?", 0, false).
+				// PRINT "Confirm: Circularize? (y/n)". set ch to terminal:input:getchar().
+				// if (ch = "y" OR ch = "Y")
+					// RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
+			// }
 			runpath("boot/BURN.c").
 		}
 	else

@@ -168,11 +168,6 @@ function check_fairing_sep
 		stage. 		 	//LES: launch escape system
 		set phase to 1.	 
 	}
-	if vehicle_type = "SaturnV" and altitude > FAIRSEP and phase < 2
-	{
-		AG7 ON. 		 //Special: Farings
-		set phase to 2.	 //fairing-sep
-	}
 }
 
 
