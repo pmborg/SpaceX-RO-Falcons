@@ -178,8 +178,8 @@ function get_rendevous_nodes
     set nd to node(time:seconds + abs(tb), 0, 0, dv1).
     add nd.
 
-    set ned2 to node(time:seconds + abs(tb)+(orbit:period/2), 0, 0, dv1).
-    add ned2.
+    // set ned2 to node(time:seconds + abs(tb)+(orbit:period/2), 0, 0, dv1).
+    // add ned2.
 
 	set warp to 0.
 	CLEARSCREEN.	
@@ -205,4 +205,6 @@ function get_rendevous_nodes
 		}.
 		PRINT "nd:ETA "+ROUND(nd:ETA) + "        " at (0, 35).
 	}.
+	
+	return nd.
 }

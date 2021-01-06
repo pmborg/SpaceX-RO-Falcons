@@ -26,11 +26,12 @@ set GM to originBody:mu. 			//GM = 3.5316*(10^12). for Kerbin
 set target to goto_mission_target.	//"Mun"/"Moon", etc
 runpath("boot/lib_trajectory.c").
 set warp to 2. wait 1.
-get_rendevous_nodes().
+set node to get_rendevous_nodes().
 set warp to 0. wait 1.
 set target to goto_mission_target.	//"Mun"/"Moon", etc
-SAS ON. WAIT 1.
-set sasmode to "maneuver".
+
+// SAS ON. WAIT 1.
+// set sasmode to "maneuver".
 
 
 //-------------------------------------------------------------------------------
@@ -112,6 +113,7 @@ print "PhaseI-Rotate to "+goto_mission_target+" Burn" at (0,2).
 RCS ON.
 wait 15.
 RCS OFF.
+RCS OFF.
 
 
 //-------------------------------------------------------------------------------
@@ -142,6 +144,9 @@ set Vy to vec:y.
 set Vz to vec:z.
 set Vo to ((Vx^2)+(Vy^2)+(Vz^2))^.5. //Original Speed.
 set Vp to Vo + burn_dV.
+
+set np to node:deltav. //points to node, don't care about the roll direction.
+lock steering to np.
 
 //DO MAIN BURN:
 set HaveEncounter to False.
@@ -209,7 +214,7 @@ until HaveEncounter //(Vp-V) < 0.001
 				if thesepatches[i]:name = goto_mission_target 
 				{
 					set thrust to 0.1. wait 0.1.
-					set SASMODE to "STABILITY". wait 0.1.
+					LOCK STEERING TO PROGRADE. wait 0.1. //set SASMODE to "STABILITY". wait 0.1.
 					set thrust to 1. wait 0.1. //Safty Margin
 					set thrust to 0.
 					set warp to 0.

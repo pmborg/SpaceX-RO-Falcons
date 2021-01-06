@@ -36,6 +36,10 @@ function DO_BURN {
 		RCS OFF.
 	}
 
+	// if vehicle_type = "SaturnV" {
+			// AG7 ON. 		 //Special: Farings
+	// }
+	
 	//WARP -------------------------------------------------------
 	if IS_INTER_PLANETARY_MISSION {
 		RUNPATH( "boot/PhaseI-Warp.c" ).	 			 // Warp out of "Kerbin" and all Moons...
@@ -62,6 +66,3 @@ function DO_BURN {
 }
 
 DO_BURN().
-
-if vehicle_type = "SaturnV"
-	AG7 ON. 		 //Special: Farings
