@@ -1,7 +1,7 @@
 // --------------------------------------------------------------------------------------------
 // Filename: lib_trajectory.c
 // --------------------------------------------------------------------------------------------
-// KOS Scripts for KSP to be used on SpaceX_Launch_Vehicles Mod with (Pmborg RO Version) 
+// KOS Scripts for KSP to be used on SpaceX-RO-Falcons Mod (Pmborg RO Version) 
 // --------------------------------------------------------------------------------------------
 // Adapted code by : Pmborg - https://forum.kerbalspaceprogram.com/index.php?/profile/198861-pmborg/
 // Original code:   - https://github.com/AlexAscherson/Kerbal-Kos-Programming/blob/master/old/r1.ks

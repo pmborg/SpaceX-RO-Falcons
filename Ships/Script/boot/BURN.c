@@ -1,7 +1,7 @@
 // --------------------------------------------------------------------------------------------
 // Filename: BURN.c
 // --------------------------------------------------------------------------------------------
-// KOS Scripts for KSP to be used on SpaceX_Launch_Vehicles Mod with (Pmborg RO Version) 
+// KOS Scripts for KSP to be used on SpaceX-RO-Falcons Mod (Pmborg RO Version) 
 // --------------------------------------------------------------------------------------------
 // Code by : Pmborg - https://forum.kerbalspaceprogram.com/index.php?/profile/198861-pmborg/
 // Beta load from: 	- https://www.dropbox.com/sh/jd1oh6d806iyat1/AABa7aXbiYDfv8G-aQ4MyR-ta?dl=0
@@ -15,30 +15,27 @@ update_phase_title("MAIN BURN", 0, false).
 
 function DO_BURN {
 	
-	//set SASMODE to "STABILITY".
-	SAS OFF.	//!
+	SAS OFF.	
 	GEAR OFF.	// Make sure: gear retracted
 	BRAKES OFF.	// Air Breaks off
 
+	//LEM DOCKING -------------------------------------------------------
+	if vehicle_type = "SaturnV"
+		RUNPATH( "boot/PhaseI-Docking.c" ).
+
 	//BURN -------------------------------------------------------
 	if STATUS = "ORBITING" {
-		if vehicle_type <> "SaturnV"
+		
+		PRINT "Press: y to to Confirm the BURN!". 
+		PRINT "Press: n to SKIT IT".
+		set ch to terminal:input:getchar(). print "selected: "+ch.
+		if (ch = "y" OR ch = "Ys")
 		{
-			PRINT "Press: y to to Confirm the BURN!". 
-			PRINT "Press: n to SKIT IT".
-			set ch to terminal:input:getchar(). print "selected: "+ch.
-			if (ch = "n" OR ch = "N")
-				 return.
+			RUNPATH( "boot/PhaseI-Burn.c", mission_target:name ). // MAIN BURN (to target BODY Mission)
+			shutDownAllEngines().
+			RCS OFF.
 		}
-
-		RUNPATH( "boot/PhaseI-Burn.c", mission_target:name ). // MAIN BURN (to target BODY Mission)
-		shutDownAllEngines().
-		RCS OFF.
 	}
-
-	// if vehicle_type = "SaturnV" {
-			// AG7 ON. 		 //Special: Farings
-	// }
 	
 	//WARP -------------------------------------------------------
 	if IS_INTER_PLANETARY_MISSION {
