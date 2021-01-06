@@ -275,7 +275,7 @@ if alt:radar < 200
 	{
 		if machVal > 0.8 and mphase = 0
 		{
-			update_phase_title("[3] Transonic Fligth", 0, false).
+			update_phase_title("[3] Transonic Flight", 0, false).
 			set mphase to 1.
 		}
 		if machVal > 1.2 and mphase = 1
