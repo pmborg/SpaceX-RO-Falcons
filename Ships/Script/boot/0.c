@@ -84,7 +84,7 @@ if (status = "PRELAUNCH" or status = "LANDED") and ( BODY:name = "Kerbin" or BOD
 		PRINT "LANDING ZONE (LOADED FROM INT.DISK): "+LandingZone:NAME.
 		LOG STAGE_1_TYPE+" "+LandingZone to LOG.txt.
 		
-		update_phase_title("BOOSTER SLEEPING...    ", 0, true).
+		update_phase_title("BOOSTER SLEEPING...", 0, true).
 	} else {
 		// SLAVE:
 		if CORE:BOOTFILENAME:FIND("boot-boosters-L.ks") > -1 		// STAGE-1L

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Deorbit ST-3
-// 06/Jan/2020
+// 07/Jan/2020
 // --------------------------------------------------------------------------------------------
 CLEARSCREEN.
 RUNPATH( "boot/sw-version.c" ).
@@ -62,18 +62,18 @@ function DEORBIT
 	print " ".
 }
 
-wait 5.
+//wait 5.
 core:doaction("Open Terminal", true).
-update_phase_title("STAGE 3 - RETROGRADE", 0, true).
-SAS OFF. wait 1.
+update_phase_title("STAGE 3 - PROGRADE", 0, true).
+// SAS OFF. wait 1.
 RCS ON. wait 1.
-LOCK STEERING TO SHIP:RETROGRADE. wait 1.
+LOCK STEERING TO SHIP:PROGRADE. wait 1.
 
-if KUniverse:ActiveVessel <> SHIP {
-	update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
-	UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
-}
-DEORBIT(+165, 0).		//CD-2 -179
+// if KUniverse:ActiveVessel <> SHIP {
+	// update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
+	// UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
+// }
+// DEORBIT(+165, 0).		//CD-2 -179
 PRINT "Thankyou ST-3!". 
 
 until FALSE WAIT 1.	// KEEP: STEERING

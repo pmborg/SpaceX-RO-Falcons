@@ -8,10 +8,9 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Control the Manouver and prograde burn into: mission_target
-// 03/Jan/2021
+// 07/Jan/2021
 // --------------------------------------------------------------------------------------------
 CLEARSCREEN. print " ". print " ".
-update_phase_title("MAIN BURN", 0, false).
 
 function DO_BURN {
 	
@@ -22,10 +21,11 @@ function DO_BURN {
 	//BURN -------------------------------------------------------
 	if STATUS = "ORBITING" {
 		
-		PRINT "Press: y to to Confirm the BURN!". 
-		PRINT "Press: n to SKIT IT".
-		set ch to terminal:input:getchar(). print "selected: "+ch.
-		if (ch = "y" OR ch = "Ys")
+		// PRINT "Press: y to to Confirm the BURN!". 
+		// PRINT "Press: n to SKIT IT".
+		// set ch to terminal:input:getchar(). print "selected: "+ch.
+		// if (ch = "y" OR ch = "Ys")
+		update_phase_title("MAIN BURN", 1, false).
 		{
 			RUNPATH( "boot/PhaseI-Burn.c", mission_target:name ). // MAIN BURN (to target BODY Mission)
 			shutDownAllEngines().
@@ -33,12 +33,9 @@ function DO_BURN {
 		}
 	}
 
-	//LEM DOCKING -------------------------------------------------------
-	if vehicle_type = "SaturnV" and NOT EXISTS("dock.txt")
-		RUNPATH( "boot/PhaseI-Docking.c" ).
-	
-	//WARP -------------------------------------------------------
+	//WARP(INTER_PLANETARY_MISSION) ----------------------------
 	if IS_INTER_PLANETARY_MISSION {
+		update_phase_title("PhaseI-Warp", 1, false).
 		RUNPATH( "boot/PhaseI-Warp.c" ).	 			 // Warp out of "Kerbin" and all Moons...
 		
 		PRINT "Press [ENTER] to Confirm STEP!!!!!". set ch to terminal:input:getchar().
@@ -46,8 +43,9 @@ function DO_BURN {
 	}
 
 	//PE -------------------------------------------------------
+	update_phase_title("WARP-TO-PE", 1, false).
 	shutDownAllEngines().
-	AG5 ON. //Turn on Generators
+	AG5 ON. //Turn on Generators + Antenas
 	if (Orbit:periapsis > MAX(40000, 1.5*BODY:atm:height)) // 40,000m safe altitude (periapsis wait) in all planets.
 		wait_until_periapsis().
 
@@ -59,6 +57,7 @@ function DO_BURN {
 	}
 		
 	//CIRCULARIZE TARGET -------------------------------------------------------
+	update_phase_title("Circle "+mission_target, 1, false).
 	RUNPATH( "boot/PhaseII-Circularize.c", mission_target ).
 }
 

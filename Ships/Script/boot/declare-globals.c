@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor @start, to init or restart the all Mission.
-// 29/Dez/2020
+// 07/Jan/2020
 // --------------------------------------------------------------------------------------------
 function ResetMission 
 {
@@ -19,6 +19,7 @@ function ResetMission
 	DELETEPATH("normal.txt").
 	DELETEPATH("resources.txt").
 	DELETEPATH("bodys_list.txt").
+	DELETEPATH("burn.txt").
 	DELETEPATH("dock.txt").
 	WAIT 1.
 }

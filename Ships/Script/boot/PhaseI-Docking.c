@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Dock CMD with LEM
-// 05/Jan/2020
+// 07/Jan/2021
 // --------------------------------------------------------------------------------------------
 Function Translate {
   Parameter SomeVector.
@@ -30,6 +30,7 @@ Function KillRelVelRCS {
   }
   Translate(V(0,0,0)).
 }
+
 Function PortGetter {
   Parameter NameOfVessel is ship.
   Parameter PrePickedPort is "none".
@@ -71,19 +72,21 @@ Function ApproachDockingPort {
 
   until ShipDockingPort:state <> "ready" {
     Translate((ShipToDIFOP:normalized*Speed) - RelativeVelocity).
-    clearvecdraws().
+	
 	//DEBUG:
-    //vecdraw(TargetDockingPort:position, DistanceInFrontOfPort, RGB(1,0,0), "DistanceInFrontOfPort", 1.0, true, 0.2).
-    //vecdraw(v(0,0,0), ShipToDIFOP, RGB(0,1,0), "ShipToDIFOP", 1.0, true, 0.2).
+	clearvecdraws().
+    vecdraw(TargetDockingPort:position, DistanceInFrontOfPort, RGB(1,0,0), "DistanceInFrontOfPort", 1.0, true, 0.2).
+    vecdraw(v(0,0,0), ShipToDIFOP, RGB(0,1,0), "ShipToDIFOP", 1.0, true, 0.2).
+	
     local DistanceVector is (TargetDockingPort:nodeposition - ShipDockingPort:nodeposition).
 	set error to abs(Distance - DistanceVector:mag).
-	print "Error: "+ROUND(error,2)+"  " at (0,15).
+	print "Distance Error: "+ROUND(error,2)+"  " at (0,15).
 	set ang to vang(ShipDockingPort:portfacing:vector, DistanceVector).
-	print "Ang: "+ROUND(ang,2)+"  " at (0,16).
+	print "Current Angle: "+ROUND(ang,2)+"  " at (0,16).
 	if ang < 20
 	{
-		SAS ON. wait 0.5.
-		set sasmode to "TARGET". wait 0.5.
+		SAS ON. wait 0.01.
+		set sasmode to "TARGET". wait 0.01.
 	}
     if (ang < 2) and (error < ErrorAllowed)
       break.
@@ -92,14 +95,27 @@ Function ApproachDockingPort {
   SAS OFF.
 }
 
+lock steering to prograde. wait 0.1.
+CLEARSCREEN. print " ". print " ".
+update_phase_title("CMD/LEM Docking", 0, true).
+
 //STAGE:
 if vehicle_type = "SaturnV"
 {
-	PRINT "Press: y to to Confirm the STAGE!". 
+	PRINT "Press: y to to confirm the docking stage?". 
 	PRINT "Press: n to SKIT IT".
 	set ch to terminal:input:getchar(). print "selected: "+ch.
 	if (ch = "y" OR ch = "Y")
-		{ STAGE. wait 1. STAGE. }
+		{ 
+			//[F9]:SEND PROCESSOR ID TO ST-3
+			IF PROCESSOR_STAGE3:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
+			{
+			  PRINT "PROCESSOR_STAGE3: Message sent!".
+			  WAIT 1.
+			}	
+			STAGE. wait 1. 
+			STAGE. 
+		}
 }
 
 //GET LEM VESSEL:
@@ -122,7 +138,7 @@ UNTIL (Ship_Distance >= 25)
 {
 	set Ship_Distance to RP:mag.
 	print "TARGET DISTANCE(40): "+ROUND(Ship_Distance,1) at (0,11).
-	WAIT 0.5.
+	WAIT 0.25.
 	
 	//ROTATE (DO 180):
 	if (Ship_Distance > 20)
@@ -143,9 +159,13 @@ KillRelVelRCS(target_vessel).
 //SIDEWAYSAPPROACH:
 set ShipDockingPort to PortGetter(SHIP, "none").
 set TargetDockingPort to PortGetter(target_vessel, "none").
+update_phase_title("Docking 25m", 0, false).
 ApproachDockingPort(ShipDockingPort, TargetDockingPort, 25, 0.5).
+update_phase_title("Docking 10m", 0, false).
 ApproachDockingPort(ShipDockingPort, TargetDockingPort, 10, 0.4).
+update_phase_title("Docking 2.5m", 0, false).
 ApproachDockingPort(ShipDockingPort, TargetDockingPort, 2.5, 0.3).
+update_phase_title("Docking...", 0, false).
 ApproachDockingPort(ShipDockingPort, TargetDockingPort, 0, 0.1).
 
 LOG "Docked" to dock.txt.

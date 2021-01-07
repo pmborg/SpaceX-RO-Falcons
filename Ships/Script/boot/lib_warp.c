@@ -22,7 +22,8 @@ function WarpOutofKerbinSOI {
 		if body:name = DEFAULT_KSC OR body:name = "Mun" OR body:name = "Minmus" OR body:name = "Moon" {
 			set warp to 6.
 		} else {
-			if warp < 6 {
+			//if warp < 6 
+			{
 				set warp to 0.
 				break.
 			}

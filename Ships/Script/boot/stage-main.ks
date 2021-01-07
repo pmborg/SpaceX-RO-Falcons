@@ -39,6 +39,7 @@ declare global PROCESSOR_STAGE1 to ALL_PROCESSORS[0].
 declare global PROCESSOR_STAGE1L to ALL_PROCESSORS[0].
 declare global PROCESSOR_STAGE1R to ALL_PROCESSORS[0].
 declare global PROCESSOR_STAGE2 to ALL_PROCESSORS[0].
+declare global PROCESSOR_STAGE3 to ALL_PROCESSORS[0].
 declare global PROCESSOR_MAINID to ALL_PROCESSORS[0].
 declare global PROCESSOR_LEMID to ALL_PROCESSORS[0].
 
@@ -63,6 +64,12 @@ PRINT "List CPU Stages:".
 		PRINT "- STAGE1R-ID: "+counter.
 		LOG  "["+STAGE_1_TYPE+"] - STAGE1R-ID: "+counter to LOG.txt.
 		set PROCESSOR_STAGE1R to ALL_PROCESSORS[counter].
+	}
+	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-st3.ks") <> -1 			// STAGE-2: (Deorbit)
+	{
+		PRINT "- ST3-ID: "+counter.
+		LOG  "["+STAGE_1_TYPE+"] - ST3-ID: "+counter to LOG.txt.
+		set PROCESSOR_STAGE3 to ALL_PROCESSORS[counter].
 	}
 	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-st2.ks") <> -1 			// STAGE-2: (Deorbit)
 	{

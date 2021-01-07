@@ -186,6 +186,9 @@ function update_phase_title
 	if STAGE_1_TYPE = "ST-2" 		
 		PRINT "(ST-2)" at (44,1).
 	else 
+	if STAGE_1_TYPE = "ST-3" 		
+		PRINT "(ST-3)" at (44,1).
+	else 
 	if STAGE_1_TYPE = "MAIN" 		//MAIN CPU
 		PRINT "(MAIN)" at (44,1).
 		
@@ -298,7 +301,7 @@ function flip_maneuver
 
 	if STAGE_1_TYPE = "MASTER" or STAGE_1_TYPE = "SLAVE"
 	{
-		update_phase_title("HEAVY-1 SEPARATION...   ", 0, true).
+		update_phase_title("HEAVY-1 SEPARATION...", 0, true).
 		SET thrust TO 0.2.
 		lock throttle to thrust.
 		SET steeringVdeg to shipPitch.
@@ -312,7 +315,7 @@ function flip_maneuver
 			
 		LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).//steering_falcon(Vdeg).
 	} else {
-		update_phase_title("STAGE-1 SEPARATION...   ", 0, true).
+		update_phase_title("STAGE-1 SEPARATION...", 0, true).
 		LOCK STEERING TO SHIP:PROGRADE  + R(0,0,180).
 	}
 	
@@ -324,7 +327,7 @@ function flip_maneuver
 	
 	//FLIP MANEUVER -------------------------------------------------------
 	CLEARSCREEN.
-	update_phase_title("FLIP MANEUVER   ", 0, true).
+	update_phase_title("FLIP MANEUVER", 0, true).
 	RCS ON.
 	set wait_max_sec to 25.
 	if STAGE_1_TYPE = "CORE"

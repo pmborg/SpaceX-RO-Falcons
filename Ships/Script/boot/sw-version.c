@@ -159,7 +159,7 @@ if STAGE_1_TYPE <> ""
 if vehicle_type = "SaturnV"
 {
 	// Data: SaturnV
-	declare global Qmax 	to 14600.
+	declare global Qmax 	to 14600/1.1.
 	declare global MECO1 	to 9999^2.
 	declare global FAIRSEP 	to 110*1000.
 	SET TARGET TO "Moon". 	wait 1.

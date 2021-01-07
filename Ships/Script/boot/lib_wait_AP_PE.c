@@ -13,22 +13,21 @@
 
 function wait_until_periapsis 
 {
-	set warp to 0.
-	WAIT 1.
+	set warp to 0. WAIT 0.1.
+	
 	if eta:periapsis > 86400. //1Day
-		set warp to 7.
+		set warp to 5.
 	WAIT until eta:periapsis < 86400.
 
 	if eta:periapsis > 600. 	//10Mins
-		set warp to 5.
+		set warp to 4.
 	WAIT until eta:periapsis < 600.
 
 	if eta:periapsis > 30. 	//30Secs
-		set warp to 3.		
+		set warp to 2.		
 	WAIT until eta:periapsis < 30.
 
-	set warp to 0.
-	WAIT 1.
+	set warp to 0. WAIT 0.1.
 }
 
 function wait_until_apoapsis 

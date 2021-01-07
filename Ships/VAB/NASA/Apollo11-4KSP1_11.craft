@@ -2,7 +2,7 @@ ship = Apollo11-4KSP1.11
 version = 1.11.0
 description = 
 type = VAB
-size = 12.8339195,127.718788,23.3459473
+size = 11.4117699,127.718788,12.1229315
 steamPublishedFileId = 0
 persistentId = 3288414004
 rot = 0,0,0,0
@@ -189,26 +189,6 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 1.25
-		defaultScale = 1.25
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 400
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -243,7 +223,7 @@ PART
 {
 	part = bluedog.Apollo.Block2.ServiceEngine_4290801284
 	partName = Part
-	persistentId = 1939522900
+	persistentId = 147317648
 	pos = -0.147758871,110.742302,0.225649521
 	attPos = 0,-5.4586525,0
 	attPos0 = 0,3.0586586,0
@@ -317,7 +297,7 @@ PART
 		{
 			OnAction
 			{
-				actionGroup = None
+				actionGroup = Custom08
 				wasActiveBeforePartWasAdjusted = False
 			}
 			ShutdownAction
@@ -561,7 +541,7 @@ PART
 {
 	part = bluedog.Apollo.Block2.HGA_4290801164
 	partName = Part
-	persistentId = 582833773
+	persistentId = 2711542607
 	pos = 0.387172788,110.652336,1.15217829
 	attPos = 0,0,0
 	attPos0 = 0.53493166,-0.0899677277,0.926528811
@@ -686,26 +666,6 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 1
-		defaultScale = 1
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 800
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -779,7 +739,7 @@ PART
 {
 	part = bluedog.Apollo.Block2.ServiceModule_4290801768
 	partName = Part
-	persistentId = 2501595953
+	persistentId = 2816291732
 	pos = -0.147758871,113.142296,0.225649521
 	attPos = 0,-0.0823383331,0
 	attPos0 = 0,1.83670592,-2.38418579E-07
@@ -818,6 +778,10 @@ PART
 	link = strutConnector_4290713862
 	link = strutConnector_4290713746
 	link = bluedog.Apollo.Block2.ServiceEngine_4290801284
+	link = rtg_4290133880
+	link = rtg_4290132232
+	link = rtg_4290132184
+	link = rtg_4290132136
 	attN = top,FASAGeminiDecDark375_4290801886_0|1.73670602|0_0|1.56459999|0_0|1.73670602|0_0|1.56459999|0
 	attN = bottom,bluedog.Apollo.Block2.ServiceEngine_4290801284_0|-2.26867008|0_0|-1.56459999|0_0|-2.26867008|0_0|-1.56459999|0
 	EVENTS
@@ -993,63 +957,9 @@ PART
 		}
 		VesselProdPartsList
 		{
-			AYPwrPartList
-			{
-				PrtName = bluedog.Apollo.Block2.ServiceModule
-				PrtTitle = Apollo Service Module
-				PrtModuleName = TacGenericConverter  
-				PrtSubsystem = False
-				PrtPower = 5.06
-				PrtPowerF = 5.05999994
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = False
-				PrtEmergShutDnInclude = False
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ProdPartKey = 4290801768,TacGenericConverter  
-			}
-			AYPwrPartList
-			{
-				PrtName = bluedog.Apollo.Block2.ServiceModule
-				PrtTitle = Apollo Service Module
-				PrtModuleName = TacGenericConverter Fuel Cell 
-				PrtSubsystem = False
-				PrtPower = 0.2
-				PrtPowerF = 0.200255722
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = False
-				PrtEmergShutDnInclude = False
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ProdPartKey = 4290801768,TacGenericConverter Fuel Cell 
-			}
 		}
 		VesselConsPartsList
 		{
-			AYPwrPartList
-			{
-				PrtName = bluedog.Apollo.Block2.ServiceModule
-				PrtTitle = Apollo Service Module
-				PrtModuleName = TacGenericConverter  
-				PrtSubsystem = False
-				PrtPower = 0.075
-				PrtPowerF = 0.075000003
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = False
-				PrtEmergShutDnInclude = False
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4290801768,TacGenericConverter  
-			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -1066,142 +976,6 @@ PART
 		}
 		ACTIONS
 		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TacGenericConverter
-		isEnabled = True
-		converterEnabled = False
-		EfficiencyBonus = 1
-		IsActivated = False
-		stagingEnabled = True
-		lastUpdateTime = 0
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			StopResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			StartResourceConverterAction
-			{
-				actionGroup = Custom05
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TacGenericConverter
-		isEnabled = True
-		converterEnabled = False
-		EfficiencyBonus = 1
-		IsActivated = False
-		stagingEnabled = True
-		lastUpdateTime = 0
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			StopResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			StartResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TacGenericConverter
-		isEnabled = True
-		converterEnabled = False
-		EfficiencyBonus = 1
-		IsActivated = False
-		stagingEnabled = True
-		lastUpdateTime = 0
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			StopResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			StartResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TacGenericConverter
-		isEnabled = True
-		converterEnabled = False
-		EfficiencyBonus = 1
-		IsActivated = False
-		stagingEnabled = True
-		lastUpdateTime = 0
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			StopResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			StartResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -2215,40 +1989,6 @@ PART
 	}
 	MODULE
 	{
-		name = TacGenericConverter
-		isEnabled = True
-		converterEnabled = False
-		EfficiencyBonus = 1
-		IsActivated = False
-		stagingEnabled = True
-		lastUpdateTime = 0
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			StopResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			StartResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleB9PartInfo
 		isEnabled = False
 		stagingEnabled = True
@@ -2348,7 +2088,7 @@ PART
 {
 	part = bluedog.Apollo.Block2.RCSquad_4290801556
 	partName = Part
-	persistentId = 1582054863
+	persistentId = 4158341215
 	pos = -1.34523618,113.754509,0.22564958
 	attPos = 0,0,0
 	attPos0 = -1.19747722,0.612213135,6.63621904E-08
@@ -2431,26 +2171,6 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 750
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -2525,7 +2245,7 @@ PART
 {
 	part = bluedog.Apollo.Block2.RCSquad_4290801488
 	partName = Part
-	persistentId = 2214857733
+	persistentId = 3770162780
 	pos = -0.147758871,113.754509,1.42312682
 	attPos = 0,0,0
 	attPos0 = -5.0131348E-09,0.612213135,1.1974771
@@ -2608,26 +2328,6 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 750
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -2702,7 +2402,7 @@ PART
 {
 	part = bluedog.Apollo.Block2.RCSquad_4290801420
 	partName = Part
-	persistentId = 369570884
+	persistentId = 1214522113
 	pos = 1.04971826,113.754509,0.225649342
 	attPos = 0,0,0
 	attPos0 = 1.19747722,0.612213135,-1.71048669E-07
@@ -2785,26 +2485,6 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 750
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -2879,7 +2559,7 @@ PART
 {
 	part = bluedog.Apollo.Block2.RCSquad_4290801352
 	partName = Part
-	persistentId = 1103022066
+	persistentId = 763306832
 	pos = -0.147758991,113.754509,-0.971827924
 	attPos = 0,0,0
 	attPos0 = -1.37737516E-07,0.612213135,-1.1974771
@@ -2962,26 +2642,6 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 750
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -3056,7 +2716,7 @@ PART
 {
 	part = FASAGeminiDecDark375_4290801886
 	partName = Part
-	persistentId = 339775565
+	persistentId = 4261199085
 	pos = -0.147758871,114.978996,0.225649282
 	attPos = 0,0,0
 	attPos0 = 0.00122067332,20.134325,0.417235464
@@ -3166,26 +2826,6 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 3.75
-		defaultScale = 3.75
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 2500
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleToggleCrossfeed
 		isEnabled = True
 		crossfeedStatus = False
@@ -3235,7 +2875,7 @@ PART
 {
 	part = bluedog.Apollo.Block2.Heatshield_4290801834
 	partName = Part
-	persistentId = 3399153199
+	persistentId = 1374217933
 	pos = -0.147758871,114.859962,0.225649282
 	attPos = 0,-0.444998741,0
 	attPos0 = 0,-0.855000496,0
@@ -3288,26 +2928,6 @@ PART
 	{
 		name = ModuleLiftingSurface
 		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 2.5
-		defaultScale = 2.5
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 176
-		OriginalCrewCapacity = 0
 		stagingEnabled = True
 		EVENTS
 		{
@@ -3414,7 +3034,7 @@ PART
 {
 	part = bluedog.Apollo.Block2.Capsule_4290801078
 	partName = Part
-	persistentId = 2616355911
+	persistentId = 4051525837
 	pos = -0.147758871,116.199257,0.225649282
 	attPos = -0.0148229301,-0.0191764832,0.00163006783
 	attPos0 = -0.147758871,116.199257,0.225649282
@@ -3777,24 +3397,6 @@ PART
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
 				ConsPartKey = 4290801078,ModuleCommand
-			}
-			AYPwrPartList
-			{
-				PrtName = TAC Life Support
-				PrtTitle = Apollo Command Module
-				PrtModuleName = LifeSupport
-				PrtSubsystem = False
-				PrtPower = 0
-				PrtPowerF = 0
-				PrtActive = False
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = False
-				PrtEmergShutDnInclude = False
-				PrtPreEmergShutDnStateActive = False
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4290801078,LifeSupport
 			}
 			AYPwrPartList
 			{
@@ -4904,40 +4506,6 @@ PART
 	}
 	MODULE
 	{
-		name = TacGenericConverter
-		isEnabled = True
-		converterEnabled = False
-		EfficiencyBonus = 1
-		IsActivated = False
-		stagingEnabled = True
-		lastUpdateTime = 0
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			StopResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			StartResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = MechJebCore
 		isEnabled = True
 		running = True
@@ -5639,21 +5207,6 @@ PART
 	}
 	MODULE
 	{
-		name = LifeSupportModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = TrajectoriesVesselSettings
 		isEnabled = True
 		Initialized = False
@@ -5937,7 +5490,7 @@ PART
 {
 	part = bluedog.Apollo.Block2.ParachuteMount_4290800768
 	partName = Part
-	persistentId = 3831119835
+	persistentId = 1575170480
 	pos = -0.147758871,117.06292,0.225649282
 	attPos = 0,0,0
 	attPos0 = 0,0.552999496,0
@@ -6009,26 +5562,6 @@ PART
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 1.25
-		defaultScale = 1.25
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 850
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
 		}
 		UPGRADESAPPLIED
 		{
@@ -6122,7 +5655,7 @@ PART
 {
 	part = bluedog.Apollo.Block2.Parachute_4290800660
 	partName = Part
-	persistentId = 3999745026
+	persistentId = 2672780853
 	pos = -0.147758871,117.061134,0.643932462
 	attPos = 0,0,0
 	attPos0 = 0,-0.00178337097,0.418282986
@@ -6249,26 +5782,6 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 1.25
-		defaultScale = 1.25
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 400
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -6324,7 +5837,7 @@ PART
 {
 	part = bluedog.Apollo.Block2.Parachute_4290800584
 	partName = Part
-	persistentId = 45435042
+	persistentId = 171670004
 	pos = 0.214485258,117.061134,0.0165076703
 	attPos = 0,0,0
 	attPos0 = 0.362244189,-0.00178337097,-0.209141508
@@ -6451,26 +5964,6 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 1.25
-		defaultScale = 1.25
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 400
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -6526,7 +6019,7 @@ PART
 {
 	part = bluedog.Apollo.Block2.Parachute_4290800508
 	partName = Part
-	persistentId = 101187781
+	persistentId = 756495779
 	pos = -0.51000309,117.061134,0.0165076703
 	attPos = 0,0,0
 	attPos0 = -0.362244189,-0.00178337097,-0.209141493
@@ -6653,26 +6146,6 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 1.25
-		defaultScale = 1.25
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 400
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYPart
 		isEnabled = True
 		stagingEnabled = True
@@ -6728,11 +6201,11 @@ PART
 {
 	part = FASAApollo.SM.RCS_4291275654
 	partName = Part
-	persistentId = 2280507652
-	pos = -1.55992877,113.608154,-1.18652046
-	attPos = 0,0,0
+	persistentId = 4008378265
+	pos = -1.54775882,113.242294,-1.17435038
+	attPos = 0.0121699572,-0.365859985,0.0121700764
 	attPos0 = -1.41216993,0.465858459,-1.41216993
-	rot = 4.64180259E-18,0.923879564,1.12063013E-17,-0.382683456
+	rot = -4.64180218E-18,-0.923879564,-1.12063005E-17,0.382683456
 	attRot = 0,0,0,1
 	attRot0 = 4.64180259E-18,0.923879564,1.12063013E-17,-0.382683456
 	mir = 1,1,1
@@ -6866,9 +6339,9 @@ PART
 {
 	part = FASAApollo.SM.RCS_4291866312
 	partName = Part
-	persistentId = 1253144255
-	pos = -1.55992877,113.608154,1.63781917
-	attPos = 0,0,0
+	persistentId = 329877244
+	pos = -1.54775882,113.242294,1.62564945
+	attPos = 0.0121699572,-0.365859985,-0.012169838
 	attPos0 = -1.41216993,0.465858459,1.41216981
 	rot = 1.12063013E-17,0.382683426,4.64180135E-18,-0.923879564
 	attRot = 0,0,0,1
@@ -7004,11 +6477,11 @@ PART
 {
 	part = FASAApollo.SM.RCS_4291866218
 	partName = Part
-	persistentId = 4293864029
-	pos = 1.26441121,113.608154,1.63781917
-	attPos = 0,0,0
+	persistentId = 2779197177
+	pos = 1.25224102,113.242294,1.62564945
+	attPos = -0.0121701956,-0.365859985,-0.012169838
 	attPos0 = 1.41217005,0.465858459,1.41216981
-	rot = 1.12063013E-17,-0.382683486,-4.641803E-18,-0.923879564
+	rot = 1.12063005E-17,-0.382683456,-4.64180218E-18,-0.923879564
 	attRot = 0,0,0,1
 	attRot0 = 1.12063013E-17,-0.382683486,-4.641803E-18,-0.923879564
 	mir = 1,1,1
@@ -7142,11 +6615,11 @@ PART
 {
 	part = FASAApollo.SM.RCS_4291866124
 	partName = Part
-	persistentId = 420825762
-	pos = 1.26441097,113.608154,-1.18652046
-	attPos = 0,0,0
+	persistentId = 3029613086
+	pos = 1.25224102,113.242294,-1.17435062
+	attPos = -0.0121699572,-0.365859985,0.012169838
 	attPos0 = 1.41216981,0.465858459,-1.41216993
-	rot = 4.64180135E-18,-0.923879564,-1.12063013E-17,-0.382683426
+	rot = 4.64180094E-18,-0.923879564,-1.12063013E-17,-0.382683396
 	attRot = 0,0,0,1
 	attRot0 = 4.64180135E-18,-0.923879564,-1.12063013E-17,-0.382683426
 	mir = 1,1,1
@@ -7280,7 +6753,7 @@ PART
 {
 	part = solarPanels1_4292060338
 	partName = Part
-	persistentId = 2127069
+	persistentId = 837628923
 	pos = -2.09724665,111.226372,0.22564964
 	attPos = 0,0,0
 	attPos0 = -1.94948781,-1.91592407,1.1920929E-07
@@ -7403,7 +6876,7 @@ PART
 				PrtModuleName = ModuleDeployableSolarPanel
 				PrtSubsystem = False
 				PrtPower = 0.277
-				PrtPowerF = 0.277290285
+				PrtPowerF = 0.277290225
 				PrtActive = True
 				PrtSolarDependant = True
 				PrtEditorInclude = True
@@ -7416,26 +6889,6 @@ PART
 			}
 		}
 		VesselConsPartsList
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 440
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -7516,7 +6969,7 @@ PART
 {
 	part = solarPanels1_4291864412
 	partName = Part
-	persistentId = 992316272
+	persistentId = 2232114199
 	pos = -0.147758871,111.226372,2.17513728
 	attPos = 0,0,0
 	attPos0 = 0,-1.91592407,1.94948781
@@ -7639,7 +7092,7 @@ PART
 				PrtModuleName = ModuleDeployableSolarPanel
 				PrtSubsystem = False
 				PrtPower = 0.277
-				PrtPowerF = 0.277290285
+				PrtPowerF = 0.277290225
 				PrtActive = True
 				PrtSolarDependant = True
 				PrtEditorInclude = True
@@ -7652,26 +7105,6 @@ PART
 			}
 		}
 		VesselConsPartsList
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 440
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -7752,7 +7185,7 @@ PART
 {
 	part = solarPanels1_4291864280
 	partName = Part
-	persistentId = 1001764907
+	persistentId = 1144918697
 	pos = 1.80172896,111.226372,0.225649238
 	attPos = 0,0,0
 	attPos0 = 1.94948781,-1.91592407,-2.83122063E-07
@@ -7875,7 +7308,7 @@ PART
 				PrtModuleName = ModuleDeployableSolarPanel
 				PrtSubsystem = False
 				PrtPower = 0.277
-				PrtPowerF = 0.277290285
+				PrtPowerF = 0.277290225
 				PrtActive = True
 				PrtSolarDependant = True
 				PrtEditorInclude = True
@@ -7888,26 +7321,6 @@ PART
 			}
 		}
 		VesselConsPartsList
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 440
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -7988,7 +7401,7 @@ PART
 {
 	part = solarPanels1_4291864148
 	partName = Part
-	persistentId = 2554788122
+	persistentId = 301708221
 	pos = -0.14775911,111.226372,-1.72383821
 	attPos = 0,0,0
 	attPos0 = -2.38418579E-07,-1.91592407,-1.94948769
@@ -8111,7 +7524,7 @@ PART
 				PrtModuleName = ModuleDeployableSolarPanel
 				PrtSubsystem = False
 				PrtPower = 0.277
-				PrtPowerF = 0.277290285
+				PrtPowerF = 0.277290225
 				PrtActive = True
 				PrtSolarDependant = True
 				PrtEditorInclude = True
@@ -8124,26 +7537,6 @@ PART
 			}
 		}
 		VesselConsPartsList
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 440
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -8224,7 +7617,7 @@ PART
 {
 	part = strutConnector_4290717226
 	partName = CompoundPart
-	persistentId = 2114388652
+	persistentId = 1200991518
 	pos = -1.52261853,110.899208,-1.1492101
 	attPos = 0,0,0
 	attPos0 = -1.37485969,-2.24308777,-1.37485957
@@ -8275,7 +7668,7 @@ PART
 	{
 		tgt = 4290806030
 		pos = -0.297181606,-5.03845215,0.087624006
-		rot = -2.24678942E-09,-0.240626305,0.862185776,0.445798427
+		rot = 3.78380633E-08,-0.240626484,0.862186313,0.445798695
 		dir = -0.0588715151,-0.998114645,0.0173582677
 		col = LM_LC_Coll11
 	}
@@ -8399,7 +7792,7 @@ PART
 {
 	part = strutConnector_4290713978
 	partName = CompoundPart
-	persistentId = 1177990349
+	persistentId = 641342210
 	pos = -1.52261841,110.899208,1.60050905
 	attPos = 0,0,0
 	attPos0 = -1.37485957,-2.24308777,1.37485957
@@ -8450,7 +7843,7 @@ PART
 	{
 		tgt = 4290699508
 		pos = -0.640080988,-10.1325455,0.188952371
-		rot = 1.36642431E-08,2.52830489E-07,0.707106829,0.707107186
+		rot = -2.72311347E-08,2.11935102E-07,0.707107008,0.707107365
 		dir = -0.0630342141,-0.997837842,0.0186077449
 		col = colliderMain
 	}
@@ -8574,7 +7967,7 @@ PART
 {
 	part = strutConnector_4290713862
 	partName = CompoundPart
-	persistentId = 3089190892
+	persistentId = 3827852650
 	pos = 1.22710097,110.899208,1.60050881
 	attPos = 0,0,0
 	attPos0 = 1.37485981,-2.24308777,1.37485945
@@ -8624,9 +8017,9 @@ PART
 	PARTDATA
 	{
 		tgt = 4290699508
-		pos = -0.640081882,-10.1325455,0.188874438
-		rot = 6.95101434E-08,-3.02600853E-07,0.707107067,0.707107425
-		dir = -0.0630343109,-0.99783802,0.0186000746
+		pos = -0.640082955,-10.1325455,0.188874856
+		rot = 5.06139486E-08,-2.48343866E-07,0.707107365,0.707107782
+		dir = -0.0630344227,-0.99783802,0.0186001156
 		col = colliderMain
 	}
 	MODULE
@@ -8749,7 +8142,7 @@ PART
 {
 	part = strutConnector_4290713746
 	partName = CompoundPart
-	persistentId = 2314705150
+	persistentId = 3400906686
 	pos = 1.22710061,110.899208,-1.14921033
 	attPos = 0,0,0
 	attPos0 = 1.37485945,-2.24308777,-1.37485969
@@ -8799,9 +8192,9 @@ PART
 	PARTDATA
 	{
 		tgt = 4290806030
-		pos = -0.293723077,-4.98707581,0.0867436752
-		rot = 1.59269824E-08,0.240617827,0.862190664,0.445792496
-		dir = -0.0587861091,-0.998119652,0.017360989
+		pos = -0.293723494,-4.98707581,0.0867437944
+		rot = 2.56536126E-09,0.240617886,0.862190902,0.445792586
+		dir = -0.058786191,-0.998119652,0.0173610132
 		col = LM_LC_Coll11
 	}
 	MODULE
@@ -8924,7 +8317,7 @@ PART
 {
 	part = FASAApollo.DockingDevice_4292329008
 	partName = Part
-	persistentId = 188181451
+	persistentId = 594403334
 	pos = -0.147758871,117.351334,0.225649282
 	attPos = 0,0,0
 	attPos0 = 0,0.288414001,0
@@ -9158,7 +8551,7 @@ PART
 	resPri = 0
 	dstg = 0
 	sidx = 0
-	sqor = 15
+	sqor = 14
 	sepI = 14
 	attm = 0
 	sameVesselCollision = False
@@ -9699,6 +9092,10 @@ PART
 	link = FASALM.AscentEngine_4290806090
 	link = solarPanels1_4292068616
 	link = solarPanels1_4292067280
+	link = rtg_4290130802
+	link = rtg_4290129958
+	link = rtg_4290129910
+	link = rtg_4290129862
 	attN = bottom,FASALM.AscentEngine_4290806090_0|0.330000013|0_0|-0.550000012|0_0|0.330000013|0_0|-0.550000012|0
 	attN = ant,Null_0_0|2.0999999|2_0|1|0_0|2.0999999|2_0|1|0
 	attN = connect1,FASALM.DockingCone_4292327116_0|1.22500002|0_0|1|0_0|1.22500002|0_0|1|0
@@ -9964,24 +9361,6 @@ PART
 			{
 				PrtName = FASALM.AscentStage
 				PrtTitle = Apollo Lunar Module Ascent Module
-				PrtModuleName = ModuleDataTransmitter
-				PrtSubsystem = False
-				PrtPower = 6
-				PrtPowerF = 6
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = True
-				PrtEmergShutDnInclude = True
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4290806030,ModuleDataTransmitter
-			}
-			AYPwrPartList
-			{
-				PrtName = FASALM.AscentStage
-				PrtTitle = Apollo Lunar Module Ascent Module
 				PrtModuleName = ModuleCommand
 				PrtSubsystem = False
 				PrtPower = 1.01
@@ -9998,21 +9377,21 @@ PART
 			}
 			AYPwrPartList
 			{
-				PrtName = TAC Life Support
+				PrtName = FASALM.AscentStage
 				PrtTitle = Apollo Lunar Module Ascent Module
-				PrtModuleName = LifeSupport
+				PrtModuleName = ModuleDataTransmitter
 				PrtSubsystem = False
-				PrtPower = 0
-				PrtPowerF = 0
-				PrtActive = False
+				PrtPower = 6
+				PrtPowerF = 6
+				PrtActive = True
 				PrtSolarDependant = False
 				PrtEditorInclude = True
 				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = False
-				PrtEmergShutDnInclude = False
-				PrtPreEmergShutDnStateActive = False
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4290806030,LifeSupport
+				ConsPartKey = 4290806030,ModuleDataTransmitter
 			}
 		}
 		UPGRADESAPPLIED
@@ -11093,40 +10472,6 @@ PART
 	}
 	MODULE
 	{
-		name = TacGenericConverter
-		isEnabled = True
-		converterEnabled = False
-		EfficiencyBonus = 1
-		IsActivated = False
-		stagingEnabled = True
-		lastUpdateTime = 0
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			StopResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			StartResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleRCSFX
 		isEnabled = True
 		rcsEnabled = False
@@ -11280,21 +10625,6 @@ PART
 	MODULE
 	{
 		name = SCANRPMStorage
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = LifeSupportModule
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -13004,7 +12334,7 @@ PART
 				PrtModuleName = ModuleDeployableSolarPanel
 				PrtSubsystem = False
 				PrtPower = 0.003
-				PrtPowerF = 0.00323505327
+				PrtPowerF = 0.00323505257
 				PrtActive = True
 				PrtSolarDependant = True
 				PrtEditorInclude = True
@@ -13214,7 +12544,7 @@ PART
 				PrtModuleName = ModuleDeployableSolarPanel
 				PrtSubsystem = False
 				PrtPower = 0.003
-				PrtPowerF = 0.00323505327
+				PrtPowerF = 0.00323505257
 				PrtActive = True
 				PrtSolarDependant = True
 				PrtEditorInclude = True
@@ -16218,26 +15548,6 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 800
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -18137,64 +17447,8 @@ PART
 		}
 		VesselProdPartsList
 		{
-			AYPwrPartList
-			{
-				PrtName = FuelCellArray
-				PrtTitle = Fuel Cell Array
-				PrtModuleName = TacGenericConverter  
-				PrtSubsystem = False
-				PrtPower = 4.5
-				PrtPowerF = 4.5
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = False
-				PrtEmergShutDnInclude = False
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ProdPartKey = 4290803002,TacGenericConverter  
-			}
 		}
 		VesselConsPartsList
-		{
-			AYPwrPartList
-			{
-				PrtName = FuelCellArray
-				PrtTitle = Fuel Cell Array
-				PrtModuleName = TacGenericConverter  
-				PrtSubsystem = False
-				PrtPower = 0.113
-				PrtPowerF = 0.112500004
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = False
-				PrtEmergShutDnInclude = False
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4290803002,TacGenericConverter  
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 4500
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -18212,74 +17466,6 @@ PART
 		}
 		ACTIONS
 		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TacGenericConverter
-		isEnabled = True
-		converterEnabled = False
-		EfficiencyBonus = 1
-		IsActivated = False
-		stagingEnabled = True
-		lastUpdateTime = 0
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			StopResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			StartResourceConverterAction
-			{
-				actionGroup = Custom06
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TacGenericConverter
-		isEnabled = True
-		converterEnabled = False
-		EfficiencyBonus = 1
-		IsActivated = False
-		stagingEnabled = True
-		lastUpdateTime = 0
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			StopResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			StartResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -18409,64 +17595,8 @@ PART
 		}
 		VesselProdPartsList
 		{
-			AYPwrPartList
-			{
-				PrtName = FuelCellArray
-				PrtTitle = Fuel Cell Array
-				PrtModuleName = TacGenericConverter  
-				PrtSubsystem = False
-				PrtPower = 4.5
-				PrtPowerF = 4.5
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = False
-				PrtEmergShutDnInclude = False
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ProdPartKey = 4290802948,TacGenericConverter  
-			}
 		}
 		VesselConsPartsList
-		{
-			AYPwrPartList
-			{
-				PrtName = FuelCellArray
-				PrtTitle = Fuel Cell Array
-				PrtModuleName = TacGenericConverter  
-				PrtSubsystem = False
-				PrtPower = 0.113
-				PrtPowerF = 0.112500004
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = False
-				PrtEmergShutDnInclude = False
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4290802948,TacGenericConverter  
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 4500
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -18484,74 +17614,6 @@ PART
 		}
 		ACTIONS
 		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TacGenericConverter
-		isEnabled = True
-		converterEnabled = False
-		EfficiencyBonus = 1
-		IsActivated = False
-		stagingEnabled = True
-		lastUpdateTime = 0
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			StopResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			StartResourceConverterAction
-			{
-				actionGroup = Custom06
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TacGenericConverter
-		isEnabled = True
-		converterEnabled = False
-		EfficiencyBonus = 1
-		IsActivated = False
-		stagingEnabled = True
-		lastUpdateTime = 0
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			StopResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			StartResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleResourceConverterAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -18888,12 +17950,12 @@ PART
 	sepI = 7
 	attm = 0
 	sameVesselCollision = False
-	modCost = 13.5415192
-	modMass = 0.0385235101
+	modCost = 0
+	modMass = 0
 	modSize = 0,0,0
 	link = bluedog.Saturn.S4B.InstrumentUnit_4291874204
-	attN = top,FASALM.DescentEngine_4290803348_0|0.0500000007|0_0|1|0_0|0.057|0_0|1|0
-	attN = bottom,bluedog.Saturn.S4B.InstrumentUnit_4291874204_0|-0.0500000007|0_0|-1|0_0|-0.057|0_0|-1|0
+	attN = top,FASALM.DescentEngine_4290803348_0|0.0500000007|0_0|1|0_0|0.0500000007|0_0|1|0
+	attN = bottom,bluedog.Saturn.S4B.InstrumentUnit_4291874204_0|-0.0500000007|0_0|-1|0_0|-0.0500000007|0_0|-1|0
 	EVENTS
 	{
 	}
@@ -19034,26 +18096,6 @@ PART
 		{
 		}
 		VesselConsPartsList
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 1.42499995
-		defaultScale = 1.25
-		defaultTransformScale = (1, 1, 1)
-		DryCost = 213.541519
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -19255,26 +18297,6 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 3.75
-		defaultScale = 3.75
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 5000
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = AYCrewPart
 		isEnabled = True
 		stagingEnabled = True
@@ -19326,24 +18348,6 @@ PART
 			{
 				PrtName = bluedog.Saturn.S4B.InstrumentUnit
 				PrtTitle = non RO - Sarnus-SIVB-IU Instrument Unit
-				PrtModuleName = ModuleReactionWheel
-				PrtSubsystem = False
-				PrtPower = 1.5
-				PrtPowerF = 1.5
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = True
-				PrtEmergShutDnInclude = True
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4291874204,ModuleReactionWheel
-			}
-			AYPwrPartList
-			{
-				PrtName = bluedog.Saturn.S4B.InstrumentUnit
-				PrtTitle = non RO - Sarnus-SIVB-IU Instrument Unit
 				PrtModuleName = ModuleCommand
 				PrtSubsystem = False
 				PrtPower = 0.03
@@ -19357,6 +18361,24 @@ PART
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
 				ConsPartKey = 4291874204,ModuleCommand
+			}
+			AYPwrPartList
+			{
+				PrtName = bluedog.Saturn.S4B.InstrumentUnit
+				PrtTitle = non RO - Sarnus-SIVB-IU Instrument Unit
+				PrtModuleName = ModuleReactionWheel
+				PrtSubsystem = False
+				PrtPower = 1.5
+				PrtPowerF = 1.5
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4291874204,ModuleReactionWheel
 			}
 		}
 		UPGRADESAPPLIED
@@ -19661,6 +18683,7 @@ PART
 	link = strutConnector_4290717610
 	link = strutConnector_4290717494
 	link = strutConnector_4290717378
+	link = SYclamp1_4291937730
 	attN = bottom,RSBtankSaturnSIVB_4291089742_0|-0.600000024|0_0|-1|0_0|-0.600000024|0_0|-1|0
 	attN = top,bluedog.Saturn.S4B.InstrumentUnit_4291874204_0|0.600000024|0_0|1|0_0|0.600000024|0_0|1|0
 	EVENTS
@@ -19892,26 +18915,6 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 2500
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModulePartInfo
 		isEnabled = True
 		stagingEnabled = True
@@ -19954,7 +18957,6 @@ PART
 	modSize = 0,0,0
 	link = RSBengineJ2X_4291089680
 	link = FASAApolloStrJ2StrJ23m5mDec_4291089580
-	link = SYclamp1_4291088514
 	attN = top,RSBfairingSaturn6m_4290699508_0|6|0_0|1|0_0|6|0_0|1|0
 	attN = bottom01,RSBengineJ2X_4291089680_0|-8.64799976|0_0|-1|0_0|-8.64799976|0_0|-1|0
 	attN = bottom,FASAApolloStrJ2StrJ23m5mDec_4291089580_0|-6|0_0|-1|0_0|-6|0_0|-1|0
@@ -20775,26 +19777,6 @@ PART
 			upgrade = MLI.Upgrade3
 			upgrade = MLI.Upgrade4
 			upgrade = MLI.Upgrade5
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (1, 1, 1)
-		DryCost = 52000.0156
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
 		}
 	}
 	MODULE
@@ -22159,26 +21141,6 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (1, 1, 1)
-		DryCost = 289999.938
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModulePartInfo
 		isEnabled = True
 		stagingEnabled = True
@@ -22245,7 +21207,7 @@ PART
 	resPri = 0
 	dstg = 14
 	sidx = 0
-	sqor = 16
+	sqor = 15
 	sepI = 13
 	attm = 0
 	sameVesselCollision = False
@@ -22544,7 +21506,7 @@ PART
 	resPri = 0
 	dstg = 14
 	sidx = 1
-	sqor = 16
+	sqor = 15
 	sepI = 13
 	attm = 0
 	sameVesselCollision = False
@@ -22843,7 +21805,7 @@ PART
 	resPri = 0
 	dstg = 14
 	sidx = 2
-	sqor = 16
+	sqor = 15
 	sepI = 13
 	attm = 0
 	sameVesselCollision = False
@@ -23142,7 +22104,7 @@ PART
 	resPri = 0
 	dstg = 14
 	sidx = 3
-	sqor = 16
+	sqor = 15
 	sepI = 13
 	attm = 0
 	sameVesselCollision = False
@@ -23440,14 +22402,16 @@ PART
 	istg = 16
 	resPri = 0
 	dstg = 14
-	sidx = 0
-	sqor = 17
+	sidx = 1
+	sqor = 16
 	sepI = 16
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
+	link = ROSmallSpinMotor_4291337192
+	link = ROSmallSpinMotor_4291337074
 	attN = bottom,Null_0_0|-3|0_0|-1|0_0|-3|0_0|-1|0
 	attN = top,RSBtankSaturnSII8_4291089270_0|3|0_0|1|0_0|3|0_0|1|0
 	EVENTS
@@ -23611,26 +22575,6 @@ PART
 	}
 	MODULE
 	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 7500
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModulePartInfo
 		isEnabled = True
 		stagingEnabled = True
@@ -23664,7 +22608,7 @@ PART
 	resPri = 0
 	dstg = 14
 	sidx = 4
-	sqor = 16
+	sqor = 15
 	sepI = 13
 	attm = 1
 	sameVesselCollision = False
@@ -23965,7 +22909,7 @@ PART
 	resPri = 0
 	dstg = 16
 	sidx = 0
-	sqor = 18
+	sqor = 17
 	sepI = 17
 	attm = 0
 	sameVesselCollision = False
@@ -25000,11 +23944,11 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 19
+	istg = 18
 	resPri = 0
 	dstg = 18
 	sidx = 1
-	sqor = 20
+	sqor = 18
 	sepI = 17
 	attm = 0
 	sameVesselCollision = False
@@ -25318,11 +24262,11 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 19
+	istg = 18
 	resPri = 0
 	dstg = 18
 	sidx = 0
-	sqor = 20
+	sqor = 18
 	sepI = 17
 	attm = 0
 	sameVesselCollision = False
@@ -25639,11 +24583,11 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 19
+	istg = 18
 	resPri = 0
 	dstg = 18
 	sidx = 0
-	sqor = 20
+	sqor = 18
 	sepI = 17
 	attm = 0
 	sameVesselCollision = False
@@ -25952,11 +24896,11 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 19
+	istg = 18
 	resPri = 0
 	dstg = 18
 	sidx = 0
-	sqor = 20
+	sqor = 18
 	sepI = 17
 	attm = 0
 	sameVesselCollision = False
@@ -26265,11 +25209,11 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 19
+	istg = 18
 	resPri = 0
 	dstg = 18
 	sidx = 0
-	sqor = 20
+	sqor = 18
 	sepI = 17
 	attm = 0
 	sameVesselCollision = False
@@ -26618,7 +25562,7 @@ PART
 	{
 		tgt = 4290806030
 		pos = 0.649557889,4.67266846,0.0161178242
-		rot = 1.3151447E-08,8.43953558E-07,0.966186106,-0.25784862
+		rot = 2.57025423E-08,8.47699198E-07,0.966186643,-0.257848769
 		dir = 0.137687385,0.990469873,0.0034165103
 		col = LM_RCS
 	}
@@ -26793,7 +25737,7 @@ PART
 	{
 		tgt = 4290806030
 		pos = 0.649554372,4.67267609,0.0161248296
-		rot = -2.18278622E-08,2.90609364E-07,0.966185868,-0.257848233
+		rot = -7.65572228E-09,3.04173625E-07,0.966186047,-0.257848322
 		dir = 0.137686431,0.990469992,0.00341798994
 		col = LM_RCS
 	}
@@ -26967,9 +25911,9 @@ PART
 	PARTDATA
 	{
 		tgt = 4290806030
-		pos = 0.649538636,4.67269897,0.0161225647
-		rot = 9.35792244E-09,-6.92794117E-07,0.966186106,-0.257848114
-		dir = 0.137682498,0.990470529,0.00341749494
+		pos = 0.649539232,4.67269897,0.0161222667
+		rot = 2.66330478E-08,-6.95931874E-07,0.966186643,-0.257848263
+		dir = 0.137682632,0.990470529,0.00341743184
 		col = LM_RCS
 	}
 	MODULE
@@ -27142,9 +26086,9 @@ PART
 	PARTDATA
 	{
 		tgt = 4290806030
-		pos = 0.649569035,4.67264557,0.0161306188
-		rot = -2.18281127E-08,-4.65961051E-07,0.966185868,-0.257848233
-		dir = 0.137690365,0.990469456,0.00341923744
+		pos = 0.649569511,4.67264557,0.0161306188
+		rot = -7.65597719E-09,-4.65961051E-07,0.966186047,-0.257848233
+		dir = 0.13769047,0.990469456,0.00341923744
 		col = LM_RCS
 	}
 	MODULE
@@ -27388,7 +26332,7 @@ PART
 				PrtModuleName = ModuleDeployableSolarPanel
 				PrtSubsystem = False
 				PrtPower = 0.277
-				PrtPowerF = 0.277290285
+				PrtPowerF = 0.277290225
 				PrtActive = True
 				PrtSolarDependant = True
 				PrtEditorInclude = True
@@ -27401,26 +26345,6 @@ PART
 			}
 		}
 		VesselConsPartsList
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 440
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -27622,7 +26546,7 @@ PART
 				PrtModuleName = ModuleDeployableSolarPanel
 				PrtSubsystem = False
 				PrtPower = 0.277
-				PrtPowerF = 0.277290285
+				PrtPowerF = 0.277290225
 				PrtActive = True
 				PrtSolarDependant = True
 				PrtEditorInclude = True
@@ -27635,26 +26559,6 @@ PART
 			}
 		}
 		VesselConsPartsList
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 440
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
 		{
 		}
 		UPGRADESAPPLIED
@@ -27704,767 +26608,6 @@ PART
 		trackingBodyName = 
 		_manualTracking = False
 		_relativeSunAoa = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = SYclamp1_4291088514
-	partName = Part
-	persistentId = 3369527511
-	pos = -0.147760615,78.6402664,21.5175991
-	attPos = 0,0,0
-	attPos0 = -3.12924385E-07,-14.926384,21.2919502
-	rot = 2.01907053E-15,1,-2.36378852E-07,8.54167137E-09
-	attRot = 0,0,0,1
-	attRot0 = 2.01907053E-15,1,-2.36378852E-07,8.54167137E-09
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 18
-	resPri = 0
-	dstg = 11
-	sidx = 0
-	sqor = 19
-	sepI = 18
-	attm = 1
-	sameVesselCollision = False
-	modCost = 25200
-	modMass = 63
-	modSize = 0,0,0
-	link = B9.Utility.Light.A8.White_4291088376
-	link = B9.Utility.Light.A8.White_4291088330
-	srfN = srfAttach,RSBtankSaturnSIVB_4291089742,colliderMain,0|16|18,0|0|-1,0|16|18
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		ToggleSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		SetSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		RemoveSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = LaunchClamp
-		isEnabled = True
-		scaleFactor = 12.5647526
-		height = 85.4402618
-		stagingEnabled = True
-		towerRot = -2.01907053E-15,-1,2.36378852E-07,8.54167137E-09
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ReleaseClamp
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleGenerator
-		isEnabled = True
-		generatorIsActive = False
-		throttle = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ActivateAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FlagDecal
-		isEnabled = True
-		flagDisplayed = True
-		isMirrored = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleTestSubject
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = RefuelingPump
-		isEnabled = True
-		enablePump = True
-		pump_rate = 100
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = AYPart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		VesselProdPartsList
-		{
-			AYPwrPartList
-			{
-				PrtName = SYclamp1
-				PrtTitle = non RO - SY-LC1 Heavy-Duty Launch Clamp
-				PrtModuleName = ModuleGenerator
-				PrtSubsystem = False
-				PrtPower = 128
-				PrtPowerF = 128
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = False
-				PrtEmergShutDnInclude = False
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ProdPartKey = 4291088514,ModuleGenerator
-			}
-		}
-		VesselConsPartsList
-		{
-			AYPwrPartList
-			{
-				PrtName = SYclamp1
-				PrtTitle = non RO - SY-LC1 Heavy-Duty Launch Clamp
-				PrtModuleName = ModuleGenerator
-				PrtSubsystem = False
-				PrtPower = 0
-				PrtPowerF = 0
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = False
-				PrtEmergShutDnInclude = False
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4291088514,ModuleGenerator
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 4
-		defaultScale = 1
-		defaultTransformScale = (1, 1, 1)
-		DryCost = 25600
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = KOSNameTag
-		isEnabled = True
-		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = B9.Utility.Light.A8.White_4291088376
-	partName = Part
-	persistentId = 833129129
-	pos = -0.14776054,98.6207504,17.6138229
-	attPos = 0,0,0
-	attPos0 = -5.86061333E-09,19.9804859,3.90376663
-	rot = 0.49999997,0.499999881,-0.50000006,-0.500000119
-	attRot = 0,-0.707106709,0,-0.707106709
-	attRot0 = 0.49999994,0.500000179,0.499999881,0.500000119
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 18
-	resPri = 0
-	dstg = 11
-	sidx = -1
-	sqor = -1
-	sepI = 18
-	attm = 1
-	sameVesselCollision = False
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	srfN = srfAttach,SYclamp1_4291088514,colliderHead,0|0|0,0|-1|0,0|0|0
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		ToggleSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		SetSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		RemoveSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleLight
-		isEnabled = True
-		isOn = False
-		uiWriteLock = False
-		lightR = 0
-		lightG = 0
-		lightB = 0
-		castLight = True
-		movementTransformName = movementTransformName
-		isBlinking = False
-		rotationAngle = 0
-		pitchAngle = 0
-		blinkRate = 1
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleLightAction
-			{
-				actionGroup = Light
-				wasActiveBeforePartWasAdjusted = False
-			}
-			LightOnAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			LightOffAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		AXISGROUPS
-		{
-			lightR
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisSpeedMultiplier = 0
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-			lightG
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisSpeedMultiplier = 0
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-			lightB
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisSpeedMultiplier = 0
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-			rotationAngle
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisSpeedMultiplier = 0
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-			pitchAngle
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisSpeedMultiplier = 0
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-			blinkRate
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisSpeedMultiplier = 0
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = AYPart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		VesselProdPartsList
-		{
-		}
-		VesselConsPartsList
-		{
-			AYPwrPartList
-			{
-				PrtName = B9.Utility.Light.A8.White
-				PrtTitle = A8 Spot Light Array
-				PrtModuleName = ModuleLight
-				PrtSubsystem = False
-				PrtPower = 0.12
-				PrtPowerF = 0.119999997
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = True
-				PrtEmergShutDnInclude = True
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4291088376,ModuleLight
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 950
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = KOSNameTag
-		isEnabled = True
-		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartInfo
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = B9.Utility.Light.A8.White_4291088330
-	partName = Part
-	persistentId = 448432696
-	pos = -0.14776054,90.6541901,17.6005478
-	attPos = 0,0,0
-	attPos0 = -6.99506586E-09,12.0139256,3.91704559
-	rot = 0.65328145,0.270598024,-0.653281569,-0.270598054
-	attRot = -0.270598114,-0.65328145,-0.270598084,-0.65328151
-	attRot0 = 0.65328151,0.270598203,0.653281391,0.270598173
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 18
-	resPri = 0
-	dstg = 11
-	sidx = -1
-	sqor = -1
-	sepI = 18
-	attm = 1
-	sameVesselCollision = False
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	srfN = srfAttach,SYclamp1_4291088514,colliderHead,0|0|0,0|-1|0,0|0|0
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		ToggleSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		SetSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		RemoveSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleLight
-		isEnabled = True
-		isOn = False
-		uiWriteLock = False
-		lightR = 0
-		lightG = 0
-		lightB = 0
-		castLight = True
-		movementTransformName = movementTransformName
-		isBlinking = False
-		rotationAngle = 0
-		pitchAngle = 0
-		blinkRate = 1
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleLightAction
-			{
-				actionGroup = Light
-				wasActiveBeforePartWasAdjusted = False
-			}
-			LightOnAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			LightOffAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		AXISGROUPS
-		{
-			lightR
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisSpeedMultiplier = 0
-				axisInverted = None
-			}
-			lightG
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisSpeedMultiplier = 0
-				axisInverted = None
-			}
-			lightB
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisSpeedMultiplier = 0
-				axisInverted = None
-			}
-			rotationAngle
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisSpeedMultiplier = 0
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-			pitchAngle
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisSpeedMultiplier = 0
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-			blinkRate
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisSpeedMultiplier = 0
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = AYPart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		VesselProdPartsList
-		{
-		}
-		VesselConsPartsList
-		{
-			AYPwrPartList
-			{
-				PrtName = B9.Utility.Light.A8.White
-				PrtTitle = A8 Spot Light Array
-				PrtModuleName = ModuleLight
-				PrtSubsystem = False
-				PrtPower = 0.12
-				PrtPowerF = 0.119999997
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = True
-				PrtEmergShutDnInclude = True
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4291088330,ModuleLight
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 100
-		defaultScale = 100
-		defaultTransformScale = (0, 0, 0)
-		DryCost = 950
-		OriginalCrewCapacity = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = KOSNameTag
-		isEnabled = True
-		nameTag = 
 		stagingEnabled = True
 		EVENTS
 		{
@@ -28749,6 +26892,2663 @@ PART
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
 				ConsPartKey = 4288150872,ModuleLight
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = ROSmallSpinMotor_4291337192
+	partName = Part
+	persistentId = 2882344733
+	pos = -5.12336493,45.1223373,0.225649819
+	attPos = 0,0,0
+	attPos0 = -4.97560453,2.33368683,2.98023224E-07
+	rot = -0.707107067,-9.04479128E-14,0.70710659,-9.04479806E-14
+	attRot = 0,0,0.99999994,0
+	attRot0 = -0.707107067,-9.04479128E-14,0.70710659,-9.04479806E-14
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 16
+	resPri = 0
+	dstg = 15
+	sidx = 0
+	sqor = 16
+	sepI = 16
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0.00999999978
+	modMass = 0
+	modSize = 0,0,0
+	sym = ROSmallSpinMotor_4291337074
+	srfN = srfAttach,RSBdecouplerSaturnSII_4291088818,collider04,0|0|0,0|0|0.5,0|0|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEnginesRF
+		isEnabled = True
+		ignitions = -1
+		independentThrottle = False
+		independentThrottlePercentage = 0
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActivateAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisSpeedMultiplier = 0
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisSpeedMultiplier = 0
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		Ullage
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCargoPart
+		isEnabled = True
+		beingAttached = False
+		beingSettled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleFuelTanks
+		isEnabled = True
+		type = PSPC
+		utilization = 86
+		mass = 0.00400000019
+		_numberOfAddedMLILayers = 0
+		partPrevTemperature = -1
+		stagingEnabled = True
+		volume = 1
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		TANK
+		{
+			name = PSPC
+			note = 
+			utilization = 1
+			mass = 0
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 1
+			maxAmount = 1
+		}
+		UPGRADESAPPLIED
+		{
+			upgrade = MLI.Upgrade1
+			upgrade = MLI.Upgrade2
+			upgrade = MLI.Upgrade3
+			upgrade = MLI.Upgrade4
+			upgrade = MLI.Upgrade5
+		}
+	}
+	MODULE
+	{
+		name = ModuleEngineConfigs
+		isEnabled = True
+		configuration = SpinSmall
+		techLevel = -1
+		thrustRating = maxThrust
+		modded = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = PSPC
+		amount = 1
+		maxAmount = 1
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = ROSmallSpinMotor_4291337074
+	partName = Part
+	persistentId = 640386754
+	pos = 4.82784414,45.1223373,0.225648791
+	attPos = 0,0,0
+	attPos0 = 4.97560453,2.33368683,-7.30156898E-07
+	rot = 0.70710665,-9.04479738E-14,0.707107008,9.04479196E-14
+	attRot = 0,0,0.99999994,0
+	attRot0 = 0.70710665,-9.04479738E-14,0.707107008,9.04479196E-14
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 16
+	resPri = 0
+	dstg = 15
+	sidx = 0
+	sqor = 16
+	sepI = 16
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0.00999999978
+	modMass = 0
+	modSize = 0,0,0
+	sym = ROSmallSpinMotor_4291337192
+	srfN = srfAttach,RSBdecouplerSaturnSII_4291088818,collider04,0|0|0,0|0|0.5,0|0|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEnginesRF
+		isEnabled = True
+		ignitions = -1
+		independentThrottle = False
+		independentThrottlePercentage = 0
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActivateAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisSpeedMultiplier = 0
+				axisInverted = None
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisSpeedMultiplier = 0
+				axisInverted = None
+			}
+		}
+		Ullage
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCargoPart
+		isEnabled = True
+		beingAttached = False
+		beingSettled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleFuelTanks
+		isEnabled = True
+		type = PSPC
+		utilization = 86
+		mass = 0.00400000019
+		_numberOfAddedMLILayers = 0
+		partPrevTemperature = -1
+		stagingEnabled = True
+		volume = 1
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		TANK
+		{
+			name = PSPC
+			note = 
+			utilization = 1
+			mass = 0
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 1
+			maxAmount = 1
+		}
+		UPGRADESAPPLIED
+		{
+			upgrade = MLI.Upgrade1
+			upgrade = MLI.Upgrade2
+			upgrade = MLI.Upgrade3
+			upgrade = MLI.Upgrade4
+			upgrade = MLI.Upgrade5
+		}
+	}
+	MODULE
+	{
+		name = ModuleEngineConfigs
+		isEnabled = True
+		configuration = SpinSmall
+		techLevel = -1
+		thrustRating = maxThrust
+		modded = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = PSPC
+		amount = 1
+		maxAmount = 1
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = rtg_4290133880
+	partName = Part
+	persistentId = 2201988294
+	pos = -1.84775901,111.942299,0.225649521
+	attPos = 0.503311276,0.0147018433,-1.63912773E-07
+	attPos0 = -2.20331144,-1.21469879,1.63912773E-07
+	rot = 0.50000006,-0.49999997,0.49999997,0.50000006
+	attRot = 0,0,0,1
+	attRot0 = 0.50000006,-0.49999997,0.49999997,0.50000006
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 3
+	resPri = 0
+	dstg = 4
+	sidx = -1
+	sqor = -1
+	sepI = 3
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = rtg_4290132232
+	sym = rtg_4290132184
+	sym = rtg_4290132136
+	srfN = srfAttach,bluedog.Apollo.Block2.ServiceModule_4290801768,pCylinder72,0|-0.254000038|0,0|-0.777227998|0,0|-0.254000038|0
+	attN = top,Null_0_0|0.254000038|0_0|0.777227998|0_0|0.254000038|0_0|0.777227998|0
+	attN = bottom,Null_0_0|-0.254000038|0_0|-0.777227998|0_0|-0.254000038|0_0|-0.777227998|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleCoreHeat
+		isEnabled = True
+		CoreTempGoalAdjustment = 0
+		CoreThermalEnergy = 0
+		stagingEnabled = True
+		lastUpdateTime = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCargoPart
+		isEnabled = True
+		beingAttached = False
+		beingSettled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = rtg
+				PrtTitle = Multi-Hundred Watt RTG
+				PrtModuleName = ModuleResourceConverter RTG 
+				PrtSubsystem = False
+				PrtPower = 0.158
+				PrtPowerF = 0.157499999
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ProdPartKey = 4290133880,ModuleResourceConverter RTG 
+			}
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleResourceConverter
+		isEnabled = True
+		EfficiencyBonus = 1
+		IsActivated = False
+		stagingEnabled = True
+		lastUpdateTime = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StopResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			StartResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = USI_ModuleFieldRepair
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = Plutonium-238
+		amount = 0.22700000000000001
+		maxAmount = 0.22700000000000001
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = DepletedFuel
+		amount = 0
+		maxAmount = 0.22700000000000001
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = rtg_4290132232
+	partName = Part
+	persistentId = 1630793895
+	pos = -0.147758976,111.942299,1.92564952
+	attPos = -1.34110451E-07,0.0147018433,-0.503311157
+	attPos0 = 2.98023224E-08,-1.21469879,2.2033112
+	rot = 0.707106829,6.3220277E-08,-6.3220277E-08,0.707106829
+	attRot = 0,0,0,1
+	attRot0 = 0.707106829,6.3220277E-08,-6.3220277E-08,0.707106829
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 3
+	resPri = 0
+	dstg = 4
+	sidx = -1
+	sqor = -1
+	sepI = 3
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = rtg_4290132184
+	sym = rtg_4290132136
+	sym = rtg_4290133880
+	srfN = srfAttach,bluedog.Apollo.Block2.ServiceModule_4290801768,pCylinder72,0|-0.254000038|0,0|-0.777227998|0,0|-0.254000038|0
+	attN = top,Null_0_0|0.254000038|0_0|0.777227998|0_0|0.254000038|0_0|0.777227998|0
+	attN = bottom,Null_0_0|-0.254000038|0_0|-0.777227998|0_0|-0.254000038|0_0|-0.777227998|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleCoreHeat
+		isEnabled = True
+		CoreTempGoalAdjustment = 0
+		CoreThermalEnergy = 0
+		stagingEnabled = True
+		lastUpdateTime = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCargoPart
+		isEnabled = True
+		beingAttached = False
+		beingSettled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = rtg
+				PrtTitle = Multi-Hundred Watt RTG
+				PrtModuleName = ModuleResourceConverter RTG 
+				PrtSubsystem = False
+				PrtPower = 0.158
+				PrtPowerF = 0.157499999
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ProdPartKey = 4290132232,ModuleResourceConverter RTG 
+			}
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleResourceConverter
+		isEnabled = True
+		EfficiencyBonus = 1
+		IsActivated = False
+		stagingEnabled = True
+		lastUpdateTime = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StopResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			StartResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = USI_ModuleFieldRepair
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = Plutonium-238
+		amount = 0.22700000000000001
+		maxAmount = 0.22700000000000001
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = DepletedFuel
+		amount = 0
+		maxAmount = 0.22700000000000001
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = rtg_4290132184
+	partName = Part
+	persistentId = 528142892
+	pos = 1.55224133,111.942299,0.225649372
+	attPos = -0.503311276,0.0147018433,2.08616257E-07
+	attPos0 = 2.20331144,-1.21469879,-3.57627869E-07
+	rot = 0.49999994,0.50000006,-0.50000006,0.49999994
+	attRot = 0,0,0,1
+	attRot0 = 0.49999994,0.50000006,-0.50000006,0.49999994
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 3
+	resPri = 0
+	dstg = 4
+	sidx = -1
+	sqor = -1
+	sepI = 3
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = rtg_4290132136
+	sym = rtg_4290133880
+	sym = rtg_4290132232
+	srfN = srfAttach,bluedog.Apollo.Block2.ServiceModule_4290801768,pCylinder72,0|-0.254000038|0,0|-0.777227998|0,0|-0.254000038|0
+	attN = top,Null_0_0|0.254000038|0_0|0.777227998|0_0|0.254000038|0_0|0.777227998|0
+	attN = bottom,Null_0_0|-0.254000038|0_0|-0.777227998|0_0|-0.254000038|0_0|-0.777227998|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleCoreHeat
+		isEnabled = True
+		CoreTempGoalAdjustment = 0
+		CoreThermalEnergy = 0
+		stagingEnabled = True
+		lastUpdateTime = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCargoPart
+		isEnabled = True
+		beingAttached = False
+		beingSettled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = rtg
+				PrtTitle = Multi-Hundred Watt RTG
+				PrtModuleName = ModuleResourceConverter RTG 
+				PrtSubsystem = False
+				PrtPower = 0.158
+				PrtPowerF = 0.157499999
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ProdPartKey = 4290132184,ModuleResourceConverter RTG 
+			}
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleResourceConverter
+		isEnabled = True
+		EfficiencyBonus = 1
+		IsActivated = False
+		stagingEnabled = True
+		lastUpdateTime = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StopResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			StartResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = USI_ModuleFieldRepair
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = Plutonium-238
+		amount = 0.22700000000000001
+		maxAmount = 0.22700000000000001
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = DepletedFuel
+		amount = 0
+		maxAmount = 0.22700000000000001
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = rtg_4290132136
+	partName = Part
+	persistentId = 3338243250
+	pos = -0.147758976,111.942299,-1.47435057
+	attPos = 1.93715096E-07,0.0147018433,0.503311157
+	attPos0 = -2.98023224E-07,-1.21469879,-2.2033112
+	rot = -6.3220277E-08,0.707106829,-0.707106829,-6.3220277E-08
+	attRot = 0,0,0,1
+	attRot0 = -6.3220277E-08,0.707106829,-0.707106829,-6.3220277E-08
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 3
+	resPri = 0
+	dstg = 4
+	sidx = -1
+	sqor = -1
+	sepI = 3
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = rtg_4290133880
+	sym = rtg_4290132232
+	sym = rtg_4290132184
+	srfN = srfAttach,bluedog.Apollo.Block2.ServiceModule_4290801768,pCylinder72,0|-0.254000038|0,0|-0.777227998|0,0|-0.254000038|0
+	attN = top,Null_0_0|0.254000038|0_0|0.777227998|0_0|0.254000038|0_0|0.777227998|0
+	attN = bottom,Null_0_0|-0.254000038|0_0|-0.777227998|0_0|-0.254000038|0_0|-0.777227998|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleCoreHeat
+		isEnabled = True
+		CoreTempGoalAdjustment = 0
+		CoreThermalEnergy = 0
+		stagingEnabled = True
+		lastUpdateTime = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCargoPart
+		isEnabled = True
+		beingAttached = False
+		beingSettled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = rtg
+				PrtTitle = Multi-Hundred Watt RTG
+				PrtModuleName = ModuleResourceConverter RTG 
+				PrtSubsystem = False
+				PrtPower = 0.158
+				PrtPowerF = 0.157499999
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ProdPartKey = 4290132136,ModuleResourceConverter RTG 
+			}
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleResourceConverter
+		isEnabled = True
+		EfficiencyBonus = 1
+		IsActivated = False
+		stagingEnabled = True
+		lastUpdateTime = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StopResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			StartResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = USI_ModuleFieldRepair
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = Plutonium-238
+		amount = 0.22700000000000001
+		maxAmount = 0.22700000000000001
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = DepletedFuel
+		amount = 0
+		maxAmount = 0.22700000000000001
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = rtg_4290130802
+	partName = Part
+	persistentId = 775112670
+	pos = -1.54775882,106.028648,0.225649521
+	attPos = 0.548961878,0.0471878052,-1.04308128E-07
+	attPos0 = -1.94896185,0.952812195,1.04308128E-07
+	rot = 0.440633476,-0.553029954,0.440633476,0.553029954
+	attRot = 0,0,0,1
+	attRot0 = 0.440633476,-0.553029954,0.440633476,0.553029954
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 4
+	resPri = 0
+	dstg = 6
+	sidx = -1
+	sqor = -1
+	sepI = 12
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = rtg_4290129958
+	sym = rtg_4290129910
+	sym = rtg_4290129862
+	srfN = srfAttach,FASALM.AscentStage_4290806030,LM_LC_Coll08,0|-0.254000038|0,0|-0.777227998|0,0|-0.254000038|0
+	attN = top,Null_0_0|0.254000038|0_0|0.777227998|0_0|0.254000038|0_0|0.777227998|0
+	attN = bottom,Null_0_0|-0.254000038|0_0|-0.777227998|0_0|-0.254000038|0_0|-0.777227998|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleCoreHeat
+		isEnabled = True
+		CoreTempGoalAdjustment = 0
+		CoreThermalEnergy = 0
+		stagingEnabled = True
+		lastUpdateTime = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCargoPart
+		isEnabled = True
+		beingAttached = False
+		beingSettled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = rtg
+				PrtTitle = Multi-Hundred Watt RTG
+				PrtModuleName = ModuleResourceConverter RTG 
+				PrtSubsystem = False
+				PrtPower = 0.158
+				PrtPowerF = 0.157499999
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ProdPartKey = 4290130802,ModuleResourceConverter RTG 
+			}
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleResourceConverter
+		isEnabled = True
+		EfficiencyBonus = 1
+		IsActivated = False
+		stagingEnabled = True
+		lastUpdateTime = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StopResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			StartResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = USI_ModuleFieldRepair
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = Plutonium-238
+		amount = 0.22700000000000001
+		maxAmount = 0.22700000000000001
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = DepletedFuel
+		amount = 0
+		maxAmount = 0.22700000000000001
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = rtg_4290129958
+	partName = Part
+	persistentId = 2597518866
+	pos = -0.147758961,106.028648,1.62564933
+	attPos = -7.4505806E-08,0.0471878052,-0.548961997
+	attPos0 = -1.49011612E-08,0.952812195,1.94896185
+	rot = 0.623149872,0,0,0.782102525
+	attRot = 0,0,0,1
+	attRot0 = 0.623149872,0,0,0.782102525
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 4
+	resPri = 0
+	dstg = 6
+	sidx = -1
+	sqor = -1
+	sepI = 12
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = rtg_4290129910
+	sym = rtg_4290129862
+	sym = rtg_4290130802
+	srfN = srfAttach,FASALM.AscentStage_4290806030,LM_LC_Coll08,0|-0.254000038|0,0|-0.777227998|0,0|-0.254000038|0
+	attN = top,Null_0_0|0.254000038|0_0|0.777227998|0_0|0.254000038|0_0|0.777227998|0
+	attN = bottom,Null_0_0|-0.254000038|0_0|-0.777227998|0_0|-0.254000038|0_0|-0.777227998|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleCoreHeat
+		isEnabled = True
+		CoreTempGoalAdjustment = 0
+		CoreThermalEnergy = 0
+		stagingEnabled = True
+		lastUpdateTime = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCargoPart
+		isEnabled = True
+		beingAttached = False
+		beingSettled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = rtg
+				PrtTitle = Multi-Hundred Watt RTG
+				PrtModuleName = ModuleResourceConverter RTG 
+				PrtSubsystem = False
+				PrtPower = 0.158
+				PrtPowerF = 0.157499999
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ProdPartKey = 4290129958,ModuleResourceConverter RTG 
+			}
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleResourceConverter
+		isEnabled = True
+		EfficiencyBonus = 1
+		IsActivated = False
+		stagingEnabled = True
+		lastUpdateTime = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StopResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			StartResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = USI_ModuleFieldRepair
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = Plutonium-238
+		amount = 0.22700000000000001
+		maxAmount = 0.22700000000000001
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = DepletedFuel
+		amount = 0
+		maxAmount = 0.22700000000000001
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = rtg_4290129910
+	partName = Part
+	persistentId = 187529842
+	pos = 1.25224113,106.028648,0.225649402
+	attPos = -0.548961878,0.0471878052,1.49011612E-07
+	attPos0 = 1.94896185,0.952812195,-2.68220901E-07
+	rot = 0.440633446,0.553029954,-0.440633506,0.553029954
+	attRot = 0,0,0,1
+	attRot0 = 0.440633446,0.553029954,-0.440633506,0.553029954
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 4
+	resPri = 0
+	dstg = 6
+	sidx = -1
+	sqor = -1
+	sepI = 12
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = rtg_4290129862
+	sym = rtg_4290130802
+	sym = rtg_4290129958
+	srfN = srfAttach,FASALM.AscentStage_4290806030,LM_LC_Coll08,0|-0.254000038|0,0|-0.777227998|0,0|-0.254000038|0
+	attN = top,Null_0_0|0.254000038|0_0|0.777227998|0_0|0.254000038|0_0|0.777227998|0
+	attN = bottom,Null_0_0|-0.254000038|0_0|-0.777227998|0_0|-0.254000038|0_0|-0.777227998|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleCoreHeat
+		isEnabled = True
+		CoreTempGoalAdjustment = 0
+		CoreThermalEnergy = 0
+		stagingEnabled = True
+		lastUpdateTime = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCargoPart
+		isEnabled = True
+		beingAttached = False
+		beingSettled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = rtg
+				PrtTitle = Multi-Hundred Watt RTG
+				PrtModuleName = ModuleResourceConverter RTG 
+				PrtSubsystem = False
+				PrtPower = 0.158
+				PrtPowerF = 0.157499999
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ProdPartKey = 4290129910,ModuleResourceConverter RTG 
+			}
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleResourceConverter
+		isEnabled = True
+		EfficiencyBonus = 1
+		IsActivated = False
+		stagingEnabled = True
+		lastUpdateTime = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StopResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			StartResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = USI_ModuleFieldRepair
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = Plutonium-238
+		amount = 0.22700000000000001
+		maxAmount = 0.22700000000000001
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = DepletedFuel
+		amount = 0
+		maxAmount = 0.22700000000000001
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = rtg_4290129862
+	partName = Part
+	persistentId = 526132202
+	pos = -0.147758961,106.028648,-1.17435038
+	attPos = 1.34110451E-07,0.0471878052,0.548961878
+	attPos0 = -2.23517418E-07,0.952812195,-1.94896173
+	rot = 0,0.782102525,-0.623149872,0
+	attRot = 0,0,0,1
+	attRot0 = 0,0.782102525,-0.623149872,0
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 4
+	resPri = 0
+	dstg = 6
+	sidx = -1
+	sqor = -1
+	sepI = 12
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = rtg_4290130802
+	sym = rtg_4290129958
+	sym = rtg_4290129910
+	srfN = srfAttach,FASALM.AscentStage_4290806030,LM_LC_Coll08,0|-0.254000038|0,0|-0.777227998|0,0|-0.254000038|0
+	attN = top,Null_0_0|0.254000038|0_0|0.777227998|0_0|0.254000038|0_0|0.777227998|0
+	attN = bottom,Null_0_0|-0.254000038|0_0|-0.777227998|0_0|-0.254000038|0_0|-0.777227998|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleCoreHeat
+		isEnabled = True
+		CoreTempGoalAdjustment = 0
+		CoreThermalEnergy = 0
+		stagingEnabled = True
+		lastUpdateTime = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCargoPart
+		isEnabled = True
+		beingAttached = False
+		beingSettled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = rtg
+				PrtTitle = Multi-Hundred Watt RTG
+				PrtModuleName = ModuleResourceConverter RTG 
+				PrtSubsystem = False
+				PrtPower = 0.158
+				PrtPowerF = 0.157499999
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ProdPartKey = 4290129862,ModuleResourceConverter RTG 
+			}
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleResourceConverter
+		isEnabled = True
+		EfficiencyBonus = 1
+		IsActivated = False
+		stagingEnabled = True
+		lastUpdateTime = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StopResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			StartResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = USI_ModuleFieldRepair
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartInfo
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = Plutonium-238
+		amount = 0.22700000000000001
+		maxAmount = 0.22700000000000001
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = DepletedFuel
+		amount = 0
+		maxAmount = 0.22700000000000001
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = SYclamp1_4291937730
+	partName = Part
+	persistentId = 1953742054
+	pos = -0.147760406,95.8845367,8.00368977
+	attPos = 0,0,0
+	attPos0 = -1.04308128E-07,-4.28211975,7.77804279
+	rot = 5.04192974E-15,1,-4.13662804E-07,1.21885018E-08
+	attRot = 0,0,0,1
+	attRot0 = 5.04192974E-15,1,-4.13662804E-07,1.21885018E-08
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 11
+	resPri = 0
+	dstg = 11
+	sidx = 1
+	sqor = 11
+	sepI = 11
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	srfN = srfAttach,RSBfairingSaturn6m_4290699508,colliderMain,0|4|4.5,0|0|-1,0|4|4.5
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = LaunchClamp
+		isEnabled = True
+		scaleFactor = 57.402771
+		height = 97.5845337
+		stagingEnabled = True
+		towerRot = -5.04192974E-15,-1,4.13662804E-07,1.21885018E-08
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ReleaseClamp
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleGenerator
+		isEnabled = True
+		generatorIsActive = False
+		throttle = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActivateAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = FlagDecal
+		isEnabled = True
+		flagDisplayed = True
+		isMirrored = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = RefuelingPump
+		isEnabled = True
+		enablePump = True
+		pump_rate = 100
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = SYclamp1
+				PrtTitle = non RO - SY-LC1 Heavy-Duty Launch Clamp
+				PrtModuleName = ModuleGenerator
+				PrtSubsystem = False
+				PrtPower = 2
+				PrtPowerF = 2
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ProdPartKey = 4291937730,ModuleGenerator
+			}
+		}
+		VesselConsPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = SYclamp1
+				PrtTitle = non RO - SY-LC1 Heavy-Duty Launch Clamp
+				PrtModuleName = ModuleGenerator
+				PrtSubsystem = False
+				PrtPower = 0
+				PrtPowerF = 0
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4291937730,ModuleGenerator
 			}
 		}
 		UPGRADESAPPLIED

@@ -14,7 +14,7 @@
 
 CLEARSCREEN.
 //PRINT "PhaseIII-Descending" at (0,0).
-update_phase_title("PHASEIII-DESCENDING   ", 1).
+update_phase_title("PHASEIII-DESCENDING", 1).
 //runpath("boot/common.c").
 
 set GM to mission_target:mu. 		//GM = 6.5138398*(10^10).  (MUN)
