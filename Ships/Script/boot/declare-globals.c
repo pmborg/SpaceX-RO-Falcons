@@ -19,6 +19,7 @@ function ResetMission
 	DELETEPATH("normal.txt").
 	DELETEPATH("resources.txt").
 	DELETEPATH("bodys_list.txt").
+	DELETEPATH("dock.txt").
 	WAIT 1.
 }
 

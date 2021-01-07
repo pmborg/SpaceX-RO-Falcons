@@ -8,11 +8,11 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to specify the SW version and the diferent types of profiles supported.
-// 06/Jan/2021
+// 07/Jan/2021
 // --------------------------------------------------------------------------------------------
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //             #.YY.MM.DD
-PRINT "SW-Ver: 1.21.01.06" at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
+PRINT "SW-Ver: 1.21.01.07" at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 
 //https://ksp-kos.github.io/KOS/structures/misc/loaddistance.html#attribute:SITUATIONLOADDISTANCE:UNLOAD
 //MAGIC LINES! Extend Physics:

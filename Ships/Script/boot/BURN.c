@@ -19,10 +19,6 @@ function DO_BURN {
 	GEAR OFF.	// Make sure: gear retracted
 	BRAKES OFF.	// Air Breaks off
 
-	//LEM DOCKING -------------------------------------------------------
-	if vehicle_type = "SaturnV"
-		RUNPATH( "boot/PhaseI-Docking.c" ).
-
 	//BURN -------------------------------------------------------
 	if STATUS = "ORBITING" {
 		
@@ -36,6 +32,10 @@ function DO_BURN {
 			RCS OFF.
 		}
 	}
+
+	//LEM DOCKING -------------------------------------------------------
+	if vehicle_type = "SaturnV" and NOT EXISTS("dock.txt")
+		RUNPATH( "boot/PhaseI-Docking.c" ).
 	
 	//WARP -------------------------------------------------------
 	if IS_INTER_PLANETARY_MISSION {

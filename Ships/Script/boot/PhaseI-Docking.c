@@ -72,8 +72,9 @@ Function ApproachDockingPort {
   until ShipDockingPort:state <> "ready" {
     Translate((ShipToDIFOP:normalized*Speed) - RelativeVelocity).
     clearvecdraws().
-    vecdraw(TargetDockingPort:position, DistanceInFrontOfPort, RGB(1,0,0), "DistanceInFrontOfPort", 1.0, true, 0.2).
-    vecdraw(v(0,0,0), ShipToDIFOP, RGB(0,1,0), "ShipToDIFOP", 1.0, true, 0.2).
+	//DEBUG:
+    //vecdraw(TargetDockingPort:position, DistanceInFrontOfPort, RGB(1,0,0), "DistanceInFrontOfPort", 1.0, true, 0.2).
+    //vecdraw(v(0,0,0), ShipToDIFOP, RGB(0,1,0), "ShipToDIFOP", 1.0, true, 0.2).
     local DistanceVector is (TargetDockingPort:nodeposition - ShipDockingPort:nodeposition).
 	set error to abs(Distance - DistanceVector:mag).
 	print "Error: "+ROUND(error,2)+"  " at (0,15).
@@ -92,14 +93,19 @@ Function ApproachDockingPort {
 }
 
 //STAGE:
-PRINT "Press: y to to Confirm the STAGE!". 
-PRINT "Press: n to SKIT IT".
-set ch to terminal:input:getchar(). print "selected: "+ch.
-if (ch = "y" OR ch = "Y")
-	{ STAGE. wait 1. STAGE. }
+if vehicle_type = "SaturnV"
+{
+	PRINT "Press: y to to Confirm the STAGE!". 
+	PRINT "Press: n to SKIT IT".
+	set ch to terminal:input:getchar(). print "selected: "+ch.
+	if (ch = "y" OR ch = "Y")
+		{ STAGE. wait 1. STAGE. }
+}
 
 //GET LEM VESSEL:
-set target_vessel to getNearbyProbe(0, "Ship", 100).
+if vehicle_type = "SaturnV"
+	set target_vessel to getNearbyProbe(0, "Ship", 100).
+	
 print target_vessel:name.
 set TARGET to target_vessel. wait 1.
 
@@ -142,5 +148,4 @@ ApproachDockingPort(ShipDockingPort, TargetDockingPort, 10, 0.4).
 ApproachDockingPort(ShipDockingPort, TargetDockingPort, 2.5, 0.3).
 ApproachDockingPort(ShipDockingPort, TargetDockingPort, 0, 0.1).
 
-
-PRINT "Press: ENTER". set ch to terminal:input:getchar().
+LOG "Docked" to dock.txt.
