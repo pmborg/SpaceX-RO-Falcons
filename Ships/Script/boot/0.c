@@ -29,7 +29,8 @@ set in_sync to false.
 if (status = "PRELAUNCH" or status = "LANDED") and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
 {
 	DELETEPATH("1:/STAGE1_TARGET_FILE.c"). 	//KOS local HD
-	//DELETEPATH("FLIP.txt"). 				//Real HD
+	DELETEPATH("FLIP.txt"). 				//Real HD
+	DELETEPATH(STAGE_1_TYPE+"burn.txt").
 
 	//WAIT until signal received:
 	update_phase_title("WAIT TO STARTUP SIGNAL", 0, true).

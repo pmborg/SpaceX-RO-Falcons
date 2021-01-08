@@ -527,7 +527,11 @@ function main_falcon_return
 	update_phase_title("(ACTIVATE 3 ENGINES)", 0, true).
 	activate3engines().
 	
-	prepare_boostback_burn().
+	if NOT EXISTS(STAGE_1_TYPE+"burn.txt")
+	{
+		prepare_boostback_burn().
+		LOG "boostback_burn" to STAGE_1_TYPE+"burn.txt".
+	}
 
 	until (altitude > BODY:ATM:HEIGHT) or (VERTICALSPEED < 0) //BODY:ATM:HEIGHT=140000m (EARTH)
 	{
