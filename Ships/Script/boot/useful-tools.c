@@ -25,9 +25,10 @@ function steering_falcon
 		set lat_correction to (VESSEL("Landingzone1"):GEOPOSITION:LAT - ADDONS:TR:IMPACTPOS:LAT)*50.
 	}
 
-	PRINT "[GEOPOSITION]: " at (0,17).
-	PRINT ROUND (GEOPOSITION:LAT,3)+", " +ROUND (GEOPOSITION:LNG,3)+"   " at (22,17).
-	PRINT "lat.correction: " at (0,18). PRINT ROUND(lat_correction,2) at (22,18).
+	//PRINT "[GEOPOSITION]: " at (0,17).
+	PRINT ROUND (GEOPOSITION:LAT,3)+", " +ROUND (GEOPOSITION:LNG,3)+"   " at (25,17).
+	//PRINT "lat.correction: " at (0,18). 
+	PRINT ROUND(lat_correction,2) at (25,18).
 	SET steeringDir TO (-90-lat_correction).	// W/E
 	set steeringVroll to -270.					// -270 = Zero Rotation
 	//LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll). (AUTOMATIC!)
