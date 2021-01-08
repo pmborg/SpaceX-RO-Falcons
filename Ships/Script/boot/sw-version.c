@@ -182,7 +182,7 @@ if vehicle_type = "Crew Dragon 2"
 {
 	// Data from: Crew Demo 1:
 	declare global Qmax 	to .5*0.34876*(259.9^2).
-	declare global MECO1 	to 1950^2.// 1875*
+	declare global MECO1 	to 1900^2.// 1875*
 	declare global FAIRSEP 	to 160*1000.
 }else
 if vehicle_type = "F9v1.2B5"
