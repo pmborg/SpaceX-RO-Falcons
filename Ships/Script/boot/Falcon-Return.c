@@ -125,7 +125,7 @@ function boostback_burn
 function ReEntryburn 
 {
 	parameter safe_alt.
-	parameter safe_power to 1.
+	parameter safe_power to 0.9.
 	parameter maxDescendSpeed to -200.	//Due Terminal Speed don't use another above value.
 	
 	update_phase_title("WAIT4RE-ENTRY BURN", 1).
