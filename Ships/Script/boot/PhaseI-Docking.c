@@ -7,7 +7,7 @@
 // Beta load from: 	- https://www.dropbox.com/sh/jd1oh6d806iyat1/AABa7aXbiYDfv8G-aQ4MyR-ta?dl=0
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
-//				Used to Dock (CMD with LEM) or (CD2 with ISS)
+//				Used to Dock (SLM with LEM) or (CD2 with ISS)
 // 09/Jan/2021
 // --------------------------------------------------------------------------------------------
 Function Translate {
@@ -97,7 +97,7 @@ Function ApproachDockingPort {
 
 lock steering to prograde. wait 0.1.
 CLEARSCREEN. print " ". print " ".
-update_phase_title("CMD/LEM Docking", 1, true).
+update_phase_title("SLM/LEM Docking", 1, true).
 
 //STAGE:
 if vehicle_type = "SaturnV"

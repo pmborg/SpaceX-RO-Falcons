@@ -101,26 +101,39 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		{
 			CLEARSCREEN. print " ". print " ".
 			update_phase_title("MAIN STAGE", 0, false).
-			// PRINT "Confirm: MAIN STAGE? (y/n)". set ch to terminal:input:getchar().
-			// if (ch = "y" OR ch = "Y") {
-				if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
-				if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
-				if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
-			// }
-			// if (ch = "n" OR ch = "N") {
-				// CLEARSCREEN. print " ". print " ".
-				// update_phase_title("Confirm: Circularize?", 0, false).
-				// PRINT "Confirm: Circularize? (y/n)". set ch to terminal:input:getchar().
-				// if (ch = "y" OR ch = "Y")
-					// RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
-			// }
+			if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
+			if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
+			if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
+
 			runpath("boot/BURN.c").
 		}
 	else
 		LOG  "SKIP: BURN" to LOG.txt.
 
+	if BODY:name = mission_target:name and not EXISTS("lem.txt")
+	{
+		if vehicle_type = "SaturnV"
+		{
+			if vehicle_type = "SaturnV"
+			{
+				update_phase_title("FINAL SLM ORBIT", 1, true).
+				lock steering to retrograde. wait 0.1.
+				RCS OFF. wait 0.1.
+				set thrust to 1. wait 0.1.
+				WAIT UNTIL periapsis < 150000.
+				set thrust to 0.10.
+				WAIT UNTIL periapsis < 114000. //Moon Orbit PE: 114km (Ideal to do the LM landing + Ideal to do a cheaper re-orbit) 
+			}
+			set thrust to 0.
+		
+			PRINT "[SWITCH CREWS]". 
+			PRINT "ENTER WHEN READY...". 
+			set ch to terminal:input:getchar().	//DEBUG
+			stage.
+		}		
+	}
+
 	//ACTION: Break & LAND! -------------------------------------------
-	
 	if status <> "LANDED" and status <> "SPLASHED"
 	{
 		if EXISTS("CIRCULARIZE.txt")

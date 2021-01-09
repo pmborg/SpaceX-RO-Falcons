@@ -201,7 +201,7 @@ if (Orbit:periapsis > MAX(40000, 1.5*TARGET:atm:height)) // 40,000m is a safe al
 		print STATUS at (20,ly+5).
 		//wait 1.
 	}
-		
+	
 	lock throttle to 0.
 	RCS OFF.
 

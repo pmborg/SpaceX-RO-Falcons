@@ -59,8 +59,8 @@ function DO_BURN {
 				stage. wait 5.
 			}
 			
-			//TURN ON: CMD ENGINE
-			update_phase_title("CMD ENGINE ON", 1, true).
+			//TURN ON: SLM ENGINE
+			update_phase_title("SLM ENGINE ON", 1, true).
 			shutDownAllEngines().
 			AG8 ON.			
 			LOCK STEERING TO retrograde.
@@ -77,8 +77,6 @@ function DO_BURN {
 		WAIT UNTIL STATUS <> "ESCAPING".
 		set thrust to 0.
 	}
-	
-	
 		
 	//CIRCULARIZE TARGET -------------------------------------------------------
 	update_phase_title("Circle "+mission_target:NAME, 1, false).
