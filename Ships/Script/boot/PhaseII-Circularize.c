@@ -21,43 +21,10 @@ SAS OFF.
 // Altitudes INFO: https://forum.kerbalspaceprogram.com/index.php?/topic/173446-lowest-highest-points-of-celestial-bodies/
 if (Orbit:periapsis > MAX(40000, 1.5*TARGET:atm:height)) // 40,000m is a safe altitude (to do a periapsis wait) in all planets.
 {
-	// if vehicle_type <> "SaturnV"
-	// {
-		// clearscreen.
-		// set SOI to TARGET:SOIRADIUS. // 2429559.1.	(MUN-SOI)
-		// print "PhaseII-Warp to "+goto_mission_target:NAME+" PE".
-		// set warp to 5.
-		// wait until eta:periapsis < 2000.
-		// set warp to 4.
-		// wait until eta:periapsis < 500.
-		// set warp to 3.
-		// wait until eta:periapsis < 50.
-		// set warp to 0.
-
-		// lock steering to retrograde.
-
-		// RCS ON.
-		// wait 5.
-		// RCS OFF.
-	// }
-
 	//clearscreen. print " ". print " ".
 	update_phase_title("ORBIT BURN", 1, true).
-	//print "PhaseII-Burn for "+goto_mission_target:NAME+" Capture/Orbit".
-	//-------------------------------------------------------------------------------
-	// wait until eta:periapsis < 1.
-	// lock throttle to 0.5.
-	// print "eta:periapsis < 1".
-	
-	// wait until apoapsis < .5*SOI.
-	// print "until apoapsis < .5*SOI".
-	
-	// lock throttle to 0.
-	// set thrust to 0.
-	// lock throttle to thrust.
 
 	// Calculate Delta-V to circularize orbit:
-	// TARGET:
 	set GM to goto_mission_target:mu. //GM = 6.5138398*(10^10).  (MUN)
 	set Rp to periapsis + goto_mission_target:RADIUS.
 	set vcir to (GM/Rp)^.5.
@@ -71,62 +38,18 @@ if (Orbit:periapsis > MAX(40000, 1.5*TARGET:atm:height)) // 40,000m is a safe al
 	set W to mass*(g-ar).
 	
 	set warp to 0. wait 5.
-	
-	// PRINT "Press [ENTER], to continue...".
-	// set ch to terminal:input:getchar().
-	
-	// if vehicle_type = "SaturnV"
-	// { 
-		// RCS ON.
-		// AG8 ON. WAIT 5.
-		// STAGE. WAIT 5.
-		// STAGE. WAIT 5.
-		// print "CYCLE UNTIL POSITIVE TRUST...".
-		// until maxthrust > 0 
-			// { confirm_stage(). wait 5. }
-	// }
-
 	set theta to arcsin(W/maxthrust).
 	RCS OFF.
 	
-	// I do two seperate burns to help make the burns more efficient
-	// It is more efficient to burn at Periapsis Warp!
-	//clearscreen.
-	//print "PhaseII-Circularize-Warp to Periapsis".
 	print "theta: "+theta.
 
 	if vehicle_type <> "SaturnV"	
-	{
-		set warp to 6.
-		print "warp to 6".
-		wait until eta:periapsis < 2000.
-
-		set warp to 4.
-		print "warp to 4".
-		wait until eta:periapsis < 500.
-		
-		set warp to 3.
-		print "warp to 3".
-		wait until eta:periapsis < 50.
-		
-		set warp to 0.
-		lock steering to heading (270, theta).
-		
-		// Waiting on periapsis arrival.
-		print "Vertical Speed" at (0,10).
-		until verticalspeed > 0 {
-			print verticalspeed at (20,10).
-		}.
-	}
+		WarpToPE().
 	
-	// clearscreen.
-	// update_phase_title("PhaseII-Prepare", 0, false).
 	SAS OFF. wait 0.1.
 	lock steering to RETROGRADE. wait 0.1.
 	wait 20.
 	set thrust to 1.
-	
-	// wait until status <> "ESCAPING".
 	
 	set ly to 3.
 	
@@ -156,7 +79,7 @@ if (Orbit:periapsis > MAX(40000, 1.5*TARGET:atm:height)) // 40,000m is a safe al
 		set W to mass*(g-ar).
 		
 		// Generic:
-		if throttle > 0 AND maxthrust = 0 //AND vehicle_type < 3 
+		if throttle > 0 AND maxthrust = 0
 		{
 			confirm_stage(). // Decouple
 			wait 5.
@@ -182,15 +105,15 @@ if (Orbit:periapsis > MAX(40000, 1.5*TARGET:atm:height)) // 40,000m is a safe al
 			set A to .1.
 			set y to y+1.
 			}.
-		if y > 1 and vehicle_type < 2
+		if y > 1
 		{
 			set error to 1-(err*verticalspeed).
 			set C to mass*A.
 			set B to ((W^2)+(C^2))^.5.
 			set x to B/maxthrust.
-			if x > 1 {
+			if x > 1
 				set x to 1.
-				}.
+
 			set theta to arctan(W/C).
 			set theta to theta*error.
 		}
@@ -199,7 +122,6 @@ if (Orbit:periapsis > MAX(40000, 1.5*TARGET:atm:height)) // 40,000m is a safe al
 		print ROUND(Vo,2) at (20,ly+2).
 		print ROUND(theta,2) at (20,ly+4).
 		print STATUS at (20,ly+5).
-		//wait 1.
 	}
 	
 	lock throttle to 0.
@@ -210,7 +132,7 @@ if (Orbit:periapsis > MAX(40000, 1.5*TARGET:atm:height)) // 40,000m is a safe al
 	// set avg to (apoapsis+periapsis)/2-FINAL.
 	// set error to avg/FINAL*100.
 	// print "Error " + error + "%" at (0,1).
-	print "Craft is now in stable circular orbit around "+goto_mission_target at (0,20).
+	print "Craft on circular orbit around "+goto_mission_target:NAME at (0,20).
 }.
 
-print "This ends Phase II, on to Phase III" at (0,21). 
+print "This ends Phase II, on to Phase III" at (0,22). 

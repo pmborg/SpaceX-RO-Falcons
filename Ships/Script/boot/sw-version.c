@@ -192,7 +192,8 @@ if vehicle_type = "SaturnV"
 	declare global Qmax 	to 14600/1.1.
 	declare global MECO1 	to 9999^2.
 	declare global FAIRSEP 	to 110*1000.
-	SET TARGET TO "Moon". 	wait 1.
+	if KUniverse:ActiveVessel = SHIP
+		SET TARGET TO "Moon". 	wait 1.
 }else
 if vehicle_type = "Falcon Heavy" 
 {

@@ -114,23 +114,40 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 	{
 		if vehicle_type = "SaturnV"
 		{
-			if vehicle_type = "SaturnV"
-			{
-				update_phase_title("FINAL SLM ORBIT", 1, true).
-				lock steering to retrograde. wait 0.1.
-				RCS OFF. wait 0.1.
-				set thrust to 1. wait 0.1.
-				WAIT UNTIL periapsis < 150000.
-				set thrust to 0.10.
-				WAIT UNTIL periapsis < 114000. //Moon Orbit PE: 114km (Ideal to do the LM landing + Ideal to do a cheaper re-orbit) 
-			}
-			set thrust to 0.
+			clearscreen. print " ". print " ".
+			update_phase_title("FINAL SLM ORBIT", 1, true).
+			SET MAPVIEW TO TRUE.
+			SAS OFF. wait 0.1.
+			lock steering to retrograde. wait 0.1.
+			RCS OFF. wait 0.1.
+			lock throttle to thrust.
+			set thrust to 1. wait 0.1.
+			WAIT UNTIL periapsis < 200000.
+			set thrust to 0.05.
+			WAIT UNTIL periapsis < 114000. //Moon Orbit PE: 114km (Ideal to do the LM landing + Ideal to do a cheaper re-orbit) 
 		
-			PRINT "[SWITCH CREWS]". 
-			PRINT "ENTER WHEN READY...". 
-			set ch to terminal:input:getchar().	//DEBUG
-			stage.
-		}		
+			set thrust to 0.
+			SET MAPVIEW TO FALSE.
+			AG9 OFF. wait 1.
+			AG9 ON. wait 1.
+
+			update_phase_title("MOVE CREW TO LEM", 1, true).
+			WAIT UNTIL mass < 25. //WAIT FOR UNDOCK
+			
+			RCS ON.
+			set ShipDockingPort to LEMPortGetter(SHIP, "none").				//GET SM PORT
+			set target_vessel to getNearbyProbe(0, "Ship", 100).			//GET LEM
+			set TargetDockingPort to LEMPortGetter(target_vessel, "none").	//GET LEM PORT
+			update_phase_title("Docking 5m", 0, true).
+			ApproachDockingPort(ShipDockingPort, TargetDockingPort, 20, 1).
+			RCS OFF. wait 1.
+			SET KUniverse:ACTIVEVESSEL TO VESSEL(target_vessel:NAME).
+			
+			clearscreen. print " ". print " ".
+			PRINT "SWTICH TO LEM AND WAIT...".
+			PRINT "Press [ENTER], to Confirm: EARTH RETURN".
+			set ch to terminal:input:getchar().
+		}
 	}
 
 	//ACTION: Break & LAND! -------------------------------------------
@@ -138,7 +155,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 	{
 		if EXISTS("CIRCULARIZE.txt")
 			RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
-			
+
 		if KUniverse:ActiveVessel <> SHIP {
 			update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
 			UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.

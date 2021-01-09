@@ -109,22 +109,15 @@ function activateOneEngine
 	}
 }
 
-// function get_current_max_thrust
-// {
-	// LIST ENGINES IN enginesList.
-	// set n to 0.
-	// set max_th to 0.
-	// FOR eng IN enginesList {
-		// if eng:typename() = "Engine" and eng:AVAILABLETHRUST > 100
-		// {
-			// print eng:AVAILABLETHRUST.
-			// set max_th to eng:AVAILABLETHRUST.
-		// }
-	// }
-	
-	// return max_th.
-// }
-// print "get_current_max_thrust: "+get_current_max_thrust.
+function activateLEMengine 
+{
+	shutDownAllEngines().
+	LIST ENGINES IN enginesList.
+	FOR eng IN enginesList {
+		if eng:POSSIBLETHRUST > 40
+			eng:ACTIVATE.
+	}
+}
 
 function activateAllEngines 
 {
@@ -293,7 +286,7 @@ function vessel_pitch
   return 90 - vang(ves:up:vector, ves:facing:forevector).
 }
 
-// --------------------------------------------------------------------------------------------
+// FLIP --------------------------------------------------------------------------------------------
 function flip_maneuver
 {
 	SAS OFF.
@@ -355,3 +348,112 @@ function flip_maneuver
 		print ROUND (steeringVdeg) at  (40,4).
 		print ROUND (steeringVroll) at (40,5).
 	}
+
+
+// DOCKING --------------------------------------------------------------------------------------------
+Function Translate {
+  Parameter SomeVector.
+  if SomeVector:mag > 1 {
+    set SomeVector to SomeVector:normalized.
+  }
+
+  set ship:control:starboard to SomeVector * ship:facing:starvector.
+  set ship:control:fore      to SomeVector * ship:facing:forevector.
+  set ship:control:top       to SomeVector * ship:facing:topvector.
+}
+
+Function KillRelVelRCS {
+  Parameter target_vessel.
+
+  local lock RelativeVelocity to (ship:velocity:orbit - target_vessel:velocity:orbit).
+  until RelativeVelocity:mag < 0.1 {
+    Translate(-1*RelativeVelocity).
+  }
+  Translate(V(0,0,0)).
+}
+
+Function LEMPortGetter {
+  Parameter NameOfVessel is ship.
+  Parameter PrePickedPort is "none".
+  if PrePickedPort = "none" {
+
+    local portlist is list().
+    for port in NameOfVessel:partsdubbedpattern("dock"){
+		if port:name:FIND("FASAApollo.SM.Light") < 0
+			portlist:add(port).
+		log port to log.txt.
+    }
+
+    local PortNumber is 0.
+    until false {
+        return portlist[PortNumber].
+    }
+  } else {
+    return PrePickedPort.
+  }
+}
+
+Function PortGetter {
+  Parameter NameOfVessel is ship.
+  Parameter PrePickedPort is "none".
+  if PrePickedPort = "none" {
+
+    local portlist is list().
+    for port in NameOfVessel:partsdubbedpattern("dock"){
+		portlist:add(port).
+    }
+
+    local PortNumber is 0.
+    until false {
+      if portlist[PortNumber]:state = "ready" {
+        return portlist[PortNumber].
+      } else {
+        set PortNumber to PortNumber + 1.
+        if PortNumber = PortList:length {
+          print "ERROR NO PORTS READY TO BE USED".
+        }
+      }
+    }
+  } else {
+    return PrePickedPort.
+  }
+}
+
+Function ApproachDockingPort {
+  Parameter ShipDockingPort.
+  Parameter TargetDockingPort.
+  Parameter Distance.
+  Parameter Speed.
+  Parameter ErrorAllowed is 0.2.
+
+  ShipDockingPort:controlfrom.
+
+  local Lock DistanceInFrontOfPort to TargetDockingPort:portfacing:vector:normalized * Distance.
+  local Lock ShipToDIFOP to TargetDockingPort:nodeposition - ShipDockingPort:nodeposition + DistanceInFrontOfPort.
+  local Lock RelativeVelocity to ship:velocity:orbit - TargetDockingPort:ship:velocity:orbit.
+
+  until FALSE //ShipDockingPort:state <> "ready" 
+  {
+    Translate((ShipToDIFOP:normalized*Speed) - RelativeVelocity).
+	
+	//DEBUG:
+	clearvecdraws().
+    vecdraw(TargetDockingPort:position, DistanceInFrontOfPort, RGB(1,0,0), "DistanceInFrontOfPort", 1.0, true, 0.2).
+    vecdraw(v(0,0,0), ShipToDIFOP, RGB(0,1,0), "ShipToDIFOP", 1.0, true, 0.2).
+	
+    local DistanceVector is (TargetDockingPort:nodeposition - ShipDockingPort:nodeposition).
+	set error to abs(Distance - DistanceVector:mag).
+	print "Distance Error: "+ROUND(error,2)+"    " at (0,15).
+	set ang to vang(ShipDockingPort:portfacing:vector, DistanceVector).
+	print "Current Angle:  "+ROUND(ang,2)+"    " at (0,16).
+	if ang < 30 and SAS //Check if we can use SAS
+	{
+		SAS ON. wait 0.01.
+		set sasmode to "TARGET". wait 0.01.
+	}
+    if (ang < 2) and (error < ErrorAllowed)
+      break.
+  }
+  Translate(v(0,0,0)).
+  SAS OFF.
+}

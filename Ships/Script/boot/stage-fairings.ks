@@ -37,7 +37,7 @@ function faring_descend
 		display_altitude().
 
 	update_phase_title("DEPLOY CHUTE",1, false).
-	AG4 ON.
+	AG4 ON. //CD2 deply chute
 	SAS OFF. WAIT 1.
 	RCS OFF. WAIT 1.
 	LOCK STEERING TO UP + R(0,-90-10,180+25). //UP

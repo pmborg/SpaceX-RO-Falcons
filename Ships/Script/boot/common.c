@@ -272,7 +272,7 @@ function PRINT_STATUS
 	PRINT "[t]: "+ROUND(t,2)+"   " at (0, y+23).
 	PRINT "Altitude: "+ROUND(ALTITUDE/1000,3)+" km " at (0, y+24).
 	
-	if KUniverse:ActiveVessel = SHIP //or STAGE_1_TYPE = "ST-1"
+	if KUniverse:ActiveVessel = SHIP
 		PRINT "*" at (43,1).
 	else
 		PRINT "-" at (43,1).
@@ -283,9 +283,6 @@ function PRINT_STATUS
 		SLAVE_CONNECTION:SENDMESSAGE(list(throttle,steeringDir,shipPitch, local_ADDONS_TR_IMPACTPOS, altitude)).
 	}
 }
-
-
-
 
 // --------------------------------------------------------------------------------------------
 // START:

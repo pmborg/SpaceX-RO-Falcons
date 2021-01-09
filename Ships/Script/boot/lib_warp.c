@@ -11,6 +11,30 @@
 // 14/Nov/2020
 // --------------------------------------------------------------------------------------------
 
+function WarpToPE 
+{
+	set warp to 6.
+	print "warp to 6".
+	wait until eta:periapsis < 2000.
+
+	set warp to 4.
+	print "warp to 4".
+	wait until eta:periapsis < 500.
+	
+	set warp to 3.
+	print "warp to 3".
+	wait until eta:periapsis < 50.
+	
+	set warp to 0.
+	lock steering to heading (270, theta).
+	
+	// Waiting on periapsis arrival.
+	print "Vertical Speed" at (0,10).
+	until verticalspeed > 0 {
+		print verticalspeed at (20,10).
+	}.
+}
+
 function WarpOutofKerbinSOI {
 	PRINT "PhaseI: Warp Out of Kerbin SOI".
 	
