@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to todo the Manouver in prograde to the: mission_target
-// 07/Jan/2021
+// 09/Jan/2021
 // --------------------------------------------------------------------------------------------
 
 parameter goto_mission_target.
@@ -259,8 +259,8 @@ AG5 ON. //Panels ON
 // PRINT "Press [ENTER], to Confirm: Warp!"at (0,26).
 // set ch to terminal:input:getchar().
 
-CLEARSCREEN.
-print "PhaseI-Burn: Warp Out of Kerbin SOI".
+CLEARSCREEN. print " ".
+update_phase_title("Warp-Out "+BODY:NAME+" SOI", 1, true).
 set x to 0.
 set warp to 4. wait 0.1.
 until x = 1 

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Circularize an orbit after BURN.c
-// 07/Jan/2021
+// 09/Jan/2021
 // --------------------------------------------------------------------------------------------
 
 parameter goto_mission_target.
@@ -21,37 +21,40 @@ SAS OFF.
 // Altitudes INFO: https://forum.kerbalspaceprogram.com/index.php?/topic/173446-lowest-highest-points-of-celestial-bodies/
 if (Orbit:periapsis > MAX(40000, 1.5*TARGET:atm:height)) // 40,000m is a safe altitude (to do a periapsis wait) in all planets.
 {
-	clearscreen.
-	set SOI to TARGET:SOIRADIUS. // 2429559.1.	(MUN-SOI)
-	print "PhaseII-Warp to "+goto_mission_target+" Periapsis".
-	set warp to 5.
-	wait until eta:periapsis < 2000.
-	set warp to 4.
-	wait until eta:periapsis < 500.
-	set warp to 3.
-	wait until eta:periapsis < 50.
-	set warp to 0.
+	// if vehicle_type <> "SaturnV"
+	// {
+		// clearscreen.
+		// set SOI to TARGET:SOIRADIUS. // 2429559.1.	(MUN-SOI)
+		// print "PhaseII-Warp to "+goto_mission_target:NAME+" PE".
+		// set warp to 5.
+		// wait until eta:periapsis < 2000.
+		// set warp to 4.
+		// wait until eta:periapsis < 500.
+		// set warp to 3.
+		// wait until eta:periapsis < 50.
+		// set warp to 0.
 
-	lock steering to retrograde.
-	LOCK STEERING TO SHIP:RETROGRADE.
+		// lock steering to retrograde.
 
-	RCS ON.
-	wait 5.
-	RCS OFF.
+		// RCS ON.
+		// wait 5.
+		// RCS OFF.
+	// }
 
-	clearscreen.
-	print "PhaseII-Burn for "+goto_mission_target+" Capture/Orbit".
+	//clearscreen. print " ". print " ".
+	update_phase_title("ORBIT BURN", 1, true).
+	//print "PhaseII-Burn for "+goto_mission_target:NAME+" Capture/Orbit".
 	//-------------------------------------------------------------------------------
-	wait until eta:periapsis < 1.
-	lock throttle to 0.5.
-	print "eta:periapsis < 1".
+	// wait until eta:periapsis < 1.
+	// lock throttle to 0.5.
+	// print "eta:periapsis < 1".
 	
-	wait until apoapsis < .5*SOI.
-	print "until apoapsis < .5*SOI".
+	// wait until apoapsis < .5*SOI.
+	// print "until apoapsis < .5*SOI".
 	
-	lock throttle to 0.
-	set thrust to 0.
-	lock throttle to thrust.
+	// lock throttle to 0.
+	// set thrust to 0.
+	// lock throttle to thrust.
 
 	// Calculate Delta-V to circularize orbit:
 	// TARGET:
@@ -69,58 +72,61 @@ if (Orbit:periapsis > MAX(40000, 1.5*TARGET:atm:height)) // 40,000m is a safe al
 	
 	set warp to 0. wait 5.
 	
-	PRINT "Press [ENTER], to continue...".
-	set ch to terminal:input:getchar().
+	// PRINT "Press [ENTER], to continue...".
+	// set ch to terminal:input:getchar().
 	
-	if vehicle_type = "SaturnV"
-	{ 
-		RCS ON.
-		AG8 ON. WAIT 5.
+	// if vehicle_type = "SaturnV"
+	// { 
+		// RCS ON.
+		// AG8 ON. WAIT 5.
 		// STAGE. WAIT 5.
 		// STAGE. WAIT 5.
-		print "CYCLE UNTIL POSITIVE TRUST...".
-		until maxthrust > 0 
-			{ confirm_stage(). wait 5. }
-	}
+		// print "CYCLE UNTIL POSITIVE TRUST...".
+		// until maxthrust > 0 
+			// { confirm_stage(). wait 5. }
+	// }
 
 	set theta to arcsin(W/maxthrust).
 	RCS OFF.
 	
 	// I do two seperate burns to help make the burns more efficient
 	// It is more efficient to burn at Periapsis Warp!
-	clearscreen.
-	print "PhaseII-Circularize-Warp to Periapsis".
+	//clearscreen.
+	//print "PhaseII-Circularize-Warp to Periapsis".
 	print "theta: "+theta.
-	
-	set warp to 6.
-	print "warp to 6".
-	wait until eta:periapsis < 2000.
 
-	set warp to 4.
-	print "warp to 4".
-	wait until eta:periapsis < 500.
+	if vehicle_type <> "SaturnV"	
+	{
+		set warp to 6.
+		print "warp to 6".
+		wait until eta:periapsis < 2000.
+
+		set warp to 4.
+		print "warp to 4".
+		wait until eta:periapsis < 500.
+		
+		set warp to 3.
+		print "warp to 3".
+		wait until eta:periapsis < 50.
+		
+		set warp to 0.
+		lock steering to heading (270, theta).
+		
+		// Waiting on periapsis arrival.
+		print "Vertical Speed" at (0,10).
+		until verticalspeed > 0 {
+			print verticalspeed at (20,10).
+		}.
+	}
 	
-	set warp to 3.
-	print "warp to 3".
-	wait until eta:periapsis < 50.
-	
-	set warp to 0.
-	lock steering to heading (270, theta).
-	
-	// Waiting on periapsis arrival.
-	print "Vertical Speed" at (0,10).
-	until verticalspeed > 0 {
-		print verticalspeed at (20,10).
-	}.
-	
-	clearscreen.
-	update_phase_title("PhaseII-Prepare", 0, false).
+	// clearscreen.
+	// update_phase_title("PhaseII-Prepare", 0, false).
 	SAS OFF. wait 0.1.
 	lock steering to RETROGRADE. wait 0.1.
 	wait 20.
 	set thrust to 1.
 	
-	wait until status <> "ESCAPING".
+	// wait until status <> "ESCAPING".
 	
 	set ly to 3.
 	

@@ -43,21 +43,45 @@ function DO_BURN {
 	}
 
 	//PE -------------------------------------------------------
-	update_phase_title("WARP-TO-PE", 1, false).
+	update_phase_title("WARP-TO-PE", 1, true).
 	shutDownAllEngines().
 	AG5 ON. //Turn on Generators + Antenas
 	if (Orbit:periapsis > MAX(40000, 1.5*BODY:atm:height)) // 40,000m safe altitude (periapsis wait) in all planets.
-		wait_until_periapsis().
-
-	if vehicle_type <> "SaturnV"
 	{
+		wait_until_periapsis().
+		SET MAPVIEW TO FALSE. 
+		wait 10.	// WAIT for GUI Refresh etc...
+
+		if vehicle_type = "SaturnV"
+		{
+			UNTIL STAGE:NUMBER <=6
+			{
+				stage. wait 5.
+			}
+			
+			//TURN ON: CMD ENGINE
+			update_phase_title("CMD ENGINE ON", 1, true).
+			shutDownAllEngines().
+			AG8 ON.			
+			LOCK STEERING TO retrograde.
+		}
+		
+		// WAIT for RETRO:
+		update_phase_title("ROTATE", 1, true).
 		RCS ON.
-		wait 15.
+		wait 10.
 		RCS OFF.
+		
+		update_phase_title("CAPTURE BURN", 1, true).
+		set thrust to 1.
+		WAIT UNTIL STATUS <> "ESCAPING".
+		set thrust to 0.
 	}
+	
+	
 		
 	//CIRCULARIZE TARGET -------------------------------------------------------
-	update_phase_title("Circle "+mission_target, 1, false).
+	update_phase_title("Circle "+mission_target:NAME, 1, false).
 	RUNPATH( "boot/PhaseII-Circularize.c", mission_target ).
 }
 

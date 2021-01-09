@@ -7,8 +7,8 @@
 // Beta load from: 	- https://www.dropbox.com/sh/jd1oh6d806iyat1/AABa7aXbiYDfv8G-aQ4MyR-ta?dl=0
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
-//				Used to Dock CMD with LEM
-// 07/Jan/2021
+//				Used to Dock (CMD with LEM) or (CD2 with ISS)
+// 09/Jan/2021
 // --------------------------------------------------------------------------------------------
 Function Translate {
   Parameter SomeVector.
@@ -80,9 +80,9 @@ Function ApproachDockingPort {
 	
     local DistanceVector is (TargetDockingPort:nodeposition - ShipDockingPort:nodeposition).
 	set error to abs(Distance - DistanceVector:mag).
-	print "Distance Error: "+ROUND(error,2)+"  " at (0,15).
+	print "Distance Error: "+ROUND(error,2)+"    " at (0,15).
 	set ang to vang(ShipDockingPort:portfacing:vector, DistanceVector).
-	print "Current Angle: "+ROUND(ang,2)+"  " at (0,16).
+	print "Current Angle:  "+ROUND(ang,2)+"    " at (0,16).
 	if ang < 30
 	{
 		SAS ON. wait 0.01.
@@ -97,7 +97,7 @@ Function ApproachDockingPort {
 
 lock steering to prograde. wait 0.1.
 CLEARSCREEN. print " ". print " ".
-update_phase_title("CMD/LEM Docking", 0, true).
+update_phase_title("CMD/LEM Docking", 1, true).
 
 //STAGE:
 if vehicle_type = "SaturnV"
@@ -126,7 +126,6 @@ print target_vessel:name.
 set TARGET to target_vessel. wait 1.
 
 //GET SAFETY DISATANCE & ROTATE (DO 180):
-print "WAIT FOR ATGERT DISTANCE: 100m".
 lock RP to ( ship:position - target_vessel:position).
 
 UNTIL NOT HASNODE { REMOVE NEXTNODE. WAIT 0. } //removeAllNodes!
@@ -137,7 +136,7 @@ set Ship_Distance to 24. //25-1
 UNTIL (Ship_Distance >= 25)
 {
 	set Ship_Distance to RP:mag.
-	print "TARGET DISTANCE(25): "+ROUND(Ship_Distance,1) at (0,11).
+	print "TARGET DISTANCE(25): "+ROUND(Ship_Distance,1)+"  " at (0,12).
 	WAIT 0.25.
 	
 	//ROTATE (DO 180):
@@ -147,29 +146,39 @@ UNTIL (Ship_Distance >= 25)
 	}
 	
 }
-//SAS OFF.
 RCS OFF.
 UNLOCK RP.
 UNLOCK STEERING. wait 1.
 
-//KILL SPEED IF NEEDED:
+//KILL REL. SPEED:
+update_phase_title("KillRelVel", 0, true).
 RCS ON. wait 1.
 KillRelVelRCS(target_vessel).
 
 //SIDEWAYSAPPROACH:
 set ShipDockingPort to PortGetter(SHIP, "none").
 set TargetDockingPort to PortGetter(target_vessel, "none").
-update_phase_title("Docking 25m", 0, false).
+
+update_phase_title("Docking 25m", 0, true).
 ApproachDockingPort(ShipDockingPort, TargetDockingPort, 25, 0.3).
-update_phase_title("Docking 10m", 0, false).
+update_phase_title("KillRelVel", 0, true).
+KillRelVelRCS(target_vessel).
+
+update_phase_title("Docking 10m", 0, true).
 ApproachDockingPort(ShipDockingPort, TargetDockingPort, 10, 0.3).
-update_phase_title("Docking 5m", 0, false).
+
+update_phase_title("Docking 5m", 0, true).
 ApproachDockingPort(ShipDockingPort, TargetDockingPort, 5, 0.2).
-update_phase_title("Docking 2.5m", 0, false).
+
+update_phase_title("Docking 2.5m", 0, true).
 ApproachDockingPort(ShipDockingPort, TargetDockingPort, 2.5, 0.1).
-update_phase_title("Docking...", 0, false).
+
+update_phase_title("Docking...", 1, true).
 ApproachDockingPort(ShipDockingPort, TargetDockingPort, 0, 0.1, 0).
 
-
+//DONE!
+WAIT 5.
 LOG "Docked" to dock.txt.
+CLEARSCREEN.
+update_phase_title("Docking Done", 1, true).
 PRINT "ENTER TO PROCEED". set ch to terminal:input:getchar().	//DEBUG
