@@ -44,7 +44,6 @@ or SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5" and STAGE:NUMBER <= 4
 	// ST-1 SEPARATION
 	UNTIL SHIP:MAXTHRUST <= 0
 	{
-		//UNLOCK STEERING.
 		SAS OFF.
 		wait 0.5.
 		if (KUniverse:ActiveVessel = SHIP) STAGE.

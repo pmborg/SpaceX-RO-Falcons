@@ -14,6 +14,36 @@ PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //             #.YY.MM.DD
 PRINT "SW-Ver: 1.21.01.09" at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 
+// REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
+// ------------------------------------------------------------
+// [ok] F9 QMAX							1.20.12.27 ("LAND") 1.20.12.28 ("SEA")
+// [ok] F9 ST-1 STAGE					1.20.12.27 ("LAND") 1.20.12.28 ("SEA")
+// [ok] F9 ST-1 LANDING					1.20.12.27 ("LAND") 1.20.12.28 ("SEA")
+// [ok] F9 ST-1 FARING RECOVER			1.20.12.27 ("LAND") 1.20.12.28 ("SEA")
+// [ok] F9 ST-2 LEO ORBIT				1.20.12.27 ("LAND") 1.20.12.28 ("SEA")
+// [ok] F9 ST-2 DE-ORBIT				1.20.12.27 ("LAND") 1.20.12.28 ("SEA")
+
+// [ok] Crew Dragon 2 QMAX				1.21.01.08 ("LAND")
+// [ok] Crew Dragon 2 STAGE				1.21.01.08 ("LAND")
+// [ok] Crew Dragon 2 ST-1 LANDING		1.21.01.08 ("LAND")
+// [ok] Crew Dragon 2 DRAGON LEO ORBIT	1.21.01.08 ("LAND")
+// [ok] Crew Dragon 2 DRAGON DE-ORBIT	1.21.01.08 ("LAND")
+
+// (Before last touch in FH)
+// [ok] SaturnV ST1 QMAX				1.21.01.09
+// [ok] SaturnV  ST1 STAGE				1.21.01.09
+// [ok] SaturnV  ST2 LEO Orbit			1.21.01.09
+// [ok] SaturnV  ST2 Lunnar BURN		1.21.01.09
+
+// [ok] FH ST1 QMAX						1.20.12.07
+// [ok] FH ST1 STAGE					1.20.12.07
+// [ok] FH ST1 Master ST-1 LANDING		1.20.11.23
+// [ok] FH Core ST-1 LANDING			1.20.12.07
+// [ok] FH LEO Orbit					1.20.11.22
+// [ok] FH GSO Orbit					1.20.12.07
+
+
+
 //https://ksp-kos.github.io/KOS/structures/misc/loaddistance.html#attribute:SITUATIONLOADDISTANCE:UNLOAD
 //MAGIC LINES! Extend Physics:
 SET KUNIVERSE:DEFAULTLOADDISTANCE:FLYING:UNLOAD TO 1960000. 

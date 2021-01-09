@@ -86,21 +86,22 @@ function main_liftoff
 
 		CLEARSCREEN. PRINT " ".PRINT " ".	
 		update_phase_title("[ ] IGNITION...", 0, false).
-		set thrust to 1. //ALL ENGINES START IGNITION...
-		// --------------------------------------------------------------------------------------------
+		set thrust to 1. //ALL ENGINES: START IGNITION!
 		
+		// --------------------------------------------------------------------------------------------
 		if vehicle_type = "Crew Dragon 2" or vehicle_type = "Falcon Heavy"
 			WAIT 1.
 			
 		if (KUniverse:ActiveVessel = SHIP) STAGE.		//TOWER
-		if vehicle_company = "SpaceX" Print "(Strongback Retracted)".
+		if vehicle_company = "SpaceX" 
+			Print "(Strongback Retracted)".
 
 		if vehicle_type = "Crew Dragon 2"
-			WAIT 1.										//TOWER+Liftoff
+			WAIT 1.										//CD2: TOWER+Liftoff
 		else {
 			WAIT 3.
 			if vehicle_type = "SaturnV"
-				WAIT 5.
+				WAIT 5.									//SaturnV: 8 seconds total to reach max power
 			if (KUniverse:ActiveVessel = SHIP) STAGE.	//Liftoff
 		}
 	}
@@ -119,8 +120,6 @@ function do_stage
 		if vehicle_type = "Falcon Heavy" 
 			AG6 ON. //Toggle: FH Boosters separator
 	}
-	// LOCK STEERING TO PROGRADE.
-	// wait 3.	
 }
 
 // --------------------------------------------------------------------------------------------
