@@ -137,7 +137,7 @@ set Ship_Distance to 24. //25-1
 UNTIL (Ship_Distance >= 25)
 {
 	set Ship_Distance to RP:mag.
-	print "TARGET DISTANCE(40): "+ROUND(Ship_Distance,1) at (0,11).
+	print "TARGET DISTANCE(25): "+ROUND(Ship_Distance,1) at (0,11).
 	WAIT 0.25.
 	
 	//ROTATE (DO 180):
@@ -160,12 +160,16 @@ KillRelVelRCS(target_vessel).
 set ShipDockingPort to PortGetter(SHIP, "none").
 set TargetDockingPort to PortGetter(target_vessel, "none").
 update_phase_title("Docking 25m", 0, false).
-ApproachDockingPort(ShipDockingPort, TargetDockingPort, 25, 0.5).
+ApproachDockingPort(ShipDockingPort, TargetDockingPort, 25, 0.3).
 update_phase_title("Docking 10m", 0, false).
-ApproachDockingPort(ShipDockingPort, TargetDockingPort, 10, 0.4).
+ApproachDockingPort(ShipDockingPort, TargetDockingPort, 10, 0.3).
+update_phase_title("Docking 5m", 0, false).
+ApproachDockingPort(ShipDockingPort, TargetDockingPort, 5, 0.2).
 update_phase_title("Docking 2.5m", 0, false).
-ApproachDockingPort(ShipDockingPort, TargetDockingPort, 2.5, 0.3).
+ApproachDockingPort(ShipDockingPort, TargetDockingPort, 2.5, 0.1).
 update_phase_title("Docking...", 0, false).
-ApproachDockingPort(ShipDockingPort, TargetDockingPort, 0, 0.1).
+ApproachDockingPort(ShipDockingPort, TargetDockingPort, 0, 0.1, 0).
+
 
 LOG "Docked" to dock.txt.
+PRINT "ENTER TO PROCEED". set ch to terminal:input:getchar().	//DEBUG
