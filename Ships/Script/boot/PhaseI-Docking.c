@@ -83,7 +83,7 @@ Function ApproachDockingPort {
 	print "Distance Error: "+ROUND(error,2)+"  " at (0,15).
 	set ang to vang(ShipDockingPort:portfacing:vector, DistanceVector).
 	print "Current Angle: "+ROUND(ang,2)+"  " at (0,16).
-	if ang < 20
+	if ang < 30
 	{
 		SAS ON. wait 0.01.
 		set sasmode to "TARGET". wait 0.01.
@@ -147,7 +147,7 @@ UNTIL (Ship_Distance >= 25)
 	}
 	
 }
-SAS OFF.
+//SAS OFF.
 RCS OFF.
 UNLOCK RP.
 UNLOCK STEERING. wait 1.
