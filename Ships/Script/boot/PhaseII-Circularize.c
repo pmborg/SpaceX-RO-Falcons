@@ -48,6 +48,7 @@ if (Orbit:periapsis > MAX(40000, 1.5*TARGET:atm:height)) // 40,000m is a safe al
 	
 	SAS OFF. wait 0.1.
 	lock steering to RETROGRADE. wait 0.1.
+	update_phase_title("WAIT: 20s", 1, true).
 	wait 20.
 	set thrust to 1.
 	

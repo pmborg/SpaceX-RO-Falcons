@@ -122,8 +122,10 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			RCS OFF. wait 0.1.
 			lock throttle to thrust.
 			set thrust to 1. wait 0.1.
+			update_phase_title("wait for 200km", 1, true).
 			WAIT UNTIL periapsis < 200000.
 			set thrust to 0.05.
+			update_phase_title("wait for 114km", 1, true).
 			WAIT UNTIL periapsis < 114000. //Moon Orbit PE: 114km (Ideal to do the LM landing + Ideal to do a cheaper re-orbit) 
 		
 			set thrust to 0.

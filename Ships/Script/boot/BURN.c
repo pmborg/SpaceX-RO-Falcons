@@ -74,8 +74,10 @@ function DO_BURN {
 		
 		update_phase_title("CAPTURE BURN", 1, true).
 		set thrust to 1.
+		SET MAPVIEW TO TRUE.
 		WAIT UNTIL STATUS <> "ESCAPING".
 		set thrust to 0.
+		SET MAPVIEW TO FALSE.
 	}
 		
 	//CIRCULARIZE TARGET -------------------------------------------------------

@@ -179,8 +179,11 @@ function update_phase_title
 	if STAGE_1_TYPE = "ST-2" 		
 		PRINT "(ST-2)" at (44,1).
 	else 
-	if STAGE_1_TYPE = "ST-3" 		
+	if STAGE_1_TYPE = "ST-3"
 		PRINT "(ST-3)" at (44,1).
+	else 
+	if STAGE_1_TYPE = "LEM"
+		PRINT "LEM" at (44,1).
 	else 
 	if STAGE_1_TYPE = "MAIN" 		//MAIN CPU
 		PRINT "(MAIN)" at (44,1).
@@ -432,7 +435,7 @@ Function ApproachDockingPort {
   local Lock ShipToDIFOP to TargetDockingPort:nodeposition - ShipDockingPort:nodeposition + DistanceInFrontOfPort.
   local Lock RelativeVelocity to ship:velocity:orbit - TargetDockingPort:ship:velocity:orbit.
 
-  until FALSE //ShipDockingPort:state <> "ready" 
+  until FALSE
   {
     Translate((ShipToDIFOP:normalized*Speed) - RelativeVelocity).
 	
@@ -449,11 +452,12 @@ Function ApproachDockingPort {
 	if ang < 30 and SAS //Check if we can use SAS
 	{
 		SAS ON. wait 0.01.
-		set sasmode to "TARGET". wait 0.01.
+		if SAS 
+			set sasmode to "TARGET". wait 0.01.
 	}
     if (ang < 2) and (error < ErrorAllowed)
       break.
   }
   Translate(v(0,0,0)).
-  SAS OFF.
+  //SAS OFF.
 }

@@ -14,12 +14,15 @@ SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 CLEARSCREEN.
 
 runpath("boot/sw-version.c").
+set STAGE_1_TYPE to "LEM".
+
 runpath("boot/useful-tools.c").
 runpath("boot/lib_warp.c").
 
 // --------------------------------------------------------------------------------------------
 Function UNDOCK_LEM
 {
+	SET MAPVIEW TO FALSE. wait 1.
 	set ShipDockingPortPart to LEMPortGetter(SHIP, "none").
 	SET docked_node TO ShipDockingPortPart:CHILDREN[0].
 	IF ShipDockingPortPart:PARENT:name = ShipDockingPortPart:name {
@@ -82,8 +85,9 @@ function PREPARE_FOR_CIRCULARIZE
 }
 
 // --------------------------------------------------------------------------------------------
-function PREPARE_FOR_LANDING
+function LUNNAR_APPROACH
 {
+	update_phase_title("PREPARE FOR LANDING", 0, true).
 	//LAND AT: 23 12 37S
 	//LAND AT: 12 53 44W
 	declare global LandingTarget to latlng(-23.210278, -12.895556).
@@ -106,7 +110,7 @@ set ch to terminal:input:getchar().
 UNDOCK_LEM().
 PREPARE_FOR_LANDING().
 PREPARE_FOR_CIRCULARIZE().
-PREPARE_FOR_LANDING().
+LUNNAR_APPROACH().
 
 //TOBE DONE...
 print "DONE".
