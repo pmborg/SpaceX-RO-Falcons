@@ -115,7 +115,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		if vehicle_type = "SaturnV"
 		{
 			clearscreen. print " ". print " ".
-			update_phase_title("FINAL SLM ORBIT", 1, true).
+			update_phase_title(BODY+" CAPTURE", 1, true).
 			SET MAPVIEW TO TRUE.
 			SAS OFF. wait 0.1.
 			lock steering to retrograde. wait 0.1.
@@ -140,7 +140,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			set ShipDockingPort to LEMPortGetter(SHIP, "none").				//GET SM PORT
 			set target_vessel to getNearbyProbe(0, "Ship", 100).			//GET LEM
 			set TargetDockingPort to LEMPortGetter(target_vessel, "none").	//GET LEM PORT
-			update_phase_title("Docking 5m", 0, true).
+			update_phase_title("UN-DOCKING 5m", 0, true).
 			ApproachDockingPort(ShipDockingPort, TargetDockingPort, 20, 1).
 			RCS OFF. wait 1.
 			SET KUniverse:ACTIVEVESSEL TO VESSEL(target_vessel:NAME).

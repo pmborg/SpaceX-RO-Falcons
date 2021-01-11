@@ -87,7 +87,7 @@ function PREPARE_FOR_CIRCULARIZE
 // --------------------------------------------------------------------------------------------
 function LUNNAR_APPROACH
 {
-	update_phase_title("PREPARE FOR LANDING", 0, true).
+	update_phase_title("LEM LUNNAR (boostback burn)", 0, true).
 	//LAND AT: 23 12 37S
 	//LAND AT: 12 53 44W
 	declare global LandingTarget to latlng(-23.210278, -12.895556).
