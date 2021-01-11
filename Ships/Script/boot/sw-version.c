@@ -33,7 +33,7 @@ PRINT "SW-Ver: 1.21.01.11" at (0,2). PRINT time:calendar + " " + time:clock at (
 // [ok] SaturnV ST1 ST1- STAGE              1.21.01.09
 // [ok] SaturnV ST2 LEO ORBIT               1.21.01.09
 // [ok] SaturnV ST2 SLE DOCKING             1.21.01.09
-// [ok] SaturnV ST3 LUNNAR BURN             1.21.01.09
+// [ok] SaturnV ST3 LUNAR BURN             1.21.01.09
 // [ok] SaturnV ST3 EARTH SOI WARP          1.21.01.09
 // [ok] SaturnV ST3 MOON PE WARP            1.21.01.09
 // [ok] SaturnV MOON CAPTURE                1.21.01.09
@@ -42,8 +42,8 @@ PRINT "SW-Ver: 1.21.01.11" at (0,2). PRINT time:calendar + " " + time:clock at (
 // [ok] SaturnV SLM (CMD/LEM) UNDOCK        1.21.01.09
 // [ok] SaturnV LEM PREPARE FOR LANDING     1.21.01.09
 // [ok] SaturnV LEM PREPARE FOR CIRCULARIZE 1.21.01.09
-// [ok] SaturnV LEM LUNNAR (boostback burn) ...coding...
-// [ok] SaturnV LEM LUNNAR LANDING          ...coding...
+// [ok] SaturnV LEM LUNAR (horizontal burn)...coding...
+// [ok] SaturnV LEM LUNAR LANDING          ...coding...
 
 // [ok] FH ST1 QMAX                         1.20.12.07
 // [ok] FH ST1 STAGE                        1.20.12.07

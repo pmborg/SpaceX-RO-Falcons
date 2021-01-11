@@ -85,9 +85,9 @@ function PREPARE_FOR_CIRCULARIZE
 }
 
 // --------------------------------------------------------------------------------------------
-function LUNNAR_APPROACH
+function LUNAR_APPROACH
 {
-	update_phase_title("LEM LUNNAR (boostback burn)", 0, true).
+	update_phase_title("LEM LUNAR (horizontal burn)", 0, true).
 	//LAND AT: 23 12 37S
 	//LAND AT: 12 53 44W
 	declare global LandingTarget to latlng(-23.210278, -12.895556).
@@ -110,7 +110,7 @@ set ch to terminal:input:getchar().
 UNDOCK_LEM().
 PREPARE_FOR_LANDING().
 PREPARE_FOR_CIRCULARIZE().
-LUNNAR_APPROACH().
+LUNAR_APPROACH().
 
 //TOBE DONE...
 print "DONE".
