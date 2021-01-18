@@ -50,4 +50,4 @@ xcopy /S /Y %KSPTEMP%\GameData\ModularFlightIntegrator GameData\ModularFlightInt
 move KopernicusBE_1110_Release58.zip %KSPTEMP%
 	
 :No
-	EXIT
+EXIT
