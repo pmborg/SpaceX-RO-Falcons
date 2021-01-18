@@ -47,7 +47,7 @@ mkdir GameData\Kopernicus
 mkdir GameData\ModularFlightIntegrator
 xcopy /S /Y %KSPTEMP%\GameData\Kopernicus GameData\Kopernicus
 xcopy /S /Y %KSPTEMP%\GameData\ModularFlightIntegrator GameData\ModularFlightIntegrator
-move KopernicusBE_111_Release57.zip %KSPTEMP%
+move KopernicusBE_111_Release58.zip %KSPTEMP%
 	
 :No
 	EXIT
