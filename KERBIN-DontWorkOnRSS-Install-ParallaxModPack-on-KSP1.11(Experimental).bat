@@ -20,6 +20,10 @@ if not exist buildID64.txt (
 	goto :choice
 
 :Yes
+if "%TEMP%" == "" (echo The TEMP variable must be set. ;goto :No)
+if not exist "%TEMP%" mkdir %TEMP%
+set KSPTEMP=%TEMP%\ksp~%RANDOM%.tmp
+MKDIR %KSPTEMP%
 
 echo "Get Latest CKAN Version:"
 powershell -command "& { $latestRelease = (Invoke-WebRequest https://github.com/KSP-CKAN/CKAN/releases/latest -Headers @{'Accept'='application/json'}) ; $json = $latestRelease.Content | ConvertFrom-Json ; $LATESTVERSION = $json.tag_name ; iwr https://github.com/KSP-CKAN/CKAN/releases/download/$LATESTVERSION/ckan.exe -OutFile ckan.exe }"
@@ -41,13 +45,13 @@ ckan.exe install --headless --allow-incompatible --no-recommends Scatterer-confi
 ckan.exe install --headless --allow-incompatible --no-recommends EnvironmentalVisualEnhancements EnvironmentalVisualEnhancements-HR
 
 REM INSTALL: KopernicusBE_111
-powershell -command "& { iwr https://github.com/R-T-B/Kopernicus/releases/download/UBE-release-58/KopernicusBE_1110_Release58.zip -OutFile KopernicusBE_1110_Release58.zip }"
-powershell.exe -NoP -NonI -Command "Expand-Archive 'KopernicusBE_1110_Release58.zip' '%KSPTEMP%'"
+powershell -command "& { iwr https://github.com/R-T-B/Kopernicus/releases/download/UBE-release-58/KopernicusBE_1110_Release62.zip -OutFile KopernicusBE_1110_Release62.zip }"
+powershell.exe -NoP -NonI -Command "Expand-Archive 'KopernicusBE_1110_Release62.zip' '%KSPTEMP%'"
 mkdir GameData\Kopernicus
 mkdir GameData\ModularFlightIntegrator
 xcopy /S /Y %KSPTEMP%\GameData\Kopernicus GameData\Kopernicus
 xcopy /S /Y %KSPTEMP%\GameData\ModularFlightIntegrator GameData\ModularFlightIntegrator
-move KopernicusBE_1110_Release58.zip %KSPTEMP%
+move KopernicusBE_1110_Release62.zip %KSPTEMP%
 	
 :No
 EXIT
