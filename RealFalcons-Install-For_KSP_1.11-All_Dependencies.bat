@@ -113,14 +113,14 @@ REM INSTALL: ISS (International SpaceStation) Dep-1:
 	xcopy /S %KSPTEMP%\GameData\Science818 GameData\Science818
 	move SpaceX_Launch_Towers-1.7.3.zip %KSPTEMP%
 
-	REM INSTALL: KopernicusBE_111
-	powershell -command "& { iwr https://github.com/R-T-B/Kopernicus/releases/download/UBE-release-62/KopernicusBE_1.11.0_Release62.zip -OutFile KopernicusBE_1.11.0_Release62.zip }"
-	powershell.exe -NoP -NonI -Command "Expand-Archive 'KopernicusBE_1.11.0_Release62.zip' '%KSPTEMP%'"
+	REM INSTALL: KopernicusBE for 1.11.2:
+	powershell -command "& { iwr https://github.com/R-T-B/Kopernicus/releases/download/UBE-release-81/KopernicusBE_19+_Release81.zip -OutFile KopernicusBE.zip }"
+	powershell.exe -NoP -NonI -Command "Expand-Archive 'KopernicusBE.zip' '%KSPTEMP%'"
 	mkdir GameData\Kopernicus
 	mkdir GameData\ModularFlightIntegrator
 	xcopy /S /Y %KSPTEMP%\GameData\Kopernicus GameData\Kopernicus
 	xcopy /S /Y %KSPTEMP%\GameData\ModularFlightIntegrator GameData\ModularFlightIntegrator
-	move KopernicusBE_1110_Release62.zip %KSPTEMP%
+	move KopernicusBE.zip %KSPTEMP%
 
 	REM INSTALL: Katniss.s.Cape.Canaveral
 	powershell -command "& { iwr https://github.com/Katniss218/KatnisssCapeCanaveral/releases/download/1.2.2/Katniss.s.Cape.Canaveral.v1.2.2.zip -OutFile Katniss.s.Cape.Canaveral.v1.2.2.zip }"
@@ -142,7 +142,8 @@ REM INSTALL: ISS (International SpaceStation) Dep-1:
 	move GameData\EngineGroupController %NONEED%
 
 	REM FIX: TrajectoriesMod for KSP 1.11
-	copy /Y GameData\Trajectories\Plugin\Trajectories110.bin GameData\Trajectories\Plugin\Trajectories111.bin
+	REM copy /Y GameData\Trajectories\Plugin\Trajectories110.bin GameData\Trajectories\Plugin\Trajectories111.bin
+	
 	echo set kspver to 1.11. > Ships\Script\kspver.c.
 	PAUSE
 :No
