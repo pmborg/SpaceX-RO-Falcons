@@ -32,8 +32,8 @@ if not exist buildID64.txt (
 	if "%TEMP%" == "" (echo The TEMP variable must be set. ;goto :No)
 	if not exist "%TEMP%" mkdir %TEMP%
 
-	echo "Get Latest CKAN Version:"
-	powershell -command "& { $latestRelease = (Invoke-WebRequest https://github.com/KSP-CKAN/CKAN/releases/latest -Headers @{'Accept'='application/json'}) ; $json = $latestRelease.Content | ConvertFrom-Json ; $LATESTVERSION = $json.tag_name ; iwr https://github.com/KSP-CKAN/CKAN/releases/download/$LATESTVERSION/ckan.exe -OutFile ckan.exe }"
+	echo "Get CKAN Version: v1.29.2"
+	powershell -command "& { iwr https://github.com/KSP-CKAN/CKAN/releases/download/v1.29.2/ckan.exe -OutFile ckan.exe }"
 
 	ckan.exe ksp default auto
 	ckan.exe repo add Kopernicus_BE http://glacialsoftware.net/CKAN/Kopernicus_BE.tar.gz
@@ -43,6 +43,10 @@ if not exist buildID64.txt (
 	ckan.exe compat add 1.10.0
 	ckan.exe compat add 1.9.0
 	ckan.exe compat add 1.8.1
+
+	REM DOWNLOAD Latest:
+	echo "Get CKAN Latest Version"
+	powershell -command "& { $latestRelease = (Invoke-WebRequest https://github.com/KSP-CKAN/CKAN/releases/latest -Headers @{'Accept'='application/json'}) ; $json = $latestRelease.Content | ConvertFrom-Json ; $LATESTVERSION = $json.tag_name ; iwr https://github.com/KSP-CKAN/CKAN/releases/download/$LATESTVERSION/ckan.exe -OutFile ckan.exe }"
 
 	REM Install Special Kopernicus dev branch for KSP1.10.1:
 	ckan.exe install --headless --allow-incompatible --no-recommends Kopernicus-BE
@@ -85,7 +89,7 @@ if not exist buildID64.txt (
 	REM Acelerometers needed to Falcons:
 	ckan.exe install --headless --allow-incompatible --no-recommends TantaresSP
 
-	pause
+	REM pause
 
 REM INSTALL: ISS (International SpaceStation) Dep-1:
 	set KSPTEMP=%TEMP%\ksp~%RANDOM%.tmp
