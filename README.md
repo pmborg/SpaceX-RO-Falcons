@@ -117,7 +117,7 @@ Select: 0 3 [ENTER] at KOS Console Launch Menu.
 If you want to follow Stage-1 landing, switch vessels imediattly after the stage separation.
 
 ----
-<h2>HOW TO: Disable the RSS Real **Solar System** and keep **Kerbin System**:</h2>
+<h2>HOW TO: Disable the RSS Real Solar System and keep Kerbin System:</h2>
 After thefull  instalation, you can remove this directory:
 **[KSP ROOT]**\GameData\Kopernicus<br>
 This will remove the RSS but keep RO, its an option... 
