@@ -1,13 +1,7 @@
 # WHAT WILL BE ON RELEASE 1 ?
-What is on development [Not yet Available]<br>
--- [FH+LEM] On the Moon?<br>
--- [FH] Landing Both FH ST-1 Boosters at the same time on LZ-1 and LZ-2. **(Already work! tunning it...)**<br>
 
-
-**Time to test and stress StarShip:**
-![!](https://i.imgur.com/9D6vZ9q.png)
-
-----
+**Testing all Crew Dragon 2 Mission:**
+![!](https://i.imgur.com/1L7eKOC.png)
 
 # SpaceX-RO-Falcons
 This KSP (**Kerbal Space Program**) addon, works ontop of [kks-spacex-pack mod](https://forum.kerbalspaceprogram.com/index.php?/topic/193933-1101-kks-spacex-pack-v65-01112020/) for KSP.<br>
@@ -160,10 +154,16 @@ Rename directory:<br>
 
 ----
 
+What is on development [Not yet Available]<br>
+-- [FH+LEM] On the Moon?<br>
+-- [FH] Landing Both FH ST-1 Boosters at the same time on LZ-1 and LZ-2. **(Already work! tunning it...)**<br>
+
+----
 **Testing all Moon Mission code with SaturnV, (before use FH+LEM)**
 ![!](https://i.imgur.com/OXC7pUn.png)
 
 **Note:** The SaturnV after fly certification will be also released.<br>
 
-**Testing all Crew Dragon 2 Mission:**
-![!](https://i.imgur.com/1L7eKOC.png)
+----
+**FUTURE DEV: Time to test and stress StarShip:**
+![!](https://i.imgur.com/9D6vZ9q.png)
