@@ -165,5 +165,5 @@ What is on development [Not yet Available]<br>
 **Note:** The SaturnV after fly certification will be also released.<br>
 
 ----
-**FUTURE DEV: Time to test and stress StarShip:**
+**FUTURE/CURRENT in Development: Time to test and stress StarShip:**
 ![!](https://i.imgur.com/9D6vZ9q.png)
