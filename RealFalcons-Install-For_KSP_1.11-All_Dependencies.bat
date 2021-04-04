@@ -127,15 +127,15 @@ REM INSTALL: ISS (International SpaceStation) Dep-1:
 	move KopernicusBE.zip %KSPTEMP%
 
 	REM INSTALL: Katniss.s.Cape.Canaveral
-	REM powershell -command "& { iwr https://github.com/Katniss218/KatnisssCapeCanaveral/releases/download/1.2.2/Katniss.s.Cape.Canaveral.v1.2.2.zip -OutFile Katniss.s.Cape.Canaveral.v1.2.2.zip }"
-	REM powershell.exe -NoP -NonI -Command "Expand-Archive 'Katniss.s.Cape.Canaveral.v1.2.2.zip' '%KSPTEMP%'"
-	REM mkdir GameData\KatnisssCapeCanaveral
-	REM mkdir GameData\RSS-Textures
-	REM mkdir GameData\RSS-Tweaks
-	REM xcopy /S /Y %KSPTEMP%\GameData\KatnisssCapeCanaveral GameData\KatnisssCapeCanaveral
-	REM xcopy /S /Y %KSPTEMP%\GameData\RSS-Textures GameData\RSS-Textures
-	REM xcopy /S /Y %KSPTEMP%\GameData\RSS-Tweaks GameData\RSS-Tweaks
-	REM move Katniss.s.Cape.Canaveral.v1.2.2.zip %KSPTEMP%
+	powershell -command "& { iwr https://github.com/Katniss218/KatnisssCapeCanaveral/releases/download/1.2.2/Katniss.s.Cape.Canaveral.v1.2.2.zip -OutFile Katniss.s.Cape.Canaveral.v1.2.2.zip }"
+	powershell.exe -NoP -NonI -Command "Expand-Archive 'Katniss.s.Cape.Canaveral.v1.2.2.zip' '%KSPTEMP%'"
+	mkdir GameData\KatnisssCapeCanaveral
+	mkdir GameData\RSS-Textures
+	mkdir GameData\RSS-Tweaks
+	xcopy /S /Y %KSPTEMP%\GameData\KatnisssCapeCanaveral GameData\KatnisssCapeCanaveral
+	xcopy /S /Y %KSPTEMP%\GameData\RSS-Textures GameData\RSS-Textures
+	xcopy /S /Y %KSPTEMP%\GameData\RSS-Tweaks GameData\RSS-Tweaks
+	move Katniss.s.Cape.Canaveral.v1.2.2.zip %KSPTEMP%
 
 	REM Move Not Needed/Incompatible Stuff to "NONEED" directory:
 	set NONEED=noneed~%RANDOM%.todelete
