@@ -74,6 +74,9 @@ The **SpaceX-RO-Falcons** Mod Introduce:
 [ok] **FH LEO Orbit**<br>
 [ok] **FH Core ST-1 LANDING**<br>
 
+----
+**CURRENT in Development: StarShip already do SN10 style landings... :)**
+![!](https://i.imgur.com/xHjSP5u.png)
 
 ----
 <h2>HOW TODO: Automatic Installation:</h2>
@@ -170,6 +173,3 @@ What is on development [Not yet Available]<br>
 
 **Note:** The SaturnV after fly certification will be also released.<br>
 
-----
-**FUTURE/CURRENT in Development: Time to test and stress StarShip:**
-![!](https://i.imgur.com/9D6vZ9q.png)
