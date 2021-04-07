@@ -89,6 +89,9 @@ if not exist buildID64.txt (
 	REM Acelerometers needed to Falcons:
 	ckan.exe install --headless --allow-incompatible --no-recommends TantaresSP
 
+	REM ADD StarShip
+	ckan.exe install --headless --allow-incompatible --no-recommends Waterfall TundraExploration
+
 	REM pause
 
 REM INSTALL: ISS (International SpaceStation) Dep-1:
