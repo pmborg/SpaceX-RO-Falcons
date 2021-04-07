@@ -90,7 +90,7 @@ if not exist buildID64.txt (
 	ckan.exe install --headless --allow-incompatible --no-recommends TantaresSP
 
 	REM ADD StarShip
-	ckan.exe install --headless --allow-incompatible --no-recommends Waterfall TundraExploration
+	ckan.exe install --headless --allow-incompatible --no-recommends AT-Utils Waterfall TundraExploration
 
 	REM pause
 
