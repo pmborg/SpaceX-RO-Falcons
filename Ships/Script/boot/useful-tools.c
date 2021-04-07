@@ -145,6 +145,19 @@ function engines_thrustlimit_to
 	}
 }
 
+function sn11_test_profile_deactivate_engine1
+{
+	AG3 OFF. wait 0.1.
+	AG3 ON.  wait 0.1.
+}
+
+function sn11_test_profile_deactivate_engine2
+{
+	AG4 OFF. wait 0.1.
+	AG4 ON.  wait 0.1.
+}
+
+
 function update_phase_title
 {
 	parameter phase.					//Title
@@ -212,6 +225,9 @@ function log_data
 	parameter Vs2.
 	parameter showlog to false.	//true = TURN ON LOG file.
 	
+	if vehicle_type = "SN11-Profile1" 
+		set showlog to true.
+	
 	updateVars().
 	
 	if (not showlog)
@@ -234,7 +250,7 @@ function log_data
 	set Acz to Ac:z.	
 	
 	set Aceleration_value1 to ROUND(g+SQRT((Acx^2)+(Acy^2)+(Acz^2)),1).
-	PRINT Aceleration_value1+" " at (8*3,35).
+	PRINT Aceleration_value1+"   " at (8*3,35).
 	
 	//v1
 	// set q to ROUND(SHIP:DYNAMICPRESSURE).
@@ -295,6 +311,7 @@ function flip_maneuver
 	SAS OFF.
 	RCS ON. //OFF.
 
+	//FH PRE FLIP MANEUVER
 	if STAGE_1_TYPE = "MASTER" or STAGE_1_TYPE = "SLAVE"
 	{
 		update_phase_title("HEAVY-1 SEPARATION...", 0, true).
@@ -321,7 +338,7 @@ function flip_maneuver
 		WAIT 5. // wait for SEP
 	PRINT_STATUS (3).
 	
-	//FLIP MANEUVER -------------------------------------------------------
+	//NORMAL FLIP MANEUVER -------------------------------------------------------
 	CLEARSCREEN.
 	update_phase_title("FLIP MANEUVER", 0, true).
 	RCS ON.

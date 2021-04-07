@@ -8,11 +8,13 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              Used to specify the SW version and the diferent types of profiles supported.
-// 11/Jan/2021
+// 06/Apr/2021
 // --------------------------------------------------------------------------------------------
+LOG   "START: sw-version.c" to log.txt.
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //             #.YY.MM.DD
-PRINT "SW-Ver: 1.21.01.11" at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
+set version_str to "SW-Ver: 1.06.04.11".
+PRINT version_str at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
 // ------------------------------------------------------------
@@ -124,6 +126,11 @@ declare global MAIN_SHIP_NAME to SHIP_NAME:REPLACE(" probe", "").   //["NAME"]  
 
 declare global vehicle_company to "SpaceX". 
 
+if SHIP_NAME = "Starship SN9"
+{
+	declare global vehicle_type to "SN11-Profile1".
+}
+else
 if SHIP_NAME = "Apollo11-4KSP1.11"
 {
     declare global vehicle_type to "SaturnV".               // BASE: Falcon-9 v1.2Blk:5 
@@ -185,7 +192,7 @@ else
 if CORE:BOOTFILENAME:FIND("boot.ks") > -1               // STAGE-2 (General ST-2)
 {
     set STAGE_1_TYPE to "MAIN".
-    LOG "SW-Ver: 1.20.12.27" to LOG.txt.
+    LOG version_str to LOG.txt.
 }
 
 if STAGE_1_TYPE <> ""
@@ -252,6 +259,11 @@ else
     declare global Qmax     to .5*1.2*(250^2).      // 1/2 x air density ρ | Vehicle's speed v^2 (Default value)    
     declare global MECO1    to 2100^2.
     declare global FAIRSEP  to BODY:ATM:HEIGHT.
+}
+
+if vehicle_type = "SN11-Profile1" 
+{
+	declare global Qmax to 6200.
 }
 
 if  Qmax <> .5*1.2*(250^2)
@@ -341,3 +353,5 @@ if orbit_type = "GSO"
 
 // LOAD TOOLS: -------------------------------------------------------
 runpath("boot/useful-tools.c").
+LOG   "END: sw-version.c" to log.txt.
+LOG   "-----------------" to log.txt.

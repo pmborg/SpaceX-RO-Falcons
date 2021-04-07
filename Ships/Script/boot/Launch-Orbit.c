@@ -11,6 +11,7 @@
 // 09/Jan/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
+LOG   "START: Launch-Orbit.c" to log.txt.
 set FINAL_ORBIT2 to FINAL_ORBIT.// For Phase-2 falcon stage-2
 set FINAL_ORBIT  to 150000. 	//(FINAL_ORBIT/2) - For Phase-1 falcon stage-1
 set phase to 0.
@@ -25,36 +26,39 @@ function main_liftoff
 		else
 			set str_vehicle to "Falcon".
 		
-		// Vehicle Release Auto Sequence:
-		PRINT " ".
-		PRINT "T-04:15 MVac and M1D fuel bleed has started. ".
-		PRINT "T-04:10 ST-1 LOX throttling to close up".
-		PRINT "T-03:40 M1D LOX load complete".
-		PRINT "T-03:30 P-1&LOX throttling to close up".
-		PRINT "T-03:25 P-1&LOX load completed".
-		PRINT "T-03:15 ST-2 TVC motions nominal".
-		PRINT "T-02:55 POGO bleed verification".
-		PRINT "T-02:50 Center-core LOX load complete".
-		PRINT "T-02:00 ST-2 LOX load complete".
-		PRINT "T-01:50 Falcon decouple is complete".
-		PRINT "T-01:40 "+str_vehicle+" is on internal power".
 		if vehicle_type = "Falcon Heavy" 
-			PRINT "T-01:30 Vehicles in self alignment".
-		PRINT "T-01:25 "+str_vehicle+" gas load complete".
-		PRINT "T-01:15 M1D-Fuel bleed complete".
-		if vehicle_type = "Falcon Heavy" 
-			PRINT "T-01:15 M1D Engine shells is complete".
-		PRINT "T-01:00 (Final FTS): READY FOR LAUNCH".
-		PRINT "T-00:55 "+str_vehicle+" (computer) is on start-up".
-		PRINT "T-00:45 STAGE-1&2 Pressurization for flight".
-		PRINT "T-00:30 (T-30 Seconds)".
-		PRINT "T-00:30 [Launch Director]: GO FOR LAUNCH".
-		PRINT "T-00:15 "+str_vehicle+" is configured for flight".
-		PRINT "T-00:15 (T-15 Seconds)".
-		PRINT "T-00:14 Standby for Turnarround Count".
-		PRINT "T-00:05 Side Boosters Ignition".
+		{
+			// Vehicle Release Auto Sequence:
+			PRINT " ".
+			PRINT "T-04:15 MVac and M1D fuel bleed has started. ".
+			PRINT "T-04:10 ST-1 LOX throttling to close up".
+			PRINT "T-03:40 M1D LOX load complete".
+			PRINT "T-03:30 P-1&LOX throttling to close up".
+			PRINT "T-03:25 P-1&LOX load completed".
+			PRINT "T-03:15 ST-2 TVC motions nominal".
+			PRINT "T-02:55 POGO bleed verification".
+			PRINT "T-02:50 Center-core LOX load complete".
+			PRINT "T-02:00 ST-2 LOX load complete".
+			PRINT "T-01:50 Falcon decouple is complete".
+			PRINT "T-01:40 "+str_vehicle+" is on internal power".
+			if vehicle_type = "Falcon Heavy" 
+				PRINT "T-01:30 Vehicles in self alignment".
+			PRINT "T-01:25 "+str_vehicle+" gas load complete".
+			PRINT "T-01:15 M1D-Fuel bleed complete".
+			if vehicle_type = "Falcon Heavy" 
+				PRINT "T-01:15 M1D Engine shells is complete".
+			PRINT "T-01:00 (Final FTS): READY FOR LAUNCH".
+			PRINT "T-00:55 "+str_vehicle+" (computer) is on start-up".
+			PRINT "T-00:45 STAGE-1&2 Pressurization for flight".
+			PRINT "T-00:30 (T-30 Seconds)".
+			PRINT "T-00:30 [Launch Director]: GO FOR LAUNCH".
+			PRINT "T-00:15 "+str_vehicle+" is configured for flight".
+			PRINT "T-00:15 (T-15 Seconds)".
+			PRINT "T-00:14 Standby for Turnarround Count".
+			PRINT "T-00:05 Side Boosters Ignition".
 
-		PRINT " ".
+			PRINT " ".
+		}
 		
 		if vehicle_type = "Crew Dragon 2"
 		{
@@ -69,7 +73,8 @@ function main_liftoff
 		if vehicle_type = "F1-M1" or 
 		   vehicle_sub_type = "Falcon Heavy LEM" or 
 		   vehicle_type = "Crew Dragon 2" or
-		   vehicle_type = "SaturnV"
+		   vehicle_type = "SaturnV" or
+		   vehicle_type = "SN11-Profile1"
 			SAS OFF.
 		else
 			SAS ON.
@@ -220,7 +225,9 @@ if alt:radar < 200
 	PRINT "q/Qmax" 				at (0,4).
 	set index2 to 6.
 
-	set thrust to 1.	
+	set thrust to 1.
+
+	set profile_stage to 0.
 
 	// LOOP: UNTIL HALF Qmax
 	// --------------------------------------------------------------------------------------------
@@ -244,6 +251,13 @@ if alt:radar < 200
 		}
 		else
 			PRINT "                    " at (0,5+index2).
+		
+		if alt:radar > 100 and vehicle_type = "SN11-Profile1"
+		{
+			set tThrust to 1.11*((mass*g)/maxthrust).
+			set thrust to (tThrust).
+			set q to q * 2. // END CYCLE AT: 25%
+		}
 		
 		set vsurf to velocity:surface.
 		set Vsx to vsurf:x.
@@ -270,7 +284,7 @@ if alt:radar < 200
 	
 	// LOOP: LAUNCH-Trusting:
 	// --------------------------------------------------------------------------------------------
-	until altitude > 30000 
+	until altitude > 30000 or profile_stage >= 3
 	{
 		if machVal > 0.8 and mphase = 0
 		{
@@ -316,6 +330,9 @@ if alt:radar < 200
 			set Weight to (mass*g)/0.01.		
 		}
 
+		if vehicle_type = "SN11-Profile1" //and profile_stage < 2
+			set delta to -delta.
+			
 		steering_falcon(90-delta).
 		
 		set tThrust to (Drag+ Weight)*error.
@@ -327,7 +344,7 @@ if alt:radar < 200
 				PRINT "( Throttle down to reduce drag losses )" at (0,4+index2).
 			}
 		}
-		if  tThrust >= 1 
+		if  tThrust >= 1
 		{
 			// if vehicle_type = "Falcon Heavy" and mphase = 2 and machVal < 1.8
 				// set tThrust to 0.85.
@@ -341,6 +358,35 @@ if alt:radar < 200
 				PRINT "( Passed MAXQ! )          " at (0,6+index2).
 				set phase to 2.
 			}
+		}
+
+		if vehicle_type = "SN11-Profile1" 
+		{
+			if alt:radar > 4500 and profile_stage = 0
+			{
+				sn11_test_profile_deactivate_engine1().
+				set profile_stage to 1.
+				PRINT "( Shutdown 1st engine )" at (0,5+index2).
+			}
+			if apoapsis > 9100 and profile_stage = 1
+			{
+				sn11_test_profile_deactivate_engine2().
+				set profile_stage to 2.
+				PRINT "( Shutdown 2nd engine )" at (0,5+index2).
+			}
+			if altitude >= 10000 and profile_stage = 2
+			{
+				set profile_stage to 3.
+				PRINT "( Start Flip to Horizontal )" at (0,5+index2).
+			}
+			
+			if alt:radar > 100 and vehicle_type = "SN11-Profile1"
+			{
+				set tThrust to 1.11*((mass*g)/maxthrust).
+				set thrust to (tThrust).
+			}
+			
+			PRINT "P-ST: "+profile_stage at (30,2).
 		}
 
 		set thrust to (tThrust).
@@ -366,89 +412,92 @@ if alt:radar < 200
 		log_data (vel).
 	}.
 
-	// --------------------------------------------------------------------------------------------
-	SAS OFF.
-	CLEARSCREEN.
-	PRINT " ".PRINT " ".
-	update_phase_title("[5] ASCENT",1,false).
-	set thrust to 1.
-	set x to 0.
-	RCS OFF.
-	set Vs2 to 0.
-	set phase to 0.
-	SET NAVMODE TO "ORBIT".
-
-	// After 30km, the effects of drag are minimal so thrust to 100% and Burn until MECO1:
-	PRINT "mass: " 				at (0,4).
-	PRINT "thrust: " 			at (0,5).
-	PRINT "apoapsis: " 			at (0,6).
-	PRINT "delta: " 			at (0,7).
-	PRINT "VERTICALSPEED: " 	at (0,8).
-	PRINT "mphase: " 			at (0,9).
-	PRINT "phase: " 			at (0,10).
-	PRINT "deltaReduction: " 	at (0,11).
-	
-	LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
-	// LOOP: ASCENT:
-	// --------------------------------------------------------------------------------------------
-	until (Vs2 >= MECO1) or (apoapsis >= FINAL_ORBIT2) or phase = 3 //(Reusable) or (Non Reusable Mission) or (on stage-2 burn)
+	if vehicle_type <> "SN11-Profile1" 
 	{
-		set delta to set_max_delta_curve().
-		steering_falcon(90-delta).
+		// --------------------------------------------------------------------------------------------
+		SAS OFF.
+		CLEARSCREEN.
+		PRINT " ".PRINT " ".
+		update_phase_title("[5] ASCENT",1,false).
+		set thrust to 1.
+		set x to 0.
+		RCS OFF.
+		set Vs2 to 0.
+		set phase to 0.
+		SET NAVMODE TO "ORBIT".
 
-		set vorb to velocity:orbit.
-		set Vsx to vorb:x.
-		set Vsy to vorb:y.
-		set Vsz to vorb:z.
-		set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).
+		// After 30km, the effects of drag are minimal so thrust to 100% and Burn until MECO1:
+		PRINT "mass: " 				at (0,4).
+		PRINT "thrust: " 			at (0,5).
+		PRINT "apoapsis: " 			at (0,6).
+		PRINT "delta: " 			at (0,7).
+		PRINT "VERTICALSPEED: " 	at (0,8).
+		PRINT "mphase: " 			at (0,9).
+		PRINT "phase: " 			at (0,10).
+		PRINT "deltaReduction: " 	at (0,11).
 		
-		if vehicle_company = "SpaceX"
-			PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,3).
-			
-		PRINT ROUND(mass)+" t   " 			 at (22,4).
-		PRINT thrust*100+" %   " 			 at (22,5).
-		PRINT ROUND(apoapsis/1000)+" km    " at (22,6).
-		PRINT ROUND(delta)+"    " 			 at (22,7).
-		PRINT ROUND(VERTICALSPEED)+" m/s   " at (22,8).
-		PRINT mphase 						 at (22,9).
-		PRINT phase 						 at (22,10).
-		PRINT deltaReduction 				 at (22,11).
-		
-		if (Aceleration_value1 > 30)
+		LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
+		// LOOP: ASCENT:
+		// --------------------------------------------------------------------------------------------
+		until (Vs2 >= MECO1) or (apoapsis >= FINAL_ORBIT2) or phase = 3 //(Reusable) or (Non Reusable Mission) or (on stage-2 burn)
 		{
-			if (mphase = 2) 
+			set delta to set_max_delta_curve().
+			steering_falcon(90-delta).
+
+			set vorb to velocity:orbit.
+			set Vsx to vorb:x.
+			set Vsy to vorb:y.
+			set Vsz to vorb:z.
+			set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).
+			
+			if vehicle_company = "SpaceX"
+				PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,3).
+				
+			PRINT ROUND(mass)+" t   " 			 at (22,4).
+			PRINT thrust*100+" %   " 			 at (22,5).
+			PRINT ROUND(apoapsis/1000)+" km    " at (22,6).
+			PRINT ROUND(delta)+"    " 			 at (22,7).
+			PRINT ROUND(VERTICALSPEED)+" m/s   " at (22,8).
+			PRINT mphase 						 at (22,9).
+			PRINT phase 						 at (22,10).
+			PRINT deltaReduction 				 at (22,11).
+			
+			if (Aceleration_value1 > 30)
 			{
-				//PRINT "( Throttle down to avoid stress on vehicle )" at (0,11).
-				set mphase to 3. // Acceleration Relation... to avoid stress on vehicle.
+				if (mphase = 2) 
+				{
+					//PRINT "( Throttle down to avoid stress on vehicle )" at (0,11).
+					set mphase to 3. // Acceleration Relation... to avoid stress on vehicle.
+				}
+				set thrust to (thrust-deltaReduction).
 			}
-			set thrust to (thrust-deltaReduction).
+			
+			if vehicle_type = "F1-M1" or 
+			   vehicle_sub_type = "Falcon Heavy LEM" or
+			   vehicle_type = "SaturnV"
+				check_fairing_sep().
+
+			set vel to SQRT(Vs2).
+			update_atmosphere (altitude, vel).
+			log_data (vel).
+			check_if_we_need_new_stage().
+		}.		
+
+		RCS ON.
+		SAS OFF.
+		if SHIP_NAME <> "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" and 
+		  SHIP_NAME <> "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2" and
+		  vehicle_type <> "SaturnV"
+		{ 
+			set thrust to 0.01.
+			WAIT 1.
 		}
-		
-		if vehicle_type = "F1-M1" or 
-		   vehicle_sub_type = "Falcon Heavy LEM" or
-		   vehicle_type = "SaturnV"
-			check_fairing_sep().
-
-		set vel to SQRT(Vs2).
-		update_atmosphere (altitude, vel).
-		log_data (vel).
-		check_if_we_need_new_stage().
-	}.		
-
-	RCS ON.
-	SAS OFF.
-    if SHIP_NAME <> "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" and 
-      SHIP_NAME <> "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2" and
-	  vehicle_type <> "SaturnV"
-    { 
-	    set thrust to 0.01.
-	    WAIT 1.
-    }
+	}
 }
 
 //F9/FH: STAGE-1/BOOSTER SEP
 // --------------------------------------------------------------------------------------------
-if altitude*1.1 < FINAL_ORBIT2 
+if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN11-Profile1" 
 {
 	CLEARSCREEN.
 	PRINT " ".PRINT " ".
@@ -697,3 +746,5 @@ if altitude*1.1 < FINAL_ORBIT2
 
 set warp to 0.
 wait 2.
+LOG   "END: Launch-Orbit.c" to log.txt.
+LOG   "-------------------" to log.txt.

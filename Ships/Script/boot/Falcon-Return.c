@@ -15,11 +15,12 @@
 // INIT:
 // --------------------------------------------------------------------------------------------
 SET thrust TO 0.
-lock throttle to thrust.
+if vehicle_type <> "SN11-Profile1"
+	lock throttle to thrust.
 
 set TOTAL_PARTS to 0.
 FOR P IN SHIP:PARTS
-	SET TOTAL_PARTS to TOTAL_PARTS + 1.
+SET TOTAL_PARTS to TOTAL_PARTS + 1.
 
 // --------------------------------------------------------------------------------------------
 function boostback_burn
@@ -52,34 +53,46 @@ function boostback_burn
 			SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
 		} else
 			steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset, do_reverse).
-
-		if(impactDist < 5000)
+			
+		PRINT_STATUS (3). //impactDist
+		
+		if vehicle_type <> "SN11-Profile1"
 		{
-			PRINT "OP3: impactDist < 3km   " at (0,2).
-				SET thrust TO 0.025.	// 0.0025. Near? for high precision, do it in lower thrust
-			RCS ON.
-			if STAGE_1_TYPE = "SLAVE" and impactDist < 2500
+			if(impactDist < 5000)
+			{
+				PRINT "OP3: impactDist < 3km   " at (0,2).
+					SET thrust TO 0.025.	// 0.0025. Near? for high precision, do it in lower thrust
+				RCS ON.
+				if STAGE_1_TYPE = "SLAVE" and impactDist < 2500
+				{
+					SET thrust TO 0.
+					LOG  "SLAVE:[we_are_done] " to LOG.txt.
+					set we_are_done to TRUE.
+				}
+			}else if(impactDist < 10000){
+				PRINT "OP2: impactDist < 10km  " at (0,2).
+				SET thrust TO 0.1.
+			}else{
+				PRINT "OP1: impactDist > 10km   " at (0,2).
+				SET thrust TO 1.	// Faraway? all seconds count do it ASAP
+			}
+
+			if (do_reverse)
+			{
+				if (impactDist < 1000) and SHIP:GROUNDSPEED < do_reverse_max_speed or (SHIP:GROUNDSPEED < 350 and impactDist > prev_impactDist)
+					break.
+			}else{
+				if impactDist > prev_impactDist and impactDist < 10000
+					break.
+			}
+		} else {
+			if impactDist > prev_impactDist and impactDist < 500
 			{
 				SET thrust TO 0.
-				LOG  "SLAVE:[we_are_done] " to LOG.txt.
+				LOG  "SS:[we_are_done] " to LOG.txt.
 				set we_are_done to TRUE.
+				break.			
 			}
-		}else if(impactDist < 10000){
-			PRINT "OP2: impactDist < 10km  " at (0,2).
-			SET thrust TO 0.1.
-		}else{
-			PRINT "OP1: impactDist > 10km   " at (0,2).
-			SET thrust TO 1.	// Faraway? all seconds count do it ASAP
-		}
-		
-		PRINT_STATUS (3). //impactDist
-		if (do_reverse)
-		{
-			if (impactDist < 1000) and SHIP:GROUNDSPEED < do_reverse_max_speed or (SHIP:GROUNDSPEED < 350 and impactDist > prev_impactDist)
-				break.
-		}else{
-			if impactDist > prev_impactDist and impactDist < 10000
-				break.
 		}
 	}
 	
@@ -95,8 +108,8 @@ function boostback_burn
 		reboot.
 	}
 
-	// update_phase_title("BOOSTBACK BURN END", 0, false).
-	// LOG  STAGE_1_TYPE + " " + we_are_done + " - boostback_burn() - END" to LOG.txt.
+	update_phase_title("BOOSTBACK BURN END", 0, false).
+	LOG  STAGE_1_TYPE + " " + we_are_done + " - boostback_burn() - END" to LOG.txt.
 }
 
 // --------------------------------------------------------------------------------------------
@@ -298,7 +311,10 @@ function aerodynamic_guidance
 		{
 			SAS OFF.
 			updateHoverSteering().
-			steerToTarget(steeringPitch, 0, 0, true).
+			// if vehicle_type = "SN11-Profile1"
+				// steerToTarget(90, 0, 0, true).
+			// else
+				steerToTarget(steeringPitch, 0, 0, true).
 		}
 			
 		SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
@@ -376,10 +392,24 @@ function touchdown
 	SET step to TRUE.
 	set checkgear to 0.
 	LOCK STEERING TO HEADING(steeringDir, steeringVdeg, steeringVroll).
+	set t to 1. //init
+	
+	set final_kiss to 0.01.
+	if vehicle_type = "SN11-Profile1"
+	{
+		set final_kiss to 1.25.
+		//sn11_test_profile_deactivate_engine1().
+	}
+	
 	until (SHIP:STATUS="LANDED" or sBurnDist <= 0.1) and alt:radar < 100
 	{
 		PRINT_STATUS (3, t). 
-		
+	
+		if vehicle_type = "SN11-Profile1"
+			set ALT_RADAR to (alt:radar-35).
+		else
+			set ALT_RADAR to (alt:radar-30).
+			
 		if alt:radar > 650 and (impactDist < 150) and SHIP:GROUNDSPEED < 5 and Verticalspeed > -25
 		{
 			set thrust to 0.01. // we are too high! we need to gain vertical speed a bit 
@@ -391,7 +421,7 @@ function touchdown
 			set checkgear to 1.
 		}
 			
-		if (alt:radar-30) < 250 and LandingTarget:DISTANCE > 100
+		if ALT_RADAR < 250 and LandingTarget:DISTANCE > 100
 			set rate to steeringPitch.	//FAST correction
 		else
 			set rate to 80.				//MEDIUM correction
@@ -399,7 +429,7 @@ function touchdown
 		if GROUNDSPEED < 5 and impactDist < 50
 			set rate to 85.				//SLOW correction
 
-		if (alt:radar-30) < 30
+		if ALT_RADAR < 30
 			set rate to 89.9.			//"zero" correction
 			
 		updateHoverSteering().
@@ -412,7 +442,7 @@ function touchdown
 		else
 			set t to error*((1000*SHIP:MASS*g)/maxthrust)/maxthrust.
 		
-		setHoverDescendSpeed(0.01+((alt:radar-30)/7.5),t).
+		setHoverDescendSpeed(final_kiss+(ALT_RADAR/7.5),t).
 	}
 }
 
@@ -516,7 +546,8 @@ function main_falcon_return
 		WAIT 0.1.
 		PRINT_STATUS (3).
 	}
-	activateMainVessel(). //Better switch out of ATM
+	if vehicle_type <> "SN11-Profile1" 
+		activateMainVessel(). //Better switch out of ATM
 			
 	guide_falcon_core().
 	

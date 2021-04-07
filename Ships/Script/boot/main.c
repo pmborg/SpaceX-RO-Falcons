@@ -76,40 +76,46 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		
 		if (BODY:name = mission_origin) and (apoapsis < LEOrbit or periapsis < body:atm:height) or orbit_type = "GSO" or vehicle_type = "Crew Dragon 2"
 		{
-			if KUniverse:ActiveVessel <> SHIP {
-				update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
-				UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
+			if vehicle_type <> "SN11-Profile1"
+			{
+				if KUniverse:ActiveVessel <> SHIP {
+					update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
+					UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
+				}
+				if body:atm:height > 0
+					RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
+				else
+					RUNPATH( "boot/Launch-Circularize.c", apoapsis ).
 			}
-			if body:atm:height > 0
-				RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
-			else
-				RUNPATH( "boot/Launch-Circularize.c", apoapsis ).
 		} else
 			LOG  "SKIP: Launch-Circularize" to LOG.txt.
 	} else
 		LOG  "SKIP: Launch" to LOG.txt.
 
 	// Adjust mission inclination?
-	if NOT EXISTS("normal.txt")
-		change_inclination().
-	else
-		LOG  "SKIP: Normal" to LOG.txt.
+	if vehicle_type <> "SN11-Profile1" 
+	{
+		if NOT EXISTS("normal.txt")
+			change_inclination().
+		else
+			LOG  "SKIP: Normal" to LOG.txt.
 
-	//ACTION: BURN ----------------------------------------------------
-	if STATUS = "ORBITING" and apoapsis > body:atm:height and periapsis > body:atm:height and BODY:name = mission_origin
-		if BODY:name <> mission_target:name 
-		{
-			CLEARSCREEN. print " ". print " ".
-			update_phase_title("MAIN STAGE", 0, false).
-			if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
-			if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
-			if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
+		//ACTION: BURN ----------------------------------------------------
+		if STATUS = "ORBITING" and apoapsis > body:atm:height and periapsis > body:atm:height and BODY:name = mission_origin
+			if BODY:name <> mission_target:name 
+			{
+				CLEARSCREEN. print " ". print " ".
+				update_phase_title("MAIN STAGE", 0, false).
+				if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
+				if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
+				if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
 
-			runpath("boot/BURN.c").
-		}
-	else
-		LOG  "SKIP: BURN" to LOG.txt.
-
+				runpath("boot/BURN.c").
+			}
+		else
+			LOG  "SKIP: BURN" to LOG.txt.
+	}
+	
 	if BODY:name = mission_target:name and not EXISTS("lem.txt")
 	{
 		if vehicle_type = "SaturnV"
@@ -153,68 +159,73 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 	}
 
 	//ACTION: Break & LAND! -------------------------------------------
-	if status <> "LANDED" and status <> "SPLASHED"
+	if vehicle_type <> "SN11-Profile1" 
 	{
-		if EXISTS("CIRCULARIZE.txt")
-			RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
-
-		if KUniverse:ActiveVessel <> SHIP {
-			update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
-			UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
-		}
-		CLEARSCREEN. print " ". print " ".
-		RCS OFF.
-		SAS OFF.
-		LOCK STEERING TO SHIP:prograde.
-		wait 1.
-		update_phase_title("Mission Command", 0, false).
-		PRINT "Press: 1 - Abort/Land Anywhere!". 
-		PRINT "Press: 2 - Circularize(or Stablize ST-2)". 
-		if vehicle_type <> "Crew Dragon 2"
-			PRINT "Press: 3 - Stage: Customer Payload". 
-		else
-			PRINT "Press: 4 - Deorbit". 
-		PRINT "Press: 5 - Change Inclination".
-		set ch to terminal:input:getchar(). PRINT "selected: "+ch.
-		if ch="1" or ch =""  {
-			CLEARSCREEN. print " ". print " ".
-			update_phase_title("Confirm: SPEED-BREAK?", 0, false).
-			PRINT "Confirm: SPEED-BREAK? (y/n)". set ch to terminal:input:getchar().
-			if (ch = "y" OR ch = "Y")
-				RUNPATH( "boot/PhaseII-Break.c", mission_target ).	 // Burn Capture & Burn Circularize: [NOW5]
-			
-			RUNPATH( "boot/PhaseIII-Land.c" ).  	// Auto-Land / Touch-Down
-		}
-		else if ch="2" {
-			if body:atm:height > 0
+		if status <> "LANDED" and status <> "SPLASHED"
+		{
+			if EXISTS("CIRCULARIZE.txt")
 				RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
-			else
-				RUNPATH( "boot/Launch-Circularize.c", apoapsis ).
-			reboot.
-		}
-		else if ch="3" {
-			//SEND PROCESSOR ID TO BOOSTER
-			IF PROCESSOR_STAGE2:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
-				{ PRINT "PROCESSOR_STAGE1: Message sent!". WAIT 1. }
-				
+
+			if KUniverse:ActiveVessel <> SHIP {
+				update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
+				UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
+			}
+			CLEARSCREEN. print " ". print " ".
 			RCS OFF.
 			SAS OFF.
-			LOCK STEERING TO prograde.
+			LOCK STEERING TO SHIP:prograde.
 			wait 1.
-			
-			stage. wait 1.
-			SAS ON. wait 1.
-			SET SASMODE TO "RADIALIN". wait 1.
-			AG4 ON.
-			CLEARSCREEN. print " ". print " ".
+			update_phase_title("Mission Command", 0, false).
+			PRINT "Press: 1 - Abort/Land Anywhere!". 
+			PRINT "Press: 2 - Circularize(or Stablize ST-2)". 
+			if vehicle_type <> "Crew Dragon 2"
+				PRINT "Press: 3 - Stage: Customer Payload". 
+			else
+				PRINT "Press: 4 - Deorbit". 
+			PRINT "Press: 5 - Change Inclination".
+			set ch to terminal:input:getchar(). PRINT "selected: "+ch.
+			if ch="1" or ch =""  {
+				CLEARSCREEN. print " ". print " ".
+				update_phase_title("Confirm: SPEED-BREAK?", 0, false).
+				PRINT "Confirm: SPEED-BREAK? (y/n)". set ch to terminal:input:getchar().
+				if (ch = "y" OR ch = "Y")
+					RUNPATH( "boot/PhaseII-Break.c", mission_target ).	 // Burn Capture & Burn Circularize: [NOW5]
+				
+				RUNPATH( "boot/PhaseIII-Land.c" ).  	// Auto-Land / Touch-Down
+			}
+			else if ch="2" {
+				if body:atm:height > 0
+					RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
+				else
+					RUNPATH( "boot/Launch-Circularize.c", apoapsis ).
+				reboot.
+			}
+			else if ch="3" {
+				//SEND PROCESSOR ID TO BOOSTER
+				IF PROCESSOR_STAGE2:CONNECTION:SENDMESSAGE(127) //127 = Boost wake-up!
+					{ PRINT "PROCESSOR_STAGE1: Message sent!". WAIT 1. }
+					
+				RCS OFF.
+				SAS OFF.
+				LOCK STEERING TO prograde.
+				wait 1.
+				
+				stage. wait 1.
+				SAS ON. wait 1.
+				SET SASMODE TO "RADIALIN". wait 1.
+				AG4 ON.
+				CLEARSCREEN. print " ". print " ".
+			}
+			else if ch="4" {
+				runpath("boot/stage-2-deorbit.c").
+			}
+			else if ch="5" {
+				if vehicle_type = "Crew Dragon 2" 
+					change_inclination (VESSEL("PMB ISS HT2 & TANTARES KSP1.10")).
+			}
 		}
-		else if ch="4" {
-			runpath("boot/stage-2-deorbit.c").
-		}
-		else if ch="5" {
-			if vehicle_type = "Crew Dragon 2" 
-				change_inclination (VESSEL("PMB ISS HT2 & TANTARES KSP1.10")).
-		}
+	} else {
+		RUNPATH( "boot/starship_lowentry_return.c").
 	}
 	
 	LOG  STAGE_1_TYPE+" REBOOT FOR RE-FUEL" to LOG.TXT.
