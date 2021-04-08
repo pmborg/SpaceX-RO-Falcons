@@ -15,3 +15,8 @@ xcopy /S /Y %KSPTEMP%\GameData\KatnisssCapeCanaveral GameData\KatnisssCapeCanave
 xcopy /S /Y %KSPTEMP%\GameData\RSS-Textures GameData\RSS-Textures
 xcopy /S /Y %KSPTEMP%\GameData\RSS-Tweaks GameData\RSS-Tweaks
 move Katniss.s.Cape.Canaveral.v1.2.2.zip %KSPTEMP%
+
+cd saves\InterStar
+ren *.sfs *.sfs.default
+ren *.loadmeta *.loadmeta.default
+ren *.option *.
