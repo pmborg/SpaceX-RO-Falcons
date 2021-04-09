@@ -77,12 +77,13 @@ if not exist buildID64.txt (
 	REM KIS-KAS:
 	REM ckan.exe install --headless --allow-incompatible --no-recommends KIS KAS
 
-	REM KOS:
-	ckan.exe install --headless --allow-incompatible --no-recommends KOS MechJeb2
+	REM KOS: (Use this stable version for now, once the new ones are generating several exceptions:)
+	ckan.exe install --headless --allow-incompatible --no-recommends KOS="1:1.2.1.0"
 
 	REM DEPS:
 	ckan.exe install --headless --allow-incompatible --no-recommends AnimatedDecouplers BackgroundResources FASA HeatControl KerbalEngineerRedux 
-	REM MechJeb2 AlternateResourcePanel TACLS WorldStabilizer
+	REM AlternateResourcePanel TACLS WorldStabilizer
+	ckan.exe install --headless --allow-incompatible --no-recommends MechJeb2
 	ckan.exe install --headless --allow-incompatible --no-recommends RetractableLiftingSurface SpaceXLaunchVehicles USITools SpaceXLegs
 	ckan.exe install --headless --allow-incompatible --no-recommends BDAnimationModules DockingPortAlignmentIndicator REPOSoftTech-Agencies TextureReplacer
 
