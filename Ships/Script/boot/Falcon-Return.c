@@ -86,7 +86,7 @@ function boostback_burn
 					break.
 			}
 		} else {
-			if impactDist > prev_impactDist and impactDist < 500
+			if impactDist > prev_impactDist and impactDist < 400
 			{
 				SET thrust TO 0.
 				LOG  "SS:[we_are_done] " to LOG.txt.

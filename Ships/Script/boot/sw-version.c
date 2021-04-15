@@ -12,8 +12,8 @@
 // --------------------------------------------------------------------------------------------
 LOG   "START: sw-version.c" to log.txt.
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
-//             #.YY.MM.DD
-set version_str to "SW-Ver: 1.06.04.11".
+//                          #.YY.MM.DD
+set version_str to "SW-Ver: 1.15.04.11".
 PRINT version_str at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:

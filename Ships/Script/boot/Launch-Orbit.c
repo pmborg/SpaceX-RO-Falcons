@@ -91,7 +91,8 @@ function main_liftoff
 
 		CLEARSCREEN. PRINT " ".PRINT " ".	
 		update_phase_title("[ ] IGNITION...", 0, false).
-		set thrust to 1. //ALL ENGINES: START IGNITION!
+		//if vehicle_type <> "SN11-Profile1"
+			set thrust to 1. //ALL ENGINES: START IGNITION!
 		
 		// --------------------------------------------------------------------------------------------
 		if vehicle_type = "Crew Dragon 2" or vehicle_type = "Falcon Heavy"
@@ -104,7 +105,8 @@ function main_liftoff
 		if vehicle_type = "Crew Dragon 2"
 			WAIT 1.										//CD2: TOWER+Liftoff
 		else {
-			WAIT 3.
+			if vehicle_type <> "SN11-Profile1"	
+				WAIT 3.
 			if vehicle_type = "SaturnV"
 				WAIT 5.									//SaturnV: 8 seconds total to reach max power
 			if (KUniverse:ActiveVessel = SHIP) STAGE.	//Liftoff
@@ -225,13 +227,14 @@ if alt:radar < 200
 	PRINT "q/Qmax" 				at (0,4).
 	set index2 to 6.
 
-	set thrust to 1.
+	if vehicle_type <> "SN11-Profile1"
+		set thrust to 1.
 
 	set profile_stage to 0.
 
 	// LOOP: UNTIL HALF Qmax
 	// --------------------------------------------------------------------------------------------
-	until q > Qmax*.50
+	until q > Qmax*.50  or profile_stage >= 1	// END CYCLE AT: qmax 50%
 	{ 
 		set H to altitude/(-5000).
 		set p to p0*(e^H).
@@ -239,7 +242,8 @@ if alt:radar < 200
 		
 		PRINT ROUND(Qmax) at (22,2).
 		PRINT ROUND(q) at (22,3).
-		PRINT ROUND(q/Qmax*100,2)+ " %       " at (22,4).
+		set q_qmax to q/Qmax*100.
+		PRINT ROUND(q_qmax,2)+ " %       " at (22,4).
 		if vehicle_company = "SpaceX"
 			PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,6).
 		
@@ -250,13 +254,39 @@ if alt:radar < 200
 				SAS ON.
 		}
 		else
-			PRINT "                    " at (0,5+index2).
+			if vehicle_type <> "SN11-Profile1"
+				PRINT "                    " at (0,5+index2).
 		
 		if alt:radar > 100 and vehicle_type = "SN11-Profile1"
 		{
-			set tThrust to 1.11*((mass*g)/maxthrust).
-			set thrust to (tThrust).
-			set q to q * 2. // END CYCLE AT: 25%
+			//Align performance with real telemetry data:
+			if (q_qmax < 11)
+				set thrust to 1.05*((mass*g)/maxthrust).
+			else if (q_qmax < 12)
+				set thrust to 1.04*((mass*g)/maxthrust).
+			else if (q_qmax < 13)
+				set thrust to 1.032*((mass*g)/maxthrust).
+			
+			set q to q * 2. // END CYCLE AT: qmax 25%
+			
+			if alt:radar > 3600 and profile_stage = 0
+			{
+				sn11_test_profile_deactivate_engine1().
+				set profile_stage to 1.
+				PRINT "( Shutdown 1st engine )" at (0,5+index2).
+			}
+			// if alt:radar > 8900 and profile_stage = 1
+			// {
+				// sn11_test_profile_deactivate_engine2().
+				// set profile_stage to 2.
+				// PRINT "( Shutdown 2nd engine )" at (0,5+index2).
+			// }
+			// if altitude >= 10000 and profile_stage = 2
+			// {
+				// set profile_stage to 3.
+				// PRINT "( Start Flip to Horizontal )" at (0,5+index2).
+			// }
+			PRINT "P-ST: "+profile_stage at (30,2).
 		}
 		
 		set vsurf to velocity:surface.
@@ -360,15 +390,25 @@ if alt:radar < 200
 			}
 		}
 
-		if vehicle_type = "SN11-Profile1" 
+		if vehicle_type = "SN11-Profile1"
 		{
-			if alt:radar > 4500 and profile_stage = 0
-			{
-				sn11_test_profile_deactivate_engine1().
-				set profile_stage to 1.
-				PRINT "( Shutdown 1st engine )" at (0,5+index2).
-			}
-			if apoapsis > 9100 and profile_stage = 1
+			//Align performance with real telemetry data:
+			// if (q_qmax < 11)
+				// set thrust to 1.05*((mass*g)/maxthrust).
+			// else if (q_qmax < 12)
+				// set thrust to 1.04*((mass*g)/maxthrust).
+			// else if (q_qmax < 13)
+				// set thrust to 1.032*((mass*g)/maxthrust).
+			
+			// set q to q * 2. // END CYCLE AT: qmax 25%
+			
+			// if alt:radar > 3600 and profile_stage = 0
+			// {
+				// sn11_test_profile_deactivate_engine1().
+				// set profile_stage to 1.
+				// PRINT "( Shutdown 1st engine )" at (0,5+index2).
+			// }
+			if alt:radar > 8900 and profile_stage = 1
 			{
 				sn11_test_profile_deactivate_engine2().
 				set profile_stage to 2.
@@ -379,16 +419,10 @@ if alt:radar < 200
 				set profile_stage to 3.
 				PRINT "( Start Flip to Horizontal )" at (0,5+index2).
 			}
-			
-			if alt:radar > 100 and vehicle_type = "SN11-Profile1"
-			{
-				set tThrust to 1.11*((mass*g)/maxthrust).
-				set thrust to (tThrust).
-			}
-			
 			PRINT "P-ST: "+profile_stage at (30,2).
+			set tThrust to 1.025*((mass*g)/maxthrust).
 		}
-
+		
 		set thrust to (tThrust).
 			
 		if delta <= -1 and x < 1 
