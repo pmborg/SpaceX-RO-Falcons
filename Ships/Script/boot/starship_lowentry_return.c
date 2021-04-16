@@ -1,3 +1,16 @@
+// --------------------------------------------------------------------------------------------
+// Filename: Launch-Orbit.c
+// --------------------------------------------------------------------------------------------
+// KOS Scripts for KSP to be used on SpaceX-RO-Falcons Mod (Pmborg RO Version) 
+// --------------------------------------------------------------------------------------------
+// Code by : Pmborg - https://forum.kerbalspaceprogram.com/index.php?/profile/198861-pmborg/
+// Beta load from: 	- https://www.dropbox.com/sh/jd1oh6d806iyat1/AABa7aXbiYDfv8G-aQ4MyR-ta?dl=0
+// Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
+// Purpose: 
+//              This code is to test the Starship Horizontal flight.
+// 16/Apr/2021
+// --------------------------------------------------------------------------------------------
+
 // Init Common:
 // --------------------------------------------------------------------------------------------
 LOG   "START: starship_lowentry_return.c" to log.txt.
@@ -40,7 +53,7 @@ SET thrust TO 0.
 
 // BELLY DOWN:
 // --------------------------------------------------------------------------------------------
-SET steeringVdeg to 2. //shipPitch.
+SET steeringVdeg to 1. //shipPitch.
 SET steeringDir TO -(90).		// W/E
 set steeringVroll to -180.		// -270 = Zero Rotation
 LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//steering_falcon(Vdeg).

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 09/Jan/2021
+// 16/Apr/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 LOG   "START: Launch-Orbit.c" to log.txt.
@@ -84,32 +84,35 @@ function main_liftoff
 	if (status = "PRELAUNCH" or status = "LANDED" or status = "SPLASHED") //KSP have so many bugs...
 	{
 		AG1 ON. //TOGGLE
-		if vehicle_company = "SpaceX" Print "(Release Tower Clamp)".
+		if vehicle_company = "SpaceX" and vehicle_type <> "SN11-Profile1"
+			Print "(Release Tower Clamp)".
 		
 		FROM {local countdown is 5.} UNTIL countdown = 0 STEP {SET countdown to countdown - 1.} 
 		DO { PRINT "..." + countdown. WAIT 1. }
 
 		CLEARSCREEN. PRINT " ".PRINT " ".	
 		update_phase_title("[ ] IGNITION...", 0, false).
-		//if vehicle_type <> "SN11-Profile1"
-			set thrust to 1. //ALL ENGINES: START IGNITION!
+		if vehicle_type = "SN11-Profile1"
+			set thrust to 0.875. //ALL ENGINES: START IGNITION!
+		else
+			set thrust to 1. 	//ALL ENGINES: START IGNITION!
 		
 		// --------------------------------------------------------------------------------------------
 		if vehicle_type = "Crew Dragon 2" or vehicle_type = "Falcon Heavy"
 			WAIT 1.
 			
 		if (KUniverse:ActiveVessel = SHIP) STAGE.		//TOWER
-		if vehicle_company = "SpaceX" 
+		if vehicle_company = "SpaceX" and vehicle_type <> "SN11-Profile1"
 			Print "(Strongback Retracted)".
 
 		if vehicle_type = "Crew Dragon 2"
 			WAIT 1.										//CD2: TOWER+Liftoff
 		else {
-			if vehicle_type <> "SN11-Profile1"	
-				WAIT 3.
+			WAIT 3.
 			if vehicle_type = "SaturnV"
-				WAIT 5.									//SaturnV: 8 seconds total to reach max power
-			if (KUniverse:ActiveVessel = SHIP) STAGE.	//Liftoff
+				WAIT 5.									//SaturnV: 3+5=8 seconds total to reach max power
+				
+			if (KUniverse:ActiveVessel = SHIP) STAGE.	//Liftoff Stage!
 		}
 	}
 }
@@ -143,11 +146,6 @@ function check_if_we_need_new_stage
 		do_stage().
 		engines_thrustlimit_to (100).	//Main Core back to 100% now
 	}
-	// if alt:radar > 1000 and SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2" and maxthrust < 10000 and stage:number = 6
-	// {
-		// do_stage().
-		// set phase to 3.
-	// }
 }
 
 // --------------------------------------------------------------------------------------------
@@ -260,12 +258,12 @@ if alt:radar < 200
 		if alt:radar > 100 and vehicle_type = "SN11-Profile1"
 		{
 			//Align performance with real telemetry data:
-			if (q_qmax < 11)
-				set thrust to 1.05*((mass*g)/maxthrust).
-			else if (q_qmax < 12)
-				set thrust to 1.04*((mass*g)/maxthrust).
-			else if (q_qmax < 13)
-				set thrust to 1.032*((mass*g)/maxthrust).
+			if alt:radar < 1000
+				set thrust to 1.0625*((mass*g)/maxthrust).
+			else //if (q_qmax < 12)
+				set thrust to 1.039*((mass*g)/maxthrust).
+			// else if (q_qmax < 13)
+				// set thrust to 1.031*((mass*g)/maxthrust).
 			
 			set q to q * 2. // END CYCLE AT: qmax 25%
 			
@@ -275,17 +273,7 @@ if alt:radar < 200
 				set profile_stage to 1.
 				PRINT "( Shutdown 1st engine )" at (0,5+index2).
 			}
-			// if alt:radar > 8900 and profile_stage = 1
-			// {
-				// sn11_test_profile_deactivate_engine2().
-				// set profile_stage to 2.
-				// PRINT "( Shutdown 2nd engine )" at (0,5+index2).
-			// }
-			// if altitude >= 10000 and profile_stage = 2
-			// {
-				// set profile_stage to 3.
-				// PRINT "( Start Flip to Horizontal )" at (0,5+index2).
-			// }
+
 			PRINT "P-ST: "+profile_stage at (30,2).
 		}
 		
@@ -392,35 +380,22 @@ if alt:radar < 200
 
 		if vehicle_type = "SN11-Profile1"
 		{
-			//Align performance with real telemetry data:
-			// if (q_qmax < 11)
-				// set thrust to 1.05*((mass*g)/maxthrust).
-			// else if (q_qmax < 12)
-				// set thrust to 1.04*((mass*g)/maxthrust).
-			// else if (q_qmax < 13)
-				// set thrust to 1.032*((mass*g)/maxthrust).
-			
-			// set q to q * 2. // END CYCLE AT: qmax 25%
-			
-			// if alt:radar > 3600 and profile_stage = 0
-			// {
-				// sn11_test_profile_deactivate_engine1().
-				// set profile_stage to 1.
-				// PRINT "( Shutdown 1st engine )" at (0,5+index2).
-			// }
 			if alt:radar > 8900 and profile_stage = 1
 			{
 				sn11_test_profile_deactivate_engine2().
 				set profile_stage to 2.
 				PRINT "( Shutdown 2nd engine )" at (0,5+index2).
 			}
-			if altitude >= 10000 and profile_stage = 2
+			if altitude >= 10100 and profile_stage = 2
 			{
 				set profile_stage to 3.
 				PRINT "( Start Flip to Horizontal )" at (0,5+index2).
 			}
 			PRINT "P-ST: "+profile_stage at (30,2).
-			set tThrust to 1.025*((mass*g)/maxthrust).
+			if profile_stage = 1 and alt:radar < 6000
+				set tThrust to 1.02*((mass*g)/maxthrust).
+			else
+				set tThrust to 1.025*((mass*g)/maxthrust).
 		}
 		
 		set thrust to (tThrust).
