@@ -77,6 +77,8 @@ AG5 OFF.
 // }
 
 activateAllEngines().
+if vehicle_type = "SN9-Profile1"
+	sn11_test_profile_deactivate_engine1().
 // SS-LAND:
 // --------------------------------------------------------------------------------------------
 aerodynamic_guidance().
