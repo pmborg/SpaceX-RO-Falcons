@@ -8,14 +8,14 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 16/Apr/2021
+// 17/Apr/2021
 // --------------------------------------------------------------------------------------------
 
 // --------------------------------------------------------------------------------------------
 // INIT:
 // --------------------------------------------------------------------------------------------
 SET thrust TO 0.
-if vehicle_type <> "SN11-Profile1"
+if vehicle_type <> "SN9-Profile1"
 	lock throttle to thrust.
 
 set TOTAL_PARTS to 0.
@@ -56,7 +56,7 @@ function boostback_burn
 			
 		PRINT_STATUS (3). //impactDist
 		
-		if vehicle_type <> "SN11-Profile1"
+		if vehicle_type <> "SN9-Profile1"
 		{
 			if(impactDist < 5000)
 			{
@@ -311,7 +311,7 @@ function aerodynamic_guidance
 		{
 			SAS OFF.
 			updateHoverSteering().
-			// if vehicle_type = "SN11-Profile1"
+			// if vehicle_type = "SN9-Profile1"
 				// steerToTarget(90, 0, 0, true).
 			// else
 				steerToTarget(steeringPitch, 0, 0, true).
@@ -395,7 +395,7 @@ function touchdown
 	set t to 1. //init
 	
 	set final_kiss to 0.01.
-	if vehicle_type = "SN11-Profile1"
+	if vehicle_type = "SN9-Profile1"
 	{
 		set final_kiss to 1.25.
 		//sn11_test_profile_deactivate_engine1().
@@ -405,7 +405,7 @@ function touchdown
 	{
 		PRINT_STATUS (3, t). 
 	
-		if vehicle_type = "SN11-Profile1"
+		if vehicle_type = "SN9-Profile1"
 			set ALT_RADAR to (alt:radar-35).
 		else
 			set ALT_RADAR to (alt:radar-30).
@@ -475,7 +475,10 @@ function after_landing
 		SET AFTER_LAND_TOTAL_PARTS to AFTER_LAND_TOTAL_PARTS + 1.
 
 	if TOTAL_PARTS = AFTER_LAND_TOTAL_PARTS and STATUS <> "SPLASHED"
-		PRINT "GRATZ: Another Booster landed safely!".
+		if vehicle_type = "SN9-Profile1"
+			PRINT "GRATZ: Another Starship landed safely!".
+		else
+			PRINT "GRATZ: Another Booster landed safely!".
 	else
 		PRINT "INTEGRITY: "+(AFTER_LAND_TOTAL_PARTS/TOTAL_PARTS)*100+"%".
 
@@ -546,7 +549,7 @@ function main_falcon_return
 		WAIT 0.1.
 		PRINT_STATUS (3).
 	}
-	if vehicle_type <> "SN11-Profile1" 
+	if vehicle_type <> "SN9-Profile1" 
 		activateMainVessel(). //Better switch out of ATM
 			
 	guide_falcon_core().

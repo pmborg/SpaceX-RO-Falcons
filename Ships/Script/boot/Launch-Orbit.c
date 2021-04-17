@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 16/Apr/2021
+// 17/Apr/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 LOG   "START: Launch-Orbit.c" to log.txt.
@@ -74,7 +74,7 @@ function main_liftoff
 		   vehicle_sub_type = "Falcon Heavy LEM" or 
 		   vehicle_type = "Crew Dragon 2" or
 		   vehicle_type = "SaturnV" or
-		   vehicle_type = "SN11-Profile1"
+		   vehicle_type = "SN9-Profile1"
 			SAS OFF.
 		else
 			SAS ON.
@@ -84,7 +84,7 @@ function main_liftoff
 	if (status = "PRELAUNCH" or status = "LANDED" or status = "SPLASHED") //KSP have so many bugs...
 	{
 		AG1 ON. //TOGGLE
-		if vehicle_company = "SpaceX" and vehicle_type <> "SN11-Profile1"
+		if vehicle_company = "SpaceX" and vehicle_type <> "SN9-Profile1"
 			Print "(Release Tower Clamp)".
 		
 		FROM {local countdown is 5.} UNTIL countdown = 0 STEP {SET countdown to countdown - 1.} 
@@ -92,7 +92,7 @@ function main_liftoff
 
 		CLEARSCREEN. PRINT " ".PRINT " ".	
 		update_phase_title("[ ] IGNITION...", 0, false).
-		if vehicle_type = "SN11-Profile1"
+		if vehicle_type = "SN9-Profile1"
 			set thrust to 0.875. //ALL ENGINES: START IGNITION!
 		else
 			set thrust to 1. 	//ALL ENGINES: START IGNITION!
@@ -102,7 +102,7 @@ function main_liftoff
 			WAIT 1.
 			
 		if (KUniverse:ActiveVessel = SHIP) STAGE.		//TOWER
-		if vehicle_company = "SpaceX" and vehicle_type <> "SN11-Profile1"
+		if vehicle_company = "SpaceX" and vehicle_type <> "SN9-Profile1"
 			Print "(Strongback Retracted)".
 
 		if vehicle_type = "Crew Dragon 2"
@@ -225,13 +225,14 @@ if alt:radar < 200
 	PRINT "q/Qmax" 				at (0,4).
 	set index2 to 6.
 
-	if vehicle_type <> "SN11-Profile1"
+	if vehicle_type <> "SN9-Profile1"
 		set thrust to 1.
 
 	set profile_stage to 0.
 
 	// LOOP: UNTIL HALF Qmax
 	// --------------------------------------------------------------------------------------------
+	set update_th to true.
 	until q > Qmax*.50  or profile_stage >= 1	// END CYCLE AT: qmax 50%
 	{ 
 		set H to altitude/(-5000).
@@ -247,32 +248,43 @@ if alt:radar < 200
 		
 		if alt:radar > 130 and alt:radar < 1000
 		{
-			PRINT "( Tower is cleared )" at (0,5+index2).
+			if vehicle_type <> "SN9-Profile1"
+				PRINT "( Tower is cleared )" at (0,5+index2).
 			if vehicle_type = "Crew Dragon 2"
 				SAS ON.
 		}
 		else
-			if vehicle_type <> "SN11-Profile1"
+			if vehicle_type <> "SN9-Profile1"
 				PRINT "                    " at (0,5+index2).
-		
-		if alt:radar > 100 and vehicle_type = "SN11-Profile1"
+				
+		//SS only:
+		if alt:radar > 100 and vehicle_type = "SN9-Profile1"
 		{
 			//Align performance with real telemetry data:
-			if alt:radar < 1000
-				set thrust to 1.0625*((mass*g)/maxthrust).
-			else //if (q_qmax < 12)
-				set thrust to 1.039*((mass*g)/maxthrust).
-			// else if (q_qmax < 13)
-				// set thrust to 1.031*((mass*g)/maxthrust).
-			
-			set q to q * 2. // END CYCLE AT: qmax 25%
+			if (update_th)
+			{
+				if alt:radar < 1000
+					set thrust to 1.0625*((mass*g)/maxthrust).
+				else
+					set thrust to 1.039*((mass*g)/maxthrust).
+			}
 			
 			if alt:radar > 3600 and profile_stage = 0
 			{
 				sn11_test_profile_deactivate_engine1().
-				set profile_stage to 1.
+				set profile_stage to 0.5.
 				PRINT "( Shutdown 1st engine )" at (0,5+index2).
+				set t_now to (TIME:SECONDS-TakeOffTime).
+				set update_th to false.
 			}
+
+			//Simulate the acc delay on Raptor engines:
+			if profile_stage = 0.5
+				if (TIME:SECONDS-TakeOffTime) > t_now+2
+				{
+					set update_th to true.
+					set profile_stage to 1.
+				}
 
 			PRINT "P-ST: "+profile_stage at (30,2).
 		}
@@ -348,7 +360,7 @@ if alt:radar < 200
 			set Weight to (mass*g)/0.01.		
 		}
 
-		if vehicle_type = "SN11-Profile1" //and profile_stage < 2
+		if vehicle_type = "SN9-Profile1" //and profile_stage < 2
 			set delta to -delta.
 			
 		steering_falcon(90-delta).
@@ -378,7 +390,8 @@ if alt:radar < 200
 			}
 		}
 
-		if vehicle_type = "SN11-Profile1"
+		//SS only:
+		if vehicle_type = "SN9-Profile1"
 		{
 			if alt:radar > 8900 and profile_stage = 1
 			{
@@ -386,16 +399,13 @@ if alt:radar < 200
 				set profile_stage to 2.
 				PRINT "( Shutdown 2nd engine )" at (0,5+index2).
 			}
-			if altitude >= 10100 and profile_stage = 2
+			if altitude >= 10600 and profile_stage = 2
 			{
 				set profile_stage to 3.
 				PRINT "( Start Flip to Horizontal )" at (0,5+index2).
 			}
 			PRINT "P-ST: "+profile_stage at (30,2).
-			if profile_stage = 1 and alt:radar < 6000
-				set tThrust to 1.02*((mass*g)/maxthrust).
-			else
-				set tThrust to 1.025*((mass*g)/maxthrust).
+			set tThrust to 1.036*((mass*g)/maxthrust).
 		}
 		
 		set thrust to (tThrust).
@@ -421,7 +431,7 @@ if alt:radar < 200
 		log_data (vel).
 	}.
 
-	if vehicle_type <> "SN11-Profile1" 
+	if vehicle_type <> "SN9-Profile1" 
 	{
 		// --------------------------------------------------------------------------------------------
 		SAS OFF.
@@ -506,7 +516,7 @@ if alt:radar < 200
 
 //F9/FH: STAGE-1/BOOSTER SEP
 // --------------------------------------------------------------------------------------------
-if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN11-Profile1" 
+if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" 
 {
 	CLEARSCREEN.
 	PRINT " ".PRINT " ".

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to test the Starship Horizontal flight.
-// 16/Apr/2021
+// 17/Apr/2021
 // --------------------------------------------------------------------------------------------
 
 // Init Common:
@@ -53,7 +53,7 @@ SET thrust TO 0.
 
 // BELLY DOWN:
 // --------------------------------------------------------------------------------------------
-SET steeringVdeg to 1. //shipPitch.
+SET steeringVdeg to 3. //shipPitch.
 SET steeringDir TO -(90).		// W/E
 set steeringVroll to -180.		// -270 = Zero Rotation
 LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//steering_falcon(Vdeg).
