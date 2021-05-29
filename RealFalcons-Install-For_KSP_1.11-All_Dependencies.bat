@@ -153,6 +153,10 @@ if not exist buildID64.txt (
 
 	echo set kspver to 1.11. > Ships\Script\kspver.c.
 
+	REM Filter RO ships:
+	mkdir Ships\VAB.all
+	move Ships\VAB\*.* Ships\VAB.all
+
 	echo.
 	echo "Installation ended."
 	echo "Please keep KOS at this version (1:1.2.1.0), and for future updates run scipt: RealFalcons-AUTO-Update.bat"
