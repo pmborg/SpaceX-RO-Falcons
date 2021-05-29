@@ -52,7 +52,7 @@ if not exist buildID64.txt (
 	ckan.exe install --headless --allow-incompatible --no-recommends Kopernicus-BE
 
 	REM General Base Stuff:
-	ckan.exe install --headless --allow-incompatible --no-recommends CraftManager KSP-AVC HangerExtenderExtended MoarFEConfigs DraggableNavball
+	ckan.exe install --headless --allow-incompatible --no-recommends CraftManager KerbalXMod HangerExtenderExtended MoarFEConfigs DraggableNavball
 
 	ckan.exe install --headless --allow-incompatible --no-recommends BetterCrewAssignment KerbalAlarmClock Trajectories PatchManager 
 	ckan.exe install --headless --allow-incompatible --no-recommends AmpYearPowerManager DMagicScienceAnimate 
@@ -75,7 +75,7 @@ if not exist buildID64.txt (
 	ckan.exe install --headless --allow-incompatible --no-recommends DynamicBatteryStorage ShipEffectsContinued EnvironmentalVisualEnhancements
 
 	REM not used:
-	REM KerbalXMod
+	REM KSP-AVC
 	REM VesselMoverContinued DraggableAltimeter AntennaHelper
 	REM EasyVesselSwitch SCANsat DockingCamKURS 
 	REM ckan.exe install --headless --allow-incompatible --no-recommends KIS KAS
@@ -145,6 +145,8 @@ if not exist buildID64.txt (
 	move GameData\FerramAerospaceResearch %NONEED%
 	move GameData\AJE %NONEED%
 	move GameData\EngineGroupController %NONEED%
+	move GameData\EngineGroupController %NONEED%
+	REM move GameData\KXAPI %NONEED%
 
 	echo set kspver to 1.11. > Ships\Script\kspver.c.
 
