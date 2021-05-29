@@ -48,15 +48,15 @@ if not exist buildID64.txt (
 	echo "Get CKAN Latest Version"
 	powershell -command "& { $latestRelease = (Invoke-WebRequest https://github.com/KSP-CKAN/CKAN/releases/latest -Headers @{'Accept'='application/json'}) ; $json = $latestRelease.Content | ConvertFrom-Json ; $LATESTVERSION = $json.tag_name ; iwr https://github.com/KSP-CKAN/CKAN/releases/download/$LATESTVERSION/ckan.exe -OutFile ckan.exe }"
 
-	REM Install Special Kopernicus dev branch for KSP1.10.1:
+	REM Install Special Kopernicus dev branch for KSP1.10.1 and KSP1.11.x:
 	ckan.exe install --headless --allow-incompatible --no-recommends Kopernicus-BE
 
 	REM General Base Stuff:
-	ckan.exe install --headless --allow-incompatible --no-recommends KerbalXMod CraftManager KSP-AVC HangerExtenderExtended MoarFEConfigs DraggableNavball
-	REM VesselMoverContinued DraggableAltimeter AntennaHelper
+	ckan.exe install --headless --allow-incompatible --no-recommends CraftManager KSP-AVC HangerExtenderExtended MoarFEConfigs DraggableNavball
+
 	ckan.exe install --headless --allow-incompatible --no-recommends BetterCrewAssignment KerbalAlarmClock Trajectories PatchManager 
 	ckan.exe install --headless --allow-incompatible --no-recommends AmpYearPowerManager DMagicScienceAnimate 
-	REM EasyVesselSwitch SCANsat DockingCamKURS 
+
 	ckan.exe install --headless --allow-incompatible --no-recommends CommunityTechTree 
 	ckan.exe install --headless --allow-incompatible --no-recommends B9PartSwitch KSP-Recall 
 	ckan.exe install --headless --allow-incompatible --no-recommends KerbalJointReinforcementContinued
@@ -74,15 +74,18 @@ if not exist buildID64.txt (
 	ckan.exe install --headless --allow-incompatible --no-recommends Scatterer Scatterer-config Scatterer-sunflare
 	ckan.exe install --headless --allow-incompatible --no-recommends DynamicBatteryStorage ShipEffectsContinued EnvironmentalVisualEnhancements
 
-	REM KIS-KAS:
+	REM not used:
+	REM KerbalXMod
+	REM VesselMoverContinued DraggableAltimeter AntennaHelper
+	REM EasyVesselSwitch SCANsat DockingCamKURS 
 	REM ckan.exe install --headless --allow-incompatible --no-recommends KIS KAS
-
+	REM AlternateResourcePanel TACLS WorldStabilizer
+	
 	REM KOS: (Use this stable version for now, once the new ones are generating several exceptions:)
 	ckan.exe install --headless --allow-incompatible --no-recommends KOS="1:1.2.1.0"
 
 	REM DEPS:
 	ckan.exe install --headless --allow-incompatible --no-recommends AnimatedDecouplers BackgroundResources FASA HeatControl KerbalEngineerRedux 
-	REM AlternateResourcePanel TACLS WorldStabilizer
 	ckan.exe install --headless --allow-incompatible --no-recommends MechJeb2
 	ckan.exe install --headless --allow-incompatible --no-recommends RetractableLiftingSurface SpaceXLaunchVehicles USITools SpaceXLegs
 	ckan.exe install --headless --allow-incompatible --no-recommends BDAnimationModules DockingPortAlignmentIndicator REPOSoftTech-Agencies TextureReplacer
@@ -93,9 +96,7 @@ if not exist buildID64.txt (
 	REM ADD StarShip
 	ckan.exe install --headless --allow-incompatible --no-recommends AT-Utils Waterfall TundraExploration
 
-	REM pause
-
-REM INSTALL: ISS (International SpaceStation) Dep-1:
+	REM INSTALL: ISS (International SpaceStation) Dep-1:
 	set KSPTEMP=%TEMP%\ksp~%RANDOM%.tmp
 	MKDIR %KSPTEMP%
 	
@@ -130,13 +131,6 @@ REM INSTALL: ISS (International SpaceStation) Dep-1:
 	xcopy /S /Y %KSPTEMP%\GameData\ModularFlightIntegrator GameData\ModularFlightIntegrator
 	move KopernicusBE.zip %KSPTEMP%
 
-	REM INSTALL: EVO HIGH:
-	REM powershell -command "& { iwr https://github.com/Its-Just-Luci/EVO/releases/download/Alpha-v0.2a/EVO-32k.Alpha.v0.2.zip -OutFile EVO.zip }"
-	REM powershell.exe -NoP -NonI -Command "Expand-Archive 'EVO.zip' '%KSPTEMP%'"
-	REM mkdir GameData\EVO
-	REM xcopy /S %KSPTEMP%\EVO GameData\EVO
-	REM move EVO.zip %KSPTEMP%
-
 	REM ...OR... INSTALL: EVO ULTRA:
 	powershell -command "& { iwr https://github.com/Its-Just-Luci/EVO/releases/download/Alpha-v0.2a/EVO-64k.Alpha.v0.2.zip -OutFile EVO.zip }"
 	powershell.exe -NoP -NonI -Command "Expand-Archive 'EVO.zip' '%KSPTEMP%'"
@@ -152,10 +146,11 @@ REM INSTALL: ISS (International SpaceStation) Dep-1:
 	move GameData\AJE %NONEED%
 	move GameData\EngineGroupController %NONEED%
 
-	REM FIX: TrajectoriesMod for KSP 1.11
-	REM copy /Y GameData\Trajectories\Plugin\Trajectories110.bin GameData\Trajectories\Plugin\Trajectories111.bin
-	
 	echo set kspver to 1.11. > Ships\Script\kspver.c.
+
+	echo.
+	echo "Installation ended."
+	echo "Please keep KOS at this version (1:1.2.1.0), and for future updates run scipt: RealFalcons-AUTO-Update.bat"
 	PAUSE
 :No
 	EXIT
