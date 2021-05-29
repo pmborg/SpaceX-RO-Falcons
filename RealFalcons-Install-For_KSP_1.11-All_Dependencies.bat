@@ -130,16 +130,19 @@ REM INSTALL: ISS (International SpaceStation) Dep-1:
 	xcopy /S /Y %KSPTEMP%\GameData\ModularFlightIntegrator GameData\ModularFlightIntegrator
 	move KopernicusBE.zip %KSPTEMP%
 
-	REM INSTALL: Katniss.s.Cape.Canaveral (this will be an option)
-	REM powershell -command "& { iwr https://github.com/Katniss218/KatnisssCapeCanaveral/releases/download/1.2.2/Katniss.s.Cape.Canaveral.v1.2.2.zip -OutFile Katniss.s.Cape.Canaveral.v1.2.2.zip }"
-	REM powershell.exe -NoP -NonI -Command "Expand-Archive 'Katniss.s.Cape.Canaveral.v1.2.2.zip' '%KSPTEMP%'"
-	REM mkdir GameData\KatnisssCapeCanaveral
-	REM mkdir GameData\RSS-Textures
-	REM mkdir GameData\RSS-Tweaks
-	REM xcopy /S /Y %KSPTEMP%\GameData\KatnisssCapeCanaveral GameData\KatnisssCapeCanaveral
-	REM xcopy /S /Y %KSPTEMP%\GameData\RSS-Textures GameData\RSS-Textures
-	REM xcopy /S /Y %KSPTEMP%\GameData\RSS-Tweaks GameData\RSS-Tweaks
-	REM move Katniss.s.Cape.Canaveral.v1.2.2.zip %KSPTEMP%
+	REM INSTALL: EVO HIGH:
+	REM powershell -command "& { iwr https://github.com/Its-Just-Luci/EVO/releases/download/Alpha-v0.2a/EVO-32k.Alpha.v0.2.zip -OutFile EVO.zip }"
+	REM powershell.exe -NoP -NonI -Command "Expand-Archive 'EVO.zip' '%KSPTEMP%'"
+	REM mkdir GameData\EVO
+	REM xcopy /S %KSPTEMP%\EVO GameData\EVO
+	REM move EVO.zip %KSPTEMP%
+
+	REM ...OR... INSTALL: EVO ULTRA:
+	powershell -command "& { iwr https://github.com/Its-Just-Luci/EVO/releases/download/Alpha-v0.2a/EVO-64k.Alpha.v0.2.zip -OutFile EVO.zip }"
+	powershell.exe -NoP -NonI -Command "Expand-Archive 'EVO.zip' '%KSPTEMP%'"
+	mkdir GameData\EVO
+	xcopy /S %KSPTEMP%\EVO GameData\EVO
+	move EVO.zip %KSPTEMP%
 
 	REM Move Not Needed/Incompatible Stuff to "NONEED" directory:
 	set NONEED=noneed~%RANDOM%.todelete
