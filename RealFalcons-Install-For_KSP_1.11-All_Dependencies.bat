@@ -96,6 +96,9 @@ if not exist buildID64.txt (
 	REM ADD StarShip
 	ckan.exe install --headless --allow-incompatible --no-recommends AT-Utils Waterfall TundraExploration
 
+	REM To show FPS (press F8 and drag it with mouse)
+	ckan.exe install --headless --allow-incompatible --no-recommends ShowFPS
+
 	REM INSTALL: ISS (International SpaceStation) Dep-1:
 	set KSPTEMP=%TEMP%\ksp~%RANDOM%.tmp
 	MKDIR %KSPTEMP%
