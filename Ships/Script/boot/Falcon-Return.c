@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 17/Apr/2021
+// 30/may/2021
 // --------------------------------------------------------------------------------------------
 
 // --------------------------------------------------------------------------------------------
@@ -146,15 +146,15 @@ function ReEntryburn
 			
 			if STAGE1_LAND_ON = "LAND" {
 				if impactDist > 2000
-					steerToTarget(steeringPitch, 0, 0). 				// Minor Correction
+					steerToTarget(steeringPitch, 0, 0). 	// Minor Correction
 				else
 					steerToTarget(85, 0, 0). 				// Minor Correction
 			} else {
 				if impactDist > 250
 				{
-					steerToTarget(steeringPitch, 0, 0). // Fast Correction
+					steerToTarget(steeringPitch, 0, 0). 	// Fast Correction
 				} else {
-					steerToTarget(82.5, 0, 0). 			// Slower Correction
+					steerToTarget(82.5, 0, 0). 				// Slower Correction
 				}
 			}
 		} 
@@ -430,7 +430,7 @@ function touchdown
 			set rate to 85.				//SLOW correction
 
 		if ALT_RADAR < 30
-			set rate to 89.9.			//"zero" correction
+			set rate to 89.9.			//Almost "zero" correction
 			
 		updateHoverSteering().
 		steerToTarget(rate).
@@ -443,6 +443,8 @@ function touchdown
 			set t to error*((1000*SHIP:MASS*g)/maxthrust)/maxthrust.
 		
 		setHoverDescendSpeed(final_kiss+(ALT_RADAR/7.5),t).
+		
+		wait 0.01.
 	}
 }
 

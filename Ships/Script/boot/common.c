@@ -9,8 +9,9 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Common lib of functions used by Falcon-Return.c
-// 01/Jan/2020
+// 30/may/2021
 // --------------------------------------------------------------------------------------------
+runpath("boot/atm.c").
 
 declare global landingAltitude TO LandingTarget:TERRAINHEIGHT.
 declare global coreAdjustLatOffset TO 0.
@@ -270,7 +271,15 @@ function PRINT_STATUS
 	PRINT "impactTime: "+ROUND(impactTime,1)+" s  " at (0, y+21).
 	PRINT "burnAlt: "+ROUND(burnAlt)+" m   " at (0, y+22).
 	PRINT "[t]: "+ROUND(t,2)+"   " at (0, y+23).
-	PRINT "Altitude: "+ROUND(ALTITUDE/1000,3)+" km " at (0, y+24).
+	
+	//Altitude and Speed:
+	set vsurf to velocity:surface.
+	set Vsx to vsurf:x.
+	set Vsy to vsurf:y.
+	set Vsz to vsurf:z.
+	set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).	
+	set vel to SQRT(Vs2).
+	display_speed_kmh (altitude, vel, y+24, 10).
 	
 	if KUniverse:ActiveVessel = SHIP
 		PRINT "*" at (43,1).

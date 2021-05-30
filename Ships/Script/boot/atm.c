@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used go get more realistic data from Planet Earth Atmosphere.
-// 21/Dez/2020
+// 30/may/2021
 // --------------------------------------------------------------------------------------------
 
 // --------------------------------------------------------------------------------------------
@@ -95,9 +95,10 @@ function display_speed_kmh
 	parameter h0.
 	parameter v0.
 	parameter indice.
+	parameter xpos is 22.
 	
-	PRINT "Altitude: "		 	at (0,indice+0).	PRINT ROUND(h0/1000,1)+" km   "		 	at (22,indice+0).
-	PRINT "Speed: "				at (0,indice+1).	PRINT ROUND(v0*3.6,1)+" km/h   "		at (22,indice+1).
+	PRINT "Altitude: "		 	at (0,indice+0).	PRINT ROUND(h0/1000,1)+" km   "		 	at (xpos,indice+0).
+	PRINT "Speed: "				at (0,indice+1).	PRINT ROUND(v0*3.6,1)+" km/h   "		at (xpos,indice+1).
 }
 
 // --------------------------------------------------------------------------------------------
