@@ -314,6 +314,10 @@ if alt:radar < 200
 	LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
 	
 	// LOOP: LAUNCH-Trusting:
+	set lat_correction to 0.
+	if vehicle_sub_type = "SN20-Profile"
+		set lat_correction to 5.
+
 	// --------------------------------------------------------------------------------------------
 	until altitude > 30000 or profile_stage >= 3
 	{
@@ -365,7 +369,7 @@ if alt:radar < 200
 		if vehicle_type = "SN9-Profile1"
 			set delta to -delta.
 			
-		steering_falcon(90-delta).
+		steering_falcon(90-delta, lat_correction).
 		
 		set tThrust to (Drag+ Weight)*error.
 		if  tThrust < 0.85 
@@ -460,7 +464,7 @@ if alt:radar < 200
 		until (Vs2 >= MECO1) or (apoapsis >= FINAL_ORBIT2) or phase = 3 //(Reusable) or (Non Reusable Mission) or (on stage-2 burn)
 		{
 			set delta to set_max_delta_curve().
-			steering_falcon(90-delta).
+			steering_falcon(90-delta, lat_correction).
 
 			set vorb to velocity:orbit.
 			set Vsx to vorb:x.
@@ -629,7 +633,7 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 	// --------------------------------------------------------------------------------------------
 	UNTIL periapsis > 0 and apoapsis < FINAL_ORBIT2
 	{
-		SET steeringDir TO 90.			// W/E
+		SET steeringDir TO 90+lat_correction.			// W/E
 		SET steeringVdeg to set_Vdeg().
 		set steeringVroll to -270.		// -270 = Zero Rotation
 		LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
@@ -704,7 +708,7 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 		else
 			SET steeringVdeg to set_Vdeg().
 		set steeringVroll to -270.			// Zero Rotation
-		SET steeringDir TO 90.	// W/E
+		SET steeringDir TO 90+lat_correction.			// W/E
 		//LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).//steering_falcon(Vdeg).
 		
 		set vorb to velocity:orbit.

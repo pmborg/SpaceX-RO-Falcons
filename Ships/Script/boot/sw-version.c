@@ -213,7 +213,7 @@ if vehicle_type = "StarShip"
 {
     // Data: SaturnV
     declare global Qmax     to 8140.///1.1.
-    declare global MECO1    to 2000^2.
+    declare global MECO1    to 1630^2.
     declare global FAIRSEP  to 110*1000.
 }else
 if vehicle_type = "SaturnV"

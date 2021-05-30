@@ -2,7 +2,7 @@ ship = Starship SN20
 version = 1.11.2
 description = 
 type = VAB
-size = 17.0530319,115.70636,14.5404177
+size = 17.0530319,115.706345,14.5404177
 steamPublishedFileId = 0
 persistentId = 636001204
 rot = 0,0,0,0
@@ -1327,9 +1327,6 @@ PART
 	modCost = 55.1823578
 	modMass = 27.2552261
 	modSize = 0,0,0
-	link = TE2.19.BFS.SL.RAPTOR_4290348964
-	link = TE2.19.BFS.SL.RAPTOR_4290348350
-	link = TE2.19.BFS.SL.RAPTOR_4290348038
 	link = TE2.19.SS.RF.R_4290326808
 	link = TE2.19.SS.RF.L_4290326536
 	link = TE2.21.SN.LEG_4290313570
@@ -1338,17 +1335,23 @@ PART
 	link = TE2.21.SN.LEG_4290310662
 	link = TE2.21.SN.LEG_4290310588
 	link = TE2.21.SN.LEG_4290310514
+	link = TE2.19.SS.RPTR.VAC_4292523532
+	link = TE2.19.SS.RPTR.VAC_4292522990
+	link = TE2.19.SS.RPTR.VAC_4292522860
+	link = TE2.19.BFS.SL.RAPTOR_4290348350
+	link = TE2.19.BFS.SL.RAPTOR_4292514654
+	link = TE2.19.BFS.SL.RAPTOR_4292514360
 	link = TE2.19.SH.Interstage_4293615696
 	attN = node_aft_1,Null_0_-2.16479492|-4.93898296|1.51536751_0.819152415|0|-0.573576331_-3.46367192|-7.90237284|2.42458797_0.819152415|0|-0.573576331
 	attN = node_aft_2,Null_0_-0.000366210938|-4.93898296|-2.64247513_0|0|1_-0.000585937523|-7.90237284|-4.22796011_0|0|1
 	attN = node_aft_3,Null_0_2.16479492|-4.93898487|1.51536751_-0.819152296|0|-0.573576808_3.46367192|-7.9023757|2.42458797_-0.819152296|0|-0.573576808
 	attN = node_top,TE2.21.SN8_4290357954_0|12.5593262|0_0|1.00000012|-1.1920929E-07_0|20.094923|0_0|1.00000012|-1.1920929E-07
-	attN = node_vac_1,Null_0_1.59521484|-3.80018091|-0.92098999_0|-1.00000012|-9.68575478E-08_2.55234385|-6.08028936|-1.47358406_0|-1.00000012|-9.68575478E-08
-	attN = node_vac_2,Null_0_-1.59521484|-3.80018091|-0.920991898_0|-1.00000012|-9.68575478E-08_-2.55234385|-6.08028936|-1.47358704_0|-1.00000012|-9.68575478E-08
-	attN = node_vac_3,Null_0_0|-3.800179|1.84201241_0|-1|0_0|-6.0802865|2.94721985_0|-1|0
-	attN = node_sl_1,TE2.19.BFS.SL.RAPTOR_4290348964_0|-4.32789946|-0.599990845_0|-1|0_0|-6.92463923|-0.959985375_0|-1|0
-	attN = node_sl_2,TE2.19.BFS.SL.RAPTOR_4290348038_0.519622803|-4.32789564|0.300018311_0|-1.00000012|-9.68575478E-08_0.83139652|-6.92463303|0.480029315_0|-1.00000012|-9.68575478E-08
-	attN = node_sl_3,TE2.19.BFS.SL.RAPTOR_4290348350_-0.519607544|-4.32789946|0.300018311_0|-1.00000012|-9.68575478E-08_-0.831372082|-6.92463923|0.480029315_0|-1.00000012|-9.68575478E-08
+	attN = node_vac_1,TE2.19.SS.RPTR.VAC_4292522990_1.59521484|-3.80018091|-0.92098999_0|-1.00000012|-9.68575478E-08_2.55234385|-6.08028936|-1.47358406_0|-1.00000012|-9.68575478E-08
+	attN = node_vac_2,TE2.19.SS.RPTR.VAC_4292522860_-1.59521484|-3.80018091|-0.920991898_0|-1.00000012|-9.68575478E-08_-2.55234385|-6.08028936|-1.47358704_0|-1.00000012|-9.68575478E-08
+	attN = node_vac_3,TE2.19.SS.RPTR.VAC_4292523532_0|-3.800179|1.84201241_0|-1|0_0|-6.0802865|2.94721985_0|-1|0
+	attN = node_sl_1,TE2.19.BFS.SL.RAPTOR_4292514654_0|-4.32789946|-0.599990845_0|-1|0_0|-6.92463923|-0.959985375_0|-1|0
+	attN = node_sl_2,TE2.19.BFS.SL.RAPTOR_4290348350_0.519622803|-4.32789564|0.300018311_0|-1.00000012|-9.68575478E-08_0.83139652|-6.92463303|0.480029315_0|-1.00000012|-9.68575478E-08
+	attN = node_sl_3,TE2.19.BFS.SL.RAPTOR_4292514360_-0.519607544|-4.32789946|0.300018311_0|-1.00000012|-9.68575478E-08_-0.831372082|-6.92463923|0.480029315_0|-1.00000012|-9.68575478E-08
 	attN = node_fin_left,TE2.19.SS.RF.L_4290326536_-3.20599413|-2.44902468|0_-1.00000012|-1.1920929E-07|-2.38418579E-07_-5.12959051|-3.91843963|0_-1.00000012|-1.1920929E-07|-2.38418579E-07
 	attN = node_fin_right,TE2.19.SS.RF.R_4290326808_3.20599413|-2.4490037|0_1|5.96046448E-08|0_5.12959051|-3.91840601|0_1|5.96046448E-08|0
 	attN = node_bottom,TE2.19.SH.Interstage_4293615696_0|-7.46000004|0_0|-1|0_0|-11.9359999|0_0|-1|0
@@ -1673,7 +1676,7 @@ PART
 		name = Refunding
 		isEnabled = True
 		active = True
-		OriginalCost = 29915.16762927399
+		OriginalCost = 29955.108714473656
 		stagingEnabled = True
 		EVENTS
 		{
@@ -1769,7 +1772,7 @@ PART
 			temperature = 90.1500015
 			fillable = True
 			techRequired = 
-			amount = 184347.36703794365
+			amount = 921736.82145476935
 			maxAmount = 921736.82145476935
 		}
 		TANK
@@ -1783,7 +1786,7 @@ PART
 			temperature = 111.449997
 			fillable = True
 			techRequired = 
-			amount = 51928.836482846069
+			amount = 259644.17854523059
 			maxAmount = 259644.17854523059
 		}
 		UPGRADESAPPLIED
@@ -1920,7 +1923,7 @@ PART
 	RESOURCE
 	{
 		name = LqdMethane
-		amount = 51928.836482846069
+		amount = 259644.17854523059
 		maxAmount = 259644.17854523059
 		flowState = True
 		isTweakable = True
@@ -1931,1195 +1934,13 @@ PART
 	RESOURCE
 	{
 		name = LqdOxygen
-		amount = 184347.36703794365
+		amount = 921736.82145476935
 		maxAmount = 921736.82145476935
 		flowState = True
 		isTweakable = True
 		hideFlow = False
 		isVisible = True
 		flowMode = Both
-	}
-}
-PART
-{
-	part = TE2.19.BFS.SL.RAPTOR_4290348964
-	partName = Part
-	persistentId = 1338596858
-	pos = 0.136875808,94.5469742,-1.12300503
-	attPos = 0,0,0
-	attPos0 = -3.55271453E-15,-4.92199898,-0.599990726
-	rot = 0,-0.707106829,0,0.707106829
-	attRot = 0,0,0,1
-	attRot0 = 0,0.707106829,0,-0.707106829
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 0
-	resPri = 0
-	dstg = 0
-	sidx = 0
-	sqor = 0
-	sepI = 0
-	attm = 0
-	sameVesselCollision = False
-	modCost = 5.25600052
-	modMass = 5.25600052
-	modSize = 0,0,0
-	attN = node_top,TE2.19.SS.Fuel.Tank_4290354762_0|0.594099998|0_0|1.00000012|-1.1920929E-07_0|0.950560033|0_0|1.00000012|-1.1920929E-07
-	attN = node_bottom,Null_0_0|-1.15799999|0_0|-1.00000012|-1.1920929E-07_0|-1.85280001|0_0|-1.00000012|-1.1920929E-07
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		ToggleSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		SetSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		RemoveSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleAlternator
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleSurfaceFX
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleGimbal
-		isEnabled = True
-		gimbalLock = False
-		gimbalLimiter = 100
-		currentShowToggles = False
-		enableYaw = True
-		enablePitch = True
-		enableRoll = True
-		gimbalActive = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			LockAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			FreeAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			TogglePitchAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleYawAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleRollAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FXModuleLookAtConstraint
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = Refunding
-		isEnabled = True
-		active = True
-		OriginalCost = 9125.2560005187988
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = AYPart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		VesselProdPartsList
-		{
-			AYPwrPartList
-			{
-				PrtName = TE2.19.BFS.SL.RAPTOR
-				PrtTitle = non RO - Mk4 RPTR-22 SL "Raptor" Engine
-				PrtModuleName = ModuleAlternator
-				PrtSubsystem = False
-				PrtPower = 0
-				PrtPowerF = 0
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = False
-				PrtEmergShutDnInclude = False
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ProdPartKey = 4290348964,ModuleAlternator
-			}
-		}
-		VesselConsPartsList
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = KOSNameTag
-		isEnabled = True
-		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleWaterfallFX
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleEnginesFX
-		isEnabled = True
-		independentThrottle = False
-		independentThrottlePercentage = 0
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ShutdownAction
-			{
-				actionGroup = Custom04
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ActivateAction
-			{
-				actionGroup = Custom02
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleThrottle
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		AXISGROUPS
-		{
-			independentThrottlePercentage
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisSpeedMultiplier = 0
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-			thrustPercentage
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisSpeedMultiplier = 0
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = AnisotropicPartResizer
-		isEnabled = True
-		size = 1.60000002
-		orig_size = 1
-		orig_local_scale = (1, 1, 1)
-		aspect = 1
-		orig_aspect = 1
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = EmitterUpdater
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ResourcesUpdater
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = EngineUpdater
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = ElectricCharge
-		amount = 0
-		maxAmount = 0
-		flowState = True
-		isTweakable = False
-		hideFlow = True
-		isVisible = True
-		flowMode = Both
-	}
-	RESOURCE
-	{
-		name = RefundingForKSP111x
-		amount = 0
-		maxAmount = 1
-		flowState = False
-		isTweakable = False
-		hideFlow = False
-		isVisible = False
-		flowMode = None
-	}
-}
-PART
-{
-	part = TE2.19.BFS.SL.RAPTOR_4290348350
-	partName = Part
-	persistentId = 2597421043
-	pos = -0.694496274,94.5469742,0.317009687
-	attPos = 0,0,0
-	attPos0 = -0.519607425,-4.92199898,0.300018191
-	rot = 0,0.258819103,0,0.965925813
-	attRot = 0,0,0,1
-	attRot0 = 0,-0.258819103,0,-0.965925813
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 0
-	resPri = 0
-	dstg = 0
-	sidx = 1
-	sqor = 0
-	sepI = 0
-	attm = 0
-	sameVesselCollision = False
-	modCost = 5.25600052
-	modMass = 5.25600052
-	modSize = 0,0,0
-	attN = node_top,TE2.19.SS.Fuel.Tank_4290354762_0|0.594099998|0_0|1.00000012|-1.1920929E-07_0|0.950560033|0_0|1.00000012|-1.1920929E-07
-	attN = node_bottom,Null_0_0|-1.15799999|0_0|-1.00000012|-1.1920929E-07_0|-1.85280001|0_0|-1.00000012|-1.1920929E-07
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		ToggleSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		SetSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		RemoveSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleAlternator
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleSurfaceFX
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleGimbal
-		isEnabled = True
-		gimbalLock = False
-		gimbalLimiter = 100
-		currentShowToggles = False
-		enableYaw = True
-		enablePitch = True
-		enableRoll = True
-		gimbalActive = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			LockAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			FreeAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			TogglePitchAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleYawAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleRollAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FXModuleLookAtConstraint
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = Refunding
-		isEnabled = True
-		active = True
-		OriginalCost = 9125.2560005187988
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = AYPart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		VesselProdPartsList
-		{
-			AYPwrPartList
-			{
-				PrtName = TE2.19.BFS.SL.RAPTOR
-				PrtTitle = non RO - Mk4 RPTR-22 SL "Raptor" Engine
-				PrtModuleName = ModuleAlternator
-				PrtSubsystem = False
-				PrtPower = 0
-				PrtPowerF = 0
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = False
-				PrtEmergShutDnInclude = False
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ProdPartKey = 4290348350,ModuleAlternator
-			}
-		}
-		VesselConsPartsList
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = KOSNameTag
-		isEnabled = True
-		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleWaterfallFX
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleEnginesFX
-		isEnabled = True
-		independentThrottle = False
-		independentThrottlePercentage = 0
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ActivateAction
-			{
-				actionGroup = Custom02
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleThrottle
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		AXISGROUPS
-		{
-			independentThrottlePercentage
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisSpeedMultiplier = 0
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-			thrustPercentage
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisSpeedMultiplier = 0
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = AnisotropicPartResizer
-		isEnabled = True
-		size = 1.60000002
-		orig_size = 1
-		orig_local_scale = (1, 1, 1)
-		aspect = 1
-		orig_aspect = 1
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = EmitterUpdater
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ResourcesUpdater
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = EngineUpdater
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = ElectricCharge
-		amount = 0
-		maxAmount = 0
-		flowState = True
-		isTweakable = False
-		hideFlow = True
-		isVisible = True
-		flowMode = Both
-	}
-	RESOURCE
-	{
-		name = RefundingForKSP111x
-		amount = 0
-		maxAmount = 1
-		flowState = False
-		isTweakable = False
-		hideFlow = False
-		isVisible = False
-		flowMode = None
-	}
-}
-PART
-{
-	part = TE2.19.BFS.SL.RAPTOR_4290348038
-	partName = Part
-	persistentId = 4127865008
-	pos = 0.968272328,94.5469818,0.317009687
-	attPos = 0,0,0
-	attPos0 = 0.519622684,-4.92199516,0.300018221
-	rot = 0,0.965925872,0,0.258819014
-	attRot = 0,0,0,1
-	attRot0 = 0,-0.965925872,0,-0.258819014
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 0
-	resPri = 0
-	dstg = 0
-	sidx = 2
-	sqor = 0
-	sepI = 0
-	attm = 0
-	sameVesselCollision = False
-	modCost = 5.25600052
-	modMass = 5.25600052
-	modSize = 0,0,0
-	attN = node_top,TE2.19.SS.Fuel.Tank_4290354762_0|0.594099998|0_0|1.00000012|-1.1920929E-07_0|0.950560033|0_0|1.00000012|-1.1920929E-07
-	attN = node_bottom,Null_0_0|-1.15799999|0_0|-1.00000012|-1.1920929E-07_0|-1.85280001|0_0|-1.00000012|-1.1920929E-07
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		ToggleSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		SetSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		RemoveSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleAlternator
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleSurfaceFX
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleGimbal
-		isEnabled = True
-		gimbalLock = False
-		gimbalLimiter = 100
-		currentShowToggles = False
-		enableYaw = True
-		enablePitch = True
-		enableRoll = True
-		gimbalActive = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			LockAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			FreeAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			TogglePitchAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleYawAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleRollAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FXModuleLookAtConstraint
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = Refunding
-		isEnabled = True
-		active = True
-		OriginalCost = 9125.2560005187988
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = AYPart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		VesselProdPartsList
-		{
-			AYPwrPartList
-			{
-				PrtName = TE2.19.BFS.SL.RAPTOR
-				PrtTitle = non RO - Mk4 RPTR-22 SL "Raptor" Engine
-				PrtModuleName = ModuleAlternator
-				PrtSubsystem = False
-				PrtPower = 0
-				PrtPowerF = 0
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = False
-				PrtEmergShutDnInclude = False
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ProdPartKey = 4290348038,ModuleAlternator
-			}
-		}
-		VesselConsPartsList
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = KOSNameTag
-		isEnabled = True
-		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleWaterfallFX
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleEnginesFX
-		isEnabled = True
-		independentThrottle = False
-		independentThrottlePercentage = 0
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ShutdownAction
-			{
-				actionGroup = Custom03
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ActivateAction
-			{
-				actionGroup = Custom02
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleThrottle
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		AXISGROUPS
-		{
-			independentThrottlePercentage
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisSpeedMultiplier = 0
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-			thrustPercentage
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisSpeedMultiplier = 0
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = AnisotropicPartResizer
-		isEnabled = True
-		size = 1.60000002
-		orig_size = 1
-		orig_local_scale = (1, 1, 1)
-		aspect = 1
-		orig_aspect = 1
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = EmitterUpdater
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ResourcesUpdater
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = EngineUpdater
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = ElectricCharge
-		amount = 0
-		maxAmount = 0
-		flowState = True
-		isTweakable = False
-		hideFlow = True
-		isVisible = True
-		flowMode = Both
-	}
-	RESOURCE
-	{
-		name = RefundingForKSP111x
-		amount = 0
-		maxAmount = 1
-		flowState = False
-		isTweakable = False
-		hideFlow = False
-		isVisible = False
-		flowMode = None
 	}
 }
 PART
@@ -5888,12 +4709,1939 @@ PART
 }
 PART
 {
+	part = TE2.19.SS.RPTR.VAC_4292523532
+	partName = Part
+	persistentId = 4200806769
+	pos = 0.136875808,95.7460709,2.78420019
+	attPos = 0,0,0
+	attPos0 = 0,-6.67610168,2.94721985
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,-1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 0
+	sidx = 0
+	sqor = 0
+	sepI = 0
+	attm = 0
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = TE2.19.SS.RPTR.VAC_4292522990
+	sym = TE2.19.SS.RPTR.VAC_4292522860
+	attN = node_top,TE2.19.SS.Fuel.Tank_4290354762_0|0.595816612|0_-8.42936885E-08|1.00000012|-1.1920929E-07_0|0.595816612|0_-8.42936885E-08|1.00000012|-1.1920929E-07
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEnginesRF
+		isEnabled = True
+		ignited = False
+		ignitions = -1
+		independentThrottle = False
+		independentThrottlePercentage = 0
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActivateAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisSpeedMultiplier = 0
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisSpeedMultiplier = 0
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		Ullage
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleAlternator
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSurfaceFX
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = Refunding
+		isEnabled = True
+		active = True
+		OriginalCost = 11340
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = TE2.19.SS.RPTR.VAC
+				PrtTitle = non RO - Mk4 RPTR-31 Vacuum "Raptor" Engine
+				PrtModuleName = ModuleAlternator
+				PrtSubsystem = False
+				PrtPower = 0
+				PrtPowerF = 0
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ProdPartKey = 4292523532,ModuleAlternator
+			}
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWaterfallFX
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 0
+		maxAmount = 0
+		flowState = True
+		isTweakable = False
+		hideFlow = True
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = TE2.19.SS.RPTR.VAC_4292522990
+	partName = Part
+	persistentId = 1820738143
+	pos = 2.68921971,95.7460632,-1.63660371
+	attPos = 0,0,0
+	attPos0 = 2.55234385,-6.67610931,-1.47358406
+	rot = 0,0.866025448,0,0.49999997
+	attRot = 0,0,0,1
+	attRot0 = 0,-0.866025448,0,-0.49999997
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 0
+	sidx = 0
+	sqor = 0
+	sepI = 0
+	attm = 0
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = TE2.19.SS.RPTR.VAC_4292522860
+	sym = TE2.19.SS.RPTR.VAC_4292523532
+	attN = node_top,TE2.19.SS.Fuel.Tank_4290354762_0|0.595816612|0_-8.42936885E-08|1.00000012|-1.1920929E-07_0|0.595816612|0_-8.42936885E-08|1.00000012|-1.1920929E-07
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEnginesRF
+		isEnabled = True
+		ignited = False
+		ignitions = -1
+		independentThrottle = False
+		independentThrottlePercentage = 0
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActivateAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisSpeedMultiplier = 0
+				axisInverted = None
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisSpeedMultiplier = 0
+				axisInverted = None
+			}
+		}
+		Ullage
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleAlternator
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSurfaceFX
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = Refunding
+		isEnabled = True
+		active = True
+		OriginalCost = 11340
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = TE2.19.SS.RPTR.VAC
+				PrtTitle = non RO - Mk4 RPTR-31 Vacuum "Raptor" Engine
+				PrtModuleName = ModuleAlternator
+				PrtSubsystem = False
+				PrtPower = 0
+				PrtPowerF = 0
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ProdPartKey = 4292522990,ModuleAlternator
+			}
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWaterfallFX
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 0
+		maxAmount = 0
+		flowState = True
+		isTweakable = False
+		hideFlow = True
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = TE2.19.SS.RPTR.VAC_4292522860
+	partName = Part
+	persistentId = 2216235989
+	pos = -2.41546798,95.7460632,-1.63660669
+	attPos = 0,0,0
+	attPos0 = -2.55234385,-6.67610931,-1.47358704
+	rot = 0,0.866025388,0,-0.50000006
+	attRot = 0,0,0,1
+	attRot0 = 0,-0.866025388,0,0.50000006
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 0
+	sidx = 0
+	sqor = 0
+	sepI = 0
+	attm = 0
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = TE2.19.SS.RPTR.VAC_4292523532
+	sym = TE2.19.SS.RPTR.VAC_4292522990
+	attN = node_top,TE2.19.SS.Fuel.Tank_4290354762_0|0.595816612|0_-8.42936885E-08|1.00000012|-1.1920929E-07_0|0.595816612|0_-8.42936885E-08|1.00000012|-1.1920929E-07
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEnginesRF
+		isEnabled = True
+		ignited = False
+		ignitions = -1
+		independentThrottle = False
+		independentThrottlePercentage = 0
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActivateAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisSpeedMultiplier = 0
+				axisInverted = None
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisSpeedMultiplier = 0
+				axisInverted = None
+			}
+		}
+		Ullage
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleAlternator
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSurfaceFX
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = Refunding
+		isEnabled = True
+		active = True
+		OriginalCost = 11340
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = TE2.19.SS.RPTR.VAC
+				PrtTitle = non RO - Mk4 RPTR-31 Vacuum "Raptor" Engine
+				PrtModuleName = ModuleAlternator
+				PrtSubsystem = False
+				PrtPower = 0
+				PrtPowerF = 0
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ProdPartKey = 4292522860,ModuleAlternator
+			}
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWaterfallFX
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 0
+		maxAmount = 0
+		flowState = True
+		isTweakable = False
+		hideFlow = True
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = TE2.19.BFS.SL.RAPTOR_4290348350
+	partName = Part
+	persistentId = 2597421043
+	pos = 0.968272328,94.5469742,0.317009687
+	attPos = 0,0,0
+	attPos0 = 0.83139652,-7.87519073,0.480029315
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,-1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 0
+	sidx = 1
+	sqor = 0
+	sepI = 0
+	attm = 0
+	sameVesselCollision = False
+	modCost = 5.25600052
+	modMass = 5.25600052
+	modSize = 0,0,0
+	sym = TE2.19.BFS.SL.RAPTOR_4292514654
+	sym = TE2.19.BFS.SL.RAPTOR_4292514360
+	attN = node_top,TE2.19.SS.Fuel.Tank_4290354762_0|0.594099998|0_0|1.00000012|-1.1920929E-07_0|0.950560033|0_0|1.00000012|-1.1920929E-07
+	attN = node_bottom,Null_0_0|-1.15799999|0_0|-1.00000012|-1.1920929E-07_0|-1.85280001|0_0|-1.00000012|-1.1920929E-07
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleAlternator
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSurfaceFX
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleGimbal
+		isEnabled = True
+		gimbalLock = False
+		gimbalLimiter = 100
+		currentShowToggles = False
+		enableYaw = True
+		enablePitch = True
+		enableRoll = True
+		gimbalActive = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			LockAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			FreeAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			TogglePitchAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleYawAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleRollAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = FXModuleLookAtConstraint
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = Refunding
+		isEnabled = True
+		active = True
+		OriginalCost = 9125.2560005187988
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = TE2.19.BFS.SL.RAPTOR
+				PrtTitle = non RO - Mk4 RPTR-22 SL "Raptor" Engine
+				PrtModuleName = ModuleAlternator
+				PrtSubsystem = False
+				PrtPower = 0
+				PrtPowerF = 0
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ProdPartKey = 4290348350,ModuleAlternator
+			}
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWaterfallFX
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActivateAction
+			{
+				actionGroup = Custom02
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisSpeedMultiplier = 0
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisSpeedMultiplier = 0
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AnisotropicPartResizer
+		isEnabled = True
+		size = 1.60000002
+		orig_size = 1
+		orig_local_scale = (1, 1, 1)
+		aspect = 1
+		orig_aspect = 1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = EmitterUpdater
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ResourcesUpdater
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = EngineUpdater
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 0
+		maxAmount = 0
+		flowState = True
+		isTweakable = False
+		hideFlow = True
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = RefundingForKSP111x
+		amount = 0
+		maxAmount = 1
+		flowState = False
+		isTweakable = False
+		hideFlow = False
+		isVisible = False
+		flowMode = None
+	}
+}
+PART
+{
+	part = TE2.19.BFS.SL.RAPTOR_4292514654
+	partName = Part
+	persistentId = 4223773339
+	pos = 0.136875808,94.5469742,-1.12300503
+	attPos = 0,0,0
+	attPos0 = 0,-7.87519836,-0.959985375
+	rot = 0,0.866025448,0,0.49999997
+	attRot = 0,0,0,1
+	attRot0 = 0,-0.866025448,0,-0.49999997
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 0
+	sidx = 1
+	sqor = 0
+	sepI = 0
+	attm = 0
+	sameVesselCollision = False
+	modCost = 5.25600052
+	modMass = 5.25600052
+	modSize = 0,0,0
+	sym = TE2.19.BFS.SL.RAPTOR_4292514360
+	sym = TE2.19.BFS.SL.RAPTOR_4290348350
+	attN = node_top,TE2.19.SS.Fuel.Tank_4290354762_0|0.594099998|0_0|1.00000012|-1.1920929E-07_0|0.950560033|0_0|1.00000012|-1.1920929E-07
+	attN = node_bottom,Null_0_0|-1.15799999|0_0|-1.00000012|-1.1920929E-07_0|-1.85280001|0_0|-1.00000012|-1.1920929E-07
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleAlternator
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSurfaceFX
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleGimbal
+		isEnabled = True
+		gimbalLock = False
+		gimbalLimiter = 100
+		currentShowToggles = False
+		enableYaw = True
+		enablePitch = True
+		enableRoll = True
+		gimbalActive = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			LockAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			FreeAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			TogglePitchAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleYawAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleRollAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = FXModuleLookAtConstraint
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = Refunding
+		isEnabled = True
+		active = True
+		OriginalCost = 9125.2560005187988
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = TE2.19.BFS.SL.RAPTOR
+				PrtTitle = non RO - Mk4 RPTR-22 SL "Raptor" Engine
+				PrtModuleName = ModuleAlternator
+				PrtSubsystem = False
+				PrtPower = 0
+				PrtPowerF = 0
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ProdPartKey = 4292514654,ModuleAlternator
+			}
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWaterfallFX
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActivateAction
+			{
+				actionGroup = Custom02
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisSpeedMultiplier = 0
+				axisInverted = None
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisSpeedMultiplier = 0
+				axisInverted = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AnisotropicPartResizer
+		isEnabled = True
+		size = 1.60000002
+		orig_size = 1
+		orig_local_scale = (1, 1, 1)
+		aspect = 1
+		orig_aspect = 1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = EmitterUpdater
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ResourcesUpdater
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = EngineUpdater
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 0
+		maxAmount = 0
+		flowState = True
+		isTweakable = False
+		hideFlow = True
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = RefundingForKSP111x
+		amount = 0
+		maxAmount = 1
+		flowState = False
+		isTweakable = False
+		hideFlow = False
+		isVisible = False
+		flowMode = None
+	}
+}
+PART
+{
+	part = TE2.19.BFS.SL.RAPTOR_4292514360
+	partName = Part
+	persistentId = 4115557795
+	pos = -0.694496274,94.5469742,0.317009687
+	attPos = 0,0,0
+	attPos0 = -0.831372082,-7.87519836,0.480029315
+	rot = 0,0.866025388,0,-0.50000006
+	attRot = 0,0,0,1
+	attRot0 = 0,-0.866025388,0,0.50000006
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 0
+	sidx = 1
+	sqor = 0
+	sepI = 0
+	attm = 0
+	sameVesselCollision = False
+	modCost = 5.25600052
+	modMass = 5.25600052
+	modSize = 0,0,0
+	sym = TE2.19.BFS.SL.RAPTOR_4290348350
+	sym = TE2.19.BFS.SL.RAPTOR_4292514654
+	attN = node_top,TE2.19.SS.Fuel.Tank_4290354762_0|0.594099998|0_0|1.00000012|-1.1920929E-07_0|0.950560033|0_0|1.00000012|-1.1920929E-07
+	attN = node_bottom,Null_0_0|-1.15799999|0_0|-1.00000012|-1.1920929E-07_0|-1.85280001|0_0|-1.00000012|-1.1920929E-07
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleAlternator
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSurfaceFX
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleGimbal
+		isEnabled = True
+		gimbalLock = False
+		gimbalLimiter = 100
+		currentShowToggles = False
+		enableYaw = True
+		enablePitch = True
+		enableRoll = True
+		gimbalActive = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			LockAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			FreeAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			TogglePitchAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleYawAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleRollAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = FXModuleLookAtConstraint
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = Refunding
+		isEnabled = True
+		active = True
+		OriginalCost = 9125.2560005187988
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = TE2.19.BFS.SL.RAPTOR
+				PrtTitle = non RO - Mk4 RPTR-22 SL "Raptor" Engine
+				PrtModuleName = ModuleAlternator
+				PrtSubsystem = False
+				PrtPower = 0
+				PrtPowerF = 0
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ProdPartKey = 4292514360,ModuleAlternator
+			}
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWaterfallFX
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActivateAction
+			{
+				actionGroup = Custom02
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisSpeedMultiplier = 0
+				axisInverted = None
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisSpeedMultiplier = 0
+				axisInverted = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AnisotropicPartResizer
+		isEnabled = True
+		size = 1.60000002
+		orig_size = 1
+		orig_local_scale = (1, 1, 1)
+		aspect = 1
+		orig_aspect = 1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = EmitterUpdater
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ResourcesUpdater
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = EngineUpdater
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 0
+		maxAmount = 0
+		flowState = True
+		isTweakable = False
+		hideFlow = True
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = RefundingForKSP111x
+		amount = 0
+		maxAmount = 1
+		flowState = False
+		isTweakable = False
+		hideFlow = False
+		isVisible = False
+		flowMode = None
+	}
+}
+PART
+{
 	part = TE2.19.SH.Interstage_4293615696
 	partName = Part
 	persistentId = 1197087183
-	pos = 0.136875808,90.1070023,-0.163019627
+	pos = 0.136875808,90.1070099,-0.163019627
 	attPos = 0,0,0
-	attPos0 = 0,-12.1729813,0
+	attPos0 = 0,-12.3151627,0
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,-1
@@ -6149,6 +6897,24 @@ PART
 			{
 				PrtName = TE2.19.SH.Interstage
 				PrtTitle = non RO - Mk4 BFT-40 Probe Core
+				PrtModuleName = ModuleDataTransmitter
+				PrtSubsystem = False
+				PrtPower = 10
+				PrtPowerF = 10
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4293615696,ModuleDataTransmitter
+			}
+			AYPwrPartList
+			{
+				PrtName = TE2.19.SH.Interstage
+				PrtTitle = non RO - Mk4 BFT-40 Probe Core
 				PrtModuleName = ModuleReactionWheel
 				PrtSubsystem = False
 				PrtPower = 5.12
@@ -6180,24 +6946,6 @@ PART
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
 				ConsPartKey = 4293615696,ModuleCommand
-			}
-			AYPwrPartList
-			{
-				PrtName = TE2.19.SH.Interstage
-				PrtTitle = non RO - Mk4 BFT-40 Probe Core
-				PrtModuleName = ModuleDataTransmitter
-				PrtSubsystem = False
-				PrtPower = 10
-				PrtPowerF = 10
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = True
-				PrtEmergShutDnInclude = True
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4293615696,ModuleDataTransmitter
 			}
 		}
 		UPGRADESAPPLIED
@@ -6541,7 +7289,7 @@ PART
 	part = TE2.19.SH.Tank_4293636378
 	partName = Part
 	persistentId = 2055045791
-	pos = 0.136875808,62.8214798,-0.163019627
+	pos = 0.136875808,62.8214951,-0.163019627
 	attPos = 0,0,0
 	attPos0 = 0,-18.0201569,0
 	rot = 0,0,0,1
@@ -6594,7 +7342,7 @@ PART
 		name = Refunding
 		isEnabled = True
 		active = True
-		OriginalCost = 55107.136437379726
+		OriginalCost = 55121.082574683744
 		stagingEnabled = True
 		EVENTS
 		{
@@ -6654,7 +7402,7 @@ PART
 			temperature = 90.1500015
 			fillable = True
 			techRequired = 
-			amount = 2317252.6790257627
+			amount = 2574725.267124441
 			maxAmount = 2574725.267124441
 		}
 		TANK
@@ -6668,7 +7416,7 @@ PART
 			temperature = 111.449997
 			fillable = True
 			techRequired = 
-			amount = 652747.24229610607
+			amount = 725274.73287555913
 			maxAmount = 725274.73287555913
 		}
 		UPGRADESAPPLIED
@@ -6734,7 +7482,7 @@ PART
 	RESOURCE
 	{
 		name = LqdMethane
-		amount = 652747.24229610607
+		amount = 725274.73287555913
 		maxAmount = 725274.73287555913
 		flowState = True
 		isTweakable = True
@@ -6745,7 +7493,7 @@ PART
 	RESOURCE
 	{
 		name = LqdOxygen
-		amount = 2317252.6790257627
+		amount = 2574725.267124441
 		maxAmount = 2574725.267124441
 		flowState = True
 		isTweakable = True
@@ -6759,7 +7507,7 @@ PART
 	part = TE2.19.SH.Engine_4293638868
 	partName = Part
 	persistentId = 1019891515
-	pos = 0.136875808,32.2328339,-0.163019627
+	pos = 0.136875808,32.2328491,-0.163019627
 	attPos = 0,0,0
 	attPos0 = 0,-28.5034943,0
 	rot = 0,0,0,1

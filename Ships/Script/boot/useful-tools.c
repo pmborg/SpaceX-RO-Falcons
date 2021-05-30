@@ -8,30 +8,26 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 17/Apr/2021
+// 30/May/2021
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
 
 function steering_falcon
 {
 	parameter Vdeg.	//SET Vdeg to 90-delta.						// Vertical = 90
-	set steeringVdeg to Vdeg.
-	 
-	set lat_correction to 0.
-	if vehicle_company = "SpaceX"
+	parameter lat_correction is 0.
+	
+	if vehicle_company = "SpaceX" and vehicle_type <> "StarShip"
 	{
 		if KUniverse:ActiveVessel = SHIP
 			if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT and vehicle_sub_type <> "Falcon Heavy LEM"
 		set lat_correction to (VESSEL("Landingzone1"):GEOPOSITION:LAT - ADDONS:TR:IMPACTPOS:LAT)*50.
 	}
-	//DEBUG:
-	//PRINT "[GEOPOSITION]: " at (0,17).
-	//PRINT ROUND (GEOPOSITION:LAT,3)+", " +ROUND (GEOPOSITION:LNG,3)+"   " at (22,17).
-	//PRINT "lat.correction: " at (0,18). 
-	//PRINT ROUND(lat_correction,2) at (22,18).
+
 	SET steeringDir TO (-90-lat_correction).	// W/E
-	set steeringVroll to -270.					// -270 = Zero Rotation
-	//LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll). (AUTOMATIC!)
+	set steeringVroll to -270.				// -270 = Zero Rotation
+	set steeringVdeg to Vdeg.
+	//LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll). (NO NEED THIS LINE AUTOMATIC!)
 }
 
 function st1_stage 
@@ -225,7 +221,7 @@ function log_data
 	parameter Vs2.
 	parameter showlog to false.	//true = TURN ON LOG file.
 	
-	if vehicle_type = "SN9-Profile1" 
+	if vehicle_type = "SN9-Profile1" or vehicle_type = "StarShip"
 		set showlog to true.
 	
 	updateVars().
@@ -233,16 +229,16 @@ function log_data
 	if (not showlog)
 		return.
 	
-	PRINT "TIME,   VELO,   ALT,    Acel,   Q     --LOG:FILE" at (0,34).
+	PRINT "TIME,    VELO,   ALT,    Acel,   Q     --LOG:FILE" at (0,34).
 	
 	set value1 to ROUND((TIME:SECONDS-TakeOffTime),1).
-	PRINT value1+" " at (0,35).
+	PRINT "T+"+value1+" " at (0,35).
 	
 	set value2 to ROUND(Vs2,0).
-	PRINT value2+" " at (8,35).
+	PRINT value2+" " at (1+8,35).
 
 	set value3 to ROUND((SHIP:altitude-145)/1000,3).
-	PRINT value3+" " at (8*2,35).
+	PRINT value3+" " at (1+8*2,35).
 
 	set Ac to SHIP:SENSORS:ACC.
 	set Acx to Ac:x.
@@ -250,7 +246,7 @@ function log_data
 	set Acz to Ac:z.	
 	
 	set Aceleration_value1 to ROUND(g+SQRT((Acx^2)+(Acy^2)+(Acz^2)),1).
-	PRINT Aceleration_value1+"   " at (8*3,35).
+	PRINT Aceleration_value1+"   " at (1+8*3,35).
 	
 	//v1
 	// set q to ROUND(SHIP:DYNAMICPRESSURE).
@@ -260,16 +256,16 @@ function log_data
 	// set q to ROUND(.5*p*(Vs2^2),1). // pd = 1/2 ρ v^2
 	//v3
 	if ROUND(BODY:ATM:ALTITUDEPRESSURE(h),4) = 0 and ROUND(BODY:ATM:ALTITUDETEMPERATURE(h),1) = 0
-		PRINT "--    " at (8*4,35).
+		PRINT "--    " at (1+8*4,35).
 	else
-		PRINT ROUND(qVal,0)+" " at (8*4,35).
+		PRINT ROUND(qVal,0)+" " at (1+8*4,35).
 		
 	if (ROUND (value1,0) > last_value1) 
 	{
 		set last_value1 to ROUND (value1,0).
 		LOG value1+","+value2+","+value3+","+Aceleration_value1+","+ROUND(qVal,0) to FLIGHT_LOG.txt.
 	}
-	PRINT "T.ORB: "+orbit_type at (8*5-2,35).
+	PRINT "T.ORB: "+orbit_type at (1+8*5-2,35).
 }
 
 function east_for 
