@@ -126,6 +126,11 @@ declare global MAIN_SHIP_NAME to SHIP_NAME:REPLACE(" probe", "").   //["NAME"]  
 
 declare global vehicle_company to "SpaceX". 
 
+if SHIP_NAME = "Starship SN20"
+{
+	declare global vehicle_type to "SN20-Profile".
+}
+else
 if SHIP_NAME = "Starship SN9"
 {
 	declare global vehicle_type to "SN9-Profile1".

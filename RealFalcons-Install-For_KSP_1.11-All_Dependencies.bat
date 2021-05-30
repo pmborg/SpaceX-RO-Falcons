@@ -155,7 +155,7 @@ if not exist buildID64.txt (
 
 	REM Add a filter to PMBORG RO ships, only:
 	mkdir Ships\VAB.all
-	move Ships\VAB\*.* Ships\VAB.all
+	move Ships\VAB\*.* Ships\SPH
 	move Ships\VAB.all %NONEED%
 
 	echo.
