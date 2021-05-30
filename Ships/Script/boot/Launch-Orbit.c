@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 17/Apr/2021
+// 30/may/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 LOG   "START: Launch-Orbit.c" to log.txt.
@@ -21,7 +21,7 @@ function main_liftoff
 {
 	if vehicle_company = "SpaceX"
 	{
-		if vehicle_type = "Falcon Heavy" 
+		if (vehicle_type = "Falcon Heavy" or vehicle_type = "StarShip")
 			set str_vehicle to vehicle_type.
 		else
 			set str_vehicle to "Falcon".
@@ -74,7 +74,8 @@ function main_liftoff
 		   vehicle_sub_type = "Falcon Heavy LEM" or 
 		   vehicle_type = "Crew Dragon 2" or
 		   vehicle_type = "SaturnV" or
-		   vehicle_type = "SN9-Profile1"
+		   vehicle_type = "SN9-Profile1" or 
+		   vehicle_type = "StarShip"
 			SAS OFF.
 		else
 			SAS ON.
@@ -84,7 +85,7 @@ function main_liftoff
 	if (status = "PRELAUNCH" or status = "LANDED" or status = "SPLASHED") //KSP have so many bugs...
 	{
 		AG1 ON. //TOGGLE
-		if vehicle_company = "SpaceX" and vehicle_type <> "SN9-Profile1"
+		if vehicle_company = "SpaceX" and vehicle_type <> "SN9-Profile1" and vehicle_type <> "StarShip"
 			Print "(Release Tower Clamp)".
 		
 		FROM {local countdown is 5.} UNTIL countdown = 0 STEP {SET countdown to countdown - 1.} 
@@ -102,7 +103,7 @@ function main_liftoff
 			WAIT 1.
 			
 		if (KUniverse:ActiveVessel = SHIP) STAGE.		//TOWER
-		if vehicle_company = "SpaceX" and vehicle_type <> "SN9-Profile1"
+		if vehicle_company = "SpaceX" and vehicle_type <> "SN9-Profile1" and vehicle_type <> "StarShip"
 			Print "(Strongback Retracted)".
 
 		if vehicle_type = "Crew Dragon 2"
@@ -257,7 +258,7 @@ if alt:radar < 200
 			if vehicle_type <> "SN9-Profile1"
 				PRINT "                    " at (0,5+index2).
 				
-		//SS only:
+		//SN9-Profile1 only:
 		if alt:radar > 100 and vehicle_type = "SN9-Profile1"
 		{
 			//Align performance with real telemetry data:
@@ -360,7 +361,8 @@ if alt:radar < 200
 			set Weight to (mass*g)/0.01.		
 		}
 
-		if vehicle_type = "SN9-Profile1" //and profile_stage < 2
+		//SN9-Profile1 only:
+		if vehicle_type = "SN9-Profile1"
 			set delta to -delta.
 			
 		steering_falcon(90-delta).
@@ -376,10 +378,7 @@ if alt:radar < 200
 		}
 		if  tThrust >= 1
 		{
-			// if vehicle_type = "Falcon Heavy" and mphase = 2 and machVal < 1.8
-				// set tThrust to 0.85.
-			// else
-				set tThrust to 1.
+			set tThrust to 1.
 			
 			if phase = 1
 			{
@@ -390,7 +389,7 @@ if alt:radar < 200
 			}
 		}
 
-		//SS only:
+		//SN9-Profile1 only:
 		if vehicle_type = "SN9-Profile1"
 		{
 			if alt:radar > 8900 and profile_stage = 1

@@ -128,7 +128,8 @@ declare global vehicle_company to "SpaceX".
 
 if SHIP_NAME = "Starship SN20"
 {
-	declare global vehicle_type to "SN20-Profile".
+	declare global vehicle_type to "StarShip".
+	declare global vehicle_sub_type to "SN20-Profile".
 }
 else
 if SHIP_NAME = "Starship SN9"
@@ -208,6 +209,13 @@ if STAGE_1_TYPE <> ""
 
 // Defaults for Fligth Profile:
 // --------------------------------------------------------------------------------------------
+if vehicle_type = "StarShip"
+{
+    // Data: SaturnV
+    declare global Qmax     to 8140.///1.1.
+    declare global MECO1    to 2000^2.
+    declare global FAIRSEP  to 110*1000.
+}else
 if vehicle_type = "SaturnV"
 {
     // Data: SaturnV
