@@ -153,9 +153,10 @@ if not exist buildID64.txt (
 
 	echo set kspver to 1.11. > Ships\Script\kspver.c.
 
-	REM Filter RO ships:
+	REM Add a filter to PMBORG RO ships, only:
 	mkdir Ships\VAB.all
 	move Ships\VAB\*.* Ships\VAB.all
+	move Ships\VAB.all %NONEED%
 
 	echo.
 	echo "Installation ended."
