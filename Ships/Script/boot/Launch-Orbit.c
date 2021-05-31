@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 30/may/2021
+// 31/may/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 LOG   "START: Launch-Orbit.c" to log.txt.
@@ -244,7 +244,7 @@ if alt:radar < 200
 		PRINT ROUND(q) at (22,3).
 		set q_qmax to q/Qmax*100.
 		PRINT ROUND(q_qmax,2)+ " %       " at (22,4).
-		if vehicle_company = "SpaceX"
+		if vehicle_company = "SpaceX" and vehicle_type <> "StarShip"
 			PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,6).
 		
 		if alt:radar > 130 and alt:radar < 1000
@@ -316,7 +316,7 @@ if alt:radar < 200
 	// LOOP: LAUNCH-Trusting:
 	set lat_correction to 0.
 	if vehicle_sub_type = "SN20-Profile"
-		set lat_correction to 5.
+		set lat_correction to 5. // =90+5
 
 	// --------------------------------------------------------------------------------------------
 	until altitude > 30000 or profile_stage >= 3
@@ -419,7 +419,7 @@ if alt:radar < 200
 			set x to x+1.
 		}.
 		
-		if vehicle_company = "SpaceX"
+		if vehicle_company = "SpaceX" and vehicle_type <> "StarShip"
 			PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,index2).
 			
 		PRINT ROUND(tThrust*100,1)+"%                " 	at (22,1+index2).	
@@ -472,7 +472,7 @@ if alt:radar < 200
 			set Vsz to vorb:z.
 			set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).
 			
-			if vehicle_company = "SpaceX"
+			if vehicle_company = "SpaceX" and vehicle_type <> "StarShip"
 				PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,3).
 				
 			PRINT ROUND(mass)+" t   " 			 at (22,4).
@@ -525,7 +525,7 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 	PRINT " ".PRINT " ".
 	
 	// OK: >=3 for F9 - CHECK: FH...
-	if (STAGE:NUMBER >= 3) and (MECO1 < 9999^2)  //A Recovery Mission ?
+	if ( (STAGE:NUMBER >= 3) or (vehicle_type = "StarShip") ) and (MECO1 < 9999^2)  //A Recovery Mission ?
 	{
 		update_phase_title("[6] STAGING...",1,false).
 		PRINT "1st ORBIT: "+FINAL_ORBIT+"km, Done!".
@@ -559,7 +559,7 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 		//KUniverse:PAUSE().
 		
 		RCS ON.
-		if vehicle_type = "Falcon Heavy" 
+		if vehicle_type = "Falcon Heavy" or vehicle_type = "StarShip"
 		{
 			AG6 ON. //(Toggle: FH Boosters separator)
 			WAIT 0.5.
