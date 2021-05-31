@@ -13,7 +13,7 @@
 LOG   "START: sw-version.c" to log.txt.
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //                          #.YY.MM.DD
-set version_str to "SW-Ver: 1.21.05.30".
+set version_str to "SW-Ver: 1.21.05.31".
 PRINT version_str at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
@@ -167,6 +167,11 @@ else
 
 declare global vehicle_sub_type to vehicle_type.
 
+if SHIP_NAME = "Starship SN20"
+{
+	declare global vehicle_sub_type to "SN20-Profile".
+}
+
 if SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" or
    SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
     set vehicle_sub_type to "Falcon Heavy LEM".
@@ -203,8 +208,13 @@ if CORE:BOOTFILENAME:FIND("boot.ks") > -1               // STAGE-2 (General ST-2
 
 if STAGE_1_TYPE <> ""
 {
-    PRINT "INIT CODE FOR: "+STAGE_1_TYPE.
-    LOG  "["+STAGE_1_TYPE+"] SHIP_NAME: "+MAIN_SHIP_NAME to LOG.txt.
+	PRINT "INIT CODE FOR: "+STAGE_1_TYPE.
+	LOG  "["+STAGE_1_TYPE+"] SHIP_NAME: "+MAIN_SHIP_NAME to LOG.txt.
+}
+else
+{
+	PRINT "INIT CODE FOR: UNKNOWN".
+	LOG  "[UNKNOWN] SHIP_NAME: "+MAIN_SHIP_NAME to LOG.txt.
 }
 
 // Defaults for Fligth Profile:
@@ -212,8 +222,8 @@ if STAGE_1_TYPE <> ""
 if vehicle_type = "StarShip"
 {
     // Data: SaturnV
-    declare global Qmax     to 8140.///1.1.
-    declare global MECO1    to 1630^2.
+    declare global Qmax     to 8510/1.1.
+    declare global MECO1    to 2000^2.
     declare global FAIRSEP  to 110*1000.
 }else
 if vehicle_type = "SaturnV"

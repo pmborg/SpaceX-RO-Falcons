@@ -16,6 +16,11 @@ set FINAL_ORBIT2 to FINAL_ORBIT.// For Phase-2 falcon stage-2
 set FINAL_ORBIT  to 150000. 	//(FINAL_ORBIT/2) - For Phase-1 falcon stage-1
 set phase to 0.
 set str_vehicle to "".
+
+//DEFINE SN20-Profile TARGET
+set LandingTarget to latlng(23.12854, -159.982839).
+runpath("boot/common.c").
+
 // --------------------------------------------------------------------------------------------
 function main_liftoff
 {
@@ -59,6 +64,9 @@ function main_liftoff
 
 			PRINT " ".
 		}
+		
+		PRINT "vehicle_sub_type: "+vehicle_sub_type.
+		PRINT " ".
 		
 		if vehicle_type = "Crew Dragon 2"
 		{
@@ -346,15 +354,15 @@ if alt:radar < 200
 		set Vsy to vsurf:y.
 		set Vsz to vsurf:z.
 		set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).	
-		set q to .5*p*(vs2).
+		set q0 to q.			//last value
+		set q to .5*p*(vs2).	//new value
 		set err to .002.
 		set error to 1-err*(q-Qmax).
-
-		set q0 to q.
-		if q < q0 and phase = 1 
+		
+		if q < q0 //and phase >= 1 
 		{
-			PRINT "( Passed MAXQ! )              " at (0,10+index2).
-			set phase to 1. //Passed MAXQ
+			PRINT "( Passed MAXQ! )              " at (0,6+index2).
+			set phase to 2. //Passed MAXQ
 		}
 		
 		if 	maxthrust > 0 {
@@ -385,11 +393,13 @@ if alt:radar < 200
 			set tThrust to 1.
 			
 			if phase = 1
+				set phase to 2.
+			
+			if phase = 2
 			{
 				PRINT "                                       " at (0,4+index2).
-				PRINT "( Continuing gravity turn )" at (0,5+index2).
+				PRINT "( Continuing downrange acc )" at (0,5+index2).
 				PRINT "( Passed MAXQ! )          " at (0,6+index2).
-				set phase to 2.
 			}
 		}
 
@@ -415,7 +425,7 @@ if alt:radar < 200
 			
 		if delta <= -1 and x < 1 
 		{
-			PRINT "( Begin gravity turn )" at (0,5+index2).
+			PRINT "( Begin downrange acc )" at (0,5+index2).
 			set x to x+1.
 		}.
 		
@@ -559,7 +569,12 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 		//KUniverse:PAUSE().
 		
 		RCS ON.
-		if vehicle_type = "Falcon Heavy" or vehicle_type = "StarShip"
+		if vehicle_type = "StarShip"
+		{
+			WAIT 0.1.
+			if (KUniverse:ActiveVessel = SHIP) STAGE.	//[SS]
+			WAIT 1.
+		} else if vehicle_type = "Falcon Heavy"
 		{
 			AG6 ON. //(Toggle: FH Boosters separator)
 			WAIT 0.5.
@@ -622,6 +637,7 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 	if vehicle_type = "Falcon Heavy"
 		engines_thrustlimit_to (100).	//Main Core back to 100% now
 
+	// --------------------------------------------------------------------------------------------
 	set thrust to 1.
 	RCS OFF.
 	set phase to 0.
@@ -668,6 +684,22 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 					SET Vdeg to 90-85.
 				WAIT 1.
 			}
+		}
+
+		if vehicle_sub_type = "SN20-Profile" and KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+		{
+			//set LandingTarget to latlng(23.12854, -159.982839).
+			set ADDONS_TR_IMPACTPOS to ADDONS:TR:IMPACTPOS.
+			
+			SET landingDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
+			PRINT "landingDist: "+ROUND(landingDist/1000,1) + "  km    " at (0,16).
+			PRINT "[IMPACTPOS]: "+ROUND (ADDONS_TR_IMPACTPOS:LAT,3)+" " +ROUND (ADDONS_TR_IMPACTPOS:LNG,3) at (0,17).
+			
+			if landingDist > 10000000
+				set thrust to 0.05.
+				
+			if landingDist < 5
+				break.
 		}
 
 		if vehicle_type <> "Crew Dragon 2"
@@ -739,6 +771,23 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 				WAIT 1.
 			}
 		}
+		
+		if vehicle_sub_type = "SN20-Profile" and KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+		{
+			//set LandingTarget to latlng(23.12854, -159.982839).
+			set ADDONS_TR_IMPACTPOS to ADDONS:TR:IMPACTPOS.
+			
+			SET landingDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
+			PRINT "landingDist: "+ROUND(landingDist/1000,1) + "  km    " at (0,16).
+			PRINT "[IMPACTPOS]: "+ROUND (ADDONS_TR_IMPACTPOS:LAT,3)+" " +ROUND (ADDONS_TR_IMPACTPOS:LNG,3) at (0,17).
+			
+			if landingDist > 10000000
+				set thrust to 0.05.
+				
+			if landingDist < 5
+				break.
+		}
+		
 		if vehicle_type <> "Crew Dragon 2"
 			check_fairing_sep().
 		
