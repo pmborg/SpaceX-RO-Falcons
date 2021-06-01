@@ -648,10 +648,15 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 	function do_orbit 
 	{
 		set do_break to false.
-		
-		SET steeringDir TO 90+lat_correction.			// W/E
+
+		//UPDATE FROM: steering_falcon(90-delta, lat_correction).
+		//TO:
 		SET steeringVdeg to set_Vdeg().
-		set steeringVroll to -270.		// -270 = Zero Rotation
+		SET steeringDir TO 90+lat_correction.	// W/E
+		if vehicle_type = "StarShip"
+			set steeringVroll to 0.				// 0 = Zero Rotation
+		else
+			set steeringVroll to -270.			// -270 = Zero Rotation
 		LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
 	
 		set eta_apoapsis to eta:apoapsis.

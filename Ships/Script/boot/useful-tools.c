@@ -24,9 +24,9 @@ function steering_falcon
 		set lat_correction to (VESSEL("Landingzone1"):GEOPOSITION:LAT - ADDONS:TR:IMPACTPOS:LAT)*50.
 	}
 
-	SET steeringDir TO (-90-lat_correction).	// W/E
-	set steeringVroll to -270.				// -270 = Zero Rotation
+	set steeringDir TO (-90-lat_correction).	// W/E
 	set steeringVdeg to Vdeg.
+	set steeringVroll to -270.					// -270 = Zero Rotation
 	//LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll). (NO NEED THIS LINE AUTOMATIC!)
 }
 

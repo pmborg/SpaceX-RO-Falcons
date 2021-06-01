@@ -328,6 +328,12 @@ function set_max_delta_curve
         set delta to (1*(e^I)*(-1))*1.3.        //Rotate 30% Faster
         if delta < (-80)                        //MAX. Keep: 10 deg nose up
             set delta to (-80).
+    // } else 
+    // if vehicle_type = "StarShip"
+    // {
+		// set delta to (1*(e^I)*(-1)).    		//Normal Rotation
+		// if delta < (-60)                    	//MAX. Keep: 30 deg nose up
+			// set delta to (-60).    
     } else {
 		// DEFAULTS:
         if STAGE1_LAND_ON <> "LAND"
