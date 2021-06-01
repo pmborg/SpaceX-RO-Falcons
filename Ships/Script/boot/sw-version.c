@@ -13,7 +13,7 @@
 LOG   "START: sw-version.c" to log.txt.
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //                          #.YY.MM.DD
-set version_str to "SW-Ver: 1.21.05.31".
+set version_str to "SW-Ver: 1.21.06.01".
 PRINT version_str at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
@@ -54,10 +54,8 @@ PRINT version_str at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 // [ok] FH LEO Orbit                        1.20.11.22
 // [ok] FH GSO Orbit                        1.20.12.07
 
-
-
 //https://ksp-kos.github.io/KOS/structures/misc/loaddistance.html#attribute:SITUATIONLOADDISTANCE:UNLOAD
-//MAGIC LINES! Extend Physics:
+//MAGIC LINES! Extend Physics --------------------------------------------------------------------------
 SET KUNIVERSE:DEFAULTLOADDISTANCE:FLYING:UNLOAD TO 1960000. 
 SET KUNIVERSE:DEFAULTLOADDISTANCE:FLYING:LOAD   TO 1969500.
 WAIT 0.001.
@@ -97,8 +95,7 @@ declare global kspver to 0.
 if EXISTS("kspver.c")
     runpath ("kspver.c").
 
-// GLOBALS:
-// --------------------------------------------------------------------------------------------
+// GLOBALS ----------------------------------------------------------------------------------------
 declare global r to 0.
 declare global GM to 0.
 declare global g to 0.
@@ -122,15 +119,14 @@ declare global MAIN_SHIP_NAME to SHIP_NAME:REPLACE(" probe", "").   //["NAME"]  
 //DEBUG:
 // PRINT "MODEL: "+SHIP_NAME.
 // PRINT "BOOT: " + CORE:BOOTFILENAME.
-// --------------------------------------------------------------------------------------------
 
+// SELECT VEHICLE_TYPE -------------------------------------------------------------
 declare global vehicle_company to "SpaceX". 
 
 if SHIP_NAME = "Starship SN20"
 {
 	declare global vehicle_type to "StarShip".				
 	declare global vehicle_sub_type to "SN20-Profile".		// BASE: starship-SN20 prototype (orbital flight): SPLASH LANDING (23.12854, -159.982839)
-	set STAGE1_LAND_ON to "SEA". 							// SETUP ST-1 to land on droneship
 }
 else
 if SHIP_NAME = "Starship SN9"
@@ -161,11 +157,12 @@ if SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5" or
 else
 {
     if MASS < 20
-        declare global vehicle_type to "Stage-2".
+        declare global vehicle_type to "Stage-2".			// GENERIC STAGE-2 profile
     else
-        declare global vehicle_type to "Stage-1".
+        declare global vehicle_type to "Stage-1".			// GENERIC STAGE-1 profile
 }
 
+// --------------------------------------------------------------------------------------------
 declare global vehicle_sub_type to vehicle_type.
 
 if SHIP_NAME = "Starship SN20"
@@ -180,7 +177,7 @@ if SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" or
 if CORE:BOOTFILENAME:FIND("boot-fairings.ks") > -1
     set vehicle_type to "Fairing".
 
-//STAGE_1_TYPE: (boot filename):
+//STAGE_1_TYPE: (boot filename) ---------------------------------------------------
 // boot-boosters-L.ks
 // boot-boosters-R.ks
 // boot-boosters.ks
@@ -190,7 +187,6 @@ if CORE:BOOTFILENAME:FIND("boot-fairings.ks") > -1
 // boot-landingzone.ks
 // boot-st2.ks
 // boot.ks
-// --------------------------------------------------------------------------------------------
 declare global STAGE_1_TYPE to "".
 if CORE:BOOTFILENAME:FIND("boot-boosters-L.ks") > -1    // STAGE-1L (if vehicle_type = "Falcon Heavy")
     set STAGE_1_TYPE to "SLAVE".
@@ -218,10 +214,10 @@ else
 	LOG  "[UNKNOWN] SHIP_NAME: "+MAIN_SHIP_NAME to LOG.txt.
 }
 
+//DEBUG:
 PRINT "STAGE1_LAND_ON: "+STAGE1_LAND_ON.
 
-// Defaults for Fligth Profile:
-// --------------------------------------------------------------------------------------------
+// DEFAULTS FOR FLIGTH PROFILE: -------------------------------------------------
 if vehicle_type = "StarShip"
 {
     // Data: SaturnV
