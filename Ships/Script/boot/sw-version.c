@@ -220,9 +220,9 @@ PRINT "STAGE1_LAND_ON: "+STAGE1_LAND_ON.
 // DEFAULTS FOR FLIGTH PROFILE: -------------------------------------------------
 if vehicle_type = "StarShip"
 {
-    // Data: SaturnV
-    declare global Qmax     to 8510/1.1.
-    declare global MECO1    to 1700^2. //ideal: 2000 (1700 match T+169)
+    // Data: StarShip
+	declare global Qmax     to 11750/1.1. 	//v1: 8510/1.1.
+	declare global MECO1    to 2835^2. 		//(T+169)
     declare global FAIRSEP  to 110*1000.
 }else
 if vehicle_type = "SaturnV"
@@ -354,15 +354,15 @@ function set_max_delta_curve
 function set_Vdeg 
 {
     if vehicle_type = "Crew Dragon 2"
-        return 90-74.   // Vertical = 90
+        return 90-74.   // 16 -> Vertical = 90
     else
     if  SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" //or SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
-        return 90-76.   // Vertical = 90
+        return 90-76.   // 14 -> Vertical = 90
     else
-    if vehicle_type = "Falcon Heavy"
-        return 90-85.   // Vertical = 90
+    if (vehicle_type = "Falcon Heavy" or vehicle_type = "StarShip")
+        return 90-85.   // 7 -> Vertical = 90
     
-    return 90-81.  // Vertical = 90
+    return 90-81.  		// 9 -> Vertical = 90
 }
 
 

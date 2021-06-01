@@ -324,7 +324,7 @@ if alt:radar < 200
 	// LOOP: LAUNCH-Trusting:
 	set lat_correction to 0.
 	if vehicle_sub_type = "SN20-Profile"
-		set lat_correction to 5. // =90+5
+		set lat_correction to 12. // =90+12
 
 	// --------------------------------------------------------------------------------------------
 	until altitude > 30000 or profile_stage >= 3
@@ -573,8 +573,8 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 		{
 			WAIT 0.1.
 			if (KUniverse:ActiveVessel = SHIP) STAGE.	//[SS]
-			WAIT 1.
-		} else if vehicle_type = "Falcon Heavy"
+		} 
+		else if vehicle_type = "Falcon Heavy"
 		{
 			AG6 ON. //(Toggle: FH Boosters separator)
 			WAIT 0.5.
@@ -702,8 +702,9 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 				PRINT "landingDist: "+ROUND(landingDist/1000,1) + "  km    " at (0,16).
 				PRINT "[IMPACTPOS]: "+ROUND (ADDONS_TR_IMPACTPOS:LAT,3)+" " +ROUND (ADDONS_TR_IMPACTPOS:LNG,3) at (0,17).
 				
-				if landingDist > 10000000
-					set thrust to 0.05.
+				//DEBUG:
+				//if landingDist > 10000000
+				//	set thrust to 0.2. //set thrust to 0.05.
 					
 				if periapsis > 0
 					set do_break to true.

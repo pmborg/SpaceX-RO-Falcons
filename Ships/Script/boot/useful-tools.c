@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 30/May/2021
+// 01/Jun/2021
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
 

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to test the Starship Horizontal flight.
-// 17/Apr/2021
+// 01/Jun/2021
 // --------------------------------------------------------------------------------------------
 
 // Init Common:
@@ -29,7 +29,16 @@ if KUniverse:ActiveVessel <> SHIP
 	update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
 
 UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
+
+if vehicle_type = "SN9-Profile1"
 	SET TARGET TO LandingZone.
+	
+if vehicle_sub_type = "SN20-Profile"
+{
+	SET LandingTarget TO BODY:GEOPOSITIONLATLNG(23.12854, -159.982839).
+	PRINT "WAIT 1000".
+	WAIT 1000.
+}
 
 set present_heading to SHIP:HEADING.
 
