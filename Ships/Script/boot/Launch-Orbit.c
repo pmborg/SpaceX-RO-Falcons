@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 31/may/2021
+// 01/Jun/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 LOG   "START: Launch-Orbit.c" to log.txt.
@@ -645,10 +645,10 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 	// UNLOCK STEERING. wait 0.1.
 	// LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll). wait 0.1.
 	
-	// LOOP: ORBIT PHASE I (Maximizing: Horizontal Aceleration)
-	// --------------------------------------------------------------------------------------------
-	UNTIL periapsis > 0 and apoapsis < FINAL_ORBIT2
+	function do_orbit 
 	{
+		set do_break to false.
+		
 		SET steeringDir TO 90+lat_correction.			// W/E
 		SET steeringVdeg to set_Vdeg().
 		set steeringVroll to -270.		// -270 = Zero Rotation
@@ -686,24 +686,39 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 			}
 		}
 
-		if vehicle_sub_type = "SN20-Profile" and KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
+		if vehicle_sub_type = "SN20-Profile"  
 		{
-			//set LandingTarget to latlng(23.12854, -159.982839).
-			set ADDONS_TR_IMPACTPOS to ADDONS:TR:IMPACTPOS.
-			
-			SET landingDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
-			PRINT "landingDist: "+ROUND(landingDist/1000,1) + "  km    " at (0,16).
-			PRINT "[IMPACTPOS]: "+ROUND (ADDONS_TR_IMPACTPOS:LAT,3)+" " +ROUND (ADDONS_TR_IMPACTPOS:LNG,3) at (0,17).
-			
-			if landingDist > 10000000
-				set thrust to 0.05.
+			if (KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT)
+			{
+				//set LandingTarget to latlng(23.12854, -159.982839).
+				set ADDONS_TR_IMPACTPOS to ADDONS:TR:IMPACTPOS.
 				
-			if landingDist < 5
-				break.
+				SET landingDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
+				PRINT "landingDist: "+ROUND(landingDist/1000,1) + "  km    " at (0,16).
+				PRINT "[IMPACTPOS]: "+ROUND (ADDONS_TR_IMPACTPOS:LAT,3)+" " +ROUND (ADDONS_TR_IMPACTPOS:LNG,3) at (0,17).
+				
+				if landingDist > 10000000
+					set thrust to 0.05.
+					
+				if periapsis > 0
+					set do_break to true.
+			}
+			else
+				set do_break to true.
 		}
 
 		if vehicle_type <> "Crew Dragon 2"
-			check_fairing_sep().
+			check_fairing_sep().		
+			
+		return do_break.
+	}
+	
+	// LOOP: ORBIT PHASE I (Maximizing: Horizontal Aceleration)
+	// --------------------------------------------------------------------------------------------
+	UNTIL periapsis > 0 and apoapsis < FINAL_ORBIT2
+	{
+		if do_orbit()
+			break.
 		
 		if (Aceleration_value1 > 30.75)
 		{
@@ -735,61 +750,8 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 	// --------------------------------------------------------------------------------------------
 	UNTIL (apoapsis >= FINAL_ORBIT2) 
 	{
-		if verticalspeed < 0 
-			SET steeringVdeg to (-verticalspeed/8).	// UP/DOWN: Vertical = 90 (magical number: 8 tune precision)
-		else
-			SET steeringVdeg to set_Vdeg().
-		set steeringVroll to -270.			// Zero Rotation
-		SET steeringDir TO 90+lat_correction.			// W/E
-		//LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).//steering_falcon(Vdeg).
-		
-		set vorb to velocity:orbit.
-		set Vsx to vorb:x.
-		set Vsy to vorb:y.
-		set Vsz to vorb:z.
-		set velocity_orbit to (Vsx^2)+(Vsy^2)+(Vsz^2).
-		set Vs2 to (velocity_orbit). //km/h
-		
-		if vehicle_sub_type = "Falcon Heavy" and phase=0 and (Vs2 > MECO2 or altitude > FAIRSEP)
-		{	// FH:CORE Booster SEP:
-			RCS ON.
-			set thrust to 0.
-			WAIT 1.
-			if (KUniverse:ActiveVessel = SHIP) 
-			{
-				STAGE.
-				WAIT 3.
-				if (KUniverse:ActiveVessel = SHIP) 
-					STAGE. 
-				set phase to 1. // Booster SEP}
-				set thrust to 1.
-				RCS OFF.
-				if vehicle_type = "Falcon Heavy"
-					SET Vdeg to 90-75.
-				else
-					SET Vdeg to 90-85.
-				WAIT 1.
-			}
-		}
-		
-		if vehicle_sub_type = "SN20-Profile" and KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT
-		{
-			//set LandingTarget to latlng(23.12854, -159.982839).
-			set ADDONS_TR_IMPACTPOS to ADDONS:TR:IMPACTPOS.
-			
-			SET landingDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
-			PRINT "landingDist: "+ROUND(landingDist/1000,1) + "  km    " at (0,16).
-			PRINT "[IMPACTPOS]: "+ROUND (ADDONS_TR_IMPACTPOS:LAT,3)+" " +ROUND (ADDONS_TR_IMPACTPOS:LNG,3) at (0,17).
-			
-			if landingDist > 10000000
-				set thrust to 0.05.
-				
-			if landingDist < 5
-				break.
-		}
-		
-		if vehicle_type <> "Crew Dragon 2"
-			check_fairing_sep().
+		if do_orbit()
+			break.
 		
 		update_orbit_status().
 		set vel to SQRT(Vs2).

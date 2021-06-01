@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestre all mission phases.
-// 17/Apr/2021
+// 01/Jun/2021
 // --------------------------------------------------------------------------------------------
 
 // Reset Engine settings before all, ("migth be a reboot")
@@ -76,7 +76,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		
 		if (BODY:name = mission_origin) and (apoapsis < LEOrbit or periapsis < body:atm:height) or orbit_type = "GSO" or vehicle_type = "Crew Dragon 2"
 		{
-			if vehicle_type <> "SN9-Profile1"
+			if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN20-Profile")
 			{
 				if KUniverse:ActiveVessel <> SHIP {
 					update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
@@ -93,7 +93,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		LOG  "SKIP: Launch" to LOG.txt.
 
 	// Adjust mission inclination?
-	if vehicle_type <> "SN9-Profile1" 
+	if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN20-Profile")
 	{
 		if NOT EXISTS("normal.txt")
 			change_inclination().
@@ -159,7 +159,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 	}
 
 	//ACTION: Break & LAND! -------------------------------------------
-	if vehicle_type <> "SN9-Profile1" 
+	if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN20-Profile")
 	{
 		if status <> "LANDED" and status <> "SPLASHED"
 		{

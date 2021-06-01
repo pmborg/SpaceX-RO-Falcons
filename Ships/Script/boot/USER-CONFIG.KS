@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------
-// Filename: stage-main.ks
+// Filename: USER-CONFIG.KS
 // --------------------------------------------------------------------------------------------
 // KOS Scripts for KSP to be used on SpaceX-RO-Falcons Mod (Pmborg RO Version) 
 // --------------------------------------------------------------------------------------------
@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This file is to allow Final USER to do some customizations at flight profile.
-// 21/Dez/2020
+// 01/Jun/2021
 // --------------------------------------------------------------------------------------------
 
 // USER CAN SELECT:

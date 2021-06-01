@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used before main.c, to distribute tasks among all Processors.
-// 03/Jan/2021
+// 01/Jun/2021
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 core:doaction("Open Terminal", true).
@@ -98,27 +98,27 @@ if vehicle_type = "Falcon Heavy"
 {
 	// 1=LandZone:    LZ-1
 	// 2=LandZone:    LZ-2
-	// 100=DroneShip: OCISLY
-	// 101=DroneShip: JRTI
+	// 100=DroneShip: JRTI
+	// 101=DroneShip: OCISLY
 	// 102=DroneShip: OCISLY-FAROUT
 	IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(102)	WAIT 0.1. //OCISLY_FAROUT
-	IF PROCESSOR_STAGE1L:CONNECTION:SENDMESSAGE(1)  WAIT 0.1.//LZ-1(Slave)
+	IF PROCESSOR_STAGE1L:CONNECTION:SENDMESSAGE(1)  WAIT 0.1. //LZ-1(Slave)
 	IF PROCESSOR_STAGE1R:CONNECTION:SENDMESSAGE(2)  WAIT 0.1. //LZ-2(Master)
 } 
 else if vehicle_type = "Crew Dragon 2"
 {
 	if STAGE1_LAND_ON = "LAND" {
-		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(1)   WAIT 0.1.	//LZ-1   F9 LandingZone
+		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(1)   WAIT 0.1.	//LZ-1   F9 LandingZone or starbase
 	} else {
-		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(101) WAIT 0.1.	//JRTI
+		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(101) WAIT 0.1.	//OCISLY F9 DroneShip
 	}
 } 
-else if vehicle_type = "F9v1.2B5"
+else if (vehicle_type = "F9v1.2B5" or vehicle_type = "StarShip")
 {
 	if STAGE1_LAND_ON = "LAND" {
 		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(1)   WAIT 0.1.	//LZ-1   F9 LandingZone
 	} else {
-		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(100) WAIT 0.1.	//OCISLY F9 DroneShip
+		IF PROCESSOR_STAGE1:CONNECTION:SENDMESSAGE(100) WAIT 0.1.	//JRTI
 	}
 }
 

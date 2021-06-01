@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              Used to specify the SW version and the diferent types of profiles supported.
-// 30/may/2021
+// 01/Jun/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: sw-version.c" to log.txt.
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
@@ -128,13 +128,14 @@ declare global vehicle_company to "SpaceX".
 
 if SHIP_NAME = "Starship SN20"
 {
-	declare global vehicle_type to "StarShip".
-	declare global vehicle_sub_type to "SN20-Profile".
+	declare global vehicle_type to "StarShip".				
+	declare global vehicle_sub_type to "SN20-Profile".		// BASE: starship-SN20 prototype (orbital flight): SPLASH LANDING (23.12854, -159.982839)
+	set STAGE1_LAND_ON to "SEA". 							// SETUP ST-1 to land on droneship
 }
 else
 if SHIP_NAME = "Starship SN9"
 {
-	declare global vehicle_type to "SN9-Profile1".
+	declare global vehicle_type to "SN9-Profile1".			// BASE: starship-SN8/SN9/SN10/SN11/SN15 prototype (hi-altitude flight: 10km)
 }
 else
 if SHIP_NAME = "Apollo11-4KSP1.11"
@@ -179,7 +180,7 @@ if SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" or
 if CORE:BOOTFILENAME:FIND("boot-fairings.ks") > -1
     set vehicle_type to "Fairing".
 
-//STAGE_1_TYPE:
+//STAGE_1_TYPE: (boot filename):
 // boot-boosters-L.ks
 // boot-boosters-R.ks
 // boot-boosters.ks
@@ -217,13 +218,15 @@ else
 	LOG  "[UNKNOWN] SHIP_NAME: "+MAIN_SHIP_NAME to LOG.txt.
 }
 
+PRINT "STAGE1_LAND_ON: "+STAGE1_LAND_ON.
+
 // Defaults for Fligth Profile:
 // --------------------------------------------------------------------------------------------
 if vehicle_type = "StarShip"
 {
     // Data: SaturnV
     declare global Qmax     to 8510/1.1.
-    declare global MECO1    to 2000^2.
+    declare global MECO1    to 1700^2. //ideal: 2000 (1700 match T+169)
     declare global FAIRSEP  to 110*1000.
 }else
 if vehicle_type = "SaturnV"
@@ -264,18 +267,18 @@ if vehicle_type = "F9v1.2B5"
         declare global MECO1    to 1835^2. //AP:160
     else
         declare global MECO1    to 2080^2. //2180*
-    declare global FAIRSEP  to 160*1000.
+    declare global FAIRSEP  	to 160*1000.
 }else
 if vehicle_type = "F1-M1"
 {
-    declare global Qmax     to 8576/1.1.
+    declare global Qmax     	to 8576/1.1.
         
     if SHIP_NAME = "PMBT-SpaceX Falcon 1 (Merlin 1A)"
         declare global MECO1    to 2300^2.  //Change from: ASCENT to Orbit
     if SHIP_NAME = "PMBT-SpaceX Falcon 1 (Merlin 1C)"
         declare global MECO1    to 3160^2.  //Change from: ASCENT to Orbit
     
-    declare global FAIRSEP  to 160*1000.
+    declare global FAIRSEP  	to 160*1000.
 }
 else
 {
@@ -330,12 +333,13 @@ function set_max_delta_curve
         if delta < (-80)                        //MAX. Keep: 10 deg nose up
             set delta to (-80).
     } else {
+		// DEFAULTS:
         if STAGE1_LAND_ON <> "LAND"
-        {
+        {										//WATER
             set delta to (1*(e^I)*(-1)).        //Normal Rotation
             if delta < (-50)                    //MAX. Keep: 40 deg nose up
                 set delta to (-50).
-        } else {
+        } else {								//LAND
             set delta to (1*(e^I)*(-1))*1.4.    //Rotate 40% Faster
             if delta < (-70)                    //MAX. Keep: 20 deg nose up
                 set delta to (-70).         
@@ -356,11 +360,11 @@ function set_Vdeg
     if vehicle_type = "Falcon Heavy"
         return 90-85.   // Vertical = 90
     
-    return  90-81.  // Vertical = 90
+    return 90-81.  // Vertical = 90
 }
 
 
-// SELECT VEHICLE TYPE: -------------------------------------------------------
+// SELECT ORBIT TYPE: -------------------------------------------------------
 declare global orbit_type to "LEO".         // Default: Orbit Type
 declare global LEOrbit to 300000.           // Default: Orbit Target at Launch
 
@@ -368,7 +372,7 @@ if vehicle_sub_type = "Falcon Heavy"
     set orbit_type to "GSO".
 
 if SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM"
-    declare global LEOrbit to 300000.       // Default: Orbit Target at Launch
+    declare global LEOrbit to 300000.       // downgrade to LEO (using FH)
     
 if orbit_type = "GSO" 
     set LEOrbit to 33000000.                // 1st step for (stage-2)

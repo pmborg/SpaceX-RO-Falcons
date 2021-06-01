@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to control (ST-1) Boosters and waiting phases and prepare them to land.
-// 01/Jan/2020
+// 01/Jun/2021
 // --------------------------------------------------------------------------------------------
 RCS OFF.
 RUNPATH( "boot/sw-version.c" ).
@@ -35,9 +35,12 @@ if (status = "PRELAUNCH" or status = "LANDED") and ( BODY:name = "Kerbin" or BOD
 	//WAIT until signal received:
 	update_phase_title("WAIT TO STARTUP SIGNAL", 0, true).
 	WAIT UNTIL NOT CORE:MESSAGES:EMPTY.
+	//WAIT:..............................................
+	
 	SET RECEIVED TO CORE:MESSAGES:POP.
 	set TARGET_N to RECEIVED:CONTENT.
 	PRINT "TARGET_N: "+TARGET_N.
+	LOG "TARGET_N: "+TARGET_N to LOG.txt.
 	
 	//Select target for later:
 	if TARGET_N = 100
