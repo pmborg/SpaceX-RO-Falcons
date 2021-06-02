@@ -12,7 +12,7 @@ GAME
 	scene = 7
 	editor = None
 	flag = Launchers Pack/Flags/SpaceX
-	launchID = 88
+	launchID = 90
 	defaultVABLaunchSite = LaunchPad
 	defaultSPHLaunchSite = Runway
 	modded = True
@@ -515,7 +515,7 @@ GAME
 	{
 		name = ContractSystem
 		scene = 7, 8, 5, 6
-		update = 3759928837.3016753
+		update = 3759928903.3016124
 		version = 1.11.2
 		WEIGHTS
 		{
@@ -799,7 +799,7 @@ GAME
 	{
 		name = Funding
 		scene = 7, 8, 5, 6
-		funds = 5002235028224.6543
+		funds = 5002235279339.6953
 	}
 	SCENARIO
 	{
@@ -7333,7 +7333,7 @@ GAME
 	{
 		name = Reputation
 		scene = 7, 8, 5, 6
-		rep = -998.090271
+		rep = -999.29071
 	}
 	SCENARIO
 	{
@@ -11969,8 +11969,8 @@ GAME
 				AutoPilotDisabled = False
 				AutoPilotDisTime = 0
 				AutoPilotDisCounter = 0
-				timeLastElectricity = 3759928839.9616728
-				lastUpdate = 3759928839.9616728
+				timeLastElectricity = 0
+				lastUpdate = 0
 				EmgcyShutOverride = False
 				EmgcyShutOverrideStarted = False
 				Emergencypowerdownactivated = False
@@ -11987,7 +11987,7 @@ GAME
 				ReenableRcs = False
 				ReenableSas = False
 				IsolateReservePower = False
-				Guid = 284be547-5dcd-4bbf-bf13-97b514dda3a7
+				Guid = b210c787-df38-4b06-917b-1f69868111d8
 			}
 		}
 	}
@@ -13344,7 +13344,7 @@ GAME
 		name = KerbalKonstructsSettings
 		scene = 5, 6, 7, 8
 		initialized = False
-		savetime = 3759928845.6816673
+		savetime = 3759928910.5416055
 		useUUID = True
 		KKSettings
 		{
@@ -15701,7 +15701,7 @@ GAME
 	FLIGHTSTATE
 	{
 		version = 1.11.2
-		UT = 3759928845.6816673
+		UT = 3759928910.5416055
 		activeVessel = 17
 		mapViewFiltering = 31740
 		commNetUIModeTracking = Network
@@ -15750,13 +15750,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 0
-				ECC = 1
-				INC = 70.953101106538426
+				SMA = 1222120.5414348338
+				ECC = 0.99999999999999989
+				INC = 70.953101106642734
 				LPE = 90
-				LAN = 45.558472049651755
-				MNA = 0
-				EPH = 3759928826.9216852
+				LAN = 45.563864550754715
+				MNA = 3.1415926207170166
+				EPH = 3759928902.8216128
 				REF = 2
 				IDENT = Mercury
 			}
@@ -15973,13 +15973,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 1220901.2557345526
-				ECC = 0.99999999999999989
-				INC = 95.370880967806571
-				LPE = 90
-				LAN = 2.1832496520939912
-				MNA = 3.1415926207170166
-				EPH = 3759928826.9216852
+				SMA = 0
+				ECC = 1
+				INC = 95.370880967875507
+				LPE = 90.000000000000014
+				LAN = 2.1886421527393054
+				MNA = 0
+				EPH = 3759928902.8216128
 				REF = 2
 				IDENT = Mercury
 			}
@@ -16217,13 +16217,13 @@ GAME
 			cMod = -1
 			ORBIT
 			{
-				SMA = NaN
-				ECC = 1
-				INC = 58.458237335853333
-				LPE = 89.999999999999986
-				LAN = 54.064516768153226
-				MNA = 0
-				EPH = 3759928826.9216852
+				SMA = 905650.18709997286
+				ECC = 0.99999999999999989
+				INC = 58.4582373362867
+				LPE = 90.000000000000014
+				LAN = 54.243059646098459
+				MNA = 3.1415926207170166
+				EPH = 3759928902.8216128
 				REF = 3
 				IDENT = Io
 			}
@@ -17161,13 +17161,13 @@ GAME
 			cMod = -1
 			ORBIT
 			{
-				SMA = 1220614.1670536653
+				SMA = 1220614.1670562022
 				ECC = 0.99999999999999989
-				INC = 45.605810559830644
+				INC = 45.605810559947237
 				LPE = 90
-				LAN = 309.95913118900359
+				LAN = 309.96452369024786
 				MNA = 3.1415926207170166
-				EPH = 3759928826.9216852
+				EPH = 3759928902.8216128
 				REF = 2
 				IDENT = Mercury
 			}
@@ -17400,11 +17400,11 @@ GAME
 			{
 				SMA = 0
 				ECC = 1
-				INC = 82.938050098777651
+				INC = 82.938050098754672
 				LPE = 90
-				LAN = 134.63007000408254
+				LAN = 134.63546250529248
 				MNA = 0
-				EPH = 3759928826.9216852
+				EPH = 3759928902.8216128
 				REF = 2
 				IDENT = Mercury
 			}
@@ -18594,13 +18594,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = NaN
-				ECC = 1
+				SMA = 3185537.2845892608
+				ECC = 0.99999999999999989
 				INC = 61.387097606932144
 				LPE = 90
-				LAN = 231.25046965500883
-				MNA = 0
-				EPH = 3759928826.9216852
+				LAN = 231.56758518538047
+				MNA = 3.1415926207170166
+				EPH = 3759928902.8216128
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -19939,13 +19939,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 3185537.2762951227
-				ECC = 0.99999999999999989
+				SMA = NaN
+				ECC = 1
 				INC = 61.387109843702987
 				LPE = 90
-				LAN = 231.24855855872318
-				MNA = 3.1415926207170166
-				EPH = 3759928826.9216852
+				LAN = 231.56567408909478
+				MNA = 0
+				EPH = 3759928902.8216128
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -21287,10 +21287,10 @@ GAME
 				SMA = 0
 				ECC = 1
 				INC = 63.840302653560194
-				LPE = 90
-				LAN = 217.25501993035891
+				LPE = 90.000000000000014
+				LAN = 217.57213546073055
 				MNA = 0
-				EPH = 3759928826.9216852
+				EPH = 3759928902.8216128
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -22768,7 +22768,7 @@ GAME
 		{
 			pid = b0089d550a014772881dffc7b4c9bef1
 			persistentId = 1132137143
-			name = Untitled Space Craft
+			name = LandingZone1
 			type = Probe
 			sit = LANDED
 			landed = True
@@ -22779,17 +22779,17 @@ GAME
 			landedAt = KSC_Pad_Grounds
 			displaylandedAt = #autoLOC_6002112
 			splashed = False
-			met = 193.03981590270996
+			met = 257.8997540473938
 			lct = 3759928652.6418514
-			lastUT = 3759928845.6816673
+			lastUT = 3759928910.5416055
 			distanceTraveled = 9.3146993655811308
 			root = 0
-			lat = 25.996514130010233
-			lon = -97.148008125825243
-			alt = 149.8885064618662
-			hgt = 3.50015926
-			nrm = 0.11897476,0.990790784,0.0646416545
-			rot = -0.518401623,0.252310693,-0.110430956,0.809570313
+			lat = 25.996534786785357
+			lon = -97.148022194997566
+			alt = 150.11381082888693
+			hgt = 3.28658509
+			nrm = 0.11645516,0.991510093,0.0578417331
+			rot = -0.51993376,0.236025289,-0.103160411,0.814443946
 			CoM = 0,0,0
 			stg = 1
 			prst = False
@@ -22808,13 +22808,13 @@ GAME
 			cMod = 0
 			ORBIT
 			{
-				SMA = 3190020.5048767715
-				ECC = 0.99721283257165683
-				INC = 25.996514130339165
-				LPE = 270.00027737636117
-				LAN = 214.80023752675214
-				MNA = -3.1415920565731414
-				EPH = 3759928845.6816673
+				SMA = 3190020.6925498466
+				ECC = 0.99721278570085137
+				INC = 25.996534786786338
+				LPE = 269.99998502033753
+				LAN = 215.07153925447102
+				MNA = 3.1415925002240837
+				EPH = 3759928910.5416055
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -22842,10 +22842,10 @@ GAME
 				srfN = , -1
 				mass = 25
 				shielded = False
-				temp = 303.44107933160899
-				tempExt = 303.43148142416675
-				tempExtUnexp = 303.42941876981598
-				staticPressureAtm = 0.98242627230215263
+				temp = 305.25291720929192
+				tempExt = 305.45773619998801
+				tempExtUnexp = 305.45642561971886
+				staticPressureAtm = 0.98240006920028367
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -24122,7 +24122,7 @@ GAME
 		}
 		VESSEL
 		{
-			pid = 284be5475dcd4bbfbf1397b514dda3a7
+			pid = b210c787df384b06917b1f69868111d8
 			persistentId = 636001204
 			name = Starship SN20
 			type = Ship
@@ -24136,20 +24136,20 @@ GAME
 			displaylandedAt = #autoLOC_6002112
 			splashed = False
 			met = 0
-			lct = 3759928845.6816673
-			lastUT = 3759928845.6816673
+			lct = 3759928910.5416055
+			lastUT = 3759928910.5416055
 			distanceTraveled = 0
 			root = 0
-			lat = 25.996611256643543
-			lon = -97.149724707763056
-			alt = 253.29611344914883
-			hgt = 98.9294739
-			nrm = -0.000138584524,0.99999994,-7.43567944E-05
-			rot = -0.528853357,0.0520936809,0.0334917158,0.846450686
-			CoM = -3.81469727E-06,-51.7786942,1.90734863E-05
+			lat = 25.996611202161613
+			lon = -97.149731486387864
+			alt = 253.78126829862595
+			hgt = 98.9053116
+			nrm = 0.000181075186,0.999999821,-0.000541299582
+			rot = -0.528689563,0.0532637872,0.0329409689,0.846501827
+			CoM = -6.00814819E-05,-51.7500496,1.33514404E-05
 			stg = 4
 			prst = False
-			ref = 1576258262
+			ref = 1345400309
 			ctrl = True
 			PQSMin = 2
 			PQSMax = 10
@@ -24159,18 +24159,18 @@ GAME
 			OverrideAxisControl = 0,0,0,0
 			OverrideGroupNames = ,,,
 			altDispState = ASL
-			cPch = 0.3280001
-			cHdg = 0.03999999
+			cPch = 0.116
+			cHdg = 0.04600003
 			cMod = 0
 			ORBIT
 			{
-				SMA = 3190046.1376341614
-				ECC = 0.99721296888511568
-				INC = 25.996611271032524
-				LPE = 269.9966090471886
-				LAN = 214.80260240811961
-				MNA = -3.1415922464813559
-				EPH = 3759928845.6816673
+				SMA = 3190046.4200519198
+				ECC = 0.99721295313506852
+				INC = 25.996610970469703
+				LPE = 270.00217718656353
+				LAN = 215.06739254247483
+				MNA = 3.1415913360185592
+				EPH = 3759928910.5416055
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -24178,33 +24178,33 @@ GAME
 			{
 				name = TE2.21.SN8
 				cid = 4290357954
-				uid = 1576258262
-				mid = 3100902108
-				persistentId = 348345342
-				launchID = 87
+				uid = 1345400309
+				mid = 3596995287
+				persistentId = 2314906570
+				launchID = 89
 				parent = 0
 				position = 0,0,0
 				rotation = 0,0,0,1
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 2
+				istg = 3
 				resPri = 0
 				dstg = 0
-				sqor = 2
+				sqor = 3
 				sepI = -1
 				sidx = 0
 				attm = 0
 				sameVesselCollision = False
 				srfN = srfAttach, -1
-				attN = node_FF_R, 22
-				attN = node_FF_L, 23
+				attN = node_FF_R, 31
+				attN = node_FF_L, 32
 				attN = node_bottom, 1
 				mass = 5.40483761
 				shielded = False
-				temp = 289.14698653867634
-				tempExt = 277.51668729058343
-				tempExtUnexp = 277.52638323697153
-				staticPressureAtm = 0.97046124326309213
+				temp = 296.56030533343522
+				tempExt = 284.08200429487727
+				tempExtUnexp = 284.09960291128755
+				staticPressureAtm = 0.9704054487272159
 				expt = 2.0480001
 				state = 0
 				PreFailState = 0
@@ -25196,15 +25196,15 @@ GAME
 						}
 						MechJebModuleFlightRecorder
 						{
-							markUT = 3759928845.6816673
+							markUT = 3759928910.5416055
 							deltaVExpended = 0
 							dragLosses = 0
 							gravityLosses = 0
 							steeringLosses = 0
-							markLAN = 214.80328056641474
-							markLatitude = 25.996611511391997
-							markLongitude = -97.14972584997372
-							markAltitude = 201.51730252923443
+							markLAN = 215.07055136900462
+							markLatitude = 25.996611255078268
+							markLongitude = -97.149732470997719
+							markAltitude = 202.03123686825856
 							markBodyIndex = 1
 							maxDragGees = 0
 							unlockParts = 
@@ -25330,7 +25330,7 @@ GAME
 							file
 							{
 								filename = boot.ks
-								binary = H4sIAHKhtmAA,72TUW,aMBSFn+FXXPUJHhIDqxiLNFUU1HVqKxhhW6epDzfxTeKSxJbtkLJfPzsgdRPP7X2zffXd4+NjxiB4w+o7,o0oqcaKIkiktOHO9N9h6N0qhjjVQlkDmdRwF6,BSkgIGkMcZA2xwpQeg80quMEylbWBB8lhsK4SqXPYrOAHaSNkPYT30LuQnCA5QAQnAQEU1ioTMebkN1W4I51gabxopWWusQpTWTFRc3oJVaGumNvOnNVs,Gk2m44D1XGYh1+TRSglcsi0rCLovcLbtg25liqRLx3PFOyZj2Ux5bPRVBzQjtl8fo0f8TERv5bZfvYlwG+XD4dNYPGKl59Hnn+PloyFpWxrPyX6R3wubNEkHfok6Mx3T1g3WknjIuIX,9W2EOaovdWoFGnAvRTcP6amgLiwgDUHg3sCBC3THVl4bpwc15EWWOcEtiBIvcEyO+Nf+FAyYzGnoEJRX4A3MXR9PVfffVh8fvwRK9Fhu1ZH6qineYPjVSDeBhNw3QtNLSw15m5vMvQzxx,Ykv6wyWgyevM49eOfX7eLW9iuYBT2GHtdcsqwKS2s59vbCH67T,HE4kIow45,pa+bWqEtBmeuDMO,e6TOFyoEAAA=
+								binary = H4sIAD2It2AA,72TUW,aMBSFn+FXXPUJHhIDqxiLNFUU1HVqKxhhW6epDzfxTeKSxJbtkLJfPzsgdRPP7X2zffXd4+NjxiB4w+o7,o0oqcaKIkiktOHO9N9h6N0qhjjVQlkDmdRwF6,BSkgIGkMcZA2xwpQeg80quMEylbWBB8lhsK4SqXPYrOAHaSNkPYT30LuQnCA5QAQnAQEU1ioTMebkN1W4I51gabxopWWusQpTWTFRc3oJVaGumNvOnNVs,Gk2m44D1XGYh1+TRSglcsi0rCLovcLbtg25liqRLx3PFOyZj2Ux5bPRVBzQjtl8fo0f8TERv5bZfvYlwG+XD4dNYPGKl59Hnn+PloyFpWxrPyX6R3wubNEkHfok6Mx3T1g3WknjIuIX,9W2EOaovdWoFGnAvRTcP6amgLiwgDUHg3sCBC3THVl4bpwc15EWWOcEtiBIvcEyO+Nf+FAyYzGnoEJRX4A3MXR9PVfffVh8fvwRK9Fhu1ZH6qineYPjVSDeBhNw3QtNLSw15m5vMvQzxx,Ykv6wyWgyevM49eOfX7eLW9iuYBT2GHtdcsqwKS2s59vbCH67T,HE4kIow45,pa+bWqEtBmeuDMO,e6TOFyoEAAA=
 							}
 						}
 					}
@@ -25440,7 +25440,7 @@ GAME
 				RESOURCE
 				{
 					name = ElectricCharge
-					amount = 20479.908203125
+					amount = 20479.947265625
 					maxAmount = 20480.009187909134
 					flowState = True
 					isTweakable = True
@@ -25475,16 +25475,16 @@ GAME
 			{
 				name = TE2.19.SS.Fuel.Tank
 				cid = 4290354762
-				uid = 1465131368
-				mid = 3100902108
-				persistentId = 2344705361
-				launchID = 87
+				uid = 1724961294
+				mid = 3596995287
+				persistentId = 1976620557
+				launchID = 89
 				parent = 0
 				position = 0,-22.529541015625,0
 				rotation = 0,0,0,-1
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 2
+				istg = 3
 				resPri = 0
 				dstg = 0
 				sqor = -1
@@ -25508,10 +25508,10 @@ GAME
 				attN = node_bottom, 16
 				mass = 43.2552261
 				shielded = False
-				temp = 114.01190565807988
-				tempExt = 148.67265348781595
-				tempExtUnexp = 148.65696628048474
-				staticPressureAtm = 0.97305715745859545
+				temp = 100.42175499745386
+				tempExt = 143.35735663046941
+				tempExtUnexp = 143.36472174041214
+				staticPressureAtm = 0.97300121233017978
 				expt = 2.0480001
 				state = 0
 				PreFailState = 0
@@ -25942,7 +25942,7 @@ GAME
 						temperature = 90.1500015
 						fillable = True
 						techRequired = 
-						amount = 829562.35333762132
+						amount = 829562.98760598153
 						maxAmount = 921736.82145476935
 					}
 					TANK
@@ -25956,7 +25956,7 @@ GAME
 						temperature = 111.449997
 						fillable = True
 						techRequired = 
-						amount = 233679.70826536714
+						amount = 233679.75450030793
 						maxAmount = 259644.17854523059
 					}
 					UPGRADESAPPLIED
@@ -26082,7 +26082,7 @@ GAME
 				RESOURCE
 				{
 					name = RefundingForKSP111x
-					amount = 55.182357788086335
+					amount = 55.182357788084502
 					maxAmount = 9.9999999999999995E-08
 					flowState = False
 					isTweakable = False
@@ -26093,7 +26093,7 @@ GAME
 				RESOURCE
 				{
 					name = LqdMethane
-					amount = 233679.70826536714
+					amount = 233679.75450030793
 					maxAmount = 259644.17854523059
 					flowState = True
 					isTweakable = True
@@ -26104,7 +26104,7 @@ GAME
 				RESOURCE
 				{
 					name = LqdOxygen
-					amount = 829562.35333762132
+					amount = 829562.98760598153
 					maxAmount = 921736.82145476935
 					flowState = True
 					isTweakable = True
@@ -26117,16 +26117,16 @@ GAME
 			{
 				name = TE2.19.SS.RF.R
 				cid = 4290326808
-				uid = 1353542309
-				mid = 3100902108
-				persistentId = 3827767814
-				launchID = 87
+				uid = 3907357966
+				mid = 3596995287
+				persistentId = 1977389605
+				launchID = 89
 				parent = 1
 				position = 5.0639858245849609,-24.895927429199219,-1.1920928955078125E-07
 				rotation = 0,5.96046448E-08,0.710185409,0.704014719
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 2
+				istg = 3
 				resPri = 0
 				dstg = 0
 				sqor = -1
@@ -26138,10 +26138,10 @@ GAME
 				attN = node_top, 1
 				mass = 7.05600071
 				shielded = False
-				temp = 295.62928696098481
-				tempExt = 220.04847988199901
-				tempExtUnexp = 220.04627963748041
-				staticPressureAtm = 0.97333018173266717
+				temp = 299.5722323790128
+				tempExt = 225.18760082342519
+				tempExtUnexp = 225.22084374251034
+				staticPressureAtm = 0.97327401071544217
 				expt = 0.409600019
 				state = 0
 				PreFailState = 0
@@ -26480,16 +26480,16 @@ GAME
 			{
 				name = TE2.19.SS.RF.L
 				cid = 4290326536
-				uid = 3286140673
-				mid = 3100902108
-				persistentId = 1089750966
-				launchID = 87
+				uid = 1761714901
+				mid = 3596995287
+				persistentId = 2324691456
+				launchID = 89
 				parent = 1
 				position = -5.0639858245849609,-24.895957946777344,8.9406967163085938E-08
 				rotation = -1.78813934E-07,1.49011612E-07,0.710185409,-0.704014778
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 2
+				istg = 3
 				resPri = 0
 				dstg = 0
 				sqor = -1
@@ -26501,10 +26501,10 @@ GAME
 				attN = node_top, 1
 				mass = 7.05600071
 				shielded = False
-				temp = 295.6292847210072
-				tempExt = 220.04847918835696
-				tempExtUnexp = 220.04627892454721
-				staticPressureAtm = 0.97333010643639739
+				temp = 299.57223152797616
+				tempExt = 225.18760187492964
+				tempExtUnexp = 225.22084476784221
+				staticPressureAtm = 0.97327431190052116
 				expt = 0.409600019
 				state = 0
 				PreFailState = 0
@@ -26843,16 +26843,16 @@ GAME
 			{
 				name = TE2.21.SN.LEG
 				cid = 4290313570
-				uid = 380583529
-				mid = 3100902108
-				persistentId = 2405490822
-				launchID = 87
+				uid = 50452617
+				mid = 3596995287
+				persistentId = 4072836662
+				launchID = 89
 				parent = 1
 				position = -0.062199607491493225,-31.792976379394531,-4.3182148933410645
 				rotation = 1.49094163E-07,0.692047298,-1.86049206E-07,-0.721852243
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 2
+				istg = 3
 				resPri = 0
 				dstg = 0
 				sqor = -1
@@ -26868,10 +26868,10 @@ GAME
 				srfN = srfAttach, 1,Cube_24
 				mass = 0.0799999982
 				shielded = False
-				temp = 297.80391255230148
-				tempExt = 220.33848127271773
-				tempExtUnexp = 220.33606674894506
-				staticPressureAtm = 0.97412621389634213
+				temp = 300.75388616663895
+				tempExt = 225.31526567257123
+				tempExtUnexp = 225.34783063409128
+				staticPressureAtm = 0.97406996758284758
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -27018,16 +27018,16 @@ GAME
 			{
 				name = TE2.21.SN.LEG
 				cid = 4290310810
-				uid = 2849729987
-				mid = 3100902108
-				persistentId = 1380543806
-				launchID = 87
+				uid = 3026105609
+				mid = 3596995287
+				persistentId = 3092900828
+				launchID = 89
 				parent = 1
 				position = -3.7707903385162354,-31.792976379394531,-2.1052403450012207
 				rotation = 3.60947325E-08,0.238404393,-2.35670385E-07,-0.971166015
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 2
+				istg = 3
 				resPri = 0
 				dstg = 0
 				sqor = -1
@@ -27043,10 +27043,10 @@ GAME
 				srfN = srfAttach, 1,Cube_24
 				mass = 0.0799999982
 				shielded = False
-				temp = 297.80391255230148
-				tempExt = 220.33848127271773
-				tempExtUnexp = 220.33606674894506
-				staticPressureAtm = 0.97412621389634213
+				temp = 300.75388616663895
+				tempExt = 225.31526567257123
+				tempExtUnexp = 225.34783063409128
+				staticPressureAtm = 0.9740701934716568
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -27189,16 +27189,16 @@ GAME
 			{
 				name = TE2.21.SN.LEG
 				cid = 4290310736
-				uid = 1102945329
-				mid = 3100902108
-				persistentId = 3033372586
-				launchID = 87
+				uid = 2275576572
+				mid = 3596995287
+				persistentId = 2164867648
+				launchID = 89
 				parent = 1
 				position = -3.708620548248291,-31.792976379394531,2.2129926681518555
 				rotation = -8.65762289E-08,-0.279118776,-2.22143839E-07,-0.960256577
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 2
+				istg = 3
 				resPri = 0
 				dstg = 0
 				sqor = -1
@@ -27214,10 +27214,10 @@ GAME
 				srfN = srfAttach, 1,Cube_24
 				mass = 0.0799999982
 				shielded = False
-				temp = 297.80391255230148
-				tempExt = 220.33848127271773
-				tempExtUnexp = 220.33606674894506
-				staticPressureAtm = 0.97412621389634213
+				temp = 300.75388616663895
+				tempExt = 225.31526567257123
+				tempExtUnexp = 225.34783063409128
+				staticPressureAtm = 0.97407049465673567
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -27360,16 +27360,16 @@ GAME
 			{
 				name = TE2.21.SN.LEG
 				cid = 4290310662
-				uid = 2156979533
-				mid = 3100902108
-				persistentId = 3164749230
-				launchID = 87
+				uid = 4177863782
+				mid = 3596995287
+				persistentId = 675147989
+				launchID = 89
 				parent = 1
 				position = 0.062200084328651428,-31.792976379394531,4.3182148933410645
 				rotation = -1.86049206E-07,-0.721852303,-1.49094163E-07,-0.692047238
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 2
+				istg = 3
 				resPri = 0
 				dstg = 0
 				sqor = -1
@@ -27385,10 +27385,10 @@ GAME
 				srfN = srfAttach, 1,Cube_24
 				mass = 0.0799999982
 				shielded = False
-				temp = 297.80391255230148
-				tempExt = 220.33848127271773
-				tempExtUnexp = 220.33606674894506
-				staticPressureAtm = 0.9741262891926119
+				temp = 300.75388616663895
+				tempExt = 225.31526567257123
+				tempExtUnexp = 225.34783063409128
+				staticPressureAtm = 0.97407049465673567
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -27531,16 +27531,16 @@ GAME
 			{
 				name = TE2.21.SN.LEG
 				cid = 4290310588
-				uid = 1070137092
-				mid = 3100902108
-				persistentId = 1483825421
-				launchID = 87
+				uid = 2454449292
+				mid = 3596995287
+				persistentId = 2996584603
+				launchID = 89
 				parent = 1
 				position = 3.7707912921905518,-31.792976379394531,2.1052405834197998
 				rotation = -2.35670399E-07,-0.971166015,-3.60946935E-08,-0.238404244
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 2
+				istg = 3
 				resPri = 0
 				dstg = 0
 				sqor = -1
@@ -27556,10 +27556,10 @@ GAME
 				srfN = srfAttach, 1,Cube_24
 				mass = 0.0799999982
 				shielded = False
-				temp = 297.80391255230148
-				tempExt = 220.33848127271773
-				tempExtUnexp = 220.33606674894506
-				staticPressureAtm = 0.9741262891926119
+				temp = 300.75388616663895
+				tempExt = 225.31526567257123
+				tempExtUnexp = 225.34783063409128
+				staticPressureAtm = 0.97407026876792646
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -27702,16 +27702,16 @@ GAME
 			{
 				name = TE2.21.SN.LEG
 				cid = 4290310514
-				uid = 903503503
-				mid = 3100902108
-				persistentId = 1520193721
-				launchID = 87
+				uid = 268954003
+				mid = 3596995287
+				persistentId = 1670896489
+				launchID = 89
 				parent = 1
 				position = 3.7086210250854492,-31.792976379394531,-2.212989330291748
 				rotation = -2.22143939E-07,-0.960256696,8.65762217E-08,0.279118627
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 2
+				istg = 3
 				resPri = 0
 				dstg = 0
 				sqor = -1
@@ -27727,10 +27727,10 @@ GAME
 				srfN = srfAttach, 1,Cube_24
 				mass = 0.0799999982
 				shielded = False
-				temp = 297.80391255230148
-				tempExt = 220.33848127271773
-				tempExtUnexp = 220.33606674894506
-				staticPressureAtm = 0.97412621389634213
+				temp = 300.75388616663895
+				tempExt = 225.31526567257123
+				tempExtUnexp = 225.34783063409128
+				staticPressureAtm = 0.97406996758284758
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -27873,10 +27873,10 @@ GAME
 			{
 				name = TE2.19.SS.RPTR.VAC
 				cid = 4292523532
-				uid = 1009674909
-				mid = 3100902108
-				persistentId = 4200806769
-				launchID = 87
+				uid = 460316303
+				mid = 3596995287
+				persistentId = 3202170550
+				launchID = 89
 				parent = 1
 				position = 0,-29.205642700195313,2.9472198486328125
 				rotation = 0,0,0,1
@@ -27896,10 +27896,10 @@ GAME
 				attN = node_top, 1
 				mass = 2.5999999
 				shielded = False
-				temp = 281.27141434490869
-				tempExt = 245.44891953879528
-				tempExtUnexp = 245.45714263518045
-				staticPressureAtm = 0.97382758889055943
+				temp = 293.26225348763694
+				tempExt = 253.32307538054792
+				tempExtUnexp = 253.34772290773262
+				staticPressureAtm = 0.97377171905841342
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28150,10 +28150,10 @@ GAME
 			{
 				name = TE2.19.SS.RPTR.VAC
 				cid = 4292522990
-				uid = 1701210876
-				mid = 3100902108
-				persistentId = 1820738143
-				launchID = 87
+				uid = 1763263287
+				mid = 3596995287
+				persistentId = 3252139545
+				launchID = 89
 				parent = 1
 				position = 2.5523438453674316,-29.205650329589844,-1.4735840559005737
 				rotation = 0,0.866025448,0,0.49999997
@@ -28173,10 +28173,10 @@ GAME
 				attN = node_top, 1
 				mass = 2.5999999
 				shielded = False
-				temp = 281.27141157837985
-				tempExt = 245.44891821080205
-				tempExtUnexp = 245.45714130841313
-				staticPressureAtm = 0.97382751359428965
+				temp = 293.2622541150966
+				tempExt = 253.32307566213626
+				tempExtUnexp = 253.34772318854979
+				staticPressureAtm = 0.97377134257706477
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28427,10 +28427,10 @@ GAME
 			{
 				name = TE2.19.SS.RPTR.VAC
 				cid = 4292522860
-				uid = 3008952487
-				mid = 3100902108
-				persistentId = 2216235989
-				launchID = 87
+				uid = 132029885
+				mid = 3596995287
+				persistentId = 3874170848
+				launchID = 89
 				parent = 1
 				position = -2.5523438453674316,-29.205650329589844,-1.4735870361328125
 				rotation = 0,0.866025388,0,-0.50000006
@@ -28450,10 +28450,10 @@ GAME
 				attN = node_top, 1
 				mass = 2.5999999
 				shielded = False
-				temp = 281.27141849470354
-				tempExt = 245.44892153078547
-				tempExtUnexp = 245.45714462533186
-				staticPressureAtm = 0.97382751359428965
+				temp = 293.26225474255654
+				tempExt = 253.32307594372537
+				tempExtUnexp = 253.34772346936782
+				staticPressureAtm = 0.97377149316960421
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28704,10 +28704,10 @@ GAME
 			{
 				name = TE2.19.BFS.SL.RAPTOR
 				cid = 4290348350
-				uid = 3300786602
-				mid = 3100902108
-				persistentId = 2597421043
-				launchID = 87
+				uid = 3207915941
+				mid = 3596995287
+				persistentId = 2708015416
+				launchID = 89
 				parent = 1
 				position = 0.83139652013778687,-30.404739379882813,0.48002931475639343
 				rotation = 0,0,0,1
@@ -28728,10 +28728,10 @@ GAME
 				attN = node_bottom, -1
 				mass = 7.65600061
 				shielded = False
-				temp = 295.32169530373494
-				tempExt = 252.23944026451014
-				tempExtUnexp = 252.24107834118419
-				staticPressureAtm = 0.97396598343433871
+				temp = 299.39469166142749
+				tempExt = 256.12633244820205
+				tempExtUnexp = 256.14319091656267
+				staticPressureAtm = 0.97390996300965327
 				expt = 2.0480001
 				state = 0
 				PreFailState = 0
@@ -29114,10 +29114,10 @@ GAME
 			{
 				name = TE2.19.BFS.SL.RAPTOR
 				cid = 4292514654
-				uid = 1084486271
-				mid = 3100902108
-				persistentId = 4223773339
-				launchID = 87
+				uid = 2803571145
+				mid = 3596995287
+				persistentId = 2001062391
+				launchID = 89
 				parent = 1
 				position = 0,-30.404739379882813,-0.95998537540435791
 				rotation = 0,0.866025448,0,0.49999997
@@ -29138,10 +29138,10 @@ GAME
 				attN = node_bottom, -1
 				mass = 7.65600061
 				shielded = False
-				temp = 295.3198962293522
-				tempExt = 252.27089847590642
-				tempExtUnexp = 252.27253658193212
-				staticPressureAtm = 0.97396590813806894
+				temp = 299.39403206185921
+				tempExt = 256.15432689820199
+				tempExtUnexp = 256.17118571953125
+				staticPressureAtm = 0.9739098877133836
 				expt = 2.0480001
 				state = 0
 				PreFailState = 0
@@ -29516,10 +29516,10 @@ GAME
 			{
 				name = TE2.19.BFS.SL.RAPTOR
 				cid = 4292514360
-				uid = 8986848
-				mid = 3100902108
-				persistentId = 4115557795
-				launchID = 87
+				uid = 2410429973
+				mid = 3596995287
+				persistentId = 623899600
+				launchID = 89
 				parent = 1
 				position = -0.83137208223342896,-30.404739379882813,0.48002931475639343
 				rotation = 0,0.866025388,0,-0.50000006
@@ -29540,10 +29540,10 @@ GAME
 				attN = node_bottom, -1
 				mass = 7.65600061
 				shielded = False
-				temp = 295.32042679405095
-				tempExt = 252.23877919648282
-				tempExtUnexp = 252.24041796619309
-				staticPressureAtm = 0.97396598343433871
+				temp = 299.39423048403251
+				tempExt = 256.12607467117908
+				tempExtUnexp = 256.14293386556631
+				staticPressureAtm = 0.97391003830592304
 				expt = 2.0480001
 				state = 0
 				PreFailState = 0
@@ -29918,10 +29918,10 @@ GAME
 			{
 				name = TE2.19.SH.Interstage
 				cid = 4293615696
-				uid = 519401535
-				mid = 3100902108
-				persistentId = 1197087183
-				launchID = 87
+				uid = 2626288341
+				mid = 3596995287
+				persistentId = 157505564
+				launchID = 89
 				parent = 1
 				position = 0,-34.844703674316406,0
 				rotation = 0,0,0,1
@@ -29937,13 +29937,13 @@ GAME
 				sameVesselCollision = False
 				srfN = , -1
 				attN = node_top, 1
-				attN = node_bottom, 17
+				attN = node_bottom, 21
 				mass = 9.25600052
 				shielded = False
-				temp = 293.90424255018087
-				tempExt = 250.72725257791168
-				tempExtUnexp = 250.72911415222416
-				staticPressureAtm = 0.97447867573498792
+				temp = 298.85228857846249
+				tempExt = 259.2570956052308
+				tempExtUnexp = 259.26911282361522
+				staticPressureAtm = 0.97442265531030248
 				expt = 2.0480001
 				state = 0
 				PreFailState = 0
@@ -30405,7 +30405,7 @@ GAME
 					baseModuleMass = 0
 					additionalCost = 0
 					MaxPartId = 100
-					RequiredPower = 0.00125714287
+					RequiredPower = 0.00122142863
 					stagingEnabled = True
 					activated = True
 					EVENTS
@@ -30445,13 +30445,13 @@ GAME
 							file
 							{
 								filename = boot-boosters.ks
-								binary = H4sIAHKhtmAA,72TXW+bMBSGr5NfcdSr9gIMVZVlSFOVpl9T15EFtnWadnHABtwAx7JNaP797LRSO1W7bM8FkrH1+PHxa8YgeMOaOv6lbEWPnUigILKB+xgrtAk3ZvoOu9+kGWSllsoaqEjDTbYCS1AIGIzgQD1kCktxF6zT4BLbknoDt8ThcNUVpGtYp,DD2Urqj+A9fJfEBRQ7SOBJIIDGWmUSxpz+0IUboQtsjZdWmmqNXVhSx2TPxUOoGnXK3O,K9ZzFH+fzWRyoPYd5+JmwCC0hh0pTl8DkGT6OY8g1qYIe9jzTsHseUzPj82gmd2hjtlic4Qe8K+Sv82o7vwrw28ntbh1YPOXtp8jzv6AVxsI5jb3fJXkhX0vbDMUe,ST0qu+esBq0IuOy4gf,VN5I8+g+alRKaMAtSe4vU4tAcGkBew4GtwIQNJUbYeF+cDpuRdlgXwuwjYDSN5iqV,wDn05mLNbiZUYPwPcydMsnrr77zPgYZXkQwzJdX,gZiE,YV9qy4+g4evOMTLOfn,PlNeQpROGEsechFxUOrYXVIr9O4LdL+h+WNVIZ9vgApnroFdrm8H9HPQr,AtcvSaoPBAAA
+								binary = H4sIAD2It2AA,72TXW+bMBSGr5NfcdSr9gIMVZVlSFOVpl9T15EFtnWadnHABtwAx7JNaP797LRSO1W7bM8FkrH1+PHxa8YgeMOaOv6lbEWPnUigILKB+xgrtAk3ZvoOu9+kGWSllsoaqEjDTbYCS1AIGIzgQD1kCktxF6zT4BLbknoDt8ThcNUVpGtYp,DD2Urqj+A9fJfEBRQ7SOBJIIDGWmUSxpz+0IUboQtsjZdWmmqNXVhSx2TPxUOoGnXK3O,K9ZzFH+fzWRyoPYd5+JmwCC0hh0pTl8DkGT6OY8g1qYIe9jzTsHseUzPj82gmd2hjtlic4Qe8K+Sv82o7vwrw28ntbh1YPOXtp8jzv6AVxsI5jb3fJXkhX0vbDMUe,ST0qu+esBq0IuOy4gf,VN5I8+g+alRKaMAtSe4vU4tAcGkBew4GtwIQNJUbYeF+cDpuRdlgXwuwjYDSN5iqV,wDn05mLNbiZUYPwPcydMsnrr77zPgYZXkQwzJdX,gZiE,YV9qy4+g4evOMTLOfn,PlNeQpROGEsechFxUOrYXVIr9O4LdL+h+WNVIZ9vgApnroFdrm8H9HPQr,AtcvSaoPBAAA
 							}
 						}
 						file
 						{
 							filename = STAGE1_TARGET_FILE.c
-							binary = H4sIAHKhtmAA,0tJTc5JLEpVSM,JT0rMUfBJzEvJzEuPys9LVQjxVwhzDQ529dHwCgrx1NTjAgC637Z5LAAAAA==
+							binary = H4sIAD2It2AA,0tJTc5JLEpVSM,JT0rMUfBJzEvJzEuPys9LVQjxVwhzDQ529dHwiYo31NTjAgCP0W4vLAAAAA==
 						}
 					}
 					UPGRADESAPPLIED
@@ -30608,14 +30608,953 @@ GAME
 			}
 			PART
 			{
+				name = TE2.19.SH.HGT
+				cid = 4293623034
+				uid = 651628846
+				mid = 3596995287
+				persistentId = 4086973220
+				launchID = 89
+				parent = 16
+				position = -4.4907994270324707,-37.21185302734375,2.6822090148925781E-07
+				rotation = 0,0.707106829,0,0.707106709
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 2
+				resPri = 0
+				dstg = 0
+				sqor = 2
+				sepI = 1
+				sidx = 0
+				attm = 1
+				sameVesselCollision = False
+				sym = 18
+				sym = 19
+				sym = 20
+				srfN = srfAttach, 16,TE2_19_SH_Interstage_Collider1_7
+				mass = 0.100000001
+				shielded = False
+				temp = 302.0797042396859
+				tempExt = 280.79727340691926
+				tempExtUnexp = 280.80547260050781
+				staticPressureAtm = 0.9746962066582624
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = reDIRECT/KertemisProgram/Flags/KertemisMark
+				rTrf = TE2.19.SH.HGT
+				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+					ToggleSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					SetSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					RemoveSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleRCSFX
+					isEnabled = True
+					rcsEnabled = False
+					thrustPercentage = 100
+					currentShowToggles = False
+					enableYaw = True
+					enablePitch = True
+					enableRoll = True
+					enableX = True
+					enableY = True
+					enableZ = True
+					useThrottle = False
+					fullThrust = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = Refunding
+					isEnabled = True
+					active = True
+					OriginalCost = 350
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleWaterfallFX
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				RESOURCE
+				{
+					name = RefundingForKSP111x
+					amount = 0
+					maxAmount = 9.9999999999999995E-08
+					flowState = False
+					isTweakable = False
+					hideFlow = False
+					isVisible = False
+					flowMode = None
+				}
+			}
+			PART
+			{
+				name = TE2.19.SH.HGT
+				cid = 4293622056
+				uid = 4247662280
+				mid = 3596995287
+				persistentId = 634319081
+				launchID = 89
+				parent = 16
+				position = 0,-37.21185302734375,4.4907989501953125
+				rotation = 0,1,0,-8.42937027E-08
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 2
+				resPri = 0
+				dstg = 0
+				sqor = 2
+				sepI = 1
+				sidx = 0
+				attm = 1
+				sameVesselCollision = False
+				sym = 17
+				sym = 19
+				sym = 20
+				srfN = srfAttach, 16,TE2_19_SH_Interstage_Collider1_7
+				mass = 0.100000001
+				shielded = False
+				temp = 302.0797042396859
+				tempExt = 280.79727340691926
+				tempExtUnexp = 280.80547260050781
+				staticPressureAtm = 0.97469635725080184
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = reDIRECT/KertemisProgram/Flags/KertemisMark
+				rTrf = TE2.19.SH.HGT
+				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+					ToggleSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					SetSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					RemoveSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleRCSFX
+					isEnabled = True
+					rcsEnabled = False
+					thrustPercentage = 100
+					currentShowToggles = False
+					enableYaw = True
+					enablePitch = True
+					enableRoll = True
+					enableX = True
+					enableY = True
+					enableZ = True
+					useThrottle = False
+					fullThrust = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = Refunding
+					isEnabled = True
+					active = True
+					OriginalCost = 350
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleWaterfallFX
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				RESOURCE
+				{
+					name = RefundingForKSP111x
+					amount = 0
+					maxAmount = 9.9999999999999995E-08
+					flowState = False
+					isTweakable = False
+					hideFlow = False
+					isVisible = False
+					flowMode = None
+				}
+			}
+			PART
+			{
+				name = TE2.19.SH.HGT
+				cid = 4293621988
+				uid = 3072669544
+				mid = 3596995287
+				persistentId = 1651841236
+				launchID = 89
+				parent = 16
+				position = 4.4907994270324707,-37.21185302734375,-6.5565109252929688E-07
+				rotation = 0,0.70710665,0,-0.707106888
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 2
+				resPri = 0
+				dstg = 0
+				sqor = 2
+				sepI = 1
+				sidx = 0
+				attm = 1
+				sameVesselCollision = False
+				sym = 17
+				sym = 18
+				sym = 20
+				srfN = srfAttach, 16,TE2_19_SH_Interstage_Collider1_7
+				mass = 0.100000001
+				shielded = False
+				temp = 302.08258659162033
+				tempExt = 280.90805954384206
+				tempExtUnexp = 280.91622710347906
+				staticPressureAtm = 0.97469598076945319
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = reDIRECT/KertemisProgram/Flags/KertemisMark
+				rTrf = TE2.19.SH.HGT
+				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+					ToggleSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					SetSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					RemoveSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleRCSFX
+					isEnabled = True
+					rcsEnabled = False
+					thrustPercentage = 100
+					currentShowToggles = False
+					enableYaw = True
+					enablePitch = True
+					enableRoll = True
+					enableX = True
+					enableY = True
+					enableZ = True
+					useThrottle = False
+					fullThrust = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = Refunding
+					isEnabled = True
+					active = True
+					OriginalCost = 350
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleWaterfallFX
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				RESOURCE
+				{
+					name = RefundingForKSP111x
+					amount = 0
+					maxAmount = 9.9999999999999995E-08
+					flowState = False
+					isTweakable = False
+					hideFlow = False
+					isVisible = False
+					flowMode = None
+				}
+			}
+			PART
+			{
+				name = TE2.19.SH.HGT
+				cid = 4293621920
+				uid = 2515310408
+				mid = 3596995287
+				persistentId = 3854515866
+				launchID = 89
+				parent = 16
+				position = -5.3644180297851563E-07,-37.21185302734375,-4.4907989501953125
+				rotation = 0,-8.42937027E-08,0,-1
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 2
+				resPri = 0
+				dstg = 0
+				sqor = 2
+				sepI = 1
+				sidx = 0
+				attm = 1
+				sameVesselCollision = False
+				sym = 17
+				sym = 18
+				sym = 19
+				srfN = srfAttach, 16,TE2_19_SH_Interstage_Collider1_7
+				mass = 0.100000001
+				shielded = False
+				temp = 302.08262854161745
+				tempExt = 280.90899561635638
+				tempExtUnexp = 280.91718393771833
+				staticPressureAtm = 0.97469575488064397
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = reDIRECT/KertemisProgram/Flags/KertemisMark
+				rTrf = TE2.19.SH.HGT
+				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+					ToggleSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					SetSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					RemoveSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleRCSFX
+					isEnabled = True
+					rcsEnabled = False
+					thrustPercentage = 100
+					currentShowToggles = False
+					enableYaw = True
+					enablePitch = True
+					enableRoll = True
+					enableX = True
+					enableY = True
+					enableZ = True
+					useThrottle = False
+					fullThrust = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = Refunding
+					isEnabled = True
+					active = True
+					OriginalCost = 350
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleWaterfallFX
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				RESOURCE
+				{
+					name = RefundingForKSP111x
+					amount = 0
+					maxAmount = 9.9999999999999995E-08
+					flowState = False
+					isTweakable = False
+					hideFlow = False
+					isVisible = False
+					flowMode = None
+				}
+			}
+			PART
+			{
+				name = Rockomax8BW
+				cid = 4293615470
+				uid = 3865468650
+				mid = 3596995287
+				persistentId = 3433828977
+				launchID = 89
+				parent = 16
+				position = 0,-36.9447021484375,0
+				rotation = 0,0,0,1
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 1
+				resPri = 0
+				dstg = 0
+				sqor = -1
+				sepI = 1
+				sidx = -1
+				attm = 0
+				sameVesselCollision = False
+				srfN = srfAttach, -1
+				attN = top, 16
+				attN = bottom, 22
+				mass = 0.140719026
+				shielded = False
+				temp = 302.47230871063459
+				tempExt = 302.47230871063459
+				tempExtUnexp = 302.47230871063459
+				staticPressureAtm = 0.97466518459513007
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = reDIRECT/KertemisProgram/Flags/KertemisMark
+				rTrf = Rockomax8BW
+				modCost = 0
+				modMass = -0.359280974
+				moduleVariantName = BlackAndWhite
+				moduleCargoStackableQuantity = 1
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+					ToggleSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					SetSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					RemoveSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModulePartVariants
+					isEnabled = True
+					useVariantMass = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = Refunding
+					isEnabled = True
+					active = True
+					OriginalCost = 841.5328980977298
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleFuelTanks
+					isEnabled = True
+					type = Cryogenic
+					utilization = 86
+					mass = 0.140719026
+					_numberOfAddedMLILayers = 0
+					stagingEnabled = True
+					volume = 4000
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					TANK
+					{
+						name = LiquidFuel
+						note = 
+						utilization = 1
+						mass = 1.6E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 1799.9999523162842
+						maxAmount = 1799.9999523162842
+					}
+					TANK
+					{
+						name = Oxidizer
+						note = 
+						utilization = 1
+						mass = 1.6E-05
+						cost = 0
+						loss_rate = 0
+						temperature = 300
+						fillable = True
+						techRequired = 
+						amount = 2200.0000476837158
+						maxAmount = 2200.0000476837158
+					}
+					UPGRADESAPPLIED
+					{
+						upgrade = MLI.Upgrade1
+						upgrade = MLI.Upgrade2
+						upgrade = MLI.Upgrade3
+						upgrade = MLI.Upgrade4
+						upgrade = MLI.Upgrade5
+					}
+				}
+				RESOURCE
+				{
+					name = LiquidFuel
+					amount = 1799.9999523162842
+					maxAmount = 1799.9999523162842
+					flowState = True
+					isTweakable = True
+					hideFlow = False
+					isVisible = True
+					flowMode = Both
+				}
+				RESOURCE
+				{
+					name = Oxidizer
+					amount = 2200.0000476837158
+					maxAmount = 2200.0000476837158
+					flowState = True
+					isTweakable = True
+					hideFlow = False
+					isVisible = True
+					flowMode = Both
+				}
+				RESOURCE
+				{
+					name = RefundingForKSP111x
+					amount = 36.688453674316435
+					maxAmount = 9.9999999999999995E-08
+					flowState = False
+					isTweakable = False
+					hideFlow = False
+					isVisible = False
+					flowMode = None
+				}
+			}
+			PART
+			{
 				name = TE2.19.SH.Tank
 				cid = 4293636378
-				uid = 3577301781
-				mid = 3100902108
-				persistentId = 2055045791
-				launchID = 87
-				parent = 16
-				position = 0,-62.130218505859375,0
+				uid = 3715213449
+				mid = 3596995287
+				persistentId = 136866278
+				launchID = 89
+				parent = 21
+				position = 0,-62.107318878173828,0
 				rotation = 0,0,0,1
 				mirror = 1,1,1
 				symMethod = Radial
@@ -30628,14 +31567,14 @@ GAME
 				attm = 0
 				sameVesselCollision = False
 				srfN = , -1
-				attN = node_top, 16
-				attN = node_bottom, 18
+				attN = node_top, 21
+				attN = node_bottom, 23
 				mass = 102.645737
 				shielded = False
-				temp = 90.150047092210698
-				tempExt = 97.964525080994619
-				tempExtUnexp = 97.956527021757992
-				staticPressureAtm = 0.97763471888107567
+				temp = 90.150002953205359
+				tempExt = 93.35944551464307
+				tempExtUnexp = 93.35127239308602
+				staticPressureAtm = 0.97757591249441
 				expt = 2.0480001
 				state = 0
 				PreFailState = 0
@@ -30737,7 +31676,7 @@ GAME
 						temperature = 90.1500015
 						fillable = True
 						techRequired = 
-						amount = 2574725.2671239148
+						amount = 2574725.267124441
 						maxAmount = 2574725.267124441
 					}
 					TANK
@@ -30828,7 +31767,7 @@ GAME
 				RESOURCE
 				{
 					name = LqdOxygen
-					amount = 2574725.2671239148
+					amount = 2574725.267124441
 					maxAmount = 2574725.267124441
 					flowState = True
 					isTweakable = True
@@ -30852,32 +31791,32 @@ GAME
 			{
 				name = TE2.19.SH.Engine
 				cid = 4293638868
-				uid = 1920579029
-				mid = 3100902108
-				persistentId = 1019891515
-				launchID = 87
-				parent = 17
-				position = 0,-92.718864440917969,0
+				uid = 1017290617
+				mid = 3596995287
+				persistentId = 1667123259
+				launchID = 89
+				parent = 22
+				position = 0,-92.695968627929688,0
 				rotation = 0,0,0,1
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 3
+				istg = 2
 				resPri = 0
 				dstg = 0
-				sqor = 3
+				sqor = 2
 				sepI = 1
-				sidx = 0
+				sidx = 2
 				attm = 0
 				sameVesselCollision = False
 				srfN = , -1
 				attN = bottom, -1
-				attN = node_top, 17
+				attN = node_top, 22
 				mass = 66.2559967
 				shielded = False
-				temp = 302.59192195202382
-				tempExt = 302.77412573821465
-				tempExtUnexp = 302.77450535430535
-				staticPressureAtm = 0.98118313088877063
+				temp = 302.47517889726947
+				tempExt = 302.63082577128006
+				tempExtUnexp = 302.6305967377557
+				staticPressureAtm = 0.98112409861329564
 				expt = 2.0480001
 				state = 0
 				PreFailState = 0
@@ -31416,16 +32355,16 @@ GAME
 			{
 				name = 4mv.vl.sensor.accelerometer.srf.1
 				cid = 4292956322
-				uid = 2392208852
-				mid = 3100902108
-				persistentId = 2567996015
-				launchID = 87
-				parent = 18
-				position = -4.5026397705078125,-87.324684143066406,-0.0063809603452682495
+				uid = 3077799045
+				mid = 3596995287
+				persistentId = 834221755
+				launchID = 89
+				parent = 23
+				position = -4.5026397705078125,-87.301788330078125,-0.0063809603452682495
 				rotation = 0.017760234,0.659161806,-0.0155753074,0.751630008
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 3
+				istg = 2
 				resPri = 0
 				dstg = 0
 				sqor = -1
@@ -31433,14 +32372,14 @@ GAME
 				sidx = -1
 				attm = 1
 				sameVesselCollision = False
-				sym = 20
-				srfN = srfAttach, 18,TE2_19_SH_Engine_Collider_1
+				sym = 25
+				srfN = srfAttach, 23,TE2_19_SH_Engine_Collider_1
 				mass = 0.00999999978
 				shielded = False
-				temp = 302.58419219905289
-				tempExt = 302.63637997537467
-				tempExtUnexp = 302.63638710384117
-				staticPressureAtm = 0.98055659062827683
+				temp = 302.47261935917385
+				tempExt = 302.59213729762359
+				tempExtUnexp = 302.5923873690403
+				staticPressureAtm = 0.98049770894534138
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -31648,16 +32587,16 @@ GAME
 			{
 				name = 4mv.vl.sensor.accelerometer.srf.1
 				cid = 4292956144
-				uid = 3903909710
-				mid = 3100902108
-				persistentId = 112860337
-				launchID = 87
-				parent = 18
-				position = 4.5026397705078125,-87.324684143066406,0.0063805729150772095
+				uid = 3026643083
+				mid = 3596995287
+				persistentId = 678211932
+				launchID = 89
+				parent = 23
+				position = 4.5026397705078125,-87.301788330078125,0.0063805729150772095
 				rotation = -0.0155753084,0.751630008,-0.017760234,-0.659161866
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 3
+				istg = 2
 				resPri = 0
 				dstg = 0
 				sqor = -1
@@ -31665,14 +32604,14 @@ GAME
 				sidx = -1
 				attm = 1
 				sameVesselCollision = False
-				sym = 19
-				srfN = srfAttach, 18,TE2_19_SH_Engine_Collider_1
+				sym = 24
+				srfN = srfAttach, 23,TE2_19_SH_Engine_Collider_1
 				mass = 0.00999999978
 				shielded = False
-				temp = 302.58419219905289
-				tempExt = 302.63637997537467
-				tempExtUnexp = 302.63638710384117
-				staticPressureAtm = 0.98055628944319795
+				temp = 302.47232652784959
+				tempExt = 302.51601737288087
+				tempExtUnexp = 302.51629993041774
+				staticPressureAtm = 0.98049725716772296
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -31880,16 +32819,16 @@ GAME
 			{
 				name = KAL9000
 				cid = 4293561484
-				uid = 1652778202
-				mid = 3100902108
-				persistentId = 2093232235
-				launchID = 87
-				parent = 18
-				position = -4.4884090423583984,-87.285179138183594,-0.17687132954597473
+				uid = 1897905163
+				mid = 3596995287
+				persistentId = 590373980
+				launchID = 89
+				parent = 23
+				position = -4.4884090423583984,-87.262283325195313,-0.17687132954597473
 				rotation = 0.00154497649,-0.0653848946,-0.0235717893,0.997580528
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 3
+				istg = 2
 				resPri = 0
 				dstg = 0
 				sqor = -1
@@ -31897,13 +32836,13 @@ GAME
 				sidx = -1
 				attm = 1
 				sameVesselCollision = False
-				srfN = srfAttach, 18,TE2_19_SH_Engine_Collider_1
+				srfN = srfAttach, 23,TE2_19_SH_Engine_Collider_1
 				mass = 0.000500000024
 				shielded = False
-				temp = 302.64279889860529
-				tempExt = 302.7078096440016
-				tempExtUnexp = 302.70781246969023
-				staticPressureAtm = 0.98055244933344121
+				temp = 302.49925476048639
+				tempExt = 302.59271127855067
+				tempExtUnexp = 302.59297436625462
+				staticPressureAtm = 0.98049341705796622
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -32205,18 +33144,734 @@ GAME
 			}
 			PART
 			{
+				name = TE2.19.SH.HGT
+				cid = 4292759120
+				uid = 1965771546
+				mid = 3596995287
+				persistentId = 4183947565
+				launchID = 89
+				parent = 22
+				position = -4.5999994277954102,-86.807319641113281,2.6822090148925781E-07
+				rotation = 0,-0.707106829,0,-0.707106709
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 2
+				resPri = 0
+				dstg = 0
+				sqor = 2
+				sepI = 1
+				sidx = 1
+				attm = 1
+				sameVesselCollision = False
+				sym = 28
+				sym = 29
+				sym = 30
+				srfN = srfAttach, 22,SH_Tank_Collider
+				mass = 0.100000001
+				shielded = False
+				temp = 302.47454777435621
+				tempExt = 302.57523899570037
+				tempExtUnexp = 302.5754530106895
+				staticPressureAtm = 0.98044063437287965
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = reDIRECT/KertemisProgram/Flags/KertemisMark
+				rTrf = TE2.19.SH.HGT
+				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+					ToggleSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					SetSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					RemoveSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleRCSFX
+					isEnabled = True
+					rcsEnabled = False
+					thrustPercentage = 100
+					currentShowToggles = False
+					enableYaw = True
+					enablePitch = True
+					enableRoll = True
+					enableX = True
+					enableY = True
+					enableZ = True
+					useThrottle = False
+					fullThrust = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = Refunding
+					isEnabled = True
+					active = True
+					OriginalCost = 350
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleWaterfallFX
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				RESOURCE
+				{
+					name = RefundingForKSP111x
+					amount = 0
+					maxAmount = 9.9999999999999995E-08
+					flowState = False
+					isTweakable = False
+					hideFlow = False
+					isVisible = False
+					flowMode = None
+				}
+			}
+			PART
+			{
+				name = TE2.19.SH.HGT
+				cid = 4292243802
+				uid = 2276317482
+				mid = 3596995287
+				persistentId = 2086011046
+				launchID = 89
+				parent = 22
+				position = 0,-86.807319641113281,4.5999999046325684
+				rotation = 0,1,0,-8.42937027E-08
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 2
+				resPri = 0
+				dstg = 0
+				sqor = 2
+				sepI = 1
+				sidx = 1
+				attm = 1
+				sameVesselCollision = False
+				sym = 27
+				sym = 29
+				sym = 30
+				srfN = srfAttach, 22,SH_Tank_Collider
+				mass = 0.100000001
+				shielded = False
+				temp = 302.46899071965834
+				tempExt = 302.29556404392616
+				tempExtUnexp = 302.29561823188186
+				staticPressureAtm = 0.98044078496541909
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = reDIRECT/KertemisProgram/Flags/KertemisMark
+				rTrf = TE2.19.SH.HGT
+				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+					ToggleSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					SetSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					RemoveSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleRCSFX
+					isEnabled = True
+					rcsEnabled = False
+					thrustPercentage = 100
+					currentShowToggles = False
+					enableYaw = True
+					enablePitch = True
+					enableRoll = True
+					enableX = True
+					enableY = True
+					enableZ = True
+					useThrottle = False
+					fullThrust = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = Refunding
+					isEnabled = True
+					active = True
+					OriginalCost = 350
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleWaterfallFX
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				RESOURCE
+				{
+					name = RefundingForKSP111x
+					amount = 0
+					maxAmount = 9.9999999999999995E-08
+					flowState = False
+					isTweakable = False
+					hideFlow = False
+					isVisible = False
+					flowMode = None
+				}
+			}
+			PART
+			{
+				name = TE2.19.SH.HGT
+				cid = 4292243734
+				uid = 1722498071
+				mid = 3596995287
+				persistentId = 2081068417
+				launchID = 89
+				parent = 22
+				position = 4.5999994277954102,-86.807319641113281,2.6822090148925781E-07
+				rotation = 0,0.707106709,0,-0.707106829
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 2
+				resPri = 0
+				dstg = 0
+				sqor = 2
+				sepI = 1
+				sidx = 1
+				attm = 1
+				sameVesselCollision = False
+				sym = 27
+				sym = 28
+				sym = 30
+				srfN = srfAttach, 22,SH_Tank_Collider
+				mass = 0.100000001
+				shielded = False
+				temp = 302.46899071965834
+				tempExt = 302.29556404392616
+				tempExtUnexp = 302.29561823188186
+				staticPressureAtm = 0.98044033318780066
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = reDIRECT/KertemisProgram/Flags/KertemisMark
+				rTrf = TE2.19.SH.HGT
+				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+					ToggleSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					SetSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					RemoveSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleRCSFX
+					isEnabled = True
+					rcsEnabled = False
+					thrustPercentage = 100
+					currentShowToggles = False
+					enableYaw = True
+					enablePitch = True
+					enableRoll = True
+					enableX = True
+					enableY = True
+					enableZ = True
+					useThrottle = False
+					fullThrust = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = Refunding
+					isEnabled = True
+					active = True
+					OriginalCost = 350
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleWaterfallFX
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				RESOURCE
+				{
+					name = RefundingForKSP111x
+					amount = 0
+					maxAmount = 9.9999999999999995E-08
+					flowState = False
+					isTweakable = False
+					hideFlow = False
+					isVisible = False
+					flowMode = None
+				}
+			}
+			PART
+			{
+				name = TE2.19.SH.HGT
+				cid = 4292243666
+				uid = 1441158568
+				mid = 3596995287
+				persistentId = 2134488412
+				launchID = 89
+				parent = 22
+				position = -4.0233135223388672E-07,-86.807319641113281,-4.5999999046325684
+				rotation = 0,-1.28005098E-07,0,-1
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 2
+				resPri = 0
+				dstg = 0
+				sqor = 2
+				sepI = 1
+				sidx = 1
+				attm = 1
+				sameVesselCollision = False
+				sym = 27
+				sym = 28
+				sym = 29
+				srfN = srfAttach, 22,SH_Tank_Collider
+				mass = 0.100000001
+				shielded = False
+				temp = 302.46899071965834
+				tempExt = 302.29556404392616
+				tempExtUnexp = 302.29561823188186
+				staticPressureAtm = 0.98044018259526122
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = reDIRECT/KertemisProgram/Flags/KertemisMark
+				rTrf = TE2.19.SH.HGT
+				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+					ToggleSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					SetSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					RemoveSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleRCSFX
+					isEnabled = True
+					rcsEnabled = False
+					thrustPercentage = 100
+					currentShowToggles = False
+					enableYaw = True
+					enablePitch = True
+					enableRoll = True
+					enableX = True
+					enableY = True
+					enableZ = True
+					useThrottle = False
+					fullThrust = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = Refunding
+					isEnabled = True
+					active = True
+					OriginalCost = 350
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleWaterfallFX
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				RESOURCE
+				{
+					name = RefundingForKSP111x
+					amount = 0
+					maxAmount = 9.9999999999999995E-08
+					flowState = False
+					isTweakable = False
+					hideFlow = False
+					isVisible = False
+					flowMode = None
+				}
+			}
+			PART
+			{
 				name = TE2.19.SS.FF.R
 				cid = 4290320222
-				uid = 1988146117
-				mid = 3100902108
-				persistentId = 3642904806
-				launchID = 87
+				uid = 2486366965
+				mid = 3596995287
+				persistentId = 3189823156
+				launchID = 89
 				parent = 0
 				position = 4.4240236282348633,6.8561477661132813,0.0016357451677322388
 				rotation = 0,0,-0.749123514,-0.662430465
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 2
+				istg = 3
 				resPri = 0
 				dstg = 0
 				sqor = -1
@@ -32228,10 +33883,10 @@ GAME
 				attN = node_top, 0
 				mass = 5.73600054
 				shielded = False
-				temp = 302.38155667726608
-				tempExt = 283.99424768306795
-				tempExtUnexp = 284.00231740331964
-				staticPressureAtm = 0.96967251483758166
+				temp = 302.43468469188133
+				tempExt = 290.39612837560702
+				tempExtUnexp = 290.41524356378176
+				staticPressureAtm = 0.96961656970916599
 				expt = 0.409600019
 				state = 0
 				PreFailState = 0
@@ -32570,16 +34225,16 @@ GAME
 			{
 				name = TE2.19.SS.FF.L
 				cid = 4290316812
-				uid = 1298843209
-				mid = 3100902108
-				persistentId = 2550886383
-				launchID = 87
+				uid = 200692860
+				mid = 3596995287
+				persistentId = 2090335683
+				launchID = 89
 				parent = 0
 				position = -4.488037109375,6.8561477661132813,0.0016601532697677612
 				rotation = -8.94069601E-08,1.49011598E-07,0.754873753,-0.65587014
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 2
+				istg = 3
 				resPri = 0
 				dstg = 0
 				sqor = -1
@@ -32591,10 +34246,10 @@ GAME
 				attN = node_top, 0
 				mass = 5.73600054
 				shielded = False
-				temp = 302.38288169272278
-				tempExt = 283.81649524825002
-				tempExtUnexp = 283.8245909624153
-				staticPressureAtm = 0.96967251483758166
+				temp = 302.43489996270267
+				tempExt = 290.21830476261374
+				tempExtUnexp = 290.23740179106926
+				staticPressureAtm = 0.96961687089424498
 				expt = 0.409600019
 				state = 0
 				PreFailState = 0
@@ -32933,16 +34588,16 @@ GAME
 			{
 				name = 4mv.vl.sensor.accelerometer.srf.1
 				cid = 4291625674
-				uid = 4220757594
-				mid = 3100902108
-				persistentId = 2554054274
-				launchID = 87
+				uid = 2630497272
+				mid = 3596995287
+				persistentId = 3774532990
+				launchID = 89
 				parent = 0
-				position = -4.4667339324951172,2.29541015625,2.6822090148925781E-07
+				position = -4.4667339324951172,2.2954177856445313,2.6822090148925781E-07
 				rotation = 0,0.707106829,0,0.707106709
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 2
+				istg = 3
 				resPri = 0
 				dstg = 0
 				sqor = -1
@@ -32950,14 +34605,14 @@ GAME
 				sidx = -1
 				attm = 1
 				sameVesselCollision = False
-				sym = 25
+				sym = 34
 				srfN = srfAttach, 0,Cone
 				mass = 0.00999999978
 				shielded = False
-				temp = 302.41394298597186
-				tempExt = 283.00809555385518
-				tempExtUnexp = 283.01639964467762
-				staticPressureAtm = 0.97019710394884962
+				temp = 302.43393721926719
+				tempExt = 289.53492779871044
+				tempExtUnexp = 289.55426794474766
+				staticPressureAtm = 0.97014146000551282
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -33165,16 +34820,16 @@ GAME
 			{
 				name = 4mv.vl.sensor.accelerometer.srf.1
 				cid = 4291624720
-				uid = 1321479936
-				mid = 3100902108
-				persistentId = 359887572
-				launchID = 87
+				uid = 2036119716
+				mid = 3596995287
+				persistentId = 3248224436
+				launchID = 89
 				parent = 0
-				position = 4.4667339324951172,2.29541015625,-6.5565109252929688E-07
+				position = 4.4667339324951172,2.2954177856445313,-6.5565109252929688E-07
 				rotation = 0,0.70710665,0,-0.707106888
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 2
+				istg = 3
 				resPri = 0
 				dstg = 0
 				sqor = -1
@@ -33182,14 +34837,14 @@ GAME
 				sidx = -1
 				attm = 1
 				sameVesselCollision = False
-				sym = 24
+				sym = 33
 				srfN = srfAttach, 0,Cone
 				mass = 0.00999999978
 				shielded = False
-				temp = 302.41394298597186
-				tempExt = 283.00809555385518
-				tempExtUnexp = 283.01639964467762
-				staticPressureAtm = 0.97019717924511928
+				temp = 302.43393721926719
+				tempExt = 289.53492779871044
+				tempExtUnexp = 289.55426794474766
+				staticPressureAtm = 0.97014123411670361
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -33410,7 +35065,7 @@ GAME
 				Custom06 = False, 0
 				Custom07 = False, 0
 				Custom08 = False, 0
-				Custom09 = True, 3759928831.76168
+				Custom09 = False, 0
 				Custom10 = False, 0
 			}
 			DISCOVERY

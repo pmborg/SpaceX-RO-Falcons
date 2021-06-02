@@ -324,7 +324,7 @@ if alt:radar < 200
 	// LOOP: LAUNCH-Trusting:
 	set lat_correction to 0.
 	if vehicle_sub_type = "SN20-Profile"
-		set lat_correction to 12. // =90+12
+		set lat_correction to -6. // -6 = HEADING: 90+6
 
 	// --------------------------------------------------------------------------------------------
 	until altitude > 30000 or profile_stage >= 3
@@ -649,16 +649,6 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 	{
 		set do_break to false.
 
-		//UPDATE FROM: steering_falcon(90-delta, lat_correction).
-		//TO:
-		SET steeringVdeg to set_Vdeg().
-		SET steeringDir TO 90+lat_correction.	// W/E
-		if vehicle_type = "StarShip"
-			set steeringVroll to 0.				// 0 = Zero Rotation
-		else
-			set steeringVroll to -270.			// -270 = Zero Rotation
-		LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
-	
 		set eta_apoapsis to eta:apoapsis.
 		set vorb to velocity:orbit.
 		set Vsx to vorb:x.
@@ -723,6 +713,20 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 	// --------------------------------------------------------------------------------------------
 	UNTIL periapsis > 0 and apoapsis < FINAL_ORBIT2
 	{
+		//UPDATE FROM: steering_falcon(90-delta, lat_correction).
+		//TO:
+		SET steeringVdeg to set_Vdeg().
+
+		if vehicle_type = "StarShip"
+		{
+			set steeringVroll to 0.					// 0 = Zero Rotation
+			SET steeringDir TO 90-lat_correction.	// W/E
+		} else {
+			set steeringVroll to -270.				// -270 = Zero Rotation
+			SET steeringDir TO 90+lat_correction.	// W/E
+		}
+		LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
+		
 		if do_orbit()
 			break.
 		
@@ -756,6 +760,21 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 	// --------------------------------------------------------------------------------------------
 	UNTIL (apoapsis >= FINAL_ORBIT2) 
 	{
+		if verticalspeed < 0 
+			SET steeringVdeg to (-verticalspeed/8).	// UP/DOWN: Vertical = 90 (magical number: 8 tune precision)
+		else
+			SET steeringVdeg to set_Vdeg().
+		
+		if vehicle_type = "StarShip"
+		{
+			set steeringVroll to 0.					// 0 = Zero Rotation
+			SET steeringDir TO 90-lat_correction.	// W/E
+		} else {
+			set steeringVroll to -270.				// -270 = Zero Rotation
+			SET steeringDir TO 90+lat_correction.	// W/E
+		}
+		//LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).//steering_falcon(Vdeg).
+		
 		if do_orbit()
 			break.
 		
