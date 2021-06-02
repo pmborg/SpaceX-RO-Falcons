@@ -8,8 +8,16 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 30/may/2021
+// 02/Jun/2021
 // --------------------------------------------------------------------------------------------
+
+// --------------
+// ACTION GROUPS:
+// --------------
+// AG2 - Activate F9 (3 engines, for landing)
+// AG3 - Faring SEP...
+// AG4 - Activate client solar painels
+// AG8 - Toggle RCS for landing
 
 // --------------------------------------------------------------------------------------------
 // INIT:
@@ -27,6 +35,11 @@ function boostback_burn
 {
 	parameter do_reverse to false.
 	parameter do_reverse_max_speed to 100.
+	
+	// if vehicle_type = "StarShip"
+		// set tfactor to 0.1.
+	// else
+	set tfactor to 1.
 	
 	if do_reverse
 		update_phase_title("BOOSTBACK BURN REV."+do_reverse_max_speed, 1).
@@ -61,7 +74,7 @@ function boostback_burn
 			if(impactDist < 5000)
 			{
 				PRINT "OP3: impactDist < 3km   " at (0,2).
-					SET thrust TO 0.025.	// 0.0025. Near? for high precision, do it in lower thrust
+					SET thrust TO tfactor*0.025.	// 0.0025. Near? for high precision, do it in lower thrust
 				RCS ON.
 				if STAGE_1_TYPE = "SLAVE" and impactDist < 2500
 				{
@@ -71,10 +84,10 @@ function boostback_burn
 				}
 			}else if(impactDist < 10000){
 				PRINT "OP2: impactDist < 10km  " at (0,2).
-				SET thrust TO 0.1.
+				SET thrust TO tfactor*0.1.
 			}else{
 				PRINT "OP1: impactDist > 10km   " at (0,2).
-				SET thrust TO 1.	// Faraway? all seconds count do it ASAP
+				SET thrust TO tfactor*1.	// Faraway? all seconds count do it ASAP
 			}
 
 			if (do_reverse)
@@ -536,9 +549,19 @@ function main_falcon_return
 		engines_thrustlimit_to (100).	
 	}
 
-	//Activate 3 engines:
-	update_phase_title("(ACTIVATE 3 ENGINES)", 0, true).
-	activate3engines().
+	if vehicle_type <> "SS-BN"
+	{
+		//F9: Activate 3 engines:
+		update_phase_title("(ACTIVATE 3 ENGINES)", 0, true).
+		activate3engines().
+	} else {
+		//SS: all stack as 1:
+		update_phase_title("(LIM. 33% ENGINES)", 0, true).
+		AG2 ON.
+		WAIT 0.1.
+		engines_thrustlimit_to(33).
+		WAIT 0.1.
+	}
 	
 	if NOT EXISTS(STAGE_1_TYPE+"burn.txt")
 	{
@@ -552,9 +575,9 @@ function main_falcon_return
 		PRINT_STATUS (3).
 	}
 	if vehicle_type <> "SN9-Profile1" 
-		activateMainVessel(). //Better switch out of ATM
+		activateMainVessel(). //Better switch out of ATM go to ST-2
 			
 	guide_falcon_core().
 	
-	activateMainVessel(). //After landing go to ST-1
+	activateMainVessel(). //After landing go to ST-2
 }

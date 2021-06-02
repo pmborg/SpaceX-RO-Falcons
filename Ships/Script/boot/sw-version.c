@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              Used to specify the SW version and the diferent types of profiles supported.
-// 01/Jun/2021
+// 02/Jun/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: sw-version.c" to log.txt.
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
@@ -159,7 +159,10 @@ else
     if MASS < 20
         declare global vehicle_type to "Stage-2".			// GENERIC STAGE-2 profile
     else
-        declare global vehicle_type to "Stage-1".			// GENERIC STAGE-1 profile
+		if mass > 200
+			declare global vehicle_type to "SS-BN".			// SS-BN
+		else
+			declare global vehicle_type to "Stage-1".		// GENERIC STAGE-1 profile
 }
 
 // --------------------------------------------------------------------------------------------
@@ -222,7 +225,7 @@ if vehicle_type = "StarShip"
 {
     // Data: StarShip
 	declare global Qmax     to 11750/1.1. 	//v1: 8510/1.1.
-	declare global MECO1    to 2750^2. 		//(T+169)
+	declare global MECO1    to 2300^2. 		//(T+169)
     declare global FAIRSEP  to 110*1000.
 }else
 if vehicle_type = "SaturnV"

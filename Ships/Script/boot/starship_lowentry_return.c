@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to test the Starship Horizontal flight.
-// 01/Jun/2021
+// 02/Jun/2021
 // --------------------------------------------------------------------------------------------
 
 // Init Common:
@@ -16,8 +16,8 @@
 LOG   "START: starship_lowentry_return.c" to log.txt.
 CLEARSCREEN.
 set STAGE_1_TYPE to "CORE".
-//runpath("boot/useful-tools.c").
 
+//runpath("boot/useful-tools.c").
 runpath("boot/spacex_defaults.c").
 runpath("boot/common.c").
 
@@ -36,6 +36,7 @@ if vehicle_type = "SN9-Profile1"
 if vehicle_sub_type = "SN20-Profile"
 {
 	SET LandingTarget TO BODY:GEOPOSITIONLATLNG(23.12854, -159.982839).
+	//DEBUG:
 	PRINT "WAIT 1000".
 	WAIT 1000.
 }
@@ -55,46 +56,48 @@ LOG "Done" to flip.txt.
 // SS-RETURN:
 // --------------------------------------------------------------------------------------------
 RUNPATH( "boot/Falcon-Return.c").	//RESET thrust!!!
-SET thrust TO 0.25.
 
-boostback_burn(true).
-SET thrust TO 0.
-
-// BELLY DOWN:
-// --------------------------------------------------------------------------------------------
-SET steeringVdeg to 3. //shipPitch.
-SET steeringDir TO -(90).		// W/E
-set steeringVroll to -180.		// -270 = Zero Rotation
-LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//steering_falcon(Vdeg).
-
-//WAIT 30:
-// --------------------------------------------------------------------------------------------
-AG5 ON.
-FROM {local x is 30.} UNTIL x = 0 STEP {set x to x-1.} DO 
-{
-	wait 1.
-	PRINT_STATUS (3).
-}
-AG5 OFF.
-
-// update_phase_title("W8 2000", 1).
-// until (altitude < 3000)
-// {
-	// WAIT 0.1.
-	// LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//steering_falcon(Vdeg).
-	// PRINT_STATUS (3).	
-// }
-
-activateAllEngines().
 if vehicle_type = "SN9-Profile1"
-	sn11_test_profile_deactivate_engine1().
-// SS-LAND:
-// --------------------------------------------------------------------------------------------
-aerodynamic_guidance().
-landingBurn(). //3000
-touchdown().
-rocketshutdown().
-after_landing().
+{
+	SET thrust TO 0.25.
+	boostback_burn(true).
+	SET thrust TO 0.
+
+	// BELLY DOWN:
+	// --------------------------------------------------------------------------------------------
+	SET steeringVdeg to 3. //shipPitch.
+	SET steeringDir TO -(90).		// W/E
+	set steeringVroll to -180.		// -270 = Zero Rotation
+	LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//steering_falcon(Vdeg).
+
+	//WAIT 30:
+	// --------------------------------------------------------------------------------------------
+	AG5 ON.
+	FROM {local x is 30.} UNTIL x = 0 STEP {set x to x-1.} DO 
+	{
+		wait 1.
+		PRINT_STATUS (3).
+	}
+	AG5 OFF.
+
+	activateAllEngines().
+	if vehicle_type = "SN9-Profile1"
+		sn11_test_profile_deactivate_engine1().
+	// SS-LAND:
+	// --------------------------------------------------------------------------------------------
+	aerodynamic_guidance().
+	landingBurn(). //3000
+	touchdown().
+	rocketshutdown().
+	after_landing().
+}
+
+if vehicle_sub_type = "SN20-Profile"
+{
+	if status <> "LANDED" and status <> "SPLASHED"
+		main_falcon_return().
+}
+
 
 LOG   "END: starship_lowentry_return.c" to log.txt.
 LOG   "-------------------------------" to log.txt.

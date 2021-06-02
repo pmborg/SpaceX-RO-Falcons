@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 01/Jun/2021
+// 02/Jun/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 LOG   "START: Launch-Orbit.c" to log.txt.
@@ -20,6 +20,11 @@ set str_vehicle to "".
 //DEFINE SN20-Profile TARGET
 set LandingTarget to latlng(23.12854, -159.982839).
 runpath("boot/common.c").
+
+// LOOP: LAUNCH-Trusting:
+set lat_correction to 0.
+if vehicle_sub_type = "SN20-Profile"
+	set lat_correction to -6. // -6 = HEADING: 90+6
 
 // --------------------------------------------------------------------------------------------
 function main_liftoff
@@ -75,7 +80,7 @@ function main_liftoff
 			if (KUniverse:ActiveVessel = SHIP) STAGE.	//Water run...
 		}
 
-		if vehicle_type <> "SaturnV"
+		if vehicle_type <> "SaturnV" and vehicle_type <> "StarShip"
 			RCS ON.
 
 		if vehicle_type = "F1-M1" or 
@@ -321,11 +326,6 @@ if alt:radar < 200
 	steering_falcon(90).
 	LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
 	
-	// LOOP: LAUNCH-Trusting:
-	set lat_correction to 0.
-	if vehicle_sub_type = "SN20-Profile"
-		set lat_correction to -6. // -6 = HEADING: 90+6
-
 	// --------------------------------------------------------------------------------------------
 	until altitude > 30000 or profile_stage >= 3
 	{
@@ -466,7 +466,7 @@ if alt:radar < 200
 		PRINT "VERTICALSPEED: " 	at (0,8).
 		PRINT "mphase: " 			at (0,9).
 		PRINT "phase: " 			at (0,10).
-		PRINT "deltaReduction: " 	at (0,11).
+		//PRINT "deltaReduction: " 	at (0,11).
 		
 		LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
 		// LOOP: ASCENT:
@@ -492,7 +492,7 @@ if alt:radar < 200
 			PRINT ROUND(VERTICALSPEED)+" m/s   " at (22,8).
 			PRINT mphase 						 at (22,9).
 			PRINT phase 						 at (22,10).
-			PRINT deltaReduction 				 at (22,11).
+			//PRINT deltaReduction 				 at (22,11).
 			
 			if (Aceleration_value1 > 30)
 			{
@@ -501,7 +501,11 @@ if alt:radar < 200
 					//PRINT "( Throttle down to avoid stress on vehicle )" at (0,11).
 					set mphase to 3. // Acceleration Relation... to avoid stress on vehicle.
 				}
-				set thrust to (thrust-deltaReduction).
+				
+				if vehicle_type = "StarShip"
+					set thrust to 3*0.95*((mass*g)/maxthrust). //Max acc: 3g
+				else
+					set thrust to (thrust).
 			}
 			
 			if vehicle_type = "F1-M1" or 
@@ -515,7 +519,9 @@ if alt:radar < 200
 			check_if_we_need_new_stage().
 		}.		
 
-		RCS ON.
+		if vehicle_type <> "StarShip"
+			RCS ON.
+			
 		SAS OFF.
 		if SHIP_NAME <> "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" and 
 		  SHIP_NAME <> "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2" and
@@ -571,20 +577,31 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 		RCS ON.
 		if vehicle_type = "StarShip"
 		{
+			LOG  "STAGE SS" to LOG.txt.
 			WAIT 0.1.
 			if (KUniverse:ActiveVessel = SHIP) STAGE.	//[SS]
+			WAIT 0.1.
+			AG2 ON.
+			WAIT 0.1.
+			activateVesselProbe(0, "Ship").
 		} 
-		else if vehicle_type = "Falcon Heavy"
+		else 
 		{
-			AG6 ON. //(Toggle: FH Boosters separator)
-			WAIT 0.5.
-			if (KUniverse:ActiveVessel = SHIP) STAGE.	//[FH]
-			WAIT 5.
-		} else {
-			st1_stage().								//[F9]
+			if vehicle_type = "Falcon Heavy"
+			{
+				LOG  "STAGE FH" to LOG.txt.
+				AG6 ON. //(Toggle: FH Boosters separator)
+				WAIT 0.5.
+				if (KUniverse:ActiveVessel = SHIP) STAGE.	//[FH]
+				WAIT 5.
+			} else {
+				LOG  "STAGE ST1" to LOG.txt.
+				st1_stage().								//[F9]
+			}
+			activateVesselProbe().
 		}
 		
-		activateVesselProbe().
+		
 	}
 	
 	// ORBIT SETUP 
@@ -683,7 +700,7 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 
 		if vehicle_sub_type = "SN20-Profile"  
 		{
-			if (KUniverse:ActiveVessel = SHIP and ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT)
+			if (ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT) //KUniverse:ActiveVessel = SHIP and 
 			{
 				//set LandingTarget to latlng(23.12854, -159.982839).
 				set ADDONS_TR_IMPACTPOS to ADDONS:TR:IMPACTPOS.
@@ -699,8 +716,8 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 				if periapsis > 0
 					set do_break to true.
 			}
-			else
-				set do_break to true.
+			//else
+			//	set do_break to true.
 		}
 
 		if vehicle_type <> "Crew Dragon 2"

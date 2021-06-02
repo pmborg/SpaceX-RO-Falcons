@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 01/Jun/2021
+// 02/Jun/2021
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
 
@@ -255,7 +255,7 @@ function log_data
 	// set p to p0*(e^H).
 	// set q to ROUND(.5*p*(Vs2^2),1). // pd = 1/2 ρ v^2
 	//v3
-	if ROUND(BODY:ATM:ALTITUDEPRESSURE(h),4) = 0 and ROUND(BODY:ATM:ALTITUDETEMPERATURE(h),1) = 0
+	if ROUND(BODY:ATM:ALTITUDEPRESSURE(altitude),4) = 0 and ROUND(BODY:ATM:ALTITUDETEMPERATURE(altitude),1) = 0
 		PRINT "--    " at (1+8*4,35).
 	else
 		PRINT ROUND(qVal,0)+" " at (1+8*4,35).
