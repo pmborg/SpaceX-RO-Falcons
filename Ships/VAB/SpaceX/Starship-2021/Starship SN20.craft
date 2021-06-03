@@ -27,11 +27,11 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 2
 	resPri = 0
 	dstg = 0
-	sidx = 0
-	sqor = 3
+	sidx = 2
+	sqor = 2
 	sepI = -1
 	attm = 0
 	sameVesselCollision = False
@@ -1135,7 +1135,7 @@ PART
 		baseModuleMass = 0
 		additionalCost = 0
 		MaxPartId = 100
-		RequiredPower = 0.00999999978
+		RequiredPower = 0.0399999991
 		stagingEnabled = True
 		activated = True
 		EVENTS
@@ -1316,7 +1316,7 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 2
 	resPri = 0
 	dstg = 0
 	sidx = -1
@@ -1676,7 +1676,7 @@ PART
 		name = Refunding
 		isEnabled = True
 		active = True
-		OriginalCost = 29950.116077614763
+		OriginalCost = 29945.123443731711
 		stagingEnabled = True
 		EVENTS
 		{
@@ -1772,7 +1772,7 @@ PART
 			temperature = 90.1500015
 			fillable = True
 			techRequired = 
-			amount = 829563.1173333741
+			amount = 737389.46815177461
 			maxAmount = 921736.82145476935
 		}
 		TANK
@@ -1786,7 +1786,7 @@ PART
 			temperature = 111.449997
 			fillable = True
 			techRequired = 
-			amount = 233679.75450030793
+			amount = 207715.34593138428
 			maxAmount = 259644.17854523059
 		}
 		UPGRADESAPPLIED
@@ -1923,7 +1923,7 @@ PART
 	RESOURCE
 	{
 		name = LqdMethane
-		amount = 233679.75450030793
+		amount = 207715.34593138428
 		maxAmount = 259644.17854523059
 		flowState = True
 		isTweakable = True
@@ -1934,7 +1934,7 @@ PART
 	RESOURCE
 	{
 		name = LqdOxygen
-		amount = 829563.1173333741
+		amount = 737389.46815177461
 		maxAmount = 921736.82145476935
 		flowState = True
 		isTweakable = True
@@ -1958,7 +1958,7 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 2
 	resPri = 0
 	dstg = 0
 	sidx = -1
@@ -2307,7 +2307,7 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 2
 	resPri = 0
 	dstg = 0
 	sidx = -1
@@ -2656,7 +2656,7 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 2
 	resPri = 0
 	dstg = 0
 	sidx = -1
@@ -3005,7 +3005,7 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 2
 	resPri = 0
 	dstg = 0
 	sidx = -1
@@ -3354,7 +3354,7 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 2
 	resPri = 0
 	dstg = 0
 	sidx = -1
@@ -3516,7 +3516,7 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 2
 	resPri = 0
 	dstg = 0
 	sidx = -1
@@ -3674,7 +3674,7 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 2
 	resPri = 0
 	dstg = 0
 	sidx = -1
@@ -3832,7 +3832,7 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 2
 	resPri = 0
 	dstg = 0
 	sidx = -1
@@ -3990,7 +3990,7 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 2
 	resPri = 0
 	dstg = 0
 	sidx = -1
@@ -4148,7 +4148,7 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 2
 	resPri = 0
 	dstg = 0
 	sidx = -1
@@ -4306,7 +4306,7 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 2
 	resPri = 0
 	dstg = 0
 	sidx = -1
@@ -4514,7 +4514,7 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 2
 	resPri = 0
 	dstg = 0
 	sidx = -1
@@ -7134,7 +7134,7 @@ PART
 		baseModuleMass = 0
 		additionalCost = 0
 		MaxPartId = 100
-		RequiredPower = 0.00999999978
+		RequiredPower = 0.0399999991
 		stagingEnabled = True
 		activated = True
 		EVENTS
@@ -7932,8 +7932,8 @@ PART
 	sepI = 1
 	attm = 0
 	sameVesselCollision = False
-	modCost = 2841.62134
-	modMass = 62.6457329
+	modCost = 2906.51587
+	modMass = 62.7010918
 	modSize = 0,0,0
 	link = TE2.19.SH.Engine_4293638868
 	link = TE2.19.SH.HGT_4292759120
@@ -7976,7 +7976,7 @@ PART
 		name = Refunding
 		isEnabled = True
 		active = True
-		OriginalCost = 55121.082574683744
+		OriginalCost = 55197.66560663328
 		stagingEnabled = True
 		EVENTS
 		{
@@ -8015,7 +8015,7 @@ PART
 		isEnabled = True
 		type = Cryogenic
 		utilization = 86
-		mass = 97.3897324
+		mass = 97.4450912
 		_numberOfAddedMLILayers = 0
 		stagingEnabled = True
 		volume = 3300000
@@ -8036,8 +8036,8 @@ PART
 			temperature = 90.1500015
 			fillable = True
 			techRequired = 
-			amount = 2574725.267124441
-			maxAmount = 2574725.267124441
+			amount = 2566923.0693452759
+			maxAmount = 2566923.0693452759
 		}
 		TANK
 		{
@@ -8050,8 +8050,36 @@ PART
 			temperature = 111.449997
 			fillable = True
 			techRequired = 
-			amount = 725274.73287555913
-			maxAmount = 725274.73287555913
+			amount = 723076.93065472413
+			maxAmount = 723076.93065472413
+		}
+		TANK
+		{
+			name = LiquidFuel
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 4500
+			maxAmount = 4500
+		}
+		TANK
+		{
+			name = Oxidizer
+			note = 
+			utilization = 1
+			mass = 1.6E-05
+			cost = 0
+			loss_rate = 0
+			temperature = 300
+			fillable = True
+			techRequired = 
+			amount = 5500
+			maxAmount = 5500
 		}
 		UPGRADESAPPLIED
 		{
@@ -8115,9 +8143,31 @@ PART
 	}
 	RESOURCE
 	{
+		name = LiquidFuel
+		amount = 4500
+		maxAmount = 4500
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 5500
+		maxAmount = 5500
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
 		name = LqdMethane
-		amount = 725274.73287555913
-		maxAmount = 725274.73287555913
+		amount = 723076.93065472413
+		maxAmount = 723076.93065472413
 		flowState = True
 		isTweakable = True
 		hideFlow = False
@@ -8127,8 +8177,8 @@ PART
 	RESOURCE
 	{
 		name = LqdOxygen
-		amount = 2574725.267124441
-		maxAmount = 2574725.267124441
+		amount = 2566923.0693452759
+		maxAmount = 2566923.0693452759
 		flowState = True
 		isTweakable = True
 		hideFlow = False
@@ -8151,11 +8201,11 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 2
+	istg = 3
 	resPri = 0
 	dstg = 0
-	sidx = 2
-	sqor = 2
+	sidx = 0
+	sqor = 3
 	sepI = 1
 	attm = 0
 	sameVesselCollision = False
@@ -8693,7 +8743,7 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 2
+	istg = 3
 	resPri = 0
 	dstg = 0
 	sidx = -1
@@ -8901,7 +8951,7 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 2
+	istg = 3
 	resPri = 0
 	dstg = 0
 	sidx = -1
@@ -9109,7 +9159,7 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 2
+	istg = 3
 	resPri = 0
 	dstg = 0
 	sidx = -1
@@ -9155,7 +9205,7 @@ PART
 		baseModuleMass = 0
 		additionalCost = 0
 		MaxPartId = 100
-		RequiredPower = 0.00999999978
+		RequiredPower = 0.0399999991
 		stagingEnabled = True
 		activated = True
 		EVENTS

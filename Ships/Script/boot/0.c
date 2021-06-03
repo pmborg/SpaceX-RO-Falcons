@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to control (ST-1) Boosters and waiting phases and prepare them to land.
-// 01/Jun/2021
+// 03/Jun/2021
 // --------------------------------------------------------------------------------------------
 RCS OFF.
 RUNPATH( "boot/sw-version.c" ).
@@ -156,7 +156,7 @@ runpath("boot/common.c").
 // --------------------------------------------------------------------------------------------
 set in_sync to true.
 
-// SEPARATION -------------------------------------------------------
+// SEPARATION / FLIP MANEUVER ---------------------------------------------------------
 if (SHIP:VERTICALSPEED > 1) and NOT EXISTS("flip.txt")
 {
 	set present_heading to SHIP:HEADING.

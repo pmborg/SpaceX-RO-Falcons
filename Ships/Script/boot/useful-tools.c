@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 02/Jun/2021
+// 03/Jun/2021
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
 
@@ -307,6 +307,12 @@ function flip_maneuver
 	SAS OFF.
 	RCS ON. //OFF.
 
+	if vehicle_type = "SS-BN"
+	{
+		AG2 ON.
+		SET thrust TO 0.1.
+	}
+	
 	//FH PRE FLIP MANEUVER
 	if STAGE_1_TYPE = "MASTER" or STAGE_1_TYPE = "SLAVE"
 	{

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 02/Jun/2021
+// 03/Jun/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 LOG   "START: Launch-Orbit.c" to log.txt.
@@ -708,16 +708,9 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 				SET landingDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
 				PRINT "landingDist: "+ROUND(landingDist/1000,1) + "  km    " at (0,16).
 				PRINT "[IMPACTPOS]: "+ROUND (ADDONS_TR_IMPACTPOS:LAT,3)+" " +ROUND (ADDONS_TR_IMPACTPOS:LNG,3) at (0,17).
-				
-				//DEBUG:
-				//if landingDist > 10000000
-				//	set thrust to 0.2. //set thrust to 0.05.
-					
-				if periapsis > 0
-					set do_break to true.
 			}
-			//else
-			//	set do_break to true.
+			if periapsis >= 50000 //50km
+				set do_break to true.
 		}
 
 		if vehicle_type <> "Crew Dragon 2"
@@ -770,7 +763,10 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 	}
 
 	if vehicle_type = "F9v1.2B5"
-		activateVesselProbe().	//Time to Switch to ST-1
+		activateVesselProbe().			//Time to Switch to ST-1
+
+	if vehicle_type = "StarShip"
+		activateVesselProbe(0, "Ship").	//Time to Switch to BN
 			
 	update_phase_title("[7] ORBIT PHASE II",1,false). 
 	// LOOP: ORBIT PHASE II (Maximizing Apoapsis Increase)

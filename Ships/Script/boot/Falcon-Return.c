@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 02/Jun/2021
+// 03/Jun/2021
 // --------------------------------------------------------------------------------------------
 
 // --------------
@@ -36,10 +36,10 @@ function boostback_burn
 	parameter do_reverse to false.
 	parameter do_reverse_max_speed to 100.
 	
-	// if vehicle_type = "StarShip"
-		// set tfactor to 0.1.
-	// else
-	set tfactor to 1.
+	if vehicle_type = "SS-BN"
+		set tfactor to 0.33.
+	else
+		set tfactor to 1.
 	
 	if do_reverse
 		update_phase_title("BOOSTBACK BURN REV."+do_reverse_max_speed, 1).
@@ -87,7 +87,7 @@ function boostback_burn
 				SET thrust TO tfactor*0.1.
 			}else{
 				PRINT "OP1: impactDist > 10km   " at (0,2).
-				SET thrust TO tfactor*1.	// Faraway? all seconds count do it ASAP
+				SET thrust TO 1.	// Faraway? all seconds count do it ASAP
 			}
 
 			if (do_reverse)
@@ -126,11 +126,13 @@ function boostback_burn
 }
 
 // --------------------------------------------------------------------------------------------
-function ReEntryburn 
+function ReEntryburn
 {
 	parameter safe_alt.
 	parameter safe_power to 0.9.
 	parameter maxDescendSpeed to -200.	//Due Terminal Speed don't use another above value.
+	
+	LOG  "safe_alt: "+safe_alt to LOG.txt.
 	
 	update_phase_title("WAIT4RE-ENTRY BURN", 1).
 	set x to 0.
@@ -142,7 +144,7 @@ function ReEntryburn
 		SET prev_impactDist to impactDist.
 		updateHoverSteering().	
 		
-		if SHIP:ALTITUDE < safe_alt
+		if SHIP:ALTITUDE < safe_alt //and vehicle_type <> "SS-BN"
 		{
 			//REENTRY BURN!!!
 			if  x = 0 
@@ -282,7 +284,11 @@ function waitAndDoReEntryburn
 
 	if STAGE1_LAND_ON = "LAND"
 	{
-		set burnAlt to 60000.			// Entry Burn Altitude
+		if vehicle_type <> "SS-BN" 
+			set burnAlt to 60000.			// F9: Entry Burn Altitude
+		else
+			set burnAlt to 25000.			// SS-BN: Entry Burn Altitude
+		
 		ReEntryburn(burnAlt, 1, -630).	// Speed Goal of Entry Burn
 	}
 	else
@@ -559,7 +565,7 @@ function main_falcon_return
 		update_phase_title("(LIM. 33% ENGINES)", 0, true).
 		AG2 ON.
 		WAIT 0.1.
-		engines_thrustlimit_to(33).
+		engines_thrustlimit_to(25).
 		WAIT 0.1.
 	}
 	

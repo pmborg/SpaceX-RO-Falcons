@@ -36,6 +36,9 @@ if vehicle_type = "SN9-Profile1"
 if vehicle_sub_type = "SN20-Profile"
 {
 	SET LandingTarget TO BODY:GEOPOSITIONLATLNG(23.12854, -159.982839).
+	set thrust to 0.
+	shutDownAllEngines().
+	
 	//DEBUG:
 	PRINT "WAIT 1000".
 	WAIT 1000.
