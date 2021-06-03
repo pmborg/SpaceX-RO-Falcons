@@ -40,8 +40,8 @@ if vehicle_sub_type = "SN20-Profile"
 	shutDownAllEngines().
 	
 	//DEBUG:
-	PRINT "WAIT 1000".
-	WAIT 1000.
+	PRINT "WAIT 10000".
+	WAIT 10000.
 }
 
 set present_heading to SHIP:HEADING.

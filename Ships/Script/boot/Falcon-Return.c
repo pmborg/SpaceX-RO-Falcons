@@ -288,7 +288,7 @@ function waitAndDoReEntryburn
 		if vehicle_type <> "SS-BN" 
 			set burnAlt to 60000.			// F9: Entry Burn Altitude
 		else
-			set burnAlt to 27500.			// SS-BN: Entry Burn Altitude
+			set burnAlt to 37500.			// SS-BN: Entry Burn Altitude
 		
 		ReEntryburn(burnAlt, 1, -630).	// Speed Goal of Entry Burn
 	}
@@ -305,7 +305,7 @@ function waitAndDoReEntryburn
 }
 
 // --------------------------------------------------------------------------------------------
-function aerodynamic_guidance 
+function aerodynamic_guidance
 {
 	update_phase_title("AERODYNAMIC GUIDANCE", 1).
 	if KUniverse:ActiveVessel = SHIP 
@@ -353,25 +353,38 @@ function landingBurn
 	parameter landing_burn to 1000.
 	parameter maxDescendSpeed TO 125.
 	
-	if vehicle_type = "SS-BN"
-		{ engines_thrustlimit_to(10). WAIT 0.1. }
-	
 	update_phase_title("LANDING BURN", 1).
 	SAS OFF.
 	RCS ON.
 	LOCK STEERING TO HEADING(steeringDir, steeringVdeg, steeringVroll).
 	until (alt:radar<100 and Verticalspeed=0)
 	{
-		// set error for min. thrust
-		if impactDist > 50
+		if vehicle_type = "SS-BN" 
 		{
-			steerToTarget(steeringPitch).	//FAST correction
-			set maxDescendSpeed to 15.
-			set error to 0.825. 			//Keep up @82.5% x g
-		} else {
-			steerToTarget(80).				//MEDIUM correction
+			if altitude > 5000 and altitude <= 7000
+				{ engines_thrustlimit_to(9). }
+			if altitude <= 5000
+				{ engines_thrustlimit_to(6). }
+			wait 0.01.
+		}
+		
+		if  vehicle_type <> "SS-BN" {
+			if impactDist > 50
+			{
+				// set error for min. thrust
+				steerToTarget(steeringPitch).	//FAST correction
+				set maxDescendSpeed to 15.
+				set error to 0.825. 			//Keep up @82.5% x g
+			} else {
+				steerToTarget(80).				//MEDIUM correction
+				set maxDescendSpeed to 125.
+				set error to 0.65. 				//Keep up @65% x g
+			}
+		} else
+		{
+			steerToTarget(steeringPitch).	//MEDIUM correction
 			set maxDescendSpeed to 125.
-			set error to 0.65. 				//Keep up @65% x g
+			set error to 0.85. 				
 		}
 		
 		//need: error
@@ -416,9 +429,13 @@ function touchdown
 	
 	set final_kiss to 0.01.
 	if vehicle_type = "SN9-Profile1"
-	{
 		set final_kiss to 1.25.
-		//sn11_test_profile_deactivate_engine1().
+	
+	if vehicle_type = "SS-BN" 
+	{
+		engines_thrustlimit_to(10).
+		if altitude < 500
+			engines_thrustlimit_to(6).
 	}
 	
 	until (SHIP:STATUS="LANDED" or sBurnDist <= 0.1) and alt:radar < 100
@@ -430,7 +447,7 @@ function touchdown
 		else
 			set ALT_RADAR to (alt:radar-30).
 			
-		if alt:radar > 650 and (impactDist < 150) and SHIP:GROUNDSPEED < 5 and Verticalspeed > -25
+		if alt:radar > 650 and (impactDist < 150) and SHIP:GROUNDSPEED < 5 and Verticalspeed > -25 and vehicle_type <> "SS-BN" 
 		{
 			set thrust to 0.01. // we are too high! we need to gain vertical speed a bit 
 			wait until Verticalspeed < -15.
@@ -456,7 +473,10 @@ function touchdown
 		steerToTarget(rate).
 
 		//Calc Optimized Throttle:
-		set error to 0.75. //Keep up @75% x g
+		// if vehicle_type <> "SS-BN" 
+			set error to 0.75. //Keep up @75% x g
+		// else
+			// set error to 0.99.
 		if maxthrust = 0
 			set t to 1.
 		else
@@ -513,8 +533,9 @@ function guide_falcon_core
 	AG8 ON. //Disable Lower RCS.
 	waitAndDoReEntryburn().
 	activateOneEngine().
-	aerodynamic_guidance().
-	landingBurn(). //3000
+	if vehicle_type <> "SS-BN"
+		aerodynamic_guidance().
+	landingBurn().
 	touchdown().
 	rocketshutdown().
 	after_landing().

@@ -341,8 +341,7 @@ function flip_maneuver
 		// lock throttle to thrust.
 		// SET thrust TO 0.1.
 	// }
-	
-	LOG  "Thrust: "+thrust to LOG.txt.
+	//LOG  "Thrust: "+thrust to LOG.txt.
 	
 	//NORMAL FLIP MANEUVER -------------------------------------------------------
 	CLEARSCREEN.
