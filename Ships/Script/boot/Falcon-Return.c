@@ -199,6 +199,7 @@ function ReEntryburn
 		
 			AG8 OFF. //Re-enable Lower RCS.
 			// FOR FH:
+			if vehicle_type <> "SS-BN"
 			{
 				//Add 10 secs of vertical stability after REENTRY BURN
 				update_phase_title("(vertical stability)", 0).
@@ -287,7 +288,7 @@ function waitAndDoReEntryburn
 		if vehicle_type <> "SS-BN" 
 			set burnAlt to 60000.			// F9: Entry Burn Altitude
 		else
-			set burnAlt to 25000.			// SS-BN: Entry Burn Altitude
+			set burnAlt to 27500.			// SS-BN: Entry Burn Altitude
 		
 		ReEntryburn(burnAlt, 1, -630).	// Speed Goal of Entry Burn
 	}
@@ -320,7 +321,7 @@ function aerodynamic_guidance
 		
 		if SHIP:ALTITUDE > 7000
 			set aerodynamic_target to 100.
-		else //if SHIP:ALTITUDE > 3000 
+		else
 			set aerodynamic_target to 50.
 	
 		if (impactDist < aerodynamic_target) and SHIP:ALTITUDE > 3500
@@ -330,10 +331,7 @@ function aerodynamic_guidance
 		{
 			SAS OFF.
 			updateHoverSteering().
-			// if vehicle_type = "SN9-Profile1"
-				// steerToTarget(90, 0, 0, true).
-			// else
-				steerToTarget(steeringPitch, 0, 0, true).
+			steerToTarget(steeringPitch, 0, 0, true).
 		}
 			
 		SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
@@ -354,6 +352,9 @@ function landingBurn
 {
 	parameter landing_burn to 1000.
 	parameter maxDescendSpeed TO 125.
+	
+	if vehicle_type = "SS-BN"
+		{ engines_thrustlimit_to(10). WAIT 0.1. }
 	
 	update_phase_title("LANDING BURN", 1).
 	SAS OFF.
@@ -562,7 +563,7 @@ function main_falcon_return
 		activate3engines().
 	} else {
 		//SS: all stack as 1:
-		update_phase_title("(LIM. 33% ENGINES)", 0, true).
+		update_phase_title("(LIM. 25% ENGINES)", 0, true).
 		AG2 ON.
 		WAIT 0.1.
 		engines_thrustlimit_to(25).

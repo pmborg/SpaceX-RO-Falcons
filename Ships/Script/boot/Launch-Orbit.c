@@ -503,7 +503,7 @@ if alt:radar < 200
 				}
 				
 				if vehicle_type = "StarShip"
-					set thrust to 3*0.95*((mass*g)/maxthrust). //Max acc: 3g
+					set thrust to 3*0.81*((mass*g)/maxthrust). //Max acc: 3g
 				else
 					set thrust to (thrust).
 			}
@@ -709,7 +709,7 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 				PRINT "landingDist: "+ROUND(landingDist/1000,1) + "  km    " at (0,16).
 				PRINT "[IMPACTPOS]: "+ROUND (ADDONS_TR_IMPACTPOS:LAT,3)+" " +ROUND (ADDONS_TR_IMPACTPOS:LNG,3) at (0,17).
 			}
-			if periapsis >= 50000 //50km
+			if periapsis >= 75000 //75km
 				set do_break to true.
 		}
 

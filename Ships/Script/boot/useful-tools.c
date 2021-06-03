@@ -304,15 +304,11 @@ function vessel_pitch
 // FLIP --------------------------------------------------------------------------------------------
 function flip_maneuver
 {
+	LOG "flip_maneuver" to log.txt.
+	
 	SAS OFF.
 	RCS ON. //OFF.
 
-	if vehicle_type = "SS-BN"
-	{
-		AG2 ON.
-		SET thrust TO 0.1.
-	}
-	
 	//FH PRE FLIP MANEUVER
 	if STAGE_1_TYPE = "MASTER" or STAGE_1_TYPE = "SLAVE"
 	{
@@ -339,6 +335,14 @@ function flip_maneuver
 	else
 		WAIT 5. // wait for SEP
 	PRINT_STATUS (3).
+
+	// if vehicle_type = "SS-BN"
+	// {
+		// lock throttle to thrust.
+		// SET thrust TO 0.1.
+	// }
+	
+	LOG  "Thrust: "+thrust to LOG.txt.
 	
 	//NORMAL FLIP MANEUVER -------------------------------------------------------
 	CLEARSCREEN.

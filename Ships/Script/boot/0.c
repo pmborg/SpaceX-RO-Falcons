@@ -156,6 +156,8 @@ runpath("boot/common.c").
 // --------------------------------------------------------------------------------------------
 set in_sync to true.
 
+LOG "FLIP:0" to log.txt.
+
 // SEPARATION / FLIP MANEUVER ---------------------------------------------------------
 if (SHIP:VERTICALSPEED > 1) and NOT EXISTS("flip.txt")
 {
