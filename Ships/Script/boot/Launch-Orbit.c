@@ -377,7 +377,10 @@ if alt:radar < 200
 		if vehicle_type = "SN9-Profile1"
 			set delta to -delta.
 			
-		steering_falcon(90-delta, lat_correction).
+		if vehicle_type = "StarShip"
+			steering_falcon(90-delta, lat_correction, -180).
+		else
+			steering_falcon(90-delta, lat_correction).
 		
 		set tThrust to (Drag+ Weight)*error.
 		if  tThrust < 0.85 
@@ -475,7 +478,7 @@ if alt:radar < 200
 		{
 			set delta to set_max_delta_curve().
 			if vehicle_type = "StarShip"
-				steering_falcon(90-delta, lat_correction, 0).
+				steering_falcon(90-delta, lat_correction, -180).
 			else
 				steering_falcon(90-delta, lat_correction).
 
@@ -732,7 +735,7 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 
 		if vehicle_type = "StarShip"
 		{
-			set steeringVroll to 0.					// 0 = Zero Rotation
+			set steeringVroll to -180.					// 0 = Zero Rotation
 			SET steeringDir TO 90-lat_correction.	// W/E
 		} else {
 			set steeringVroll to -270.				// -270 = Zero Rotation
@@ -783,7 +786,7 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 		
 		if vehicle_type = "StarShip"
 		{
-			set steeringVroll to 0.					// 0 = Zero Rotation
+			set steeringVroll to -180.				// 0 = Zero Rotation
 			SET steeringDir TO 90-lat_correction.	// W/E
 		} else {
 			set steeringVroll to -270.				// -270 = Zero Rotation
