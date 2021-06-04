@@ -85,13 +85,25 @@ set present_heading to SHIP:HEADING.
 
 if vehicle_sub_type = "SN20-Profile"
 {
-	update_phase_title("RE-ENTRY", 1).
-	//"PROGRADE", "RETROGRADE", "NORMAL", "ANTINORMAL", "RADIALOUT", "RADIALIN", "TARGET", "ANTITARGET", "MANEUVER", "STABILITYASSIST"
+	update_phase_title("HI RE-ENTRY", 1).
 	unlock steering. wait 0.1.
-	SAS ON. wait 0.1.
-	SET SASMODE TO "RADIALOUT". wait 0.1.
-	set warp to 4.
+	SAS ON. wait 1.
+	
+	if altitude > BODY:ATM:HEIGHT
+	{
+		update_phase_title("WARP TO ATM", 1).
+		set warp to 4.
+	}
+	
+	update_phase_title("LOW RE-ENTRY", 1).
+	wait 1. SAS ON. wait 2.
+	SET SASMODE TO "RADIALOUT". wait 1.
+	SET SASMODE TO "RADIALOUT". wait 1.
+	
+	set warp to 3.
+	
 	until (altitude < 15000) {}
+	update_phase_title("LAST BURN", 1).
 	SAS OFF. wait 0.1.
 	lock steering to retrograde.
 	set thrust to 1.  wait 0.1.

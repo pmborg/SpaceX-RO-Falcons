@@ -15,6 +15,7 @@ LOG   "START: Launch-Orbit.c" to log.txt.
 set FINAL_ORBIT2 to FINAL_ORBIT.// For Phase-2 falcon stage-2
 set FINAL_ORBIT  to 150000. 	//(FINAL_ORBIT/2) - For Phase-1 falcon stage-1
 set phase to 0.
+set vel to 0.
 set str_vehicle to "".
 
 //DEFINE SN20-Profile TARGET
@@ -538,9 +539,18 @@ if alt:radar < 200
 	}
 }
 
+set warp to 0.
+
+set vorb to velocity:orbit.
+set Vsx to vorb:x.
+set Vsy to vorb:y.
+set Vsz to vorb:z.
+set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).
+set vel to SQRT(Vs2).
+
 //F9/FH: STAGE-1/BOOSTER SEP
 // --------------------------------------------------------------------------------------------
-if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" 
+if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vel < 3000
 {
 	CLEARSCREEN.
 	PRINT " ".PRINT " ".

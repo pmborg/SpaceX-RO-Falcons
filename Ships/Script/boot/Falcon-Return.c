@@ -443,9 +443,6 @@ function touchdown
 	if vehicle_type = "SN9-Profile1"
 		set final_kiss to 1.25.
 	
-	if vehicle_type = "SS-BN"
-		engines_thrustlimit_to(5). // NEED TO GO DOWN: 6.5: ok
-	
 	until (SHIP:STATUS="LANDED" or sBurnDist <= 0.1) and alt:radar < 100
 	{
 		//wait 0.0.
@@ -477,8 +474,14 @@ function touchdown
 		if GROUNDSPEED < 5 and impactDist < 50
 			set rate to 85.				//SLOW correction
 
-		if ALT_RADAR < 30
+		if ALT_RADAR < 30 {
 			set rate to 89.9.			//Almost "zero" correction
+			if vehicle_type = "SS-BN"
+				engines_thrustlimit_to(5.5).
+		}
+		else
+			if vehicle_type = "SS-BN"
+				engines_thrustlimit_to(6.5).
 			
 		updateHoverSteering().
 		steerToTarget(rate).
