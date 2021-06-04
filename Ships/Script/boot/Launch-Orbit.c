@@ -715,7 +715,7 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1"
 				PRINT "landingDist: "+ROUND(landingDist/1000,1) + "  km    " at (0,16).
 				PRINT "[IMPACTPOS]: "+ROUND (ADDONS_TR_IMPACTPOS:LAT,3)+" " +ROUND (ADDONS_TR_IMPACTPOS:LNG,3) at (0,17).
 			}
-			if periapsis >= 140000 //75km
+			if periapsis >= 140000
 				set do_break to true.
 		}
 

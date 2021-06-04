@@ -17,6 +17,14 @@ LOG   "START: starship_lowentry_return.c" to log.txt.
 CLEARSCREEN.
 set STAGE_1_TYPE to "CORE".
 
+update_phase_title("starship_lowentry", 0, true).
+
+PRINT "".
+
+FROM {local countdown is 5.} UNTIL countdown = 0 STEP {SET countdown to countdown - 1.} 
+DO { PRINT "..." + countdown. WAIT 1. }
+
+
 //runpath("boot/useful-tools.c").
 runpath("boot/spacex_defaults.c").
 runpath("boot/common.c").
