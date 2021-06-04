@@ -40,7 +40,7 @@ function boostback_burn
 	if vehicle_type = "SS-BN"
 	{
 		set tfactor to 0.15.
-		set slowdown to 15000.
+		set slowdown to 20000.
 	} else
 		set tfactor to 1.
 	
@@ -353,51 +353,35 @@ function aerodynamic_guidance
 // --------------------------------------------------------------------------------------------
 function landingBurn
 {
-	parameter landing_burn to 1000.
-	parameter maxDescendSpeed TO 125.
-	
+	parameter landing_burn is 1000.
+	parameter maxDescendSpeed is 125.
+	parameter pitchFactor is 1.0.
+
+	if vehicle_type = "SS-BN" 
+		set pitchFactor to 1.2.
+			
 	update_phase_title("LANDING BURN", 1).
 	SAS OFF.
 	RCS ON.
 	LOCK STEERING TO HEADING(steeringDir, steeringVdeg, steeringVroll).
 	until (alt:radar<100 and Verticalspeed=0)
 	{
-		if vehicle_type = "SS-BN" 
+		if impactDist > 50
 		{
-			if altitude > 5000 and altitude <= 7000
-				{ engines_thrustlimit_to(9). }
-			if altitude <= 5000
-				{ engines_thrustlimit_to(6). }
-			wait 0.01.
-		}
-		
-		if  vehicle_type <> "SS-BN" {
-			if impactDist > 50
+			// set error for min. thrust
+			steerToTarget(pitchFactor*steeringPitch).	//FAST correction
+			set maxDescendSpeed to 15.
+			set error to 0.825. 				//Keep up @82.5% x g
+		} else {
+			if vehicle_type = "SS-BN"
 			{
-				// set error for min. thrust
-				steerToTarget(steeringPitch).	//FAST correction
-				set maxDescendSpeed to 15.
-				set error to 0.825. 			//Keep up @82.5% x g
-			} else {
+				steerToTarget(90).				//MEDIUM correction
+				set maxDescendSpeed to 50.
+			}else{
 				steerToTarget(80).				//MEDIUM correction
 				set maxDescendSpeed to 125.
-				set error to 0.65. 				//Keep up @65% x g
 			}
-		} else
-		{
-			if impactDist > 50
-			{
-				// set error for min. thrust
-				steerToTarget(steeringPitch).	//FAST correction
-				set maxDescendSpeed to 75.
-				set error to 0.95. 				
-			}
-			else
-			{
-				steerToTarget(90).	//MEDIUM correction
-				set maxDescendSpeed to 125.
-				set error to 0.85. 				
-			}
+			set error to 0.65. 				//Keep up @65% x g
 		}
 		
 		//need: error
@@ -408,13 +392,25 @@ function landingBurn
 
 		PRINT_STATUS (3, t). //need: t
 		
-		if impactDist > 50
+		if vehicle_type = "SS-BN" and impactDist > 50
 		{
-			setHoverMaxSteerAngle(10).
-			setHoverMaxHorizSpeed(10).
-		} else {
-			setHoverMaxSteerAngle(5).
-			setHoverMaxHorizSpeed(5).
+			setHoverMaxSteerAngle(20).
+			setHoverMaxHorizSpeed(50).
+			engines_thrustlimit_to(11.5).
+		}
+		else
+		{
+			if vehicle_type = "SS-BN"
+				engines_thrustlimit_to(6).
+			
+			if impactDist > 50
+			{
+				setHoverMaxSteerAngle(10).
+				setHoverMaxHorizSpeed(10).
+			} else {
+				setHoverMaxSteerAngle(5).
+				setHoverMaxHorizSpeed(5).
+			}
 		}
 		
 		updateHoverSteering().
@@ -444,21 +440,20 @@ function touchdown
 	if vehicle_type = "SN9-Profile1"
 		set final_kiss to 1.25.
 	
-	if vehicle_type = "SS-BN" 
-	{
-		engines_thrustlimit_to(10).
-		if altitude < 500
-			engines_thrustlimit_to(4).
-	}
+	if vehicle_type = "SS-BN"
+		engines_thrustlimit_to(5). // NEED TO GO DOWN: 6.5: ok
 	
 	until (SHIP:STATUS="LANDED" or sBurnDist <= 0.1) and alt:radar < 100
 	{
+		//wait 0.0.
 		PRINT_STATUS (3, t). 
 	
 		if vehicle_type = "SN9-Profile1"
-			set ALT_RADAR to (alt:radar-35).
+			set ALT_RADAR to (alt:radar-35).	//SS
+		else if vehicle_type = "SS-BN"
+			set ALT_RADAR to (alt:radar-73).	//SN
 		else
-			set ALT_RADAR to (alt:radar-30).
+			set ALT_RADAR to (alt:radar-30).	//F9
 			
 		if alt:radar > 650 and (impactDist < 150) and SHIP:GROUNDSPEED < 5 and Verticalspeed > -25 and vehicle_type <> "SS-BN" 
 		{
@@ -486,19 +481,16 @@ function touchdown
 		steerToTarget(rate).
 
 		//Calc Optimized Throttle:
-		if vehicle_type <> "SS-BN" 
-			set error to 0.75. 	//F9: Keep up @75% x g
-		else
-			set error to 0.1.	//SS
+		set error to 0.75. 	//F9: Keep up @75% x g
 		if maxthrust = 0
 			set t to 1.
 		else
 			set t to error*((1000*SHIP:MASS*g)/maxthrust)/maxthrust.
 		
 		setHoverDescendSpeed(final_kiss+(ALT_RADAR/7.5),t).
-		
-		wait 0.01.
 	}
+	
+	SET thrust TO 0.
 }
 
 // --------------------------------------------------------------------------------------------
@@ -609,6 +601,9 @@ function main_falcon_return
 		prepare_boostback_burn().
 		LOG "boostback_burn" to STAGE_1_TYPE+"burn.txt".
 	}
+	
+	if vehicle_type = "SS-BN"
+		engines_thrustlimit_to(45).
 
 	until (altitude > BODY:ATM:HEIGHT) or (VERTICALSPEED < 0) //BODY:ATM:HEIGHT=140000m (EARTH)
 	{
