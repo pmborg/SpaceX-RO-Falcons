@@ -9,7 +9,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Common lib of functions used by Falcon-Return.c
-// 30/may/2021
+// 04/Jun/2021
 // --------------------------------------------------------------------------------------------
 runpath("boot/atm.c").
 
@@ -203,9 +203,10 @@ function updateLandingVars  //Scalar projection of two vectors. Find component o
 		set ADDONS_TR_IMPACTPOS to COM_ADDONS_TR_IMPACTPOS.
 		PRINT " " at(48,3+8).
 	} else
-	if KUniverse:ActiveVessel = SHIP and (ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT or altitude >3000)
+	if KUniverse:ActiveVessel = SHIP and (ADDONS:TR:AVAILABLE or altitude >3000)
 	{
-		set ADDONS_TR_IMPACTPOS to ADDONS:TR:IMPACTPOS.
+		if ADDONS:TR:HASIMPACT 
+			set ADDONS_TR_IMPACTPOS to ADDONS:TR:IMPACTPOS.
 		PRINT "*" at(48,3+8).
 	}
 	

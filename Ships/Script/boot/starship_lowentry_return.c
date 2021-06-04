@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to test the Starship Horizontal flight.
-// 02/Jun/2021
+// 04/Jun/2021
 // --------------------------------------------------------------------------------------------
 
 // Init Common:
@@ -39,68 +39,117 @@ if vehicle_sub_type = "SN20-Profile"
 	set thrust to 0.
 	shutDownAllEngines().
 	
-	//DEBUG:
-	PRINT "WAIT 10000".
-	WAIT 10000.
+	clearscreen.
+	update_phase_title("RETRO-DEORBIT", 1).
+	//wait_until_periapsis().
+	SAS OFF.
+	lock steering to retrograde.
+	AG2 OFF. wait 0.1.
+	AG2 ON. wait 0.1.
+	// activateAllEngines().
+	// AG2 OFF. wait 0.1.  //ATM ENG. OFF
+	wait 20.
+	set thrust to 0.1.
+
+	//DE-ORBIT BURN:
+	set we_are_done to false.
+	until (we_are_done)
+	{
+		SET prev_impactDist to impactDist.
+		wait 0.1.
+		PRINT_STATUS (3, thrust). 	
+		//LOG  "[impactDist] "+impactDist + "[prev_impactDist] " + prev_impactDist to LOG.txt.
+		if impactDist < 1000000 //and impactDist > prev_impactDist)
+			set we_are_done to true.
+	}
+	
+	update_phase_title("RETRO-DEORBIT: DONE", 1).
+	set thrust to 0.  wait 0.1.
+	shutDownAllEngines().
+	wait 5.
 }
 
 set present_heading to SHIP:HEADING.
 
+if vehicle_sub_type = "SN20-Profile"
+{
+	//"PROGRADE", "RETROGRADE", "NORMAL", "ANTINORMAL", "RADIALOUT", "RADIALIN", "TARGET", "ANTITARGET", "MANEUVER", "STABILITYASSIST"
+	unlock steering. wait 0.1.
+	SAS ON. wait 0.1.
+	SET SASMODE TO "RADIALOUT". wait 0.1.
+	until (altitude < 15000) {}
+	SAS OFF. wait 0.1.
+	lock steering to retrograde.
+	set thrust to 1.  wait 0.1.
+	until (maxthrust = 0) {}
+}
+
+
 // SS-FLIP-MANEUVER
 // --------------------------------------------------------------------------------------------
-SET steeringVdeg to -1. //shipPitch.
+update_phase_title("SS-FLIP-MANEUVER", 1).
+SET steeringVdeg to -1. 		//shipPitch.
 SET steeringDir TO -(90).		// W/E
 set steeringVroll to -180.		// -270 = Zero Rotation
 LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//steering_falcon(Vdeg).
-SET thrust TO 0.1.
+if vehicle_type = "SN9-Profile1"
+	SET thrust TO 0.1.
 WAIT 2.5.
 LOG "Done" to flip.txt.
 
-// SS-RETURN:
-// --------------------------------------------------------------------------------------------
-RUNPATH( "boot/Falcon-Return.c").	//RESET thrust!!!
-
-if vehicle_type = "SN9-Profile1"
+if vehicle_sub_type <> "SN20-Profile"
 {
-	SET thrust TO 0.25.
-	boostback_burn(true).
-	SET thrust TO 0.
-
-	// BELLY DOWN:
+	// SS-RETURN:
 	// --------------------------------------------------------------------------------------------
-	SET steeringVdeg to 3. //shipPitch.
-	SET steeringDir TO -(90).		// W/E
-	set steeringVroll to -180.		// -270 = Zero Rotation
-	LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//steering_falcon(Vdeg).
+	RUNPATH( "boot/Falcon-Return.c").	//RESET thrust!!!
 
-	//WAIT 30:
-	// --------------------------------------------------------------------------------------------
-	AG5 ON.
-	FROM {local x is 30.} UNTIL x = 0 STEP {set x to x-1.} DO 
-	{
-		wait 1.
-		PRINT_STATUS (3).
-	}
-	AG5 OFF.
-
-	activateAllEngines().
 	if vehicle_type = "SN9-Profile1"
-		sn11_test_profile_deactivate_engine1().
-	// SS-LAND:
-	// --------------------------------------------------------------------------------------------
-	aerodynamic_guidance().
-	landingBurn(). //3000
-	touchdown().
-	rocketshutdown().
-	after_landing().
-}
+	{
+		SET thrust TO 0.25.
+		boostback_burn(true).
+		SET thrust TO 0.
 
-if vehicle_sub_type = "SN20-Profile"
-{
-	if status <> "LANDED" and status <> "SPLASHED"
-		main_falcon_return().
-}
+		// BELLY DOWN:
+		// --------------------------------------------------------------------------------------------
+		SET steeringVdeg to 3. //shipPitch.
+		SET steeringDir TO -(90).		// W/E
+		set steeringVroll to -180.		// -270 = Zero Rotation
+		LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//steering_falcon(Vdeg).
 
+		//WAIT 30:
+		// --------------------------------------------------------------------------------------------
+		AG5 ON.
+		FROM {local x is 30.} UNTIL x = 0 STEP {set x to x-1.} DO 
+		{
+			wait 1.
+			PRINT_STATUS (3).
+		}
+		AG5 OFF.
+
+		activateAllEngines().
+		if vehicle_type = "SN9-Profile1"
+			sn11_test_profile_deactivate_engine1().
+		// SS-LAND:
+		// --------------------------------------------------------------------------------------------
+		aerodynamic_guidance().
+		landingBurn(). //3000
+		touchdown().
+		rocketshutdown().
+		after_landing().
+	}
+
+	if vehicle_sub_type = "SN20-Profile"
+	{
+		if status <> "LANDED" and status <> "SPLASHED"
+			main_falcon_return().
+	}
+} else {
+	until (false)
+	{
+		wait 0.1.
+		PRINT_STATUS (3, thrust). 	
+	}
+}
 
 LOG   "END: starship_lowentry_return.c" to log.txt.
 LOG   "-------------------------------" to log.txt.

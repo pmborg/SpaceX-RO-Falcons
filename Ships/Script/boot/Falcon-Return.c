@@ -34,11 +34,14 @@ SET TOTAL_PARTS to TOTAL_PARTS + 1.
 function boostback_burn
 {
 	parameter do_reverse to false.
-	parameter do_reverse_max_speed to 100.
+	parameter do_reverse_max_speed is 100.
+	parameter slowdown is 10000.
 	
 	if vehicle_type = "SS-BN"
-		set tfactor to 0.33.
-	else
+	{
+		set tfactor to 0.15.
+		set slowdown to 15000.
+	} else
 		set tfactor to 1.
 	
 	if do_reverse
@@ -82,7 +85,7 @@ function boostback_burn
 					LOG  "SLAVE:[we_are_done] " to LOG.txt.
 					set we_are_done to TRUE.
 				}
-			}else if(impactDist < 10000){
+			}else if(impactDist < slowdown){
 				PRINT "OP2: impactDist < 10km  " at (0,2).
 				SET thrust TO tfactor*0.1.
 			}else{
@@ -144,7 +147,7 @@ function ReEntryburn
 		SET prev_impactDist to impactDist.
 		updateHoverSteering().	
 		
-		if SHIP:ALTITUDE < safe_alt //and vehicle_type <> "SS-BN"
+		if SHIP:ALTITUDE < safe_alt
 		{
 			//REENTRY BURN!!!
 			if  x = 0 
@@ -288,9 +291,9 @@ function waitAndDoReEntryburn
 		if vehicle_type <> "SS-BN" 
 			set burnAlt to 60000.			// F9: Entry Burn Altitude
 		else
-			set burnAlt to 37500.			// SS-BN: Entry Burn Altitude
+			set burnAlt to 45000.			// SS-BN: Entry Burn Altitude
 		
-		ReEntryburn(burnAlt, 1, -630).	// Speed Goal of Entry Burn
+		ReEntryburn(burnAlt, 1, -630).		// Speed Goal of Entry Burn
 	}
 	else
 	{
@@ -382,9 +385,19 @@ function landingBurn
 			}
 		} else
 		{
-			steerToTarget(steeringPitch).	//MEDIUM correction
-			set maxDescendSpeed to 125.
-			set error to 0.85. 				
+			if impactDist > 50
+			{
+				// set error for min. thrust
+				steerToTarget(steeringPitch).	//FAST correction
+				set maxDescendSpeed to 75.
+				set error to 0.95. 				
+			}
+			else
+			{
+				steerToTarget(90).	//MEDIUM correction
+				set maxDescendSpeed to 125.
+				set error to 0.85. 				
+			}
 		}
 		
 		//need: error
@@ -435,7 +448,7 @@ function touchdown
 	{
 		engines_thrustlimit_to(10).
 		if altitude < 500
-			engines_thrustlimit_to(6).
+			engines_thrustlimit_to(4).
 	}
 	
 	until (SHIP:STATUS="LANDED" or sBurnDist <= 0.1) and alt:radar < 100
@@ -473,10 +486,10 @@ function touchdown
 		steerToTarget(rate).
 
 		//Calc Optimized Throttle:
-		// if vehicle_type <> "SS-BN" 
-			set error to 0.75. //Keep up @75% x g
-		// else
-			// set error to 0.99.
+		if vehicle_type <> "SS-BN" 
+			set error to 0.75. 	//F9: Keep up @75% x g
+		else
+			set error to 0.1.	//SS
 		if maxthrust = 0
 			set t to 1.
 		else
@@ -533,8 +546,8 @@ function guide_falcon_core
 	AG8 ON. //Disable Lower RCS.
 	waitAndDoReEntryburn().
 	activateOneEngine().
-	if vehicle_type <> "SS-BN"
-		aerodynamic_guidance().
+	//if vehicle_type <> "SS-BN"
+	aerodynamic_guidance().
 	landingBurn().
 	touchdown().
 	rocketshutdown().
@@ -584,10 +597,10 @@ function main_falcon_return
 		activate3engines().
 	} else {
 		//SS: all stack as 1:
-		update_phase_title("(LIM. 25% ENGINES)", 0, true).
+		update_phase_title("(LIM. 40% ENGINES)", 0, true).
 		AG2 ON.
 		WAIT 0.1.
-		engines_thrustlimit_to(25).
+		engines_thrustlimit_to(40).
 		WAIT 0.1.
 	}
 	
