@@ -33,7 +33,7 @@ UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 if vehicle_type = "SN9-Profile1"
 	SET TARGET TO LandingZone.
 	
-if vehicle_sub_type = "SN20-Profile"
+if vehicle_sub_type = "SN20-Profile" and altitude > 140000 //140km
 {
 	SET LandingTarget TO BODY:GEOPOSITIONLATLNG(23.12854, -159.982839).
 	set thrust to 0.
@@ -41,13 +41,11 @@ if vehicle_sub_type = "SN20-Profile"
 	
 	clearscreen.
 	update_phase_title("RETRO-DEORBIT", 1).
-	//wait_until_periapsis().
+	wait_until_periapsis().
 	SAS OFF.
 	lock steering to retrograde.
 	AG2 OFF. wait 0.1.
 	AG2 ON. wait 0.1.
-	// activateAllEngines().
-	// AG2 OFF. wait 0.1.  //ATM ENG. OFF
 	wait 20.
 	set thrust to 0.1.
 
@@ -58,7 +56,6 @@ if vehicle_sub_type = "SN20-Profile"
 		SET prev_impactDist to impactDist.
 		wait 0.1.
 		PRINT_STATUS (3, thrust). 	
-		//LOG  "[impactDist] "+impactDist + "[prev_impactDist] " + prev_impactDist to LOG.txt.
 		if impactDist < 1000000 //and impactDist > prev_impactDist)
 			set we_are_done to true.
 	}
@@ -67,6 +64,8 @@ if vehicle_sub_type = "SN20-Profile"
 	set thrust to 0.  wait 0.1.
 	shutDownAllEngines().
 	wait 5.
+	SAS OFF. wait 0.1.
+	set warp to 2.
 }
 
 set present_heading to SHIP:HEADING.
@@ -77,6 +76,7 @@ if vehicle_sub_type = "SN20-Profile"
 	unlock steering. wait 0.1.
 	SAS ON. wait 0.1.
 	SET SASMODE TO "RADIALOUT". wait 0.1.
+	set warp to 4.
 	until (altitude < 15000) {}
 	SAS OFF. wait 0.1.
 	lock steering to retrograde.

@@ -291,7 +291,7 @@ function waitAndDoReEntryburn
 		if vehicle_type <> "SS-BN" 
 			set burnAlt to 60000.			// F9: Entry Burn Altitude
 		else
-			set burnAlt to 45000.			// SS-BN: Entry Burn Altitude
+			set burnAlt to 47000.			// SS-BN: Entry Burn Altitude
 		
 		ReEntryburn(burnAlt, 1, -630).		// Speed Goal of Entry Burn
 	}
