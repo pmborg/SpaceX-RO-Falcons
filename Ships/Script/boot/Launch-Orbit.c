@@ -468,16 +468,16 @@ if alt:radar < 200
 		PRINT "phase: " 			at (0,10).
 		//PRINT "deltaReduction: " 	at (0,11).
 		
-		if vehicle_type = "StarShip"
-			set steeringVroll to 0.					// 0 = Zero Rotation
-		
 		LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
 		// LOOP: ASCENT:
 		// --------------------------------------------------------------------------------------------
 		until (Vs2 >= MECO1) or (apoapsis >= FINAL_ORBIT2) or phase = 3 //(Reusable) or (Non Reusable Mission) or (on stage-2 burn)
 		{
 			set delta to set_max_delta_curve().
-			steering_falcon(90-delta, lat_correction).
+			if vehicle_type = "StarShip"
+				steering_falcon(90-delta, lat_correction, 0).
+			else
+				steering_falcon(90-delta, lat_correction).
 
 			set vorb to velocity:orbit.
 			set Vsx to vorb:x.

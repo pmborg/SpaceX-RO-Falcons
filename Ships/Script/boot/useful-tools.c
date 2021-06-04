@@ -16,6 +16,7 @@ function steering_falcon
 {
 	parameter Vdeg.	//SET Vdeg to 90-delta.						// Vertical = 90
 	parameter lat_correction is 0.
+	parameter roll is -270.
 	
 	if vehicle_company = "SpaceX" and vehicle_type <> "StarShip"
 	{
@@ -26,7 +27,7 @@ function steering_falcon
 
 	set steeringDir TO (-90-lat_correction).	// W/E
 	set steeringVdeg to Vdeg.
-	set steeringVroll to -270.					// -270 = Zero Rotation
+	set steeringVroll to roll.					// -270 = Zero Rotation
 	//LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll). (NO NEED THIS LINE AUTOMATIC!)
 }
 
