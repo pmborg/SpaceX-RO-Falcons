@@ -396,7 +396,10 @@ function landingBurn
 		{
 			setHoverMaxSteerAngle(20).
 			setHoverMaxHorizSpeed(50).
-			engines_thrustlimit_to(11.5).
+			if sBurnDist > 5000
+				engines_thrustlimit_to(50).
+			else
+				engines_thrustlimit_to(11.5).
 		}
 		else
 		{

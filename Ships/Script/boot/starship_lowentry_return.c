@@ -19,12 +19,6 @@ set STAGE_1_TYPE to "CORE".
 
 update_phase_title("starship_lowentry", 0, true).
 
-PRINT "".
-
-FROM {local countdown is 5.} UNTIL countdown = 0 STEP {SET countdown to countdown - 1.} 
-DO { PRINT "..." + countdown. WAIT 1. }
-
-
 //runpath("boot/useful-tools.c").
 runpath("boot/spacex_defaults.c").
 runpath("boot/common.c").
@@ -66,13 +60,24 @@ if vehicle_sub_type = "SN20-Profile" and altitude > 140000 //140km
 		PRINT_STATUS (3, thrust). 	
 		if impactDist < 1000000 //and impactDist > prev_impactDist)
 			set we_are_done to true.
+		
+		set vsurf to velocity:surface.
+		set Vsx to vsurf:x.
+		set Vsy to vsurf:y.
+		set Vsz to vsurf:z.
+		set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).	
+		set vel to SQRT(Vs2).
+		//update_atmosphere (altitude, vel).
+		log_data (vel).
 	}
 	
 	update_phase_title("RETRO-DEORBIT: DONE", 1).
 	set thrust to 0.  wait 0.1.
 	shutDownAllEngines().
-	wait 5.
+	wait 1.
 	SAS OFF. wait 0.1.
+	
+	update_phase_title("WARM TO ATM", 1).
 	set warp to 2.
 }
 
@@ -80,6 +85,7 @@ set present_heading to SHIP:HEADING.
 
 if vehicle_sub_type = "SN20-Profile"
 {
+	update_phase_title("RE-ENTRY", 1).
 	//"PROGRADE", "RETROGRADE", "NORMAL", "ANTINORMAL", "RADIALOUT", "RADIALIN", "TARGET", "ANTITARGET", "MANEUVER", "STABILITYASSIST"
 	unlock steering. wait 0.1.
 	SAS ON. wait 0.1.

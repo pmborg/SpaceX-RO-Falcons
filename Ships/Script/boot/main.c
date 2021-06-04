@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestre all mission phases.
-// 01/Jun/2021
+// 04/Jun/2021
 // --------------------------------------------------------------------------------------------
 
 // Reset Engine settings before all, ("migth be a reboot")
@@ -21,6 +21,10 @@ runpath("boot/atm.c").
 
 if vehicle_type = "SaturnV"
 	LOG "Normal" to normal.txt. //Skip normal/correction
+
+global TakeOffTime to TIME:SECONDS. //(define: Secure for reboots)
+global last_value1 to 0.
+global Aceleration_value1 to 0.
 
 function change_inclination 
 {

@@ -205,7 +205,7 @@ PRINT "Final Orbit: "+ ROUND(FINAL_ORBIT2/1000)+" km".
 PRINT "Qmax: "+ ROUND(Qmax).
 PRINT "[USER-CONFIG.KS]-STAGE1_LAND_ON: "+STAGE1_LAND_ON.
 
-
+set TakeOffTime to TIME:SECONDS. //(define: Secure for reboots)
 set last_value1 to 0.
 set Aceleration_value1 to 0.
 
@@ -214,7 +214,6 @@ set p0 to 1.223125.
 set e to constant:e.
 set q to 0.
 set mphase to 0.
-set TakeOffTime to TIME:SECONDS. //(define: Secure for reboots)
 
 if alt:radar < 200
 {
