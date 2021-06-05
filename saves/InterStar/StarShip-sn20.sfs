@@ -20062,8 +20062,8 @@ GAME
 				RESOURCE
 				{
 					name = ElectricCharge
-					amount = 7999.87353515625
-					maxAmount = 8000.0060048682089
+					amount = 50000
+					maxAmount = 50000
 					flowState = True
 					isTweakable = True
 					hideFlow = False
@@ -20578,7 +20578,7 @@ GAME
 						temperature = 111.449997
 						fillable = True
 						techRequired = 
-						amount = 207715.3091898078
+						amount = 232715.3091898078
 						maxAmount = 259644.17854523059
 					}
 					UPGRADESAPPLIED

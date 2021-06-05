@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to test the Starship Horizontal flight.
-// 04/Jun/2021
+// 05/Jun/2021
 // --------------------------------------------------------------------------------------------
 
 // Init Common:
@@ -19,7 +19,6 @@ set STAGE_1_TYPE to "CORE".
 
 update_phase_title("starship_lowentry", 0, true).
 
-//runpath("boot/useful-tools.c").
 runpath("boot/spacex_defaults.c").
 runpath("boot/common.c").
 
@@ -42,15 +41,18 @@ if vehicle_sub_type = "SN20-Profile" and altitude > 140000 //140km
 	shutDownAllEngines().
 	
 	clearscreen.
-	update_phase_title("RETRO-DEORBIT", 1).
-	wait_until_periapsis().
-	SAS OFF.
-	lock steering to retrograde.
-	AG2 OFF. wait 0.1.
-	AG2 ON. wait 0.1.
+	if altitude > BODY:ATM:HEIGHT
+	{
+		update_phase_title("RETRO-DEORBIT", 1).
+		wait_until_periapsis().
+		SAS OFF.
+		lock steering to retrograde.
+		AG2 OFF. wait 0.1.
+		AG2 ON. wait 0.1.
 
-	wait 20.
-	set thrust to 0.1.
+		wait 20.
+		set thrust to 0.1.
+	}
 
 	//DE-ORBIT BURN:
 	set we_are_done to false.
@@ -91,7 +93,7 @@ if vehicle_sub_type = "SN20-Profile"
 	unlock steering. wait 0.1.
 	SAS ON. wait 1.
 	
-	if altitude > BODY:ATM:HEIGHT
+	//if altitude > BODY:ATM:HEIGHT
 	{
 		update_phase_title("WARP TO ATM", 1).
 		set kuniverse:timewarp:MODE to "PHYSICS". wait 1.//WARP with PHYSICS
@@ -107,6 +109,9 @@ if vehicle_sub_type = "SN20-Profile"
 	
 	set kuniverse:timewarp:MODE to "PHYSICS". wait 1.//WARP with PHYSICS
 	set warp to 4.
+	
+	update_phase_title("W8 FOR RE-ENTRY", 1).
+	until (altitude < 50000) {}
 }
 
 

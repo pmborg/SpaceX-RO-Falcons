@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              Used to specify the SW version and the diferent types of profiles supported.
-// 03/Jun/2021
+// 05/Jun/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: sw-version.c" to log.txt.
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
@@ -225,7 +225,7 @@ if vehicle_type = "StarShip"
 {
     // Data: StarShip
 	declare global Qmax     to 11750/1.1. 	//v1: 8510/1.1.
-	declare global MECO1    to 2440^2. 		//(T+169)
+	declare global MECO1    to 2300^2. 		//(T+169)
     declare global FAIRSEP  to 110*1000.
 }else
 if vehicle_type = "SaturnV"

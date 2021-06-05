@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 04/Jun/2021
+// 05/Jun/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 LOG   "START: Launch-Orbit.c" to log.txt.
@@ -224,23 +224,23 @@ if alt:radar < 200
 	
 	//LIFTOFF...
 	// --------------------------------------------------------------------------------------------	
+	set value1 to 0.
+	set last_value1 to 0.
+	set TakeOffTime to TIME:SECONDS.
+
+	if vehicle_type <> "SN9-Profile1"
+		set thrust to 1.
+
 	CLEARSCREEN.
 	update_phase_title("[1] LIFTOFF...",0, false).
 	
 	DELETEPATH("FLIGHT_LOG.txt").
 	LOG   "TIME,   VELO,   R:ALT,  Acel,   Q" to FLIGHT_LOG.txt.
 
-	set TakeOffTime to TIME:SECONDS.
-	set value1 to 0.
-	set last_value1 to 0.
-
 	PRINT "Q-Max" 				at (0,2).
 	PRINT "Dynamic Pressure" 	at (0,3).
 	PRINT "q/Qmax" 				at (0,4).
 	set index2 to 6.
-
-	if vehicle_type <> "SN9-Profile1"
-		set thrust to 1.
 
 	set profile_stage to 0.
 
@@ -508,9 +508,9 @@ if alt:radar < 200
 					set mphase to 3. // Acceleration Relation... to avoid stress on vehicle.
 				}
 				
-				// if vehicle_type = "StarShip"
-					// set thrust to 3*0.81*((mass*g)/maxthrust). //Max acc: 3g
-				// else
+				if vehicle_type = "StarShip"
+					set thrust to 4*0.81*((mass*g)/maxthrust). //Max acc: 3g
+				else
 					set thrust to (thrust).
 			}
 			
