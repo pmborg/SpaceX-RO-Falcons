@@ -397,14 +397,14 @@ function landingBurn
 			setHoverMaxSteerAngle(20).
 			setHoverMaxHorizSpeed(50).
 			if sBurnDist > 5000
-				engines_thrustlimit_to(50).
+				engines_thrustlimit_to(50*1.148).
 			else
-				engines_thrustlimit_to(11.5).
+				engines_thrustlimit_to(11.5*1.148).
 		}
 		else
 		{
 			if vehicle_type = "SS-BN"
-				engines_thrustlimit_to(6).
+				engines_thrustlimit_to(6*1.148).
 			
 			if impactDist > 50
 			{
@@ -477,11 +477,11 @@ function touchdown
 		if ALT_RADAR < 30 {
 			set rate to 89.9.			//Almost "zero" correction
 			if vehicle_type = "SS-BN"
-				engines_thrustlimit_to(5.5).
+				engines_thrustlimit_to(5.5*1.148).
 		}
 		else
 			if vehicle_type = "SS-BN"
-				engines_thrustlimit_to(6.5).
+				engines_thrustlimit_to(6.5*1.148).
 			
 		updateHoverSteering().
 		steerToTarget(rate).
@@ -585,7 +585,7 @@ function main_falcon_return
 	if CORE:BOOTFILENAME:FIND("boot-boosters.ks") > -1
 	{
 		update_phase_title("(THRUST MAX)  ", 0, true).
-		engines_thrustlimit_to (100).	
+		engines_thrustlimit_to (100).
 	}
 
 	if vehicle_type <> "SS-BN"
@@ -598,7 +598,7 @@ function main_falcon_return
 		update_phase_title("(LIM. 40% ENGINES)", 0, true).
 		AG2 ON.
 		WAIT 0.1.
-		engines_thrustlimit_to(40).
+		engines_thrustlimit_to(40*1.148).
 		WAIT 0.1.
 	}
 	
@@ -609,7 +609,7 @@ function main_falcon_return
 	}
 	
 	if vehicle_type = "SS-BN"
-		engines_thrustlimit_to(45).
+		engines_thrustlimit_to(45*1.148).
 
 	until (altitude > BODY:ATM:HEIGHT) or (VERTICALSPEED < 0) //BODY:ATM:HEIGHT=140000m (EARTH)
 	{

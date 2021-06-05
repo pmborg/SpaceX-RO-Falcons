@@ -111,7 +111,10 @@ if vehicle_sub_type = "SN20-Profile"
 	set warp to 4.
 	
 	update_phase_title("W8 FOR RE-ENTRY", 1).
-	until (altitude < 50000) {}
+	until (altitude < 50000) 
+	{
+		PRINT_STATUS (3, thrust). wait 0.1.
+	}
 }
 
 
@@ -180,8 +183,7 @@ if vehicle_sub_type <> "SN20-Profile"
 	
 	until (false)
 	{
-		wait 0.1.
-		PRINT_STATUS (3, thrust). 	
+		PRINT_STATUS (3, thrust). wait 0.1.
 	}
 }
 
