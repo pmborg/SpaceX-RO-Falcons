@@ -26,10 +26,10 @@ runpath("boot/common.c").
 DELETEPATH("1:/STAGE1_TARGET_FILE.c"). 	//KOS local HD
 DELETEPATH("FLIP.txt"). 				//Real HD
 DELETEPATH(STAGE_1_TYPE+"burn.txt").
-	
+
+//WAIT TO BE ACTIVE:
 if KUniverse:ActiveVessel <> SHIP
 	update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
-
 UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 
 if vehicle_type = "SN9-Profile1"
@@ -48,6 +48,7 @@ if vehicle_sub_type = "SN20-Profile" and altitude > 140000 //140km
 	lock steering to retrograde.
 	AG2 OFF. wait 0.1.
 	AG2 ON. wait 0.1.
+
 	wait 20.
 	set thrust to 0.1.
 
@@ -78,6 +79,7 @@ if vehicle_sub_type = "SN20-Profile" and altitude > 140000 //140km
 	SAS OFF. wait 0.1.
 	
 	update_phase_title("WARM TO ATM", 1).
+	set kuniverse:timewarp:MODE to "RAILS".	wait 1. //RESET
 	set warp to 2.
 }
 
@@ -92,6 +94,7 @@ if vehicle_sub_type = "SN20-Profile"
 	if altitude > BODY:ATM:HEIGHT
 	{
 		update_phase_title("WARP TO ATM", 1).
+		set kuniverse:timewarp:MODE to "PHYSICS". wait 1.//WARP with PHYSICS
 		set warp to 4.
 	}
 	
@@ -99,15 +102,11 @@ if vehicle_sub_type = "SN20-Profile"
 	wait 1. SAS ON. wait 2.
 	SET SASMODE TO "RADIALOUT". wait 1.
 	SET SASMODE TO "RADIALOUT". wait 1.
+	SET SASMODE TO "RADIALOUT". wait 1.
+	SET SASMODE TO "RADIALOUT". wait 1.
 	
-	set warp to 3.
-	
-	until (altitude < 15000) {}
-	update_phase_title("LAST BURN", 1).
-	SAS OFF. wait 0.1.
-	lock steering to retrograde.
-	set thrust to 1.  wait 0.1.
-	until (maxthrust = 0) {}
+	set kuniverse:timewarp:MODE to "PHYSICS". wait 1.//WARP with PHYSICS
+	set warp to 4.
 }
 
 
@@ -131,6 +130,7 @@ if vehicle_sub_type <> "SN20-Profile"
 
 	if vehicle_type = "SN9-Profile1"
 	{
+		//"SN9-Profile1":
 		SET thrust TO 0.25.
 		boostback_burn(true).
 		SET thrust TO 0.
@@ -164,12 +164,15 @@ if vehicle_sub_type <> "SN20-Profile"
 		after_landing().
 	}
 
-	if vehicle_sub_type = "SN20-Profile"
-	{
-		if status <> "LANDED" and status <> "SPLASHED"
-			main_falcon_return().
-	}
 } else {
+	//"SN20-Profile":
+	until (altitude < 15000) {}
+	update_phase_title("LAST BURN", 1).
+	SAS OFF. wait 0.1.
+	lock steering to retrograde.
+	set thrust to 1.  wait 0.1.
+	//until (maxthrust = 0) {}
+	
 	until (false)
 	{
 		wait 0.1.
