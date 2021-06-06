@@ -183,7 +183,7 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 	else
 		set thrust to t.
 	
-	if alt:radar < 200 and impactDist < 75 and x = 1
+	if (alt:radar < 200 and (impactDist < 75 and x = 1 or vehicle_sub_type = "SN20-Profile"))
 	{
 		PRINT "(KISS mode)" at (0,2).
 		set x to 2.
