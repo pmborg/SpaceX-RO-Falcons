@@ -1,5 +1,17 @@
 # SpaceX-RO-Falcons - using Real Solar System with EVO
 
+
+**Yes... it's possible! :)**
+
+The SHIP was re-scaled:
+TO KSP: 119.736 m x 9.088 m
+
+DEMO VIDEO with the current version of the code:
+[![SpaceX RO Falcons - HOW TO INSTALL and RUN DEMO(FULL VIDEO)](https://i.imgur.com/EfK4psB.png)](https://www.youtube.com/watch?v=8C6WOAyUm9c)
+
+I hope you like it!
+
+
 **SpaceX RO Falcons - HOW TO INSTALL and RUN DEMO(FULL VIDEO)**
 [![SpaceX RO Falcons - HOW TO INSTALL and RUN DEMO(FULL VIDEO)](https://i.imgur.com/9O8ArGM.png)](https://www.youtube.com/watch?v=A_dMWbzeP2k)
 
