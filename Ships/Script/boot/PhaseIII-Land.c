@@ -145,8 +145,10 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 		// set max to 3.
 	// }
 
-	if alt:radar < 2500 and x=0 {
-		activateOneEngine().
+	if alt:radar < 2500 and x=0 
+	{
+		if vehicle_sub_type <> "SN20-Profile"
+			activateOneEngine().
 		set x to 1.
 	}
 	

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to test the Starship Horizontal flight.
-// 05/Jun/2021
+// 06/Jun/2021
 // --------------------------------------------------------------------------------------------
 
 // Init Common:
@@ -40,10 +40,11 @@ if vehicle_sub_type = "SN20-Profile" and altitude > 140000 //140km
 	set thrust to 0.
 	shutDownAllEngines().
 	
+	//PREPARE 4 RETRO BURN:
 	clearscreen.
 	if altitude > BODY:ATM:HEIGHT
 	{
-		update_phase_title("RETRO-DEORBIT", 1).
+		update_phase_title("PREPARE 4 RETRO BURN", 1).
 		wait_until_periapsis().
 		SAS OFF.
 		lock steering to retrograde.
@@ -51,6 +52,7 @@ if vehicle_sub_type = "SN20-Profile" and altitude > 140000 //140km
 		AG2 ON. wait 0.1.
 
 		wait 20.
+		update_phase_title("RETRO BURN", 1).
 		set thrust to 0.1.
 	}
 
@@ -61,7 +63,7 @@ if vehicle_sub_type = "SN20-Profile" and altitude > 140000 //140km
 		SET prev_impactDist to impactDist.
 		wait 0.1.
 		PRINT_STATUS (3, thrust). 	
-		if impactDist < 1000000 //and impactDist > prev_impactDist)
+		if impactDist < 1500000 //and impactDist > prev_impactDist)
 			set we_are_done to true.
 		
 		set vsurf to velocity:surface.
@@ -70,19 +72,36 @@ if vehicle_sub_type = "SN20-Profile" and altitude > 140000 //140km
 		set Vsz to vsurf:z.
 		set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).	
 		set vel to SQRT(Vs2).
-		//update_atmosphere (altitude, vel).
 		log_data (vel).
 	}
 	
+	//WARP TO ATM:
 	update_phase_title("RETRO-DEORBIT: DONE", 1).
 	set thrust to 0.  wait 0.1.
 	shutDownAllEngines().
 	wait 1.
 	SAS OFF. wait 0.1.
 	
-	update_phase_title("WARM TO ATM", 1).
+	update_phase_title("WARP TO ATM", 1).
 	set kuniverse:timewarp:MODE to "RAILS".	wait 1. //RESET
 	set warp to 2.
+	
+	//ENTER IN ATM:
+	set we_are_done to false.
+	until (we_are_done)
+	{
+		PRINT_STATUS (3, thrust). 	
+		if altitude <= BODY:ATM:HEIGHT
+			set we_are_done to true.
+		
+		set vsurf to velocity:surface.
+		set Vsx to vsurf:x.
+		set Vsy to vsurf:y.
+		set Vsz to vsurf:z.
+		set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).	
+		set vel to SQRT(Vs2).
+		log_data (vel).
+	}
 }
 
 set present_heading to SHIP:HEADING.
@@ -91,14 +110,10 @@ if vehicle_sub_type = "SN20-Profile"
 {
 	update_phase_title("HI RE-ENTRY", 1).
 	unlock steering. wait 0.1.
-	SAS ON. wait 1.
-	
-	//if altitude > BODY:ATM:HEIGHT
-	{
-		update_phase_title("WARP TO ATM", 1).
-		set kuniverse:timewarp:MODE to "PHYSICS". wait 1.//WARP with PHYSICS
-		set warp to 4.
-	}
+	SAS ON. RCS ON. wait 0.1.
+
+	set warp to 0. wait 1.
+	set kuniverse:timewarp:MODE to "PHYSICS". wait 1.//WARP with PHYSICS
 	
 	update_phase_title("LOW RE-ENTRY", 1).
 	wait 1. SAS ON. wait 2.
@@ -107,16 +122,17 @@ if vehicle_sub_type = "SN20-Profile"
 	SET SASMODE TO "RADIALOUT". wait 1.
 	SET SASMODE TO "RADIALOUT". wait 1.
 	
-	set kuniverse:timewarp:MODE to "PHYSICS". wait 1.//WARP with PHYSICS
 	set warp to 4.
 	
 	update_phase_title("W8 FOR RE-ENTRY", 1).
-	until (altitude < 50000) 
+	until (altitude < 20000) 
 	{
 		PRINT_STATUS (3, thrust). wait 0.1.
 	}
 }
 
+SAS OFF.
+set warp to 0.
 
 // SS-FLIP-MANEUVER
 // --------------------------------------------------------------------------------------------
@@ -134,6 +150,7 @@ if vehicle_sub_type <> "SN20-Profile"
 {
 	// SS-RETURN:
 	// --------------------------------------------------------------------------------------------
+	//if vehicle_sub_type <> "SN20-Profile"
 	RUNPATH( "boot/Falcon-Return.c").	//RESET thrust!!!
 
 	if vehicle_type = "SN9-Profile1"
@@ -155,14 +172,14 @@ if vehicle_sub_type <> "SN20-Profile"
 		AG5 ON.
 		FROM {local x is 30.} UNTIL x = 0 STEP {set x to x-1.} DO 
 		{
-			wait 1.
-			PRINT_STATUS (3).
+			PRINT_STATUS (3). wait 1.
 		}
 		AG5 OFF.
 
 		activateAllEngines().
 		if vehicle_type = "SN9-Profile1"
 			sn11_test_profile_deactivate_engine1().
+
 		// SS-LAND:
 		// --------------------------------------------------------------------------------------------
 		aerodynamic_guidance().
@@ -172,19 +189,27 @@ if vehicle_sub_type <> "SN20-Profile"
 		after_landing().
 	}
 
-} else {
-	//"SN20-Profile":
-	until (altitude < 15000) {}
-	update_phase_title("LAST BURN", 1).
-	SAS OFF. wait 0.1.
-	lock steering to retrograde.
-	set thrust to 1.  wait 0.1.
-	//until (maxthrust = 0) {}
-	
-	until (false)
-	{
-		PRINT_STATUS (3, thrust). wait 0.1.
+} 
+else {
+	// BELLY DOWN:
+	// --------------------------------------------------------------------------------------------
+	SET steeringVdeg to 3. //shipPitch.
+	SET steeringDir TO -(90).		// W/E
+	set steeringVroll to -180.		// -270 = Zero Rotation
+	LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//steering_falcon(Vdeg).
+		
+	until (altitude < 2000) {
+		PRINT_STATUS (3). wait 0.1.
 	}
+	update_phase_title("LAST BURN", 1).
+	SAS ON. wait 0.1.
+	AG2 OFF. wait 0.1.
+	AG2 ON. wait 0.1.
+	SET SASMODE TO "RETROGRADE". wait 0.1.
+    UNLOCk steering. wait 0.1.
+	set thrust to 0.5.  wait 0.1.
+	
+	RUNPATH( "boot/PhaseIII-Land.c" ).
 }
 
 LOG   "END: starship_lowentry_return.c" to log.txt.

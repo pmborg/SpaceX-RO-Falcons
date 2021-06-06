@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 03/Jun/2021
+// 06/Jun/2021
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
 
@@ -336,19 +336,16 @@ function flip_maneuver
 	else
 		WAIT 5. // wait for SEP
 	PRINT_STATUS (3).
-
-	// if vehicle_type = "SS-BN"
-	// {
-		// lock throttle to thrust.
-		// SET thrust TO 0.1.
-	// }
-	//LOG  "Thrust: "+thrust to LOG.txt.
 	
 	//NORMAL FLIP MANEUVER -------------------------------------------------------
 	CLEARSCREEN.
 	update_phase_title("FLIP MANEUVER", 0, true).
 	RCS ON.
-	set wait_max_sec to 25.
+	if vehicle_type = "StarShip"
+		set wait_max_sec to 30.
+	else
+		set wait_max_sec to 25.
+	
 	if STAGE_1_TYPE = "CORE"
 		LOCK STEERING TO HEADING(270,0, -270).						// For Drone Ship Landing
 	FROM {local x is wait_max_sec.} UNTIL x = 0 STEP {set x to x-1.} DO 
