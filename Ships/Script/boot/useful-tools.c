@@ -259,12 +259,12 @@ function log_data
 	if ROUND(BODY:ATM:ALTITUDEPRESSURE(altitude),4) = 0 and ROUND(BODY:ATM:ALTITUDETEMPERATURE(altitude),1) = 0
 		PRINT "--    " at (1+8*4,35).
 	else
-		PRINT ROUND(qVal,0)+" " at (1+8*4,35).
+		PRINT ROUND(qVal/1000,0)+" " at (1+8*4,35).
 		
 	if (ROUND (value1,0) > last_value1) 
 	{
 		set last_value1 to ROUND (value1,0).
-		LOG value1+","+value2+","+value3+","+Aceleration_value1+","+ROUND(qVal,0) to FLIGHT_LOG.txt.
+		LOG value1+","+value2+","+value3+","+Aceleration_value1+","+ROUND(qVal/1000,0) to FLIGHT_LOG.txt.
 	}
 	PRINT "T.ORB: "+orbit_type at (1+8*5-2,35).
 }

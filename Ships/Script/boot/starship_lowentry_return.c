@@ -11,6 +11,23 @@
 // 06/Jun/2021
 // --------------------------------------------------------------------------------------------
 
+function COMPLETE_PRINT_STATUS
+{
+		parameter line is 3.
+		parameter th is thrust.
+		
+		set vsurf to velocity:surface.
+		set Vsx to vsurf:x.
+		set Vsy to vsurf:y.
+		set Vsz to vsurf:z.
+		set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).	
+		set vel to SQRT(Vs2).
+		//update_atmosphere (altitude, vel).
+		log_data (vel).
+		
+		PRINT_STATUS (line, th).
+}		
+
 // Init Common:
 // --------------------------------------------------------------------------------------------
 LOG   "START: starship_lowentry_return.c" to log.txt.
@@ -62,7 +79,7 @@ if vehicle_sub_type = "SN20-Profile" and altitude > 140000 //140km
 	{
 		SET prev_impactDist to impactDist.
 		wait 0.1.
-		PRINT_STATUS (3, thrust). 	
+		COMPLETE_PRINT_STATUS (3, thrust). 	
 		if impactDist < 1500000 //and impactDist > prev_impactDist)
 			set we_are_done to true.
 		
@@ -90,7 +107,7 @@ if vehicle_sub_type = "SN20-Profile" and altitude > 140000 //140km
 	set we_are_done to false.
 	until (we_are_done)
 	{
-		PRINT_STATUS (3, thrust). 	
+		COMPLETE_PRINT_STATUS (3, thrust). 	
 		if altitude <= BODY:ATM:HEIGHT
 			set we_are_done to true.
 		
@@ -128,7 +145,7 @@ if vehicle_sub_type = "SN20-Profile"
 	update_phase_title("RE-ENTRY", 1).
 	until (altitude < 10000) 
 	{
-		PRINT_STATUS (3, thrust). wait 0.1.
+		COMPLETE_PRINT_STATUS (3, thrust). wait 0.1.
 	}
 }
 
@@ -177,7 +194,7 @@ if vehicle_sub_type <> "SN20-Profile"
 		AG5 ON.
 		FROM {local x is 30.} UNTIL x = 0 STEP {set x to x-1.} DO 
 		{
-			PRINT_STATUS (3). wait 1.
+			COMPLETE_PRINT_STATUS (3). wait 1.
 		}
 		AG5 OFF.
 
@@ -204,14 +221,15 @@ else {
 	LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//steering_falcon(Vdeg).
 		
 	until (altitude < 2000) {
-		PRINT_STATUS (3). wait 0.1.
+		COMPLETE_PRINT_STATUS (3). wait 0.1.
 	}
 	update_phase_title("LAST BURN", 1).
 	SAS ON. wait 0.1.
 	AG2 OFF. wait 0.1.
 	AG2 ON. wait 0.1.
-    UNLOCk steering. wait 1.
-	SET SASMODE TO "RETROGRADE". wait 1.
+    //UNLOCk steering. wait 1.
+	//SET SASMODE TO "RETROGRADE". wait 1.
+	lock steering to retrograde.
 	set thrust to 1.  wait 1.
 	
 	RUNPATH( "boot/PhaseIII-Land.c" ).
