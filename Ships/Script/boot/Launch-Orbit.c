@@ -23,7 +23,6 @@ set LandingTarget to latlng(23.12854, -159.982839).
 runpath("boot/common.c").
 
 // LOOP: LAUNCH-Trusting:
-set lat_correction to 0.
 if vehicle_sub_type = "SN20-Profile"
 	set lat_correction to -6. // -6 = HEADING: 90+6
 

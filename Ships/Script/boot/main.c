@@ -25,6 +25,7 @@ if vehicle_type = "SaturnV"
 global TakeOffTime to TIME:SECONDS. //(define: Secure for reboots)
 global last_value1 to 0.
 global Aceleration_value1 to 0.
+global lat_correction to 0.
 
 function change_inclination 
 {

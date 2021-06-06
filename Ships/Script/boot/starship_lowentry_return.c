@@ -109,37 +109,42 @@ set present_heading to SHIP:HEADING.
 if vehicle_sub_type = "SN20-Profile"
 {
 	update_phase_title("HI RE-ENTRY", 1).
-	unlock steering. wait 0.1.
-	SAS ON. RCS ON. wait 0.1.
+	//unlock steering. wait 0.1.
+	SAS OFF. RCS ON. wait 0.1.
 
 	set warp to 0. wait 1.
 	set kuniverse:timewarp:MODE to "PHYSICS". wait 1.//WARP with PHYSICS
 	
 	update_phase_title("LOW RE-ENTRY", 1).
-	wait 1. SAS ON. wait 2.
-	SET SASMODE TO "RADIALOUT". wait 1.
-	SET SASMODE TO "RADIALOUT". wait 1.
-	SET SASMODE TO "RADIALOUT". wait 1.
-	SET SASMODE TO "RADIALOUT". wait 1.
+	//wait 1. SAS ON. wait 2.
+	// SET SASMODE TO "RADIALOUT". wait 1.
+	// SET SASMODE TO "RADIALOUT". wait 1.
+	// SET SASMODE TO "RADIALOUT". wait 1.
+	// SET SASMODE TO "RADIALOUT". wait 1.
+	LOCK STEERING TO UP + R(0,-15,90+lat_correction). wait 0.1.
 	
 	set warp to 4.
 	
-	update_phase_title("W8 FOR RE-ENTRY", 1).
-	until (altitude < 20000) 
+	update_phase_title("RE-ENTRY", 1).
+	until (altitude < 10000) 
 	{
 		PRINT_STATUS (3, thrust). wait 0.1.
 	}
 }
 
-SAS OFF.
+// SAS OFF.
 set warp to 0.
 
 // SS-FLIP-MANEUVER
 // --------------------------------------------------------------------------------------------
-update_phase_title("SS-FLIP-MANEUVER", 1).
+update_phase_title("HORIZ.MANEUVER", 1).
 SET steeringVdeg to -1. 		//shipPitch.
 SET steeringDir TO -(90).		// W/E
-set steeringVroll to -180.		// -270 = Zero Rotation
+if vehicle_sub_type = "SN20-Profile"
+	set steeringVroll to 0.			// 0 = Zero Rotation
+if vehicle_type = "SN9-Profile1"
+	set steeringVroll to -180.		// -270 = Zero Rotation
+	
 LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//steering_falcon(Vdeg).
 if vehicle_type = "SN9-Profile1"
 	SET thrust TO 0.1.
@@ -205,9 +210,9 @@ else {
 	SAS ON. wait 0.1.
 	AG2 OFF. wait 0.1.
 	AG2 ON. wait 0.1.
-	SET SASMODE TO "RETROGRADE". wait 0.1.
-    UNLOCk steering. wait 0.1.
-	set thrust to 0.5.  wait 0.1.
+    UNLOCk steering. wait 1.
+	SET SASMODE TO "RETROGRADE". wait 1.
+	set thrust to 1.  wait 1.
 	
 	RUNPATH( "boot/PhaseIII-Land.c" ).
 }
