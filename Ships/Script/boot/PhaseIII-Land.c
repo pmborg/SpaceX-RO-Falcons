@@ -90,7 +90,8 @@ if altitude > 100000 //100km
 	set warp to 0. WAIT 1.
 }
 
-SAS OFF.
+if vehicle_sub_type <> "SN20-Profile"
+	SAS OFF.
 RCS ON.
 set breakspeed to 1000.
 PRINT "@<100km   " at (20,0).
@@ -191,7 +192,10 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 		unlock steering.
 		SAS ON.
 		WAIT 1.
-		set sasmode TO "RETROGRADE".
+		if vehicle_sub_type <> "SN20-Profile"
+			set sasmode TO "RETROGRADE".
+		else
+			set SASMODE to "STABILITY".
 		RCS ON.
 		SET err TO 0.80.
 	}

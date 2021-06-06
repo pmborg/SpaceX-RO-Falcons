@@ -80,7 +80,7 @@ if vehicle_sub_type = "SN20-Profile" and altitude > 140000 //140km
 		SET prev_impactDist to impactDist.
 		wait 0.1.
 		COMPLETE_PRINT_STATUS (3, thrust). 	
-		if impactDist < 1500000 //and impactDist > prev_impactDist)
+		if impactDist < 3000000 //and impactDist > prev_impactDist)
 			set we_are_done to true.
 		
 		set vsurf to velocity:surface.
@@ -217,7 +217,7 @@ else {
 	// --------------------------------------------------------------------------------------------
 	SET steeringVdeg to 3. //shipPitch.
 	SET steeringDir TO -(90).		// W/E
-	set steeringVroll to -180.		// -270 = Zero Rotation
+	set steeringVroll to 0.			// 0 = Zero Rotation
 	LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//steering_falcon(Vdeg).
 		
 	until (altitude < 2000) {
@@ -227,9 +227,9 @@ else {
 	SAS ON. wait 0.1.
 	AG2 OFF. wait 0.1.
 	AG2 ON. wait 0.1.
-    //UNLOCk steering. wait 1.
-	//SET SASMODE TO "RETROGRADE". wait 1.
-	lock steering to retrograde.
+    UNLOCk steering. wait 1.
+	SET SASMODE TO "RETROGRADE". wait 1.
+	//lock steering to retrograde.
 	set thrust to 1.  wait 1.
 	
 	RUNPATH( "boot/PhaseIII-Land.c" ).
