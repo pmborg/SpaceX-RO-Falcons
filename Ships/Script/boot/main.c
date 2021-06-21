@@ -16,6 +16,9 @@ set thrust to 0.
 lock throttle to thrust.
 WAIT 0.
 
+LOG  "SHIP:LAT: "+SHIP:GEOPOSITION:LAT to LOG.txt.
+LOG  "SHIP:LNG: "+SHIP:GEOPOSITION:LNG to LOG.txt.
+
 runpath("boot/declare-globals.c").
 runpath("boot/atm.c").
 

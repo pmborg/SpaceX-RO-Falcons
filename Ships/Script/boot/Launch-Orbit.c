@@ -8,10 +8,11 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 05/Jun/2021
+// 07/Jun/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
-LOG   "START: Launch-Orbit.c" to log.txt.
+LOG "START: Launch-Orbit.c" to log.txt.
+
 set FINAL_ORBIT2 to FINAL_ORBIT.// For Phase-2 falcon stage-2
 set FINAL_ORBIT  to 150000. 	//(FINAL_ORBIT/2) - For Phase-1 falcon stage-1
 set phase to 0.
@@ -51,7 +52,7 @@ function main_liftoff
 			PRINT "T-02:00 ST-2 LOX load complete".
 			PRINT "T-01:50 Falcon decouple is complete".
 			PRINT "T-01:40 "+str_vehicle+" is on internal power".
-			if vehicle_type = "Falcon Heavy" 
+			if vehicle_type = "Falcon Heavy"
 				PRINT "T-01:30 Vehicles in self alignment".
 			PRINT "T-01:25 "+str_vehicle+" gas load complete".
 			PRINT "T-01:15 M1D-Fuel bleed complete".
@@ -65,7 +66,9 @@ function main_liftoff
 			PRINT "T-00:15 "+str_vehicle+" is configured for flight".
 			PRINT "T-00:15 (T-15 Seconds)".
 			PRINT "T-00:14 Standby for Turnarround Count".
-			PRINT "T-00:05 Side Boosters Ignition".
+			if vehicle_type = "Falcon Heavy"
+				PRINT "T-00:05 Side Boosters".
+			PRINT "T-00:03 Ignition".
 
 			PRINT " ".
 		}
@@ -101,7 +104,15 @@ function main_liftoff
 		if vehicle_company = "SpaceX" and vehicle_type <> "SN9-Profile1" and vehicle_type <> "StarShip"
 			Print "(Release Tower Clamp)".
 		
-		FROM {local countdown is 5.} UNTIL countdown = 0 STEP {SET countdown to countdown - 1.} 
+		set aim_cowntdown to 5.
+		
+		if vehicle_type = "StarShip"
+		{
+			AG8 ON.
+			set aim_cowntdown to 10.
+		}
+		
+		FROM {local countdown is aim_cowntdown.} UNTIL countdown = 0 STEP {SET countdown to countdown - 1.} 
 		DO { PRINT "..." + countdown. WAIT 1. }
 
 		CLEARSCREEN. PRINT " ".PRINT " ".	
@@ -491,7 +502,7 @@ if alt:radar < 200
 				PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,3).
 				
 			PRINT ROUND(mass)+" t   " 			 at (22,4).
-			PRINT thrust*100+" %   " 			 at (22,5).
+			PRINT ROUND(thrust*100,1)+" %   " 			 at (22,5).
 			PRINT ROUND(apoapsis/1000)+" km    " at (22,6).
 			PRINT ROUND(delta)+"    " 			 at (22,7).
 			PRINT ROUND(VERTICALSPEED)+" m/s   " at (22,8).

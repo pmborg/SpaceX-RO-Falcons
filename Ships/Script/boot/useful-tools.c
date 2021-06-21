@@ -350,7 +350,7 @@ function flip_maneuver
 		LOCK STEERING TO HEADING(270,0, -270).						// For Drone Ship Landing
 	FROM {local x is wait_max_sec.} UNTIL x = 0 STEP {set x to x-1.} DO 
 	{
-		print "wait: "+x+" " at (42,2).
+		print "wait: "+x+" " at (41,2).
 		
 		if STAGE_1_TYPE <> "CORE"
 			steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset). // Heading to Return Home

@@ -77,11 +77,18 @@ if (status = "PRELAUNCH" or status = "LANDED") and ( BODY:name = "Kerbin" or BOD
 		LOG "declare global LandingZone TO VESSEL(LZ_2)." to "1:/STAGE1_TARGET_FILE.c".
 		LOG "INIT TARGET: VESSEL(LZ_2)." to LOG.txt.
 		PRINT "LANDING AT: "+LZ_2.
+	} else
+	if TARGET_N = 110
+	{
+		set LandingZone to offline_LandingStarBase.
+		LOG "declare global LandingZone to offline_LandingStarBase." to "1:/STAGE1_TARGET_FILE.c".
+		LOG "INIT TARGET: offline_LandingStarBase." to LOG.txt.
+		PRINT "LANDING AT: offline_LandingStarBase".
 	}
 } else {
 	PRINT "LOAD: STAGE1_TARGET_FILE.c".
 	// MASTER or CORE:
-	if STAGE_1_TYPE <> "SLAVE" 
+	if STAGE_1_TYPE <> "SLAVE" and vehicle_type <> "SS-BN"
 	{
 		runpath("1:/STAGE1_TARGET_FILE.c"). //1: = Use KOS_CPU Internal Disk. (to allow each booster have it's file)
 		set LandingTarget TO LandingZone:GEOPOSITION.
@@ -90,8 +97,12 @@ if (status = "PRELAUNCH" or status = "LANDED") and ( BODY:name = "Kerbin" or BOD
 		
 		update_phase_title("BOOSTER SLEEPING...", 0, true).
 	} else {
-		// SLAVE:
-		if CORE:BOOTFILENAME:FIND("boot-boosters-L.ks") > -1 		// STAGE-1L
+		if (vehicle_type = "SS-BN")
+		{
+			declare global LandingZone_NAME to "StarBase".
+			set LandingTarget TO offline_LandingStarBase.
+		}// SLAVE:	
+		else if CORE:BOOTFILENAME:FIND("boot-boosters-L.ks") > -1 		// STAGE-1L
 		{
 			declare global LandingZone_NAME to "LandingZone1".
 			set LandingTarget TO offline_LandingZone1.
@@ -111,6 +122,17 @@ if (status = "PRELAUNCH" or status = "LANDED") and ( BODY:name = "Kerbin" or BOD
 		LOG STAGE_1_TYPE+" "+LandingZone_NAME to LOG.txt.
 	}
 }
+
+// WHEN status <> "PRELAUNCH" THEN
+// {
+// if (vehicle_type = "StarShip" or vehicle_type = "SS-BN")
+// {
+	//set TARGET to getNearbyProbe(0, "Probe").
+	//set LandingZone to offline_LandingStarBase.
+	// set LandingZone_NAME to "StarBase".
+	// set LandingTarget TO offline_LandingStarBase.
+// }
+// }
 
 //WAIT until booster is "Free" from main rocket:
 WHEN ALL_PROCESSORS:LENGTH > 1 THEN
@@ -147,6 +169,14 @@ if ALL_PROCESSORS:LENGTH > 2	//Stage-1 (Have two processors)
 else
 	if MECO1 < 9999^2
 		core:doaction("Open Terminal", true).
+
+// if (vehicle_type = "StarShip" or vehicle_type = "SS-BN")
+// {
+	// set TARGET to getNearbyProbe(0, "Probe").
+	// set LandingTarget TO VESSEL("StarBase").
+	// set LandingZone to VESSEL("StarBase").
+	// set LandingZone_NAME to LandingZone:NAME.
+// }
 
 // Init Common (After "LOADED - LandingZone"):
 runpath("boot/common.c").
@@ -188,8 +218,6 @@ if STAGE_1_TYPE = "SLAVE"
 		WAIT UNTIL NOT SHIP:MESSAGES:EMPTY.		//VESSEL:QUEUE
 		SET MESSAGE TO SHIP:MESSAGES:POP.
 		
-		//if KUniverse:ActiveVessel <> SHIP
-		// {
 			SET COM_thrust to MESSAGE:CONTENT[0].
 			SET COM_steeringDir to MESSAGE:CONTENT[1].
 			SET COM_pitch to MESSAGE:CONTENT[2].				//not used
@@ -203,21 +231,28 @@ if STAGE_1_TYPE = "SLAVE"
 			// PRINT "COM_ADDONS_TR_IMPACTPOS:HEADING: "+ROUND (COM_ADDONS_TR_IMPACTPOS:HEADING,1)+"   " at (0,y+15).
 			// PRINT "COM_impactDist:       "+ROUND (COM_impactDist,1)+"   " at (0,y+16).
 			// PRINT "COM_targetDir:       "+ROUND (COM_targetDir,1)+"   " at (0,y+17).
-		// }
+
 		PRESERVE.
 	}
 	
 	set LandingTarget TO offline_LandingZone1.
-} 
+}
 else 
 {
 	if KUniverse:ActiveVessel <> SHIP
 		update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
-	
+
 	UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
-		SET TARGET TO LandingZone.
+	{
+		if (vehicle_type = "StarShip" or vehicle_type = "SS-BN")
+			SET TARGET to getNearbyProbe(0, "Probe").
+		else
+			SET TARGET TO LandingZone.
+	}
 }
 
+
+	
 //FALCON-RETURN:
 // --------------------------------------------------------------------------------------------
 RUNPATH( "boot/Falcon-Return.c").

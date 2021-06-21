@@ -8,12 +8,12 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              Used to specify the SW version and the diferent types of profiles supported.
-// 05/Jun/2021
+// 21/Jun/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: sw-version.c" to log.txt.
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //                          #.YY.MM.DD
-set version_str to "SW-Ver: 1.21.06.01".
+set version_str to "SW-Ver: 1.21.06.21".
 PRINT version_str at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
@@ -113,8 +113,8 @@ declare global COM_ADDONS_TR_IMPACTPOS to SHIP:GEOPOSITION.
 declare global COM_altitude to 0.
 
 //SHIP NAMES: (For vessel switch)
-declare global SHIP_NAME to SHIP:NAME.                              //["NAME"]_probe
-declare global MAIN_SHIP_NAME to SHIP_NAME:REPLACE(" probe", "").   //["NAME"]       (Original name)
+declare global SHIP_NAME to SHIP:NAME.	//["NAME"]_probe or ["NAME"]_ship
+declare global MAIN_SHIP_NAME to SHIP_NAME:REPLACE(" probe", ""):REPLACE(" ship", "").
 
 //DEBUG:
 // PRINT "MODEL: "+SHIP_NAME.
@@ -123,7 +123,13 @@ declare global MAIN_SHIP_NAME to SHIP_NAME:REPLACE(" probe", "").   //["NAME"]  
 // SELECT VEHICLE_TYPE -------------------------------------------------------------
 declare global vehicle_company to "SpaceX". 
 
-if SHIP_NAME = "Starship SN20"
+if SHIP_NAME = "Starship SN16" or SHIP_NAME = "Starship-SN16"
+{
+	declare global vehicle_type to "StarShip".				
+	declare global vehicle_sub_type to "SN16-Profile1".
+}
+else
+if SHIP_NAME = "Starship SN20" or SHIP_NAME = "Starship-SN20"
 {
 	declare global vehicle_type to "StarShip".				
 	declare global vehicle_sub_type to "SN20-Profile".		// BASE: starship-SN20 prototype (orbital flight): SPLASH LANDING (23.12854, -159.982839)
