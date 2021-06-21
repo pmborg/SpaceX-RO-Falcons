@@ -116,16 +116,12 @@ declare global COM_altitude to 0.
 declare global SHIP_NAME to SHIP:NAME.	//["NAME"]_probe or ["NAME"]_ship
 declare global MAIN_SHIP_NAME to SHIP_NAME:REPLACE(" probe", ""):REPLACE(" ship", "").
 
-//DEBUG:
-// PRINT "MODEL: "+SHIP_NAME.
-// PRINT "BOOT: " + CORE:BOOTFILENAME.
-
 // SELECT VEHICLE_TYPE -------------------------------------------------------------
 declare global vehicle_company to "SpaceX". 
 
 if SHIP_NAME = "Starship SN16" or SHIP_NAME = "Starship-SN16"
 {
-	declare global vehicle_type to "StarShip".				
+	declare global vehicle_type to "SN16-Profile1".				
 	declare global vehicle_sub_type to "SN16-Profile1".
 }
 else
@@ -142,7 +138,7 @@ if SHIP_NAME = "Starship SN9"
 else
 if SHIP_NAME = "Apollo11-4KSP1.11"
 {
-    declare global vehicle_type to "SaturnV".               // BASE: Falcon-9 v1.2Blk:5 
+    declare global vehicle_type to "SaturnV".               
     set vehicle_company to "NASA".
 }
 else
@@ -175,9 +171,7 @@ else
 declare global vehicle_sub_type to vehicle_type.
 
 if SHIP_NAME = "Starship SN20"
-{
 	declare global vehicle_sub_type to "SN20-Profile".
-}
 
 if SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" or
    SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
@@ -233,6 +227,11 @@ if vehicle_type = "StarShip"
 	declare global Qmax     to 11750/1.1. 	//v1: 8510/1.1.
 	declare global MECO1    to 2300^2. 		//(T+169)
     declare global FAIRSEP  to 110*1000.
+	
+	 if vehicle_sub_type = "SN16-Profile1" {
+		set Qmax     to 11750/1.1. 	//v1: 8510/1.1.
+		set MECO1    to 1900^2. 	//(T+169)
+	 }
 }else
 if vehicle_type = "SaturnV"
 {
@@ -337,12 +336,13 @@ function set_max_delta_curve
         set delta to (1*(e^I)*(-1))*1.3.        //Rotate 30% Faster
         if delta < (-80)                        //MAX. Keep: 10 deg nose up
             set delta to (-80).
-    // } else 
-    // if vehicle_type = "StarShip"
-    // {
-		// set delta to (1*(e^I)*(-1)).    		//Normal Rotation
-		// if delta < (-60)                    	//MAX. Keep: 30 deg nose up
-			// set delta to (-60).    
+    } else
+    if vehicle_sub_type = "SN16-Profile1"
+    {
+		set I to altitude/(1500).
+		set delta to (1*(e^I)*(-1))*1.4.   		//Rotate 40% Faster
+		if delta < (-70)                    	//MAX. Keep: 30 deg nose up
+			set delta to (-70).
     } else {
 		// DEFAULTS:
         if STAGE1_LAND_ON <> "LAND"
@@ -374,7 +374,6 @@ function set_Vdeg
     return 90-81.  		// 9 -> Vertical = 90
 }
 
-
 // SELECT ORBIT TYPE: -------------------------------------------------------
 declare global orbit_type to "LEO".         // Default: Orbit Type
 declare global LEOrbit to 300000.           // Default: Orbit Target at Launch
@@ -389,8 +388,17 @@ if orbit_type = "GSO"
     set LEOrbit to 33000000.                // 1st step for (stage-2)
 
 if vehicle_sub_type = "SN16-Profile1"
-	set LEOrbit to 50000.
+	set LEOrbit to 200000.
 
+//DEBUG:
+// PRINT "MODEL: "+SHIP_NAME.
+// PRINT "BOOT: " + CORE:BOOTFILENAME.
+LOG "MODEL: "+SHIP_NAME to log.txt.
+LOG "BOOT: " + CORE:BOOTFILENAME to log.txt.
+
+print "vehicle_sub_type: "+vehicle_sub_type.	LOG "vehicle_sub_type: "+vehicle_sub_type to log.txt.
+print "LEOrbit: "+LEOrbit. 	 					LOG "LEOrbit: "+LEOrbit to log.txt.
+print "MECO1: "+sqrt(MECO1). 					LOG "MECO1: "+sqrt(MECO1) to log.txt.
 
 // LOAD TOOLS: -------------------------------------------------------
 runpath("boot/useful-tools.c").

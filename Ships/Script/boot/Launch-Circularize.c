@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Circularize an orbit after Launch-Orbit.c
-// 03/Jan/2021
+// 21/Jun/2021
 // --------------------------------------------------------------------------------------------
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
@@ -207,6 +207,12 @@ CLEARSCREEN. print " ".print " ".
 update_phase_title("WAIT TO CIRCULARIZE",1, false).
 if KUniverse:ActiveVessel = SHIP
 	SET MAPVIEW TO TRUE.	// map view on
+	
+until (altitude > BODY:ATM:HEIGHT) or (VERTICALSPEED < 0) //BODY:ATM:HEIGHT=140000m (EARTH)
+{
+	WAIT 0.1.
+	PRINT_STATUS (3).
+}
 	
 SAS OFF. //Hands off..
 set kuniverse:timewarp:MODE to "RAILS".	wait 1.

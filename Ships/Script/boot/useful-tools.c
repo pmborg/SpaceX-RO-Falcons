@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 06/Jun/2021
+// 21/Jun/2021
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
 
@@ -222,7 +222,7 @@ function log_data
 	parameter Vs2.
 	parameter showlog to false.	//true = TURN ON LOG file.
 	
-	if vehicle_type = "SN9-Profile1" or vehicle_type = "StarShip"
+	if vehicle_company = "SpaceX"
 		set showlog to true.
 	
 	updateVars().

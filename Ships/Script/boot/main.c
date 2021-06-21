@@ -7,8 +7,8 @@
 // Beta load from: 	- https://www.dropbox.com/sh/jd1oh6d806iyat1/AABa7aXbiYDfv8G-aQ4MyR-ta?dl=0
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
-//              This code is called by main processor to Orchestre all mission phases.
-// 04/Jun/2021
+//              This code is called by main processor to Orchestrate all mission phases.
+// 21/Jun/2021
 // --------------------------------------------------------------------------------------------
 
 // Reset Engine settings before all, ("migth be a reboot")
@@ -84,7 +84,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		
 		if (BODY:name = mission_origin) and (apoapsis < LEOrbit or periapsis < body:atm:height) or orbit_type = "GSO" or vehicle_type = "Crew Dragon 2"
 		{
-			if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN20-Profile")
+			if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN16-Profile1" and vehicle_sub_type <> "SN20-Profile")
 			{
 				if KUniverse:ActiveVessel <> SHIP {
 					update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
@@ -101,7 +101,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		LOG  "SKIP: Launch" to LOG.txt.
 
 	// Adjust mission inclination?
-	if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN20-Profile")
+	if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN16-Profile1" and vehicle_sub_type <> "SN20-Profile")
 	{
 		if NOT EXISTS("normal.txt")
 			change_inclination().
@@ -160,14 +160,14 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			SET KUniverse:ACTIVEVESSEL TO VESSEL(target_vessel:NAME).
 			
 			clearscreen. print " ". print " ".
-			PRINT "SWTICH TO LEM AND WAIT...".
+			PRINT "SWITCH TO LEM AND WAIT...".
 			PRINT "Press [ENTER], to Confirm: EARTH RETURN".
 			set ch to terminal:input:getchar().
 		}
 	}
 
 	//ACTION: Break & LAND! -------------------------------------------
-	if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN20-Profile")
+	if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN16-Profile1" and vehicle_sub_type <> "SN20-Profile")
 	{
 		if status <> "LANDED" and status <> "SPLASHED"
 		{
@@ -249,14 +249,14 @@ if BODY:name <> DEFAULT_KSC {
 
 		if BODY:name <> DEFAULT_KSC
 		{
-			if (IS_INTER_PLANETARY_MISSION)						// INTER-PLANETARY Mission ?
+			if (IS_INTER_PLANETARY_MISSION)							// INTER-PLANETARY Mission ?
 				RUNPATH( "boot/Phase Angle.c", BODY(DEFAULT_KSC)).	// Warp to the correct: Phase Angle
 				
 			activateAllEngines().
 			if body:atm:height > 0 {
 				print"ATM: Launch-Orbit".
-				runpath("boot/GOUP.c", true).		// ATM: "Launch-Orbit"
-				runpath("boot/GOORBIT.c").			// (Prograde) + (Moons)"Phase0-Normal"
+				runpath("boot/GOUP.c", true).						// ATM: "Launch-Orbit"
+				runpath("boot/GOORBIT.c").							// (Prograde) + (Moons)"Phase0-Normal"
 			} else {
 				print"NOATM: Launch-Orbit".
 				RUNPATH( "boot/PhaseIV-Orbit.c" ).					// Re-Launch to TARGET Orbit
@@ -265,7 +265,7 @@ if BODY:name <> DEFAULT_KSC {
 				activateVesselProbe().
 			}
 			
-			RUNPATH( "boot/PhaseV-Return.c" ).					// Return: Burn to "Kerbin SOI"
+			RUNPATH( "boot/PhaseV-Return.c" ).						// Return: Burn to "Kerbin SOI"
 		}
 
 		if (IS_INTER_PLANETARY_MISSION) {
@@ -274,7 +274,7 @@ if BODY:name <> DEFAULT_KSC {
 		}
 
 		PRINT "Press [ENTER] to LAND!".set ch to terminal:input:getchar().
-		RUNPATH( "boot/PhaseVI-Land.c", true ).		 			// Kerbin Reentry & Touch Down
+		RUNPATH( "boot/PhaseVI-Land.c", true ).		 				// Kerbin Reentry & Touch Down
 	} else {
 		ResetMission(). // Re-define Target
 		reboot.
