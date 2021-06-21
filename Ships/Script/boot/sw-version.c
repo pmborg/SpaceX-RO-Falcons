@@ -388,6 +388,9 @@ if SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM"
 if orbit_type = "GSO" 
     set LEOrbit to 33000000.                // 1st step for (stage-2)
 
+if vehicle_sub_type = "SN16-Profile1"
+	set LEOrbit to 50000.
+
 
 // LOAD TOOLS: -------------------------------------------------------
 runpath("boot/useful-tools.c").
