@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to test the Starship Horizontal flight.
-// 21/Jun/2021
+// 22/Jun/2021
 // --------------------------------------------------------------------------------------------
 
 function COMPLETE_PRINT_STATUS
@@ -51,6 +51,13 @@ UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 if vehicle_type = "SN9-Profile1"
 	SET TARGET TO LandingZone.
 	
+if vehicle_sub_type = "SN16-Profile1"
+{
+	set vehicle_sub_type to "SN20-Profile".
+	set thrust to 0.
+	shutDownAllEngines().
+}
+	
 if vehicle_sub_type = "SN20-Profile" and altitude > 140000 //140km
 {
 	SET LandingTarget TO BODY:GEOPOSITIONLATLNG(23.12854, -159.982839).
@@ -91,7 +98,10 @@ if vehicle_sub_type = "SN20-Profile" and altitude > 140000 //140km
 		set vel to SQRT(Vs2).
 		log_data (vel).
 	}
-	
+}
+
+if vehicle_type = "StarShip"
+{
 	//WARP TO ATM:
 	update_phase_title("RETRO-DEORBIT: DONE", 1).
 	set thrust to 0.  wait 0.1.
@@ -172,7 +182,6 @@ if vehicle_sub_type <> "SN20-Profile"
 {
 	// SS-RETURN:
 	// --------------------------------------------------------------------------------------------
-	//if vehicle_sub_type <> "SN20-Profile"
 	RUNPATH( "boot/Falcon-Return.c").	//RESET thrust!!!
 
 	if vehicle_type = "SN9-Profile1"
@@ -184,7 +193,7 @@ if vehicle_sub_type <> "SN20-Profile"
 
 		// BELLY DOWN:
 		// --------------------------------------------------------------------------------------------
-		SET steeringVdeg to 3. //shipPitch.
+		SET steeringVdeg to 3. 			//shipPitch.
 		SET steeringDir TO -(90).		// W/E
 		set steeringVroll to -180.		// -270 = Zero Rotation
 		LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//steering_falcon(Vdeg).
@@ -210,17 +219,21 @@ if vehicle_sub_type <> "SN20-Profile"
 		rocketshutdown().
 		after_landing().
 	}
-
 } 
 else {
 	// BELLY DOWN:
 	// --------------------------------------------------------------------------------------------
-	SET steeringVdeg to 3. //shipPitch.
+	SET steeringVdeg to 3. 			//shipPitch.
 	SET steeringDir TO -(90).		// W/E
 	set steeringVroll to 0.			// 0 = Zero Rotation
 	LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//steering_falcon(Vdeg).
-		
-	until (altitude < 2000) {
+	
+	if vehicle_type = "SN16-Profile1"
+		set landing_altitude to 500.
+	else
+		set landing_altitude to 2000.
+	
+	until (altitude < landing_altitude) {
 		COMPLETE_PRINT_STATUS (3). wait 0.1.
 	}
 	update_phase_title("LAST BURN", 1).

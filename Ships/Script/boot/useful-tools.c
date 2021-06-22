@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 21/Jun/2021
+// 22/Jun/2021
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
 
@@ -18,7 +18,7 @@ function steering_falcon
 	parameter lat_correction is 0.
 	parameter roll is -270.
 	
-	if vehicle_company = "SpaceX" and vehicle_type <> "StarShip"
+	if vehicle_company = "SpaceX" and not splash_landing
 	{
 		if KUniverse:ActiveVessel = SHIP
 			if ADDONS:TR:AVAILABLE and ADDONS:TR:HASIMPACT and vehicle_sub_type <> "Falcon Heavy LEM"
@@ -91,6 +91,7 @@ function shutDownAllEngines
 		if eng:typename() = "Engine"
 			eng:SHUTDOWN.
 	}
+	LOG "shutDownAllEngines ()" to log.txt.
 }
 
 function activateOneEngine 
@@ -104,6 +105,7 @@ function activateOneEngine
 		if eng:POSSIBLETHRUST > 710
 			set n to n+1.
 	}
+	LOG "activateOneEngine ()" to log.txt.
 }
 
 function activateLEMengine 
@@ -114,6 +116,7 @@ function activateLEMengine
 		if eng:POSSIBLETHRUST > 40
 			eng:ACTIVATE.
 	}
+	LOG "activateLEMengine ()" to log.txt.
 }
 
 function activateAllEngines 
@@ -123,6 +126,7 @@ function activateAllEngines
 		if eng:typename() = "Engine"
 			eng:ACTIVATE.
 	}
+	LOG "activateAllEngines ()" to log.txt.
 }
 
 function activate3engines
@@ -130,6 +134,7 @@ function activate3engines
 	shutDownAllEngines().
 	AG2 OFF. wait 1.	//Reset 3 main engines
 	AG2 ON.  wait 1.	//Activate 3 main engines
+	LOG "activate3engines ()" to log.txt.
 }
 
 function engines_thrustlimit_to 
@@ -140,6 +145,7 @@ function engines_thrustlimit_to
 	FOR eng IN myVariable {
 		set eng:THRUSTLIMIT to LIMIT.
 	}
+	LOG "engines_thrustlimit_to ()" to log.txt.
 }
 
 function sn11_test_profile_deactivate_engine1

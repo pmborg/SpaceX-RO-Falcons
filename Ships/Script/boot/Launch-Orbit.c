@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 21/Jun/2021
+// 22/Jun/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 LOG "START: Launch-Orbit.c" to log.txt.
@@ -103,7 +103,7 @@ function main_liftoff
 	if (status = "PRELAUNCH" or status = "LANDED" or status = "SPLASHED") //KSP have so many bugs...
 	{
 		AG1 ON. //TOGGLE
-		if vehicle_company = "SpaceX" and vehicle_type <> "SN9-Profile1" and vehicle_type <> "StarShip"
+		if vehicle_company = "SpaceX" and Release_Tower_Clamp
 			Print "(Release Tower Clamp)".
 		
 		set aim_cowntdown to 5.
@@ -129,7 +129,7 @@ function main_liftoff
 			WAIT 1.
 			
 		if (KUniverse:ActiveVessel = SHIP) STAGE.		//TOWER
-		if vehicle_company = "SpaceX" and vehicle_type <> "SN9-Profile1" and vehicle_type <> "StarShip"
+		if vehicle_company = "SpaceX" and Release_Tower_Clamp
 			Print "(Strongback Retracted)".
 
 		if vehicle_type = "Crew Dragon 2"
@@ -269,7 +269,7 @@ if alt:radar < 200
 		PRINT ROUND(q) at (22,3).
 		set q_qmax to q/Qmax*100.
 		PRINT ROUND(q_qmax,2)+ " %       " at (22,4).
-		if vehicle_company = "SpaceX" and vehicle_type <> "StarShip"
+		if vehicle_company = "SpaceX" and not splash_landing
 			PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,6).
 		
 		if alt:radar > 130 and alt:radar < 1000
@@ -389,7 +389,7 @@ if alt:radar < 200
 		if vehicle_type = "SN9-Profile1"
 			set delta to -delta.
 			
-		if vehicle_type = "StarShip"
+		if vehicle_type = "StarShip" or vehicle_type = "SN16-Profile1"
 			steering_falcon(90-delta, lat_correction, -180).
 		else
 			steering_falcon(90-delta, lat_correction).
@@ -444,7 +444,7 @@ if alt:radar < 200
 			set x to x+1.
 		}.
 		
-		if vehicle_company = "SpaceX" and vehicle_type <> "StarShip"
+		if vehicle_company = "SpaceX" and not splash_landing
 			PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,index2).
 			
 		PRINT ROUND(tThrust*100,1)+"%                " 	at (22,1+index2).	
@@ -489,7 +489,7 @@ if alt:radar < 200
 		until (Vs2 >= MECO1) or (apoapsis >= FINAL_ORBIT2) or phase = 3 //(Reusable) or (Non Reusable Mission) or (on stage-2 burn)
 		{
 			set delta to set_max_delta_curve().
-			if vehicle_type = "StarShip"
+			if vehicle_type = "StarShip" or vehicle_type = "SN16-Profile1"
 				steering_falcon(90-delta, lat_correction, -180).
 			else
 				steering_falcon(90-delta, lat_correction).
@@ -500,7 +500,7 @@ if alt:radar < 200
 			set Vsz to vorb:z.
 			set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).
 			
-			if vehicle_company = "SpaceX" and vehicle_type <> "StarShip"
+			if vehicle_company = "SpaceX" and not splash_landing
 				PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,3).
 				
 			PRINT ROUND(mass)+" t   " 			 at (22,4).
@@ -754,7 +754,7 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 		//TO:
 		SET steeringVdeg to set_Vdeg().
 
-		if vehicle_type = "StarShip"
+		if vehicle_type = "StarShip" or vehicle_type = "SN16-Profile1"
 		{
 			set steeringVroll to -180.					// 0 = Zero Rotation
 			SET steeringDir TO 90-lat_correction.	// W/E
@@ -805,7 +805,7 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 		else
 			SET steeringVdeg to set_Vdeg().
 		
-		if vehicle_type = "StarShip"
+		if vehicle_type = "StarShip" or vehicle_type = "SN16-Profile1"
 		{
 			set steeringVroll to -180.				// 0 = Zero Rotation
 			SET steeringDir TO 90-lat_correction.	// W/E

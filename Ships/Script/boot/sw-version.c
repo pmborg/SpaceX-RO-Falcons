@@ -8,12 +8,12 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              Used to specify the SW version and the diferent types of profiles supported.
-// 21/Jun/2021
+// 22/Jun/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: sw-version.c" to log.txt.
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //                          #.YY.MM.DD
-set version_str to "SW-Ver: 1.21.06.21".
+set version_str to "SW-Ver: 1.21.06.22".
 PRINT version_str at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
@@ -35,7 +35,7 @@ PRINT version_str at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 // [ok] SaturnV ST1 ST1- STAGE              1.21.01.09
 // [ok] SaturnV ST2 LEO ORBIT               1.21.01.09
 // [ok] SaturnV ST2 SLE DOCKING             1.21.01.09
-// [ok] SaturnV ST3 LUNAR BURN             1.21.01.09
+// [ok] SaturnV ST3 LUNAR BURN              1.21.01.09
 // [ok] SaturnV ST3 EARTH SOI WARP          1.21.01.09
 // [ok] SaturnV ST3 MOON PE WARP            1.21.01.09
 // [ok] SaturnV MOON CAPTURE                1.21.01.09
@@ -119,16 +119,24 @@ declare global MAIN_SHIP_NAME to SHIP_NAME:REPLACE(" probe", ""):REPLACE(" ship"
 // SELECT VEHICLE_TYPE -------------------------------------------------------------
 declare global vehicle_company to "SpaceX". 
 
+declare global splash_landing to false. 
+declare global Release_Tower_Clamp to true.
+
+
 if SHIP_NAME = "Starship SN16" or SHIP_NAME = "Starship-SN16"
 {
-	declare global vehicle_type to "SN16-Profile1".				
+	declare global vehicle_type to "SN16-Profile1".
 	declare global vehicle_sub_type to "SN16-Profile1".
+	set splash_landing to true.
+	set Release_Tower_Clamp to false.
 }
 else
 if SHIP_NAME = "Starship SN20" or SHIP_NAME = "Starship-SN20"
 {
-	declare global vehicle_type to "StarShip".				
+	declare global vehicle_type to "StarShip".
 	declare global vehicle_sub_type to "SN20-Profile".		// BASE: starship-SN20 prototype (orbital flight): SPLASH LANDING (23.12854, -159.982839)
+	set splash_landing to true.
+	set Release_Tower_Clamp to false.
 }
 else
 if SHIP_NAME = "Starship SN9"
@@ -260,7 +268,7 @@ if vehicle_type = "Crew Dragon 2"
 {
     // Data from: Crew Demo 1:
     declare global Qmax     to .5*0.34876*(259.9^2).
-    declare global MECO1    to 1900^2.// 1875*
+    declare global MECO1    to 1800^2.
     declare global FAIRSEP  to 160*1000.
 }else
 if vehicle_type = "F9v1.2B5"
@@ -340,7 +348,7 @@ function set_max_delta_curve
     if vehicle_sub_type = "SN16-Profile1"
     {
 		set I to altitude/(1500).
-		set delta to (1*(e^I)*(-1))*1.4.   		//Rotate 40% Faster
+		set delta to (1*(e^I)*(-1)).   			//Normal Rotation
 		if delta < (-70)                    	//MAX. Keep: 30 deg nose up
 			set delta to (-70).
     } else {
