@@ -98,7 +98,7 @@ if not exist buildID64.txt (
 
 	REM DEPS:
 	ckan.exe install --headless --allow-incompatible --no-recommends AnimatedDecouplers BackgroundResources FASA HeatControl KerbalEngineerRedux 
-	REM ckan.exe install --headless --allow-incompatible --no-recommends MechJeb2
+	ckan.exe install --headless --allow-incompatible --no-recommends MechJeb2
 	ckan.exe install --headless --allow-incompatible --no-recommends RetractableLiftingSurface SpaceXLaunchVehicles USITools SpaceXLegs
 	ckan.exe install --headless --allow-incompatible --no-recommends BDAnimationModules DockingPortAlignmentIndicator REPOSoftTech-Agencies TextureReplacer
 
@@ -171,7 +171,7 @@ if not exist buildID64.txt (
 	move Ships\VAB.all %NONEED%
 
     REM Fix (this beta) Trajectories 1.12
-	copy /Y GameData\Trajectories\Plugin\Trajectories111.bin GameData\Trajectories\Plugin\Trajectories112.bin
+	copy /Y GameData\Trajectories\Plugin\Trajectories110.bin GameData\Trajectories\Plugin\Trajectories112.bin
 
 	echo.
 	echo "Installation ended."
