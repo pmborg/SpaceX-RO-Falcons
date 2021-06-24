@@ -61,8 +61,9 @@ The **SpaceX-RO-Falcons** Mod Introduce:
 
 **Supported versions are:**
 * **KSP 1.9.1** (include original ISS)<br>
-* **KSP 1.10.1** ([NEW] now there is a new **ISS for KSP 1.10.1 & 1.11**)<br>
-* **KSP 1.11.x** ([NEW] **1.11.1 & 1.11.2** There is a new install bat file, to install this version)<br>
+* **KSP 1.10.1** (**ISS for KSP 1.10.1 & 1.11**)<br>
+* **KSP 1.11.x** (**1.11.1 & 1.11.2** There is a new install bat file, to install this version)<br>
+* **KSP 1.12.x** ([NEW] beta version...)<br>
 
 ----
 **CURRENT FLEET:**
