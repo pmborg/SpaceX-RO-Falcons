@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to test the Starship Horizontal flight.
-// 22/Jun/2021
+// 24/Jun/2021
 // --------------------------------------------------------------------------------------------
 
 function COMPLETE_PRINT_STATUS
@@ -148,8 +148,18 @@ if vehicle_sub_type = "SN20-Profile"
 	// SET SASMODE TO "RADIALOUT". wait 1.
 	// SET SASMODE TO "RADIALOUT". wait 1.
 	// SET SASMODE TO "RADIALOUT". wait 1.
-	LOCK STEERING TO UP + R(0,-15,90+lat_correction). wait 0.1.
 	
+	if vehicle_type = "SN20-Profile"
+		LOCK STEERING TO UP + R(0,-15,90+lat_correction). wait 0.1.
+		
+	if vehicle_type = "SN16-Profile1"
+	{
+		SET steeringVdeg to -1. 		//shipPitch.
+		SET steeringDir TO -(90).		// W/E
+		set steeringVroll to 0.			// 0 = Zero Rotation
+		LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//steering_falcon(Vdeg).
+	}
+		
 	set warp to 4.
 	
 	update_phase_title("RE-ENTRY", 1).

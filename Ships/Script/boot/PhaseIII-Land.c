@@ -187,7 +187,7 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 	{
 		PRINT "(KISS mode)" at (0,2).
 		set x to 2.
-		if KUniverse:ActiveVessel = SHIP
+		if KUniverse:ActiveVessel = SHIP and vehicle_sub_type <> "SN20-Profile"
 			set TARGET to LandingZone.
 		unlock steering.
 		SAS ON.
