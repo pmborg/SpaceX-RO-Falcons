@@ -47,17 +47,18 @@ if not exist buildID64.txt (
 	ckan.exe compat add 1.9
 	ckan.exe compat add 1.9.0
 	ckan.exe compat add 1.8.1
+
+	REM DOWNLOAD Latest:
+	echo "Get CKAN Latest Version"
+	powershell -command "& { $latestRelease = (Invoke-WebRequest https://github.com/KSP-CKAN/CKAN/releases/latest -Headers @{'Accept'='application/json'}) ; $json = $latestRelease.Content | ConvertFrom-Json ; $LATESTVERSION = $json.tag_name ; iwr https://github.com/KSP-CKAN/CKAN/releases/download/$LATESTVERSION/ckan.exe -OutFile ckan.exe }"
+
 	ckan.exe compat 1.11.2.3077
 	ckan.exe compat 1.11.1.3066
 	ckan.exe compat 1.11.0.3045
 	ckan.exe compat 1.10.1.2939
 	ckan.exe compat 1.10.0.2917
 	ckan.exe compat 1.9.1.2788
-
-	REM DOWNLOAD Latest:
-	echo "Get CKAN Latest Version"
-	powershell -command "& { $latestRelease = (Invoke-WebRequest https://github.com/KSP-CKAN/CKAN/releases/latest -Headers @{'Accept'='application/json'}) ; $json = $latestRelease.Content | ConvertFrom-Json ; $LATESTVERSION = $json.tag_name ; iwr https://github.com/KSP-CKAN/CKAN/releases/download/$LATESTVERSION/ckan.exe -OutFile ckan.exe }"
-
+	
 	REM Install Normal Kopernicus
 	ckan.exe install --headless --allow-incompatible --no-recommends Kopernicus
 
