@@ -65,7 +65,7 @@ if not exist buildID64.txt (
 	ckan.exe install --headless --allow-incompatible --no-recommends CraftManager KerbalXMod HangerExtenderExtended MoarFEConfigs DraggableNavball
 
 	ckan.exe install --headless --allow-incompatible --no-recommends BetterCrewAssignment KerbalAlarmClock PatchManager 
-	ckan.exe install --headless --allow-incompatible --no-recommends Trajectories="v2.3.4"
+	ckan.exe install --headless --allow-incompatible --no-recommends Trajectories
 	
 	ckan.exe install --headless --allow-incompatible --no-recommends AmpYearPowerManager DMagicScienceAnimate 
 
@@ -80,7 +80,9 @@ if not exist buildID64.txt (
 	ckan.exe install --headless --allow-incompatible --no-recommends ROTanks ROSolar 
 
 	REM RSS (Real Solar System):
-	ckan.exe install --headless --allow-incompatible --no-recommends RSSTextures4096 RSSDateTimeFormatter KSCSwitcher RealSolarSystem
+	REM ckan.exe install --headless --allow-incompatible --no-recommends RSSDateTimeFormatter
+	ckan.exe install --headless --allow-incompatible --no-recommends RSSTextures4096 KSCSwitcher RealSolarSystem
+	
 
 	REM SmokeScreen (already as dep)
 	ckan.exe install --headless --allow-incompatible --no-recommends Scatterer Scatterer-config Scatterer-sunflare
@@ -170,9 +172,9 @@ if not exist buildID64.txt (
 	move Ships\VAB\*.* Ships\SPH
 	move Ships\VAB.all %NONEED%
 
-    REM Fix (this beta) Trajectories 1.12
-	copy /Y GameData\Trajectories\Plugin\Trajectories110.bin GameData\Trajectories\Plugin\Trajectories112.bin
-
+    REM Using a beta version recompiled for KSP 1.12
+	copy /Y GameData\Trajectories\Plugin\Trajectories.dll_beta GameData\Trajectories\Plugin\Trajectories.dll
+	
 	echo.
 	echo "Installation ended."
 	echo "Please keep KOS at this version (1:1.2.1.0), and for future updates run scipt: RealFalcons-AUTO-Update.bat"
