@@ -98,7 +98,7 @@ if not exist buildID64.txt (
 
 	REM DEPS:
 	ckan.exe install --headless --allow-incompatible --no-recommends AnimatedDecouplers BackgroundResources FASA HeatControl KerbalEngineerRedux 
-	ckan.exe install --headless --allow-incompatible --no-recommends MechJeb2
+	REM ckan.exe install --headless --allow-incompatible --no-recommends MechJeb2
 	ckan.exe install --headless --allow-incompatible --no-recommends RetractableLiftingSurface SpaceXLaunchVehicles USITools SpaceXLegs
 	ckan.exe install --headless --allow-incompatible --no-recommends BDAnimationModules DockingPortAlignmentIndicator REPOSoftTech-Agencies TextureReplacer
 
