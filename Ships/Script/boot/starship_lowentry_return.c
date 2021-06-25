@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to test the Starship Horizontal flight.
-// 24/Jun/2021
+// 25/Jun/2021
 // --------------------------------------------------------------------------------------------
 
 function COMPLETE_PRINT_STATUS
@@ -239,7 +239,7 @@ else {
 	LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//steering_falcon(Vdeg).
 	
 	if vehicle_type = "SN16-Profile1"
-		set landing_altitude to 400.
+		set landing_altitude to 1000.
 	else
 		set landing_altitude to 2000.
 	

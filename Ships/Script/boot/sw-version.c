@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              Used to specify the SW version and the diferent types of profiles supported.
-// 24/Jun/2021
+// 25/Jun/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: sw-version.c" to log.txt.
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
@@ -141,7 +141,7 @@ if SHIP_NAME = "Starship SN20" or SHIP_NAME = "Starship-SN20"
 else
 if SHIP_NAME = "Starship SN9"
 {
-	declare global vehicle_type to "SN9-Profile1".			// BASE: starship-SN8/SN9/SN10/SN11/SN15 prototype (hi-altitude flight: 10km)
+	declare global vehicle_type to "SN9-Profile1".			// BASE: starship-SN8/SN9/SN10/SN11/SN15 prototype (altitude flight: 10km)
 }
 else
 if SHIP_NAME = "Apollo11-4KSP1.11"
@@ -229,17 +229,17 @@ else
 PRINT "STAGE1_LAND_ON: "+STAGE1_LAND_ON.
 
 // DEFAULTS FOR FLIGTH PROFILE: -------------------------------------------------
+if vehicle_type = "SN16-Profile1" {
+	declare global Qmax     to 21000/1.1. 	
+	declare global MECO1    to 1850^2.
+	declare global FAIRSEP  to 110*1000.
+}else
 if vehicle_type = "StarShip"
 {
     // Data: StarShip
 	declare global Qmax     to 11750/1.1. 	//v1: 8510/1.1.
 	declare global MECO1    to 2300^2. 		//(T+169)
     declare global FAIRSEP  to 110*1000.
-	
-	 if vehicle_sub_type = "SN16-Profile1" {
-		set Qmax     to 21080/1.1. 	
-		set MECO1    to 1900^2. 	
-	 }
 }else
 if vehicle_type = "SaturnV"
 {
@@ -300,9 +300,7 @@ else
 }
 
 if vehicle_type = "SN9-Profile1" 
-{
 	declare global Qmax to 6200.
-}
 
 if  Qmax <> .5*1.2*(250^2)
     LOG "Normal" to normal.txt.
@@ -349,8 +347,8 @@ function set_max_delta_curve
     {
 		set I to altitude/(1500).
 		set delta to (1*(e^I)*(-1)).   			//Normal Rotation
-		if delta < (-70)                    	//MAX. Keep: 30 deg nose up
-			set delta to (-70).
+		if delta < (-45)                    	//MAX. Keep: 30 deg nose up
+			set delta to (-45).
     } else {
 		// DEFAULTS:
         if STAGE1_LAND_ON <> "LAND"

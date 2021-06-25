@@ -9,7 +9,7 @@
 // Purpose: 
 //              	- Used to land any where near by, (sample: after de-orbit on Mun or Moon)
 //                    used in missions (Beyond Earth)
-// 01/Jan/2020
+// 25/Jun/2021
 // --------------------------------------------------------------------------------------------
 
 CLEARSCREEN.
@@ -125,16 +125,12 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 	// if alt:radar < 2000 {
 		// set max to 40.
 	// }
-	// if alt:radar < 1000  {
-		// set max to 20.
-	// }
-	if alt:radar < 900  {
+	if alt:radar < 1000
+		set max to 20.
+	if alt:radar < 500
 		set max to 6.
-	}
-	if alt:radar < 500 {
+	if alt:radar < 500
 		GEAR ON.	// retract gear
-		// set max to 15.
-	}
 	// if alt:radar < 400 {
 		// set max to 9.
 	// }
@@ -154,8 +150,10 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 	}
 	
 	if alt:radar < 125 {
-		//set max to 1. //6m/s
-		set max to 0.5. //m/s
+		if vehicle_type = "SN16-Profile1"
+			set max to 1. //6m/s
+		else
+			set max to 0.5. //m/s
 	}
 	
 	set r to altitude + mission_target:radius.
@@ -172,7 +170,8 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 		set Vdown to (-1)*verticalspeed.
 	
 	set error to err*(Vdown-max).
-
+	if error <= 0
+		set error to 4.
 	
 	PRINT "(mode:2)" at (0,2).
 	if maxthrust > 0
@@ -197,6 +196,9 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 		else
 			set SASMODE to "STABILITY".
 		RCS ON.
+		// if vehicle_type = "SN16-Profile1"
+			// SET err TO 0.50.
+		// else
 		SET err TO 0.80.
 	}
 
