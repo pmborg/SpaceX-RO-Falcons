@@ -141,13 +141,13 @@ if not exist buildID64.txt (
 	move SpaceX_Launch_Towers-1.7.3.zip %KSPTEMP%
 
 	REM INSTALL: BETA Kopernicus for 1.12:
-	powershell -command "& { iwr https://github.com/Kopernicus/Kopernicus/releases/download/release-46/Kopernicus-1.12.0-46.zip -OutFile Kopernicus.zip }"
-	powershell.exe -NoP -NonI -Command "Expand-Archive 'Kopernicus.zip' '%KSPTEMP%'"
-	mkdir GameData\Kopernicus
-	mkdir GameData\ModularFlightIntegrator
-	xcopy /S /Y %KSPTEMP%\GameData\Kopernicus GameData\Kopernicus
-	xcopy /S /Y %KSPTEMP%\GameData\ModularFlightIntegrator GameData\ModularFlightIntegrator
-	move Kopernicus.zip %KSPTEMP%
+	REM powershell -command "& { iwr https://github.com/Kopernicus/Kopernicus/releases/download/release-46/Kopernicus-1.12.0-46.zip -OutFile Kopernicus.zip }"
+	REM powershell.exe -NoP -NonI -Command "Expand-Archive 'Kopernicus.zip' '%KSPTEMP%'"
+	REM mkdir GameData\Kopernicus
+	REM mkdir GameData\ModularFlightIntegrator
+	REM xcopy /S /Y %KSPTEMP%\GameData\Kopernicus GameData\Kopernicus
+	REM xcopy /S /Y %KSPTEMP%\GameData\ModularFlightIntegrator GameData\ModularFlightIntegrator
+	REM move Kopernicus.zip %KSPTEMP%
 
 	REM ...OR... INSTALL: EVO ULTRA:
 	powershell -command "& { iwr https://github.com/Its-Just-Luci/EVO/releases/download/Alpha-v0.2a/EVO-64k.Alpha.v0.2.zip -OutFile EVO.zip }"

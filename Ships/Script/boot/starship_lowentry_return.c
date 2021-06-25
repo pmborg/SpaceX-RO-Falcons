@@ -239,7 +239,7 @@ else {
 	LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).	//steering_falcon(Vdeg).
 	
 	if vehicle_type = "SN16-Profile1"
-		set landing_altitude to 500.
+		set landing_altitude to 400.
 	else
 		set landing_altitude to 2000.
 	
