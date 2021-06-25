@@ -230,7 +230,7 @@ PRINT "STAGE1_LAND_ON: "+STAGE1_LAND_ON.
 
 // DEFAULTS FOR FLIGTH PROFILE: -------------------------------------------------
 if vehicle_type = "SN16-Profile1" {
-	declare global Qmax     to 21000/1.1. 	
+	declare global Qmax     to 24000/1.1. 	
 	declare global MECO1    to 1850^2.
 	declare global FAIRSEP  to 110*1000.
 }else

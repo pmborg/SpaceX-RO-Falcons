@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 22/Jun/2021
+// 25/Jun/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 LOG "START: Launch-Orbit.c" to log.txt.
@@ -93,6 +93,7 @@ function main_liftoff
 		   vehicle_type = "Crew Dragon 2" or
 		   vehicle_type = "SaturnV" or
 		   vehicle_type = "SN9-Profile1" or 
+		   vehicle_type = "SN16-Profile1" or 
 		   vehicle_type = "StarShip"
 			SAS OFF.
 		else
@@ -201,12 +202,13 @@ function check_fairing_sep
 	}
 }
 
-
 // Vehicle Release Auto Sequence:
 // --------------------------------------------------------------------------------------------
 set thrust to 0.
 lock throttle to thrust.
-LOCK STEERING TO up + R(0,0,180). //UP
+
+if vehicle_type <> "SN16-Profile1"
+	LOCK STEERING TO up + R(0,0,180). //UP
 
 set initialmass to mass.
 set Cd to .20075*.008.
