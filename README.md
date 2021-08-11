@@ -6,6 +6,10 @@
 The SHIP was re-scaled:
 TO KSP: 119.736 m x 9.088 m
 
+Starship & Super Heavy stacked in preparation for orbital flight:
+![!](https://i.imgur.com/2dSCngg.png)
+![!](https://i.imgur.com/UDZo8Ah.png)
+
 DEMO VIDEO with the current version of the code:
 [![SpaceX RO Falcons - HOW TO INSTALL and RUN DEMO(FULL VIDEO)](https://i.imgur.com/EfK4psB.png)](https://www.youtube.com/watch?v=8C6WOAyUm9c)
 
@@ -63,7 +67,7 @@ The **SpaceX-RO-Falcons** Mod Introduce:
 * **KSP 1.9.1** (include original ISS)<br>
 * **KSP 1.10.1** (**ISS for KSP 1.10.1 & 1.11**)<br>
 * **KSP 1.11.x** (**1.11.1 & 1.11.2** There is a new install bat file, to install this version)<br>
-* **KSP 1.12.x** ([NEW] beta version...)<br>
+* **KSP 1.12.x** ([NEW] beta version, **not ready!**)<br>
 
 ----
 **CURRENT FLEET:**
