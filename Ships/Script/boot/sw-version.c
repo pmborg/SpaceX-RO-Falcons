@@ -131,7 +131,7 @@ if SHIP_NAME = "Starship SN16" or SHIP_NAME = "Starship-SN16"
 	set Release_Tower_Clamp to false.
 }
 else
-if SHIP_NAME = "Starship SN20" or SHIP_NAME = "Starship-SN20"
+if SHIP_NAME = "Starship SN20" or SHIP_NAME = "Starship-SN20" or SHIP_NAME = "Starship-sn20-catch"
 {
 	declare global vehicle_type to "StarShip".
 	declare global vehicle_sub_type to "SN20-Profile".		// BASE: starship-SN20 prototype (orbital flight): SPLASH LANDING (23.12854, -159.982839)

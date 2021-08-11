@@ -34,11 +34,11 @@ function getNearbyProbe // The other Booster
 			// PRINT "["+STAGE_1_TYPE+"] mass: "+ves:mass.
 			// PRINT "["+STAGE_1_TYPE+"] AIRSPEED: "+ves:AIRSPEED.
 			// PRINT "["+STAGE_1_TYPE+"] Altitude: "+ves:altitude.
-			// LOG  "["+STAGE_1_TYPE+"] name: "+ves:name to LOG.txt.
-			// LOG  "["+STAGE_1_TYPE+"] mass: "+ves:mass to LOG.txt.
-			// LOG  "["+STAGE_1_TYPE+"] AIRSPEED: "+ves:AIRSPEED to LOG.txt.
-			// LOG  "["+STAGE_1_TYPE+"] Altitude: "+ves:altitude to LOG.txt.
-			// LOG  "["+STAGE_1_TYPE+"] ves:GEOPOSITION:DISTANCE: "+ves:GEOPOSITION:DISTANCE to LOG.txt.
+			LOG  "["+STAGE_1_TYPE+"] name: "+ves:name to LOG.txt.
+			LOG  "["+STAGE_1_TYPE+"] mass: "+ves:mass to LOG.txt.
+			LOG  "["+STAGE_1_TYPE+"] AIRSPEED: "+ves:AIRSPEED to LOG.txt.
+			LOG  "["+STAGE_1_TYPE+"] Altitude: "+ves:altitude to LOG.txt.
+			LOG  "["+STAGE_1_TYPE+"] ves:GEOPOSITION:DISTANCE: "+ves:GEOPOSITION:DISTANCE to LOG.txt.
 			
 			nearby_vessels:ADD(ves). 
 			set g_OtherBooster to ves.
