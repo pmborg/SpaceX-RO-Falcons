@@ -8,15 +8,27 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //
-// 07/Jun/2021
+// 11/Aug/2021
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 CLEARSCREEN.
 RUNPATH( "boot/sw-version.c" ).
 
-PRINT "tower: "+SHIP_NAME.
+update_phase_title("[ ] TOWER CLEAR...", 0, false).
+PRINT " ".
+PRINT "mass: "+round(mass)+" t".
+UNTIL (mass < 6000) WAIT 1.
 
-wait 30.
+update_phase_title("[ ] Counting...", 0, false).
+set aim_cowntdown to 20.
+
+PRINT " ".
+PRINT "mass: "+round(mass)+" t".
+
+FROM {local countdown is aim_cowntdown.} UNTIL countdown = 0 STEP {SET countdown to countdown - 1.} 
+DO { PRINT "..." + countdown. WAIT 1. }
+		
+wait aim_cowntdown.
 AG8 OFF.
 
 PRINT "END".

@@ -8,12 +8,12 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              Used to specify the SW version and the diferent types of profiles supported.
-// 25/Jun/2021
+// 11/Aug/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: sw-version.c" to log.txt.
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //                          #.YY.MM.DD
-set version_str to "SW-Ver: 1.21.06.22".
+set version_str to "SW-Ver: 1.21.08.11".
 PRINT version_str at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
@@ -208,6 +208,11 @@ else
 if CORE:BOOTFILENAME:FIND("boot-boosters.ks") > -1      // STAGE-1 (General ST-1)
     set STAGE_1_TYPE to "CORE".
 else 
+if CORE:BOOTFILENAME:FIND("boot-tower.ks") > -1      // STAGE-1 (General ST-1)
+{
+    set STAGE_1_TYPE to "STAGE-0".
+	set vehicle_type to STAGE_1_TYPE.
+} else 
 if CORE:BOOTFILENAME:FIND("boot.ks") > -1               // STAGE-2 (General ST-2)
 {
     set STAGE_1_TYPE to "MAIN".
@@ -397,14 +402,16 @@ if vehicle_sub_type = "SN16-Profile1"
 	set LEOrbit to 200000.
 
 //DEBUG:
-// PRINT "MODEL: "+SHIP_NAME.
-// PRINT "BOOT: " + CORE:BOOTFILENAME.
+PRINT SHIP_NAME at (25,4).
+PRINT CORE:BOOTFILENAME at (25,5).
 LOG "MODEL: "+SHIP_NAME to log.txt.
 LOG "BOOT: " + CORE:BOOTFILENAME to log.txt.
 
-print "vehicle_sub_type: "+vehicle_sub_type.	LOG "vehicle_sub_type: "+vehicle_sub_type to log.txt.
-print "LEOrbit: "+LEOrbit. 	 					LOG "LEOrbit: "+LEOrbit to log.txt.
-print "MECO1: "+sqrt(MECO1). 					LOG "MECO1: "+sqrt(MECO1) to log.txt.
+print "V.type: "+vehicle_type.	LOG "vehicle_type: "+vehicle_type to log.txt.
+print "V.sub_type: "+vehicle_sub_type at (25,6).	LOG "vehicle_sub_type: "+vehicle_sub_type to log.txt.
+print "LEOrbit: "+LEOrbit/1000+" km". 	 			LOG "LEOrbit: "+LEOrbit to log.txt.
+print "MECO1: "+sqrt(MECO1)+" m/s" at (25,7). 		LOG "MECO1: "+sqrt(MECO1) to log.txt.
+print "".
 
 // LOAD TOOLS: -------------------------------------------------------
 runpath("boot/useful-tools.c").
