@@ -20,7 +20,7 @@ PRINT "mass: "+round(mass)+" t".
 UNTIL (mass < 6000) WAIT 1.
 
 update_phase_title("[ ] Counting...", 0, false).
-set aim_cowntdown to 20.
+set aim_cowntdown to 15.
 
 PRINT " ".
 PRINT "mass: "+round(mass)+" t".
@@ -28,7 +28,6 @@ PRINT "mass: "+round(mass)+" t".
 FROM {local countdown is aim_cowntdown.} UNTIL countdown = 0 STEP {SET countdown to countdown - 1.} 
 DO { PRINT "..." + countdown. WAIT 1. }
 		
-wait aim_cowntdown.
 AG8 OFF.
 
 PRINT "END".
