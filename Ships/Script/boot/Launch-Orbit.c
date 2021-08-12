@@ -11,7 +11,7 @@
 // 25/Jun/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
-LOG "START: Launch-Orbit.c" to log.txt.
+LOG "START: Launch-Orbit.c" to LOG_FILE.
 
 set FINAL_ORBIT2 to FINAL_ORBIT.// For Phase-2 falcon stage-2
 set FINAL_ORBIT  to 150000. 	//(FINAL_ORBIT/2) - For Phase-1 falcon stage-1
@@ -249,7 +249,7 @@ if alt:radar < 200
 	update_phase_title("[1] LIFTOFF...",0, false).
 	
 	DELETEPATH("FLIGHT_LOG.txt").
-	LOG   "TIME,   VELO,   R:ALT,  Acel,   Q" to FLIGHT_LOG.txt.
+	LOG   "TIME,   VELO,   R:ALT,  Acel,   Q" to FLIGHT_LOG_FILE.
 
 	PRINT "Q-Max" 				at (0,2).
 	PRINT "Dynamic Pressure" 	at (0,3).
@@ -570,7 +570,7 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 	PRINT " ".PRINT " ".
 	
 	// OK: >=3 for F9 - CHECK: FH...
-	if ( (STAGE:NUMBER >= 3) or (vehicle_type = "StarShip") ) and (MECO1 < 9999^2)  //A Recovery Mission ?
+	if ( (STAGE:NUMBER >= 3) or (vehicle_type = "StarShip") ) and (MECO1 < 9999^2)  //A reusable booster Mission ?
 	{
 		update_phase_title("[6] STAGING...",1,false).
 		PRINT "1st ORBIT: "+FINAL_ORBIT+"km, Done!".
@@ -606,7 +606,7 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 		RCS ON.
 		if vehicle_type = "StarShip"
 		{
-			LOG  "STAGE SS" to LOG.txt.
+			LOG  "STAGE SS" to LOG_FILE.
 			WAIT 0.1.
 			if (KUniverse:ActiveVessel = SHIP) STAGE.	//[SS]
 			WAIT 0.1.
@@ -618,13 +618,13 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 		{
 			if vehicle_type = "Falcon Heavy"
 			{
-				LOG  "STAGE FH" to LOG.txt.
+				LOG  "STAGE FH" to LOG_FILE.
 				AG6 ON. //(Toggle: FH Boosters separator)
 				WAIT 0.5.
 				if (KUniverse:ActiveVessel = SHIP) STAGE.	//[FH]
 				WAIT 5.
 			} else {
-				LOG  "STAGE ST1" to LOG.txt.
+				LOG  "STAGE ST1" to LOG_FILE.
 				st1_stage().								//[F9]
 			}
 			activateVesselProbe().
@@ -795,7 +795,7 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 		activateVesselProbe().			//Time to Switch to ST-1
 
 	if vehicle_type = "StarShip"
-		activateVesselProbe(0, "Ship").	//Time to Switch to BN
+		activateVesselProbe(0, "Ship").
 			
 	update_phase_title("[7] ORBIT PHASE II",1,false). 
 	// LOOP: ORBIT PHASE II (Maximizing Apoapsis Increase)
@@ -846,5 +846,5 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 
 set warp to 0.
 wait 2.
-LOG   "END: Launch-Orbit.c" to log.txt.
-LOG   "-------------------" to log.txt.
+LOG   "END: Launch-Orbit.c" to LOG_FILE.
+LOG   "-------------------" to LOG_FILE.

@@ -11,6 +11,7 @@
 // 26/Dez/2020
 // --------------------------------------------------------------------------------------------
 CLEARSCREEN.
+declare global LOG_FILE to "st2-log.txt". DELETEPATH(LOG_FILE).
 RUNPATH( "boot/sw-version.c" ).
 set STAGE_1_TYPE to "ST-2".
 print "".print "".print "".

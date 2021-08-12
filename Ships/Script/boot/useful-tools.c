@@ -91,7 +91,7 @@ function shutDownAllEngines
 		if eng:typename() = "Engine"
 			eng:SHUTDOWN.
 	}
-	LOG "shutDownAllEngines ()" to log.txt.
+	LOG "shutDownAllEngines ()" to LOG_FILE.
 }
 
 function activateOneEngine 
@@ -105,7 +105,7 @@ function activateOneEngine
 		if eng:POSSIBLETHRUST > 710
 			set n to n+1.
 	}
-	LOG "activateOneEngine ()" to log.txt.
+	LOG "activateOneEngine ()" to LOG_FILE.
 }
 
 function activateLEMengine 
@@ -116,7 +116,7 @@ function activateLEMengine
 		if eng:POSSIBLETHRUST > 40
 			eng:ACTIVATE.
 	}
-	LOG "activateLEMengine ()" to log.txt.
+	LOG "activateLEMengine ()" to LOG_FILE.
 }
 
 function activateAllEngines 
@@ -126,7 +126,7 @@ function activateAllEngines
 		if eng:typename() = "Engine"
 			eng:ACTIVATE.
 	}
-	LOG "activateAllEngines ()" to log.txt.
+	LOG "activateAllEngines ()" to LOG_FILE.
 }
 
 function activate3engines
@@ -134,7 +134,7 @@ function activate3engines
 	shutDownAllEngines().
 	AG2 OFF. wait 1.	//Reset 3 main engines
 	AG2 ON.  wait 1.	//Activate 3 main engines
-	LOG "activate3engines ()" to log.txt.
+	LOG "activate3engines ()" to LOG_FILE.
 }
 
 function engines_thrustlimit_to 
@@ -145,7 +145,7 @@ function engines_thrustlimit_to
 	FOR eng IN myVariable {
 		set eng:THRUSTLIMIT to LIMIT.
 	}
-	LOG "engines_thrustlimit_to ()" to log.txt.
+	LOG "engines_thrustlimit_to ()" to LOG_FILE.
 }
 
 function sn11_test_profile_deactivate_engine1
@@ -212,7 +212,7 @@ function update_phase_title
 	WAIT 0.5.
 	PRINT "| Profile: "+vehicle_type + " " at (24,0). //avoid overlap (KOS Bug) here, instead in ORI.
 	
-	LOG time:clock +": " + STAGE_1_TYPE + " - PHASE: "+phase to LOG.txt.
+	LOG "#"+time:clock +": " + STAGE_1_TYPE + " - PHASE: "+phase to LOG_FILE.
 }
 
 function updateVars  //Scalar projection of two vectors. Find component of a along b. a(dot)b/||b||
@@ -228,8 +228,8 @@ function log_data
 	parameter Vs2.
 	parameter showlog to false.	//true = TURN ON LOG file.
 	
-	if vehicle_company = "SpaceX"
-		set showlog to true.
+	//if vehicle_company = "SpaceX"
+	//	set showlog to true.
 	
 	updateVars().
 	
@@ -270,7 +270,7 @@ function log_data
 	if (ROUND (value1,0) > last_value1) 
 	{
 		set last_value1 to ROUND (value1,0).
-		LOG value1+","+value2+","+value3+","+Aceleration_value1+","+ROUND(qVal/1000,0) to FLIGHT_LOG.txt.
+		LOG value1+","+value2+","+value3+","+Aceleration_value1+","+ROUND(qVal/1000,0) to FLIGHT_LOG_FILE.
 	}
 	PRINT "T.ORB: "+orbit_type at (1+8*5-2,35).
 }
@@ -311,7 +311,7 @@ function vessel_pitch
 // FLIP --------------------------------------------------------------------------------------------
 function flip_maneuver
 {
-	LOG "flip_maneuver" to log.txt.
+	LOG "flip_maneuver" to LOG_FILE.
 	
 	SAS OFF.
 	RCS ON. //OFF.
@@ -410,7 +410,7 @@ Function LEMPortGetter {
     for port in NameOfVessel:partsdubbedpattern("dock"){
 		if port:name:FIND("FASAApollo.SM.Light") < 0
 			portlist:add(port).
-		log port to log.txt.
+		log port to LOG_FILE.
     }
 
     local PortNumber is 0.

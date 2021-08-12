@@ -8,11 +8,13 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used before main.c, to distribute tasks among all Processors.
-// 01/Jun/2021
+// 12/Aug/2021
 // --------------------------------------------------------------------------------------------
+LOG   "START: stage-main.ks" to LOG_FILE.
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 core:doaction("Open Terminal", true).
 CLEARSCREEN.
+declare global LOG_FILE to "main-log.txt". DELETEPATH(LOG_FILE).
 
 // URGENT/RESET STUFF: -------------------------------------------------------
 if (status = "PRELAUNCH" or status = "LANDED") and ( BODY:name = "Kerbin" or BODY:name = "Earth" )
@@ -21,19 +23,16 @@ if (status = "PRELAUNCH" or status = "LANDED") and ( BODY:name = "Kerbin" or BOD
 	LOG  "SET SLAVE_STAGE to 0." to SLAVE.TXT.
 
 	DELETEPATH("CIRCULARIZE.txt").
-	//DELETEPATH("LOG.txt").
 	DELETEPATH("MAIN_SHIP.txt").
 }
 //DELETEPATH("FLIP.txt"). 				//Reload, maybe?
-
-DELETEPATH("LOG.txt").
 
 // DEFINE MISSION PROFILE: -------------------------------------------------------
 RUNPATH( "boot/sw-version.c" ).
 
 LIST PROCESSORS IN ALL_PROCESSORS.
 PRINT  "TOTAL CPU PROCESSORS: "+ALL_PROCESSORS:LENGTH.
-LOG  "["+STAGE_1_TYPE+"] TOTAL CPU PROCESSORS: "+ALL_PROCESSORS:LENGTH to LOG.txt.
+LOG  "["+STAGE_1_TYPE+"] TOTAL CPU PROCESSORS: "+ALL_PROCESSORS:LENGTH to LOG_FILE.
 if ALL_PROCESSORS:LENGTH = 0 { WAIT 5. reboot. }
 
 // Identify other processors from (Booster(s), Stage-1 and Stage-2) ----------------
@@ -47,48 +46,48 @@ declare global PROCESSOR_LEMID to ALL_PROCESSORS[0].
 
 PRINT "List CPU Stages:".
  FROM {local counter is 0.} UNTIL counter = ALL_PROCESSORS:LENGTH STEP {SET counter to counter + 1.} DO {
-	LOG  "["+STAGE_1_TYPE+"] BOOTFILENAME: "+ALL_PROCESSORS[counter]:BOOTFILENAME to LOG.txt.
+	LOG  "["+STAGE_1_TYPE+"] BOOTFILENAME: "+ALL_PROCESSORS[counter]:BOOTFILENAME to LOG_FILE.
 	
 	if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-boosters.ks") <> -1 			// STAGE-1: CORE
 	{
 		PRINT "- STAGE1-ID: "+counter.
-		LOG  "["+STAGE_1_TYPE+"] - STAGE1-ID: "+counter to LOG.txt.
+		LOG  "["+STAGE_1_TYPE+"] - STAGE1-ID: "+counter to LOG_FILE.
 		set PROCESSOR_STAGE1 to ALL_PROCESSORS[counter].
 	} 
 	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-boosters-L.ks") <> -1 	// STAGE-1L:
 	{
 		PRINT "- STAGE1L-ID: "+counter.
-		LOG  "["+STAGE_1_TYPE+"] - STAGE1L-ID: "+counter to LOG.txt.
+		LOG  "["+STAGE_1_TYPE+"] - STAGE1L-ID: "+counter to LOG_FILE.
 		set PROCESSOR_STAGE1L to ALL_PROCESSORS[counter].
 	}
 	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-boosters-R.ks") <> -1 	// STAGE-1R:
 	{
 		PRINT "- STAGE1R-ID: "+counter.
-		LOG  "["+STAGE_1_TYPE+"] - STAGE1R-ID: "+counter to LOG.txt.
+		LOG  "["+STAGE_1_TYPE+"] - STAGE1R-ID: "+counter to LOG_FILE.
 		set PROCESSOR_STAGE1R to ALL_PROCESSORS[counter].
 	}
 	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-st3.ks") <> -1 			// STAGE-2: (Deorbit)
 	{
 		PRINT "- ST3-ID: "+counter.
-		LOG  "["+STAGE_1_TYPE+"] - ST3-ID: "+counter to LOG.txt.
+		LOG  "["+STAGE_1_TYPE+"] - ST3-ID: "+counter to LOG_FILE.
 		set PROCESSOR_STAGE3 to ALL_PROCESSORS[counter].
 	}
 	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-st2.ks") <> -1 			// STAGE-2: (Deorbit)
 	{
 		PRINT "- ST2-ID: "+counter.
-		LOG  "["+STAGE_1_TYPE+"] - ST2-ID: "+counter to LOG.txt.
+		LOG  "["+STAGE_1_TYPE+"] - ST2-ID: "+counter to LOG_FILE.
 		set PROCESSOR_STAGE2 to ALL_PROCESSORS[counter].
 	}
 	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot.ks") <> -1 				// MAIN MISSION (Launch, Orbit & Deploy)
 	{
 		PRINT "- MAIN-ID: "+counter.
-		LOG  "["+STAGE_1_TYPE+"] - MAIN-ID: "+counter to LOG.txt.
+		LOG  "["+STAGE_1_TYPE+"] - MAIN-ID: "+counter to LOG_FILE.
 		set PROCESSOR_MAINID to ALL_PROCESSORS[counter].
 	}
 	else if ALL_PROCESSORS[counter]:BOOTFILENAME:FIND("boot-lem.ks") <> -1 				// MAIN MISSION (Launch, Orbit & Deploy)
 	{
 		PRINT "- LEM-ID: "+counter.
-		LOG  "["+STAGE_1_TYPE+"] - LEM-ID: "+counter to LOG.txt.
+		LOG  "["+STAGE_1_TYPE+"] - LEM-ID: "+counter to LOG_FILE.
 		set PROCESSOR_LEMID to ALL_PROCESSORS[counter].
 	}
 }
@@ -131,3 +130,6 @@ else if (vehicle_type = "StarShip")
 }
 
 RUNPATH( "boot/main.c" ).
+
+LOG   "END: stage-main.ks" to LOG_FILE.
+LOG   "-----------------" to LOG_FILE.

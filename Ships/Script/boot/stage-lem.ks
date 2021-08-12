@@ -8,11 +8,11 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to land on the a body (moon for example) and orbit again
-// 05/Jan/2020
+// 12/Aug/2021
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 CLEARSCREEN.
-
+declare global LOG_FILE to "lem-log.txt". DELETEPATH(LOG_FILE).
 runpath("boot/sw-version.c").
 set STAGE_1_TYPE to "LEM".
 

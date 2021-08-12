@@ -12,7 +12,7 @@ GAME
 	scene = 7
 	editor = None
 	flag = Launchers Pack/Flags/SpaceX
-	launchID = 103
+	launchID = 105
 	defaultVABLaunchSite = LaunchPad
 	defaultSPHLaunchSite = Runway
 	modded = True
@@ -141,7 +141,6 @@ GAME
 		ROLGameSettings
 		{
 			persistRecolorSelections = False
-			enableFlagDecalDefault = True
 		}
 		HangerExtender
 		{
@@ -516,7 +515,7 @@ GAME
 	{
 		name = ContractSystem
 		scene = 7, 8, 5, 6
-		update = 3759932534.5032539
+		update = 3759932457.4233274
 		version = 1.11.2
 		WEIGHTS
 		{
@@ -800,7 +799,7 @@ GAME
 	{
 		name = Funding
 		scene = 7, 8, 5, 6
-		funds = 5002236142068.5332
+		funds = 5002236269540.6045
 	}
 	SCENARIO
 	{
@@ -1083,7 +1082,7 @@ GAME
 			part = AM.MLP.LaunchStandServiceTower1
 			part = AM.MLP.LaunchStandServiceTower2
 			part = AM.MLP.LaunchStandServiceTower3
-			part = AM.MLP.GeneralUmbilicalDroopE
+			part = AM.MLP.Pole12m
 		}
 		Tech
 		{
@@ -1271,7 +1270,6 @@ GAME
 			part = PMB.SPX.LandingZone2
 			part = RO-RD-0105
 			part = TE.19.F910.S2.Engine
-			part = RO-KTDU417
 		}
 		Tech
 		{
@@ -1359,7 +1357,6 @@ GAME
 			part = Tantares.RCS.4.E
 			part = Tantares.RCS.5.E
 			part = sp.star.tracker.srf.1
-			part = RO-X1Cockpit
 		}
 		Tech
 		{
@@ -1517,7 +1514,6 @@ GAME
 			part = spotLight3
 			part = spotLight1.v2
 			part = spotLight2.v2
-			part = aje.solarPanels
 		}
 		Tech
 		{
@@ -1845,8 +1841,6 @@ GAME
 			part = FASAApolloLFERL10
 			part = Virgo.Engine.1
 			part = liquidEngineMini.v2
-			part = RO-KDU414
-			part = RO-RangerRetro
 		}
 		Tech
 		{
@@ -2327,7 +2321,6 @@ GAME
 			part = SmallCapsuleEngineRCS
 			part = vega.engine.srf.1.1
 			part = vega.engine.srf.1.2
-			part = sepMotorSmall
 		}
 		Tech
 		{
@@ -2740,10 +2733,6 @@ GAME
 			part = mk2CrewCabin
 			part = mk2.1m.Bicoupler.Structural
 			part = FASAStrS1BWing
-			part = aje.j75
-			part = RO-J48
-			part = aje.ramjet
-			part = aje.al31
 		}
 		Tech
 		{
@@ -3928,8 +3917,6 @@ GAME
 			part = AM.MLP.GeneralCrewElevator
 			part = AM.MLP.GeneralCrewArmSmallMount
 			part = AM.MLP.GeneralCrewArm
-			part = AM.MLP.CrewElevatorXLargeSec
-			part = AM.MLP.GeneralFallbackUmbilicalTower
 		}
 		Tech
 		{
@@ -3995,12 +3982,6 @@ GAME
 			part = AM.MLP.GeneralCrewElevatorMini
 			part = AM.MLP.GeneralCrewElevatorMiniArmS
 			part = AM.MLP.GeneralCrewElevatorMiniArm
-			part = AM.MLP.GeneralServiceTowerXLBase
-			part = AM.MLP.GeneralServiceTowerXLSec1
-			part = AM.MLP.GeneralServiceTowerXLTop
-			part = AM.MLP.Titan3LaunchStand
-			part = AM.MLP.TitanIIITowerMast
-			part = AM.MLP.SaturnMilkstoolClamp
 		}
 		Tech
 		{
@@ -4036,14 +4017,6 @@ GAME
 			part = AM.MLP.SaturnTowerCrewArm
 			part = AM.MLP.HoldArmSaturnV
 			part = AM.MLP.HoldArmSaturnIB
-			part = AM.MLP.SaturnTowerSwingArm0
-			part = AM.MLP.SaturnTowerSwingArm2
-			part = AM.MLP.SaturnTowerSwingArm3
-			part = AM.MLP.SaturnTowerSwingArm4
-			part = AM.MLP.SaturnTowerSwingArm5
-			part = AM.MLP.SaturnTowerSwingArm6
-			part = AM.MLP.SaturnTowerSwingArm7
-			part = AM.MLP.SaturnTowerSwingArm8
 		}
 		Tech
 		{
@@ -7901,10 +7874,6 @@ GAME
 			intact = True
 		}
 		SpaceCenter/Mesh/Facility/ksp_pad_cylTank
-		{
-			intact = True
-		}
-		SpaceCenter/Mesh/Facility
 		{
 			intact = True
 		}
@@ -12226,8 +12195,8 @@ GAME
 				AutoPilotDisabled = False
 				AutoPilotDisTime = 0
 				AutoPilotDisCounter = 0
-				timeLastElectricity = 3759932543.1032457
-				lastUpdate = 3759932543.1032457
+				timeLastElectricity = 0
+				lastUpdate = 0
 				EmgcyShutOverride = False
 				EmgcyShutOverrideStarted = False
 				Emergencypowerdownactivated = False
@@ -12244,7 +12213,7 @@ GAME
 				ReenableRcs = False
 				ReenableSas = False
 				IsolateReservePower = False
-				Guid = a667d741-9972-4f85-a382-98d54ed40c08
+				Guid = 47624209-87d8-4727-b775-465b29ac8a6f
 			}
 		}
 	}
@@ -13601,7 +13570,7 @@ GAME
 		name = KerbalKonstructsSettings
 		scene = 5, 6, 7, 8
 		initialized = False
-		savetime = 3759932543.4632454
+		savetime = 3759932457.4233274
 		useUUID = True
 		KKSettings
 		{
@@ -14129,11 +14098,6 @@ GAME
 		}
 		TLUpgrade
 		{
-			name = RO-Centaur-RCSMMH+MON10
-			currentTL = 0
-		}
-		TLUpgrade
-		{
 			name = RO-Centaur-RCSUDMH+NTO
 			currentTL = 0
 		}
@@ -14180,11 +14144,6 @@ GAME
 		TLUpgrade
 		{
 			name = FASA-Mercury-LFEngMMH+MON3
-			currentTL = 0
-		}
-		TLUpgrade
-		{
-			name = FASA-Mercury-LFEngMMH+MON10
 			currentTL = 0
 		}
 		TLUpgrade
@@ -14239,11 +14198,6 @@ GAME
 		}
 		TLUpgrade
 		{
-			name = microEngineMMH+MON10
-			currentTL = 0
-		}
-		TLUpgrade
-		{
 			name = microEngineUDMH+NTO
 			currentTL = 0
 		}
@@ -14290,11 +14244,6 @@ GAME
 		TLUpgrade
 		{
 			name = RO-2kN-ThrusterMMH+MON3
-			currentTL = 0
-		}
-		TLUpgrade
-		{
-			name = RO-2kN-ThrusterMMH+MON10
 			currentTL = 0
 		}
 		TLUpgrade
@@ -14349,11 +14298,6 @@ GAME
 		}
 		TLUpgrade
 		{
-			name = linearRcsMMH+MON10
-			currentTL = 0
-		}
-		TLUpgrade
-		{
 			name = linearRcsUDMH+NTO
 			currentTL = 0
 		}
@@ -14400,11 +14344,6 @@ GAME
 		TLUpgrade
 		{
 			name = RO-linearRcs-tenthMMH+MON3
-			currentTL = 0
-		}
-		TLUpgrade
-		{
-			name = RO-linearRcs-tenthMMH+MON10
 			currentTL = 0
 		}
 		TLUpgrade
@@ -14459,11 +14398,6 @@ GAME
 		}
 		TLUpgrade
 		{
-			name = RO-FASA-ExplorerRCSMMH+MON10
-			currentTL = 0
-		}
-		TLUpgrade
-		{
 			name = RO-FASA-ExplorerRCSUDMH+NTO
 			currentTL = 0
 		}
@@ -14510,11 +14444,6 @@ GAME
 		TLUpgrade
 		{
 			name = RO-FASA-MercuryPodRCSMMH+MON3
-			currentTL = 0
-		}
-		TLUpgrade
-		{
-			name = RO-FASA-MercuryPodRCSMMH+MON10
 			currentTL = 0
 		}
 		TLUpgrade
@@ -14569,11 +14498,6 @@ GAME
 		}
 		TLUpgrade
 		{
-			name = vernierEngineMMH+MON10
-			currentTL = 0
-		}
-		TLUpgrade
-		{
 			name = vernierEngineUDMH+NTO
 			currentTL = 0
 		}
@@ -14620,11 +14544,6 @@ GAME
 		TLUpgrade
 		{
 			name = RCSBlockMMH+MON3
-			currentTL = 0
-		}
-		TLUpgrade
-		{
-			name = RCSBlockMMH+MON10
 			currentTL = 0
 		}
 		TLUpgrade
@@ -14679,11 +14598,6 @@ GAME
 		}
 		TLUpgrade
 		{
-			name = SquadRCSBlockTenthMMH+MON10
-			currentTL = 0
-		}
-		TLUpgrade
-		{
 			name = SquadRCSBlockTenthUDMH+NTO
 			currentTL = 0
 		}
@@ -14734,11 +14648,6 @@ GAME
 		}
 		TLUpgrade
 		{
-			name = RCSBlockQuarterMMH+MON10
-			currentTL = 0
-		}
-		TLUpgrade
-		{
 			name = RCSBlockQuarterUDMH+NTO
 			currentTL = 0
 		}
@@ -14785,11 +14694,6 @@ GAME
 		TLUpgrade
 		{
 			name = SquadRCSBlockHalfMMH+MON3
-			currentTL = 0
-		}
-		TLUpgrade
-		{
-			name = SquadRCSBlockHalfMMH+MON10
 			currentTL = 0
 		}
 		TLUpgrade
@@ -16169,8 +16073,8 @@ GAME
 	FLIGHTSTATE
 	{
 		version = 1.11.2
-		UT = 3759932543.4632454
-		activeVessel = 8
+		UT = 3759932457.4233274
+		activeVessel = 9
 		mapViewFiltering = 31740
 		commNetUIModeTracking = Network
 		commNetUIModeFlight = Path
@@ -16878,33 +16782,20 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
 				}
-				FlightGUI
-				{
-				}
-				FARVesselAero
-				{
-				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
 				{
-				}
-				VesselModuleRotationRO
-				{
-					angularVelocity = (0, 0, 0)
-					autopilotTargetHold = False
-					autopilotMode = 0
-					autopilotContext = 0
 				}
 			}
 		}
@@ -17028,33 +16919,20 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
 				}
-				FlightGUI
-				{
-				}
-				FARVesselAero
-				{
-				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
 				{
-				}
-				VesselModuleRotationRO
-				{
-					angularVelocity = (0, 0, 0)
-					autopilotTargetHold = False
-					autopilotMode = 0
-					autopilotContext = 0
 				}
 			}
 		}
@@ -17178,33 +17056,20 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
 				}
-				FlightGUI
-				{
-				}
-				FARVesselAero
-				{
-				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
 				{
-				}
-				VesselModuleRotationRO
-				{
-					angularVelocity = (0, 0, 0)
-					autopilotTargetHold = False
-					autopilotMode = 0
-					autopilotContext = 0
 				}
 			}
 		}
@@ -17328,33 +17193,20 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
 				}
-				FlightGUI
-				{
-				}
-				FARVesselAero
-				{
-				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
 				{
-				}
-				VesselModuleRotationRO
-				{
-					angularVelocity = (0, 0, 0)
-					autopilotTargetHold = False
-					autopilotMode = 0
-					autopilotContext = 0
 				}
 			}
 		}
@@ -17478,33 +17330,20 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
 				}
-				FlightGUI
-				{
-				}
-				FARVesselAero
-				{
-				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
 				{
-				}
-				VesselModuleRotationRO
-				{
-					angularVelocity = (0, 0, 0)
-					autopilotTargetHold = False
-					autopilotMode = 0
-					autopilotContext = 0
 				}
 			}
 		}
@@ -17628,33 +17467,20 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
 				}
-				FlightGUI
-				{
-				}
-				FARVesselAero
-				{
-				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
 				{
-				}
-				VesselModuleRotationRO
-				{
-					angularVelocity = (0, 0, 0)
-					autopilotTargetHold = False
-					autopilotMode = 0
-					autopilotContext = 0
 				}
 			}
 		}
@@ -17778,33 +17604,20 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
 				}
-				FlightGUI
-				{
-				}
-				FARVesselAero
-				{
-				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
 				{
-				}
-				VesselModuleRotationRO
-				{
-					angularVelocity = (0, 0, 0)
-					autopilotTargetHold = False
-					autopilotMode = 0
-					autopilotContext = 0
 				}
 			}
 		}
@@ -17928,7 +17741,1369 @@ GAME
 				ModuleStabilization
 				{
 				}
+				VesselDataManager
+				{
+				}
+				ModuleDynamicBatteryStorage
+				{
+				}
+				kOSVesselModule
+				{
+				}
 				SolverFlightSys
+				{
+				}
+				UllageModule
+				{
+				}
+			}
+		}
+		VESSEL
+		{
+			pid = 5d647138155c4aed9a163e8fcd3bb810
+			persistentId = 1545486064
+			name = LandingZone1
+			type = Ship
+			sit = LANDED
+			landed = True
+			skipGroundPositioning = False
+			skipGroundPositioningForDroppedPart = False
+			vesselSpawning = False
+			launchedFrom = 
+			landedAt = 
+			displaylandedAt = 
+			splashed = False
+			met = 96.139908313751221
+			lct = 3759932361.2834191
+			lastUT = 3759932457.4233274
+			distanceTraveled = 52.10690155634591
+			root = 0
+			lat = 26.001080038861328
+			lon = -97.170417560249319
+			alt = 149.4486322728917
+			hgt = 0.822327137
+			nrm = 4.35858965E-07,1,1.78813934E-07
+			rot = -0.529218256,0.0629397109,0.0263130385,0.845738947
+			CoM = 0,0,0
+			stg = 1
+			prst = False
+			ref = 0
+			ctrl = True
+			PQSMin = 2
+			PQSMax = 10
+			GroupOverride = 0
+			OverrideDefault = False,False,False,False
+			OverrideActionControl = 0,0,0,0
+			OverrideAxisControl = 0,0,0,0
+			OverrideGroupNames = ,,,
+			altDispState = ASL
+			cPch = 0
+			cHdg = 0
+			cMod = 0
+			ORBIT
+			{
+				SMA = 3190019.989086255
+				ECC = 0.9972130176094729
+				INC = 26.001080038959287
+				LPE = 270.00014782825872
+				LAN = 229.86809331929388
+				MNA = -3.1415890342271777
+				EPH = 3759932457.4233274
+				REF = 1
+				IDENT = Kerbin
+			}
+			PART
+			{
+				name = KK.SPX.LandingZone1
+				cid = 4290092732
+				uid = 2852942292
+				mid = 2621179678
+				persistentId = 990999021
+				launchID = 103
+				parent = 0
+				position = 0,0,0
+				rotation = 0,0,0,1
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 0
+				resPri = 0
+				dstg = 0
+				sqor = 0
+				sepI = -1
+				sidx = 0
+				attm = 0
+				sameVesselCollision = False
+				srfN = , -1
+				mass = 25
+				shielded = False
+				temp = 270.17036762829633
+				tempExt = 270.55815068829594
+				tempExtUnexp = 270.55573739899421
+				staticPressureAtm = 0.98247747376557482
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Launchers Pack/Flags/SpaceX
+				rTrf = _default
+				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+					ToggleSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					SetSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+					RemoveSameVesselInteraction
+					{
+						actionGroup = None
+						wasActiveBeforePartWasAdjusted = False
+					}
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleProbeControlPoint
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = kOSProcessor
+					isEnabled = True
+					bootFile = /boot/boot-landingzone.ks
+					diskSpace = 10000
+					baseDiskSpace = 10000
+					baseModuleMass = 0
+					additionalCost = 0
+					MaxPartId = 100
+					RequiredPower = 0.000200000009
+					stagingEnabled = True
+					activated = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						Activate
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						Deactivate
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						Toggle
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						TogglePower
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					harddisk
+					{
+						dirname = 
+						capacity = 10000
+						volumeName = 
+						directory
+						{
+							dirname = boot
+							file
+							{
+								filename = boot-landingzone.ks
+								binary = H4sIAIObFWEA,72TUU,bMBSFn9tfccVT+5A4raauizShQsVAgNo13cY27cGJbxLTxNeynZby62e3SDCxV,BL5Ojm86eTY8YgesPV9,wL2aDiLaaQE7mo4UpIVT2Swnhj++8gcL3IICuM1M5CSQausyU4ghyhsyiAFGSaF3gXrRbRBW8KUhZuScBg2eZkKlgt4DsaK0kN4T18z0kg5HtI4Ukggto5bVPGvH7Xxhs0OW9skNaGKsPbuKCWSSXwIda1PmX+deljZ6NP0+lkFOkDhwX4GToODXEBpaE2hd4zfLfbxcKQzunhwLM1uxcjqidimkzknrsRm83O+Ed+l8uf83I7,RLxrx9u96vI8VPRfE4C,4Y7tA7mtFPhlPSFfCVd3eUH9JPQq9wDYdkZTdbXJWz+Weta2qP7znCt0QDfkhThZxqMUEgHvlxg+RaBg6Figw7uO6,jJ4qaqwrB1QhFCJjKV,yT,xT0BEKQsZ,t+fUtFCZ0SJNDVfhK8KbZH52OVAUvvofBza9oBH7eP8fDcOA4YXN8ZONknLx5l7IfV+vzS1gvIIl7jD1vBZa8axwsZ+vLFH77C,GHZbXUlh3vSd90SnNXDw6JMOt4hZGvhkLrp0Iqw,gvw7UB0zoEAAA=
+							}
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleCommand
+					isEnabled = True
+					hibernation = False
+					hibernateOnWarp = False
+					activeControlPointName = _default
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						MakeReferenceToggle
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						HibernateToggle
+						{
+							actionGroup = None
+							active = False
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleKerbNetAccess
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						OpenKerbNetAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleDataTransmitter
+					isEnabled = True
+					xmitIncomplete = False
+					stagingEnabled = True
+					canComm = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						StartTransmissionAction
+						{
+							actionGroup = None
+							active = False
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleEnginesRF
+					isEnabled = True
+					ignited = False
+					ignitions = -1
+					independentThrottle = False
+					independentThrottlePercentage = 0
+					staged = False
+					flameout = False
+					EngineIgnited = False
+					engineShutdown = False
+					currentThrottle = 0
+					thrustPercentage = 100
+					manuallyOverridden = False
+					includeinDVCalcs = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						OnAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						ShutdownAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						ActivateAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						ToggleThrottle
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					AXISGROUPS
+					{
+						independentThrottlePercentage
+						{
+							axisGroup = None
+							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
+							axisInverted = None
+							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+						}
+						thrustPercentage
+						{
+							axisGroup = None
+							axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							axisSpeedMultiplier = 0
+							axisInverted = None
+							overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+							overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+						}
+					}
+					Ullage
+					{
+						UllageSim
+						{
+							ullageHeightMin = 0
+							ullageHeightMax = 0
+							ullageRadialMin = 0
+							ullageRadialMax = 0
+							UT = -1.7976931348623157E+308
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleReactionWheel
+					isEnabled = True
+					actuatorModeCycle = 0
+					authorityLimiter = 100
+					stateString = Idle
+					stagingEnabled = True
+					WheelState = Active
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						CycleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						Activate
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						Deactivate
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						Toggle
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleSAS
+					isEnabled = True
+					standaloneToggle = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleGenerator
+					isEnabled = True
+					generatorIsActive = True
+					throttle = 1
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							active = False
+							wasActiveBeforePartWasAdjusted = False
+						}
+						ActivateAction
+						{
+							actionGroup = None
+							active = False
+							wasActiveBeforePartWasAdjusted = False
+						}
+						ShutdownAction
+						{
+							actionGroup = None
+							active = False
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = Refunding
+					isEnabled = True
+					active = True
+					OriginalCost = 4000.5894000059925
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYCrewPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = MechJebCore
+					isEnabled = True
+					running = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						OnOrbitProgradeAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnOrbitRetrogradeAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnOrbitNormalAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnOrbitAntinormalAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnOrbitRadialInAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnOrbitRadialOutAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnKillRotationAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnDeactivateSmartASSAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnLandsomewhereAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnLandTargetAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnPanicAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnTranslatronOffAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnTranslatronKeepVertAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnTranslatronZeroSpeedAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnTranslatronPlusOneSpeedAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnTranslatronMinusOneSpeedAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnTranslatronToggleHSAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						OnAscentAPToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					MechJebLocalSettings
+					{
+						MechJebModuleMenu
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleRoverWindow
+						{
+							unlockParts = 
+							unlockTechs = start
+						}
+						MechJebModuleAttitudeAdjustment
+						{
+							unlockParts = 
+							unlockTechs = start
+						}
+						MechJebModuleAscentNavBall
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleLogicalStageTracking
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleRCSBalancerWindow
+						{
+							unlockParts = 
+							unlockTechs = start
+						}
+						MechJebModuleRoverController
+						{
+							ControlHeading = False
+							ControlSpeed = False
+							BrakeOnEject = False
+							BrakeOnEnergyDepletion = False
+							WarpToDaylight = False
+							StabilityControl = False
+							LimitAcceleration = False
+							unlockParts = 
+							unlockTechs = 
+							heading
+							{
+								_val = 0
+								_text = 0
+							}
+							speed
+							{
+								_val = 10
+								_text = 10
+							}
+						}
+						MechJebModuleSpaceplaneGuidance
+						{
+							runwayIndex = 0
+							unlockParts = 
+							unlockTechs = start
+						}
+						MechJebModuleAscentPVG
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleInfoItems
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleSmartRcs
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleAscentClassic
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleSpaceplaneAutopilot
+						{
+							bBreakAsSoonAsLanded = False
+							unlockParts = 
+							unlockTechs = 
+							glideslope
+							{
+								_val = 2.5
+								_text = 2.5
+							}
+							approachSpeed
+							{
+								_val = 80
+								_text = 80
+							}
+							touchdownSpeed
+							{
+								_val = 60
+								_text = 60
+							}
+							maximumSafeBankAngle
+							{
+								_val = 25
+								_text = 25
+							}
+						}
+						MechJebModuleAirplaneAutopilot
+						{
+							HeadingHoldEnabled = False
+							AltitudeHoldEnabled = False
+							VertSpeedHoldEnabled = False
+							RollHoldEnabled = False
+							SpeedHoldEnabled = False
+							AltitudeTarget = 0
+							HeadingTarget = 90
+							RollTarget = 0
+							SpeedTarget = 0
+							VertSpeedTarget = 0
+							BankAngle = 30
+							unlockParts = 
+							unlockTechs = 
+							AccKp
+							{
+								_val = 0.5
+								_text = 0.5
+							}
+							AccKi
+							{
+								_val = 0.5
+								_text = 0.5
+							}
+							AccKd
+							{
+								_val = 0.0050000000000000001
+								_text = 0.005
+							}
+							PitKp
+							{
+								_val = 2
+								_text = 2
+							}
+							PitKi
+							{
+								_val = 1
+								_text = 1
+							}
+							PitKd
+							{
+								_val = 0.0050000000000000001
+								_text = 0.005
+							}
+							RolKp
+							{
+								_val = 0.5
+								_text = 0.5
+							}
+							RolKi
+							{
+								_val = 0.02
+								_text = 0.02
+							}
+							RolKd
+							{
+								_val = 0.5
+								_text = 0.5
+							}
+							YawKp
+							{
+								_val = 1
+								_text = 1
+							}
+							YawKi
+							{
+								_val = 0.25
+								_text = 0.25
+							}
+							YawKd
+							{
+								_val = 0.02
+								_text = 0.02
+							}
+							YawLimit
+							{
+								_val = 10
+								_text = 10
+							}
+							RollLimit
+							{
+								_val = 45
+								_text = 45
+							}
+							PitchDownLimit
+							{
+								_val = 15
+								_text = 15
+							}
+							PitchUpLimit
+							{
+								_val = 25
+								_text = 25
+							}
+						}
+						MechJebModuleDockingGuidance
+						{
+							unlockParts = 
+							unlockTechs = start
+						}
+						MechJebModuleSettings
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleAscentGT
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleDebugArrows
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleSmartASS
+						{
+							mode = ORBITAL
+							target = OFF
+							advReference = INERTIAL
+							advDirection = FORWARD
+							forceRol = False
+							forcePitch = True
+							forceYaw = True
+							unlockParts = 
+							unlockTechs = start
+							srfHdg
+							{
+								_val = 90
+								_text = 90
+							}
+							srfPit
+							{
+								_val = 90
+								_text = 90
+							}
+							srfRol
+							{
+								_val = 0
+								_text = 0
+							}
+							srfVelYaw
+							{
+								_val = 0
+								_text = 0
+							}
+							srfVelPit
+							{
+								_val = 0
+								_text = 0
+							}
+							srfVelRol
+							{
+								_val = 0
+								_text = 0
+							}
+							rol
+							{
+								_val = 0
+								_text = 0
+							}
+						}
+						MechJebModuleDockingAutopilot
+						{
+							forceRol = False
+							overrideSafeDistance = False
+							overrideTargetSize = False
+							unlockParts = 
+							unlockTechs = 
+							rol
+							{
+								_val = 0
+								_text = 0
+							}
+						}
+						ModExtensionDemo
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleThrustWindow
+						{
+							autostageSavedState = False
+							unlockParts = 
+							unlockTechs = start
+						}
+						MechJebModuleWarpHelper
+						{
+							unlockParts = 
+							unlockTechs = start
+							phaseAngle
+							{
+								_val = 0
+								_text = 0
+							}
+						}
+						MechJebModuleCustomWindowEditor
+						{
+							unlockParts = 
+							unlockTechs = start
+						}
+						MechJebModuleAscentAutopilot
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleRendezvousAutopilotWindow
+						{
+							unlockParts = 
+							unlockTechs = start
+						}
+						MechJebModuleNodeExecutor
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleNodeEditor
+						{
+							unlockParts = 
+							unlockTechs = start
+						}
+						MechJebModuleLandingAutopilot
+						{
+							deployGears = True
+							deployChutes = True
+							rcsAdjustment = True
+							unlockParts = 
+							unlockTechs = 
+							touchdownSpeed
+							{
+								_val = 0.5
+								_text = 0.5
+							}
+							limitGearsStage
+							{
+								val = 0
+								_text = 0
+							}
+							limitChutesStage
+							{
+								val = 0
+								_text = 0
+							}
+						}
+						MechJebModuleScript
+						{
+							minifiedGUI = False
+							selectedSlot = 0
+							selectedMemorySlotType = 0
+							vesselSaveName = LandingZone1
+							activeSavepoint = -1
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleLandingGuidance
+						{
+							landingSiteIdx = 0
+							unlockParts = 
+							unlockTechs = start
+						}
+						MechJebModuleLandingPredictions
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleTranslatron
+						{
+							unlockParts = 
+							unlockTechs = start
+							trans_spd
+							{
+								_val = 0
+								_text = 0
+							}
+						}
+						MechJebModuleAscentGuidance
+						{
+							unlockParts = 
+							unlockTechs = start
+						}
+						MechJebModuleRendezvousAutopilot
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleWaypointWindow
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleWaypointHelpWindow
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleTargetController
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleManeuverPlanner
+						{
+							unlockParts = 
+							unlockTechs = start
+						}
+						MechJebModuleStageStats
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleAirplaneGuidance
+						{
+							showpid = False
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleGuidanceController
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleRendezvousGuidance
+						{
+							unlockParts = 
+							unlockTechs = start
+						}
+						MechJebModuleAscentClassicMenu
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleCustomInfoWindow
+						{
+						}
+						MechJebModuleCustomInfoWindow
+						{
+						}
+						MechJebModuleCustomInfoWindow
+						{
+						}
+						MechJebModuleCustomInfoWindow
+						{
+						}
+						MechJebModuleWarpController
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleDeployableAntennaController
+						{
+							prev_shouldDeploy = False
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleSolarPanelController
+						{
+							prev_shouldDeploy = False
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleThrustController
+						{
+							limitThrottle = False
+							limiterMinThrottle = False
+							electricThrottle = False
+							unlockParts = 
+							unlockTechs = 
+							maxThrottle
+							{
+								_val = 1
+								_text = 100
+							}
+							minThrottle
+							{
+								_val = 0.050000000000000003
+								_text = 5
+							}
+							electricThrottleLo
+							{
+								_val = 0.050000000000000003
+								_text = 5
+							}
+							electricThrottleHi
+							{
+								_val = 0.14999999999999999
+								_text = 15
+							}
+						}
+						MechJebModuleRCSController
+						{
+							unlockParts = 
+							unlockTechs = 
+							Tf
+							{
+								_val = 1
+								_text = 1
+							}
+							Kp
+							{
+								_val = 0.125
+								_text = 0.125
+							}
+							Ki
+							{
+								_val = 0.070000000000000007
+								_text = 0.07
+							}
+							Kd
+							{
+								_val = 0.53000000000000003
+								_text = 0.53
+							}
+						}
+						MechJebModuleRCSBalancer
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleAttitudeController
+						{
+							unlockParts = 
+							unlockTechs = 
+							MJAttitudeController
+							{
+							}
+							KosAttitudeController
+							{
+							}
+							HybridController
+							{
+							}
+							BetterController
+							{
+							}
+						}
+						MechJebModuleStagingController
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleFlightRecorder
+						{
+							markUT = 3759932361.2834191
+							deltaVExpended = NaN
+							dragLosses = NaN
+							gravityLosses = 0
+							steeringLosses = NaN
+							markLAN = 229.44893826261324
+							markLatitude = 26.000779269726017
+							markLongitude = -97.170607725856343
+							markAltitude = 200.4548339043744
+							markBodyIndex = 1
+							maxDragGees = NaN
+							unlockParts = 
+							unlockTechs = 
+						}
+						MechJebModuleFlightRecorderGraph
+						{
+							unlockParts = 
+							unlockTechs = 
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FlightEngineerModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = TrajectoriesVesselSettings
+					isEnabled = True
+					Initialized = True
+					EntryAngle = 3.1415926535897931
+					EntryHorizon = False
+					HighAngle = 3.1415926535897931
+					HighHorizon = False
+					LowAngle = 3.1415926535897931
+					LowHorizon = False
+					GroundAngle = 3.1415926535897931
+					GroundHorizon = False
+					RetrogradeEntry = True
+					TargetBody = 
+					TargetPosition_x = 0
+					TargetPosition_y = 0
+					TargetPosition_z = 0
+					ManualTargetTxt = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleTripLogger
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					Log
+					{
+						flight = 0
+						0 = Flight,Earth
+						0 = Land,Earth
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				RESOURCE
+				{
+					name = ElectricCharge
+					amount = 800
+					maxAmount = 800
+					flowState = True
+					isTweakable = True
+					hideFlow = False
+					isVisible = True
+					flowMode = Both
+				}
+				RESOURCE
+				{
+					name = XenonGas
+					amount = 10000
+					maxAmount = 10000
+					flowState = True
+					isTweakable = True
+					hideFlow = False
+					isVisible = True
+					flowMode = Both
+				}
+				RESOURCE
+				{
+					name = ReservePower
+					amount = 1000
+					maxAmount = 1000
+					flowState = True
+					isTweakable = True
+					hideFlow = False
+					isVisible = True
+					flowMode = Both
+				}
+				RESOURCE
+				{
+					name = RefundingForKSP111x
+					amount = 0
+					maxAmount = 9.9999999999999995E-08
+					flowState = False
+					isTweakable = False
+					hideFlow = False
+					isVisible = False
+					flowMode = None
+				}
+			}
+			ACTIONGROUPS
+			{
+				Stage = False, 0
+				Gear = False, 0
+				Light = False, 0
+				RCS = False, 0
+				SAS = False, 0
+				Brakes = False, 0
+				Abort = False, 0
+				Custom01 = False, 0
+				Custom02 = False, 0
+				Custom03 = False, 0
+				Custom04 = False, 0
+				Custom05 = False, 0
+				Custom06 = False, 0
+				Custom07 = False, 0
+				Custom08 = False, 0
+				Custom09 = False, 0
+				Custom10 = False, 0
+			}
+			DISCOVERY
+			{
+				state = -1
+				lastObservedTime = 0
+				lifetime = Infinity
+				refTime = Infinity
+				size = 2
+			}
+			FLIGHTPLAN
+			{
+			}
+			CTRLSTATE
+			{
+				pitch = 0
+				yaw = 0
+				roll = 0
+				trimPitch = 0
+				trimYaw = 0
+				trimRoll = 0
+				mainThrottle = 0
+			}
+			VESSELMODULES
+			{
+				ModularFlightIntegrator
+				{
+				}
+				AxisGroupsModule
+				{
+				}
+				CommNetVessel
+				{
+					controlState = ProbeFull
+					canComm = True
+				}
+				ModuleStabilization
 				{
 				}
 				VesselDataManager
@@ -17937,32 +19112,22 @@ GAME
 				ModuleDynamicBatteryStorage
 				{
 				}
-				FlightGUI
-				{
-				}
-				FARVesselAero
-				{
-				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
 				{
 				}
-				VesselModuleRotationRO
-				{
-					angularVelocity = (0, 0, 0)
-					autopilotTargetHold = False
-					autopilotMode = 0
-					autopilotContext = 0
-				}
 			}
 		}
 		VESSEL
 		{
-			pid = a667d74199724f85a38298d54ed40c08
+			pid = 4762420987d84727b775465b29ac8a6f
 			persistentId = 2127333473
-			name = Starship-sn20-catch
+			name = sn20-catch
 			type = Ship
 			sit = PRELAUNCH
 			landed = True
@@ -17974,20 +19139,20 @@ GAME
 			displaylandedAt = #autoLOC_6002112
 			splashed = False
 			met = 0
-			lct = 3759932543.4632454
-			lastUT = 3759932543.4632454
+			lct = 3759932457.4233274
+			lastUT = 3759932457.4233274
 			distanceTraveled = 0
 			root = 0
-			lat = 25.996610176082854
-			lon = -97.149731851016426
-			alt = 274.04769946355373
-			hgt = 119.400063
-			nrm = -8.15838575E-07,1,8.34465027E-07
-			rot = -0.528912306,0.0529098995,0.0330638476,0.846379995
-			CoM = -0.0160858631,-69.5795364,-0.000366210938
+			lat = 25.996610772840366
+			lon = -97.149724791990238
+			alt = 273.89164891466498
+			hgt = 119.400032
+			nrm = 5.21540642E-08,1.00000012,2.38418579E-07
+			rot = -0.528912008,0.0529097281,0.033064466,0.846380234
+			CoM = -0.0165905952,-71.2479477,-0.000373840332
 			stg = 4
 			prst = False
-			ref = 3049208787
+			ref = 1081379277
 			ctrl = True
 			PQSMin = 2
 			PQSMax = 10
@@ -17997,18 +19162,18 @@ GAME
 			OverrideAxisControl = 0,0,0,0
 			OverrideGroupNames = ,,,
 			altDispState = ASL
-			cPch = 0.5340002
-			cHdg = -0.388
+			cPch = 0.52
+			cHdg = -0.6119989
 			cMod = 0
 			ORBIT
 			{
-				SMA = 3190047.999473047
-				ECC = 0.99721272821449547
-				INC = 25.996610173340709
-				LPE = 270.00001056916381
-				LAN = 230.24841702043648
-				MNA = -3.1415925773591837
-				EPH = 3759932543.4632454
+				SMA = 3190047.0820145449
+				ECC = 0.99721273069071781
+				INC = 25.996610769713296
+				LPE = 270.00000577288347
+				LAN = 229.88894833010698
+				MNA = -3.1415926453390863
+				EPH = 3759932457.4233274
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -18016,10 +19181,10 @@ GAME
 			{
 				name = TE2.21.SN8
 				cid = 4290357954
-				uid = 3049208787
-				mid = 1135705732
-				persistentId = 1947447115
-				launchID = 102
+				uid = 1081379277
+				mid = 894240916
+				persistentId = 3873041522
+				launchID = 104
 				parent = 0
 				position = 0,0,0
 				rotation = 0,0,0,1
@@ -18039,10 +19204,10 @@ GAME
 				attN = node_bottom, 5
 				mass = 1.94883728
 				shielded = False
-				temp = 213.83572691797491
-				tempExt = 210.80391444107048
-				tempExtUnexp = 210.8037854163494
-				staticPressureAtm = 0.96807563154896836
+				temp = 266.28581325816862
+				tempExt = 257.77786319915811
+				tempExtUnexp = 257.80877010776766
+				staticPressureAtm = 0.9680935520611661
 				expt = 0.800000012
 				state = 0
 				PreFailState = 0
@@ -18267,10 +19432,10 @@ GAME
 					{
 						AYPwrPartList
 						{
-							PrtName = AmpYear SubSystems
-							PrtTitle = AmpYear SubSystems
-							PrtModuleName = SAS
-							PrtSubsystem = True
+							PrtName = TE2.21.SN8
+							PrtTitle = non RO - Mk4 BFS-2200 Test Pod
+							PrtModuleName = ModuleDataTransmitter
+							PrtSubsystem = False
 							PrtPower = 0
 							PrtPowerF = 0
 							PrtActive = False
@@ -18281,7 +19446,7 @@ GAME
 							PrtEmergShutDnInclude = True
 							PrtPreEmergShutDnStateActive = False
 							PrtEmergShutDnPriority = 2
-							ConsPartKey = 4290357954,SAS
+							ConsPartKey = 4290357954,ModuleDataTransmitter
 						}
 						AYPwrPartList
 						{
@@ -18303,10 +19468,10 @@ GAME
 						}
 						AYPwrPartList
 						{
-							PrtName = TE2.21.SN8
-							PrtTitle = non RO - Mk4 BFS-2200 Test Pod
-							PrtModuleName = ModuleDataTransmitter
-							PrtSubsystem = False
+							PrtName = AmpYear SubSystems
+							PrtTitle = AmpYear SubSystems
+							PrtModuleName = SAS
+							PrtSubsystem = True
 							PrtPower = 0
 							PrtPowerF = 0
 							PrtActive = False
@@ -18317,7 +19482,7 @@ GAME
 							PrtEmergShutDnInclude = True
 							PrtPreEmergShutDnStateActive = False
 							PrtEmergShutDnPriority = 2
-							ConsPartKey = 4290357954,ModuleDataTransmitter
+							ConsPartKey = 4290357954,SAS
 						}
 						AYPwrPartList
 						{
@@ -18365,51 +19530,6 @@ GAME
 						upgrade = MLI.Upgrade3
 						upgrade = MLI.Upgrade4
 						upgrade = MLI.Upgrade5
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
 					}
 				}
 				MODULE
@@ -18886,7 +20006,7 @@ GAME
 							minifiedGUI = False
 							selectedSlot = 0
 							selectedMemorySlotType = 0
-							vesselSaveName = Starship-sn20-catch
+							vesselSaveName = sn20-catch
 							activeSavepoint = -1
 							unlockParts = 
 							unlockTechs = 
@@ -19079,15 +20199,15 @@ GAME
 						}
 						MechJebModuleFlightRecorder
 						{
-							markUT = 3759932543.4632454
+							markUT = 3759932457.4233274
 							deltaVExpended = 0
 							dragLosses = 0
 							gravityLosses = 0
 							steeringLosses = 0
-							markLAN = 230.24797313794025
-							markLatitude = 25.996610476799056
-							markLongitude = -97.149733097610664
-							markAltitude = 204.46816263319926
+							markLAN = 229.8884913705771
+							markLatitude = 25.996611073184624
+							markLongitude = -97.149726041872754
+							markAltitude = 202.6424313917756
 							markBodyIndex = 1
 							maxDragGees = 0
 							unlockParts = 
@@ -19201,21 +20321,6 @@ GAME
 							actionGroup = None
 							wasActiveBeforePartWasAdjusted = False
 						}
-						StartSuppressAutopilot
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						StopSuppressAutopilot
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						ToggleSuppressAutopilot
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
 					}
 					harddisk
 					{
@@ -19228,7 +20333,7 @@ GAME
 							file
 							{
 								filename = boot.ks
-								binary = H4sIAJNhFGEA,72TUW,aMBSFn+FXXPUJHhIDqxiLNFUU1HVqKxhhW6epDzfxTeKSxJbtkLJfPzsgdRPP7X2zffXd4+NjxiB4w+o7,o0oqcaKIkiktOHO9N9h6N0qhjjVQlkDmdRwF6,BSkgIGkMcZA2xwpQeg80quMEylbWBB8lhsK4SqXPYrOAHaSNkPYT30LuQnCA5QAQnAQEU1ioTMebkN1W4I51gabxopWWusQpTWTFRc3oJVaGumNvOnNVs,Gk2m44D1XGYh1+TRSglcsi0rCLovcLbtg25liqRLx3PFOyZj2Ux5bPRVBzQjtl8fo0f8TERv5bZfvYlwG+XD4dNYPGKl59Hnn+PloyFpWxrPyX6R3wubNEkHfok6Mx3T1g3WknjIuIX,9W2EOaovdWoFGnAvRTcP6amgLiwgDUHg3sCBC3THVl4bpwc15EWWOcEtiBIvcEyO+Nf+FAyYzGnoEJRX4A3MXR9PVfffVh8fvwRK9Fhu1ZH6qineYPjVSDeBhNw3QtNLSw15m5vMvQzxx,Ykv6wyWgyevM49eOfX7eLW9iuYBT2GHtdcsqwKS2s59vbCH67T,HE4kIow45,pa+bWqEtBmeuDMO,e6TOFyoEAAA=
+								binary = H4sIAIObFWEA,72TUW,aMBSFn+FXXPUJHhIDqxiLNFUU1HVqKxhhW6epDzfxTeKSxJbtkLJfPzsgdRPP7X2zffXd4+NjxiB4w+o7,o0oqcaKIkiktOHO9N9h6N0qhjjVQlkDmdRwF6,BSkgIGkMcZA2xwpQeg80quMEylbWBB8lhsK4SqXPYrOAHaSNkPYT30LuQnCA5QAQnAQEU1ioTMebkN1W4I51gabxopWWusQpTWTFRc3oJVaGumNvOnNVs,Gk2m44D1XGYh1+TRSglcsi0rCLovcLbtg25liqRLx3PFOyZj2Ux5bPRVBzQjtl8fo0f8TERv5bZfvYlwG+XD4dNYPGKl59Hnn+PloyFpWxrPyX6R3wubNEkHfok6Mx3T1g3WknjIuIX,9W2EOaovdWoFGnAvRTcP6amgLiwgDUHg3sCBC3THVl4bpwc15EWWOcEtiBIvcEyO+Nf+FAyYzGnoEJRX4A3MXR9PVfffVh8fvwRK9Fhu1ZH6qineYPjVSDeBhNw3QtNLSw15m5vMvQzxx,Ykv6wyWgyevM49eOfX7eLW9iuYBT2GHtdcsqwKS2s59vbCH67T,HE4kIow45,pa+bWqEtBmeuDMO,e6TOFyoEAAA=
 							}
 						}
 					}
@@ -19373,10 +20478,10 @@ GAME
 			{
 				name = TE2.19.SS.FF.R
 				cid = 4290320222
-				uid = 3776391599
-				mid = 1135705732
-				persistentId = 2791535966
-				launchID = 102
+				uid = 2964715419
+				mid = 894240916
+				persistentId = 2652909102
+				launchID = 104
 				parent = 0
 				position = 2.7650146484375,6.8561325073242188,0.0010223388671875
 				rotation = 0,0,-0.749123514,-0.662430465
@@ -19394,10 +20499,10 @@ GAME
 				attN = node_top, 0
 				mass = 8.21280003
 				shielded = False
-				temp = 250.46817846875703
-				tempExt = 231.85891607717377
-				tempExtUnexp = 231.85967350200318
-				staticPressureAtm = 0.96728855964139215
+				temp = 281.47641801878717
+				tempExt = 266.36246797900083
+				tempExtUnexp = 266.39049563636638
+				staticPressureAtm = 0.96730648015358989
 				expt = 0.532480061
 				state = 0
 				PreFailState = 0
@@ -19607,51 +20712,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -19732,10 +20792,10 @@ GAME
 			{
 				name = TE2.19.SS.FF.L
 				cid = 4290316812
-				uid = 1414762002
-				mid = 1135705732
-				persistentId = 2995475179
-				launchID = 102
+				uid = 1473325616
+				mid = 894240916
+				persistentId = 4236473366
+				launchID = 104
 				parent = 0
 				position = -2.805023193359375,6.8561553955078125,0.00103759765625
 				rotation = -5.96046448E-08,1.49011612E-07,0.754873753,-0.65587014
@@ -19753,10 +20813,10 @@ GAME
 				attN = node_top, 0
 				mass = 8.21279907
 				shielded = False
-				temp = 250.58363531870668
-				tempExt = 231.25465886678754
-				tempExtUnexp = 231.25541101858332
-				staticPressureAtm = 0.96728863493766182
+				temp = 281.47662107547677
+				tempExt = 266.13611595975061
+				tempExtUnexp = 266.16426319915439
+				staticPressureAtm = 0.96730648015358989
 				expt = 0.532480001
 				state = 0
 				PreFailState = 0
@@ -19966,51 +21026,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -20091,10 +21106,10 @@ GAME
 			{
 				name = 4mv.vl.sensor.accelerometer.srf.1
 				cid = 4291625674
-				uid = 3905546395
-				mid = 1135705732
-				persistentId = 3127026559
-				launchID = 102
+				uid = 2148448912
+				mid = 894240916
+				persistentId = 1796757944
+				launchID = 104
 				parent = 0
 				position = -2.7917094230651855,2.29541015625,2.384185791015625E-07
 				rotation = 0,0.707106829,0,0.707106709
@@ -20111,11 +21126,11 @@ GAME
 				sym = 4
 				srfN = srfAttach, 0,Cone
 				mass = 0.00999999978
-				shielded = True
-				temp = 264.83896351723564
-				tempExt = 264.84028410322225
-				tempExtUnexp = 4
-				staticPressureAtm = 0.96781209460488371
+				shielded = False
+				temp = 281.48600882484203
+				tempExt = 265.36935066768189
+				tempExtUnexp = 265.39822296983851
+				staticPressureAtm = 0.96783001511708144
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -20293,51 +21308,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -20357,9 +21327,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -20368,10 +21338,10 @@ GAME
 			{
 				name = 4mv.vl.sensor.accelerometer.srf.1
 				cid = 4291624720
-				uid = 3477361971
-				mid = 1135705732
-				persistentId = 1021137520
-				launchID = 102
+				uid = 311885856
+				mid = 894240916
+				persistentId = 1227377970
+				launchID = 104
 				parent = 0
 				position = 2.7917084693908691,2.29541015625,-1.1920928955078125E-06
 				rotation = 0,0.707106709,0,-0.707106948
@@ -20388,11 +21358,11 @@ GAME
 				sym = 3
 				srfN = srfAttach, 0,Cone
 				mass = 0.00999999978
-				shielded = True
-				temp = 264.83896351723564
-				tempExt = 264.84028410322225
-				tempExtUnexp = 4
-				staticPressureAtm = 0.96781201930861394
+				shielded = False
+				temp = 281.48600882484203
+				tempExt = 265.36935066768189
+				tempExtUnexp = 265.39822296983851
+				staticPressureAtm = 0.96782993982081167
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -20570,51 +21540,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -20634,9 +21559,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -20645,10 +21570,10 @@ GAME
 			{
 				name = TE2.19.SS.Fuel.Tank
 				cid = 4290354762
-				uid = 744648794
-				mid = 1135705732
-				persistentId = 1492929770
-				launchID = 102
+				uid = 690663382
+				mid = 894240916
+				persistentId = 3983917689
+				launchID = 104
 				parent = 0
 				position = 0,-22.529541015625,0
 				rotation = 0,0,0,-1
@@ -20678,10 +21603,10 @@ GAME
 				attN = node_bottom, 14
 				mass = 39.7992249
 				shielded = False
-				temp = 90.160207204395732
-				tempExt = 106.80892472709554
-				tempExtUnexp = 106.80941720204032
-				staticPressureAtm = 0.97066589852424123
+				temp = 90.17659227465829
+				tempExt = 130.09667807314608
+				tempExtUnexp = 130.11612976949215
+				staticPressureAtm = 0.97068389433270874
 				expt = 0.800000012
 				state = 0
 				PreFailState = 0
@@ -20735,6 +21660,21 @@ GAME
 							active = False
 							wasActiveBeforePartWasAdjusted = False
 						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleCargoBay
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
 					}
 					UPGRADESAPPLIED
 					{
@@ -21097,7 +22037,7 @@ GAME
 						temperature = 90.1500015
 						fillable = True
 						techRequired = 
-						amount = 921736.82145476935
+						amount = 745093.46797957679
 						maxAmount = 921736.82145476935
 					}
 					TANK
@@ -21111,7 +22051,7 @@ GAME
 						temperature = 111.449997
 						fillable = True
 						techRequired = 
-						amount = 259644.17854523059
+						amount = 240419.30901760998
 						maxAmount = 259644.17854523059
 					}
 					UPGRADESAPPLIED
@@ -21121,51 +22061,6 @@ GAME
 						upgrade = MLI.Upgrade3
 						upgrade = MLI.Upgrade4
 						upgrade = MLI.Upgrade5
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
 					}
 				}
 				MODULE
@@ -21293,7 +22188,7 @@ GAME
 				RESOURCE
 				{
 					name = LqdMethane
-					amount = 259644.17854523059
+					amount = 240419.30901760998
 					maxAmount = 259644.17854523059
 					flowState = True
 					isTweakable = True
@@ -21304,7 +22199,7 @@ GAME
 				RESOURCE
 				{
 					name = LqdOxygen
-					amount = 921736.82145476935
+					amount = 745093.46797957679
 					maxAmount = 921736.82145476935
 					flowState = True
 					isTweakable = True
@@ -21317,10 +22212,10 @@ GAME
 			{
 				name = TE2.19.SS.RF.R
 				cid = 4290326808
-				uid = 3498295471
-				mid = 1135705732
-				persistentId = 2411254691
-				launchID = 102
+				uid = 272281867
+				mid = 894240916
+				persistentId = 497564566
+				launchID = 104
 				parent = 5
 				position = 3.124772310256958,-24.896064758300781,-2.384185791015625E-07
 				rotation = 0,1.1920929E-07,0.710185409,0.704014719
@@ -21338,10 +22233,10 @@ GAME
 				attN = node_top, 5
 				mass = 9.53280067
 				shielded = False
-				temp = 188.25380031745459
-				tempExt = 155.44330139109528
-				tempExtUnexp = 155.44477704254396
-				staticPressureAtm = 0.97093832042815498
+				temp = 279.30643127237431
+				tempExt = 204.5924602059662
+				tempExtUnexp = 204.62675951952414
+				staticPressureAtm = 0.97095631623662249
 				expt = 0.532480061
 				state = 0
 				PreFailState = 0
@@ -21551,51 +22446,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -21676,10 +22526,10 @@ GAME
 			{
 				name = TE2.19.SS.RF.L
 				cid = 4290326536
-				uid = 77301941
-				mid = 1135705732
-				persistentId = 1083284361
-				launchID = 102
+				uid = 724348632
+				mid = 894240916
+				persistentId = 4271708145
+				launchID = 104
 				parent = 5
 				position = -3.124772310256958,-24.896095275878906,-2.9802322387695313E-08
 				rotation = -8.94069672E-08,1.1920929E-07,0.710185409,-0.704014778
@@ -21697,10 +22547,10 @@ GAME
 				attN = node_top, 5
 				mass = 9.53280067
 				shielded = False
-				temp = 187.37299842589047
-				tempExt = 157.8509052110698
-				tempExtUnexp = 157.85311349047612
-				staticPressureAtm = 0.97093839572442475
+				temp = 279.30643082683429
+				tempExt = 204.59246003651327
+				tempExtUnexp = 204.62675934843116
+				staticPressureAtm = 0.97095631623662249
 				expt = 0.532480061
 				state = 0
 				PreFailState = 0
@@ -21910,51 +22760,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -22035,10 +22840,10 @@ GAME
 			{
 				name = TE2.19.SS.RPTR.VAC
 				cid = 4292523532
-				uid = 1447876076
-				mid = 1135705732
-				persistentId = 413223938
-				launchID = 102
+				uid = 917008405
+				mid = 894240916
+				persistentId = 2452310524
+				launchID = 104
 				parent = 5
 				position = 0,-29.205642700195313,1.8420124053955078
 				rotation = 0,0,0,1
@@ -22057,11 +22862,11 @@ GAME
 				srfN = , -1
 				attN = node_top, 5
 				mass = 2.5999999
-				shielded = True
-				temp = 259.81805591470419
-				tempExt = 259.83314278560226
-				tempExtUnexp = 4
-				staticPressureAtm = 0.97143467343827095
+				shielded = False
+				temp = 272.02974617656861
+				tempExt = 232.48512996557656
+				tempExtUnexp = 232.51178382790229
+				staticPressureAtm = 0.97145259395046879
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -22186,67 +22991,6 @@ GAME
 				}
 				MODULE
 				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -22362,9 +23106,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -22373,10 +23117,10 @@ GAME
 			{
 				name = TE2.19.SS.RPTR.VAC
 				cid = 4292522990
-				uid = 1774871051
-				mid = 1135705732
-				persistentId = 294157989
-				launchID = 102
+				uid = 3872105460
+				mid = 894240916
+				persistentId = 718615593
+				launchID = 104
 				parent = 5
 				position = 1.59521484375,-29.205650329589844,-0.920989990234375
 				rotation = 0,0.866025448,0,0.49999997
@@ -22395,11 +23139,11 @@ GAME
 				srfN = , -1
 				attN = node_top, 5
 				mass = 2.5999999
-				shielded = True
-				temp = 259.81805663809172
-				tempExt = 259.83314350680536
-				tempExtUnexp = 4
-				staticPressureAtm = 0.97143459814200128
+				shielded = False
+				temp = 272.0297442473273
+				tempExt = 232.4851290908698
+				tempExtUnexp = 232.5117829553559
+				staticPressureAtm = 0.97145259395046879
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -22524,67 +23268,6 @@ GAME
 				}
 				MODULE
 				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -22700,9 +23383,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -22711,10 +23394,10 @@ GAME
 			{
 				name = TE2.19.SS.RPTR.VAC
 				cid = 4292522860
-				uid = 494334104
-				mid = 1135705732
-				persistentId = 3965045189
-				launchID = 102
+				uid = 3118447211
+				mid = 894240916
+				persistentId = 2349036171
+				launchID = 104
 				parent = 5
 				position = -1.59521484375,-29.205650329589844,-0.92099189758300781
 				rotation = 0,0.866025448,0,-0.5
@@ -22733,11 +23416,11 @@ GAME
 				srfN = , -1
 				attN = node_top, 5
 				mass = 2.5999999
-				shielded = True
-				temp = 259.81805663809172
-				tempExt = 259.83314350680536
-				tempExtUnexp = 4
-				staticPressureAtm = 0.97143467343827095
+				shielded = False
+				temp = 272.02974489040787
+				tempExt = 232.48512938243843
+				tempExtUnexp = 232.51178324620443
+				staticPressureAtm = 0.97145259395046879
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -22862,67 +23545,6 @@ GAME
 				}
 				MODULE
 				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -23038,9 +23660,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -23049,10 +23671,10 @@ GAME
 			{
 				name = TE2.19.BFS.SL.RAPTOR
 				cid = 4290348350
-				uid = 4031674657
-				mid = 1135705732
-				persistentId = 1628487957
-				launchID = 102
+				uid = 3477354327
+				mid = 894240916
+				persistentId = 611240041
+				launchID = 104
 				parent = 5
 				position = 0.519622802734375,-30.04827880859375,0.300018310546875
 				rotation = 0,0,0,1
@@ -23072,11 +23694,11 @@ GAME
 				attN = node_top, 5
 				attN = node_bottom, -1
 				mass = 2.4000001
-				shielded = True
-				temp = 259.48326424418644
-				tempExt = 259.49955183388238
-				tempExtUnexp = 4
-				staticPressureAtm = 0.97153173032996387
+				shielded = False
+				temp = 271.58812989328038
+				tempExt = 232.31176654151702
+				tempExtUnexp = 232.33885243893579
+				staticPressureAtm = 0.97154965084216161
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -23298,67 +23920,6 @@ GAME
 				}
 				MODULE
 				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -23550,10 +24111,10 @@ GAME
 			{
 				name = TE2.19.BFS.SL.RAPTOR
 				cid = 4292514654
-				uid = 3666957812
-				mid = 1135705732
-				persistentId = 3133247791
-				launchID = 102
+				uid = 4096151435
+				mid = 894240916
+				persistentId = 133500539
+				launchID = 104
 				parent = 5
 				position = 0,-30.04827880859375,-0.5999908447265625
 				rotation = 0,0.866025448,0,0.49999997
@@ -23573,11 +24134,11 @@ GAME
 				attN = node_top, 5
 				attN = node_bottom, -1
 				mass = 2.4000001
-				shielded = True
-				temp = 259.48362977669785
-				tempExt = 259.49991740276181
-				tempExtUnexp = 4
-				staticPressureAtm = 0.97153173032996387
+				shielded = False
+				temp = 271.59401746964954
+				tempExt = 232.31501078411904
+				tempExtUnexp = 232.34208876779817
+				staticPressureAtm = 0.97154965084216161
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -23799,67 +24360,6 @@ GAME
 				}
 				MODULE
 				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -24043,10 +24543,10 @@ GAME
 			{
 				name = TE2.19.BFS.SL.RAPTOR
 				cid = 4292514360
-				uid = 3847849152
-				mid = 1135705732
-				persistentId = 1184635477
-				launchID = 102
+				uid = 1960883922
+				mid = 894240916
+				persistentId = 3892891835
+				launchID = 104
 				parent = 5
 				position = -0.5196075439453125,-30.04827880859375,0.300018310546875
 				rotation = 0,0.866025448,0,-0.5
@@ -24066,11 +24566,11 @@ GAME
 				attN = node_top, 5
 				attN = node_bottom, -1
 				mass = 2.4000001
-				shielded = True
-				temp = 259.48328402640618
-				tempExt = 259.49957161922282
-				tempExtUnexp = 4
-				staticPressureAtm = 0.97153173032996387
+				shielded = False
+				temp = 271.58845496247034
+				tempExt = 232.31194564216347
+				tempExtUnexp = 232.33903110271245
+				staticPressureAtm = 0.97154972613843138
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -24292,67 +24792,6 @@ GAME
 				}
 				MODULE
 				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -24536,10 +24975,10 @@ GAME
 			{
 				name = TE2.19.SH.Interstage
 				cid = 4293615696
-				uid = 1489446398
-				mid = 1135705732
-				persistentId = 1946478628
-				launchID = 102
+				uid = 369033358
+				mid = 894240916
+				persistentId = 237359895
+				launchID = 104
 				parent = 5
 				position = 0,-34.868408203125,0
 				rotation = 0,0,0,1
@@ -24558,10 +24997,10 @@ GAME
 				attN = node_bottom, 19
 				mass = 6.10000038
 				shielded = False
-				temp = 169.80570305886053
-				tempExt = 159.15126388671482
-				tempExtUnexp = 159.15291405326138
-				staticPressureAtm = 0.97208711561555483
+				temp = 275.95867743837636
+				tempExt = 233.69253797521469
+				tempExtUnexp = 233.70906383555871
+				staticPressureAtm = 0.97210511142402234
 				expt = 0.850000024
 				state = 0
 				PreFailState = 0
@@ -24809,24 +25248,6 @@ GAME
 						{
 							PrtName = TE2.19.SH.Interstage
 							PrtTitle = non RO - Mk4 BFT-40 Probe Core
-							PrtModuleName = ModuleDataTransmitter
-							PrtSubsystem = False
-							PrtPower = 0
-							PrtPowerF = 0
-							PrtActive = False
-							PrtSolarDependant = False
-							PrtEditorInclude = True
-							PrtUserEditorInclude = True
-							PrtValidprtEmergShutDn = True
-							PrtEmergShutDnInclude = True
-							PrtPreEmergShutDnStateActive = False
-							PrtEmergShutDnPriority = 2
-							ConsPartKey = 4293615696,ModuleDataTransmitter
-						}
-						AYPwrPartList
-						{
-							PrtName = TE2.19.SH.Interstage
-							PrtTitle = non RO - Mk4 BFT-40 Probe Core
 							PrtModuleName = ModuleReactionWheel
 							PrtSubsystem = False
 							PrtPower = 0
@@ -24841,51 +25262,24 @@ GAME
 							PrtEmergShutDnPriority = 2
 							ConsPartKey = 4293615696,ModuleReactionWheel
 						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
+						AYPwrPartList
+						{
+							PrtName = TE2.19.SH.Interstage
+							PrtTitle = non RO - Mk4 BFT-40 Probe Core
+							PrtModuleName = ModuleDataTransmitter
+							PrtSubsystem = False
+							PrtPower = 0
+							PrtPowerF = 0
+							PrtActive = False
+							PrtSolarDependant = False
+							PrtEditorInclude = True
+							PrtUserEditorInclude = True
+							PrtValidprtEmergShutDn = True
+							PrtEmergShutDnInclude = True
+							PrtPreEmergShutDnStateActive = False
+							PrtEmergShutDnPriority = 2
+							ConsPartKey = 4293615696,ModuleDataTransmitter
+						}
 					}
 					UPGRADESAPPLIED
 					{
@@ -25068,7 +25462,7 @@ GAME
 					baseModuleMass = 0
 					additionalCost = 0
 					MaxPartId = 100
-					RequiredPower = 0.00110714289
+					RequiredPower = 0.00140000007
 					stagingEnabled = True
 					activated = True
 					EVENTS
@@ -25096,21 +25490,6 @@ GAME
 							actionGroup = None
 							wasActiveBeforePartWasAdjusted = False
 						}
-						StartSuppressAutopilot
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						StopSuppressAutopilot
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						ToggleSuppressAutopilot
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
 					}
 					harddisk
 					{
@@ -25123,13 +25502,8 @@ GAME
 							file
 							{
 								filename = boot-boosters.ks
-								binary = H4sIAJRhFGEA,72TXW+bMBSGr5NfcdSr9gIMVZVlSFOVpl9T15EFtnWadnHABtwAx7JNaP797LRSO1W7bM8FkrH1+PHxa8YgeMOaOv6lbEWPnUigILKB+xgrtAk3ZvoOu9+kGWSllsoaqEjDTbYCS1AIGIzgQD1kCktxF6zT4BLbknoDt8ThcNUVpGtYp,DD2Urqj+A9fJfEBRQ7SOBJIIDGWmUSxpz+0IUboQtsjZdWmmqNXVhSx2TPxUOoGnXK3O,K9ZzFH+fzWRyoPYd5+JmwCC0hh0pTl8DkGT6OY8g1qYIe9jzTsHseUzPj82gmd2hjtlic4Qe8K+Sv82o7vwrw28ntbh1YPOXtp8jzv6AVxsI5jb3fJXkhX0vbDMUe,ST0qu+esBq0IuOy4gf,VN5I8+g+alRKaMAtSe4vU4tAcGkBew4GtwIQNJUbYeF+cDpuRdlgXwuwjYDSN5iqV,wDn05mLNbiZUYPwPcydMsnrr77zPgYZXkQwzJdX,gZiE,YV9qy4+g4evOMTLOfn,PlNeQpROGEsechFxUOrYXVIr9O4LdL+h+WNVIZ9vgApnroFdrm8H9HPQr,AtcvSaoPBAAA
+								binary = H4sIAIObFWEA,72TXW+bMBSGr5NfcdSr9gIMVZVlSFOVpl9T15EFtnWadnHABtwAx7JNaP797LRSO1W7bM8FkrH1+PHxa8YgeMOaOv6lbEWPnUigILKB+xgrtAk3ZvoOu9+kGWSllsoaqEjDTbYCS1AIGIzgQD1kCktxF6zT4BLbknoDt8ThcNUVpGtYp,DD2Urqj+A9fJfEBRQ7SOBJIIDGWmUSxpz+0IUboQtsjZdWmmqNXVhSx2TPxUOoGnXK3O,K9ZzFH+fzWRyoPYd5+JmwCC0hh0pTl8DkGT6OY8g1qYIe9jzTsHseUzPj82gmd2hjtlic4Qe8K+Sv82o7vwrw28ntbh1YPOXtp8jzv6AVxsI5jb3fJXkhX0vbDMUe,ST0qu+esBq0IuOy4gf,VN5I8+g+alRKaMAtSe4vU4tAcGkBew4GtwIQNJUbYeF+cDpuRdlgXwuwjYDSN5iqV,wDn05mLNbiZUYPwPcydMsnrr77zPgYZXkQwzJdX,gZiE,YV9qy4+g4evOMTLOfn,PlNeQpROGEsechFxUOrYXVIr9O4LdL+h+WNVIZ9vgApnroFdrm8H9HPQr,AtcvSaoPBAAA
 							}
-						}
-						file
-						{
-							filename = STAGE1_TARGET_FILE.c
-							binary = H4sIAJRhFGEA,0tJTc5JLEpVSM,JT0rMUfBJzEvJzEuPys9LVSjJV8hPS8vJzEuNhwoHlyQWOSUWp+pxAQBQJ5QQNwAAAA==
 						}
 					}
 					UPGRADESAPPLIED
@@ -25277,9 +25651,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 2.1000003814697266
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -25288,10 +25662,10 @@ GAME
 			{
 				name = TE2.19.SH.HGT
 				cid = 4293623034
-				uid = 53306123
-				mid = 1135705732
-				persistentId = 3815915497
-				launchID = 102
+				uid = 2295690016
+				mid = 894240916
+				persistentId = 1353008671
+				launchID = 104
 				parent = 14
 				position = -2.8067502975463867,-37.383514404296875,7.152557373046875E-07
 				rotation = 0,0.707106829,0,0.707106709
@@ -25311,10 +25685,10 @@ GAME
 				srfN = srfAttach, 14,TE2_19_SH_Interstage_Collider1_7
 				mass = 0.100000001
 				shielded = False
-				temp = 200.04572506700589
-				tempExt = 187.63441446757997
-				tempExtUnexp = 187.63314125461923
-				staticPressureAtm = 0.97237708155031766
+				temp = 280.99246519480437
+				tempExt = 254.98788507109242
+				tempExtUnexp = 254.99885900349102
+				staticPressureAtm = 0.97239507735878516
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -25422,51 +25796,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -25501,9 +25830,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -25512,10 +25841,10 @@ GAME
 			{
 				name = TE2.19.SH.HGT
 				cid = 4293622056
-				uid = 1442022932
-				mid = 1135705732
-				persistentId = 1536270976
-				launchID = 102
+				uid = 590557833
+				mid = 894240916
+				persistentId = 3679783246
+				launchID = 104
 				parent = 14
 				position = 1.1920928955078125E-07,-37.383514404296875,2.8067493438720703
 				rotation = 0,1,0,-5.96046448E-08
@@ -25535,10 +25864,10 @@ GAME
 				srfN = srfAttach, 14,TE2_19_SH_Interstage_Collider1_7
 				mass = 0.100000001
 				shielded = False
-				temp = 189.27825997882064
-				tempExt = 183.0152480593521
-				tempExtUnexp = 183.01375428123742
-				staticPressureAtm = 0.97237700625404788
+				temp = 280.99246519480437
+				tempExt = 254.98788507109242
+				tempExtUnexp = 254.99885900349102
+				staticPressureAtm = 0.97239500206251539
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -25646,51 +25975,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -25725,9 +26009,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -25736,10 +26020,10 @@ GAME
 			{
 				name = TE2.19.SH.HGT
 				cid = 4293621988
-				uid = 69024126
-				mid = 1135705732
-				persistentId = 2622896521
-				launchID = 102
+				uid = 1959321685
+				mid = 894240916
+				persistentId = 3065392118
+				launchID = 104
 				parent = 14
 				position = 2.8067493438720703,-37.383514404296875,-1.1920928955078125E-07
 				rotation = 0,0.707106709,0,-0.707106948
@@ -25759,10 +26043,10 @@ GAME
 				srfN = srfAttach, 14,TE2_19_SH_Interstage_Collider1_7
 				mass = 0.100000001
 				shielded = False
-				temp = 200.04574384244921
-				tempExt = 187.63442251510699
-				tempExtUnexp = 187.63314930238056
-				staticPressureAtm = 0.97237700625404788
+				temp = 280.99246519480437
+				tempExt = 254.98788507109242
+				tempExtUnexp = 254.99885900349102
+				staticPressureAtm = 0.97239500206251539
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -25870,51 +26154,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -25949,9 +26188,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -25960,10 +26199,10 @@ GAME
 			{
 				name = TE2.19.SH.HGT
 				cid = 4293621920
-				uid = 1466278466
-				mid = 1135705732
-				persistentId = 3668947947
-				launchID = 102
+				uid = 2197163310
+				mid = 894240916
+				persistentId = 271270725
+				launchID = 104
 				parent = 14
 				position = -3.5762786865234375E-07,-37.383514404296875,-2.8067493438720703
 				rotation = 0,-5.96046448E-08,0,-1
@@ -25983,10 +26222,10 @@ GAME
 				srfN = srfAttach, 14,TE2_19_SH_Interstage_Collider1_7
 				mass = 0.100000001
 				shielded = False
-				temp = 182.34205990559789
-				tempExt = 180.03579100296218
-				tempExtUnexp = 180.03407224099792
-				staticPressureAtm = 0.97237700625404788
+				temp = 280.99246519480437
+				tempExt = 254.98788507109242
+				tempExtUnexp = 254.99885900349102
+				staticPressureAtm = 0.97239500206251539
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -26094,51 +26333,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -26173,9 +26367,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -26184,10 +26378,10 @@ GAME
 			{
 				name = TE2.19.SH.Tank
 				cid = 4293636382
-				uid = 546891801
-				mid = 1135705732
-				persistentId = 2933733976
-				launchID = 102
+				uid = 1779926654
+				mid = 894240916
+				persistentId = 1690011981
+				launchID = 104
 				parent = 14
 				position = 0,-63.859264373779297,0
 				rotation = 0,0,0,1
@@ -26206,10 +26400,10 @@ GAME
 				attN = node_bottom, 27
 				mass = 112.869919
 				shielded = False
-				temp = 90.150001764986115
-				tempExt = 179.78505251235993
-				tempExtUnexp = 179.7808402597459
-				staticPressureAtm = 0.97543350773154136
+				temp = 90.150001555049599
+				tempExt = 93.201542359137022
+				tempExtUnexp = 93.1943770629792
+				staticPressureAtm = 0.97545150354000887
 				expt = 0.850000024
 				state = 0
 				PreFailState = 0
@@ -26367,51 +26561,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -26510,9 +26659,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 3203.4347171783475
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -26521,10 +26670,10 @@ GAME
 			{
 				name = KAL9000
 				cid = 4293633042
-				uid = 3243902940
-				mid = 1135705732
-				persistentId = 2941683456
-				launchID = 102
+				uid = 983087249
+				mid = 894240916
+				persistentId = 1670360928
+				launchID = 104
 				parent = 19
 				position = -2.7931332588195801,-90.24493408203125,-0.22372874617576599
 				rotation = 0,-0.0654031336,0,0.997859001
@@ -26540,11 +26689,11 @@ GAME
 				sameVesselCollision = False
 				srfN = srfAttach, 19,SH_Tank_Collider
 				mass = 0.000500000024
-				shielded = True
-				temp = 264.92094758111091
-				tempExt = 264.92194397460275
-				tempExtUnexp = 4
-				staticPressureAtm = 0.97848797620975203
+				shielded = False
+				temp = 281.50830333220375
+				tempExt = 281.42418009259137
+				tempExtUnexp = 281.42434249456062
+				staticPressureAtm = 0.9785060473144892
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -26615,21 +26764,6 @@ GAME
 							wasActiveBeforePartWasAdjusted = False
 						}
 						TogglePower
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						StartSuppressAutopilot
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						StopSuppressAutopilot
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						ToggleSuppressAutopilot
 						{
 							actionGroup = None
 							wasActiveBeforePartWasAdjusted = False
@@ -26833,51 +26967,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -26897,9 +26986,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -26908,10 +26997,10 @@ GAME
 			{
 				name = TE2.19.SH.HGT
 				cid = 4293141278
-				uid = 3919147557
-				mid = 1135705732
-				persistentId = 2430663231
-				launchID = 102
+				uid = 3569525011
+				mid = 894240916
+				persistentId = 3318307984
+				launchID = 104
 				parent = 19
 				position = -2.8033692836761475,-90.377120971679688,7.152557373046875E-07
 				rotation = 0,0.707106829,0,0.707106709
@@ -26931,10 +27020,10 @@ GAME
 				srfN = srfAttach, 19,SH_Tank_Collider
 				mass = 0.100000001
 				shielded = False
-				temp = 265.00215231310193
-				tempExt = 265.10004361242596
-				tempExtUnexp = 265.1000372239767
-				staticPressureAtm = 0.97850333664877864
+				temp = 281.54032881747412
+				tempExt = 281.52449739669225
+				tempExtUnexp = 281.52449989298913
+				staticPressureAtm = 0.97852140775351582
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -27042,51 +27131,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -27121,9 +27165,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -27132,10 +27176,10 @@ GAME
 			{
 				name = TE2.19.SH.HGT
 				cid = 4293139832
-				uid = 2943747215
-				mid = 1135705732
-				persistentId = 2037614760
-				launchID = 102
+				uid = 3255853869
+				mid = 894240916
+				persistentId = 1536429623
+				launchID = 104
 				parent = 19
 				position = 1.1920928955078125E-07,-90.377120971679688,2.8033690452575684
 				rotation = 0,1,0,-5.96046448E-08
@@ -27154,11 +27198,11 @@ GAME
 				sym = 24
 				srfN = srfAttach, 19,SH_Tank_Collider
 				mass = 0.100000001
-				shielded = True
-				temp = 264.9071243583677
-				tempExt = 264.90811761762427
-				tempExtUnexp = 4
-				staticPressureAtm = 0.97850326135250887
+				shielded = False
+				temp = 281.54032881747412
+				tempExt = 281.52449739669225
+				tempExtUnexp = 281.52449989298913
+				staticPressureAtm = 0.97852140775351582
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -27266,51 +27310,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -27345,9 +27344,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -27356,10 +27355,10 @@ GAME
 			{
 				name = TE2.19.SH.HGT
 				cid = 4293139764
-				uid = 4199509532
-				mid = 1135705732
-				persistentId = 1188486677
-				launchID = 102
+				uid = 2770811416
+				mid = 894240916
+				persistentId = 2700836440
+				launchID = 104
 				parent = 19
 				position = 2.8033692836761475,-90.377120971679688,-7.152557373046875E-07
 				rotation = 0,0.707106709,0,-0.707106948
@@ -27379,10 +27378,10 @@ GAME
 				srfN = srfAttach, 19,SH_Tank_Collider
 				mass = 0.100000001
 				shielded = False
-				temp = 265.11618174242898
-				tempExt = 265.21817695338814
-				tempExtUnexp = 265.21816441730721
-				staticPressureAtm = 0.97850326135250887
+				temp = 281.54032881747412
+				tempExt = 281.52449739669225
+				tempExtUnexp = 281.52449989298913
+				staticPressureAtm = 0.97852133245724615
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -27490,51 +27489,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -27569,9 +27523,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -27580,10 +27534,10 @@ GAME
 			{
 				name = TE2.19.SH.HGT
 				cid = 4293139696
-				uid = 1539991317
-				mid = 1135705732
-				persistentId = 224170912
-				launchID = 102
+				uid = 1028372370
+				mid = 894240916
+				persistentId = 2777518998
+				launchID = 104
 				parent = 19
 				position = -9.5367431640625E-07,-90.377120971679688,-2.803370475769043
 				rotation = 0,-5.96046448E-08,0,-1
@@ -27603,10 +27557,10 @@ GAME
 				srfN = srfAttach, 19,SH_Tank_Collider
 				mass = 0.100000001
 				shielded = False
-				temp = 265.00215220095436
-				tempExt = 265.10004349093697
-				tempExtUnexp = 265.1000371024935
-				staticPressureAtm = 0.97850326135250887
+				temp = 281.54032881747412
+				tempExt = 281.52449739669225
+				tempExtUnexp = 281.52449989298913
+				staticPressureAtm = 0.97852140775351582
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -27714,51 +27668,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -27793,9 +27702,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -27804,10 +27713,10 @@ GAME
 			{
 				name = 4mv.vl.sensor.accelerometer.srf.1
 				cid = 4292956322
-				uid = 3443849058
-				mid = 1135705732
-				persistentId = 3559484176
-				launchID = 102
+				uid = 562978969
+				mid = 894240916
+				persistentId = 3752339622
+				launchID = 104
 				parent = 19
 				position = -2.7916474342346191,-90.201248168945313,7.152557373046875E-07
 				rotation = 0,0.707106829,0,0.707106829
@@ -27824,11 +27733,11 @@ GAME
 				sym = 26
 				srfN = srfAttach, 19,SH_Tank_Collider
 				mass = 0.00999999978
-				shielded = True
-				temp = 264.90764511038691
-				tempExt = 264.90864438600613
-				tempExtUnexp = 4
-				staticPressureAtm = 0.97848293135967956
+				shielded = False
+				temp = 281.54059637654188
+				tempExt = 281.5031183701164
+				tempExtUnexp = 281.50317866625323
+				staticPressureAtm = 0.97850100246441674
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28006,51 +27915,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -28070,9 +27934,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -28081,10 +27945,10 @@ GAME
 			{
 				name = 4mv.vl.sensor.accelerometer.srf.1
 				cid = 4293139336
-				uid = 190092531
-				mid = 1135705732
-				persistentId = 2692947647
-				launchID = 102
+				uid = 2460534799
+				mid = 894240916
+				persistentId = 1971021283
+				launchID = 104
 				parent = 19
 				position = 2.7916474342346191,-90.201248168945313,-1.0728836059570313E-06
 				rotation = 0,0.707106769,0,-0.707106888
@@ -28101,11 +27965,11 @@ GAME
 				sym = 25
 				srfN = srfAttach, 19,SH_Tank_Collider
 				mass = 0.00999999978
-				shielded = True
-				temp = 264.90764511038691
-				tempExt = 264.90864438600613
-				tempExtUnexp = 4
-				staticPressureAtm = 0.97848285606340979
+				shielded = False
+				temp = 281.54059637654188
+				tempExt = 281.5031183701164
+				tempExtUnexp = 281.50317866625323
+				staticPressureAtm = 0.97850092716814696
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28283,51 +28147,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -28347,9 +28166,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -28358,10 +28177,10 @@ GAME
 			{
 				name = TE2.19.SH.Engine
 				cid = 4293638868
-				uid = 1320727228
-				mid = 1135705732
-				persistentId = 1038467081
-				launchID = 102
+				uid = 2808118617
+				mid = 894240916
+				persistentId = 3098314713
+				launchID = 104
 				parent = 19
 				position = 0,-96.359703063964844,0
 				rotation = 0,0,0,1
@@ -28380,10 +28199,10 @@ GAME
 				attN = node_top, 19
 				mass = 63.0999985
 				shielded = False
-				temp = 265.56208356685181
-				tempExt = 265.88872645108307
-				tempExtUnexp = 265.88819932338299
-				staticPressureAtm = 0.97919704118187911
+				temp = 281.54620245464861
+				tempExt = 281.84727535244377
+				tempExtUnexp = 281.84725058032404
+				staticPressureAtm = 0.9792151122866164
 				expt = 0.850000024
 				state = 0
 				PreFailState = 0
@@ -28716,67 +28535,6 @@ GAME
 				}
 				MODULE
 				{
-					name = EngineGroupModule
-					isEnabled = True
-					EngineGroupId = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -28972,9 +28730,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 2.1000003814697266
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -28983,10 +28741,10 @@ GAME
 			{
 				name = FASAApolloDecSV5m
 				cid = 4288886616
-				uid = 3357622962
-				mid = 1135705732
-				persistentId = 1506778003
-				launchID = 102
+				uid = 4061847516
+				mid = 894240916
+				persistentId = 2894105973
+				launchID = 104
 				parent = 27
 				position = 0,-103.28170013427734,0
 				rotation = 0,0,0,1
@@ -29005,10 +28763,10 @@ GAME
 				attN = bottom, 29
 				mass = 0.432599992
 				shielded = False
-				temp = 265.29165169795408
-				tempExt = 265.47948201417711
-				tempExtUnexp = 265.47946482329553
-				staticPressureAtm = 0.98000022649117935
+				temp = 281.54766780717665
+				tempExt = 281.62150659996064
+				tempExtUnexp = 281.62145078227758
+				staticPressureAtm = 0.9800183728921863
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -29107,51 +28865,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -29217,9 +28930,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -29228,10 +28941,10 @@ GAME
 			{
 				name = SLE.SS.OLP
 				cid = 4293170414
-				uid = 2856359932
-				mid = 1135705732
-				persistentId = 2144553914
-				launchID = 102
+				uid = 1413499613
+				mid = 894240916
+				persistentId = 2035316492
+				launchID = 104
 				parent = 28
 				position = 0,-111.05694580078125,0
 				rotation = 0,0.50000006,0,-0.866025388
@@ -29250,10 +28963,10 @@ GAME
 				attN = node_stack_top1, 30
 				mass = 2000
 				shielded = False
-				temp = 264.9648637862436
-				tempExt = 265.47269318349339
-				tempExtUnexp = 265.47206898380961
-				staticPressureAtm = 0.9809031040616133
+				temp = 281.54129232614412
+				tempExt = 281.85992243898767
+				tempExtUnexp = 281.8598728847067
+				staticPressureAtm = 0.98092125046262024
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -29470,21 +29183,6 @@ GAME
 				}
 				MODULE
 				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -29519,9 +29217,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -29530,10 +29228,10 @@ GAME
 			{
 				name = AM.MLP.ShuttleLauncherFSSBase
 				cid = 4289408954
-				uid = 2949344295
-				mid = 1135705732
-				persistentId = 61417589
-				launchID = 102
+				uid = 3732087312
+				mid = 894240916
+				persistentId = 329504123
+				launchID = 104
 				parent = 29
 				position = -19.258060455322266,-118.79046630859375,-0.20000073313713074
 				rotation = 0,-0.376823306,0,0.926285207
@@ -29553,10 +29251,10 @@ GAME
 				attN = connect01, -1
 				mass = 0.100000001
 				shielded = False
-				temp = 267.02340391335309
-				tempExt = 270.44550597569793
-				tempExtUnexp = 270.44012700471063
-				staticPressureAtm = 0.98180206622602084
+				temp = 281.55575119133522
+				tempExt = 281.64633221791519
+				tempExtUnexp = 281.64615018548056
+				staticPressureAtm = 0.98182021262702779
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -29697,7 +29395,7 @@ GAME
 				}
 				MODULE
 				{
-					name = ModuleAnimateGenericExtra
+					name = ModuleAnimateGeneric
 					isEnabled = True
 					aniState = LOCKED
 					animSwitch = True
@@ -29754,7 +29452,7 @@ GAME
 				}
 				MODULE
 				{
-					name = ModuleAnimateGenericExtra
+					name = ModuleAnimateGeneric
 					isEnabled = True
 					aniState = LOCKED
 					animSwitch = True
@@ -29848,51 +29546,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -29927,9 +29580,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -29938,13 +29591,13 @@ GAME
 			{
 				name = AM.MLP.ShuttleTowerMultiSection
 				cid = 4290155794
-				uid = 3243882125
-				mid = 1135705732
-				persistentId = 2259469817
-				launchID = 102
+				uid = 1735980692
+				mid = 894240916
+				persistentId = 866176818
+				launchID = 104
 				parent = 30
 				position = -19.355411529541016,-112.17000579833984,-0.20000073313713074
-				rotation = -2.28717472E-08,-0.38268286,-4.22525659E-09,0.923879862
+				rotation = -2.28717489E-08,-0.38268286,-4.22525437E-09,0.923879862
 				mirror = 1,1,1
 				symMethod = Radial
 				istg = 3
@@ -29965,10 +29618,10 @@ GAME
 				attN = connect05, -1
 				mass = 1.20000005
 				shielded = False
-				temp = 283.24268437313532
-				tempExt = 283.24819303645631
-				tempExtUnexp = 283.24816129911926
-				staticPressureAtm = 0.98103261364556338
+				temp = 281.54457314071209
+				tempExt = 281.80294457499957
+				tempExtUnexp = 281.80236554592864
+				staticPressureAtm = 0.98105076004657044
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -30164,51 +29817,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -30243,9 +29851,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -30254,13 +29862,13 @@ GAME
 			{
 				name = AM.MLP.ShuttleTowerMultiSection
 				cid = 4290147200
-				uid = 3162814481
-				mid = 1135705732
-				persistentId = 2904242706
-				launchID = 102
+				uid = 991423550
+				mid = 894240916
+				persistentId = 418088219
+				launchID = 104
 				parent = 31
 				position = -19.355398178100586,-74.547676086425781,-0.19999310374259949
-				rotation = -2.28717294E-08,-0.382682949,-4.22525481E-09,0.923879802
+				rotation = -2.28717276E-08,-0.382682949,-4.22524993E-09,0.923879802
 				mirror = 1,1,1
 				symMethod = Radial
 				istg = 3
@@ -30281,10 +29889,10 @@ GAME
 				attN = connect05, -1
 				mass = 1.20000005
 				shielded = False
-				temp = 299.36376810350498
-				tempExt = 299.48892047504012
-				tempExtUnexp = 299.48053073344551
-				staticPressureAtm = 0.97666994777691674
+				temp = 281.55333934504847
+				tempExt = 282.28455838612444
+				tempExtUnexp = 282.28324308529278
+				staticPressureAtm = 0.97668801888165402
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -30480,51 +30088,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -30559,9 +30122,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -30570,13 +30133,13 @@ GAME
 			{
 				name = AM.MLP.ShuttleTowerMultiSection
 				cid = 4293144960
-				uid = 2485724582
-				mid = 1135705732
-				persistentId = 1410781898
-				launchID = 102
+				uid = 3531057374
+				mid = 894240916
+				persistentId = 485812883
+				launchID = 104
 				parent = 32
 				position = -19.355409622192383,-36.69317626953125,-0.19999310374259949
-				rotation = 2.28717347E-08,0.382683337,4.22529034E-09,-0.923879683
+				rotation = 2.28717365E-08,0.382683337,4.22528812E-09,-0.923879683
 				mirror = 1,1,1
 				symMethod = Radial
 				istg = 3
@@ -30597,10 +30160,10 @@ GAME
 				attN = connect05, -1
 				mass = 1.20000005
 				shielded = False
-				temp = 286.81189855601406
-				tempExt = 286.76753036257549
-				tempExtUnexp = 286.76748050751928
-				staticPressureAtm = 0.97229764398574359
+				temp = 281.58655698429772
+				tempExt = 283.92240670820502
+				tempExtUnexp = 283.9183043462761
+				staticPressureAtm = 0.97231556449794132
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -30796,51 +30359,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -30875,9 +30393,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -30886,13 +30404,13 @@ GAME
 			{
 				name = AM.MLP.ShuttleTowerCrewSection
 				cid = 4293144080
-				uid = 2582556816
-				mid = 1135705732
-				persistentId = 3728943650
-				launchID = 102
+				uid = 2327595579
+				mid = 894240916
+				persistentId = 2457538391
+				launchID = 104
 				parent = 33
-				position = -19.355484008789063,-13.293190002441406,-0.19999977946281433
-				rotation = -2.17693241E-08,0.382683337,3.41211432E-08,-0.923879683
+				position = -19.355495452880859,-13.293190002441406,-0.19999977946281433
+				rotation = -2.17693206E-08,0.382683337,3.41211432E-08,-0.923879683
 				mirror = 1,1,1
 				symMethod = Radial
 				istg = 3
@@ -30911,10 +30429,10 @@ GAME
 				attN = crewconnect03, -1
 				mass = 0.200000003
 				shielded = False
-				temp = 285.30704347542525
-				tempExt = 285.2994022505394
-				tempExtUnexp = 285.2993201323344
-				staticPressureAtm = 0.96960339286196173
+				temp = 281.59511786424173
+				tempExt = 282.16822462511033
+				tempExtUnexp = 282.16681537622509
+				staticPressureAtm = 0.96962138867042924
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -31144,51 +30662,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -31223,9 +30696,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -31234,13 +30707,13 @@ GAME
 			{
 				name = AM.MLP.ShuttleTowerTopSection
 				cid = 4293143068
-				uid = 2255072221
-				mid = 1135705732
-				persistentId = 1239281657
-				launchID = 102
+				uid = 578407021
+				mid = 894240916
+				persistentId = 3099713026
+				launchID = 104
 				parent = 34
-				position = -19.355480194091797,-9.3931961059570313,-0.19998356699943542
-				rotation = -2.17693241E-08,0.382683337,3.41211432E-08,-0.923879683
+				position = -19.355487823486328,-9.3931961059570313,-0.19998356699943542
+				rotation = -2.17693206E-08,0.382683337,3.41211432E-08,-0.923879683
 				mirror = 1,1,1
 				symMethod = Radial
 				istg = 3
@@ -31257,10 +30730,10 @@ GAME
 				attN = topconnect01, -1
 				mass = 0.100000001
 				shielded = False
-				temp = 284.76962870978218
-				tempExt = 284.76092424023
-				tempExtUnexp = 284.76083459685435
-				staticPressureAtm = 0.96915500357566919
+				temp = 281.57830672707007
+				tempExt = 281.76527296127563
+				tempExtUnexp = 281.7645857871226
+				staticPressureAtm = 0.96917292408786693
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -31456,51 +30929,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -31535,9 +30963,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -31546,13 +30974,13 @@ GAME
 			{
 				name = AM.MLP.SaturnHammerheadCrane
 				cid = 4293142820
-				uid = 1886486961
-				mid = 1135705732
-				persistentId = 2822577539
-				launchID = 102
+				uid = 742636446
+				mid = 894240916
+				persistentId = 1481037227
+				launchID = 104
 				parent = 33
 				position = -15.955403327941895,-5.69317626953125,5.4000072479248047
-				rotation = -2.68220901E-07,0.0212423392,0.999774575,6.33299351E-08
+				rotation = -2.68220901E-07,0.021242328,0.999774575,6.05359674E-08
 				mirror = 1,1,1
 				symMethod = Radial
 				istg = 3
@@ -31568,10 +30996,10 @@ GAME
 				attN = top, -1
 				mass = 0.100000001
 				shielded = False
-				temp = 286.66771490081669
-				tempExt = 286.40959856833837
-				tempExtUnexp = 286.40955138661752
-				staticPressureAtm = 0.9687297302441864
+				temp = 282.54456301856288
+				tempExt = 283.04979357153212
+				tempExtUnexp = 283.04682735406675
+				staticPressureAtm = 0.9687477260526538
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -31644,13 +31072,13 @@ GAME
 				}
 				MODULE
 				{
-					name = ModuleAnimateGenericExtra
+					name = ModuleAnimateGeneric
 					isEnabled = True
 					aniState = LOCKED
 					animSwitch = True
 					animTime = 0
-					animSpeed = -266.666656
-					deployPercent = 49
+					animSpeed = 1
+					deployPercent = 100
 					animationIsDisabled = False
 					stagingEnabled = True
 					EVENTS
@@ -31722,51 +31150,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -31801,9 +31184,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -31812,10 +31195,10 @@ GAME
 			{
 				name = AM.MLP.SaturnHammerheadCrane
 				cid = 4293142582
-				uid = 440052493
-				mid = 1135705732
-				persistentId = 3383321677
-				launchID = 102
+				uid = 3111667230
+				mid = 894240916
+				persistentId = 4282337647
+				launchID = 104
 				parent = 33
 				position = -15.755405426025391,-5.2931747436523438,-5.3999972343444824
 				rotation = 0.707103193,0.00216959929,0.706970751,0.0138882436
@@ -31834,10 +31217,10 @@ GAME
 				attN = top, -1
 				mass = 0.100000001
 				shielded = False
-				temp = 295.74481255798918
-				tempExt = 296.19240065586303
-				tempExtUnexp = 296.17017048309913
-				staticPressureAtm = 0.96868379951964589
+				temp = 287.22085697361575
+				tempExt = 289.65364039459388
+				tempExtUnexp = 289.64145895450292
+				staticPressureAtm = 0.96870172003184363
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -31910,13 +31293,13 @@ GAME
 				}
 				MODULE
 				{
-					name = ModuleAnimateGenericExtra
+					name = ModuleAnimateGeneric
 					isEnabled = True
-					aniState = CLAMPED
+					aniState = LOCKED
 					animSwitch = False
-					animTime = 0.5
-					animSpeed = 0
-					deployPercent = 50
+					animTime = 1
+					animSpeed = 133.333328
+					deployPercent = 100
 					animationIsDisabled = False
 					stagingEnabled = True
 					EVENTS
@@ -31988,51 +31371,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -32067,9 +31405,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -32078,10 +31416,10 @@ GAME
 			{
 				name = strutCube
 				cid = 4293142344
-				uid = 1410734033
-				mid = 1135705732
-				persistentId = 2970342466
-				launchID = 102
+				uid = 49107156
+				mid = 894240916
+				persistentId = 1928917256
+				launchID = 104
 				parent = 33
 				position = -19.296028137207031,1.0590667724609375,-0.37916180491447449
 				rotation = -0.382632464,0.0150765479,-0.923756599,-0.0062449621
@@ -32099,11 +31437,11 @@ GAME
 				attN = top, -1
 				attN = bottom, 39
 				mass = 0.00200000009
-				shielded = True
-				temp = 265.2924529447381
-				tempExt = 265.28416837531773
-				tempExtUnexp = 4
-				staticPressureAtm = 0.96795417866588018
+				shielded = False
+				temp = 281.56306381940908
+				tempExt = 282.53385575187775
+				tempExtUnexp = 282.5319328568803
+				staticPressureAtm = 0.96797209917807792
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -32198,51 +31536,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -32262,9 +31555,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -32273,12 +31566,12 @@ GAME
 			{
 				name = AM.MLP.ShuttleTowerMultiSection
 				cid = 4293618006
-				uid = 2208862402
-				mid = 1135705732
-				persistentId = 3552629832
-				launchID = 102
+				uid = 1584671008
+				mid = 894240916
+				persistentId = 3920556625
+				launchID = 104
 				parent = 38
-				position = -19.293140411376953,-9.4921646118164063,-0.37619206309318542
+				position = -19.29315185546875,-9.4921646118164063,-0.37619206309318542
 				rotation = 0.00077918265,0.382682502,-0.00188100839,-0.923877716
 				mirror = 1,1,1
 				symMethod = Radial
@@ -32300,10 +31593,10 @@ GAME
 				attN = connect05, -1
 				mass = 1.20000005
 				shielded = False
-				temp = 307.72473086869081
-				tempExt = 307.75038869915073
-				tempExtUnexp = 307.73608366505391
-				staticPressureAtm = 0.96916637331239974
+				temp = 281.54141753959732
+				tempExt = 281.57610051758081
+				tempExtUnexp = 281.5760195089162
+				staticPressureAtm = 0.96918429382459748
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -32499,51 +31792,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -32578,9 +31826,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -32589,10 +31837,10 @@ GAME
 			{
 				name = strutCube
 				cid = 4291017672
-				uid = 1917952487
-				mid = 1135705732
-				persistentId = 3425852273
-				launchID = 102
+				uid = 2074012042
+				mid = 894240916
+				persistentId = 3653569290
+				launchID = 104
 				parent = 31
 				position = -19.543476104736328,-105.65187072753906,-7.9359230995178223
 				rotation = -0.270597488,0.653281927,-0.653281569,-0.270597637
@@ -32610,11 +31858,11 @@ GAME
 				attN = top, -1
 				attN = bottom, 41
 				mass = 0.00200000009
-				shielded = True
-				temp = 265.05708794934935
-				tempExt = 265.05423359606243
-				tempExtUnexp = 4
-				staticPressureAtm = 0.98027558494961287
+				shielded = False
+				temp = 281.54330235318321
+				tempExt = 281.65548800427717
+				tempExtUnexp = 281.65520149192656
+				staticPressureAtm = 0.98029365605435015
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -32709,51 +31957,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -32773,9 +31976,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -32784,13 +31987,13 @@ GAME
 			{
 				name = RP0probeAvionics1-4m
 				cid = 4291011080
-				uid = 4159125890
-				mid = 1135705732
-				persistentId = 1432656768
-				launchID = 102
+				uid = 3118435901
+				mid = 894240916
+				persistentId = 634120172
+				launchID = 104
 				parent = 40
 				position = -19.275661468505859,-105.65187072753906,-7.6681017875671387
-				rotation = 0.653281569,0.270597398,-0.270597607,0.653281927
+				rotation = 0.65328145,0.270597368,-0.270597517,0.653282046
 				mirror = 1,1,1
 				symMethod = Radial
 				istg = 3
@@ -32806,10 +32009,10 @@ GAME
 				attN = bottom, 40
 				mass = 0.159999996
 				shielded = False
-				temp = 264.98004560968366
-				tempExt = 265.0891026064545
-				tempExtUnexp = 265.08909839721889
-				staticPressureAtm = 0.98027558494961287
+				temp = 281.54216128438827
+				tempExt = 281.55657578150362
+				tempExtUnexp = 281.55655486529633
+				staticPressureAtm = 0.98029365605435015
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -32915,51 +32118,6 @@ GAME
 							PrtEmergShutDnPriority = 2
 							ConsPartKey = 4291011080,ModuleCommand
 						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
 					}
 					UPGRADESAPPLIED
 					{
@@ -33215,21 +32373,6 @@ GAME
 							actionGroup = None
 							wasActiveBeforePartWasAdjusted = False
 						}
-						StartSuppressAutopilot
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						StopSuppressAutopilot
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						ToggleSuppressAutopilot
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
 					}
 					harddisk
 					{
@@ -33276,9 +32419,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -33287,13 +32430,13 @@ GAME
 			{
 				name = KAL9000
 				cid = 4291605280
-				uid = 2734577233
-				mid = 1135705732
-				persistentId = 3679303001
-				launchID = 102
+				uid = 4080706539
+				mid = 894240916
+				persistentId = 1296480123
+				launchID = 104
 				parent = 31
-				position = -19.727230072021484,-104.63552856445313,-8.7221956253051758
-				rotation = 2.28900543E-08,0.38268286,4.18109281E-09,-0.923879862
+				position = -19.727235794067383,-104.63552856445313,-8.7222003936767578
+				rotation = 2.28900596E-08,0.38268286,4.18109103E-09,-0.923879862
 				mirror = 1,1,1
 				symMethod = Radial
 				istg = 3
@@ -33307,10 +32450,10 @@ GAME
 				srfN = srfAttach, 31,Wall_L
 				mass = 0.000500000024
 				shielded = False
-				temp = 283.22815946353097
-				tempExt = 283.23018650179733
-				tempExtUnexp = 283.23015532565546
-				staticPressureAtm = 0.980157520398663
+				temp = 281.57123772313565
+				tempExt = 281.71828018291666
+				tempExtUnexp = 281.71776118010195
+				staticPressureAtm = 0.98017566679966994
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -33385,21 +32528,6 @@ GAME
 							actionGroup = None
 							wasActiveBeforePartWasAdjusted = False
 						}
-						StartSuppressAutopilot
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						StopSuppressAutopilot
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						ToggleSuppressAutopilot
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
 					}
 					harddisk
 					{
@@ -33412,7 +32540,7 @@ GAME
 							file
 							{
 								filename = boot-tower.ks
-								binary = H4sIAJRhFGEA,72SwU6DQBRF1,YrXly1i+GBMRVJjKkardYGLI3WGBcDMxQUeJOZQezfC7VRE9c6uzuL805uLiKwP3yDjn9ZlLLmlQwgIbLMUiu182oG,3B6FsYQp7pQ1kBGGmZxBJYgkdAYKYBqiBVP5YotQnbJy5RqA3MSMIyqhPQaFiHcS20KqkfwH77nJCQkGwhgJ8Agt1aZALHTbyrnVeqEl6aXVprWmldOShUWtZDvjsrVKXbfWVc4ese+P,aY2nKwh59Jy6EkLiDTVAWw9w1v29YRmlRC71ueyfFFeJSPhe+Oiw23Hk4mZ,yIr5Li8SJ7868YvzucbxbM8lNRnrg9,5ZbaSxcUFv3V4If8uvC5k2yRe+EfvXeE6JGKzLdULrQZ,cIb5oaD9wD78,bH8QP18vzKSxDcJ09xO8oZMab0kI0WU4DeOo29IxxXiiDn9Ma6KZW3ObD,X7faCxfy6+V74+cDyDZvPJjAwAA
+								binary = H4sIAIObFWEA,72SwU6DQBRF1,YrXly1i+GBMRVJjKkardYGLI3WGBcDMxQUeJOZQezfC7VRE9c6uzuL805uLiKwP3yDjn9ZlLLmlQwgIbLMUiu182oG,3B6FsYQp7pQ1kBGGmZxBJYgkdAYKYBqiBVP5YotQnbJy5RqA3MSMIyqhPQaFiHcS20KqkfwH77nJCQkGwhgJ8Agt1aZALHTbyrnVeqEl6aXVprWmldOShUWtZDvjsrVKXbfWVc4ese+P,aY2nKwh59Jy6EkLiDTVAWw9w1v29YRmlRC71ueyfFFeJSPhe+Oiw23Hk4mZ,yIr5Li8SJ7868YvzucbxbM8lNRnrg9,5ZbaSxcUFv3V4If8uvC5k2yRe+EfvXeE6JGKzLdULrQZ,cIb5oaD9wD78,bH8QP18vzKSxDcJ09xO8oZMab0kI0WU4DeOo29IxxXiiDn9Ma6KZW3ObD,X7faCxfy6+V74+cDyDZvPJjAwAA
 							}
 						}
 					}
@@ -33608,51 +32736,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -33672,9 +32755,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -33683,10 +32766,10 @@ GAME
 			{
 				name = launchClamp1
 				cid = 4290719110
-				uid = 4266206895
-				mid = 1135705732
-				persistentId = 4003316779
-				launchID = 102
+				uid = 2386677023
+				mid = 894240916
+				persistentId = 1837032167
+				launchID = 104
 				parent = 30
 				position = -28.554189682006836,-113.75587463378906,0.63292121887207031
 				rotation = -2.38152942E-10,0.926285207,5.85413773E-10,0.376823306
@@ -33706,10 +32789,10 @@ GAME
 				srfN = srfAttach, 30,Beam_3
 				mass = 0.100000001
 				shielded = False
-				temp = 271.54343700777713
-				tempExt = 271.59907757322202
-				tempExtUnexp = 271.59892331975522
-				staticPressureAtm = 0.98121693891388317
+				temp = 281.72385666414141
+				tempExt = 281.91401951901963
+				tempExtUnexp = 281.91373044479832
+				staticPressureAtm = 0.98123508531489012
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -33750,7 +32833,7 @@ GAME
 				{
 					name = LaunchClamp
 					isEnabled = True
-					scaleFactor = 2.47293663
+					scaleFactor = 2.47293568
 					height = 6.23970795
 					stagingEnabled = True
 					towerRot = 2.38152942E-10,-0.926285148,-5.85413773E-10,0.376823276
@@ -33897,21 +32980,6 @@ GAME
 				}
 				MODULE
 				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -33946,9 +33014,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -33957,10 +33025,10 @@ GAME
 			{
 				name = launchClamp1
 				cid = 4290718028
-				uid = 3267011301
-				mid = 1135705732
-				persistentId = 3515672015
-				launchID = 102
+				uid = 1876983963
+				mid = 894240916
+				persistentId = 3344108026
+				launchID = 104
 				parent = 30
 				position = -18.425144195556641,-113.75587463378906,9.0961275100708008
 				rotation = 2.45550302E-10,0.921436787,5.82349613E-10,-0.388528436
@@ -33980,10 +33048,10 @@ GAME
 				srfN = srfAttach, 30,Beam_3
 				mass = 0.100000001
 				shielded = False
-				temp = 271.51527278711546
-				tempExt = 271.57024548675753
-				tempExtUnexp = 271.57008972110373
-				staticPressureAtm = 0.9812168636176134
+				temp = 281.55600916131539
+				tempExt = 281.58013087715398
+				tempExtUnexp = 281.58001463604512
+				staticPressureAtm = 0.98123501001862046
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -34024,7 +33092,7 @@ GAME
 				{
 					name = LaunchClamp
 					isEnabled = True
-					scaleFactor = 2.47293615
+					scaleFactor = 2.47293496
 					height = 6.23970795
 					stagingEnabled = True
 					towerRot = -2.4555033E-10,-0.921436787,-5.82349613E-10,-0.388528466
@@ -34171,21 +33239,6 @@ GAME
 				}
 				MODULE
 				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -34220,9 +33273,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -34231,10 +33284,10 @@ GAME
 			{
 				name = launchClamp1
 				cid = 4290717902
-				uid = 1792135357
-				mid = 1135705732
-				persistentId = 4234634393
-				launchID = 102
+				uid = 3707393010
+				mid = 894240916
+				persistentId = 2949389267
+				launchID = 104
 				parent = 30
 				position = -9.9619302749633789,-113.75587463378906,-1.032923698425293
 				rotation = 5.85413718E-10,0.376823127,2.38152914E-10,-0.926285326
@@ -34254,10 +33307,10 @@ GAME
 				srfN = srfAttach, 30,Beam_3
 				mass = 0.100000001
 				shielded = False
-				temp = 271.5150852931032
-				tempExt = 271.57005331114988
-				tempExtUnexp = 271.56989755877407
-				staticPressureAtm = 0.98121678832134374
+				temp = 281.55600916131539
+				tempExt = 281.58013087715398
+				tempExtUnexp = 281.58001463604512
+				staticPressureAtm = 0.98123493472235068
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -34298,7 +33351,7 @@ GAME
 				{
 					name = LaunchClamp
 					isEnabled = True
-					scaleFactor = 2.47293663
+					scaleFactor = 2.47293544
 					height = 6.23970795
 					stagingEnabled = True
 					towerRot = -5.85413662E-10,-0.376823068,-2.38152914E-10,-0.926285207
@@ -34445,21 +33498,6 @@ GAME
 				}
 				MODULE
 				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -34494,9 +33532,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -34505,10 +33543,10 @@ GAME
 			{
 				name = launchClamp1
 				cid = 4290717776
-				uid = 3689470581
-				mid = 1135705732
-				persistentId = 3188977722
-				launchID = 102
+				uid = 4074982856
+				mid = 894240916
+				persistentId = 1755708474
+				launchID = 104
 				parent = 30
 				position = -20.090980529785156,-113.75587463378906,-9.4961280822753906
 				rotation = 5.82349613E-10,-0.388528436,-2.45550302E-10,-0.921436787
@@ -34528,10 +33566,10 @@ GAME
 				srfN = srfAttach, 30,Beam_3
 				mass = 0.100000001
 				shielded = False
-				temp = 271.53751637363558
-				tempExt = 271.59302854173387
-				tempExtUnexp = 271.59287271101766
-				staticPressureAtm = 0.9812168636176134
+				temp = 281.60172535021849
+				tempExt = 281.66670115952314
+				tempExtUnexp = 281.66653189142619
+				staticPressureAtm = 0.98123501001862046
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -34572,7 +33610,7 @@ GAME
 				{
 					name = LaunchClamp
 					isEnabled = True
-					scaleFactor = 2.47293639
+					scaleFactor = 2.47293591
 					height = 6.23970795
 					stagingEnabled = True
 					towerRot = -5.82349613E-10,0.388528466,2.4555033E-10,-0.921436787
@@ -34719,21 +33757,6 @@ GAME
 				}
 				MODULE
 				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -34768,9 +33791,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -34779,10 +33802,10 @@ GAME
 			{
 				name = launchClamp1
 				cid = 4288267774
-				uid = 3613958057
-				mid = 1135705732
-				persistentId = 43158870
-				launchID = 102
+				uid = 771712279
+				mid = 894240916
+				persistentId = 1302756429
+				launchID = 104
 				parent = 28
 				position = 4.0680480003356934,-104.61322784423828,4.0680475234985352
 				rotation = -2.05243431E-08,0.923879564,-4.95501666E-08,-0.382683337
@@ -34802,10 +33825,10 @@ GAME
 				srfN = srfAttach, 28,Dec_SV_5mCollision11
 				mass = 0.100000001
 				shielded = False
-				temp = 265.63426608485815
-				tempExt = 265.73567264051246
-				tempExtUnexp = 265.73563107586915
-				staticPressureAtm = 0.98015420736279446
+				temp = 281.56106739703523
+				tempExt = 281.58658711390785
+				tempExtUnexp = 281.58652368520785
+				staticPressureAtm = 0.98017227846753174
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -34846,7 +33869,7 @@ GAME
 				{
 					name = LaunchClamp
 					isEnabled = True
-					scaleFactor = 6.09637308
+					scaleFactor = 6.09637356
 					height = 15.3823471
 					stagingEnabled = True
 					towerRot = 2.05243431E-08,-0.923879564,4.95501666E-08,-0.382683337
@@ -34993,21 +34016,6 @@ GAME
 				}
 				MODULE
 				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -35042,9 +34050,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -35053,10 +34061,10 @@ GAME
 			{
 				name = launchClamp1
 				cid = 4288260798
-				uid = 1332857434
-				mid = 1135705732
-				persistentId = 3174637430
-				launchID = 102
+				uid = 1652465303
+				mid = 894240916
+				persistentId = 3558811914
+				launchID = 104
 				parent = 28
 				position = 4.0680475234985352,-104.61322784423828,-4.0680475234985352
 				rotation = -4.95501631E-08,0.382683545,-2.05243573E-08,-0.923879504
@@ -35076,10 +34084,10 @@ GAME
 				srfN = srfAttach, 28,Dec_SV_5mCollision11
 				mass = 0.100000001
 				shielded = False
-				temp = 265.63426608485815
-				tempExt = 265.73567264051246
-				tempExtUnexp = 265.73563107586915
-				staticPressureAtm = 0.98015420736279446
+				temp = 281.56106739703523
+				tempExt = 281.58658711390785
+				tempExtUnexp = 281.58652368520785
+				staticPressureAtm = 0.98017227846753174
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -35120,7 +34128,7 @@ GAME
 				{
 					name = LaunchClamp
 					isEnabled = True
-					scaleFactor = 6.09636974
+					scaleFactor = 6.09637213
 					height = 15.3823471
 					stagingEnabled = True
 					towerRot = 4.95501631E-08,-0.382683545,2.05243573E-08,-0.923879504
@@ -35267,21 +34275,6 @@ GAME
 				}
 				MODULE
 				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -35316,9 +34309,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -35327,10 +34320,10 @@ GAME
 			{
 				name = launchClamp1
 				cid = 4288260672
-				uid = 2879214181
-				mid = 1135705732
-				persistentId = 2317733154
-				launchID = 102
+				uid = 3436027380
+				mid = 894240916
+				persistentId = 3563911409
+				launchID = 104
 				parent = 28
 				position = -4.0680484771728516,-104.61322784423828,-4.068047046661377
 				rotation = -4.95501666E-08,-0.382683367,2.05243449E-08,-0.923879564
@@ -35350,10 +34343,10 @@ GAME
 				srfN = srfAttach, 28,Dec_SV_5mCollision11
 				mass = 0.100000001
 				shielded = False
-				temp = 265.63426608485815
-				tempExt = 265.73567264051246
-				tempExtUnexp = 265.73563107586915
-				staticPressureAtm = 0.98015428265906424
+				temp = 281.56106739703523
+				tempExt = 281.58658711390785
+				tempExtUnexp = 281.58652368520785
+				staticPressureAtm = 0.98017235376380141
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -35394,7 +34387,7 @@ GAME
 				{
 					name = LaunchClamp
 					isEnabled = True
-					scaleFactor = 6.09637213
+					scaleFactor = 6.09637499
 					height = 15.3823471
 					stagingEnabled = True
 					towerRot = 4.95501666E-08,0.382683367,-2.05243449E-08,-0.923879564
@@ -35541,21 +34534,6 @@ GAME
 				}
 				MODULE
 				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -35590,9 +34568,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -35601,10 +34579,10 @@ GAME
 			{
 				name = launchClamp1
 				cid = 4288260546
-				uid = 1703821833
-				mid = 1135705732
-				persistentId = 1873687853
-				launchID = 102
+				uid = 3419487139
+				mid = 894240916
+				persistentId = 2826490340
+				launchID = 104
 				parent = 28
 				position = -4.068047046661377,-104.61322784423828,4.0680480003356934
 				rotation = -2.05243573E-08,-0.923879504,4.95501631E-08,-0.382683545
@@ -35624,10 +34602,10 @@ GAME
 				srfN = srfAttach, 28,Dec_SV_5mCollision11
 				mass = 0.100000001
 				shielded = False
-				temp = 265.63426608485815
-				tempExt = 265.73567264051246
-				tempExtUnexp = 265.73563107586915
-				staticPressureAtm = 0.98015428265906424
+				temp = 281.56106739703523
+				tempExt = 281.58658711390785
+				tempExtUnexp = 281.58652368520785
+				staticPressureAtm = 0.98017235376380141
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -35668,7 +34646,7 @@ GAME
 				{
 					name = LaunchClamp
 					isEnabled = True
-					scaleFactor = 6.09637117
+					scaleFactor = 6.09637308
 					height = 15.3823471
 					stagingEnabled = True
 					towerRot = 2.05243573E-08,0.923879504,-4.95501631E-08,-0.382683545
@@ -35815,21 +34793,6 @@ GAME
 				}
 				MODULE
 				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -35864,9 +34827,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -35875,10 +34838,10 @@ GAME
 			{
 				name = TE2.19.SH.GRIDFIN
 				cid = 4293380326
-				uid = 1606167125
-				mid = 1135705732
-				persistentId = 4064273210
-				launchID = 102
+				uid = 240552334
+				mid = 894240916
+				persistentId = 4216610443
+				launchID = 104
 				parent = 19
 				position = 2.4341959953308105,-37.764801025390625,-1.2530908584594727
 				rotation = -0.98078531,0,0.195090383,0
@@ -35896,10 +34859,10 @@ GAME
 				srfN = srfAttach, 19,SH_Tank_Collider
 				mass = 0.699999988
 				shielded = False
-				temp = 265.17621281793078
-				tempExt = 265.32887800763365
-				tempExtUnexp = 265.32886239921902
-				staticPressureAtm = 0.97242097927557514
+				temp = 281.54071309324235
+				tempExt = 281.54090495987737
+				tempExtUnexp = 281.54090443226067
+				staticPressureAtm = 0.97243897508404264
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -36139,51 +35102,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -36203,9 +35121,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -36214,10 +35132,10 @@ GAME
 			{
 				name = TE2.19.SH.GRIDFIN
 				cid = 4293380206
-				uid = 3420914427
-				mid = 1135705732
-				persistentId = 4014636691
-				launchID = 102
+				uid = 3765466274
+				mid = 894240916
+				persistentId = 3740230867
+				launchID = 104
 				parent = 19
 				position = -2.4341959953308105,-37.764801025390625,1.2530910968780518
 				rotation = 0.195090428,0,0.98078531,0
@@ -36235,10 +35153,10 @@ GAME
 				srfN = srfAttach, 19,SH_Tank_Collider
 				mass = 0.699999988
 				shielded = False
-				temp = 265.16674774451491
-				tempExt = 265.31976716343956
-				tempExtUnexp = 265.31975209361775
-				staticPressureAtm = 0.97242097927557514
+				temp = 281.54071309324235
+				tempExt = 281.54090495987737
+				tempExtUnexp = 281.54090443226067
+				staticPressureAtm = 0.97243897508404264
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -36478,51 +35396,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -36542,9 +35415,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -36553,10 +35426,10 @@ GAME
 			{
 				name = TE2.19.SH.GRIDFIN
 				cid = 4293619500
-				uid = 708999012
-				mid = 1135705732
-				persistentId = 3540328528
-				launchID = 102
+				uid = 1102045067
+				mid = 894240916
+				persistentId = 349480375
+				launchID = 104
 				parent = 19
 				position = 2.4272503852844238,-37.788230895996094,1.2698585987091064
 				rotation = -0.98078531,0,-0.195090428,0
@@ -36574,10 +35447,10 @@ GAME
 				srfN = srfAttach, 19,SH_Tank_Collider
 				mass = 0.699999988
 				shielded = False
-				temp = 265.16674739972893
-				tempExt = 265.31976683154102
-				tempExtUnexp = 265.31975176173881
-				staticPressureAtm = 0.9724236899412857
+				temp = 281.54071309324235
+				tempExt = 281.54090495987737
+				tempExtUnexp = 281.54090443226067
+				staticPressureAtm = 0.9724416857497532
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -36817,51 +35690,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -36881,9 +35709,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -36892,10 +35720,10 @@ GAME
 			{
 				name = TE2.19.SH.GRIDFIN
 				cid = 4293379874
-				uid = 1259715436
-				mid = 1135705732
-				persistentId = 1742919400
-				launchID = 102
+				uid = 1773653432
+				mid = 894240916
+				persistentId = 640884117
+				launchID = 104
 				parent = 19
 				position = -2.4272503852844238,-37.788230895996094,-1.2698583602905273
 				rotation = -0.195090383,0,0.98078531,0
@@ -36913,10 +35741,10 @@ GAME
 				srfN = srfAttach, 19,SH_Tank_Collider
 				mass = 0.699999988
 				shielded = False
-				temp = 265.17911270742036
-				tempExt = 265.33166921287892
-				tempExtUnexp = 265.33165343950844
-				staticPressureAtm = 0.9724236899412857
+				temp = 281.54071309324235
+				tempExt = 281.54090495987737
+				tempExtUnexp = 281.54090443226067
+				staticPressureAtm = 0.9724416857497532
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -37156,51 +35984,6 @@ GAME
 				}
 				MODULE
 				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
 					name = KOSNameTag
 					isEnabled = True
 					nameTag = 
@@ -37220,9 +36003,9 @@ GAME
 					name = RefundingForKSP111x
 					amount = 0
 					maxAmount = 9.9999999999999995E-08
-					flowState = True
+					flowState = False
 					isTweakable = False
-					hideFlow = True
+					hideFlow = False
 					isVisible = False
 					flowMode = None
 				}
@@ -37284,33 +36067,20 @@ GAME
 				ModuleStabilization
 				{
 				}
-				SolverFlightSys
-				{
-				}
 				VesselDataManager
 				{
 				}
 				ModuleDynamicBatteryStorage
 				{
 				}
-				FlightGUI
-				{
-				}
-				FARVesselAero
-				{
-				}
 				kOSVesselModule
+				{
+				}
+				SolverFlightSys
 				{
 				}
 				UllageModule
 				{
-				}
-				VesselModuleRotationRO
-				{
-					angularVelocity = (0, 0, 0)
-					autopilotTargetHold = False
-					autopilotMode = 0
-					autopilotContext = 0
 				}
 			}
 		}
@@ -37357,7 +36127,7 @@ GAME
 		FShangarExtender v1.0.0.0 = False
 		HLAirships v5.3.0.0 = False
 		InterstellarFuelSwitch v3.8.5.4 = False
-		Scale_Redist v1.0.0.0 = True
+		Scale_Redist v1.0.0.0 = False
 		Jettison v1.3.0.0 = False
 		RasterPropMonitor v0.30.6.14937 = False
 		KerbalEngineer v1.1.6.0 = False
@@ -37419,7 +36189,7 @@ GAME
 		B9_Aerospace_ProceduralWings = False
 		BetterScienceLabsContinued = False
 		BoulderCo = False
-		CommunityCategoryKit = True
+		CommunityCategoryKit = False
 		CommunityResourcePack = True
 		CommunityTechTree = True
 		ContractPacks = False
@@ -37755,7 +36525,7 @@ GAME
 		ContractConfigurator v1.0.0.0 / v1.28.0 = False
 		DMagic v1.4.3.0 / vv1.4.3.0 = False
 		ExperimentTracker v1.3.5.0 / v1.0.0.0 = False
-		FShangarExtender v3.6.0.0 / v3.5.0.0 = False
+		FShangarExtender v3.6.0.0 / v3.5.0.0 = True
 		GC.UI v1.0.0.0 = False
 		GroundConstruction v2.5.0.1 = False
 		Hangar v3.4.0.0 = False
@@ -37808,7 +36578,7 @@ GAME
 		TacAtomicClock v1.6.0.0 / v1.0.0.0 = False
 		VaporVent v1.1.10.0 / v1.0.0.0 = False
 		Interstellar v1.25.3.5 = False
-		ZeroMiniAVC v1.1.0.1 = False
+		ZeroMiniAVC v1.1.0.1 = True
 		FlagRotate = False
 		Jenyaza = False
 		LaunchNumbering = False
@@ -37903,7 +36673,7 @@ GAME
 		B9PartSwitch v2.16.0.0 / vv2.16.0 = False
 		B9_Aerospace_WingStuff v0.93.0.0 / v0.93 = False
 		CivilianPopulation v3.0.0.8 / v1.0.0.0 = False
-		CCK v5.1.0.0 / v5.1.0.0 for KSP v1 = True
+		CCK v5.1.0.0 / v5.1.0.0 for KSP v1 = False
 		DMModuleScienceAnimateGeneric v0.23.0.0 = True
 		GroundConstruction v2.6.2.0 = False
 		Hangar v3.5.0.3 = False
@@ -37911,8 +36681,8 @@ GAME
 		KAS v1.6.7421.34540 / v1.6 for KSP v1 = False
 		KSPDev_Utils.2.2 v2.2.7417.673 / v2.2 for KSP v1 = False
 		KIS v1.25.7420.31998 / v1.25 for KSP v1 = False
-		kOS v1.2.1.0 = False
-		kOS.Safe v1.2.1.0 = False
+		kOS v1.2.1.0 = True
+		kOS.Safe v1.2.1.0 = True
 		KSCSwitcher v1.8.0.0 = False
 		PartInfo v0.0.2.1 / v1.0.0.0 = False
 		PersistentThrust v1.4.0.0 = False
@@ -37980,11 +36750,11 @@ GAME
 		ClickThroughBlocker v0.1.10.6 / v1.0.0.0 = False
 		MiniAVC v1.4.0.1 = False
 		WaypointManager v2.8.2.3 / v2.8.1 = False
-		ModuleManager v4.1.4.0 = False
+		ModuleManager v4.1.4.0 = True
 		ClickThroughBlocker v0.1.10.11 / v1.0.0.0 = False
 		AJE v2.15.0.0 = False
-		EngineGroupController v1.0.0.0 = True
-		UnityGUIFramework v1.0.0.0 = True
+		EngineGroupController v1.0.0.0 = False
+		UnityGUIFramework v1.0.0.0 = False
 		Atmosphere v1.10.1.2 = False
 		CelestialShadows v0.0.0.0 = False
 		CityLights v1.10.1.2 = False
@@ -37998,7 +36768,7 @@ GAME
 		_BuildManager v1.10.1.2 = False
 		FerramAerospaceResearch.Base v0.16.0.0 = False
 		FerramAerospaceResearch v0.16.0.0 = False
-		ferramGraph v1.3.0.0 = True
+		ferramGraph v1.3.0.0 = False
 		KerbalJointReinforcement v3.5.1.0 = False
 		KSP-AVC v1.4.1.5 = False
 		PartInfo v0.0.3.7 / v1.0.0.0 = False
@@ -38007,15 +36777,15 @@ GAME
 		RealismOverhaul v0.12.8.1 = False
 		RealSolarSystem v0.18.1.3 = False
 		ShipEffectsContinued v1.0.11.0 / v1.0.8.4 = True
-		AJE = True
-		EngineGroupController = True
-		FerramAerospaceResearch = True
+		AJE = False
+		EngineGroupController = False
+		FerramAerospaceResearch = False
 		RealChute = False
 		RealHeat = True
 		RealismOverhaul = True
 		ShipEffectsContinued = True
 		TantaresSP = True
-		ModuleManager.4.1.4.dll = False
+		ModuleManager.4.1.4.dll = True
 		Custom_FARAeroData.cfg = False
 		AnimatedDecouplers v1.4.2.19194 = True
 		KerbalEngineer v1.1.7.2 = False
@@ -38097,13 +36867,13 @@ GAME
 		001_AnisotropicPartResizer v1.4.1.0 = True
 		ConfigurableContainers v2.6.1.0 = True
 		ClickThroughBlocker v0.1.10.15 / v1.0.0.0 = False
-		Attached v0.2.0.0 = False
-		ChillingOut v0.2.0.0 = False
-		Driftless v0.2.0.0 = False
-		KSP-Recall v0.2.0.0 = False
+		Attached v0.2.0.0 = True
+		ChillingOut v0.2.0.0 = True
+		Driftless v0.2.0.0 = True
+		KSP-Recall v0.2.0.0 = True
 		KSPe.Light.Recall v2.3.0.1 = True
-		Refunding v0.2.0.0 = False
-		Resourceful v0.2.0.0 = False
+		Refunding v0.2.0.0 = True
+		Resourceful v0.2.0.0 = True
 		B9PartSwitch v2.18.0.0 / vv2.18.0 = True
 		Atmosphere v1.11.2.1 = False
 		CelestialShadows v1.11.2.1 = False
@@ -38116,42 +36886,34 @@ GAME
 		TextureConfig v1.11.2.1 = False
 		Utils v1.11.2.1 = False
 		_BuildManager v1.11.2.1 = False
-		KerbalEngineer v1.1.8.3 = False
+		KerbalEngineer v1.1.8.3 = True
 		KerbalJointReinforcement v3.5.2.0 = True
-		KerbalKonstructs v2.0.0.0 / v1.8.1.15 = False
+		KerbalKonstructs v2.0.0.0 / v1.8.1.15 = True
 		ModularFlightIntegrator v1.0.0.0 / v1.2.10.0 = True
 		KSCSwitcher v2.0.0.0 = True
-		MechJeb2 v2.5.1.0 / v / v2.12.0.0 = False
+		MechJeb2 v2.5.1.0 / v / v2.12.0.0 = True
 		DockingPortAlignmentIndicator v6.9.2.2 = True
 		DPAI_RPM v1.0.0.2 = True
 		ModuleDockingNodeNamed v1.0.0.2 = True
 		SolverEngines v3.3.0.0 / v3.10.0.0 = True
-		RealFuels v12.9.1.0 / v12.9.1 = False
-		RealismOverhaul v0.12.8.1 / v0.13.0.1 = False
+		RealFuels v12.9.1.0 / v12.9.1 = True
+		RealismOverhaul v0.12.8.1 / v0.13.0.1 = True
 		RealSolarSystem v0.18.1.4 = True
 		AmpYear v1.5.9.0 = True
 		BackgroundResources v1.11.0.0 = True
 		ROLib v1.0.0.0 / v1.1.1.0 = True
 		scatterer v0.770.0.0 = False
 		ShowFPS v0.2.4.0 / v1.0.0.0 = True
-		TextureReplacer v4.4.0.2094 = False
-		Trajectories v2.4.0.0 = False
+		TextureReplacer v4.4.0.2094 = True
+		Trajectories v2.4.0.0 = True
 		Waterfall v0.0.0.0 = True
 		EVO = True
 		ShowFPS = True
 		Waterfall = True
-		HullCamera v0.2.1.1 = False
+		HullCamera v0.2.1.1 = True
 		ModularLaunchPads = True
 		StarshipLaunchExpansion = True
-		ModuleManager v4.2.1.0 = True
-		ClickThroughBlocker v0.1.10.17 = True
-		Attached v0.2.0.4 = True
-		ChillingOut v0.2.0.4 = True
-		Driftless v0.2.0.4 = True
-		KSP-Recall v0.2.0.4 = True
-		Refunding v0.2.0.4 = True
-		Resourceful v0.2.0.4 = True
-		AJE v2.18.0.0 = True
+		ClickThroughBlocker v0.1.10.16 / v1.0.0.0 = True
 		Atmosphere v1.11.3.1 = True
 		CelestialShadows v1.11.3.1 = True
 		CityLights v1.11.3.1 = True
@@ -38163,26 +36925,8 @@ GAME
 		TextureConfig v1.11.3.1 = True
 		Utils v1.11.3.1 = True
 		_BuildManager v1.11.3.1 = True
-		FerramAerospaceResearch.Base v0.16.0.3 = True
-		FerramAerospaceResearch v0.16.0.3 = True
-		HangerExtenderExtended v3.6.0.1 = True
-		HullcamVDSContinued v0.2.1.2 = True
-		KerbalEngineer v1.1.9.0 = True
-		KerbalKonstructs v2.0.0.0 / v1.8.2.1 = True
-		kOS v1.3.2.0 = True
-		kOS.Safe v1.3.2.0 = True
-		MechJeb2 v2.5.1.0 / v / v2.12.1.0 = True
-		RealFuels v13.3.0.0 / v13.3.0 = True
-		RealismOverhaul v0.12.8.1 / v14.4.0.0 = True
 		scatterer v0.772.0.0 = True
-		StagedAnimation v1.0.0.0 = True
-		TextureReplacer v4.5.1.34170 = True
-		Trajectories v2.4.1.0 = True
 		TundraExploration v1.0.0.0 = True
-		ZeroMiniAVC v1.1.0.2 = True
-		StagedAnimation = True
-		ModuleManager.4.2.1.dll = True
-		System.Buffers v4.0.3.0 / v4.6.28619.01 @BuiltBy: dlab14-DDVSOWINAGE069 @Branch: release/2.1 @SrcCode: https://github.com/dotnet/corefx/tree/7601f4f6225089ffb291dc7d58293c7bbf5c5d4f / v4.6.28619.01 = True
 	}
 	ROSTER
 	{

@@ -8,12 +8,12 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              Used to specify the SW version and the diferent types of profiles supported.
-// 11/Aug/2021
+// 12/Aug/2021
 // --------------------------------------------------------------------------------------------
-LOG   "START: sw-version.c" to log.txt.
+LOG   "START: sw-version.c" to LOG_FILE.
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //                          #.YY.MM.DD
-set version_str to "SW-Ver: 1.21.08.11".
+set version_str to "SW-Ver: 1.21.08.12".
 PRINT version_str at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
@@ -129,14 +129,16 @@ if SHIP_NAME = "Starship SN16" or SHIP_NAME = "Starship-SN16"
 	declare global vehicle_sub_type to "SN16-Profile1".
 	set splash_landing to true.
 	set Release_Tower_Clamp to false.
+	LOG "Normal" to normal.txt.	//avoid normal correction
 }
 else
-if SHIP_NAME = "Starship SN20" or SHIP_NAME = "Starship-SN20" or SHIP_NAME = "Starship-sn20-catch"
+if SHIP_NAME = "Starship SN20" or SHIP_NAME = "Starship-SN20" or SHIP_NAME = "sn20-catch"
 {
 	declare global vehicle_type to "StarShip".
 	declare global vehicle_sub_type to "SN20-Profile".		// BASE: starship-SN20 prototype (orbital flight): SPLASH LANDING (23.12854, -159.982839)
 	set splash_landing to true.
 	set Release_Tower_Clamp to false.
+	LOG "Normal" to normal.txt.	//avoid normal correction
 }
 else
 if SHIP_NAME = "Starship SN9"
@@ -216,18 +218,18 @@ if CORE:BOOTFILENAME:FIND("boot-tower.ks") > -1      // STAGE-1 (General ST-1)
 if CORE:BOOTFILENAME:FIND("boot.ks") > -1               // STAGE-2 (General ST-2)
 {
     set STAGE_1_TYPE to "MAIN".
-    LOG version_str to LOG.txt.
+    LOG version_str to LOG_FILE.
 }
 
 if STAGE_1_TYPE <> ""
 {
 	PRINT "INIT CODE FOR: "+STAGE_1_TYPE.
-	LOG  "["+STAGE_1_TYPE+"] SHIP_NAME: "+MAIN_SHIP_NAME to LOG.txt.
+	LOG  "["+STAGE_1_TYPE+"] SHIP_NAME: "+MAIN_SHIP_NAME to LOG_FILE.
 }
 else
 {
 	PRINT "INIT CODE FOR: UNKNOWN".
-	LOG  "[UNKNOWN] SHIP_NAME: "+MAIN_SHIP_NAME to LOG.txt.
+	LOG  "[UNKNOWN] SHIP_NAME: "+MAIN_SHIP_NAME to LOG_FILE.
 }
 
 //DEBUG:
@@ -404,16 +406,16 @@ if vehicle_sub_type = "SN16-Profile1"
 //DEBUG:
 PRINT SHIP_NAME at (25,4).
 PRINT CORE:BOOTFILENAME at (25,5).
-LOG "MODEL: "+SHIP_NAME to log.txt.
-LOG "BOOT: " + CORE:BOOTFILENAME to log.txt.
+LOG "MODEL: "+SHIP_NAME to LOG_FILE.
+LOG "BOOT: " + CORE:BOOTFILENAME to LOG_FILE.
 
-print "V.type: "+vehicle_type.	LOG "vehicle_type: "+vehicle_type to log.txt.
-print "V.sub_type: "+vehicle_sub_type at (25,6).	LOG "vehicle_sub_type: "+vehicle_sub_type to log.txt.
-print "LEOrbit: "+LEOrbit/1000+" km". 	 			LOG "LEOrbit: "+LEOrbit to log.txt.
-print "MECO1: "+sqrt(MECO1)+" m/s" at (25,7). 		LOG "MECO1: "+sqrt(MECO1) to log.txt.
+print "V.type: "+vehicle_type.	LOG "vehicle_type: "+vehicle_type to LOG_FILE.
+print "V.sub_type: "+vehicle_sub_type at (25,6).	LOG "vehicle_sub_type: "+vehicle_sub_type to LOG_FILE.
+print "LEOrbit: "+LEOrbit/1000+" km". 	 			LOG "LEOrbit: "+LEOrbit to LOG_FILE.
+print "MECO1: "+sqrt(MECO1)+" m/s" at (25,7). 		LOG "MECO1: "+sqrt(MECO1) to LOG_FILE.
 print "".
 
 // LOAD TOOLS: -------------------------------------------------------
 runpath("boot/useful-tools.c").
-LOG   "END: sw-version.c" to log.txt.
-LOG   "-----------------" to log.txt.
+LOG   "END: sw-version.c" to LOG_FILE.
+LOG   "-----------------" to LOG_FILE.

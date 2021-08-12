@@ -1,8 +1,8 @@
-ship = Starship-sn20-catch
+ship = sn20-catch
 version = 1.11.2
 description = 
 type = VAB
-size = 41.8310471,147.48053,20.4051628
+size = 41.8310547,147.48053,20.4051666
 steamPublishedFileId = 0
 persistentId = 2127333473
 rot = 0,0,0,0
@@ -16,7 +16,7 @@ PART
 {
 	part = SLE.SS.OLP_4293170414
 	partName = Part
-	persistentId = 2144553914
+	persistentId = 2035316492
 	pos = 0.272115052,8.21859741,-0.361924559
 	attPos = 0,1.0227294,0
 	attPos0 = 0.272116303,7.19584131,-0.361928225
@@ -245,21 +245,6 @@ PART
 	}
 	MODULE
 	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -279,7 +264,7 @@ PART
 {
 	part = AM.MLP.ShuttleLauncherFSSBase_4289408954
 	partName = Part
-	persistentId = 61417589
+	persistentId = 329504123
 	pos = -18.9859447,0.485076904,-0.561925292
 	attPos = -9.80223083,-1.4496479,5.56523323
 	attPos0 = -4.76837158E-07,-6.2838707,11.0127354
@@ -437,7 +422,7 @@ PART
 	}
 	MODULE
 	{
-		name = ModuleAnimateGenericExtra
+		name = ModuleAnimateGeneric
 		isEnabled = True
 		aniState = LOCKED
 		animSwitch = True
@@ -494,7 +479,7 @@ PART
 	}
 	MODULE
 	{
-		name = ModuleAnimateGenericExtra
+		name = ModuleAnimateGeneric
 		isEnabled = True
 		aniState = LOCKED
 		animSwitch = True
@@ -588,51 +573,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -667,11 +607,11 @@ PART
 {
 	part = AM.MLP.ShuttleTowerMultiSection_4290155794
 	partName = Part
-	persistentId = 2259469817
+	persistentId = 866176818
 	pos = -19.0832958,7.10553741,-0.561925292
 	attPos = -0.0697039589,2.62046051,0.0679591522
 	attPos0 = -2.58479673E-07,4,9.17977786E-07
-	rot = -2.28717489E-08,-0.38268289,-4.22525748E-09,0.923879921
+	rot = -2.28717489E-08,-0.38268289,-4.22525304E-09,0.923879921
 	attRot = 2.28717241E-08,0.382683307,4.22530189E-09,-0.923879683
 	attRot0 = -2.27779289E-08,-0.00633434858,4.70476769E-09,0.999979973
 	mir = 1,1,1
@@ -692,7 +632,7 @@ PART
 	link = AM.MLP.ShuttleTowerMultiSection_4290147200
 	link = strutCube_4291017672
 	link = KAL9000_4291605280
-	attN = top01,AM.MLP.ShuttleTowerMultiSection_4290147200_0|3.9000001|0_0|1|0_0|37.6740036|0_0|1|0
+	attN = top01,AM.MLP.ShuttleTowerMultiSection_4290147200_0|3.9000001|0_0|1|0_0|60.6551437|0_0|1|0
 	attN = bottom,AM.MLP.ShuttleLauncherFSSBase_4289408954_0|0|0_0|-1|0_0|0|0_0|-1|0
 	attN = connect01,Null_0_3.91000009|3.9000001|3.33999991_1|0|0_3.91000009|3.9000001|3.33999991_1|0|0
 	attN = connect02,Null_0_3.91000009|7.80000019|3.33999991_1|0|0_3.91000009|7.80000019|3.33999991_1|0|0
@@ -882,51 +822,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -961,11 +856,11 @@ PART
 {
 	part = AM.MLP.ShuttleTowerMultiSection_4290147200
 	partName = Part
-	persistentId = 2904242706
+	persistentId = 418088219
 	pos = -19.0832825,44.7278671,-0.561917663
 	attPos = 1.84044256E-05,14.2223339,-5.80996584E-06
 	attPos0 = -3.16453088E-06,23.3999958,3.60011836E-06
-	rot = -2.28717312E-08,-0.382682979,-4.2252557E-09,0.923879862
+	rot = -2.28717276E-08,-0.382682979,-4.22524682E-09,0.923879862
 	attRot = 2.28717205E-08,0.382683277,4.22530233E-09,-0.923879564
 	attRot0 = 0,0,6.21724894E-15,1
 	mir = 1,1,1
@@ -984,7 +879,7 @@ PART
 	modMass = 1
 	modSize = 0,0,0
 	link = AM.MLP.ShuttleTowerMultiSection_4293144960
-	attN = top01,AM.MLP.ShuttleTowerMultiSection_4293144960_0|3.9000001|0_0|1|0_0|37.6740036|0_0|1|0
+	attN = top01,AM.MLP.ShuttleTowerMultiSection_4293144960_0|3.9000001|0_0|1|0_0|60.6551437|0_0|1|0
 	attN = bottom,AM.MLP.ShuttleTowerMultiSection_4290155794_0|0|0_0|-1|0_0|0|0_0|-1|0
 	attN = connect01,Null_0_3.91000009|3.9000001|3.33999991_1|0|0_3.91000009|3.9000001|3.33999991_1|0|0
 	attN = connect02,Null_0_3.91000009|7.80000019|3.33999991_1|0|0_3.91000009|7.80000019|3.33999991_1|0|0
@@ -1174,51 +1069,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -1253,7 +1103,7 @@ PART
 {
 	part = strutCube_4291017672
 	partName = Part
-	persistentId = 3425852273
+	persistentId = 3653569290
 	pos = -19.2713604,13.6236725,-8.29784775
 	attPos = 0.804656506,0,0.437444687
 	attPos0 = -6.40773773,6.51813316,-5.77457333
@@ -1361,51 +1211,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -1425,11 +1230,11 @@ PART
 {
 	part = RP0probeAvionics1-4m_4291011080
 	partName = Part
-	persistentId = 1432656768
+	persistentId = 634120172
 	pos = -19.0035458,13.6236725,-8.03002644
 	attPos = 0,0,0
 	attPos0 = -5.66243955E-07,-0.378733128,5.68433951E-14
-	rot = 0.653281629,0.270597458,-0.270597577,0.653281927
+	rot = 0.653281569,0.270597398,-0.270597488,0.653282046
 	attRot = 0.707106769,0,0,0.707106769
 	attRot0 = -5.96046306E-08,-1.49011584E-07,1,-2.98023153E-08
 	mir = 1,1,1
@@ -1542,51 +1347,6 @@ PART
 				PrtEmergShutDnPriority = 2
 				ConsPartKey = 4291011080,ModuleCommand
 			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
 		}
 		UPGRADESAPPLIED
 		{
@@ -2410,21 +2170,6 @@ PART
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
-			StartSuppressAutopilot
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			StopSuppressAutopilot
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleSuppressAutopilot
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -2465,7 +2210,7 @@ PART
 {
 	part = launchClamp1_4290719110
 	partName = Part
-	persistentId = 4003316779
+	persistentId = 1837032167
 	pos = -28.282074,5.51966858,0.27099666
 	attPos = 0,0,0
 	attPos0 = -6.07465267,5.03458977,7.08592844
@@ -2666,21 +2411,6 @@ PART
 	}
 	MODULE
 	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -2700,7 +2430,7 @@ PART
 {
 	part = launchClamp1_4290718028
 	partName = Part
-	persistentId = 3515672015
+	persistentId = 3344108026
 	pos = -18.1530285,5.51966858,8.73420334
 	attPos = 0,0,0
 	attPos0 = 7.08592463,5.03458977,6.07465363
@@ -2901,21 +2631,6 @@ PART
 	}
 	MODULE
 	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -2935,7 +2650,7 @@ PART
 {
 	part = launchClamp1_4290717902
 	partName = Part
-	persistentId = 4234634393
+	persistentId = 2949389267
 	pos = -9.68981552,5.51966858,-1.39484775
 	attPos = 0,0,0
 	attPos0 = 6.07464981,5.03458977,-7.08592749
@@ -3136,21 +2851,6 @@ PART
 	}
 	MODULE
 	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -3170,7 +2870,7 @@ PART
 {
 	part = launchClamp1_4290717776
 	partName = Part
-	persistentId = 3188977722
+	persistentId = 1755708474
 	pos = -19.8188648,5.51966858,-9.85805225
 	attPos = 0,0,0
 	attPos0 = -7.08592844,5.03458977,-6.07465076
@@ -3371,21 +3071,6 @@ PART
 	}
 	MODULE
 	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -3405,7 +3090,7 @@ PART
 {
 	part = FASAApolloDecSV5m_4288886616
 	partName = Part
-	persistentId = 1506778003
+	persistentId = 2894105973
 	pos = 0.272115052,15.9938431,-0.361924559
 	attPos = 0,0,0
 	attPos0 = 0,7.77524185,0
@@ -3520,51 +3205,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -3615,7 +3255,7 @@ PART
 {
 	part = TE2.19.SH.Engine_4293638868
 	partName = Part
-	persistentId = 1038467081
+	persistentId = 3098314713
 	pos = 0.272115052,22.9158401,-0.361924559
 	attPos = 0,0,0
 	attPos0 = 0,6.92199993,0
@@ -3960,67 +3600,6 @@ PART
 	}
 	MODULE
 	{
-		name = EngineGroupModule
-		isEnabled = True
-		EngineGroupId = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -4216,7 +3795,7 @@ PART
 {
 	part = TE2.19.SH.Tank_4293636382
 	partName = Part
-	persistentId = 2933733976
+	persistentId = 1690011981
 	pos = 0.272115052,55.4162788,-0.361924559
 	attPos = 0,0,0
 	attPos0 = 0,-18.1812744,0
@@ -4397,51 +3976,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -4540,7 +4074,7 @@ PART
 {
 	part = KAL9000_4293633042
 	partName = Part
-	persistentId = 2941683456
+	persistentId = 1670360928
 	pos = -2.52101827,29.0306091,-0.585653305
 	attPos = 0,0,0
 	attPos0 = -2.79313302,-26.3856735,-0.22372891
@@ -4621,21 +4155,6 @@ PART
 				wasActiveBeforePartWasAdjusted = False
 			}
 			TogglePower
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			StartSuppressAutopilot
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			StopSuppressAutopilot
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleSuppressAutopilot
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
@@ -4833,51 +4352,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -4897,7 +4371,7 @@ PART
 {
 	part = TE2.19.SH.HGT_4293141278
 	partName = Part
-	persistentId = 2430663231
+	persistentId = 3318307984
 	pos = -2.53125429,28.8984222,-0.361923844
 	attPos = -0.108384609,0,0
 	attPos0 = -2.80336881,-26.5178604,1.78813934E-07
@@ -5018,51 +4492,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -5097,7 +4526,7 @@ PART
 {
 	part = TE2.19.SH.HGT_4293139832
 	partName = Part
-	persistentId = 2037614760
+	persistentId = 1536429623
 	pos = 0.272115171,28.8984222,2.4414444
 	attPos = -0.108384609,0,0
 	attPos0 = 1.49011612E-08,-26.5178604,2.80336857
@@ -5218,51 +4647,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -5297,7 +4681,7 @@ PART
 {
 	part = TE2.19.SH.HGT_4293139764
 	partName = Part
-	persistentId = 1188486677
+	persistentId = 2700836440
 	pos = 3.07548428,28.8984222,-0.361925274
 	attPos = -0.108384609,0,0
 	attPos0 = 2.80336881,-26.5178604,-4.17232513E-07
@@ -5418,51 +4802,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -5497,7 +4836,7 @@ PART
 {
 	part = TE2.19.SH.HGT_4293139696
 	partName = Part
-	persistentId = 224170912
+	persistentId = 2777518998
 	pos = 0.272114098,28.8984222,-3.16529512
 	attPos = -0.108384609,0,0
 	attPos0 = -3.42726707E-07,-26.5178604,-2.80336857
@@ -5618,51 +4957,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -5697,7 +4991,7 @@ PART
 {
 	part = 4mv.vl.sensor.accelerometer.srf.1_4292956322
 	partName = Part
-	persistentId = 3559484176
+	persistentId = 3752339622
 	pos = -2.51953244,29.074295,-0.361923844
 	attPos = 0,0,0
 	attPos0 = -2.79164648,-26.34198,1.78813934E-07
@@ -5886,51 +5180,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -5950,7 +5199,7 @@ PART
 {
 	part = 4mv.vl.sensor.accelerometer.srf.1_4293139336
 	partName = Part
-	persistentId = 2692947647
+	persistentId = 1971021283
 	pos = 3.06376243,29.074295,-0.361925632
 	attPos = 0,0,0
 	attPos0 = 2.79164648,-26.34198,-4.17232513E-07
@@ -6139,51 +5388,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -6203,7 +5407,7 @@ PART
 {
 	part = TE2.19.SH.Interstage_4293615696
 	partName = Part
-	persistentId = 1946478628
+	persistentId = 237359895
 	pos = 0.272115052,84.407135,-0.361924559
 	attPos = 0,0,0
 	attPos0 = 0,-12.3388672,0
@@ -6466,19 +5670,19 @@ PART
 			{
 				PrtName = TE2.19.SH.Interstage
 				PrtTitle = non RO - Mk4 BFT-40 Probe Core
-				PrtModuleName = ModuleDataTransmitter
+				PrtModuleName = ModuleCommand
 				PrtSubsystem = False
-				PrtPower = 10
-				PrtPowerF = 10
+				PrtPower = 0
+				PrtPowerF = 0
 				PrtActive = True
 				PrtSolarDependant = False
 				PrtEditorInclude = True
 				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = True
-				PrtEmergShutDnInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4293615696,ModuleDataTransmitter
+				ConsPartKey = 4293615696,ModuleCommand
 			}
 			AYPwrPartList
 			{
@@ -6502,65 +5706,20 @@ PART
 			{
 				PrtName = TE2.19.SH.Interstage
 				PrtTitle = non RO - Mk4 BFT-40 Probe Core
-				PrtModuleName = ModuleCommand
+				PrtModuleName = ModuleDataTransmitter
 				PrtSubsystem = False
-				PrtPower = 0
-				PrtPowerF = 0
+				PrtPower = 10
+				PrtPowerF = 10
 				PrtActive = True
 				PrtSolarDependant = False
 				PrtEditorInclude = True
 				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = False
-				PrtEmergShutDnInclude = False
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4293615696,ModuleCommand
+				ConsPartKey = 4293615696,ModuleDataTransmitter
 			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
 		}
 		UPGRADESAPPLIED
 		{
@@ -6771,21 +5930,6 @@ PART
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
-			StartSuppressAutopilot
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			StopSuppressAutopilot
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleSuppressAutopilot
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -6917,7 +6061,7 @@ PART
 {
 	part = TE2.19.SH.HGT_4293623034
 	partName = Part
-	persistentId = 3815915497
+	persistentId = 1353008671
 	pos = -2.53463531,81.8920288,-0.361923844
 	attPos = 0,0,0
 	attPos0 = -4.49079943,-2.36714935,2.68220901E-07
@@ -7038,51 +6182,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -7117,7 +6216,7 @@ PART
 {
 	part = TE2.19.SH.HGT_4293622056
 	partName = Part
-	persistentId = 1536270976
+	persistentId = 3679783246
 	pos = 0.272115171,81.8920288,2.4448247
 	attPos = 0,0,0
 	attPos0 = 0,-2.36714935,4.49079895
@@ -7238,51 +6337,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -7317,7 +6371,7 @@ PART
 {
 	part = TE2.19.SH.HGT_4293621988
 	partName = Part
-	persistentId = 2622896521
+	persistentId = 3065392118
 	pos = 3.07886434,81.8920288,-0.361924678
 	attPos = 0,0,0
 	attPos0 = 4.49079943,-2.36714935,-6.55651093E-07
@@ -7438,51 +6492,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -7517,7 +6526,7 @@ PART
 {
 	part = TE2.19.SH.HGT_4293621920
 	partName = Part
-	persistentId = 3668947947
+	persistentId = 271270725
 	pos = 0.272114694,81.8920288,-3.16867399
 	attPos = 0,0,0
 	attPos0 = -5.36441803E-07,-2.36714935,-4.49079895
@@ -7638,51 +6647,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -7717,7 +6681,7 @@ PART
 {
 	part = TE2.19.SS.Fuel.Tank_4290354762
 	partName = Part
-	persistentId = 1492929770
+	persistentId = 3983917689
 	pos = 0.272115052,96.7460022,-0.361924559
 	attPos = 0,0,0
 	attPos0 = 0,-14.0809612,0
@@ -7802,6 +6766,21 @@ PART
 				active = False
 				wasActiveBeforePartWasAdjusted = False
 			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCargoBay
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
 		}
 		UPGRADESAPPLIED
 		{
@@ -8191,51 +7170,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -8383,7 +7317,7 @@ PART
 {
 	part = TE2.19.SS.RF.R_4290326808
 	partName = Part
-	persistentId = 2411254691
+	persistentId = 497564566
 	pos = 3.3968873,94.3794785,-0.361924797
 	attPos = 0,0,0
 	attPos0 = 3.1649909,-1.47899246,0
@@ -8603,51 +7537,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -8728,7 +7617,7 @@ PART
 {
 	part = TE2.19.SS.RF.L_4290326536
 	partName = Part
-	persistentId = 1083284361
+	persistentId = 4271708145
 	pos = -2.85265732,94.3794479,-0.361924589
 	attPos = 0,0,0
 	attPos0 = -3.1649909,-1.47901154,0
@@ -8948,51 +7837,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -9073,7 +7917,7 @@ PART
 {
 	part = TE2.19.SS.RPTR.VAC_4292523532
 	partName = Part
-	persistentId = 413223938
+	persistentId = 2452310524
 	pos = 0.272115052,90.0699005,1.48008788
 	attPos = 0,0,0
 	attPos0 = 0,-6.67610168,2.94721985
@@ -9210,67 +8054,6 @@ PART
 	}
 	MODULE
 	{
-		name = EngineGroupModule
-		isEnabled = True
-		EngineGroupId = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -9386,7 +8169,7 @@ PART
 {
 	part = TE2.19.SS.RPTR.VAC_4292522990
 	partName = Part
-	persistentId = 294157989
+	persistentId = 718615593
 	pos = 1.86732984,90.0698929,-1.28291452
 	attPos = 0,0,0
 	attPos0 = 2.55234385,-6.67610931,-1.47358406
@@ -9523,67 +8306,6 @@ PART
 	}
 	MODULE
 	{
-		name = EngineGroupModule
-		isEnabled = True
-		EngineGroupId = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -9699,7 +8421,7 @@ PART
 {
 	part = TE2.19.SS.RPTR.VAC_4292522860
 	partName = Part
-	persistentId = 3965045189
+	persistentId = 2349036171
 	pos = -1.32309985,90.0698929,-1.28291643
 	attPos = 0,0,0
 	attPos0 = -2.55234385,-6.67610931,-1.47358704
@@ -9836,67 +8558,6 @@ PART
 	}
 	MODULE
 	{
-		name = EngineGroupModule
-		isEnabled = True
-		EngineGroupId = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -10012,7 +8673,7 @@ PART
 {
 	part = TE2.19.BFS.SL.RAPTOR_4290348350
 	partName = Part
-	persistentId = 1628487957
+	persistentId = 611240041
 	pos = 0.791737854,89.2272644,-0.0619062483
 	attPos = 0,0,0
 	attPos0 = 0.83139652,-7.87519073,0.480029315
@@ -10247,67 +8908,6 @@ PART
 	}
 	MODULE
 	{
-		name = EngineGroupModule
-		isEnabled = True
-		EngineGroupId = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -10499,7 +9099,7 @@ PART
 {
 	part = TE2.19.BFS.SL.RAPTOR_4292514654
 	partName = Part
-	persistentId = 3133247791
+	persistentId = 133500539
 	pos = 0.272115052,89.2272644,-0.961915374
 	attPos = 0,0,0
 	attPos0 = 0,-7.87519836,-0.959985375
@@ -10734,67 +9334,6 @@ PART
 	}
 	MODULE
 	{
-		name = EngineGroupModule
-		isEnabled = True
-		EngineGroupId = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -10978,7 +9517,7 @@ PART
 {
 	part = TE2.19.BFS.SL.RAPTOR_4292514360
 	partName = Part
-	persistentId = 1184635477
+	persistentId = 3892891835
 	pos = -0.247492492,89.2272644,-0.0619062483
 	attPos = 0,0,0
 	attPos0 = -0.831372082,-7.87519836,0.480029315
@@ -11213,67 +9752,6 @@ PART
 	}
 	MODULE
 	{
-		name = EngineGroupModule
-		isEnabled = True
-		EngineGroupId = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -11457,7 +9935,7 @@ PART
 {
 	part = TE2.21.SN8_4290357954
 	partName = Part
-	persistentId = 1947447115
+	persistentId = 3873041522
 	pos = 0.272115052,119.275543,-0.361924559
 	attPos = 0,-5.74332809,0
 	attPos0 = 0.272115052,119.275543,-0.361924559
@@ -11698,12 +10176,12 @@ PART
 		{
 			AYPwrPartList
 			{
-				PrtName = AmpYear SubSystems-Max
-				PrtTitle = AmpYear SubSystems-Max
-				PrtModuleName = SAS
-				PrtSubsystem = True
-				PrtPower = 0
-				PrtPowerF = 0
+				PrtName = TE2.21.SN8
+				PrtTitle = non RO - Mk4 BFS-2200 Test Pod
+				PrtModuleName = ModuleDataTransmitter
+				PrtSubsystem = False
+				PrtPower = 6
+				PrtPowerF = 6
 				PrtActive = True
 				PrtSolarDependant = False
 				PrtEditorInclude = True
@@ -11712,7 +10190,7 @@ PART
 				PrtEmergShutDnInclude = True
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4290357954,SAS
+				ConsPartKey = 4290357954,ModuleDataTransmitter
 			}
 			AYPwrPartList
 			{
@@ -11734,12 +10212,12 @@ PART
 			}
 			AYPwrPartList
 			{
-				PrtName = TE2.21.SN8
-				PrtTitle = non RO - Mk4 BFS-2200 Test Pod
-				PrtModuleName = ModuleDataTransmitter
-				PrtSubsystem = False
-				PrtPower = 6
-				PrtPowerF = 6
+				PrtName = AmpYear SubSystems-Max
+				PrtTitle = AmpYear SubSystems-Max
+				PrtModuleName = SAS
+				PrtSubsystem = True
+				PrtPower = 0
+				PrtPowerF = 0
 				PrtActive = True
 				PrtSolarDependant = False
 				PrtEditorInclude = True
@@ -11748,25 +10226,7 @@ PART
 				PrtEmergShutDnInclude = True
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4290357954,ModuleDataTransmitter
-			}
-			AYPwrPartList
-			{
-				PrtName = TE2.21.SN8
-				PrtTitle = non RO - Mk4 BFS-2200 Test Pod
-				PrtModuleName = ModuleReactionWheel
-				PrtSubsystem = False
-				PrtPower = 8.32
-				PrtPowerF = 8.31999969
-				PrtActive = True
-				PrtSolarDependant = False
-				PrtEditorInclude = True
-				PrtUserEditorInclude = True
-				PrtValidprtEmergShutDn = True
-				PrtEmergShutDnInclude = True
-				PrtPreEmergShutDnStateActive = True
-				PrtEmergShutDnPriority = 2
-				ConsPartKey = 4290357954,ModuleReactionWheel
+				ConsPartKey = 4290357954,SAS
 			}
 			AYPwrPartList
 			{
@@ -11785,6 +10245,24 @@ PART
 				PrtPreEmergShutDnStateActive = True
 				PrtEmergShutDnPriority = 2
 				ConsPartKey = 4290357954,ModuleCommand
+			}
+			AYPwrPartList
+			{
+				PrtName = TE2.21.SN8
+				PrtTitle = non RO - Mk4 BFS-2200 Test Pod
+				PrtModuleName = ModuleReactionWheel
+				PrtSubsystem = False
+				PrtPower = 8.32
+				PrtPowerF = 8.31999969
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4290357954,ModuleReactionWheel
 			}
 		}
 		UPGRADESAPPLIED
@@ -11814,51 +10292,6 @@ PART
 			upgrade = MLI.Upgrade3
 			upgrade = MLI.Upgrade4
 			upgrade = MLI.Upgrade5
-		}
-	}
-	MODULE
-	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
 		}
 	}
 	MODULE
@@ -12081,21 +10514,6 @@ PART
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
-			StartSuppressAutopilot
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			StopSuppressAutopilot
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleSuppressAutopilot
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -12238,7 +10656,7 @@ PART
 {
 	part = TE2.19.SS.FF.R_4290320222
 	partName = Part
-	persistentId = 2791535966
+	persistentId = 2652909102
 	pos = 3.03712964,126.131676,-0.36090222
 	attPos = 0,0,0
 	attPos0 = 2.76501417,4.28508377,0.00102233887
@@ -12458,51 +10876,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -12583,7 +10956,7 @@ PART
 {
 	part = TE2.19.SS.FF.L_4290316812
 	partName = Part
-	persistentId = 2995475179
+	persistentId = 4236473366
 	pos = -2.5329082,126.131699,-0.360886961
 	attPos = 0,0,0
 	attPos0 = -2.80502272,4.28509903,0.00103759766
@@ -12803,51 +11176,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -12928,7 +11256,7 @@ PART
 {
 	part = 4mv.vl.sensor.accelerometer.srf.1_4291625674
 	partName = Part
-	persistentId = 3127026559
+	persistentId = 1796757944
 	pos = -2.51959443,121.570953,-0.36192432
 	attPos = 0,0,0
 	attPos0 = -4.46673393,2.29541016,2.68220901E-07
@@ -13117,51 +11445,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -13181,7 +11464,7 @@ PART
 {
 	part = 4mv.vl.sensor.accelerometer.srf.1_4291624720
 	partName = Part
-	persistentId = 1021137520
+	persistentId = 1227377970
 	pos = 3.06382346,121.570953,-0.361925751
 	attPos = 0,0,0
 	attPos0 = 4.46673393,2.29541016,-6.55651093E-07
@@ -13370,51 +11653,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -13434,7 +11672,7 @@ PART
 {
 	part = launchClamp1_4288267774
 	partName = Part
-	persistentId = 43158870
+	persistentId = 1302756429
 	pos = 4.34016323,14.6623154,3.70612288
 	attPos = 0,0,0
 	attPos0 = 4.068048,-1.33152771,4.06804752
@@ -13635,21 +11873,6 @@ PART
 	}
 	MODULE
 	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -13669,7 +11892,7 @@ PART
 {
 	part = launchClamp1_4288260798
 	partName = Part
-	persistentId = 3174637430
+	persistentId = 3558811914
 	pos = 4.34016275,14.6623154,-4.42997217
 	attPos = 0,0,0
 	attPos0 = 4.06804752,-1.33152771,-4.06804752
@@ -13870,21 +12093,6 @@ PART
 	}
 	MODULE
 	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -13904,7 +12112,7 @@ PART
 {
 	part = launchClamp1_4288260672
 	partName = Part
-	persistentId = 2317733154
+	persistentId = 3563911409
 	pos = -3.79593349,14.6623154,-4.42997169
 	attPos = 0,0,0
 	attPos0 = -4.06804848,-1.33152771,-4.06804705
@@ -14105,21 +12313,6 @@ PART
 	}
 	MODULE
 	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -14139,7 +12332,7 @@ PART
 {
 	part = launchClamp1_4288260546
 	partName = Part
-	persistentId = 1873687853
+	persistentId = 2826490340
 	pos = -3.79593205,14.6623154,3.70612335
 	attPos = 0,0,0
 	attPos0 = -4.06804705,-1.33152771,4.068048
@@ -14340,21 +12533,6 @@ PART
 	}
 	MODULE
 	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -14374,11 +12552,11 @@ PART
 {
 	part = AM.MLP.ShuttleTowerMultiSection_4293144960
 	partName = Part
-	persistentId = 1410781898
+	persistentId = 485812883
 	pos = -19.0832939,82.5823669,-0.561917663
 	attPos = -1.63160109E-06,-22.8006439,5.52745405E-07
 	attPos0 = -1.25842723E-06,60.6551437,2.26879024E-06
-	rot = 2.2871733E-08,0.382683337,4.2252899E-09,-0.923879683
+	rot = 2.28717365E-08,0.382683337,4.22528812E-09,-0.923879683
 	attRot = 2.28717205E-08,0.382683277,4.22530233E-09,-0.923879564
 	attRot0 = 1.77635832E-15,4.17698118E-07,3.21548276E-14,-1
 	mir = 1,1,1
@@ -14400,7 +12578,7 @@ PART
 	link = AM.MLP.SaturnHammerheadCrane_4293142820
 	link = AM.MLP.SaturnHammerheadCrane_4293142582
 	link = strutCube_4293142344
-	attN = top01,AM.MLP.ShuttleTowerCrewSection_4293144080_0|3.9000001|0_0|1|0_0|37.6740036|0_0|1|0
+	attN = top01,AM.MLP.ShuttleTowerCrewSection_4293144080_0|3.9000001|0_0|1|0_0|60.6551437|0_0|1|0
 	attN = bottom,AM.MLP.ShuttleTowerMultiSection_4290147200_0|0|0_0|-1|0_0|0|0_0|-1|0
 	attN = connect01,AM.MLP.SaturnHammerheadCrane_4293142820_3.91000009|3.9000001|3.33999991_1|0|0_3.91000009|3.9000001|3.33999991_1|0|0
 	attN = connect02,Null_0_3.91000009|7.80000019|3.33999991_1|0|0_3.91000009|7.80000019|3.33999991_1|0|0
@@ -14590,51 +12768,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -14669,11 +12802,11 @@ PART
 {
 	part = AM.MLP.ShuttleTowerCrewSection_4293144080
 	partName = Part
-	persistentId = 3728943650
-	pos = -19.0833664,105.982353,-0.561924338
+	persistentId = 2457538391
+	pos = -19.0833817,105.982353,-0.561924338
 	attPos = 0,0,0
 	attPos0 = -1.47865683E-06,23.4000015,4.55379359E-06
-	rot = -2.17693241E-08,0.382683337,3.41211397E-08,-0.923879683
+	rot = -2.1769317E-08,0.382683337,3.41211361E-08,-0.923879683
 	attRot = 2.28717205E-08,0.382683277,4.22531032E-09,-0.923879564
 	attRot0 = 2.98023473E-08,4.47034836E-08,-2.9802333E-08,1
 	mir = 1,1,1
@@ -14692,7 +12825,7 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	link = AM.MLP.ShuttleTowerTopSection_4293143068
-	attN = top01,AM.MLP.ShuttleTowerTopSection_4293143068_0|3.9000001|0_0|1|0_0|6.27900028|0_0|1|0
+	attN = top01,AM.MLP.ShuttleTowerTopSection_4293143068_0|3.9000001|0_0|1|0_0|10.1091909|0_0|1|0
 	attN = floor,Null_0_0|1.95000005|0_0|1|0_0|1.95000005|0_0|1|0
 	attN = bottom,AM.MLP.ShuttleTowerMultiSection_4293144960_0|0|0_0|-1|0_0|0|0_0|-1|0
 	attN = crewconnect01,Null_0_3.91000009|-0.0500000007|-2.29999995_1|0|0_3.91000009|-0.0500000007|-2.29999995_1|0|0
@@ -14914,51 +13047,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -14993,11 +13081,11 @@ PART
 {
 	part = AM.MLP.ShuttleTowerTopSection_4293143068
 	partName = Part
-	persistentId = 1239281657
-	pos = -19.0833607,109.882347,-0.561908126
+	persistentId = 3099713026
+	pos = -19.0833759,109.882347,-0.561908126
 	attPos = 0,0,0
 	attPos0 = -5.35095069E-07,3.90001249,1.16229182E-06
-	rot = -2.17693241E-08,0.382683337,3.41211397E-08,-0.923879683
+	rot = -2.1769317E-08,0.382683337,3.41211361E-08,-0.923879683
 	attRot = 2.2871717E-08,0.382683277,4.22531254E-09,-0.923879564
 	attRot0 = 0,0,-1.33226879E-15,1
 	mir = 1,1,1
@@ -15201,51 +13289,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -15280,11 +13323,11 @@ PART
 {
 	part = AM.MLP.SaturnHammerheadCrane_4293142820
 	partName = Part
-	persistentId = 2822577539
+	persistentId = 1481037227
 	pos = -15.6832886,113.582367,5.0380826
 	attPos = 1.89396286,27.1000004,-1.78436828
 	attPos0 = 4.46999979,3.89999962,3.34000659
-	rot = -2.38418579E-07,0.0212423448,0.999774575,6.42612576E-08
+	rot = -2.38418579E-07,0.021242328,0.999774575,5.96046448E-08
 	attRot = -0.382597238,0.0196255296,0.923671126,0.00812907331
 	attRot0 = -0.38259688,-0.0196254328,-0.923671186,0.00812905841
 	mir = 1,1,1
@@ -15364,13 +13407,13 @@ PART
 	}
 	MODULE
 	{
-		name = ModuleAnimateGenericExtra
+		name = ModuleAnimateGeneric
 		isEnabled = True
 		aniState = LOCKED
 		animSwitch = True
 		animTime = 0
-		animSpeed = -266.666656
-		deployPercent = 49
+		animSpeed = -133.333328
+		deployPercent = 100
 		animationIsDisabled = False
 		stagingEnabled = True
 		EVENTS
@@ -15442,51 +13485,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -15521,7 +13519,7 @@ PART
 {
 	part = AM.MLP.SaturnHammerheadCrane_4293142582
 	partName = Part
-	persistentId = 3383321677
+	persistentId = 4282337647
 	pos = -15.4832907,113.982368,-5.76192188
 	attPos = -5.60136461,19.7000046,-9.56255341
 	attPos0 = 4.46999407,11.6999969,3.34001327
@@ -15605,13 +13603,13 @@ PART
 	}
 	MODULE
 	{
-		name = ModuleAnimateGenericExtra
+		name = ModuleAnimateGeneric
 		isEnabled = True
-		aniState = CLAMPED
+		aniState = LOCKED
 		animSwitch = False
-		animTime = 0.5
-		animSpeed = 0
-		deployPercent = 50
+		animTime = 1
+		animSpeed = 133.333328
+		deployPercent = 100
 		animationIsDisabled = False
 		stagingEnabled = True
 		EVENTS
@@ -15683,51 +13681,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -15762,7 +13715,7 @@ PART
 {
 	part = strutCube_4293142344
 	partName = Part
-	persistentId = 2970342466
+	persistentId = 1928917256
 	pos = -19.0239124,120.33461,-0.741086364
 	attPos = -1.43051147E-06,0.339752197,1.59442425E-06
 	attPos0 = -0.209237665,37.5411682,-0.168672875
@@ -15870,51 +13823,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -15934,8 +13842,8 @@ PART
 {
 	part = AM.MLP.ShuttleTowerMultiSection_4293618006
 	partName = Part
-	persistentId = 3552629832
-	pos = -19.0210209,109.783386,-0.738116622
+	persistentId = 3920556625
+	pos = -19.02104,109.783379,-0.738116622
 	attPos = 2.69365955E-05,10.6742182,0.348490804
 	attPos0 = 1.46466994E-06,-0.128745899,-2.71247677E-06
 	rot = 0.000779182767,0.382682532,-0.00188100862,-0.923877716
@@ -15956,7 +13864,7 @@ PART
 	modCost = 0
 	modMass = 1
 	modSize = 0,0,0
-	attN = top01,Null_0_0|3.9000001|0_0|1|0_0|37.6740036|0_0|1|0
+	attN = top01,Null_0_0|3.9000001|0_0|1|0_0|60.6551437|0_0|1|0
 	attN = bottom,strutCube_4293142344_0|0|0_0|-1|0_0|0|0_0|-1|0
 	attN = connect01,Null_0_3.91000009|3.9000001|3.33999991_1|0|0_3.91000009|3.9000001|3.33999991_1|0|0
 	attN = connect02,Null_0_3.91000009|7.80000019|3.33999991_1|0|0_3.91000009|7.80000019|3.33999991_1|0|0
@@ -16146,51 +14054,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -16225,7 +14088,7 @@ PART
 {
 	part = TE2.19.SH.GRIDFIN_4293380326
 	partName = Part
-	persistentId = 4064273210
+	persistentId = 4216610443
 	pos = 2.70631099,81.5107422,-1.61501539
 	attPos = 0,0,0
 	attPos0 = 2.434196,26.0944633,-1.25309086
@@ -16476,51 +14339,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -16540,7 +14358,7 @@ PART
 {
 	part = TE2.19.SH.GRIDFIN_4293380206
 	partName = Part
-	persistentId = 4014636691
+	persistentId = 3740230867
 	pos = -2.162081,81.5107422,0.891166568
 	attPos = 0,0,0
 	attPos0 = -2.434196,26.0944633,1.2530911
@@ -16791,51 +14609,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -16855,7 +14628,7 @@ PART
 {
 	part = TE2.19.SH.GRIDFIN_4293619500
 	partName = Part
-	persistentId = 3540328528
+	persistentId = 349480375
 	pos = 2.69936538,81.4873123,0.90793407
 	attPos = 0,0,0
 	attPos0 = 2.42725039,26.0710335,1.2698586
@@ -17106,51 +14879,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -17170,7 +14898,7 @@ PART
 {
 	part = TE2.19.SH.GRIDFIN_4293379874
 	partName = Part
-	persistentId = 1742919400
+	persistentId = 640884117
 	pos = -2.15513539,81.4873123,-1.63178289
 	attPos = 0,0,0
 	attPos0 = -2.42725039,26.0710335,-1.26985836
@@ -17421,51 +15149,6 @@ PART
 	}
 	MODULE
 	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -17485,11 +15168,11 @@ PART
 {
 	part = KAL9000_4291605280
 	partName = Part
-	persistentId = 3679303001
-	pos = -19.4551125,14.6400146,-9.08411694
+	persistentId = 1296480123
+	pos = -19.455122,14.6400146,-9.08412457
 	attPos = -6.19888306E-06,0.225566387,-5.24520874E-06
 	attPos0 = -6.2890048,7.53447771,-5.76319361
-	rot = 2.28900561E-08,0.38268289,4.18109458E-09,-0.923879921
+	rot = 2.28900632E-08,0.38268289,4.18109192E-09,-0.923879921
 	attRot = 0,0,0,1
 	attRot0 = 1.42108547E-14,0,-4.78070916E-11,-1
 	mir = 1,1,1
@@ -17566,21 +15249,6 @@ PART
 				wasActiveBeforePartWasAdjusted = False
 			}
 			TogglePower
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			StartSuppressAutopilot
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			StopSuppressAutopilot
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ToggleSuppressAutopilot
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
@@ -17771,51 +15439,6 @@ PART
 				PrtEmergShutDnPriority = 2
 				ConsPartKey = 4291605280,ModuleLight
 			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = GeometryPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARAeroPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FARPartModule
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
 		}
 		UPGRADESAPPLIED
 		{

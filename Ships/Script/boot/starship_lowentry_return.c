@@ -30,7 +30,7 @@ function COMPLETE_PRINT_STATUS
 
 // Init Common:
 // --------------------------------------------------------------------------------------------
-LOG   "START: starship_lowentry_return.c" to log.txt.
+LOG   "START: starship_lowentry_return.c" to LOG_FILE.
 CLEARSCREEN.
 set STAGE_1_TYPE to "CORE".
 
@@ -258,5 +258,5 @@ else {
 	RUNPATH( "boot/PhaseIII-Land.c" ).
 }
 
-LOG   "END: starship_lowentry_return.c" to log.txt.
-LOG   "-------------------------------" to log.txt.
+LOG   "END: starship_lowentry_return.c" to LOG_FILE.
+LOG   "-------------------------------" to LOG_FILE.

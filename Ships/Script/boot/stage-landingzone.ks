@@ -12,6 +12,7 @@
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 CLEARSCREEN.
+declare global LOG_FILE to "lz-log.txt". DELETEPATH(LOG_FILE).
 RUNPATH( "boot/sw-version.c" ).
 
 PRINT "Landingzone: "+SHIP_NAME.

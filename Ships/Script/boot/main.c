@@ -8,19 +8,19 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestrate all mission phases.
-// 21/Jun/2021
+// 12/Aug/2021
 // --------------------------------------------------------------------------------------------
-
+LOG   "START: main.c" to LOG_FILE.
 // Reset Engine settings before all, ("migth be a reboot")
 set thrust to 0.	
 lock throttle to thrust.
 WAIT 0.
 
-LOG  "SHIP:LAT: "+SHIP:GEOPOSITION:LAT to LOG.txt.
-LOG  "SHIP:LNG: "+SHIP:GEOPOSITION:LNG to LOG.txt.
+LOG  "SHIP:LAT: "+SHIP:GEOPOSITION:LAT to LOG_FILE.
+LOG  "SHIP:LNG: "+SHIP:GEOPOSITION:LNG to LOG_FILE.
 
 runpath("boot/declare-globals.c").
-runpath("boot/atm.c").
+//runpath("boot/atm.c").
 
 if vehicle_type = "SaturnV"
 	LOG "Normal" to normal.txt. //Skip normal/correction
@@ -53,7 +53,10 @@ function change_inclination
 		CLEARSCREEN. print " ". print " ".
 }
 
-//ACTION: REFUEL ----------------------------------------------
+
+// --------------------------------------------------------------------------------------------
+//ACTION: REFUEL?
+// --------------------------------------------------------------------------------------------
 if mission_origin <> DEFAULT_KSC //mission_target //ORIGIN = TARGET
 {
 	CLEARSCREEN. print " ". print " ".
@@ -65,6 +68,9 @@ if mission_origin <> DEFAULT_KSC //mission_target //ORIGIN = TARGET
 	}
 }
 
+// --------------------------------------------------------------------------------------------
+//ACTION: LAUNCH?
+// --------------------------------------------------------------------------------------------
 if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto "RETURN-JOURNEY"
 {
 	if (IS_INTER_PLANETARY_MISSION)
@@ -96,17 +102,20 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 					RUNPATH( "boot/Launch-Circularize.c", apoapsis ).
 			}
 		} else
-			LOG  "SKIP: Launch-Circularize" to LOG.txt.
+			LOG  "SKIP: Launch-Circularize" to LOG_FILE.
 	} else
-		LOG  "SKIP: Launch" to LOG.txt.
+		LOG  "SKIP: Launch" to LOG_FILE.
 
+	// --------------------------------------------------------------------------------------------
+	//ACTION: ADJUST Normal/Inclination?
+	// --------------------------------------------------------------------------------------------
 	// Adjust mission inclination?
 	if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN16-Profile1" and vehicle_sub_type <> "SN20-Profile")
 	{
 		if NOT EXISTS("normal.txt")
 			change_inclination().
 		else
-			LOG  "SKIP: Normal" to LOG.txt.
+			LOG  "SKIP: Normal" to LOG_FILE.
 
 		//ACTION: BURN ----------------------------------------------------
 		if STATUS = "ORBITING" and apoapsis > body:atm:height and periapsis > body:atm:height and BODY:name = mission_origin
@@ -121,9 +130,12 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 				runpath("boot/BURN.c").
 			}
 		else
-			LOG  "SKIP: BURN" to LOG.txt.
+			LOG  "SKIP: BURN" to LOG_FILE.
 	}
 	
+	// --------------------------------------------------------------------------------------------
+	//ACTION: LEM/DOCK?
+	// --------------------------------------------------------------------------------------------
 	if BODY:name = mission_target:name and not EXISTS("lem.txt")
 	{
 		if vehicle_type = "SaturnV"
@@ -164,10 +176,12 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			PRINT "Press [ENTER], to Confirm: EARTH RETURN".
 			set ch to terminal:input:getchar().
 		}
+		else
+			LOG  "SKIP: LEM/DOCK" to LOG_FILE.
 	}
 
 	//ACTION: Break & LAND! -------------------------------------------
-	if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN16-Profile1" and vehicle_sub_type <> "SN20-Profile")
+	if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN16-Profile1" and vehicle_sub_type <> "SN20-Profile" and vehicle_sub_type <> "StarShip")
 	{
 		if status <> "LANDED" and status <> "SPLASHED"
 		{
@@ -236,7 +250,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		RUNPATH( "boot/starship_lowentry_return.c").
 	}
 	
-	LOG  STAGE_1_TYPE+" REBOOT FOR RE-FUEL" to LOG.TXT.
+	LOG  STAGE_1_TYPE+" REBOOT FOR RE-FUEL" to LOG_FILE.
 }
 
 //INBOUND ---------------------------------------------------------
@@ -278,6 +292,9 @@ if BODY:name <> DEFAULT_KSC {
 	} else {
 		ResetMission(). // Re-define Target
 		reboot.
-		LOG  STAGE_1_TYPE+" MISSION END" to LOG.TXT.
+		LOG  STAGE_1_TYPE+" MISSION END" to LOG_FILE.
 	}
 }
+
+LOG   "END: main.c" to LOG_FILE.
+LOG   "-----------------" to LOG_FILE.

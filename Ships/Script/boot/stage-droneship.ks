@@ -12,6 +12,7 @@
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 CLEARSCREEN.
+declare global LOG_FILE to "droneship-log.txt". DELETEPATH(LOG_FILE).
 RUNPATH( "boot/sw-version.c" ).
 
 PRINT "Droneship: "+SHIP_NAME.

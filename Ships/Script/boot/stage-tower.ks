@@ -8,10 +8,11 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //
-// 11/Aug/2021
+// 12/Aug/2021
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 CLEARSCREEN.
+declare global LOG_FILE to "tower-log.txt". DELETEPATH(LOG_FILE).
 RUNPATH( "boot/sw-version.c" ).
 
 update_phase_title("[ ] TOWER CLEAR...", 0, false).

@@ -9,8 +9,9 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Common lib of functions used by Falcon-Return.c
-// 04/Jun/2021
+// 12/Aug/2021
 // --------------------------------------------------------------------------------------------
+LOG   "START: common.c" to LOG_FILE.
 runpath("boot/atm.c").
 
 declare global landingAltitude TO LandingTarget:TERRAINHEIGHT.
@@ -299,3 +300,6 @@ function PRINT_STATUS
 // --------------------------------------------------------------------------------------------
 update_phase_title("(INIT PIDLOOPS)", 0, false).
 setHoverPIDLOOPS().
+
+LOG   "END: common.c" to LOG_FILE.
+LOG   "-----------------" to LOG_FILE.

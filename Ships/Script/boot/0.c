@@ -40,49 +40,49 @@ if (status = "PRELAUNCH" or status = "LANDED") and ( BODY:name = "Kerbin" or BOD
 	SET RECEIVED TO CORE:MESSAGES:POP.
 	set TARGET_N to RECEIVED:CONTENT.
 	PRINT "TARGET_N: "+TARGET_N.
-	LOG "TARGET_N: "+TARGET_N to LOG.txt.
+	LOG "TARGET_N: "+TARGET_N to LOG_FILE.
 	
 	//Select target for later:
 	if TARGET_N = 100
 	{
 		set LandingZone TO VESSEL(JRTI).
 		LOG "declare global LandingZone TO VESSEL(JRTI)." to "1:/STAGE1_TARGET_FILE.c".
-		LOG "INIT TARGET: VESSEL(JRTI)." to LOG.txt.			
+		LOG "INIT TARGET: VESSEL(JRTI)." to LOG_FILE.			
 		PRINT "LANDING AT: "+JRTI.
 	} else
 	if TARGET_N = 101
 	{
 		set LandingZone TO VESSEL(OCISLY).
 		LOG "declare global LandingZone TO VESSEL(OCISLY)." to "1:/STAGE1_TARGET_FILE.c".
-		LOG "INIT TARGET: VESSEL(OCISLY)." to LOG.txt.
+		LOG "INIT TARGET: VESSEL(OCISLY)." to LOG_FILE.
 		PRINT "LANDING AT: "+OCISLY.
 	} else
 	if TARGET_N = 102
 	{
 		set LandingZone TO VESSEL(OCISLY_FAROUT).
 		LOG "declare global LandingZone TO VESSEL(OCISLY_FAROUT)." to "1:/STAGE1_TARGET_FILE.c".
-		LOG "INIT TARGET: VESSEL(OCISLY_FAROUT)." to LOG.txt.
+		LOG "INIT TARGET: VESSEL(OCISLY_FAROUT)." to LOG_FILE.
 		PRINT "LANDING AT: "+OCISLY_FAROUT.
 	} else
 	if TARGET_N = 1
 	{
 		set LandingZone TO VESSEL(LZ_1).
 		LOG "declare global LandingZone TO VESSEL(LZ_1)." to "1:/STAGE1_TARGET_FILE.c".
-		LOG "INIT TARGET: VESSEL(LZ_1)." to LOG.txt.
+		LOG "INIT TARGET: VESSEL(LZ_1)." to LOG_FILE.
 		PRINT "LANDING AT: "+LZ_1.
 	} else
 	if TARGET_N = 2
 	{
 		set LandingZone TO VESSEL(LZ_2).
 		LOG "declare global LandingZone TO VESSEL(LZ_2)." to "1:/STAGE1_TARGET_FILE.c".
-		LOG "INIT TARGET: VESSEL(LZ_2)." to LOG.txt.
+		LOG "INIT TARGET: VESSEL(LZ_2)." to LOG_FILE.
 		PRINT "LANDING AT: "+LZ_2.
 	} else
 	if TARGET_N = 110
 	{
 		set LandingZone to offline_LandingStarBase.
 		LOG "declare global LandingZone to offline_LandingStarBase." to "1:/STAGE1_TARGET_FILE.c".
-		LOG "INIT TARGET: offline_LandingStarBase." to LOG.txt.
+		LOG "INIT TARGET: offline_LandingStarBase." to LOG_FILE.
 		PRINT "LANDING AT: offline_LandingStarBase".
 	}
 } else {
@@ -93,7 +93,7 @@ if (status = "PRELAUNCH" or status = "LANDED") and ( BODY:name = "Kerbin" or BOD
 		runpath("1:/STAGE1_TARGET_FILE.c"). //1: = Use KOS_CPU Internal Disk. (to allow each booster have it's file)
 		set LandingTarget TO LandingZone:GEOPOSITION.
 		PRINT "LANDING ZONE (LOADED FROM INT.DISK): "+LandingZone:NAME.
-		LOG STAGE_1_TYPE+" "+LandingZone to LOG.txt.
+		LOG STAGE_1_TYPE+" "+LandingZone to LOG_FILE.
 		
 		update_phase_title("BOOSTER SLEEPING...", 0, true).
 	} else {
@@ -119,7 +119,7 @@ if (status = "PRELAUNCH" or status = "LANDED") and ( BODY:name = "Kerbin" or BOD
 		}
 
 		PRINT "LOADED - LandingZone: "+LandingZone_NAME.
-		LOG STAGE_1_TYPE+" "+LandingZone_NAME to LOG.txt.
+		LOG STAGE_1_TYPE+" "+LandingZone_NAME to LOG_FILE.
 	}
 }
 
@@ -145,14 +145,14 @@ WHEN ALL_PROCESSORS:LENGTH > 1 THEN
 
 // Boosters still on main rocket attached? -> WAIT for the call...
 LIST PROCESSORS IN ALL_PROCESSORS.
-LOG  "["+STAGE_1_TYPE+"] - ALL_PROCESSORS:LENGTH: "+ALL_PROCESSORS:LENGTH to LOG.txt.
+LOG  "["+STAGE_1_TYPE+"] - ALL_PROCESSORS:LENGTH: "+ALL_PROCESSORS:LENGTH to LOG_FILE.
 if ALL_PROCESSORS:LENGTH > 2	//Stage-1 (Have two processors)
 {
 	//WAIT for all processors...
 	update_phase_title("WAIT4ALL PROCESSORS", 0, true).
 	WHEN ALL_PROCESSORS:LENGTH <=1 THEN
 	{
-		LOG  STAGE_1_TYPE+" REBOOT-1" to LOG.TXT.
+		LOG  STAGE_1_TYPE+" REBOOT-1" to LOG_FILE.
 		reboot.
 		PRESERVE.
 		WAIT 1.
@@ -163,7 +163,7 @@ if ALL_PROCESSORS:LENGTH > 2	//Stage-1 (Have two processors)
 	WAIT UNTIL NOT CORE:MESSAGES:EMPTY.
 	SET CODE_RECEIVED TO CORE:MESSAGES:POP.
 	PRINT "RECEIVED MSG - CODE_RECEIVED: "+CODE_RECEIVED.
-	LOG  STAGE_1_TYPE+" REBOOT-2" to LOG.TXT.
+	LOG  STAGE_1_TYPE+" REBOOT-2" to LOG_FILE.
 	reboot.
 }
 else
@@ -186,7 +186,7 @@ runpath("boot/common.c").
 // --------------------------------------------------------------------------------------------
 set in_sync to true.
 
-LOG "FLIP:0" to log.txt.
+LOG "FLIP:0" to LOG_FILE.
 
 // SEPARATION / FLIP MANEUVER ---------------------------------------------------------
 if (SHIP:VERTICALSPEED > 1) and NOT EXISTS("flip.txt")

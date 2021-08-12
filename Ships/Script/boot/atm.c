@@ -8,9 +8,9 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used go get more realistic data from Planet Earth Atmosphere.
-// 30/may/2021
+// 12/Aug/2021
 // --------------------------------------------------------------------------------------------
-
+LOG   "START: atm.c" to LOG_FILE.
 // --------------------------------------------------------------------------------------------
 // Algorithm-1:
 // --------------------------------------------------------------------------------------------
@@ -213,3 +213,6 @@ function update_atmosphere
 	//PRINT "Pressure: "+( ROUND (Pressure(h)/100,2))+" (hPa)    " 	at (0,indice+12).
 	//PRINT "Temperature: "+ROUND (Temperature(h)) + "    " 		at (0,indice+13).
 }
+
+LOG   "END: atm.c" to LOG_FILE.
+LOG   "-----------------" to LOG_FILE.

@@ -12,8 +12,9 @@
 // --------------------------------------------------------------------------------------------
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 CLEARSCREEN.
-WAIT 1.
+declare global LOG_FILE to "booster-log.txt". DELETEPATH(LOG_FILE).
 
+WAIT 1.
 runpath("boot/spacex_defaults.c").
 
 if CORE:BOOTFILENAME:FIND("boot-boosters-L.ks") > -1 		// STAGE-1L

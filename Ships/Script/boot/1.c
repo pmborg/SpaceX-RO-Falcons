@@ -45,5 +45,5 @@ boostback_burn().
 activateVesselProbe().
 
 LOG  "SET SLAVE_STAGE to 2." to SLAVE.TXT.
-LOG  "REBOOT:2" to LOG.TXT.
+LOG  "REBOOT:2" to LOG_FILE.
 reboot.

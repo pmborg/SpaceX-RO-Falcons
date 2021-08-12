@@ -53,7 +53,7 @@ function boostback_burn
 	SAS OFF.
 	
 	set impactDist to 999999.
-	LOG  STAGE_1_TYPE + " - boostback_burn("+do_reverse_max_speed+") - START" to LOG.txt.
+	LOG  STAGE_1_TYPE + " - boostback_burn("+do_reverse_max_speed+") - START" to LOG_FILE.
 
 	set we_are_done to FALSE.
 	until we_are_done
@@ -82,7 +82,7 @@ function boostback_burn
 				if STAGE_1_TYPE = "SLAVE" and impactDist < 2500
 				{
 					SET thrust TO 0.
-					LOG  "SLAVE:[we_are_done] " to LOG.txt.
+					LOG  "SLAVE:[we_are_done] " to LOG_FILE.
 					set we_are_done to TRUE.
 				}
 			}else if(impactDist < slowdown){
@@ -105,7 +105,7 @@ function boostback_burn
 			if impactDist > prev_impactDist and impactDist < 400
 			{
 				SET thrust TO 0.
-				LOG  "SS:[we_are_done] " to LOG.txt.
+				LOG  "SS:[we_are_done] " to LOG_FILE.
 				set we_are_done to TRUE.
 				break.			
 			}
@@ -120,12 +120,12 @@ function boostback_burn
 	if STAGE_1_TYPE = "SLAVE" and SLAVE_STAGE = 0
 	{
 		LOG  "SET SLAVE_STAGE to 1." to SLAVE.TXT.
-		LOG  "REBOOT:1" to LOG.TXT.
+		LOG  "REBOOT:1" to LOG_FILE.
 		reboot.
 	}
 
 	update_phase_title("BOOSTBACK BURN END", 0, false).
-	LOG  STAGE_1_TYPE + " " + we_are_done + " - boostback_burn() - END" to LOG.txt.
+	LOG  STAGE_1_TYPE + " " + we_are_done + " - boostback_burn() - END" to LOG_FILE.
 }
 
 // --------------------------------------------------------------------------------------------
@@ -135,7 +135,7 @@ function ReEntryburn
 	parameter safe_power to 0.9.
 	parameter maxDescendSpeed to -200.	//Due Terminal Speed don't use another above value.
 	
-	LOG  "safe_alt: "+safe_alt to LOG.txt.
+	LOG  "safe_alt: "+safe_alt to LOG_FILE.
 	
 	update_phase_title("WAIT4RE-ENTRY BURN", 1).
 	set x to 0.
