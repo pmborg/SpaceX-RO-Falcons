@@ -7,8 +7,8 @@ The SHIP was re-scaled:
 TO KSP: 119.736 m x 9.088 m
 
 Starship & Super Heavy stacked in preparation for orbital flight:
-![!](https://i.imgur.com/2dSCngg.png)
-![!](https://i.imgur.com/r3s546L.png)
+![!](https://i.imgur.com/IzZDN02.png)
+![!](https://i.imgur.com/zlcNX9G.png)
 
 DEMO VIDEO with the current version of the code:
 [![SpaceX RO Falcons - HOW TO INSTALL and RUN DEMO(FULL VIDEO)](https://i.imgur.com/EfK4psB.png)](https://www.youtube.com/watch?v=8C6WOAyUm9c)
