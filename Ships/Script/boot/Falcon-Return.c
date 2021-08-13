@@ -53,7 +53,7 @@ function boostback_burn
 	SAS OFF.
 	
 	set impactDist to 999999.
-	LOG  STAGE_1_TYPE + " - boostback_burn("+do_reverse_max_speed+") - START" to LOG_FILE.
+	LOG  STAGE_1_TYPE + " - boostback_burn("+do_reverse+","+do_reverse_max_speed+") - START" to LOG_FILE.
 
 	set we_are_done to FALSE.
 	until we_are_done
@@ -62,11 +62,20 @@ function boostback_burn
 
 		if STAGE_1_TYPE = "CORE"
 		{
-			set steeringDir to LandingTarget:HEADING.
-			set steeringVdeg to 0.
-			set steeringVroll to -270.
-			//LOCK STEERING TO HEADING(LandingTarget:HEADING,0, -270).
-			SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
+			if STAGE1_LAND_ON = "SEA"
+			{
+				//SEA OPTION:
+				set lat_correction to 0.
+				set lat_correction to (LandingTarget:LAT - ADDONS_TR_IMPACTPOS:LAT)*50.
+				LOCK STEERING TO HEADING(270+lat_correction,0, -270).
+				SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
+			} else {
+				//LAND OPTION:
+				set steeringDir to LandingTarget:HEADING.
+				set steeringVdeg to 0.
+				set steeringVroll to -270.
+				SET impactDist TO horizontalDistance(LATLNG(LandingTarget:LAT, LandingTarget:LNG), ADDONS_TR_IMPACTPOS).
+			}
 		} else
 			steerToTarget(0, coreAdjustLatOffset, coreAdjustLngOffset, do_reverse).
 			

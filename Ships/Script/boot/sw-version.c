@@ -234,6 +234,7 @@ else
 
 //DEBUG:
 PRINT "STAGE1_LAND_ON: "+STAGE1_LAND_ON.
+LOG  "STAGE1_LAND_ON: "+STAGE1_LAND_ON to LOG_FILE.
 
 // DEFAULTS FOR FLIGTH PROFILE: -------------------------------------------------
 if vehicle_type = "SN16-Profile1" {
