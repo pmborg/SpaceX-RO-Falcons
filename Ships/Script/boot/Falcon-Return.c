@@ -19,6 +19,8 @@
 // AG4 - Activate client solar painels
 // AG8 - Toggle RCS for landing
 
+//LAST GOOD SEA: https://github.com/pmborg/SpaceX-RO-Falcons/tree/e1b3c049e74ecb07222eea8e62ec7d868ebefa8d/Ships/Script/boot
+
 // --------------------------------------------------------------------------------------------
 // INIT:
 // --------------------------------------------------------------------------------------------
@@ -586,10 +588,13 @@ function main_falcon_return
 	CLEARSCREEN.
 	update_phase_title("(Return Home)",0).
 
-	set steeringDir to LandingTarget:HEADING.
-	set steeringVdeg to 0.
-	set steeringVroll to -270.
-	LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
+	if STAGE1_LAND_ON = "LAND"
+	{
+		set steeringDir to LandingTarget:HEADING.
+		set steeringVdeg to 0.
+		set steeringVroll to -270.
+		LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
+	}
 
 	//Back to 100% now:
 	if CORE:BOOTFILENAME:FIND("boot-boosters.ks") > -1
