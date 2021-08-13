@@ -111,7 +111,8 @@ function main_liftoff
 		
 		if vehicle_type = "StarShip"
 		{
-			AG8 ON.
+			//AG8 ON. //catch arms
+			AG7 ON. //crew
 			set aim_cowntdown to 10.
 		}
 		

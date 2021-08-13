@@ -281,7 +281,7 @@ function waitAndDoReEntryburn
 
 	RCS ON.
 	update_phase_title("(GRID FINS DEPLOY)", 0).
-	if vehicle_sub_type <> "StarShip"
+	if vehicle_sub_type <> "SS-BN"
 		BRAKES ON.
 
 	// Major Correction:
