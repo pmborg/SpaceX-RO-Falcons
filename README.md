@@ -7,7 +7,6 @@ The SHIP was re-scaled:
 TO KSP: 119.736 m x 9.088 m
 
 Starship & Super Heavy stacked in preparation for orbital flight:
-![!](https://i.imgur.com/2dSCngg.png)
 ![!](https://i.imgur.com/1IaCgSC.png)
 
 DEMO VIDEO with the current version of the code:
