@@ -228,8 +228,8 @@ function log_data
 	parameter Vs2.
 	parameter showlog to false.	//true = TURN ON LOG file.
 	
-	//if vehicle_company = "SpaceX"
-	//	set showlog to true.
+	if vehicle_company = "SpaceX"
+		set showlog to true.
 	
 	updateVars().
 	

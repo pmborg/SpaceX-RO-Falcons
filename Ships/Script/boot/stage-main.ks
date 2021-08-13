@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used before main.c, to distribute tasks among all Processors.
-// 12/Aug/2021
+// 13/Aug/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: stage-main.ks" to LOG_FILE.
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script

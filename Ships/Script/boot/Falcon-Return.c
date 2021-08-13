@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              	- Land the Falcon(s) ST-1
-// 06/Jun/2021
+// 13/Aug/2021
 // --------------------------------------------------------------------------------------------
 
 // --------------
@@ -281,7 +281,8 @@ function waitAndDoReEntryburn
 
 	RCS ON.
 	update_phase_title("(GRID FINS DEPLOY)", 0).
-	BRAKES ON.
+	if vehicle_sub_type <> "StarShip"
+		BRAKES ON.
 
 	// Major Correction:
 	PRINT_STATUS(3).

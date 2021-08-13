@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Deorbit ST-2
-// 26/Dez/2020
+// 13/Aug/2021
 // --------------------------------------------------------------------------------------------
 CLEARSCREEN.
 declare global LOG_FILE to "st2-log.txt". DELETEPATH(LOG_FILE).

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to control (ST-1) Booster from FH
-// 01/Jan/2020
+// 13/Aug/2021
 // --------------------------------------------------------------------------------------------
 RCS OFF.
 SET thrust TO 0.
