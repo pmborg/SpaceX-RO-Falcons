@@ -119,6 +119,10 @@ REM INSTALL: ISS (International SpaceStation) Dep-1:
 	move GameData\AJE %NONEED%
 	move GameData\EngineGroupController %NONEED%
 
+	REM Add a filter to PMBORG RO ships, only:
+	mkdir Ships_VAB
+	move Ships\VAB\*.* Ships_VAB
+
 	echo set kspver to 1.10. > Ships\Script\kspver.c.
 	PAUSE
 :No

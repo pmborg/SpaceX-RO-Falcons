@@ -8,12 +8,12 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              Used to specify the SW version and the diferent types of profiles supported.
-// 13/Aug/2021
+// 14/Aug/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: sw-version.c" to LOG_FILE.
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
 //                          #.YY.MM.DD
-set version_str to "SW-Ver: 1.21.08.13".
+set version_str to "SW-Ver: 1.21.08.14".
 PRINT version_str at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
@@ -246,7 +246,7 @@ if vehicle_type = "StarShip"
 {
     // Data: StarShip
 	declare global Qmax     to 11750/1.1. 	//v1: 8510/1.1.
-	declare global MECO1    to 2300^2. 		//(T+169)
+	declare global MECO1    to 2220^2. 		//(T+169)
     declare global FAIRSEP  to 110*1000.
 }else
 if vehicle_type = "SaturnV"

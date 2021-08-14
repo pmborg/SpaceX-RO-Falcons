@@ -169,13 +169,9 @@ if not exist buildID64.txt (
     echo set kspver to 1.12. > Ships\Script\kspver.c.
 
     REM Add a filter to PMBORG RO ships, only:
-    mkdir Ships\VAB.all
-    move Ships\VAB\*.* Ships\SPH
-    move Ships\VAB.all %NONEED%
+	mkdir Ships_VAB
+	move Ships\VAB\*.* Ships_VAB
 
-    REM Using a beta version recompiled for KSP 1.12
-    REM copy /Y GameData\Trajectories\Plugin\Trajectories.dll_beta GameData\Trajectories\Plugin\Trajectories.dll
-    
     echo.
     echo "Installation ended."
     echo "Please keep KOS at this version (1:1.2.1.0), and for future updates run scipt: RealFalcons-AUTO-Update.bat"
