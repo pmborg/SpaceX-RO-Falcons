@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to test the Starship Horizontal flight.
-// 13/Aug/2021
+// 15/Aug/2021
 // --------------------------------------------------------------------------------------------
 
 function COMPLETE_PRINT_STATUS
@@ -57,8 +57,8 @@ if vehicle_sub_type = "SN16-Profile1"
 	set thrust to 0.
 	shutDownAllEngines().
 }
-	
-if vehicle_sub_type = "SN20-Profile" and altitude > 140000 //140km
+
+if (vehicle_sub_type = "SN20-Profile" or vehicle_sub_type = "SS-BN") and altitude > 140000 //140km
 {
 	SET LandingTarget TO BODY:GEOPOSITIONLATLNG(23.12854, -159.982839).
 	set thrust to 0.
@@ -98,12 +98,15 @@ if vehicle_sub_type = "SN20-Profile" and altitude > 140000 //140km
 		set vel to SQRT(Vs2).
 		log_data (vel).
 	}
+	update_phase_title("RETRO-DEORBIT: DONE", 1).
 }
+else
+	update_phase_title("RETRO-DEORBIT: SKIP", 1).
 
 if vehicle_type = "StarShip"
 {
 	//WARP TO ATM:
-	update_phase_title("RETRO-DEORBIT: DONE", 1).
+	
 	set thrust to 0.  wait 0.1.
 	shutDownAllEngines().
 	wait 1.
