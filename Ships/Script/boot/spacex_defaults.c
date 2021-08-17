@@ -3,7 +3,8 @@ declare global offline_LandingZone1 to latlng(28.612903098335448, -80.6197024318
 declare global offline_LandingZone2 to latlng(28.612890963687462, -80.621613149083217).
 
 //declare global offline_LandingStarBase to latlng(25.9966111942016, -97.1497305858517).
-declare global offline_LandingStarBase to latlng(25.996389, -97.15).
+//26 00 03 -97 10 03=
+declare global offline_LandingStarBase to latlng(26.000833, -97.1675).
 
 //Define VESSELS on SAVED LOAD GAME: ""
 declare global  LZ_1 to "LandingZone1". 				
