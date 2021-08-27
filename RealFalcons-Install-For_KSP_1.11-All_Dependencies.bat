@@ -160,6 +160,9 @@ if not exist buildID64.txt (
 	echo.
 	echo "Installation ended."
 	echo "Please keep KOS at this version (1:1.2.1.0), and for future updates run scipt: RealFalcons-AUTO-Update.bat"
+	
+	call ULTRA-EVO-INSTALLER-v1.0-KSP1.11+.bat
+	
 	PAUSE
 :No
 	EXIT
