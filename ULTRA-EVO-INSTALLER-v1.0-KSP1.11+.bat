@@ -113,7 +113,16 @@ copy /Y GameData\EVO-Ultra\Kopernicus_Config.cfg_ GameData\Kopernicus\Config\Kop
 copy /Y GameData\EVO-Ultra\EVO-Earth_Atmosphere.cfg_ GameData\EVO\Configs\Scatterer_Configs\Earth\Earth_Atmosphere.cfg
 copy /Y GameData\EVO-Ultra\RSSVE-Earth_Atmosphere.cfg_ GameData\RSSVE\Configs\Scatterer_Configs\Earth\Earth_Atmosphere.cfg
 
+REM 1.12:   2021.06.17
+REM 1.12.1: 2021.06.24
+REM 1.12.1: 2021.07.28
+
 type buildID64.txt | find "2021.06"
+if %errorlevel% == 0 ( 
+	echo "This instalation is for KSP 1.12.2"
+	copy /Y GameData\EVO-Ultra\settings1.12.cfg_ settings.cfg
+)
+type buildID64.txt | find "2021.07"
 if %errorlevel% == 0 ( 
 	echo "This instalation is for KSP 1.12.2"
 	copy /Y GameData\EVO-Ultra\settings1.12.cfg_ settings.cfg
