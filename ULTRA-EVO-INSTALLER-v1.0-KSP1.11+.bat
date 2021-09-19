@@ -42,6 +42,7 @@ REM * Real Solar System v18.1.5 (cached)
 REM * Module Manager 4.2.1 (cached)
 REM * Kopernicus Planetary System Modifier 2:release-1.12.1-59 (cached)
 REM * ModularFlightIntegrator 1.2.10.0 (cached)
+ckan.exe remove --headless RSSTextures4096
 ckan.exe install --headless --allow-incompatible --no-recommends RSSTextures16K RSSDateTimeFormatter RealSolarSystem
 
 REM Scatterer:
@@ -52,7 +53,7 @@ REM * scatterer 3:v0.0772 (cached)
 ckan.exe install --headless --allow-incompatible --no-recommends Scatterer-config Scatterer-sunflare Scatterer
 
 REM RSSVE-HR
-ckan.exe install --headless --allow-incompatible --no-recommends RSSVE-HR
+REM ckan.exe install --headless --allow-incompatible --no-recommends RSSVE-HR
 
 REM EVE:
 REM ----
@@ -65,12 +66,12 @@ REM * Toolbar Controller 1:0.1.9.4 (cached)
 REM * Engine Lighting Relit 1.6.3 (cached)
 REM * ClickThrough Blocker 1:0.1.10.17 (cached)
 REM * Zero MiniAVC 1:1.1.0.2 (cached)
-ckan.exe install --headless --allow-incompatible ToolbarController EngineLightRelit
+REM ckan.exe install --headless --allow-incompatible ToolbarController EngineLightRelit
 
 REM BetterLookingOceans:
 REM --------------------
 REM * Better Looking Oceans - High Resolution 1.3.0.3 (cached)
-ckan.exe install --headless --allow-incompatible --no-recommends BetterLookingOceans-HighRes
+REM ckan.exe install --headless --allow-incompatible --no-recommends BetterLookingOceans-HighRes
 
 REM TUFX:
 REM ----
@@ -85,7 +86,7 @@ ckan.exe install --headless --allow-incompatible --no-recommends unBlur
 
 REM EVO REQ.:
 REM * Community Terrain Texture Pack 1:1.0.4 (cached)
-ckan.exe install --headless --allow-incompatible --no-recommends CommunityTerrainTexturePack
+REM ckan.exe install --headless --allow-incompatible --no-recommends CommunityTerrainTexturePack
 
 REM INSTALL: EVO
 echo "Downloading: EVO"
@@ -101,25 +102,34 @@ if not exist "GameData\EVO" (
 	)
 
 REM INSTALL: EVO-ULTRA SETTINGS FILES
-echo "Downloading: EVO-ULTRA SETTINGS"
-powershell -command "& { iwr https://www.dropbox.com/s/hjy9grnhn7eojb6/EVO-Ultra.zip?dl=1 -OutFile EVO-Ultra.zip }"
-echo "Installing: EVO-ULTRA SETTINGS"
-powershell.exe -NoP -NonI -Command "Expand-Archive 'EVO-Ultra.zip' GameData"
-move EVO-Ultra.zip %KSPTEMP%
+REM echo "Downloading: EVO-ULTRA SETTINGS"
+REM powershell -command "& { iwr https://www.dropbox.com/s/hjy9grnhn7eojb6/EVO-Ultra.zip?dl=1 -OutFile EVO-Ultra.zip }"
+REM echo "Installing: EVO-ULTRA SETTINGS"
+REM powershell.exe -NoP -NonI -Command "Expand-Archive 'EVO-Ultra.zip' GameData"
+REM move EVO-Ultra.zip %KSPTEMP%
 
 REM Setup EVO-ULTRA: Merge EVO integration with RSSVE-HI:
-echo "Install: EVO-ULTRA SETTINGS"
-copy /Y GameData\EVO-Ultra\Kopernicus_Config.cfg_ GameData\Kopernicus\Config\Kopernicus_Config.cfg
-copy /Y GameData\EVO-Ultra\EVO-Earth_Atmosphere.cfg_ GameData\EVO\Configs\Scatterer_Configs\Earth\Earth_Atmosphere.cfg
-copy /Y GameData\EVO-Ultra\RSSVE-Earth_Atmosphere.cfg_ GameData\RSSVE\Configs\Scatterer_Configs\Earth\Earth_Atmosphere.cfg
+REM echo "Install: EVO-ULTRA SETTINGS"
+REM copy /Y GameData\EVO-Ultra\Kopernicus_Config.cfg_ GameData\Kopernicus\Config\Kopernicus_Config.cfg
+REM copy /Y GameData\EVO-Ultra\EVO-Earth_Atmosphere.cfg_ GameData\EVO\Configs\Scatterer_Configs\Earth\Earth_Atmosphere.cfg
+REM copy /Y GameData\EVO-Ultra\RSSVE-Earth_Atmosphere.cfg_ GameData\RSSVE\Configs\Scatterer_Configs\Earth\Earth_Atmosphere.cfg
 
+REM 1.8.1:  2010.10.25
+REM 1.9.1:  2020.02.21
+REM 1.10.1: 2020.07.21
+REM 1.11.2: 2021.03.03
 REM 1.12:   2021.06.17
 REM 1.12.1: 2021.06.24
-REM 1.12.1: 2021.07.28
+REM 1.12.2: 2021.07.28
 
+type buildID64.txt | find "2021.03"
+if %errorlevel% == 0 ( 
+	echo "This instalation is for KSP 1.11.2"
+	copy /Y GameData\EVO-Ultra\settings1.11.cfg_ settings.cfg
+)
 type buildID64.txt | find "2021.06"
 if %errorlevel% == 0 ( 
-	echo "This instalation is for KSP 1.12.2"
+	echo "This instalation is for KSP 1.12.1"
 	copy /Y GameData\EVO-Ultra\settings1.12.cfg_ settings.cfg
 )
 type buildID64.txt | find "2021.07"
@@ -127,19 +137,14 @@ if %errorlevel% == 0 (
 	echo "This instalation is for KSP 1.12.2"
 	copy /Y GameData\EVO-Ultra\settings1.12.cfg_ settings.cfg
 )
-type buildID64.txt | find "2021.03"
-if %errorlevel% == 0 ( 
-	echo "This instalation is for KSP 1.11.2"
-	copy /Y GameData\EVO-Ultra\settings1.11.cfg_ settings.cfg
-)
 
-move /Y GameData\RSSVE\Configs\Scatterer_Configs\RSSVE_Scatterer_Planetlist_Config.cfg GameData\RSSVE\Configs\Scatterer_Configs\RSSVE_Scatterer_Planetlist_Config.cfg_
-move /Y GameData\RSSVE\Configs\Scatterer_Configs\RSSVE_Scatterer_Settings_Config.cfg GameData\RSSVE\Configs\Scatterer_Configs\RSSVE_Scatterer_Settings_Config.cfg_
-move /Y GameData\RSSVE\Configs\Scatterer_Configs\RSSVE_Scatterer_Sunflare_Config.cfg GameData\RSSVE\Configs\Scatterer_Configs\RSSVE_Scatterer_Sunflare_Config.cfg_
-move /Y GameData\RSSVE\Textures\DetailTextures %KSPTEMP%
-move /Y GameData\RSSVE\Textures\MainTextures %KSPTEMP%
-move /Y GameData\RSSVE\Textures\ScatterTextures %KSPTEMP%
-move /Y GameData\EVO-Ultra %KSPTEMP%
+REM move /Y GameData\RSSVE\Configs\Scatterer_Configs\RSSVE_Scatterer_Planetlist_Config.cfg GameData\RSSVE\Configs\Scatterer_Configs\RSSVE_Scatterer_Planetlist_Config.cfg_
+REM move /Y GameData\RSSVE\Configs\Scatterer_Configs\RSSVE_Scatterer_Settings_Config.cfg GameData\RSSVE\Configs\Scatterer_Configs\RSSVE_Scatterer_Settings_Config.cfg_
+REM move /Y GameData\RSSVE\Configs\Scatterer_Configs\RSSVE_Scatterer_Sunflare_Config.cfg GameData\RSSVE\Configs\Scatterer_Configs\RSSVE_Scatterer_Sunflare_Config.cfg_
+REM move /Y GameData\RSSVE\Textures\DetailTextures %KSPTEMP%
+REM move /Y GameData\RSSVE\Textures\MainTextures %KSPTEMP%
+REM move /Y GameData\RSSVE\Textures\ScatterTextures %KSPTEMP%
+REM move /Y GameData\EVO-Ultra %KSPTEMP%
 
 REM ShowFPS:
 REM --------

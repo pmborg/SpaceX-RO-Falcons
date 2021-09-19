@@ -8,6 +8,8 @@ REM
 CLS
 TYPE HowToInstall.txt
 echo.
+echo "INSTALLING ON:"
+cd
 
 if not exist buildID64.txt (
 	echo.

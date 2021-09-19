@@ -1,21 +1,16 @@
---------------------------------------------------------------------------------------------------------------------------------
-IMPORTANT: This Automatic Instalation, assume a Clean Install of KSP 1.9.1 or KSP 1.10.1 or KSP 1.10.2 
+---------------------------------------------------------------------------------
+IMPORTANT: This Automatic Instalation, assume a Clean Install of 
+           KSP 1.9.1 or KSP 1.10.2 or KSP 1.11.2 or KSP 1.11.2 
            in order to avoid conflicts with other MODS.
 
-
---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 [1] Automatic Instalation:
---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 Follow MAIN LINK: https://github.com/pmborg/SpaceX-RO-Falcons/wiki/HOW-TO-INSTALL
 
-
-
-
-
-
---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 [2] Manual:
---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 First  - Copy all these files to "KSP MAIN DIRECTORY" (samples:)
 
 ---------
@@ -29,33 +24,40 @@ UNZIP AND COPY: UNZIP SpaceX-RO-Falcons-main.zip
 ------------------
 ALL THESE CONTENT:
 ------------------
-	GameData
-	HowToInstall.txt
-	LICENSE
-	Pmborg-RealFalcons-v2-Apollo-Parts(Challenge-1).bat
-	Pmborg-RealFalcons-v2-CheckForModUpdates.bat
-	Pmborg-RealFalcons-v2-Install-For_KSP_1.11-All_Dependencies.bat
-	Pmborg-RealFalcons-v2-Install-For_KSP_1.10.1-All_Dependencies.bat
-	Pmborg-RealFalcons-v2-Install-For_KSP_1.9.1-All_Dependencies.bat
-	README.md
-	saves
-	Ships
-	thumbs
-	UserLoadingScreens
-	
+GameData
+HowToInstall.txt
+LICENSE
+OPTIONAL-Add_Apollo_Parts.bat
+OPTIONAL-Add_Katniss.s.Cape.Canaveral.bat
+README.md
+RealFalcons-AUTO-Update.bat
+RealFalcons-Install-For_KSP_1.10.1-All_Dependencies.bat
+RealFalcons-Install-For_KSP_1.11-All_Dependencies.bat
+RealFalcons-Install-For_KSP_1.12-All_Dependencies.bat_not_ready
+RealFalcons-Install-For_KSP_1.9.1-All_Dependencies.bat
+Remove-EARTH-Add-KERBIN-with-ParallaxModPack-on-KSP1.11.bat
+saves
+settings.cfg
+Ships
+thumbs
+ULTRA-EVO-INSTALLER-v1.0-KSP1.11+.bat
+UserLoadingScreens
+YouTube Playlist.txt
+		
 --------
 TO: (Where Kerbal Space Program is Installed)
 --------
     Windows x86: C:\Program Files\Steam\SteamApps\common\Kerbal Space Program
     Windows x64: C:\Program Files (x86)\Steam\SteamApps\common\Kerbal Space Program
 
---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 Second - Run the Script:
  From:
     Windows x86: C:\Program Files\Steam\SteamApps\common\Kerbal Space Program
     Windows x64: C:\Program Files (x86)\Steam\SteamApps\common\Kerbal Space Program
 
-	(for KSP 1.9.1)  Pmborg-RealFalcons-v2-Install-For_KSP_1.9.1-All_Dependencies.bat
-	(for KSP 1.10.1) Pmborg-RealFalcons-v2-Install-For_KSP_1.10.1-All_Dependencies.bat
-	(for KSP 1.11)   Pmborg-RealFalcons-v2-Install-For_KSP_1.11-All_Dependencies.bat
-
+    (for KSP 1.9.1)  RealFalcons-Install-For_KSP_1.9.1-All_Dependencies.bat
+    (for KSP 1.10.2) RealFalcons-Install-For_KSP_1.10.1-All_Dependencies.bat
+    (for KSP 1.11.2) RealFalcons-Install-For_KSP_1.11-All_Dependencies.bat
+    (for KSP 1.12.2) RealFalcons-Install-For_KSP_1.12-All_Dependencies.bat
+	
