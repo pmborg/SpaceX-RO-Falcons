@@ -43,8 +43,8 @@ if RealSolarSystemMod = true and mission_target:NAME <> "Earth"
 	//-----------------------
 	
 	// [1] Calculate KSP_UA:
-	set EarthAPOAPSIS to BODY("Earth"):APOAPSIS.
-	set EarthPERIAPSIS to BODY("Earth"):PERIAPSIS.
+	set EarthAPOAPSIS to ROUND( BODY("Earth"):APOAPSIS,3).
+	set EarthPERIAPSIS to ROUND ( BODY("Earth"):PERIAPSIS,3).
 	set KSP_UA to (EarthAPOAPSIS+EarthPERIAPSIS)/2.
 	print "Earth APOAPSIS: " + ROUND (EarthAPOAPSIS,3).
 	print "Earth PERIAPSIS: " + ROUND (EarthPERIAPSIS,3).

@@ -30,8 +30,16 @@ if (status = "PRELAUNCH" or status = "LANDED") and ( BODY:name = "Kerbin" or BOD
 // DEFINE MISSION PROFILE: -------------------------------------------------------
 RUNPATH( "boot/sw-version.c" ).
 
-//Usefull on reboots:
-shutDownAllEngines().
+//USEFULL ON REBOOTS:
+if alt:radar > 200
+{
+	UNTIL NOT HASNODE { REMOVE NEXTNODE. WAIT 0.1. } //removeAllNodes!
+	RCS OFF. WAIT 0.1.
+	SAS OFF. WAIT 0.1.
+	UNLOCK STEERING. wait 0.1.
+	shutDownAllEngines(). WAIT 1.
+	shutDownAllEngines(). WAIT 1.	//2 Times DUE KSPI: Engine Bugs on re-loads using multi-layer engines.
+}
 
 LIST PROCESSORS IN ALL_PROCESSORS.
 PRINT  "TOTAL CPU PROCESSORS: "+ALL_PROCESSORS:LENGTH.

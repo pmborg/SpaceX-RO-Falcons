@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to todo the Manouver in prograde to the: mission_target
-// 09/Jan/2021
+// 30/Oct/2021
 // --------------------------------------------------------------------------------------------
 
 parameter goto_mission_target.
@@ -33,9 +33,12 @@ function DOTHEMAINBURN
 	set warp to 0. wait 1.
 	set target to goto_mission_target.	//"Mun"/"Moon", etc
 
-	// SAS ON. WAIT 1.
-	// set sasmode to "maneuver".
-
+	if vehicle_type = "Space4"
+	{
+		UNLOCK STEERING. wait 0.1.
+		SAS ON. wait 0.1.
+		set sasmode to "maneuver". wait 0.1.
+	}
 
 	//-------------------------------------------------------------------------------
 
@@ -115,9 +118,11 @@ function DOTHEMAINBURN
 	print "PhaseI-Rotate to "+goto_mission_target+" Burn" at (0,2).
 	RCS ON.
 	wait 15.
-	RCS OFF.
-	RCS OFF.
-
+	// if vehicle_type <> "Space4"
+	// {
+		RCS OFF.
+		RCS OFF.
+	// }
 
 	//-------------------------------------------------------------------------------
 	clearscreen.
@@ -145,6 +150,7 @@ function DOTHEMAINBURN
 
 	//DO MAIN BURN:
 	set HaveEncounter to False.
+	set last_node_remaning_deltaV to 9999999999.
 	until HaveEncounter //(Vp-V) < 0.001 
 	{
 		set vec to velocity:orbit.
@@ -189,7 +195,7 @@ function DOTHEMAINBURN
 			{
 				FROM {local i is 0.} UNTIL i = thesepatches:length-1 STEP {SET i to i + 1.} DO 
 				{
-					print "thesepatches[i] "+thesepatches[i]+"        " at (0,14+i).
+					print "thesepatches[i] "+thesepatches[i]+"        " at (0,16+i).
 					if thesepatches[i]:name = goto_mission_target 
 					{
 						set thrust to 0.1. wait 0.1.
@@ -213,8 +219,22 @@ function DOTHEMAINBURN
 		print "Vo: (phase) " 		 at (0,py+7). print ROUND(Vo)+"    "  	 at (25,py+7).
 		print "Y: (phase) " 		 at (0,py+8). print y 					 at (25,py+8).
 		print "X: (power)" 			 at (0,py+9). print x 					 at (25,py+9).
-		print "ship:Orbit:TRANSITION: "+ship:Orbit:TRANSITION+"     " at (0,20). //FINAL
-		print "maxthrust: "+maxthrust+"     " 					 	  at (0,21).
+		set vorb to node:deltav.
+		set Vsx to vorb:x.
+		set Vsy to vorb:y.
+		set Vsz to vorb:z.
+		set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).
+		set node_remaning_deltaV to SQRT(Vs2).
+		print "node:deltav" 		 at (0,py+10). print ROUND (node_remaning_deltaV,1)+ " m/s     "		 at (25,py+10).
+		print "ship:Orbit:TRANSITION: "+ship:Orbit:TRANSITION+"     " at (0,22). //FINAL
+		print "maxthrust: "+ROUND (maxthrust)+"     " 					 	  at (0,23).
+
+		if node_remaning_deltaV > last_node_remaning_deltaV
+		{
+			print "#### break using deltaV" at (0,22).
+			break.
+		}
+	    set last_node_remaning_deltaV to node_remaning_deltaV.
 
 		if apoapsis > (Ra - BODY(goto_mission_target):RADIUS)*0.7 {
 			if (maxthrust > 5000)
@@ -245,7 +265,7 @@ function DOTHEMAINBURN
 	//REMOVE ned2.
 	
 	LOG "Burn" to burn.txt.
-}
+}//DOTHEMAINBURN
 
 if NOT EXISTS("burn.txt")
 	DOTHEMAINBURN().
@@ -258,6 +278,13 @@ if vehicle_type = "SaturnV" and NOT EXISTS("dock.txt")
 AG5 ON. //Panels ON
 // PRINT "Press [ENTER], to Confirm: Warp!"at (0,26).
 // set ch to terminal:input:getchar().
+
+if vehicle_type = "Space4"
+{
+	UNLOCK STEERING. wait 0.1.
+	SAS ON. wait 1.
+	set sasmode TO "PROGRADE". wait 1.
+}
 
 CLEARSCREEN. print " ".
 update_phase_title("Warp-Out "+BODY:NAME+" SOI", 1, true).

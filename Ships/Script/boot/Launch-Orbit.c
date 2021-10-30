@@ -30,6 +30,7 @@ if vehicle_sub_type = "SN20-Profile"
 // --------------------------------------------------------------------------------------------
 function main_liftoff
 {
+	LOG "main_liftoff()" to LOG_FILE.
 	if vehicle_company = "SpaceX"
 	{
 		if (vehicle_type = "Falcon Heavy" or vehicle_type = "StarShip")
@@ -138,6 +139,15 @@ function main_liftoff
 		if vehicle_company = "SpaceX" and Release_Tower_Clamp
 			Print "(Strongback Retracted)".
 
+		if vehicle_type = "Space4"
+		{
+			AG4 ON. WAIT 1. //Nucler Reactor on
+			AG5 ON. WAIT 1. //Vertical Jet Engines
+			AG1 ON. WAIT 1. //Jet Engines
+			AG2 ON. WAIT 1. //Multi/SPI Jet Engines
+			AG8 ON. WAIT 1. //VERTICAL RS-25
+		} 
+			
 		if vehicle_type = "Crew Dragon 2"
 			WAIT 1.										//CD2: TOWER+Liftoff
 		else {
@@ -145,23 +155,16 @@ function main_liftoff
 			if vehicle_type = "SaturnV"
 				WAIT 5.									//SaturnV: 3+5=8 seconds total to reach max power
 				
-			if vehicle_type = "Space4"
-			{
-				AG4 ON. WAIT 1. //Nucler Reactor on
-				AG5 ON. WAIT 1. //Vertical Jet Engines
-				AG1 ON. WAIT 1. //Jet Engines
-				AG2 ON. WAIT 1. //Multi/SPI Jet Engines
-				AG8 ON. WAIT 1. //VERTICAL RS-25
-			} 
 			if vehicle_company <> "PMBORG"
 				if (KUniverse:ActiveVessel = SHIP) STAGE.	//Liftoff Stage!
 		}
 	}
-}
+}//main_liftoff
 
 // --------------------------------------------------------------------------------------------
 function do_stage
 {
+	LOG "do_stage()" to LOG_FILE.
 	if vehicle_type = "Crew Dragon 2" and KUniverse:ActiveVessel <> SHIP
 		AG7 ON. //Decouple and Activate Engine
 	else
@@ -310,6 +313,7 @@ function GoSpace4
 
 // Vehicle Release Auto Sequence:
 // --------------------------------------------------------------------------------------------
+LOG "START: Vehicle Release Auto Sequence" to LOG_FILE.
 set thrust to 0.
 lock throttle to thrust.
 
@@ -657,6 +661,7 @@ set vel to SQRT(Vs2).
 // --------------------------------------------------------------------------------------------
 if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_type <> "SN16-Profile1" and vel < 3000
 {
+	LOG "START: STAGE-1/BOOSTER SEP" to LOG_FILE.
 	CLEARSCREEN.
 	PRINT " ".PRINT " ".
 	
@@ -720,8 +725,6 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 			}
 			activateVesselProbe().
 		}
-		
-		
 	}
 	
 	// ORBIT SETUP 

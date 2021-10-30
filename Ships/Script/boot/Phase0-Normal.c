@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used to match the target orbit inclination.
-// 30/Dez/2020
+// 30/Oct/2021
 // --------------------------------------------------------------------------------------------
 
 parameter mission_target_parameter.
@@ -157,20 +157,20 @@ function Inclination_Match
 	//PRINT "ENTER TO PROCEED". set ch to terminal:input:getchar().	//DEBUG
 	
 
-	UNLOCK STEERING.
-	RCS ON.
-	SAS ON.
-	wait 1.
+	UNLOCK STEERING. wait 0.1.
+	RCS ON. wait 0.1.
+	SAS ON. wait 0.1.
+	//wait 1.
 	set prev_angle to getNormalOrbitAngle().
 	
 	//set sasmode to "maneuver".
 	wait 0.
 	if dv_factor < 0
 	{
-		set sasmode to "ANTINORMAL".
+		set sasmode to "ANTINORMAL". wait 0.1.
 		print "SAS ANTINORMAL".
 	} else {
-		set sasmode to "NORMAL". //set sasmode to "maneuver".
+		set sasmode to "NORMAL". wait 0.1.//set sasmode to "maneuver".
 		print "SAS NORMAL".
 	}
 	
@@ -214,6 +214,12 @@ function Inclination_Match
 clearscreen.
 print " ".print " ".print " ".
 update_phase_title("Inclination Burn", 0, true).
+
+if vehicle_type = "Space4"
+{ 
+	UNLOCK STEERING. WAIT 0.1. 
+	SAS ON. WAIT 0.1. 
+}
 
 set result to Inclination_Match(). print result at (0,14).
 print "SUMMARY: TARGET Inclination Corrected: (result) "+result.

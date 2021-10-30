@@ -32,7 +32,8 @@ global lat_correction to 0.
 
 function change_inclination 
 {
-		//parameter mission_target.
+		//PARAMETER: mission_target.
+		LOG "MAIN: change_inclination" to LOG_FILE.
 		
 		CLEARSCREEN. print " ". print " ".
 		// Just reaction-wheels Stability:

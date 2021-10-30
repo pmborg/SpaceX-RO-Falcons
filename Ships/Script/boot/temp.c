@@ -6,7 +6,7 @@ SET gui TO GUI(200).
 LOCAL label IS gui:ADDLABEL("").
 SET label:STYLE:ALIGN TO "CENTER".
 
-gui:SHOW().
+//gui:SHOW().
 UNTIL FALSE
 {
     set temp to BODY:ATM:ALTITUDETEMPERATURE(altitude).

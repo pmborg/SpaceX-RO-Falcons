@@ -8,10 +8,11 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 22/Jun/2021
+// 30/Oct/2021
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
 
+//for falcons & SS
 function steering_falcon
 {
 	parameter Vdeg.	//SET Vdeg to 90-delta.						// Vertical = 90
@@ -31,6 +32,7 @@ function steering_falcon
 	//LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll). (NO NEED THIS LINE AUTOMATIC!)
 }
 
+//for booster:
 function st1_stage 
 {
 if SHIP_NAME = "PMBT-SpaceX Falcon 9 v1.2 Block-5" and STAGE:NUMBER <= 4
@@ -94,6 +96,7 @@ function shutDownAllEngines
 	LOG "shutDownAllEngines ()" to LOG_FILE.
 }
 
+//for falcons:
 function activateOneEngine 
 {
 	shutDownAllEngines().
@@ -129,6 +132,7 @@ function activateAllEngines
 	LOG "activateAllEngines ()" to LOG_FILE.
 }
 
+//for falcons:
 function activate3engines
 {
 	shutDownAllEngines().
@@ -137,6 +141,7 @@ function activate3engines
 	LOG "activate3engines ()" to LOG_FILE.
 }
 
+//for falcons:
 function engines_thrustlimit_to 
 {
 	parameter LIMIT.
@@ -148,12 +153,14 @@ function engines_thrustlimit_to
 	LOG "engines_thrustlimit_to ()" to LOG_FILE.
 }
 
+//for SS:
 function sn11_test_profile_deactivate_engine1
 {
 	AG3 OFF. wait 0.1.
 	AG3 ON.  wait 0.1.
 }
 
+//for SS:
 function sn11_test_profile_deactivate_engine2
 {
 	AG4 OFF. wait 0.1.
