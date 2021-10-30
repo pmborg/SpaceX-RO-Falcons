@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Circularize an orbit after Launch-Orbit.c
-// 21/Jun/2021
+// 30/Oct/2021
 // --------------------------------------------------------------------------------------------
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
@@ -33,12 +33,13 @@ function wait_for_AP
 		until eta:apoapsis < 3000 and saved
 		{
 			WAIT 1.
-			if (KUniverse:ActiveVessel = SHIP) and (NOT EXISTS("CIRCULARIZE.txt")) //and (vehicle_type = "F9v1.2B5")
+			if (KUniverse:ActiveVessel = SHIP) and (NOT EXISTS("CIRCULARIZE.txt"))
 			{
 				update_phase_title("C-RESUME CIRCULARIZE",1, true).	//WA: to KSP bug.
 				kuniverse:QUICKSAVETO("RESUME-CIRCULARIZE"). wait 1.
 				LOG  "Done" to CIRCULARIZE.txt. wait 1.
-				kuniverse:QUICKLOADFROM("RESUME-CIRCULARIZE").
+				if vehicle_company <> "PMBORG"
+					kuniverse:QUICKLOADFROM("RESUME-CIRCULARIZE").
 				set saved to true.
 			}
 		}
@@ -133,8 +134,11 @@ function do_circle_step
 		//In theory we should have it...
 		if throttle > 0 and maxthrust = 0 
 		{
-			stage. //confirm_stage().
-			WAIT 2.
+			if vehicle_type <> "Space4"
+				stage. //confirm_stage().
+			else
+				AG9 ON.
+			WAIT 1.
 		}.
 		
 		if y > 1 

@@ -8,15 +8,15 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to ...
-// 27/Nov/2021
+// 27/Oct/2021
 // --------------------------------------------------------------------------------------------
 
 parameter destBod. 		// set destBod to BODY(mission_target).
 
 PRINT "Process Phase Angle? (y/n)". set ch to terminal:input:getchar().
+PRINT ch. wait 2.
 if (ch = "y" OR ch = "Y")
 {
-	
 	clearscreen.
 	SET MAPVIEW TO TRUE.  	// goto: map view
 

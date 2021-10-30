@@ -8,12 +8,13 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              Used to specify the SW version and the diferent types of profiles supported.
-// 15/Aug/2021
+// 30/Oct/2021
 // --------------------------------------------------------------------------------------------
+set version_str to "SW-Ver: 1.21.10.28".
+//                          #.YY.MM.DD
+
 LOG   "START: sw-version.c" to LOG_FILE.
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
-//                          #.YY.MM.DD
-set version_str to "SW-Ver: 1.21.08.15".
 PRINT version_str at (0,2). PRINT time:calendar + " " + time:clock at (23,2).
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
@@ -166,6 +167,12 @@ if SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5" or
    SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM" or
    SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
     declare global vehicle_type to "Falcon Heavy".          // BASE: Falcon-9 v1.2Blk:5 
+else
+	if SHIP_NAME = "Space4-KSP1.12"
+	{
+		declare global vehicle_type to "Space4".         		// BASE: Space4-KSP1_12
+		set vehicle_company to "PMBORG".
+	}
 else
 {
     if MASS < 20

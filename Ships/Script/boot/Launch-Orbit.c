@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 13/Aug/2021
+// 30/Oct/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 LOG "START: Launch-Orbit.c" to LOG_FILE.
@@ -39,7 +39,7 @@ function main_liftoff
 		else
 			set str_vehicle to "Falcon".
 		
-		if vehicle_type = "Falcon Heavy" 
+		if vehicle_type = "Falcon Heavy" OR vehicle_type = "Crew Dragon 2" OR vehicle_type = "F9v1.2B5"
 		{
 			// Vehicle Release Auto Sequence:
 			PRINT " ".
@@ -85,7 +85,7 @@ function main_liftoff
 			if (KUniverse:ActiveVessel = SHIP) STAGE.	//Water run...
 		}
 
-		if vehicle_type <> "SaturnV" and vehicle_type <> "StarShip"
+		if vehicle_type <> "SaturnV" and vehicle_type <> "StarShip" //and vehicle_type <> "Space4"
 			RCS ON.
 
 		if vehicle_type = "F1-M1" or 
@@ -94,7 +94,8 @@ function main_liftoff
 		   vehicle_type = "SaturnV" or
 		   vehicle_type = "SN9-Profile1" or 
 		   vehicle_type = "SN16-Profile1" or 
-		   vehicle_type = "StarShip"
+		   vehicle_type = "StarShip" or
+		   vehicle_type = "Space4"
 			SAS OFF.
 		else
 			SAS ON.
@@ -103,10 +104,13 @@ function main_liftoff
 	
 	if (status = "PRELAUNCH" or status = "LANDED" or status = "SPLASHED") //KSP have so many bugs...
 	{
-		AG1 ON. //TOGGLE
-		if vehicle_company = "SpaceX" and Release_Tower_Clamp
-			Print "(Release Tower Clamp)".
 		
+		if vehicle_company = "SpaceX" 
+		{
+			AG1 ON. //TOGGLE
+			if Release_Tower_Clamp
+				Print "(Release Tower Clamp)".
+		}
 		set aim_cowntdown to 5.
 		
 		if vehicle_type = "StarShip"
@@ -141,7 +145,16 @@ function main_liftoff
 			if vehicle_type = "SaturnV"
 				WAIT 5.									//SaturnV: 3+5=8 seconds total to reach max power
 				
-			if (KUniverse:ActiveVessel = SHIP) STAGE.	//Liftoff Stage!
+			if vehicle_type = "Space4"
+			{
+				AG4 ON. WAIT 1. //Nucler Reactor on
+				AG5 ON. WAIT 1. //Vertical Jet Engines
+				AG1 ON. WAIT 1. //Jet Engines
+				AG2 ON. WAIT 1. //Multi/SPI Jet Engines
+				AG8 ON. WAIT 1. //VERTICAL RS-25
+			} 
+			if vehicle_company <> "PMBORG"
+				if (KUniverse:ActiveVessel = SHIP) STAGE.	//Liftoff Stage!
 		}
 	}
 }
@@ -154,7 +167,8 @@ function do_stage
 	else
 	{
 		UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
-		stage.
+		if vehicle_company <> "PMBORG"
+			stage.
 		
 		if vehicle_type = "Falcon Heavy" 
 			AG6 ON. //Toggle: FH Boosters separator
@@ -203,14 +217,108 @@ function check_fairing_sep
 	}
 }
 
+function GoSN9
+{
+	//Align performance with real telemetry data:
+	if (update_th)
+	{
+		if alt:radar < 1000
+			set thrust to 1.0625*((mass*g)/maxthrust).
+		else
+			set thrust to 1.039*((mass*g)/maxthrust).
+	}
+	
+	if alt:radar > 3600 and profile_stage = 0
+	{
+		sn11_test_profile_deactivate_engine1().
+		set profile_stage to 0.5.
+		PRINT "( Shutdown 1st engine )" at (0,5+index2).
+		set t_now to (TIME:SECONDS-TakeOffTime).
+		set update_th to false.
+	}
+
+	//Simulate the acc delay on Raptor engines:
+	if profile_stage = 0.5
+		if (TIME:SECONDS-TakeOffTime) > t_now+2
+		{
+			set update_th to true.
+			set profile_stage to 1.
+		}
+
+	PRINT "P-ST: "+profile_stage at (30,2).
+}
+
+function GoSpace4
+{
+		if vehicle_type = "Space4" and altitude > 200 and Space4 = 0
+		{
+			RCS OFF.
+			GEAR OFF. WAIT 0.1.
+			AG8 OFF.  WAIT 0.1. //VERTICAL RS-25
+			set Space4 to 1.
+		}
+		if vehicle_type = "Space4" and altitude > 300 and Space4 = 1
+		{
+			//AG4 ON. WAIT 1. 	//Nucler Reactor on
+			AG5 OFF. WAIT 0.1. 	//Vertical Jet Engines
+			//AG1 ON. WAIT 0.1.  //Jet Engines
+			//AG2 ON. WAIT 1. 	//Multi/SPI Jet Engines
+			//AG8 OFF. WAIT 0.1.	//VERTICAL RS-25
+			set Space4 to 2.
+			LOCK STEERING TO HEADING(90, 30). WAIT 0.1.
+		}
+		if vehicle_type = "Space4" and altitude > 2000 and Space4 = 2
+		{
+			set Space4 to 3.
+			LOCK STEERING TO HEADING(90, 70). WAIT 0.1.
+		}
+		if vehicle_type = "Space4" and altitude > 12000 and Space4 = 3
+		{
+			set Space4 to 4.
+			AG7 ON. wait 0.1.
+			AG7 OFF. wait 0.1.
+		}
+		if vehicle_type = "Space4" and altitude > 24000 and Space4 = 4
+		{
+			set Space4 to 5.
+			AG1 OFF. wait 0.1.
+		}
+		if vehicle_type = "Space4" and altitude > 52000 and Space4 = 5
+		{
+			set Space4 to 6.
+			AG9 ON. wait 0.1.
+		}
+		if vehicle_type = "Space4" and apoapsis > 140000 and Space4 = 6
+		{
+			set Space4 to 7.
+			AG2 OFF. wait 0.1.
+			LOCK STEERING TO HEADING(90, 15). WAIT 0.1.
+		}
+		if vehicle_type = "Space4" and apoapsis > 250000 and Space4 = 7
+		{
+			set Space4 to 8.
+			LOCK STEERING TO HEADING(90, 2). WAIT 0.1.
+		}
+		if vehicle_type = "Space4" and periapsis > 140000 and Space4 = 8
+		{
+			set Space4 to 8.
+			AG9 OFF. wait 0.1.
+			LOCK STEERING TO PROGRADE. 	//UNLOCK STEERING.
+			set profile_stage to 1.
+		}
+}
+
 // Vehicle Release Auto Sequence:
 // --------------------------------------------------------------------------------------------
 set thrust to 0.
 lock throttle to thrust.
 
-if vehicle_type <> "SN16-Profile1"
-	LOCK STEERING TO up + R(0,0,180). //UP
-
+if vehicle_type = "Space4"
+	LOCK STEERING TO HEADING(90, 10).
+else
+	if vehicle_type <> "SN16-Profile1"
+		LOCK STEERING TO up + R(0,0,180). //UP
+	
 set initialmass to mass.
 set Cd to .20075*.008.
 set D to (mass*g)/Qmax.
@@ -230,6 +338,7 @@ set p0 to 1.223125.
 set e to constant:e.
 set q to 0.
 set mphase to 0.
+set Space4 to 0.
 
 if alt:radar < 200
 {
@@ -255,6 +364,8 @@ if alt:radar < 200
 	PRINT "Q-Max" 				at (0,2).
 	PRINT "Dynamic Pressure" 	at (0,3).
 	PRINT "q/Qmax" 				at (0,4).
+	if vehicle_type = "Space4"
+		PRINT "Space4" 				at (0,5).
 	set index2 to 6.
 
 	set profile_stage to 0.
@@ -262,7 +373,7 @@ if alt:radar < 200
 	// LOOP: UNTIL HALF Qmax
 	// --------------------------------------------------------------------------------------------
 	set update_th to true.
-	until q > Qmax*.50  or profile_stage >= 1	// END CYCLE AT: qmax 50%
+	until q > Qmax*.50 or profile_stage >= 1	// END CYCLE AT: qmax 50%
 	{ 
 		set H to altitude/(-5000).
 		set p to p0*(e^H).
@@ -275,11 +386,14 @@ if alt:radar < 200
 		if vehicle_company = "SpaceX" and not splash_landing
 			PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,6).
 		
+	if vehicle_type = "Space4"
+		PRINT Space4 				at (22,5).
+		
 		if alt:radar > 130 and alt:radar < 1000
 		{
 			if vehicle_type <> "SN9-Profile1"
 				PRINT "( Tower is cleared )" at (0,5+index2).
-			if vehicle_type = "Crew Dragon 2"
+			if vehicle_type = "Crew Dragon 2" //OR vehicle_type = "Space4"
 				SAS ON.
 		}
 		else
@@ -288,35 +402,10 @@ if alt:radar < 200
 				
 		//SN9-Profile1 only:
 		if alt:radar > 100 and vehicle_type = "SN9-Profile1"
-		{
-			//Align performance with real telemetry data:
-			if (update_th)
-			{
-				if alt:radar < 1000
-					set thrust to 1.0625*((mass*g)/maxthrust).
-				else
-					set thrust to 1.039*((mass*g)/maxthrust).
-			}
-			
-			if alt:radar > 3600 and profile_stage = 0
-			{
-				sn11_test_profile_deactivate_engine1().
-				set profile_stage to 0.5.
-				PRINT "( Shutdown 1st engine )" at (0,5+index2).
-				set t_now to (TIME:SECONDS-TakeOffTime).
-				set update_th to false.
-			}
-
-			//Simulate the acc delay on Raptor engines:
-			if profile_stage = 0.5
-				if (TIME:SECONDS-TakeOffTime) > t_now+2
-				{
-					set update_th to true.
-					set profile_stage to 1.
-				}
-
-			PRINT "P-ST: "+profile_stage at (30,2).
-		}
+			GoSN9().
+		
+		if vehicle_type = "Space4"
+			GoSpace4().
 		
 		set vsurf to velocity:surface.
 		set Vsx to vsurf:x.
@@ -334,6 +423,7 @@ if alt:radar < 200
 	PRINT "Throttle" at (0,1+index2).
 	PRINT "Maxthrust: " at (0,2+index2).
 	PRINT "delta: " at (0,3+index2).
+	
 	set x to 0.
 	set phase to 0.
 	
@@ -743,8 +833,8 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 				set do_break to true.
 		}
 
-		if vehicle_type <> "Crew Dragon 2"
-			check_fairing_sep().		
+		if vehicle_type <> "Crew Dragon 2" and vehicle_company <> "PMBORG"
+			check_fairing_sep().
 			
 		return do_break.
 	}

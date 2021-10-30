@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestrate all mission phases.
-// 27/Nov/2021
+// 30/Oct/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: main.c" to LOG_FILE.
 // Reset Engine settings before all, ("migth be a reboot")
@@ -73,7 +73,7 @@ if mission_origin <> DEFAULT_KSC //mission_target //ORIGIN = TARGET
 // --------------------------------------------------------------------------------------------
 if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto "RETURN-JOURNEY"
 {
-	if (IS_INTER_PLANETARY_MISSION)
+	if (IS_INTER_PLANETARY_MISSION) and (altitude < alt:radar)
 		RUNPATH( "boot/Phase-Angle.c", mission_target ).	// Warp to Correct Phase Angle
 
 	//ACTION:  --------------------------------------------------------

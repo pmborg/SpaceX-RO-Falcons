@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used before main.c, to distribute tasks among all Processors.
-// 13/Aug/2021
+// 30/Oct/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: stage-main.ks" to LOG_FILE.
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
@@ -29,6 +29,9 @@ if (status = "PRELAUNCH" or status = "LANDED") and ( BODY:name = "Kerbin" or BOD
 
 // DEFINE MISSION PROFILE: -------------------------------------------------------
 RUNPATH( "boot/sw-version.c" ).
+
+//Usefull on reboots:
+shutDownAllEngines().
 
 LIST PROCESSORS IN ALL_PROCESSORS.
 PRINT  "TOTAL CPU PROCESSORS: "+ALL_PROCESSORS:LENGTH.
