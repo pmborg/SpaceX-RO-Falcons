@@ -140,20 +140,21 @@ function Inclination_Match
 	print "BURN:ETA "+ ROUND(BURN:ETA,1).
 	//PRINT "ENTER TO PROCEED". set ch to terminal:input:getchar().	//DEBUG
 	
-	until false {
-		if BURN:ETA>0 and BURN:ETA < 2000
-			set warp to 2.
+	warp_until_node (BURN).
+	// until false {
+		// if BURN:ETA>0 and BURN:ETA < 2000
+			// set warp to 2.
 			
-		if BURN:ETA>0 and BURN:ETA < 100
-			set warp to 1.
+		// if BURN:ETA>0 and BURN:ETA < 100
+			// set warp to 1.
 			
-		if BURN:ETA>0 and BURN:ETA < 15 {
-			set warp to 0.
-			break.
-		}.
+		// if BURN:ETA>0 and BURN:ETA < 15 {
+			// set warp to 0.
+			// break.
+		// }.
 
-		print "BURN:ETA "+ ROUND(BURN:ETA,1) + "        " at (0, 7).
-	}.
+		// print "BURN:ETA "+ ROUND(BURN:ETA,1) + "        " at (0, 7).
+	// }.
 	//PRINT "ENTER TO PROCEED". set ch to terminal:input:getchar().	//DEBUG
 	
 	set warp to 0. wait 1.
@@ -196,10 +197,10 @@ function Inclination_Match
 		}.
 		
 	// VALID FOR AscendNode:
-	if dv_factor < 0
-		set sasmode to "ANTINORMAL".
-	else
-		set sasmode to "NORMAL". //set sasmode to "maneuver".
+	// if dv_factor < 0
+		// set sasmode to "ANTINORMAL".
+	// else
+		// set sasmode to "NORMAL". //set sasmode to "maneuver".
 		print "Normal Orbit (angle): "+ ROUND(angle,1)  + "        "  at (0,11).
 		print "(dv_factor):"+dv_factor+ "        "  at (0,12).
 	}.

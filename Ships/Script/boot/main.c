@@ -78,8 +78,8 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 		RUNPATH( "boot/Phase-Angle.c", mission_target ).	// Warp to Correct Phase Angle
 
 	//ACTION:  --------------------------------------------------------
-	if (  (BODY:name = DEFAULT_KSC and periapsis < body:atm:height) or
-	      (BODY:name <> DEFAULT_KSC and (status = "LANDED" or status = "SPLASHED"))  ) and (not EXISTS("CIRCULARIZE.txt"))
+	if ( (  (BODY:name = DEFAULT_KSC and periapsis < body:atm:height) or
+	        (BODY:name <> DEFAULT_KSC and (status = "LANDED" or status = "SPLASHED"))  ) and (not EXISTS("CIRCULARIZE.txt")) ) or (BODY:name = DEFAULT_KSC and vehicle_type = "Space4")
 	{
 		if periapsis < 0
 		{
@@ -89,9 +89,9 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 				RUNPATH( "boot/PhaseIV-Orbit.c" ).			// NO-ATM-Launch: "PhaseIV-Orbit.c"
 		}
 		
-		if (BODY:name = mission_origin) and (apoapsis < LEOrbit or periapsis < body:atm:height) or orbit_type = "GSO" or vehicle_type = "Crew Dragon 2"
+		if (BODY:name = mission_origin) and (apoapsis < LEOrbit or periapsis < body:atm:height) or orbit_type = "GSO" or vehicle_type = "Crew Dragon 2" or vehicle_type = "Space4"
 		{
-			if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN16-Profile1" and vehicle_sub_type <> "SN20-Profile")
+			if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN16-Profile1" and vehicle_sub_type <> "SN20-Profile") or vehicle_type = "Space4"
 			{
 				if KUniverse:ActiveVessel <> SHIP {
 					update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
@@ -119,11 +119,11 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			LOG  "SKIP: Normal" to LOG_FILE.
 
 		//ACTION: BURN ----------------------------------------------------
-		if STATUS = "ORBITING" and apoapsis > body:atm:height and periapsis > body:atm:height and BODY:name = mission_origin
+		if STATUS = "ORBITING" and apoapsis > body:atm:height and periapsis > body:atm:height and (BODY:name = mission_origin or BODY:name = "Sun")
 			if BODY:name <> mission_target:name 
 			{
 				CLEARSCREEN. print " ". print " ".
-				update_phase_title("MAIN STAGE", 0, false).
+				update_phase_title("BURN MAIN STAGE", 0, false).
 				if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
 				if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
 				if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }

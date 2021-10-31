@@ -499,6 +499,7 @@ Function ApproachDockingPort {
 // WAIT WITH RCS FOR PROGRADE DIRECTION:
 function prograde_check
 {
+	SET MAPVIEW TO FALSE. wait 1. // map view: off
 	RCS ON. wait 1.
 	UNLOCK STEERING. wait 1.
 	SAS ON. wait 1.

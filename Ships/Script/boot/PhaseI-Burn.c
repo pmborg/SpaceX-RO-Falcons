@@ -231,6 +231,11 @@ function DOTHEMAINBURN
 		print "ship:Orbit:TRANSITION: "+ship:Orbit:TRANSITION+"     " at (0,22). //FINAL
 		print "maxthrust: "+ROUND (maxthrust)+"     " 					 	  at (0,23).
 
+		if (node_remaning_deltaV) > 100
+			RCS OFF.
+		else
+			RCS ON.
+
 		if node_remaning_deltaV > last_node_remaning_deltaV
 		{
 			print "#### break using deltaV" at (0,22).
@@ -283,6 +288,7 @@ AG5 ON. //Panels ON
 
 if vehicle_type = "Space4"
 {
+	SET MAPVIEW TO TRUE. wait 1.
 	set warp to 0. wait 1.
 	SET MAPVIEW TO FALSE. wait 1.  // map view: off
 	UNLOCK STEERING. wait 1.
