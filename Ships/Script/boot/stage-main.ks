@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used before main.c, to distribute tasks among all Processors.
-// 30/Oct/2021
+// 31/Oct/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: stage-main.ks" to LOG_FILE.
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
@@ -39,6 +39,9 @@ if alt:radar > 200
 	UNLOCK STEERING. wait 0.1.
 	shutDownAllEngines(). WAIT 1.
 	shutDownAllEngines(). WAIT 1.	//2 Times DUE KSPI: Engine Bugs on re-loads using multi-layer engines.
+	if vehicle_type = "Space4" {
+		AG9 OFF. WAIT 1.
+	}
 }
 
 LIST PROCESSORS IN ALL_PROCESSORS.

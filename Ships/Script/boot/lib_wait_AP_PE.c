@@ -11,8 +11,9 @@
 // 14/Nov/2020
 // --------------------------------------------------------------------------------------------
 
-function wait_until_periapsis 
+function  wait_until_periapsis
 {
+	update_phase_title("wait until periapsis", 0, false).
 	set warp to 0. WAIT 0.1.
 	
 	if eta:periapsis > 86400. 	//1Day
@@ -32,6 +33,7 @@ function wait_until_periapsis
 
 function wait_until_apoapsis 
 {
+	update_phase_title("wait until apoapsis", 0, false).
 	set warp to 0.
 	WAIT 1.
 	if eta:apoapsis > 86400. //1Day

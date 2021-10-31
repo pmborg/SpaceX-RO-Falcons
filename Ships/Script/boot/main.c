@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestrate all mission phases.
-// 30/Oct/2021
+// 31/Oct/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: main.c" to LOG_FILE.
 // Reset Engine settings before all, ("migth be a reboot")
@@ -20,7 +20,7 @@ LOG  "SHIP:LAT: "+SHIP:GEOPOSITION:LAT to LOG_FILE.
 LOG  "SHIP:LNG: "+SHIP:GEOPOSITION:LNG to LOG_FILE.
 
 runpath("boot/declare-globals.c").
-//runpath("boot/atm.c").
+runpath("boot/atm.c").	//need on orbit / reboots.
 
 if vehicle_type = "SaturnV"
 	LOG "Normal" to normal.txt. //Skip normal/correction

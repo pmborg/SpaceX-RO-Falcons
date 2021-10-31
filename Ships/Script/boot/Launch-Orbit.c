@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 30/Oct/2021
+// 31/Oct/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 LOG "START: Launch-Orbit.c" to LOG_FILE.
@@ -259,6 +259,7 @@ function GoSpace4
 			GEAR OFF. WAIT 0.1.
 			AG8 OFF.  WAIT 0.1. //VERTICAL RS-25
 			set Space4 to 1.
+			update_phase_title("VERT. RS-25: OFF + GEAR OFF", 0, true, 6, 0).
 		}
 		if vehicle_type = "Space4" and altitude > 300 and Space4 = 1
 		{
@@ -269,42 +270,58 @@ function GoSpace4
 			//AG8 OFF. WAIT 0.1.	//VERTICAL RS-25
 			set Space4 to 2.
 			LOCK STEERING TO HEADING(90, 30). WAIT 0.1.
+			update_phase_title("VERT. Jet Engines: OFF", 0, true, 6, 0).
 		}
 		if vehicle_type = "Space4" and altitude > 2000 and Space4 = 2
 		{
 			set Space4 to 3.
-			LOCK STEERING TO HEADING(90, 70). WAIT 0.1.
+			set new_PITCH to 70.
+			LOCK STEERING TO HEADING(90, new_PITCH). WAIT 0.1.
+			update_phase_title("PITCH: "+new_PITCH, 0, true, 6, 0).
 		}
 		if vehicle_type = "Space4" and altitude > 12000 and Space4 = 3
 		{
 			set Space4 to 4.
 			AG7 ON. wait 0.1.
 			AG7 OFF. wait 0.1.
+			update_phase_title("SET ENGINE MODE: ROCKET MODE", 0, true, 6, 0).
 		}
 		if vehicle_type = "Space4" and altitude > 24000 and Space4 = 4
 		{
 			set Space4 to 5.
 			AG1 OFF. wait 0.1.
+			update_phase_title("JET ENGINES: OFF", 0, true, 6, 0).
 		}
 		if vehicle_type = "Space4" and altitude > 52000 and Space4 = 5
 		{
 			set Space4 to 6.
 			AG9 ON. wait 0.1.
+			update_phase_title("VAC ENGINES: ON", 0, true, 6, 0).
 		}
 		if vehicle_type = "Space4" and apoapsis > 140000 and Space4 = 6
 		{
 			set Space4 to 7.
 			AG2 OFF. wait 0.1.
 			LOCK STEERING TO HEADING(90, 15). WAIT 0.1.
+			update_phase_title("ATM ROCKET ENGINES: OFF", 0, true, 6, 0).
 		}
 		if vehicle_type = "Space4" and apoapsis > 250000 and Space4 = 7
 		{
 			set Space4 to 8.
-			LOCK STEERING TO HEADING(90, 2). WAIT 0.1.
+			set new_PITCH to 2.
+			LOCK STEERING TO HEADING(90, new_PITCH). WAIT 0.1.
+			update_phase_title("PITCH: "+new_PITCH, 0, true, 6, 0).
 		}
-		if vehicle_type = "Space4" and periapsis > 140000 and Space4 = 8
+		if vehicle_type = "Space4" and periapsis > -1040000 and Space4 = 8
 		{
-			set Space4 to 8.
+			set Space4 to 9.
+			set new_PITCH to 0.
+			LOCK STEERING TO HEADING(90, new_PITCH). WAIT 0.1.
+			update_phase_title("PITCH: "+new_PITCH, 0, true, 6, 0).
+		}
+		if vehicle_type = "Space4" and periapsis > 140000 and Space4 = 9
+		{
+			set Space4 to 10.
 			AG9 OFF. wait 0.1.
 			LOCK STEERING TO PROGRADE. 	//UNLOCK STEERING.
 			set profile_stage to 1.
@@ -369,7 +386,7 @@ if alt:radar < 200
 	PRINT "Dynamic Pressure" 	at (0,3).
 	PRINT "q/Qmax" 				at (0,4).
 	if vehicle_type = "Space4"
-		PRINT "Space4" 				at (0,5).
+		PRINT "Space4 Phase:" 				at (0,5).
 	set index2 to 6.
 
 	set profile_stage to 0.
@@ -390,27 +407,29 @@ if alt:radar < 200
 		if vehicle_company = "SpaceX" and not splash_landing
 			PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,6).
 		
-	if vehicle_type = "Space4"
-		PRINT Space4 				at (22,5).
-		
-		if alt:radar > 130 and alt:radar < 1000
+		if vehicle_type = "Space4"
 		{
-			if vehicle_type <> "SN9-Profile1"
-				PRINT "( Tower is cleared )" at (0,5+index2).
-			if vehicle_type = "Crew Dragon 2" //OR vehicle_type = "Space4"
-				SAS ON.
+			PRINT Space4 				at (22,5).
+			GoSpace4().
 		}
 		else
-			if vehicle_type <> "SN9-Profile1"
-				PRINT "                    " at (0,5+index2).
-				
-		//SN9-Profile1 only:
-		if alt:radar > 100 and vehicle_type = "SN9-Profile1"
-			GoSN9().
-		
-		if vehicle_type = "Space4"
-			GoSpace4().
-		
+		{
+			if alt:radar > 130 and alt:radar < 1000
+			{
+				if vehicle_type <> "SN9-Profile1"
+					PRINT "( Tower is cleared )" at (0,5+index2).
+				if vehicle_type = "Crew Dragon 2" //OR vehicle_type = "Space4"
+					SAS ON.
+			}
+			else
+				if vehicle_type <> "SN9-Profile1"
+					PRINT "                    " at (0,5+index2).
+					
+			//SN9-Profile1 only:
+			if alt:radar > 100 and vehicle_type = "SN9-Profile1"
+				GoSN9().
+		}
+	
 		set vsurf to velocity:surface.
 		set Vsx to vsurf:x.
 		set Vsy to vsurf:y.

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Circularize an orbit after Launch-Orbit.c
-// 30/Oct/2021
+// 31/Oct/2021
 // --------------------------------------------------------------------------------------------
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
@@ -18,8 +18,9 @@ function wait_for_AP
 	parameter w.
 
 	update_phase_title("C-WAIT FOR APOAPSIS",1, true).	
-	set warp to 0.
-	LOCK STEERING TO SHIP:PROGRADE.//  + R(0,0,180).
+	set warp to 0. 1.
+	SAS OFF. wait 1.
+	LOCK STEERING TO SHIP:PROGRADE. wait 0.1.
 	if eta:apoapsis > 3000
 		if KUniverse:ActiveVessel = SHIP
 		{
@@ -238,15 +239,9 @@ if ship:verticalspeed > 0 and eta:apoapsis > 60		//Move closer to AP
 
 // FINAL COUNT DOWN:
 // --------------------------------------------------------------------------------------------
-LOCK STEERING TO SHIP:PROGRADE.//  + R(0,0,180).
-RCS ON.
 if vehicle_type <> "SaturnV"
 {
-	print "5".
-	WAIT 2.5. print "4".
-	WAIT 2.5. print "3".
-	WAIT 2.5. print "2".
-	WAIT 2.5. print "1".
+	prograde_check().
 }
 
 CLEARSCREEN.
@@ -264,7 +259,9 @@ do_circle_step().
 
 // ITS DONE:
 // --------------------------------------------------------------------------------------------
-RCS OFF.
+SAS OFF. wait 0.1.
+RCS OFF. wait 0.1.
+LOCK STEERING TO PROGRADE. wait 0.1.
 wait 5.
 CLEARSCREEN.
 update_phase_title("C-In Parking Orbit", 1, true).

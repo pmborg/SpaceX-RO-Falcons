@@ -10,7 +10,7 @@
 // Purpose: 
 //              	- Used to calculate orbit position to do a hohmann transfer orbit in
 //                    missions (Beyond Earth)
-// 30/Oct/2021
+// 31/Oct/2021
 // --------------------------------------------------------------------------------------------
 
 function get_rendevous_nodes
@@ -196,7 +196,8 @@ function get_rendevous_nodes
 		set burn_duration to 300.
 	print "Crude Estimated burn duration: " + round(burn_duration) + "s".
 
-	UNLOCK STEERING. wait 0.1.
+	SET MAPVIEW TO FALSE. wait 1. // map view: off
+	UNLOCK STEERING. wait 1.
 	SAS ON. wait 1.
 	set sasmode TO "PROGRADE". wait 1.
 	//LOCK STEERING TO PROGRADE. wait 0.1.

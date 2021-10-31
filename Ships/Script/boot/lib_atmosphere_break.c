@@ -9,7 +9,7 @@
 // Purpose: 
 //              This is used in orbital (de-orbit) mechanics in an atmospheric planet,
 //              to land without precision (land any where near by)
-// 01/Jan/2020
+// 31/Oct/2021
 // --------------------------------------------------------------------------------------------
 
 function atmosphereBreak 
@@ -47,9 +47,10 @@ function atmosphereBreak
 	}else{
 		// Crude code to get it set up right to start with:
 		PRINT "Periapsis is too low. Burning: prograde to correct!".
-		LOCK STEERING TO prograde.
-		PRINT "WAIT 15.".
-		WAIT 15.
+		prograde_check().
+		LOCK STEERING TO prograde. wait 1.
+		//PRINT "WAIT 15.".
+		//WAIT 15.
 		lock throttle to 0.4.
 		until alt:periapsis > (body:atm:height/3)
 		{

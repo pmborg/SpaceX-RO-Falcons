@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 30/Oct/2021
+// 31/Oct/2021
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
 
@@ -170,16 +170,17 @@ function sn11_test_profile_deactivate_engine2
 
 function update_phase_title
 {
-	parameter phase.					//Title
-	parameter play_sound.				//0 or 1
+	parameter phase is "".					//Title
+	parameter play_sound is 0.				//0 or 1
 	parameter stack_phases is true.		//true = STACK
+	parameter y is 16.
+	parameter x is 25.
 	
 	PRINT phase+"          " at (0,0). 
 	if (stack_phases)
 	{
-		set y to 16.
-		PRINT "   " at (25,y+phase_title_position). 
-		PRINT "-->"+phase at (25,y+1+phase_title_position). 
+		PRINT "   " at (x,y+phase_title_position). 
+		PRINT "-->"+phase at (x,y+1+phase_title_position). 
 		set phase_title_position to phase_title_position+1.
 	}
 	//ORI
@@ -493,4 +494,43 @@ Function ApproachDockingPort {
   }
   Translate(v(0,0,0)).
   //SAS OFF.
+}
+
+// WAIT WITH RCS FOR PROGRADE DIRECTION:
+function prograde_check
+{
+	RCS ON. wait 1.
+	UNLOCK STEERING. wait 1.
+	SAS ON. wait 1.
+	set sasmode TO "PROGRADE". wait 1.	
+
+	set a to ship:prograde:pitch.
+	set b to ship:prograde:yaw.
+	set c to ship:prograde:roll.
+	lock steering to R(a,b,c).
+	WAIT UNTIL ((ship:facing:pitch >= (ROUND(a) - 5) AND ship:facing:roll >= (ROUND(c) - 5)) 
+		   AND (ship:facing:pitch <= (ROUND(a) + 5) AND ship:facing:roll <= ROUND(c) + 5)).
+}
+
+// WARP TOWARDS NODE:
+function warp_until_node
+{
+	PARAMETER node.
+
+	update_phase_title("Warp towards node", 0, false).	
+	set warp to 0. WAIT 0.1.
+	
+	if node:ETA > 86400. 	//1Day
+		set warp to 4.
+	WAIT until node:ETA < 86400.
+
+	if node:ETA > 600. 	//10Mins
+		set warp to 3.
+	WAIT until node:ETA < 600.
+
+	if node:ETA > 30. 		//30Secs
+		set warp to 2.		
+	WAIT until node:ETA < 30.
+
+	set warp to 0. WAIT 0.1.
 }

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used to match the target orbit inclination.
-// 30/Oct/2021
+// 31/Oct/2021
 // --------------------------------------------------------------------------------------------
 
 parameter mission_target_parameter.
@@ -156,23 +156,25 @@ function Inclination_Match
 	}.
 	//PRINT "ENTER TO PROCEED". set ch to terminal:input:getchar().	//DEBUG
 	
-
-	UNLOCK STEERING. wait 0.1.
+	set warp to 0. wait 1.
+	SET MAPVIEW TO FALSE. wait 1.  // map view: off
+	UNLOCK STEERING. wait 1.
+	SAS ON. wait 1.
 	RCS ON. wait 0.1.
-	SAS ON. wait 0.1.
+	
 	//wait 1.
 	set prev_angle to getNormalOrbitAngle().
 	
-	//set sasmode to "maneuver".
-	wait 0.
-	if dv_factor < 0
-	{
-		set sasmode to "ANTINORMAL". wait 0.1.
-		print "SAS ANTINORMAL".
-	} else {
-		set sasmode to "NORMAL". wait 0.1.//set sasmode to "maneuver".
-		print "SAS NORMAL".
-	}
+	set sasmode to "maneuver".
+	// wait 0.
+	// if dv_factor < 0
+	// {
+		// set sasmode to "ANTINORMAL". wait 0.1.
+		// print "SAS ANTINORMAL".
+	// } else {
+		// set sasmode to "NORMAL". wait 0.1.//set sasmode to "maneuver".
+		// print "SAS NORMAL".
+	// }
 	
 	//PRINT "ENTER TO PROCEED". set ch to terminal:input:getchar().	//DEBUG
 	

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to todo the Manouver in prograde to the: mission_target
-// 30/Oct/2021
+// 31/Oct/2021
 // --------------------------------------------------------------------------------------------
 
 parameter goto_mission_target.
@@ -116,13 +116,8 @@ function DOTHEMAINBURN
 	print " ".print " ".
 	update_phase_title("PhaseI-Rotate", 0, false).
 	print "PhaseI-Rotate to "+goto_mission_target+" Burn" at (0,2).
-	RCS ON.
-	wait 15.
-	// if vehicle_type <> "Space4"
-	// {
-		RCS OFF.
-		RCS OFF.
-	// }
+	prograde_check(). 		// WAIT WITH RCS FOR PROGRADE DIRECTION
+	warp_until_node(node). 	// WARP TOWARDS NODE
 
 	//-------------------------------------------------------------------------------
 	clearscreen.
@@ -144,9 +139,16 @@ function DOTHEMAINBURN
 	set Vz to vec:z.
 	set Vo to ((Vx^2)+(Vy^2)+(Vz^2))^.5. //Original Speed.
 	set Vp to Vo + burn_dV.
-
 	set np to node:deltav. //points to node, don't care about the roll direction.
-	lock steering to np.
+	
+	//lock steering to np.
+	set warp to 0. wait 1.
+	SET MAPVIEW TO FALSE. wait 1.  // map view: off
+	UNLOCK STEERING. wait 1.
+	SAS ON. wait 1.
+	RCS ON. wait 0.1.
+	set sasmode to "maneuver". wait 0.1.
+	
 
 	//DO MAIN BURN:
 	set HaveEncounter to False.
@@ -281,8 +283,11 @@ AG5 ON. //Panels ON
 
 if vehicle_type = "Space4"
 {
-	UNLOCK STEERING. wait 0.1.
+	set warp to 0. wait 1.
+	SET MAPVIEW TO FALSE. wait 1.  // map view: off
+	UNLOCK STEERING. wait 1.
 	SAS ON. wait 1.
+	RCS ON. wait 0.1.
 	set sasmode TO "PROGRADE". wait 1.
 }
 
