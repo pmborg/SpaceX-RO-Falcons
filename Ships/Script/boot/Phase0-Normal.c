@@ -138,24 +138,8 @@ function Inclination_Match
 	
 	set_inc_lan (target:orbit:inclination, target:orbit:lan). //GET: BURN NODE
 	print "BURN:ETA "+ ROUND(BURN:ETA,1).
-	//PRINT "ENTER TO PROCEED". set ch to terminal:input:getchar().	//DEBUG
 	
 	warp_until_node (BURN).
-	// until false {
-		// if BURN:ETA>0 and BURN:ETA < 2000
-			// set warp to 2.
-			
-		// if BURN:ETA>0 and BURN:ETA < 100
-			// set warp to 1.
-			
-		// if BURN:ETA>0 and BURN:ETA < 15 {
-			// set warp to 0.
-			// break.
-		// }.
-
-		// print "BURN:ETA "+ ROUND(BURN:ETA,1) + "        " at (0, 7).
-	// }.
-	//PRINT "ENTER TO PROCEED". set ch to terminal:input:getchar().	//DEBUG
 	
 	set warp to 0. wait 1.
 	SET MAPVIEW TO FALSE. wait 1.  // map view: off
@@ -163,23 +147,24 @@ function Inclination_Match
 	SAS ON. wait 1.
 	RCS ON. wait 0.1.
 	
-	//wait 1.
 	set prev_angle to getNormalOrbitAngle().
 	
-	set sasmode to "maneuver".
-	// wait 0.
-	// if dv_factor < 0
-	// {
-		// set sasmode to "ANTINORMAL". wait 0.1.
-		// print "SAS ANTINORMAL".
-	// } else {
-		// set sasmode to "NORMAL". wait 0.1.//set sasmode to "maneuver".
-		// print "SAS NORMAL".
-	// }
+	// set sasmode to "maneuver".
+	wait 0.
+	if dv_factor < 0
+	{
+		set sasmode to "ANTINORMAL". wait 0.1.
+		print "SAS ANTINORMAL".
+	} else {
+		set sasmode to "NORMAL". wait 0.1.//set sasmode to "maneuver".
+		print "SAS NORMAL".
+	}
 	
-	//PRINT "ENTER TO PROCEED". set ch to terminal:input:getchar().	//DEBUG
+	if vehicle_type = "Space4"
+		WAIT 30.
+	else
+		WAIT 15.
 	
-	WAIT 15.
 	set thrust to 1.
 	SET PREV_TIME to TIME:SECONDS.
 	print "PREV_TIME: "+PREV_TIME  + "        "  at (0,10).
@@ -195,12 +180,7 @@ function Inclination_Match
 			wait 1.
 			return 1.
 		}.
-		
-	// VALID FOR AscendNode:
-	// if dv_factor < 0
-		// set sasmode to "ANTINORMAL".
-	// else
-		// set sasmode to "NORMAL". //set sasmode to "maneuver".
+
 		print "Normal Orbit (angle): "+ ROUND(angle,1)  + "        "  at (0,11).
 		print "(dv_factor):"+dv_factor+ "        "  at (0,12).
 	}.

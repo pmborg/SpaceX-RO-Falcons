@@ -147,8 +147,7 @@ function DOTHEMAINBURN
 	UNLOCK STEERING. wait 1.
 	SAS ON. wait 1.
 	RCS ON. wait 0.1.
-	set sasmode to "maneuver". wait 0.1.
-	
+	//set sasmode to "maneuver". wait 0.1.
 
 	//DO MAIN BURN:
 	set HaveEncounter to False.
@@ -274,7 +273,7 @@ function DOTHEMAINBURN
 	LOG "Burn" to burn.txt.
 }//DOTHEMAINBURN
 
-if NOT EXISTS("burn.txt")
+if NOT EXISTS("burn.txt") or BODY:NAME = "Sun"
 	DOTHEMAINBURN().
 
 //LEM DOCKING -------------------------------------------------------

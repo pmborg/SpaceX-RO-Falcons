@@ -35,8 +35,8 @@ function DO_BURN {
 
 	//WARP(INTER_PLANETARY_MISSION) ----------------------------
 	if IS_INTER_PLANETARY_MISSION {
-		update_phase_title("PhaseI-Warp", 1, false).
-		RUNPATH( "boot/PhaseI-Warp.c" ).	 			 // Warp out of "Kerbin" and all Moons...
+		//update_phase_title("PhaseI-Warp", 1, false).
+		RUNPATH( "boot/PhaseI-Warp.c" ).	 			 // Warp out of "Kerbin" and all Moons until Sun Orbit...
 		
 		//PRINT "Press [ENTER] to Confirm - PhaseI-Transfer". set ch to terminal:input:getchar().
 		RUNPATH( "boot/PhaseI-Transfer.c", "RADIALIN" ). // Fine Tune: [NOW4]
@@ -44,8 +44,12 @@ function DO_BURN {
 
 	//PE -------------------------------------------------------
 	update_phase_title("WARP-TO-PE", 1, true).
-	shutDownAllEngines().
-	AG5 ON. //Turn on Generators + Antenas
+	
+	if vehicle_type <> "Space4"
+	{
+		shutDownAllEngines().
+		AG5 ON. //Turn on Generators + Antenas
+	}
 	if (Orbit:periapsis > MAX(40000, 1.5*BODY:atm:height)) // 40,000m safe altitude (periapsis wait) in all planets.
 	{
 		wait_until_periapsis().

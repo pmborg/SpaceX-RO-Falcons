@@ -322,8 +322,14 @@ function GoSpace4
 		if vehicle_type = "Space4" and periapsis > 140000 and Space4 = 9
 		{
 			set Space4 to 10.
+			update_phase_title("ORBIT: 140km", 0, true, 6, 0).
+		}
+		if vehicle_type = "Space4" and apoapsis > 1000000 and Space4 = 10
+		{
+			set Space4 to 11.
 			AG9 OFF. wait 0.1.
 			LOCK STEERING TO PROGRADE. 	//UNLOCK STEERING.
+			update_phase_title("ORBIT: ", 0, true, 6, 0).
 			set profile_stage to 1.
 		}
 }
@@ -956,6 +962,7 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 		}.
 	}
 }
+
 
 set warp to 0.
 wait 2.

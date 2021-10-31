@@ -213,12 +213,14 @@ if vehicle_sub_type <> "SN20-Profile"
 
 		//WAIT 30:
 		// --------------------------------------------------------------------------------------------
-		AG5 ON.
+		if vehicle_type <> "Space4"
+			AG5 ON.
 		FROM {local x is 30.} UNTIL x = 0 STEP {set x to x-1.} DO 
 		{
 			COMPLETE_PRINT_STATUS (3). wait 1.
 		}
-		AG5 OFF.
+		if vehicle_type <> "Space4"
+			AG5 OFF.
 
 		activateAllEngines().
 		if vehicle_type = "SN9-Profile1"

@@ -58,7 +58,7 @@ function change_inclination
 // --------------------------------------------------------------------------------------------
 //ACTION: REFUEL?
 // --------------------------------------------------------------------------------------------
-if mission_origin <> DEFAULT_KSC //mission_target //ORIGIN = TARGET
+if mission_origin <> DEFAULT_KSC and BODY:NAME <> "Sun"//mission_target //ORIGIN = TARGET
 {
 	CLEARSCREEN. print " ". print " ".
 	update_phase_title("Confirm: START Refuel?", 0, false).
@@ -106,6 +106,9 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			LOG  "SKIP: Launch-Circularize" to LOG_FILE.
 	} else
 		LOG  "SKIP: Launch" to LOG_FILE.
+
+	set DEBUG_FORCE_MANOUVER to false.
+	set DEBUG_FORCE_MANOUVER to true.
 
 	// --------------------------------------------------------------------------------------------
 	//ACTION: ADJUST Normal/Inclination?

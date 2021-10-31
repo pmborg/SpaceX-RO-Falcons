@@ -30,7 +30,8 @@ function atmosphereBreak
 	set warp to 0.
 	WAIT 1.
 	//SAS OFF.
-	AG5 OFF. // Painels OFF: to Avoid ship rotation
+	if vehicle_type <> "Space4"
+		AG5 OFF. // Painels OFF: to Avoid ship rotation
 	if alt:periapsis >= (body:atm:height/3) {
 		// Crude code to get it set up right to start with:
 		PRINT "Periapsis is too high. Burning: retrograde to correct!".
@@ -65,6 +66,7 @@ function atmosphereBreak
 	unlock throttle.
 	unlock steering.
 	
-	AG5 ON. // Painels ON
+	if vehicle_type <> "Space4"
+		AG5 ON. // Painels ON
 	set warp to x.
 }

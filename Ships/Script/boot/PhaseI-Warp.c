@@ -13,4 +13,5 @@
 update_phase_title("PhaseI-Warp: START", 1, false).
 clearscreen.
 WarpOutofKerbinSOI().
+WAIT 
 update_phase_title("PhaseI-Warp: END", 1, false).

@@ -411,6 +411,9 @@ if orbit_type = "GSO"
 if vehicle_sub_type = "SN16-Profile1"
 	set LEOrbit to 200000.
 
+if vehicle_type = "Space4"
+	set LEOrbit to 1000000. 
+
 //DEBUG:
 PRINT SHIP_NAME at (25,4).
 PRINT CORE:BOOTFILENAME at (25,5).

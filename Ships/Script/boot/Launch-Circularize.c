@@ -13,61 +13,6 @@
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
 
-function wait_for_AP
-{
-	parameter w.
-
-	update_phase_title("C-WAIT FOR APOAPSIS",1, true).	
-	set warp to 0. 1.
-	SAS OFF. wait 1.
-	LOCK STEERING TO SHIP:PROGRADE. wait 0.1.
-	if eta:apoapsis > 3000
-		if KUniverse:ActiveVessel = SHIP
-		{
-			set kuniverse:timewarp:MODE to "RAILS".	wait 1. //RESET
-			set warp to 3.
-		}
-
-	set saved to EXISTS("CIRCULARIZE.txt").
-	if vehicle_type <> "SaturnV"
-	{
-		until eta:apoapsis < 3000 and saved
-		{
-			WAIT 1.
-			if (KUniverse:ActiveVessel = SHIP) and (NOT EXISTS("CIRCULARIZE.txt"))
-			{
-				update_phase_title("C-RESUME CIRCULARIZE",1, true).	//WA: to KSP bug.
-				kuniverse:QUICKSAVETO("RESUME-CIRCULARIZE"). wait 1.
-				LOG  "Done" to CIRCULARIZE.txt. wait 1.
-				if vehicle_company <> "PMBORG"
-					kuniverse:QUICKLOADFROM("RESUME-CIRCULARIZE").
-				set saved to true.
-			}
-		}
-	
-		if KUniverse:ActiveVessel = SHIP
-		{
-			set kuniverse:timewarp:MODE to "RAILS".	wait 1. //RESET
-			set warp to 2.
-		}
-
-		update_phase_title("C-Circularize T-3000",1, true).	
-		
-		WAIT until eta:apoapsis < 100.
-		if KUniverse:ActiveVessel = SHIP
-		{
-			set kuniverse:timewarp:MODE to "PHYSICS". wait 1.//WARP with PHYSICS
-			set warp to 3.
-		}
-		update_phase_title("C-Circularize T-100",1, true).
-		
-		WAIT until eta:apoapsis < w.
-		set kuniverse:timewarp:MODE to "RAILS".	wait 1.
-		set warp to 0.
-		update_phase_title("C-Circularize T-"+w,1, true).
-	}
-}
-
 function do_circle_step
 {
 	// Burn to circularize, theta is used to maintain the apogee in-front of the craft
@@ -154,13 +99,19 @@ function do_circle_step
 			else
 				set x to (2*B/0.1).
 			
-			if vehicle_type <> "Crew Dragon 2"		
+			if vehicle_type = "Space4"
 			{
-				if x > 1
-					set x to 1.
-			}else{
 				if x > 0.5.
-					set x to 0.5.
+					set x to 0.5.	//Slow part...
+			} else {
+				if vehicle_type <> "Crew Dragon 2"		
+				{
+					if x > 1
+						set x to 1.
+				}else{
+					if x > 0.5.
+						set x to 0.5.	//Slow part...
+				}
 			}
 			
 			set theta to arctan(W/C).
@@ -235,17 +186,23 @@ if periapsis > BODY:atm:height and verticalspeed < 0 //means moving to PE and no
 	wait until verticalspeed > 0.
 }
 if ship:verticalspeed > 0 and eta:apoapsis > 60		//Move closer to AP
-	wait_for_AP(60).
+{
+	if vehicle_type = "Space4"
+		wait_until_apoapsis(20).
+	else
+		wait_until_apoapsis(60).
+}
 
 // FINAL COUNT DOWN:
 // --------------------------------------------------------------------------------------------
 if vehicle_type <> "SaturnV"
 {
 	prograde_check().
+	WAIT 1.
 }
 
 CLEARSCREEN.
-update_phase_title("C-Circularize",1, false).
+update_phase_title("Circularize: "+FINAL_ORBIT,1, false).
 PRINT "Vertical Speed" 	at (0,2).
 PRINT "Orbital Speed" 	at (0,3).
 PRINT "Target (Vcir)" 	at (0,4).
@@ -259,9 +216,8 @@ do_circle_step().
 
 // ITS DONE:
 // --------------------------------------------------------------------------------------------
-SAS OFF. wait 0.1.
-RCS OFF. wait 0.1.
-LOCK STEERING TO PROGRADE. wait 0.1.
+// SAS OFF. wait 0.1.
+// LOCK STEERING TO PROGRADE. wait 0.1.
 wait 5.
 CLEARSCREEN.
 update_phase_title("C-In Parking Orbit", 1, true).
@@ -276,4 +232,6 @@ DELETEPATH("CIRCULARIZE.txt").
 
 //Kill KSP spin bugs, of a out of focus vessel:
 set kuniverse:timewarp:MODE to "RAILS".	wait 1. //RESET
-set warp to  0.
+set warp to  0. wait 0.1.
+
+RCS OFF. wait 0.1.

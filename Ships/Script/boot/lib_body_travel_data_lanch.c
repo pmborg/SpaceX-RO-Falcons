@@ -80,8 +80,10 @@ if RealSolarSystemMod = true and mission_target:NAME <> "Earth"
 	print mission_target:NAME+" will move: "+ ROUND (Target_Move,3)+" degrees ".
 
 	// [9] FINALLY! Calculate the position of Target at the time of launch:
-	set phaseAngle to (180-Target_Move).
-	print "phaseAngle: " + ROUND (phaseAngle,3).		//44 degrees
+	if mission_target:NAME = "Mars"
+		set phaseAngle to 63.87.							//phaseAngle: 63.87 degrees
+	set transferAngle to (180-Target_Move).
+	print "transferAngle: " + ROUND (transferAngle,3).		//transferAngle: 44 degrees
 	
 	wait 2.
 }

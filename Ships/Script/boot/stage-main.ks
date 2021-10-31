@@ -26,6 +26,8 @@ if (status = "PRELAUNCH" or status = "LANDED") and ( BODY:name = "Kerbin" or BOD
 	DELETEPATH("MAIN_SHIP.txt").
 }
 //DELETEPATH("FLIP.txt"). 				//Reload, maybe?
+DELETEPATH("bodys_list.txt").
+DELETEPATH("FLIGHT_LOG_FILE").
 
 // DEFINE MISSION PROFILE: -------------------------------------------------------
 RUNPATH( "boot/sw-version.c" ).
