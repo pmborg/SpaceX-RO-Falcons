@@ -40,7 +40,10 @@ if alt:radar > 200
 	shutDownAllEngines(). WAIT 1.
 	shutDownAllEngines(). WAIT 1.	//2 Times DUE KSPI: Engine Bugs on re-loads using multi-layer engines.
 	if vehicle_type = "Space4" {
-		AG9 OFF. WAIT 1.
+		if  maxthrust = 0
+			{ AG9 ON. wait 1.}
+		if  maxthrust = 0
+			{ AG9 OFF. wait 1.}
 	}
 }
 

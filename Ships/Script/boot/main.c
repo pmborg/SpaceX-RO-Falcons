@@ -119,7 +119,8 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			LOG  "SKIP: Normal" to LOG_FILE.
 
 		//ACTION: BURN ----------------------------------------------------
-		if STATUS = "ORBITING" and apoapsis > body:atm:height and periapsis > body:atm:height and (BODY:name = mission_origin or BODY:name = "Sun")
+		if STATUS = "ORBITING" and apoapsis > body:atm:height and periapsis > body:atm:height and (BODY:name = mission_origin or BODY:name = "Sun" or BODY:name = "Moon")
+			LOG  "ACTION: BURN" to LOG_FILE.
 			if BODY:name <> mission_target:name 
 			{
 				CLEARSCREEN. print " ". print " ".
@@ -137,6 +138,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 	// --------------------------------------------------------------------------------------------
 	//ACTION: LEM/DOCK?
 	// --------------------------------------------------------------------------------------------
+	LOG  "LEM/DOCK?" to LOG_FILE.
 	if BODY:name = mission_target:name and not EXISTS("lem.txt")
 	{
 		if vehicle_type = "SaturnV"
@@ -181,8 +183,9 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			LOG  "SKIP: LEM/DOCK" to LOG_FILE.
 	}
 
+	LOG  "ACTION: Break & LAND!" to LOG_FILE.
 	//ACTION: Break & LAND! -------------------------------------------
-	if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN16-Profile1" and vehicle_sub_type <> "SN20-Profile" and vehicle_sub_type <> "StarShip")
+	if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN16-Profile1" and vehicle_sub_type <> "SN20-Profile" and vehicle_sub_type <> "StarShip" and vehicle_type <> "Space4")
 	{
 		if status <> "LANDED" and status <> "SPLASHED"
 		{

@@ -38,7 +38,7 @@ function DO_BURN {
 		update_phase_title("PhaseI-Warp", 1, false).
 		RUNPATH( "boot/PhaseI-Warp.c" ).	 			 // Warp out of "Kerbin" and all Moons...
 		
-		PRINT "Press [ENTER] to Confirm STEP!!!!!". set ch to terminal:input:getchar().
+		//PRINT "Press [ENTER] to Confirm - PhaseI-Transfer". set ch to terminal:input:getchar().
 		RUNPATH( "boot/PhaseI-Transfer.c", "RADIALIN" ). // Fine Tune: [NOW4]
 	}
 

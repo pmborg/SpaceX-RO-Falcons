@@ -183,8 +183,8 @@ function DOTHEMAINBURN
 		if ship:patches:length > 1
 		{
 			set thesepatches to ship:patches.
-			print "ship:patches[1]:apoapsis= "+ ROUND(thesepatches[1]:apoapsis) +"        " 	at (0,11).
-			print "thesepatches= "+thesepatches+"        " 								at (0,12).
+			print "ship:patches[1]:apoapsis= "+ ROUND(thesepatches[1]:apoapsis) +"        " 	at (0,15).
+			print "thesepatches= "+thesepatches+"        " 								at (0,16).
 
 			//// if thesepatches[1]:apoapsis > (Ra + BODY(goto_mission_target):RADIUS)
 			//	// break.
@@ -238,7 +238,7 @@ function DOTHEMAINBURN
 
 		if node_remaning_deltaV > last_node_remaning_deltaV
 		{
-			print "#### break using deltaV" at (0,22).
+			print "#### break using deltaV" at (0,20+5).
 			break.
 		}
 	    set last_node_remaning_deltaV to node_remaning_deltaV.
@@ -249,24 +249,24 @@ function DOTHEMAINBURN
 		}
 
 		if HaveEncounter {
-			print "Encounter" at (0,21).
+			print "Encounter" at (0,21+5).
 			break.
 		}
 		if body:name = goto_mission_target and apoapsis > (Ra - BODY(goto_mission_target):RADIUS) {
-			print "#### break1" at (0,22).
+			print "#### break1" at (0,22+5).
 			set HaveEncounter to True.
 			break.
 		}
 		//and body:name = goto_mission_target
 		if (SHIP:PERIAPSIS < body:atm:height) {
-			print "#### break2" at (0,23).
+			print "#### break2" at (0,23+5).
 			set HaveEncounter to True.
 			break.
 		}
 	}
 
 	set thrust to 0.
-	print "BURN-I END!" at (0,25). wait 1.
+	print "BURN-I END!" at (0,25+5). wait 1.
 
 	REMOVE nd.  
 	//REMOVE ned2.
@@ -282,7 +282,7 @@ if vehicle_type = "SaturnV" and NOT EXISTS("dock.txt")
 	RUNPATH( "boot/PhaseI-Docking.c" ).
 
 //WARP TO "MOON" SOI -------------------------------------------------------
-AG5 ON. //Panels ON
+//AG5 ON. //Panels ON
 // PRINT "Press [ENTER], to Confirm: Warp!"at (0,26).
 // set ch to terminal:input:getchar().
 

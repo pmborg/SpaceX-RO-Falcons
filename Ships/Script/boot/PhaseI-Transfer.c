@@ -10,11 +10,21 @@
 //				...
 // 31/Oct/2021
 // --------------------------------------------------------------------------------------------
-update_phase_title("PhaseI-Transfer: START", 1, false);
+update_phase_title("PhaseI-Transfer: START", 1, false).
 parameter burnmode. 
 
 // TRANSFER:
 // ----------------------------------------------------------------
+if vehicle_type = "Space4"
+{
+	SET MAPVIEW TO FALSE. wait 1.  // map view: off
+	if  maxthrust = 0
+		{ AG9 ON. wait 1.}
+	if  maxthrust = 0
+		{ AG9 OFF. wait 1.}
+}
+
+
 clearscreen.
 SAS ON.
 set sasmode to burnmode.
@@ -43,4 +53,4 @@ wait 1.
 UNTIL ship:Orbit:TRANSITION <> "ENCOUNTER".
 set warp to 0.
 wait 1.
-update_phase_title("PhaseI-Transfer: END", 1, false);
+update_phase_title("PhaseI-Transfer: END", 1, false).
