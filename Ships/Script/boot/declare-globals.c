@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor @start, to init or restart the all Mission.
-// 07/Jan/2020
+// 01/Nov/2021
 // --------------------------------------------------------------------------------------------
 function ResetMission 
 {
@@ -137,7 +137,7 @@ if NOT EXISTS("target.c") {
 	set TOTAL_COUNTER to 0.
 	FROM {local counter is 0.} UNTIL counter = KerbalDestiny:LENGTH STEP {SET counter to counter + 1.} DO 
 	{
-			LOG  "KerbalDestiny["+counter+"]:NAME" + KerbalDestiny[counter]:NAME to LOG_FILE.
+			LOG  "KerbalDestiny["+counter+"]:NAME " + KerbalDestiny[counter]:NAME to LOG_FILE.
 			if counter < 10
 				PRINT "0"+counter+" - "+KerbalDestiny[counter]:NAME at (0, counter+Index).
 			else

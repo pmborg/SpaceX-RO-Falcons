@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestrate all mission phases.
-// 31/Oct/2021
+// 01/Nov/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: main.c" to LOG_FILE.
 // Reset Engine settings before all, ("migth be a reboot")
@@ -20,7 +20,7 @@ LOG  "SHIP:LAT: "+SHIP:GEOPOSITION:LAT to LOG_FILE.
 LOG  "SHIP:LNG: "+SHIP:GEOPOSITION:LNG to LOG_FILE.
 
 runpath("boot/declare-globals.c").
-runpath("boot/atm.c").	//need on orbit / reboots.
+runpath("boot/atm.c").				//needed for orbit/reboots.
 
 if vehicle_type = "SaturnV"
 	LOG "Normal" to normal.txt. //Skip normal/correction
@@ -30,26 +30,28 @@ global last_value1 to 0.
 global Aceleration_value1 to 0.
 global lat_correction to 0.
 
+global Relative_Inclination_to_Target to 0.
+
 function change_inclination 
 {
 		//PARAMETER: mission_target.
 		LOG "MAIN: change_inclination" to LOG_FILE.
 		
 		CLEARSCREEN. print " ". print " ".
+		
 		// Just reaction-wheels Stability:
 		RCS OFF.
 		SAS OFF.
 		LOCK STEERING TO SHIP:prograde.
 		wait 1.
-		// Confirm?
+
 		if KUniverse:ActiveVessel <> SHIP {
 			update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
 			UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 		}
 		CLEARSCREEN. print " ". print " ".
 		update_phase_title("Confirm: Change-Inclination?", 0, false).
-		//PRINT "Please make sure that TARGET is selected".
-		runpath( "boot/Phase0-Normal.c", mission_target).	// Correct Normal Before Burn
+		runpath( "boot/Phase0-Normal.c", mission_target).	// Correct Normal Before Burn(Please make sure that TARGET is selected)
 		LOG "Normal" to normal.txt.
 		CLEARSCREEN. print " ". print " ".
 }
@@ -58,7 +60,7 @@ function change_inclination
 // --------------------------------------------------------------------------------------------
 //ACTION: REFUEL?
 // --------------------------------------------------------------------------------------------
-if mission_origin <> DEFAULT_KSC and BODY:NAME <> "Sun"//mission_target //ORIGIN = TARGET
+if mission_origin <> DEFAULT_KSC and BODY:NAME <> "Sun"
 {
 	CLEARSCREEN. print " ". print " ".
 	update_phase_title("Confirm: START Refuel?", 0, false).
@@ -70,14 +72,14 @@ if mission_origin <> DEFAULT_KSC and BODY:NAME <> "Sun"//mission_target //ORIGIN
 }
 
 // --------------------------------------------------------------------------------------------
-//ACTION: LAUNCH?
+//ACTION: LAUNCH
 // --------------------------------------------------------------------------------------------
-if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto "RETURN-JOURNEY"
+if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY", GOTO "RETURN-JOURNEY"
 {
-	if (IS_INTER_PLANETARY_MISSION) and (altitude < alt:radar)
-		RUNPATH( "boot/Phase-Angle.c", mission_target ).	// Warp to Correct Phase Angle
+	if (IS_INTER_PLANETARY_MISSION) and (altitude < alt:radar) and (BODY:NAME = "Earth" or BODY:NAME = "Kerbin")
+		RUNPATH( "boot/Phase-Angle.c", mission_target ).	// WARP to Correct Phase Angle
 
-	//ACTION:  --------------------------------------------------------
+	//ACTION: Launch-Orbit --------------------------------------------------------
 	if ( (  (BODY:name = DEFAULT_KSC and periapsis < body:atm:height) or
 	        (BODY:name <> DEFAULT_KSC and (status = "LANDED" or status = "SPLASHED"))  ) and (not EXISTS("CIRCULARIZE.txt")) ) or (BODY:name = DEFAULT_KSC and vehicle_type = "Space4")
 	{
@@ -89,7 +91,8 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 				RUNPATH( "boot/PhaseIV-Orbit.c" ).			// NO-ATM-Launch: "PhaseIV-Orbit.c"
 		}
 		
-		if (BODY:name = mission_origin) and (apoapsis < LEOrbit or periapsis < body:atm:height) or orbit_type = "GSO" or vehicle_type = "Crew Dragon 2" or vehicle_type = "Space4"
+		//ACTION: Launch-Circularize --------------------------------------------------------
+		if ((BODY:name = mission_origin) and (apoapsis < LEOrbit or periapsis < body:atm:height) or orbit_type = "GSO" or vehicle_type = "Crew Dragon 2" or vehicle_type = "Space4") and NOT EXISTS("CIRCULARIZE.txt")
 		{
 			if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN16-Profile1" and vehicle_sub_type <> "SN20-Profile") or vehicle_type = "Space4"
 			{
@@ -106,9 +109,6 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			LOG  "SKIP: Launch-Circularize" to LOG_FILE.
 	} else
 		LOG  "SKIP: Launch" to LOG_FILE.
-
-	set DEBUG_FORCE_MANOUVER to false.
-	set DEBUG_FORCE_MANOUVER to true.
 
 	// --------------------------------------------------------------------------------------------
 	//ACTION: ADJUST Normal/Inclination?
@@ -128,6 +128,7 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			{
 				CLEARSCREEN. print " ". print " ".
 				update_phase_title("BURN MAIN STAGE", 0, false).
+				//SaturnV:
 				if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
 				if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
 				if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
@@ -186,13 +187,13 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 			LOG  "SKIP: LEM/DOCK" to LOG_FILE.
 	}
 
-	LOG  "ACTION: Break & LAND!" to LOG_FILE.
+	LOG  "ON TARGET -> ACTION: Break & LAND!" to LOG_FILE.
 	//ACTION: Break & LAND! -------------------------------------------
 	if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN16-Profile1" and vehicle_sub_type <> "SN20-Profile" and vehicle_sub_type <> "StarShip" and vehicle_type <> "Space4")
 	{
 		if status <> "LANDED" and status <> "SPLASHED"
 		{
-			if EXISTS("CIRCULARIZE.txt")
+			if NOT EXISTS("CIRCULARIZE.txt")
 				RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
 
 			if KUniverse:ActiveVessel <> SHIP {
@@ -258,9 +259,10 @@ if NOT EXISTS("resources.txt") 			// Refuelled already?, SKIP "GO-JOURNEY", goto
 	}
 	
 	LOG  STAGE_1_TYPE+" REBOOT FOR RE-FUEL" to LOG_FILE.
+	reboot.
 }
 
-//INBOUND ---------------------------------------------------------
+// RETURN TO EARTH / INBOUND ---------------------------------------------------------
 if BODY:name <> DEFAULT_KSC {
 	CLEARSCREEN. print " ". print " ".
 	PRINT "Press [y/n] y to Confirm the Kerbin Return, n to new target!".set ch to terminal:input:getchar().
@@ -297,9 +299,10 @@ if BODY:name <> DEFAULT_KSC {
 		PRINT "Press [ENTER] to LAND!".set ch to terminal:input:getchar().
 		RUNPATH( "boot/PhaseVI-Land.c", true ).		 				// Kerbin Reentry & Touch Down
 	} else {
+		LOG  STAGE_1_TYPE+" MISSION ABORTED" to LOG_FILE.
+		PRINT "Press [ENTER] to ResetMission".set ch to terminal:input:getchar().
 		ResetMission(). // Re-define Target
 		reboot.
-		LOG  STAGE_1_TYPE+" MISSION END" to LOG_FILE.
 	}
 }
 

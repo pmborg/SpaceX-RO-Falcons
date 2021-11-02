@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Circularize an orbit after Launch-Orbit.c
-// 31/Oct/2021
+// 01/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
@@ -188,9 +188,9 @@ if periapsis > BODY:atm:height and verticalspeed < 0 //means moving to PE and no
 if ship:verticalspeed > 0 and eta:apoapsis > 60		//Move closer to AP
 {
 	if vehicle_type = "Space4"
-		wait_until_apoapsis(20).
+		warp_until_apoapsis(30).
 	else
-		wait_until_apoapsis(60).
+		warp_until_apoapsis(60).
 }
 
 // FINAL COUNT DOWN:
@@ -218,7 +218,9 @@ do_circle_step().
 // --------------------------------------------------------------------------------------------
 // SAS OFF. wait 0.1.
 // LOCK STEERING TO PROGRADE. wait 0.1.
-wait 5.
+//wait 5.
+RCS OFF.
+
 CLEARSCREEN.
 update_phase_title("C-In Parking Orbit", 1, true).
 set e to (apoapsis-periapsis)/(apoapsis+periapsis).
@@ -228,7 +230,7 @@ WAIT 5.
 SET MAPVIEW TO FALSE.  	// map view off
 lock throttle to 0.		//set thrust to 0.
 LOCK STEERING TO SHIP:PROGRADE.//  + R(0,0,180).
-DELETEPATH("CIRCULARIZE.txt").
+
 
 //Kill KSP spin bugs, of a out of focus vessel:
 set kuniverse:timewarp:MODE to "RAILS".	wait 1. //RESET

@@ -8,13 +8,14 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used before main.c, to distribute tasks among all Processors.
-// 31/Oct/2021
+// 01/Nov/2021
 // --------------------------------------------------------------------------------------------
+declare global LOG_FILE to "main-log.txt". DELETEPATH(LOG_FILE).
 LOG   "START: stage-main.ks" to LOG_FILE.
+
 SWITCH TO 0.	//SWITCH TO default PATH: [KSP]/Ships/Script
 core:doaction("Open Terminal", true).
 CLEARSCREEN.
-declare global LOG_FILE to "main-log.txt". DELETEPATH(LOG_FILE).
 
 // URGENT/RESET STUFF: -------------------------------------------------------
 if (status = "PRELAUNCH" or status = "LANDED") and ( BODY:name = "Kerbin" or BODY:name = "Earth" )

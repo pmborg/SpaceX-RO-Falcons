@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------
-// Filename: Phase0-Normal.c
+// Filename: lib_normal.c
 // --------------------------------------------------------------------------------------------
 // KOS Scripts for KSP to be used on SpaceX-RO-Falcons Mod (Pmborg RO Version) 
 // --------------------------------------------------------------------------------------------
@@ -7,16 +7,10 @@
 // Beta load from: 	- https://www.dropbox.com/sh/jd1oh6d806iyat1/AABa7aXbiYDfv8G-aQ4MyR-ta?dl=0
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
-//              This code is used to match the target orbit inclination.
+//              This is used in orbital mechanics warp to match orbit planes
 // 01/Nov/2021
 // --------------------------------------------------------------------------------------------
 
-parameter mission_target_parameter.
-set TARGET to mission_target_parameter. //set TARGET to BODY(mission_target_parameter).
-
-RCS ON.
-set dv_factor to 1.
-set BURN to 0. //NODE(0, 0, 0, 0).
 
 //----------------------------------------------------------------------------------
 function getNormalOrbitAngle 
@@ -127,90 +121,3 @@ function set_inc_lan
 	ADD inc_node.
 	set BURN to inc_node.
 }
-
-//----------------------------------------------------------------------------------
-function Inclination_Match 
-{
-	//RESET: thrust
-	set thrust to 0.	
-	lock throttle to thrust.
-	wait 1.
-	
-	set_inc_lan (target:orbit:inclination, target:orbit:lan). //GET: BURN NODE
-	print "BURN:ETA "+ ROUND(BURN:ETA,1).
-	
-	warp_until_node (BURN).
-	
-	set warp to 0. wait 1.
-	SET MAPVIEW TO FALSE. wait 1.  // map view: off
-	UNLOCK STEERING. wait 1.
-	SAS ON. wait 1.
-	RCS ON. wait 0.1.
-	
-	set prev_angle to getNormalOrbitAngle().
-	
-	// set sasmode to "maneuver".
-	wait 0.
-	if dv_factor < 0
-	{
-		set sasmode to "ANTINORMAL". wait 0.1.
-		print "SAS ANTINORMAL".
-	} else {
-		set sasmode to "NORMAL". wait 0.1.//set sasmode to "maneuver".
-		print "SAS NORMAL".
-	}
-	
-	if vehicle_type = "Space4"
-		WAIT 30.
-	else
-		WAIT 15.
-	
-	set thrust to 1.
-	//SET PREV_TIME to TIME:SECONDS.
-	//print "PREV_TIME: "+PREV_TIME  + "        "  at (0,10).
-
-	until FALSE //TIME:SECONDS > PREV_TIME + 35
-	{
-		set angle to getNormalOrbitAngle().
-		set prev_angle to angle.
-		set Relative_Inclination_to_Target to angle.
-
-		if angle*angle > (prev_angle+1)*(prev_angle+1) or angle > -0.1 and angle < 0.1
-		{
-			set thrust to 0.
-			remove BURN.
-			wait 1.
-			return 1.
-		}.
-
-		print "Normal Orbit (angle): "+ ROUND(angle,1)  + "        "  at (0,11).
-		print "(dv_factor):"+dv_factor+ "        "  at (0,12).
-	}.
-
-	set thrust to 0.
-	remove BURN.
-	wait 1.
-	return 0.
-}.
-
-////////////////////////////////////////////////////////////////////////////////////////////////
-// MAIN:
-////////////////////////////////////////////////////////////////////////////////////////////////
-clearscreen.
-print " ".print " ".print " ".
-update_phase_title("Inclination Burn", 0, true).
-
-if vehicle_type = "Space4"
-{ 
-	UNLOCK STEERING. WAIT 0.1. 
-	SAS ON. WAIT 0.1. 
-}
-
-set result to Inclination_Match(). print result at (0,14).
-print "SUMMARY: TARGET Inclination Corrected: (result) "+result.
-
-//RESET:
-UNTIL NOT HASNODE { REMOVE NEXTNODE. WAIT 0. } //removeAllNodes!
-SAS OFF.
-RCS OFF.
-set warp to 0.

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Control the Manouver and prograde burn into: mission_target
-// 07/Jan/2021
+// 01/Nov/2021
 // --------------------------------------------------------------------------------------------
 CLEARSCREEN. print " ". print " ".
 
@@ -19,7 +19,8 @@ function DO_BURN {
 	BRAKES OFF.	// Air Breaks off
 
 	//BURN -------------------------------------------------------
-	if STATUS = "ORBITING" {
+	if STATUS = "ORBITING" and (BODY:NAME = "Earth" or BODY:NAME = "Kerbin") 
+	{
 		
 		// PRINT "Press: y to to Confirm the BURN!". 
 		// PRINT "Press: n to SKIT IT".
@@ -33,15 +34,17 @@ function DO_BURN {
 		}
 	}
 
-	//WARP(INTER_PLANETARY_MISSION) ----------------------------
+	//WARP(INTER_PLANETARY_MISSION) (SKIP FOR MOON) ----------------------------
 	if IS_INTER_PLANETARY_MISSION {
 		//update_phase_title("PhaseI-Warp", 1, false).
-		RUNPATH( "boot/PhaseI-Warp.c" ).	 			 // Warp out of "Kerbin" and all Moons until Sun Orbit...
+		if STATUS = "ORBITING" and (BODY:NAME = "Earth" or BODY:NAME = "Kerbin") 
+			RUNPATH( "boot/PhaseI-Warp.c" ).	 			 // Warp out of "Kerbin" and all Moons until Sun Orbit...
 		
 		//PRINT "Press [ENTER] to Confirm - PhaseI-Transfer". set ch to terminal:input:getchar().
 		RUNPATH( "boot/PhaseI-Transfer.c", "RADIALIN" ). // Fine Tune: [NOW4]
 	}
 
+	//INTERCEPT TARGET: MOON/MARS
 	//PE -------------------------------------------------------
 	update_phase_title("WARP-TO-PE", 1, true).
 	
@@ -52,7 +55,7 @@ function DO_BURN {
 	}
 	if (Orbit:periapsis > MAX(40000, 1.5*BODY:atm:height)) // 40,000m safe altitude (periapsis wait) in all planets.
 	{
-		wait_until_periapsis().
+		warp_until_periapsis().
 		SET MAPVIEW TO FALSE. 
 		wait 10.	// WAIT for GUI Refresh etc...
 

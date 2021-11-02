@@ -10,7 +10,7 @@
 // Purpose: 
 //              	- Used to calculate orbit position to do a hohmann transfer orbit in
 //                    missions (Beyond Earth)
-// 31/Oct/2021
+// 01/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 function get_rendevous_nodes
@@ -199,6 +199,8 @@ function get_rendevous_nodes
 	SET MAPVIEW TO FALSE. wait 1. // map view: off
 	UNLOCK STEERING. wait 1.
 	SAS ON. wait 1.
+	if MAPVIEW
+		SET MAPVIEW TO FALSE. wait 2. // map view: off
 	set sasmode TO "PROGRADE". wait 1.
 	//LOCK STEERING TO PROGRADE. wait 0.1.
 

@@ -8,12 +8,15 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Circularize an orbit after BURN.c
-// 09/Jan/2021
+// 01/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 parameter goto_mission_target.
 
-//AG5 ON.
+
+if vehicle_type <> "Space4"
+	AG5 ON. //Panels ON
+
 set TARGET to goto_mission_target. //BODY(goto_mission_target).
 set warp to 0.
 SAS OFF.

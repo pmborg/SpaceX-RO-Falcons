@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to test the Starship Horizontal flight.
-// 15/Aug/2021
+// 01/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 function COMPLETE_PRINT_STATUS
@@ -69,7 +69,7 @@ if (vehicle_sub_type = "SN20-Profile" or vehicle_sub_type = "SS-BN") and altitud
 	if altitude > BODY:ATM:HEIGHT
 	{
 		update_phase_title("PREPARE 4 RETRO BURN", 1).
-		wait_until_periapsis().
+		warp_until_periapsis().
 		SAS OFF.
 		lock steering to retrograde.
 		AG2 OFF. wait 0.1.

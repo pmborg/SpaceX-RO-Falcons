@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to todo the Manouver in prograde to the: mission_target
-// 31/Oct/2021
+// 01/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 parameter goto_mission_target.
@@ -117,7 +117,7 @@ function DOTHEMAINBURN
 	update_phase_title("PhaseI-Rotate", 0, false).
 	print "PhaseI-Rotate to "+goto_mission_target+" Burn" at (0,2).
 	prograde_check(). 		// WAIT WITH RCS FOR PROGRADE DIRECTION
-	warp_until_node(node). 	// WARP TOWARDS NODE
+	warp_until_node(node, 60+(node:TIME/2)). 	// WARP TOWARDS NODE
 
 	//-------------------------------------------------------------------------------
 	clearscreen.
@@ -147,7 +147,7 @@ function DOTHEMAINBURN
 	UNLOCK STEERING. wait 1.
 	SAS ON. wait 1.
 	RCS ON. wait 0.1.
-	//set sasmode to "maneuver". wait 0.1.
+	set sasmode to "maneuver". wait 0.1.
 
 	//DO MAIN BURN:
 	set HaveEncounter to False.
@@ -199,9 +199,9 @@ function DOTHEMAINBURN
 					print "thesepatches[i] "+thesepatches[i]+"        " at (0,16+i).
 					if thesepatches[i]:name = goto_mission_target 
 					{
-						set thrust to 0.1. wait 0.1.
-						LOCK STEERING TO PROGRADE. wait 0.1. //set SASMODE to "STABILITY". wait 0.1.
-						set thrust to 1. wait 0.1. //Safty Margin
+						set thrust to 0.1. wait 1.			//Safty Margin
+						LOCK STEERING TO PROGRADE. wait 1. 	//Safty Margin
+						set thrust to 1. wait 1. 			//Safty Margin
 						set thrust to 0.
 						set warp to 0.
 						PRINT ("####COND 2") at (0,24).
@@ -281,7 +281,6 @@ if vehicle_type = "SaturnV" and NOT EXISTS("dock.txt")
 	RUNPATH( "boot/PhaseI-Docking.c" ).
 
 //WARP TO "MOON" SOI -------------------------------------------------------
-//AG5 ON. //Panels ON
 // PRINT "Press [ENTER], to Confirm: Warp!"at (0,26).
 // set ch to terminal:input:getchar().
 
@@ -294,6 +293,8 @@ if vehicle_type = "Space4"
 	SAS ON. wait 1.
 	RCS ON. wait 0.1.
 	set sasmode TO "PROGRADE". wait 1.
+} else {
+	AG5 ON. //Panels ON
 }
 
 CLEARSCREEN. print " ".
