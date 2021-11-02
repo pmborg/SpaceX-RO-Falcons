@@ -83,7 +83,7 @@ set Relative_Inclination_to_Target to getNormalOrbitAngle().
 LOG "MAIN:change_inclination" to LOG_FILE.
 change_inclination().	//if (apoapsis >= mission_target:orbit:semimajoraxis)
 
-set sasmode to PROGRADE. wait 0.1.
+set sasmode to "PROGRADE". wait 0.1.
 prograde_check(). 		// WAIT WITH RCS FOR PROGRADE DIRECTION
 PhaseI_Transfer().
 	
