@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used go get more realistic data from Planet Earth Atmosphere.
-// 13/Aug/2021
+// 02/Nov/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: atm.c" to LOG_FILE.
 // --------------------------------------------------------------------------------------------
@@ -97,8 +97,9 @@ function display_speed_kmh
 	parameter indice.
 	parameter xpos is 22.
 	
-	PRINT "Altitude: "		 	at (0,indice+0).	PRINT ROUND(h0/1000,1)+" km   "		 	at (xpos,indice+0).
-	PRINT "Speed: "				at (0,indice+1).	PRINT ROUND(v0*3.6,1)+" km/h   "		at (xpos,indice+1).
+	print "Rel. angle to target: " at (0,indice+0).	print ROUND (getNormalOrbitAngle(), 4)+"    " at (xpos,indice+0).
+	PRINT "Altitude: "		 	at (0,indice+1).	PRINT ROUND(h0/1000,1)+" km   "		 	at (xpos,indice+1).
+	PRINT "Speed: "				at (0,indice+2).	PRINT ROUND(v0*3.6,1)+" km/h   "		at (xpos,indice+2).
 }
 
 // --------------------------------------------------------------------------------------------
@@ -109,7 +110,7 @@ function update_atmosphere
 {
 	parameter h0.
 	parameter v0.
-	set indice to 20.
+	set indice to 19.
 	
 	display_speed_kmh (h0, v0, indice).
 	

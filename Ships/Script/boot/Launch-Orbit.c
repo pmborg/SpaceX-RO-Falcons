@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 01/Nov/2021
+// 02/Nov/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 LOG "START: Launch-Orbit.c" to LOG_FILE.
@@ -251,6 +251,60 @@ function GoSN9
 	PRINT "P-ST: "+profile_stage at (30,2).
 }
 
+
+// function Clamp {
+	// PARAMETER value.
+	// PARAMETER lower.
+	// PARAMETER upper.
+ 
+	// return Max(lower, Min(upper, value)).
+// }
+// function GetLaunchAzimuthInertial {
+	// PARAMETER targetInclination.
+	// PARAMETER launchLatitude.
+ 
+	// return Arcsin(Clamp(Cos(targetInclination)/Cos(launchLatitude), -1, 1)).
+// }
+// set targetInclination to mission_target:orbit:inclination.
+// function GetLaunchAzimuthRotating {
+	// set  launchLatitude to Ship:Latitude.
+	// set  targetAltitude to Altitude.
+ 
+	// local azimuth_inertial to GetLaunchAzimuthInertial(targetInclination, launchLatitude).
+ 
+	// local v_equatorial to 2*Constant():Pi*Body:Radius / Body:RotationPeriod.
+ 
+	// local v_orbit to Sqrt(Body:Mu / (Body:Radius + targetAltitude)).
+	// local v_xrot to v_orbit * sin(azimuth_inertial) - v_equatorial * cos(launchLatitude).
+	// local v_yrot to v_orbit * cos(azimuth_inertial).
+ 
+	// return Arctan(v_xrot/v_yrot).
+// }
+
+// declare t0 to time:seconds.	//returns compass direction to launch to a desired inclination:
+// declare dH to 0.
+// declare oldH to 0.		
+// declare function directionFindPD 
+// {
+  
+  // set t to time:seconds.	//iterate time step, only necessary for dH:
+  // set dT to t-t0.
+  // set t0 to t.
+  
+  
+  // set dH to (ship:heading-oldH)/dT.	//set dH to change in heading:
+  // set oldH to ship:heading.
+  
+  // return 90+.01*(ship:heading)+.01*dH.	//return Kp*(setpoint-P)+Kd*D
+// }
+
+declare function directionFindPD
+{
+	return 104.	//Magic Number to GetLaunchAzimuthRotatingHeading to Mars
+}
+
+set new_PITCH to 10. //Space4
+
 function GoSpace4
 {
 		if vehicle_type = "Space4" and altitude > 200 and Space4 = 0
@@ -265,19 +319,17 @@ function GoSpace4
 		{
 			//AG4 ON. WAIT 1. 	//Nucler Reactor on
 			AG5 OFF. WAIT 0.1. 	//Vertical Jet Engines
-			//AG1 ON. WAIT 0.1.  //Jet Engines
+			//AG1 ON. WAIT 0.1. //Jet Engines
 			//AG2 ON. WAIT 1. 	//Multi/SPI Jet Engines
-			//AG8 OFF. WAIT 0.1.	//VERTICAL RS-25
+			//AG8 OFF. WAIT 0.1.//VERTICAL RS-25
 			set Space4 to 2.
 			set new_PITCH to 30.
-			LOCK STEERING TO HEADING(90, new_PITCH). WAIT 0.1.
 			update_phase_title("@ALT:300m, PITCH: "+new_PITCH+" / VERT. Jet Engines: OFF", 0, true, 6, 0).
 		}
 		if vehicle_type = "Space4" and altitude > 2000 and Space4 = 2
 		{
 			set Space4 to 3.
 			set new_PITCH to 70.
-			LOCK STEERING TO HEADING(90, new_PITCH). WAIT 0.1.
 			update_phase_title("@ALT:002km, PITCH: "+new_PITCH, 0, true, 6, 0).
 		}
 		if vehicle_type = "Space4" and altitude > 12000 and Space4 = 3
@@ -303,21 +355,19 @@ function GoSpace4
 		{
 			set Space4 to 7.
 			AG2 OFF. wait 0.1.
-			LOCK STEERING TO HEADING(90, 15). WAIT 0.1.
-			update_phase_title("@ALT:140km, ATM ROCKET ENGINES: OFF", 0, true, 6, 0).
+			set new_PITCH to 15.
+			update_phase_title("@AP:140km, ATM ROCKET ENGINES: OFF", 0, true, 6, 0).
 		}
 		if vehicle_type = "Space4" and apoapsis > 250000 and Space4 = 7
 		{
 			set Space4 to 8.
 			set new_PITCH to 2.
-			LOCK STEERING TO HEADING(90, new_PITCH). WAIT 0.1.
-			update_phase_title("@ALT:250km, PITCH: "+new_PITCH, 0, true, 6, 0).
+			update_phase_title("@AP:250km, PITCH: "+new_PITCH, 0, true, 6, 0).
 		}
 		if vehicle_type = "Space4" and periapsis > -1000000 and Space4 = 8
 		{
 			set Space4 to 9.
 			set new_PITCH to 0.
-			LOCK STEERING TO HEADING(90, new_PITCH). WAIT 0.1.
 			update_phase_title("@PE:-1000km, PITCH: "+new_PITCH, 0, true, 6, 0).
 		}
 		if vehicle_type = "Space4" and periapsis > 140000 and Space4 = 9
@@ -333,6 +383,8 @@ function GoSpace4
 			set profile_stage to 1.
 			update_phase_title("@AP:1000km, ORBIT: ", 0, true, 6, 0).
 		}
+		
+		LOCK STEERING TO HEADING(directionFindPD(), new_PITCH).
 }
 
 // Vehicle Release Auto Sequence:
@@ -341,8 +393,10 @@ LOG "START: Vehicle Release Auto Sequence" to LOG_FILE.
 set thrust to 0.
 lock throttle to thrust.
 
-if vehicle_type = "Space4"
-	LOCK STEERING TO HEADING(90, 10).
+if vehicle_type = "Space4" {
+	LOCK STEERING TO HEADING(90, new_PITCH).
+	set target to mission_target.
+}
 else
 	if vehicle_type <> "SN16-Profile1"
 		LOCK STEERING TO up + R(0,0,180). //UP

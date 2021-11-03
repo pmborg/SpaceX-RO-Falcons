@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used to match the target orbit inclination.
-// 01/Nov/2021
+// 02/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 parameter mission_target_parameter.
@@ -17,22 +17,6 @@ set TARGET to mission_target_parameter. //set TARGET to BODY(mission_target_para
 RCS ON.
 set dv_factor to 1.
 set BURN to 0. //NODE(0, 0, 0, 0).
-
-//----------------------------------------------------------------------------------
-function getNormalOrbitAngle 
-{
-	set a1 to sin(ship:Orbit:Inclination)*cos(ship:orbit:LAN).
-	set a2 to sin(ship:Orbit:Inclination)*sin(ship:orbit:LAN).
-	set a3 to cos(ship:Orbit:Inclination).
-
-	set b1 to sin(target:Orbit:Inclination)*cos(target:orbit:LAN).
-	set b2 to sin(target:Orbit:Inclination)*sin(target:orbit:LAN).
-	set b3 to cos(target:Orbit:Inclination).
-
-	set angle to arccos(a1*b1+a2*b2+a3*b3).
-	
-	return angle.
-}
 
 //----------------------------------------------------------------------------------
 function eta_true_anom 
@@ -139,7 +123,8 @@ function Inclination_Match
 	set_inc_lan (target:orbit:inclination, target:orbit:lan). //GET: BURN NODE
 	print "BURN:ETA "+ ROUND(BURN:ETA,1).
 	
-	warp_until_node (BURN).
+	warp_until_node (BURN, 60+15).
+	//warp_until_node (BURN, 60+(BURN:TIME/2)).
 	
 	set warp to 0. wait 1.
 	SET MAPVIEW TO FALSE. wait 1.  // map view: off
@@ -149,7 +134,7 @@ function Inclination_Match
 	
 	set prev_angle to getNormalOrbitAngle().
 	
-	// set sasmode to "maneuver".
+	//set sasmode to "maneuver".
 	wait 0.
 	if dv_factor < 0
 	{
@@ -165,31 +150,12 @@ function Inclination_Match
 	else
 		WAIT 15.
 	
-	set thrust to 1.
-	//SET PREV_TIME to TIME:SECONDS.
-	//print "PREV_TIME: "+PREV_TIME  + "        "  at (0,10).
-
-	until FALSE //TIME:SECONDS > PREV_TIME + 35
-	{
-		set angle to getNormalOrbitAngle().
-		set prev_angle to angle.
-		set Relative_Inclination_to_Target to angle.
-
-		if angle*angle > (prev_angle+1)*(prev_angle+1) or angle > -0.1 and angle < 0.1
-		{
-			set thrust to 0.
-			remove BURN.
-			wait 1.
-			return 1.
-		}.
-
-		print "Normal Orbit (angle): "+ ROUND(angle,1)  + "        "  at (0,11).
-		print "(dv_factor):"+dv_factor+ "        "  at (0,12).
-	}.
-
-	set thrust to 0.
-	remove BURN.
-	wait 1.
+	execute_node (BURN, false, false).
+	set angle to getNormalOrbitAngle().
+	
+	print "prev_angle: "+prev_angle. LOG "prev_angle: "+prev_angle to LOG_FILE.
+	print "angle: "+angle. LOG "angle: "+angle to LOG_FILE.
+	
 	return 0.
 }.
 

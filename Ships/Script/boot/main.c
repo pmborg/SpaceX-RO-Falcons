@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestrate all mission phases.
-// 01/Nov/2021
+// 02/Nov/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: main.c" to LOG_FILE.
 // Reset Engine settings before all, ("migth be a reboot")
@@ -58,7 +58,7 @@ function change_inclination
 
 
 // --------------------------------------------------------------------------------------------
-//ACTION: REFUEL?
+// ACTION: REFUEL?
 // --------------------------------------------------------------------------------------------
 if mission_origin <> DEFAULT_KSC and BODY:NAME <> "Sun"
 {
@@ -72,7 +72,7 @@ if mission_origin <> DEFAULT_KSC and BODY:NAME <> "Sun"
 }
 
 // --------------------------------------------------------------------------------------------
-//ACTION: LAUNCH
+// ACTION: LAUNCH
 // --------------------------------------------------------------------------------------------
 if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY", GOTO "RETURN-JOURNEY"
 {
@@ -111,13 +111,21 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 		LOG  "SKIP: Launch" to LOG_FILE.
 
 	// --------------------------------------------------------------------------------------------
-	//ACTION: ADJUST Normal/Inclination?
+	// ACTION: ADJUST Normal/Inclination?
 	// --------------------------------------------------------------------------------------------
 	// Adjust mission inclination?
 	if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN16-Profile1" and vehicle_sub_type <> "SN20-Profile")
 	{
-		if NOT EXISTS("normal.txt")
+		if NOT EXISTS("normal.txt") {
+			LOG "part-1-change_inclination" to LOG_FILE.
 			change_inclination().
+		
+			// WAIT and recalculate:
+			//set WARP to 2. WAIT 5. set WARP to 0. WAIT 1.
+			LOG "part-2-change_inclination" to LOG_FILE.
+			if (getNormalOrbitAngle() > 1) 
+				change_inclination().
+		}
 		else
 			LOG  "SKIP: Normal" to LOG_FILE.
 
@@ -140,7 +148,7 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 	}
 	
 	// --------------------------------------------------------------------------------------------
-	//ACTION: LEM/DOCK?
+	// ACTION: LEM/DOCK?
 	// --------------------------------------------------------------------------------------------
 	LOG  "LEM/DOCK?" to LOG_FILE.
 	if BODY:name = mission_target:name and not EXISTS("lem.txt")
@@ -188,7 +196,7 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 	}
 
 	LOG  "ON TARGET -> ACTION: Break & LAND!" to LOG_FILE.
-	//ACTION: Break & LAND! -------------------------------------------
+	// ACTION: Break & LAND! -------------------------------------------
 	if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN16-Profile1" and vehicle_sub_type <> "SN20-Profile" and vehicle_sub_type <> "StarShip" and vehicle_type <> "Space4")
 	{
 		if status <> "LANDED" and status <> "SPLASHED"

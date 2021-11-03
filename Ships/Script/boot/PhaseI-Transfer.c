@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				...
-// 01/Nov/2021
+// 02/Nov/2021
 // --------------------------------------------------------------------------------------------
 clearscreen.
 update_phase_title("PhaseI-Transfer: START", 1, false).
@@ -30,6 +30,7 @@ function PhaseI_Transfer
 {
 parameter burnmode is "PROGRADE".
 
+	UNLOCK STEERING. wait 0.1.
 	SAS ON. wait 0.1.
 	set sasmode to burnmode. wait 0.1. //set sasmode TO "PROGRADE". wait 1.
 
@@ -43,8 +44,9 @@ parameter burnmode is "PROGRADE".
 	//----------------------------------
 	update_phase_title("PhaseI-Transfer: "+burnmode, 1, false).
 	//set cond to 0.
-	//until cond = 1 or (apoapsis >= mission_target:orbit:semimajoraxis) 
-	until FALSE
+	//until cond = 1 or (apoapsis >= mission_target:orbit:semimajoraxis)
+	RCS OFF.
+	until FALSE or (apoapsis >= mission_target:orbit:semimajoraxis)
 	{
 		set thesepatches to ship:patches.
 		print "burnmode: "+burnmode+"        " 							 at (0,9).
@@ -83,14 +85,17 @@ set Relative_Inclination_to_Target to getNormalOrbitAngle().
 LOG "MAIN:change_inclination" to LOG_FILE.
 change_inclination().	//if (apoapsis >= mission_target:orbit:semimajoraxis)
 
-set sasmode to "PROGRADE". wait 0.1.
-prograde_check(). 		// WAIT WITH RCS FOR PROGRADE DIRECTION
-PhaseI_Transfer().
-	
 ////rep1
 // LOG "rep1:change_inclination" to LOG_FILE.
 // if (Relative_Inclination_to_Target > 0.1) 
 	// change_inclination().
+
+update_phase_title("PhaseI-Transfer: ROTATE", 1, false).
+set sasmode to "PROGRADE". wait 0.1.
+prograde_check(). 		// WAIT WITH RCS FOR PROGRADE DIRECTION
+
+update_phase_title("PhaseI-Transfer: BURN", 1, false).
+PhaseI_Transfer().
 
 ////rep2
 // LOG "rep2:change_inclination" to LOG_FILE.

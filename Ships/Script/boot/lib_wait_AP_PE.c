@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This is used in orbital mechanics warp to AP or PE.
-// 01/Nov/2021
+// 02/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 function  warp_until_periapsis
@@ -41,7 +41,7 @@ function  warp_until_periapsis
 
 function warp_until_apoapsis 
 {
-	parameter w is 30.
+	parameter w is 60.	//DEFAULT: warp to, 1 min before burn.
 	parameter sas_mode is "PROGRADE".
 	
 	update_phase_title("wait until apoapsis", 0, false).
@@ -56,11 +56,11 @@ function warp_until_apoapsis
 		set warp to 4.
 	WAIT until eta:apoapsis < 86400.
 
-	if eta:apoapsis > 600. 	//10Mins
+	if eta:periapsis > 600. 	//10Mins
 		set warp to 3.
 	WAIT until eta:apoapsis < 600.
 
-	if eta:apoapsis > w. 	//30Secs
+	if eta:apoapsis > w.
 		set warp to 1.		
 	WAIT until eta:apoapsis < w.
 
@@ -115,3 +115,4 @@ function warp_until_node
 
 	set warp to 0. WAIT 0.1.
 }
+

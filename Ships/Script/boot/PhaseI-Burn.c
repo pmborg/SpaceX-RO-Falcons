@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to todo the Manouver in prograde to the: mission_target
-// 01/Nov/2021
+// 02/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 parameter goto_mission_target.
@@ -117,7 +117,8 @@ function DOTHEMAINBURN
 	update_phase_title("PhaseI-Rotate", 0, false).
 	print "PhaseI-Rotate to "+goto_mission_target+" Burn" at (0,2).
 	prograde_check(). 		// WAIT WITH RCS FOR PROGRADE DIRECTION
-	warp_until_node(node, 60+(node:TIME/2)). 	// WARP TOWARDS NODE
+	//warp_until_node(node, 60+(node:TIME/2)). 	// WARP TOWARDS NODE
+	warp_until_node (node, 60+15).
 
 	//-------------------------------------------------------------------------------
 	clearscreen.
@@ -147,7 +148,7 @@ function DOTHEMAINBURN
 	UNLOCK STEERING. wait 1.
 	SAS ON. wait 1.
 	RCS ON. wait 0.1.
-	set sasmode to "maneuver". wait 0.1.
+	set sasmode to "prograde". wait 0.1. //set sasmode to "maneuver". wait 0.1.
 
 	//DO MAIN BURN:
 	set HaveEncounter to False.
@@ -229,6 +230,7 @@ function DOTHEMAINBURN
 		print "node:deltav" 		 at (0,py+10). print ROUND (node_remaning_deltaV,1)+ " m/s     "		 at (25,py+10).
 		print "ship:Orbit:TRANSITION: "+ship:Orbit:TRANSITION+"     " at (0,22). //FINAL
 		print "maxthrust: "+ROUND (maxthrust)+"     " 					 	  at (0,23).
+		//print "Rel. angle to target: " at (0, 24).	print ROUND (getNormalOrbitAngle(), 4)+"    " at (25, 24).
 
 		if (node_remaning_deltaV) > 100
 			RCS OFF.
