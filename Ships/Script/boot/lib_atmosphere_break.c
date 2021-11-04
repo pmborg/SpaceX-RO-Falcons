@@ -9,7 +9,7 @@
 // Purpose: 
 //              This is used in orbital (de-orbit) mechanics in an atmospheric planet,
 //              to land without precision (land any where near by)
-// 31/Oct/2021
+// 04/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 function atmosphereBreak 
@@ -18,13 +18,7 @@ function atmosphereBreak
 	// SAS ON.
 	// WAIT 1.
 	if maxthrust > 0	// Do we have: fuel & active engines ?
-	{
-		// UNLOCK STEERING.
-		// WAIT 1.
-		// set sasmode TO "RETROGRADE".
-		// WAIT 1.
 		LOCK STEERING TO retrograde.
-	}
 
 	set x to warp.
 	set warp to 0.

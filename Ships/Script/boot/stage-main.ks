@@ -25,7 +25,7 @@ if (status = "PRELAUNCH" or status = "LANDED") and ( BODY:name = "Kerbin" or BOD
 
 	DELETEPATH("CIRCULARIZE.txt").
 	DELETEPATH("MAIN_SHIP.txt").
-	DELETEPATH("TRANSFER.TXT").
+	DELETEPATH("transfer.txt").
 	DELETEPATH("TRANSFER2.TXT").
 }
 //DELETEPATH("FLIP.txt"). 				//Reload, maybe?

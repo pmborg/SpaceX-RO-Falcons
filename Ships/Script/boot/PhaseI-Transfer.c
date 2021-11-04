@@ -32,7 +32,7 @@ parameter burnmode is "PROGRADE".
 
 	UNLOCK STEERING. wait 0.1.
 	SAS ON. wait 0.1.
-	set sasmode to burnmode. wait 0.1. //set sasmode TO "PROGRADE". wait 1.
+	SET MAPVIEW TO FALSE. wait 2. set sasmode to burnmode. wait 0.1.
 
 	if burnmode <> "PROGRADE" 
 		wait 20.
@@ -43,10 +43,11 @@ parameter burnmode is "PROGRADE".
 	//PhaseI-Transfer: TARGET ENCOUNTER:
 	//----------------------------------
 	update_phase_title("PhaseI-Transfer: "+burnmode, 1, false).
-	//set cond to 0.
-	//until cond = 1 or (apoapsis >= mission_target:orbit:semimajoraxis)
+	
 	RCS OFF.
-	until FALSE or ((apoapsis >= mission_target:orbit:semimajoraxis) and  NOT EXISTS("TRANSFER.TXT"))
+	
+	set cond to 0.
+	until cond = 1 or ((apoapsis >= mission_target:orbit:semimajoraxis) and  NOT EXISTS("transfer.txt"))
 	{
 		set thesepatches to ship:patches.
 		print "burnmode: "+burnmode+"        " 							 at (0,9).
@@ -62,9 +63,8 @@ parameter burnmode is "PROGRADE".
 					print "thesepatches[i] "+thesepatches[i]+"        " at (0,16+i).
 					if (thesepatches[i]:NAME = mission_target:NAME)
 					{
-						set thrust to 0. //set warp to 0. //LOCK STEERING TO PROGRADE. //set SASMODE to "STABILITY". wait 0.1.
-						LOG "ship:patches[1] "+thesepatches to LOG_FILE.
-						break.
+						set thrust to 0.
+						set cond to 1.
 					}
 				}
 			}
@@ -80,35 +80,37 @@ parameter burnmode is "PROGRADE".
 runpath("boot/lib_normal.c"). //set Relative_Inclination_to_Target to getNormalOrbitAngle().
 
 //TRANSFER:I
-if NOT EXISTS("TRANSFER.TXT")
+if NOT EXISTS("transfer.txt")
 {
 	change_inclination(true).	  //FORCE MATCH PLANES, IT1
 
 	//TRANSFER:
 	update_phase_title("PhaseI-Transfer: ROTATE", 1, false).
-	set sasmode to "PROGRADE". wait 0.1.
+	SET MAPVIEW TO FALSE. wait 2. set sasmode to "PROGRADE". wait 0.1.
 	prograde_check().
 	update_phase_title("PhaseI-Transfer: BURN", 1, false).
 	PhaseI_Transfer().
-
-	LOG  "Done" to TRANSFER.TXT.
+	LOG  "Done" to transfer.txt.
 }
 
-if NOT EXISTS("TRANSFER2.TXT")
+if NOT EXISTS("transfer2.txt")
 {
 	//TRANSFER:II = ENCOUNTER
 	change_inclination().	//FORCE MATCH PLANES, IT2
 	prograde_check().
 	update_phase_title("PhaseI-Transfer: BURN-II", 1, false).
 	PhaseI_Transfer().
-	LOG  "Done" to TRANSFER2.TXT.
+	LOG  "Done" to transfer2.txt.
 }
 
 // WARP!
 // ----------------------------------------------------------------
 update_phase_title("PhaseI-Transfer: WARP TO TARGET", 1, false).
+SET MAPVIEW TO FALSE. wait 1.  // map view: off
 SAS OFF. wait 1.
 set warp to 7. wait 1.
 UNTIL ship:Orbit:TRANSITION <> "ENCOUNTER".
 set warp to 0. wait 1.
 update_phase_title("PhaseI-Transfer: END", 1, false).
+
+LOG  "PhaseI-Transfer.c: done" to transfer-complete.txt.

@@ -135,14 +135,14 @@ function Inclination_Match
 	
 	set prev_angle to getNormalOrbitAngle().
 	
-	//set sasmode to "maneuver".
+	SET MAPVIEW TO FALSE. 
 	wait 0.
 	if dv_factor < 0
 	{
 		set sasmode to "ANTINORMAL". wait 0.1.
 		print "SAS ANTINORMAL".
 	} else {
-		set sasmode to "NORMAL". wait 0.1.//set sasmode to "maneuver".
+		set sasmode to "NORMAL". wait 0.1.
 		print "SAS NORMAL".
 	}
 	

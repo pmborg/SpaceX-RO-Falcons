@@ -197,12 +197,8 @@ function get_rendevous_nodes
 	SET MAPVIEW TO FALSE. wait 1. // map view: off
 	UNLOCK STEERING. wait 1.
 	SAS ON. wait 1.
-	if MAPVIEW
-		SET MAPVIEW TO FALSE. wait 2. // map view: off
-		
+	if MAPVIEW { SET MAPVIEW TO FALSE. wait 2. } 
 	set sasmode to "maneuver". wait 0.1.
-	//set sasmode TO "PROGRADE". wait 1.
-	//LOCK STEERING TO PROGRADE. wait 0.1.
 
 	set warp to 2.
 	until false {

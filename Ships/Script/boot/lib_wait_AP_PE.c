@@ -14,7 +14,7 @@
 function  warp_until_periapsis
 {
 	parameter w is 30.
-	parameter sas_mode is "PROGRADE".
+	parameter sas_mode is "retrograde".
 	
 	update_phase_title("wait until periapsis", 0, false).
 	set warp to 0. wait 1.
@@ -83,6 +83,27 @@ function prograde_check
 	set a to ship:prograde:pitch.
 	set b to ship:prograde:yaw.
 	set c to ship:prograde:roll.
+	lock steering to R(a,b,c).
+	WAIT UNTIL ((ship:facing:pitch >= (ROUND(a) - 5) AND ship:facing:roll >= (ROUND(c) - 5)) 
+		   AND (ship:facing:pitch <= (ROUND(a) + 5) AND ship:facing:roll <= ROUND(c) + 5)).
+}
+
+// WAIT WITH RCS FOR PROGRADE DIRECTION:
+function retrograde_check
+{
+	parameter sas_mode is "retrograde".
+	
+	update_phase_title("retrograde wait&check", 0, false).
+	
+	SET MAPVIEW TO FALSE. wait 1. // map view: off
+	RCS ON. wait 1.
+	UNLOCK STEERING. wait 1.
+	SAS ON. wait 1.
+	set sasmode TO sas_mode. wait 1.	
+
+	set a to ship:retrograde:pitch.
+	set b to ship:retrograde:yaw.
+	set c to ship:retrograde:roll.
 	lock steering to R(a,b,c).
 	WAIT UNTIL ((ship:facing:pitch >= (ROUND(a) - 5) AND ship:facing:roll >= (ROUND(c) - 5)) 
 		   AND (ship:facing:pitch <= (ROUND(a) + 5) AND ship:facing:roll <= ROUND(c) + 5)).

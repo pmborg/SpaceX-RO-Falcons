@@ -8,13 +8,11 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Dock (SLM with LEM) or (CD2 with ISS)
-// 09/Jan/2021
+// 04/Nov/2021
 // --------------------------------------------------------------------------------------------
-
-
-lock steering to prograde. wait 0.1.
 CLEARSCREEN. print " ". print " ".
 update_phase_title("SLM/LEM Docking", 1, true).
+lock steering to prograde. wait 0.1.
 
 //STAGE:
 if vehicle_type = "SaturnV"
@@ -58,9 +56,7 @@ UNTIL (Ship_Distance >= 25)
 	
 	//ROTATE (DO 180):
 	if (Ship_Distance > 20)
-	{
-		set sasmode to "TARGET". wait 1.
-	}
+		{ SET MAPVIEW TO FALSE. wait 2. set sasmode to "TARGET". wait 1. }
 	
 }
 RCS OFF.

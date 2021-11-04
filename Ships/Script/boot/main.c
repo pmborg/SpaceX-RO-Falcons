@@ -198,7 +198,14 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 
 	LOG  "ON TARGET -> ACTION: Break & LAND!" to LOG_FILE.
 	// ACTION: Break & LAND! -------------------------------------------
-	if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN16-Profile1" and vehicle_sub_type <> "SN20-Profile" and vehicle_sub_type <> "StarShip" and vehicle_type <> "Space4")
+	if vehicle_type = "Space4" or vehicle_type = "SaturnV"
+	{
+		 //Process target landing:
+		 
+		 
+		 
+	}
+	else if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN16-Profile1" and vehicle_sub_type <> "SN20-Profile" and vehicle_sub_type <> "StarShip")
 	{
 		if status <> "LANDED" and status <> "SPLASHED"
 		{
@@ -251,7 +258,7 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 				
 				stage. wait 1.
 				SAS ON. wait 1.
-				SET SASMODE TO "RADIALIN". wait 1.
+				SET MAPVIEW TO FALSE. wait 2. set sasmode TO "RADIALIN". wait 1.
 				AG4 ON.
 				CLEARSCREEN. print " ". print " ".
 			}
@@ -267,7 +274,11 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 		RUNPATH( "boot/starship_lowentry_return.c").
 	}
 	
-	LOG  STAGE_1_TYPE+" REBOOT FOR RE-FUEL" to LOG_FILE.
+	//LOG  STAGE_1_TYPE+" REBOOT FOR RE-FUEL" to LOG_FILE.
+	CLEARSCREEN. print " ". print " ".
+	update_phase_title("Confirm, MISSON ENDED", 0, false).
+	PRINT "Press [ENTER], to Confirm, REBOOT!".
+	set ch to terminal:input:getchar().
 	reboot.
 }
 

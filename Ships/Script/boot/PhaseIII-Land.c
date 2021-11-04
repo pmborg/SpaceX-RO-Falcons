@@ -9,13 +9,11 @@
 // Purpose: 
 //              	- Used to land any where near by, (sample: after de-orbit on Mun or Moon)
 //                    used in missions (Beyond Earth)
-// 25/Jun/2021
+// 04/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 CLEARSCREEN.
-//PRINT "PhaseIII-Descending" at (0,0).
 update_phase_title("PHASEIII-DESCENDING", 1).
-//runpath("boot/common.c").
 
 set GM to mission_target:mu. 		//GM = 6.5138398*(10^10).  (MUN)
 
@@ -192,9 +190,11 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 		SAS ON.
 		WAIT 1.
 		if vehicle_sub_type <> "SN20-Profile"
-			set sasmode TO "RETROGRADE".
-		else
-			set SASMODE to "STABILITY".
+		{
+			SET MAPVIEW TO FALSE. wait 2. set sasmode TO "RETROGRADE".
+		} else {
+			SET MAPVIEW TO FALSE. wait 2. set sasmode to "STABILITY".
+		}
 		RCS ON.
 		// if vehicle_type = "SN16-Profile1"
 			// SET err TO 0.50.

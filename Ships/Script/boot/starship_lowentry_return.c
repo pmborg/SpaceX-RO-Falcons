@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to test the Starship Horizontal flight.
-// 01/Nov/2021
+// 04/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 function COMPLETE_PRINT_STATUS
@@ -146,12 +146,6 @@ if vehicle_sub_type = "SN20-Profile"
 	set kuniverse:timewarp:MODE to "PHYSICS". wait 1.//WARP with PHYSICS
 	
 	update_phase_title("LOW RE-ENTRY", 1).
-	//wait 1. SAS ON. wait 2.
-	// SET SASMODE TO "RADIALOUT". wait 1.
-	// SET SASMODE TO "RADIALOUT". wait 1.
-	// SET SASMODE TO "RADIALOUT". wait 1.
-	// SET SASMODE TO "RADIALOUT". wait 1.
-	
 	if vehicle_type = "SN20-Profile"
 		LOCK STEERING TO UP + R(0,-15,90+lat_correction). wait 0.1.
 		
@@ -256,8 +250,7 @@ else {
 	AG2 OFF. wait 0.1.
 	AG2 ON. wait 0.1.
     UNLOCk steering. wait 1.
-	SET SASMODE TO "RETROGRADE". wait 1.
-	//lock steering to retrograde.
+	SET MAPVIEW TO FALSE. wait 2. set sasmode TO "RETROGRADE". wait 1.
 	set thrust to 1.  wait 1.
 	
 	RUNPATH( "boot/PhaseIII-Land.c" ).

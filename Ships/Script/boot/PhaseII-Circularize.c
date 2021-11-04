@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Circularize an orbit after BURN.c
-// 01/Nov/2021
+// 04/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 parameter goto_mission_target.
@@ -24,7 +24,7 @@ SAS OFF.
 // Altitudes INFO: https://forum.kerbalspaceprogram.com/index.php?/topic/173446-lowest-highest-points-of-celestial-bodies/
 if (Orbit:periapsis > MAX(40000, 1.5*TARGET:atm:height)) // 40,000m is a safe altitude (to do a periapsis wait) in all planets.
 {
-	//clearscreen. print " ". print " ".
+	clearscreen. print " ". print " ".
 	update_phase_title("ORBIT BURN", 1, true).
 
 	// Calculate Delta-V to circularize orbit:
@@ -44,15 +44,15 @@ if (Orbit:periapsis > MAX(40000, 1.5*TARGET:atm:height)) // 40,000m is a safe al
 	set theta to arcsin(W/maxthrust).
 	RCS OFF.
 	
-	print "theta: "+theta.
+	print "theta: " + ROUND (theta,3).
 
-	if vehicle_type <> "SaturnV"	
-		WarpToPE().
+	if vehicle_type <> "SaturnV"
+		warp_until_periapsis().
 	
 	SAS OFF. wait 0.1.
 	lock steering to RETROGRADE. wait 0.1.
-	update_phase_title("WAIT: 20s", 1, true).
-	wait 20.
+	//update_phase_title("WAIT: 20s", 1, true).
+	//wait 20.
 	set thrust to 1.
 	
 	set ly to 3.

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Control the Manouver and prograde burn into: mission_target
-// 01/Nov/2021
+// 04/Nov/2021
 // --------------------------------------------------------------------------------------------
 CLEARSCREEN. print " ". print " ".
 
@@ -44,47 +44,47 @@ function DO_BURN {
 		RUNPATH( "boot/PhaseI-Transfer.c", "RADIALIN" ). // Fine Tune: [NOW4]
 	}
 
-	//INTERCEPT TARGET: MOON/MARS
-	//PE -------------------------------------------------------
-	update_phase_title("WARP-TO-PE", 1, true).
-	
-	if vehicle_type <> "Space4"
+	if (STATUS = "ESCAPING")
 	{
-		shutDownAllEngines().
-		AG5 ON. //Turn on Generators + Antenas
-	}
-	if (Orbit:periapsis > MAX(40000, 1.5*BODY:atm:height)) // 40,000m safe altitude (periapsis wait) in all planets.
-	{
-		warp_until_periapsis().
-		SET MAPVIEW TO FALSE. 
-		wait 10.	// WAIT for GUI Refresh etc...
-
-		if vehicle_type = "SaturnV"
+		//INTERCEPT TARGET: MOON/MARS
+		//PE -------------------------------------------------------
+		update_phase_title("WARP-TO-PE", 1, true).
+		
+		if vehicle_type <> "Space4"
 		{
-			UNTIL STAGE:NUMBER <=6
+			shutDownAllEngines().
+			AG5 ON. //Turn on Generators + Antenas
+		}
+		if (Orbit:periapsis > MAX(40000, 1.5*BODY:atm:height)) // 40,000m safe altitude (periapsis wait) in all planets.
+		{
+			SET MAPVIEW TO FALSE. wait 2. set sasmode TO "retrograde". wait 1.	
+			warp_until_periapsis().
+			SET MAPVIEW TO FALSE.
+			wait 10.	// WAIT for GUI Refresh etc...
+
+			if vehicle_type = "SaturnV"
 			{
-				stage. wait 5.
+				UNTIL STAGE:NUMBER <=6
+					{ stage. wait 5.}
+				
+				//TURN ON: SLM ENGINE
+				update_phase_title("SLM ENGINE ON", 1, true).
+				shutDownAllEngines().
+				AG8 ON.			
+				LOCK STEERING TO retrograde.
 			}
 			
-			//TURN ON: SLM ENGINE
-			update_phase_title("SLM ENGINE ON", 1, true).
-			shutDownAllEngines().
-			AG8 ON.			
-			LOCK STEERING TO retrograde.
+			// WAIT for RETRO:
+			retrograde_check().
+			
+			update_phase_title("CAPTURE BURN", 1, true).
+			set thrust to 1.
+			RCS OFF.
+			SET MAPVIEW TO TRUE.
+			WAIT UNTIL STATUS <> "ESCAPING".
+			set thrust to 0.
+			SET MAPVIEW TO FALSE.
 		}
-		
-		// WAIT for RETRO:
-		update_phase_title("ROTATE", 1, true).
-		RCS ON.
-		wait 10.
-		RCS OFF.
-		
-		update_phase_title("CAPTURE BURN", 1, true).
-		set thrust to 1.
-		SET MAPVIEW TO TRUE.
-		WAIT UNTIL STATUS <> "ESCAPING".
-		set thrust to 0.
-		SET MAPVIEW TO FALSE.
 	}
 		
 	//CIRCULARIZE TARGET -------------------------------------------------------

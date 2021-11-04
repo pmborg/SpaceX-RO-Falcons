@@ -37,7 +37,7 @@ function DOTHEMAINBURN
 	{
 		UNLOCK STEERING. wait 0.1.
 		SAS ON. wait 0.1.
-		set sasmode to "maneuver". wait 0.1.
+		SET MAPVIEW TO FALSE. wait 2. set sasmode to "maneuver". wait 0.1.
 	}
 
 	//-------------------------------------------------------------------------------
@@ -111,7 +111,7 @@ function DOTHEMAINBURN
 	
 	prograde_check(). 						// WAIT WITH RCS FOR PROGRADE DIRECTION
 	
-	set sasmode to "maneuver". wait 0.1.
+	SET MAPVIEW TO FALSE. wait 2. set sasmode to "maneuver". wait 0.1.
 	warp_until_node (node, 30).				//WARP to NODE
 
 	//-------------------------------------------------------------------------------
@@ -143,8 +143,6 @@ function DOTHEMAINBURN
 	UNLOCK STEERING. wait 1.
 	SAS ON. wait 1.
 	RCS ON. wait 0.1.
-	//set sasmode to "prograde". wait 0.1. 
-	//set sasmode to "maneuver". wait 0.1.
 
 	//DO MAIN BURN:
 	set HaveEncounter to False.
@@ -272,7 +270,7 @@ function DOTHEMAINBURN
 	REMOVE nd.  
 	//REMOVE ned2.
 	
-	LOG "Burn" to burn.txt.
+	LOG "PhaseI-Burn.c" to burn.txt.
 }//DOTHEMAINBURN
 
 if NOT EXISTS("burn.txt") or BODY:NAME = "Sun"
@@ -294,12 +292,12 @@ if vehicle_type = "Space4"
 	UNLOCK STEERING. wait 1.
 	SAS ON. wait 1.
 	RCS ON. wait 0.1.
-	set sasmode TO "PROGRADE". wait 1.
+	SET MAPVIEW TO FALSE. wait 2. set sasmode TO "PROGRADE". wait 1.
 } else {
 	AG5 ON. //Panels ON
 }
 
-CLEARSCREEN. print " ".
+CLEARSCREEN. print " ". print " ".
 update_phase_title("Warp-Out "+BODY:NAME+" SOI", 1, true).
 set x to 0.
 set warp to 4. wait 0.1.
