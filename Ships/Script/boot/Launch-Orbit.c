@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 02/Nov/2021
+// 04/Nov/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 LOG "START: Launch-Orbit.c" to LOG_FILE.
@@ -105,7 +105,6 @@ function main_liftoff
 	
 	if (status = "PRELAUNCH" or status = "LANDED" or status = "SPLASHED") //KSP have so many bugs...
 	{
-		
 		if vehicle_company = "SpaceX" 
 		{
 			AG1 ON. //TOGGLE
@@ -124,8 +123,8 @@ function main_liftoff
 		FROM {local countdown is aim_cowntdown.} UNTIL countdown = 0 STEP {SET countdown to countdown - 1.} 
 		DO { PRINT "..." + countdown. WAIT 1. }
 
-		CLEARSCREEN. PRINT " ".PRINT " ".	
-		update_phase_title("[ ] IGNITION...", 0, false).
+		CLEARSCREEN. PRINT " ".PRINT " ". update_phase_title("[ ] IGNITION...", 0, false).
+		
 		if vehicle_type = "SN9-Profile1"
 			set thrust to 0.875. //ALL ENGINES: START IGNITION!
 		else
@@ -300,7 +299,7 @@ function GoSN9
 
 declare function directionFindPD
 {
-	return 104.	//Magic Number to GetLaunchAzimuthRotatingHeading to Mars
+	return 106.	//Magic Number to GetLaunchAzimuthRotatingHeading to Mars: 104
 }
 
 set new_PITCH to 10. //Space4
@@ -356,7 +355,7 @@ function GoSpace4
 			set Space4 to 7.
 			AG2 OFF. wait 0.1.
 			set new_PITCH to 15.
-			update_phase_title("@AP:140km, ATM ROCKET ENGINES: OFF", 0, true, 6, 0).
+			update_phase_title("@AP:140km, ATM ENGINES: OFF / PITCH: "+new_PITCH, 0, true, 6, 0).
 		}
 		if vehicle_type = "Space4" and apoapsis > 250000 and Space4 = 7
 		{
@@ -437,8 +436,7 @@ if alt:radar < 200
 	if vehicle_type <> "SN9-Profile1"
 		set thrust to 1.
 
-	CLEARSCREEN.
-	update_phase_title("[1] LIFTOFF...",0, false).
+	CLEARSCREEN. PRINT " ".PRINT " ". update_phase_title("[1] LIFTOFF...",0, false).
 	
 	DELETEPATH("FLIGHT_LOG.txt").
 	LOG   "TIME,   VELO,   R:ALT,  Acel,   Q" to FLIGHT_LOG_FILE.
@@ -479,7 +477,7 @@ if alt:radar < 200
 			{
 				if vehicle_type <> "SN9-Profile1"
 					PRINT "( Tower is cleared )" at (0,5+index2).
-				if vehicle_type = "Crew Dragon 2" //OR vehicle_type = "Space4"
+				if vehicle_type = "Crew Dragon 2"
 					SAS ON.
 			}
 			else
@@ -491,13 +489,13 @@ if alt:radar < 200
 				GoSN9().
 		}
 	
-		set vsurf to velocity:surface.
-		set Vsx to vsurf:x.
-		set Vsy to vsurf:y.
-		set Vsz to vsurf:z.
-		set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).	
-		set vel to SQRT(Vs2).
-		update_atmosphere (altitude, vel).
+		// set vsurf to velocity:surface.
+		// set Vsx to vsurf:x.
+		// set Vsy to vsurf:y.
+		// set Vsz to vsurf:z.
+		// set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).	
+		// set vel to SQRT(Vs2).
+		update_atmosphere (altitude, velocity:surface:mag).
 		log_data (vel).
 	}.
 
@@ -631,8 +629,8 @@ if alt:radar < 200
 		PRINT ROUND(maxthrust)+ " kN    " 				at (22,2+index2).
 		PRINT ROUND(delta)+ "    " 						at (22,3+index2).
 	
-		set vel to SQRT(Vs2).
-		update_atmosphere (altitude, vel).
+		//set vel to SQRT(Vs2).
+		update_atmosphere (altitude, velocity:surface:mag).
 		log_data (vel).
 	}.
 
@@ -708,8 +706,8 @@ if alt:radar < 200
 			   vehicle_type = "SaturnV"
 				check_fairing_sep().
 
-			set vel to SQRT(Vs2).
-			update_atmosphere (altitude, vel).
+			//set vel to SQRT(Vs2).
+			update_atmosphere (altitude, velocity:orbit:mag).
 			log_data (vel).
 			check_if_we_need_new_stage().
 		}.		
@@ -955,8 +953,8 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 		}
 		
 		update_orbit_status().
-		set vel to SQRT(Vs2).
-		update_atmosphere (altitude, vel).
+		//set vel to SQRT(Vs2).
+		update_atmosphere (altitude, velocity:orbit:mag).
 		log_data (vel).
 		check_if_we_need_new_stage().
 		
@@ -995,8 +993,8 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 			break.
 		
 		update_orbit_status().
-		set vel to SQRT(Vs2).
-		update_atmosphere (altitude, vel).
+		//set vel to SQRT(Vs2).
+		update_atmosphere (altitude, velocity:orbit:mag).
 		log_data (vel).
 		check_if_we_need_new_stage().
 	}

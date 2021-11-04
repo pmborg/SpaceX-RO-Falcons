@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to todo the Manouver in prograde to the: mission_target
-// 02/Nov/2021
+// 04/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 parameter goto_mission_target.
@@ -29,7 +29,7 @@ function DOTHEMAINBURN
 	set target to goto_mission_target.	//"Mun"/"Moon", etc
 	runpath("boot/lib_trajectory.c").
 	set warp to 2. wait 1.
-	set node to get_rendevous_nodes().
+	set node to get_rendevous_nodes().	//CALCULATE Manouver
 	set warp to 0. wait 1.
 	set target to goto_mission_target.	//"Mun"/"Moon", etc
 
@@ -72,19 +72,12 @@ function DOTHEMAINBURN
 	//Ra = a(1-e)
 	//Rp = a(1+e)
 
-	//Semi-major axis 	12 000 000 m
-	//Apoapsis 			12 000 000 m
-	//Periapsis 		12 000 000 m
+	set Ra to ( BODY(goto_mission_target):Apoapsis + BODY(goto_mission_target):periapsis ) /2.
+	set Rp to (apoapsis+periapsis)/2+ BODY(goto_mission_target):radius + altitude.
 
-	//set Ra to target:distance + BODY("Kerbin"):radius.	//[set Ra to 1.2*(10^7).] //12 000 000 (m) Dist from Kerbin to Mun
-	//Apoapsis+Periapsis/2 = 6 000 000 + Semi-major axis /2	// https://wiki.kerbalspaceprogram.com/wiki/Mun
-	set Ra to ( BODY(goto_mission_target):Apoapsis + BODY(goto_mission_target):periapsis ) /2. //1.2*(10^7).
-	set Rp to (apoapsis+periapsis)/2+ BODY(goto_mission_target):radius + altitude.	//[set Rp to (apoapsis+periapsis)/2+600000.]  //Raio equatorial Kerbin: 600 000 m 
-
-	// Minmus: 61301
 	set e to (Ra-Rp)/(Ra+Rp).
 	set a to (Ra+Rp)/2.
-	set h to (GM*a*(1-(e^2)))^.5. // "^.5" = SQRT
+	set h to (GM*a*(1-(e^2)))^.5. // Note: "^.5" = SQRT
 
 	//Rp.Vp = Ra.Va
 	set Vp to h/Rp. //perigee 
@@ -94,7 +87,6 @@ function DOTHEMAINBURN
 	set Vcir to (GM/Rp)^.5.
 	set dV to Vp-Vcir.
 
-	//set LAUNCH to 1.229146628119515*(10^7). //MAGIC NUMBER
 	set LAUNCH to Ra.
 
 	print "-----------------".
@@ -116,9 +108,11 @@ function DOTHEMAINBURN
 	print " ".print " ".
 	update_phase_title("PhaseI-Rotate", 0, false).
 	print "PhaseI-Rotate to "+goto_mission_target+" Burn" at (0,2).
-	prograde_check(). 		// WAIT WITH RCS FOR PROGRADE DIRECTION
-	//warp_until_node(node, 60+(node:TIME/2)). 	// WARP TOWARDS NODE
-	warp_until_node (node, 60+15).
+	
+	prograde_check(). 						// WAIT WITH RCS FOR PROGRADE DIRECTION
+	
+	set sasmode to "maneuver". wait 0.1.
+	warp_until_node (node, 30).				//WARP to NODE
 
 	//-------------------------------------------------------------------------------
 	clearscreen.
@@ -134,11 +128,12 @@ function DOTHEMAINBURN
 	set x to 1.		//thrust
 	set y to .5.	//Burn-Phase
 	set V to 0.		//Initial relative speed.
-	set vec to velocity:orbit.
-	set Vx to vec:x.
-	set Vy to vec:y.
-	set Vz to vec:z.
-	set Vo to ((Vx^2)+(Vy^2)+(Vz^2))^.5. //Original Speed.
+	// set vec to velocity:orbit.
+	// set Vx to vec:x.
+	// set Vy to vec:y.
+	// set Vz to vec:z.
+	// set Vo to ((Vx^2)+(Vy^2)+(Vz^2))^.5. //Original Speed.
+	set Vo to velocity:orbit:mag.
 	set Vp to Vo + burn_dV.
 	set np to node:deltav. //points to node, don't care about the roll direction.
 	
@@ -148,18 +143,20 @@ function DOTHEMAINBURN
 	UNLOCK STEERING. wait 1.
 	SAS ON. wait 1.
 	RCS ON. wait 0.1.
-	set sasmode to "prograde". wait 0.1. //set sasmode to "maneuver". wait 0.1.
+	//set sasmode to "prograde". wait 0.1. 
+	//set sasmode to "maneuver". wait 0.1.
 
 	//DO MAIN BURN:
 	set HaveEncounter to False.
 	set last_node_remaning_deltaV to 9999999999.
 	until HaveEncounter //(Vp-V) < 0.001 
 	{
-		set vec to velocity:orbit.
-		set Vx to vec:x.
-		set Vy to vec:y.
-		set Vz to vec:z.
-		set V to ((Vx^2)+(Vy^2)+(Vz^2))^.5.
+		// set vec to velocity:orbit.
+		// set Vx to vec:x.
+		// set Vy to vec:y.
+		// set Vz to vec:z.
+		// set V to ((Vx^2)+(Vy^2)+(Vz^2))^.5.
+		set V to velocity:orbit:mag.
 
 		if phaseAngle = 999  // Moon or (Mun or Minimus)...
 		{
@@ -182,9 +179,9 @@ function DOTHEMAINBURN
 		// |ship:patches|
 		if ship:patches:length > 1
 		{
-			set thesepatches to ship:patches.
-			print "ship:patches[1]:apoapsis= "+ ROUND(thesepatches[1]:apoapsis) +"        " 	at (0,15).
-			print "thesepatches= "+thesepatches+"        " 								at (0,16).
+			// set thesepatches to ship:patches.
+			// print "ship:patches[1]:apoapsis= "+ ROUND(thesepatches[1]:apoapsis) +"        " 	at (0,15).
+			// print "thesepatches= "+thesepatches+"        " 								at (0,16).
 
 			//// if thesepatches[1]:apoapsis > (Ra + BODY(goto_mission_target):RADIUS)
 			//	// break.
@@ -195,30 +192,32 @@ function DOTHEMAINBURN
 			// }
 			if ship:Orbit:TRANSITION <> "FINAL" 
 			{
+				set thesepatches to ship:patches.
 				FROM {local i is 0.} UNTIL i = thesepatches:length-1 STEP {SET i to i + 1.} DO 
 				{
-					print "thesepatches[i] "+thesepatches[i]+"        " at (0,16+i).
-					if thesepatches[i]:name = goto_mission_target 
-					{
-						set thrust to 0.1. wait 1.			//Safty Margin
-						LOCK STEERING TO PROGRADE. wait 1. 	//Safty Margin
-						set thrust to 1. wait 1. 			//Safty Margin
-						set thrust to 0.
-						set warp to 0.
-						PRINT ("####COND 2") at (0,24).
-						set HaveEncounter to True.
-						break.
-					}
+					print "thesepatches["+i+"] "+thesepatches[i]+"        " at (0,18+i).
+					// if thesepatches[i]:name = goto_mission_target 
+					// {
+						// set thrust to 0.1. wait 1.			//Safty Margin
+						// LOCK STEERING TO PROGRADE. wait 1. 	//Safty Margin
+						// set thrust to 1. wait 1. 			//Safty Margin
+						// set thrust to 0.
+						// set warp to 0.
+						// PRINT ("####COND 2") at (0,24).
+						// set HaveEncounter to True.
+						// break.
+					// }
 				}
 			}
+			
 		}
 		
 		print "Orbital Speed(V)" at (0,py+2).	print ROUND(V)+" m/s   " 		 at	(25,py+2).//Orbital Speed
-		print "Desired Speed (Vp)" at (0,py+3). print ROUND(Vp)+" m/s   " 			at (25,py+3).
+		//print "Desired Speed (Vp)" at (0,py+3). print ROUND(Vp)+" m/s   " 			at (25,py+3).
 		print "Current Apoapsis*" at (0,py+4).  print ROUND(apoapsis/1000)+" km    " at	(25,py+4).//Current Apoapsis
 		print "Desired Apoapsis" at (0,py+5). 	print ROUND((Ra - BODY(goto_mission_target):RADIUS)/1000)+ " km   " at (25,py+5).
-		print "Target [(Vp-V) < 0]:" at (0,py+6). print ROUND(Vp-V)+"    " 	 at	(25,py+6).
-		print "Vo: (phase) " 		 at (0,py+7). print ROUND(Vo)+"    "  	 at (25,py+7).
+		//print "Target [(Vp-V) < 0]:" at (0,py+6). print ROUND(Vp-V)+"    " 	 at	(25,py+6).
+		//print "Vo: (phase) " 		 at (0,py+7). print ROUND(Vo)+"    "  	 at (25,py+7).
 		print "Y: (phase) " 		 at (0,py+8). print y 					 at (25,py+8).
 		print "X: (power)" 			 at (0,py+9). print x 					 at (25,py+9).
 		set vorb to node:deltav.
@@ -228,8 +227,8 @@ function DOTHEMAINBURN
 		set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).
 		set node_remaning_deltaV to SQRT(Vs2).
 		print "node:deltav" 		 at (0,py+10). print ROUND (node_remaning_deltaV,1)+ " m/s     "		 at (25,py+10).
-		print "ship:Orbit:TRANSITION: "+ship:Orbit:TRANSITION+"     " at (0,22). //FINAL
-		print "maxthrust: "+ROUND (maxthrust)+"     " 					 	  at (0,23).
+		print "ship:Orbit:TRANSITION: "+ship:Orbit:TRANSITION+"     " at (0,24). //FINAL
+		print "maxthrust: "+ROUND (maxthrust)+"     " 					 	  at (0,25).
 		//print "Rel. angle to target: " at (0, 24).	print ROUND (getNormalOrbitAngle(), 4)+"    " at (25, 24).
 
 		if (node_remaning_deltaV) > 100
@@ -237,7 +236,7 @@ function DOTHEMAINBURN
 		else
 			RCS ON.
 
-		if node_remaning_deltaV > last_node_remaning_deltaV
+		if node_remaning_deltaV > last_node_remaning_deltaV and ship:Orbit:TRANSITION = "ESCAPE" 
 		{
 			print "#### break using deltaV" at (0,20+5).
 			break.
@@ -249,19 +248,20 @@ function DOTHEMAINBURN
 				set x to max(0.3,(mass*5)/maxthrust).
 		}
 
-		if HaveEncounter {
-			print "Encounter" at (0,21+5).
-			break.
-		}
 		if body:name = goto_mission_target and apoapsis > (Ra - BODY(goto_mission_target):RADIUS) {
-			print "#### break1" at (0,22+5).
+			print "#### break 1" at (0,22+5).
 			set HaveEncounter to True.
 			break.
 		}
-		//and body:name = goto_mission_target
+
 		if (SHIP:PERIAPSIS < body:atm:height) {
-			print "#### break2" at (0,23+5).
+			print "#### break 2" at (0,23+5).
 			set HaveEncounter to True.
+			break.
+		}
+		
+		if HaveEncounter {
+			print "Encounter" at (0,26).
 			break.
 		}
 	}

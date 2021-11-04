@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Circularize an orbit after Launch-Orbit.c
-// 02/Nov/2021
+// 04/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
@@ -35,11 +35,12 @@ function do_circle_step
 		
 		set previous_ratio to (periapsis/apoapsis).
 		set thrust to x.
-		set vorbit to velocity:orbit.
-		set Vox to vorbit:x.
-		set Voy to vorbit:y.
-		set Voz to vorbit:z.
-		set Vo to ((Vox^2)+(Voy^2)+(Voz^2))^.5.
+		// set vorbit to velocity:orbit.
+		// set Vox to vorbit:x.
+		// set Voy to vorbit:y.
+		// set Voz to vorbit:z.
+		// set Vo to ((Vox^2)+(Voy^2)+(Voz^2))^.5.
+		set Vo to velocity:orbit:mag.
 		
 		set r to max(apoapsis,periapsis)+BODY:radius. //apoapsis+BODY:radius. BODY("Kerbin")=600000.
 		set vcir to (GM/r)^.5.				// Calculate circular velocity (vcir) at apoapsis altitude:
@@ -128,9 +129,9 @@ function do_circle_step
 		PRINT ROUND (vcir-Vo)     + " m/s     "		at (20,10).
 		PRINT ROUND(SHIP:ORBIT:ECCENTRICITY,3)+"   " at (20,11).
 		
-		set vel to (Vo).
-		update_atmosphere (altitude, vel).
-		log_data (vel).
+		// set vel to (Vo).
+		update_atmosphere (altitude, Vo).
+		log_data (Vo).
 		
 		SET steeringDir TO 90.		// W/E
 		if verticalspeed < 0 
@@ -202,7 +203,7 @@ if vehicle_type <> "SaturnV"
 }
 
 CLEARSCREEN.
-update_phase_title("Circularize: "+FINAL_ORBIT,1, false).
+update_phase_title("Circularize: "+FINAL_ORBIT/1000+" km",1, false).
 PRINT "Vertical Speed" 	at (0,2).
 PRINT "Orbital Speed" 	at (0,3).
 PRINT "Target (Vcir)" 	at (0,4).

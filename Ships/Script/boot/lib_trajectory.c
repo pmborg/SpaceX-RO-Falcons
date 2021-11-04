@@ -10,7 +10,7 @@
 // Purpose: 
 //              	- Used to calculate orbit position to do a hohmann transfer orbit in
 //                    missions (Beyond Earth)
-// 01/Nov/2021
+// 04/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 function get_rendevous_nodes
@@ -65,7 +65,6 @@ function get_rendevous_nodes
 
 
     // current target angular position 
-    //PRINT "//////NEW BLOCK:///".
     set positiontarget to target:position - body:position.
     set positionlocal to V(0,0,0) - body:position.
     set targetangularpostioncurrent to arctan2(positiontarget:x,positiontarget:z).
@@ -84,7 +83,6 @@ function get_rendevous_nodes
 
     PRINT "T+" + round(missiontime,1) + " " + target:name + ", orbital period: " + round(orbitalperiodtarget/60,1) + "min".
     PRINT "T+" + round(missiontime,1) + " | now: " + round(targetangularpostioncurrent,1) + "', xfer: " + round(transferangle,1) + "', rdvz: " + round(at1,1) + "'".
-
 
     //number of angles thatneed to pass till we get to the right one
     lock anglesleft to Angle4 - (phi*(180/constant():pi)).
@@ -117,7 +115,6 @@ function get_rendevous_nodes
     PRINT "orbitalperiodship: "+ round(orbitalperiodship/60,1) +" mins".
 
 
-    //PRINT "".
     PRINT "---Transfer Time  : "+ round(transfertime/60,1)+" mins" + round(transfertime,1) + "s".
     PRINT "---Transfer Time 2: " + round(transfertime1/120,1) + "min".
 
@@ -141,8 +138,9 @@ function get_rendevous_nodes
     PRINT "angles_per_pecond"+ round(angles_per_pecond,1).
     PRINT "seconds_to_intercept_point:"+ round(seconds_to_intercept_point,1).
     PRINT "#angle_to_intercept_point#"+ round(angle_to_intercept_point,1).
-      //CLEARSCREEN.
-      PRINT "condition now" + (abs(abs(arctan2(positionlocal:x,positionlocal:z) - (angle4-( phi*(180/constant():pi)))))).
+
+    PRINT "condition now" + (abs(abs(arctan2(positionlocal:x,positionlocal:z) - (angle4-( phi*(180/constant():pi)))))).
+	
       //intercept angle would be 45 or 225?
       //print+"condition 2: is now right time?"+ round(abs(225 - abs(shipangularpostion_current)),1).
 	  
@@ -201,7 +199,9 @@ function get_rendevous_nodes
 	SAS ON. wait 1.
 	if MAPVIEW
 		SET MAPVIEW TO FALSE. wait 2. // map view: off
-	set sasmode TO "PROGRADE". wait 1.
+		
+	set sasmode to "maneuver". wait 0.1.
+	//set sasmode TO "PROGRADE". wait 1.
 	//LOCK STEERING TO PROGRADE. wait 0.1.
 
 	set warp to 2.

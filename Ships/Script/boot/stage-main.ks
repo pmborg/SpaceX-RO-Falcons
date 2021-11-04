@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used before main.c, to distribute tasks among all Processors.
-// 01/Nov/2021
+// 04/Nov/2021
 // --------------------------------------------------------------------------------------------
 declare global LOG_FILE to "main-log.txt". DELETEPATH(LOG_FILE).
 LOG   "START: stage-main.ks" to LOG_FILE.
@@ -25,6 +25,8 @@ if (status = "PRELAUNCH" or status = "LANDED") and ( BODY:name = "Kerbin" or BOD
 
 	DELETEPATH("CIRCULARIZE.txt").
 	DELETEPATH("MAIN_SHIP.txt").
+	DELETEPATH("TRANSFER.TXT").
+	DELETEPATH("TRANSFER2.TXT").
 }
 //DELETEPATH("FLIP.txt"). 				//Reload, maybe?
 DELETEPATH("bodys_list.txt").

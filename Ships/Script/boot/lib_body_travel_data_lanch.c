@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This data is used to start missions (Beyond Earth)
-// 30/Oct/2021
+// 04/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 // MORE - INFO: "body-data.txt"
@@ -43,11 +43,11 @@ if RealSolarSystemMod = true and mission_target:NAME <> "Earth"
 	//-----------------------
 	
 	// [1] Calculate KSP_UA:
-	set EarthAPOAPSIS to ROUND( BODY("Earth"):APOAPSIS,3).
-	set EarthPERIAPSIS to ROUND ( BODY("Earth"):PERIAPSIS,3).
+	set EarthAPOAPSIS to BODY("Earth"):APOAPSIS.
+	set EarthPERIAPSIS to BODY("Earth"):PERIAPSIS.
 	set KSP_UA to (EarthAPOAPSIS+EarthPERIAPSIS)/2.
-	print "Earth APOAPSIS: " + ROUND (EarthAPOAPSIS,3).
-	print "Earth PERIAPSIS: " + ROUND (EarthPERIAPSIS,3).
+	print "Earth APOAPSIS: " + ROUND (EarthAPOAPSIS/1000)+" km".
+	print "Earth PERIAPSIS: " + ROUND (EarthPERIAPSIS/1000)+" km".
 	print "KSP_UA: " + KSP_UA.	// REAL UA=149,597,871 km
 
 	// [2] Calculate target UA:

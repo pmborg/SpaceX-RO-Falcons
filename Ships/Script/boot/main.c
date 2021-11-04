@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestrate all mission phases.
-// 02/Nov/2021
+// 04/Nov/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: main.c" to LOG_FILE.
 // Reset Engine settings before all, ("migth be a reboot")
@@ -34,8 +34,9 @@ global Relative_Inclination_to_Target to 0.
 
 function change_inclination 
 {
-		//PARAMETER: mission_target.
-		LOG "MAIN: change_inclination" to LOG_FILE.
+		PARAMETER force_now is false.
+		
+		LOG "MAIN: change_inclination-"+force_now to LOG_FILE.
 		
 		CLEARSCREEN. print " ". print " ".
 		
@@ -50,8 +51,8 @@ function change_inclination
 			UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
 		}
 		CLEARSCREEN. print " ". print " ".
-		update_phase_title("Confirm: Change-Inclination?", 0, false).
-		runpath( "boot/Phase0-Normal.c", mission_target).	// Correct Normal Before Burn(Please make sure that TARGET is selected)
+		//update_phase_title("Confirm: Change-Inclination?", 0, false).
+		runpath( "boot/Phase0-Normal.c", mission_target, force_now).// Correct Normal Before Burn(Please make sure that TARGET is selected)
 		LOG "Normal" to normal.txt.
 		CLEARSCREEN. print " ". print " ".
 }

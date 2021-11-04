@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 02/Nov/2021
+// 04/Nov/2021
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
 
@@ -601,6 +601,8 @@ PARAMETER  point_ship_to_maneuver is true.
 		
 		if nd:deltav:mag > 50
 			print ROUND (getNormalOrbitAngle(),2) at (25, 10).
+			
+		wait 0.1.
 	}
 	unlock steering.
 	unlock throttle.

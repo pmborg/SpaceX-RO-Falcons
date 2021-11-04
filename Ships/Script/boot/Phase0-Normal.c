@@ -8,12 +8,13 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used to match the target orbit inclination.
-// 02/Nov/2021
+// 04/Nov/2021
 // --------------------------------------------------------------------------------------------
 
-parameter mission_target_parameter.
-set TARGET to mission_target_parameter. //set TARGET to BODY(mission_target_parameter).
+PARAMETER mission_target_parameter.
+PARAMETER force_now is false.
 
+set TARGET to mission_target_parameter.
 RCS ON.
 set dv_factor to 1.
 set BURN to 0. //NODE(0, 0, 0, 0).
@@ -116,15 +117,15 @@ function set_inc_lan
 function Inclination_Match 
 {
 	//RESET: thrust
-	set thrust to 0.	
+	set thrust to 0.
 	lock throttle to thrust.
 	wait 1.
 	
 	set_inc_lan (target:orbit:inclination, target:orbit:lan). //GET: BURN NODE
 	print "BURN:ETA "+ ROUND(BURN:ETA,1).
 	
-	warp_until_node (BURN, 60+15).
-	//warp_until_node (BURN, 60+(BURN:TIME/2)).
+	if not force_now
+		warp_until_node (BURN, 60+15). //warp_until_node (BURN, 60+(BURN:TIME/2)).
 	
 	set warp to 0. wait 1.
 	SET MAPVIEW TO FALSE. wait 1.  // map view: off
@@ -149,9 +150,22 @@ function Inclination_Match
 		WAIT 30.
 	else
 		WAIT 15.
-	
-	execute_node (BURN, false, false).
-	set angle to getNormalOrbitAngle().
+
+	if (force_now)
+	{
+		set thrust to 1.
+		until FALSE {
+			wait 0.5.
+			set angle to getNormalOrbitAngle().
+			if prev_angle < angle
+				break.
+
+			set prev_angle to angle.
+		}
+		set thrust to 0.
+	} else {
+		execute_node (BURN, false, false).
+	}
 	
 	print "prev_angle: "+prev_angle. LOG "prev_angle: "+prev_angle to LOG_FILE.
 	print "angle: "+angle. LOG "angle: "+angle to LOG_FILE.

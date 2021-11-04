@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				...
-// 02/Nov/2021
+// 04/Nov/2021
 // --------------------------------------------------------------------------------------------
 clearscreen.
 update_phase_title("PhaseI-Transfer: START", 1, false).
@@ -46,7 +46,7 @@ parameter burnmode is "PROGRADE".
 	//set cond to 0.
 	//until cond = 1 or (apoapsis >= mission_target:orbit:semimajoraxis)
 	RCS OFF.
-	until FALSE or (apoapsis >= mission_target:orbit:semimajoraxis)
+	until FALSE or ((apoapsis >= mission_target:orbit:semimajoraxis) and  NOT EXISTS("TRANSFER.TXT"))
 	{
 		set thesepatches to ship:patches.
 		print "burnmode: "+burnmode+"        " 							 at (0,9).
@@ -74,33 +74,35 @@ parameter burnmode is "PROGRADE".
 	}
 	set thrust to 0. wait 1.
 }
-	
+
 //Re-align orbit inclination:
 //---------------------------
-//PhaseI_Transfer().
+runpath("boot/lib_normal.c"). //set Relative_Inclination_to_Target to getNormalOrbitAngle().
 
-//MAIN
-runpath("boot/lib_normal.c").
-set Relative_Inclination_to_Target to getNormalOrbitAngle().
-LOG "MAIN:change_inclination" to LOG_FILE.
-change_inclination().	//if (apoapsis >= mission_target:orbit:semimajoraxis)
+//TRANSFER:I
+if NOT EXISTS("TRANSFER.TXT")
+{
+	change_inclination(true).	  //FORCE MATCH PLANES, IT1
 
-////rep1
-// LOG "rep1:change_inclination" to LOG_FILE.
-// if (Relative_Inclination_to_Target > 0.1) 
-	// change_inclination().
+	//TRANSFER:
+	update_phase_title("PhaseI-Transfer: ROTATE", 1, false).
+	set sasmode to "PROGRADE". wait 0.1.
+	prograde_check().
+	update_phase_title("PhaseI-Transfer: BURN", 1, false).
+	PhaseI_Transfer().
 
-update_phase_title("PhaseI-Transfer: ROTATE", 1, false).
-set sasmode to "PROGRADE". wait 0.1.
-prograde_check(). 		// WAIT WITH RCS FOR PROGRADE DIRECTION
+	LOG  "Done" to TRANSFER.TXT.
+}
 
-update_phase_title("PhaseI-Transfer: BURN", 1, false).
-PhaseI_Transfer().
-
-////rep2
-// LOG "rep2:change_inclination" to LOG_FILE.
-// if (Relative_Inclination_to_Target > 0.1) 
-// change_inclination().
+if NOT EXISTS("TRANSFER2.TXT")
+{
+	//TRANSFER:II = ENCOUNTER
+	change_inclination().	//FORCE MATCH PLANES, IT2
+	prograde_check().
+	update_phase_title("PhaseI-Transfer: BURN-II", 1, false).
+	PhaseI_Transfer().
+	LOG  "Done" to TRANSFER2.TXT.
+}
 
 // WARP!
 // ----------------------------------------------------------------

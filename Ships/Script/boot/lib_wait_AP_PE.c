@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This is used in orbital mechanics warp to AP or PE.
-// 02/Nov/2021
+// 04/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 function  warp_until_periapsis
@@ -71,6 +71,8 @@ function warp_until_apoapsis
 function prograde_check
 {
 	parameter sas_mode is "PROGRADE".
+	
+	update_phase_title("prograde wait&check", 0, false).
 	
 	SET MAPVIEW TO FALSE. wait 1. // map view: off
 	RCS ON. wait 1.
