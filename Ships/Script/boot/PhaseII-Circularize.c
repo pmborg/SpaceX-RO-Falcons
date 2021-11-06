@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Circularize an orbit after BURN.c
-// 04/Nov/2021
+// 06/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 parameter goto_mission_target.
@@ -25,7 +25,7 @@ SAS OFF.
 if (Orbit:periapsis > MAX(40000, 1.5*TARGET:atm:height)) // 40,000m is a safe altitude (to do a periapsis wait) in all planets.
 {
 	clearscreen. print " ". print " ".
-	update_phase_title("ORBIT BURN", 1, true).
+	update_phase_title("ORBIT BURN", 1, false).
 
 	// Calculate Delta-V to circularize orbit:
 	set GM to goto_mission_target:mu. //GM = 6.5138398*(10^10).  (MUN)

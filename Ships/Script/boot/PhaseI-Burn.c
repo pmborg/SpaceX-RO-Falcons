@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to todo the Manouver in prograde to the: mission_target
-// 04/Nov/2021
+// 06/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 parameter goto_mission_target.
@@ -128,11 +128,6 @@ function DOTHEMAINBURN
 	set x to 1.		//thrust
 	set y to .5.	//Burn-Phase
 	set V to 0.		//Initial relative speed.
-	// set vec to velocity:orbit.
-	// set Vx to vec:x.
-	// set Vy to vec:y.
-	// set Vz to vec:z.
-	// set Vo to ((Vx^2)+(Vy^2)+(Vz^2))^.5. //Original Speed.
 	set Vo to velocity:orbit:mag.
 	set Vp to Vo + burn_dV.
 	set np to node:deltav. //points to node, don't care about the roll direction.
@@ -142,18 +137,13 @@ function DOTHEMAINBURN
 	SET MAPVIEW TO FALSE. wait 1.  // map view: off
 	UNLOCK STEERING. wait 1.
 	SAS ON. wait 1.
-	RCS ON. wait 0.1.
+	RCS OFF. wait 0.1.
 
 	//DO MAIN BURN:
 	set HaveEncounter to False.
 	set last_node_remaning_deltaV to 9999999999.
 	until HaveEncounter //(Vp-V) < 0.001 
 	{
-		// set vec to velocity:orbit.
-		// set Vx to vec:x.
-		// set Vy to vec:y.
-		// set Vz to vec:z.
-		// set V to ((Vx^2)+(Vy^2)+(Vz^2))^.5.
 		set V to velocity:orbit:mag.
 
 		if phaseAngle = 999  // Moon or (Mun or Minimus)...
@@ -170,52 +160,22 @@ function DOTHEMAINBURN
 		if maxthrust = 0 
 			{ confirm_stage(). wait 5. }
 		
-		// if apoapsis > originBody:SOIRADIUS + 1000000
-			// if ship:Orbit:TRANSITION = "ENCOUNTER" 
-				// break.
-
-		// |ship:patches|
 		if ship:patches:length > 1
 		{
-			// set thesepatches to ship:patches.
-			// print "ship:patches[1]:apoapsis= "+ ROUND(thesepatches[1]:apoapsis) +"        " 	at (0,15).
-			// print "thesepatches= "+thesepatches+"        " 								at (0,16).
-
-			//// if thesepatches[1]:apoapsis > (Ra + BODY(goto_mission_target):RADIUS)
-			//	// break.
-			// if thesepatches[1]:apoapsis >= (BODY(goto_mission_target):apoapsis) {
-						// set thrust to 0.
-						// PRINT ("####COND 1").
-						// break.
-			// }
 			if ship:Orbit:TRANSITION <> "FINAL" 
 			{
 				set thesepatches to ship:patches.
 				FROM {local i is 0.} UNTIL i = thesepatches:length-1 STEP {SET i to i + 1.} DO 
 				{
 					print "thesepatches["+i+"] "+thesepatches[i]+"        " at (0,18+i).
-					// if thesepatches[i]:name = goto_mission_target 
-					// {
-						// set thrust to 0.1. wait 1.			//Safty Margin
-						// LOCK STEERING TO PROGRADE. wait 1. 	//Safty Margin
-						// set thrust to 1. wait 1. 			//Safty Margin
-						// set thrust to 0.
-						// set warp to 0.
-						// PRINT ("####COND 2") at (0,24).
-						// set HaveEncounter to True.
-						// break.
-					// }
 				}
 			}
 			
 		}
 		
-		print "Orbital Speed(V)" at (0,py+2).	print ROUND(V)+" m/s   " 		 at	(25,py+2).//Orbital Speed
-		//print "Desired Speed (Vp)" at (0,py+3). print ROUND(Vp)+" m/s   " 			at (25,py+3).
+		print "Orbital Speed(V)" at (0,py+2).	print ROUND(V)+" m/s   " 		 at	(25,py+2).
 		print "Current Apoapsis*" at (0,py+4).  print ROUND(apoapsis/1000)+" km    " at	(25,py+4).//Current Apoapsis
 		print "Desired Apoapsis" at (0,py+5). 	print ROUND((Ra - BODY(goto_mission_target):RADIUS)/1000)+ " km   " at (25,py+5).
-		//print "Target [(Vp-V) < 0]:" at (0,py+6). print ROUND(Vp-V)+"    " 	 at	(25,py+6).
-		//print "Vo: (phase) " 		 at (0,py+7). print ROUND(Vo)+"    "  	 at (25,py+7).
 		print "Y: (phase) " 		 at (0,py+8). print y 					 at (25,py+8).
 		print "X: (power)" 			 at (0,py+9). print x 					 at (25,py+9).
 		set vorb to node:deltav.
@@ -227,7 +187,6 @@ function DOTHEMAINBURN
 		print "node:deltav" 		 at (0,py+10). print ROUND (node_remaning_deltaV,1)+ " m/s     "		 at (25,py+10).
 		print "ship:Orbit:TRANSITION: "+ship:Orbit:TRANSITION+"     " at (0,24). //FINAL
 		print "maxthrust: "+ROUND (maxthrust)+"     " 					 	  at (0,25).
-		//print "Rel. angle to target: " at (0, 24).	print ROUND (getNormalOrbitAngle(), 4)+"    " at (25, 24).
 
 		if (node_remaning_deltaV) > 100
 			RCS OFF.
@@ -281,8 +240,6 @@ if vehicle_type = "SaturnV" and NOT EXISTS("dock.txt")
 	RUNPATH( "boot/PhaseI-Docking.c" ).
 
 //WARP TO "MOON" SOI -------------------------------------------------------
-// PRINT "Press [ENTER], to Confirm: Warp!"at (0,26).
-// set ch to terminal:input:getchar().
 
 if vehicle_type = "Space4"
 {
@@ -291,7 +248,7 @@ if vehicle_type = "Space4"
 	SET MAPVIEW TO FALSE. wait 1.  // map view: off
 	UNLOCK STEERING. wait 1.
 	SAS ON. wait 1.
-	RCS ON. wait 0.1.
+	RCS OFF. wait 0.1.
 	SET MAPVIEW TO FALSE. wait 2. set sasmode TO "PROGRADE". wait 1.
 } else {
 	AG5 ON. //Panels ON

@@ -8,9 +8,10 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestrate all mission phases.
-// 04/Nov/2021
+// 06/Nov/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: main.c" to LOG_FILE.
+
 // Reset Engine settings before all, ("migth be a reboot")
 set thrust to 0.	
 lock throttle to thrust.
@@ -29,7 +30,6 @@ global TakeOffTime to TIME:SECONDS. //(define: Secure for reboots)
 global last_value1 to 0.
 global Aceleration_value1 to 0.
 global lat_correction to 0.
-
 global Relative_Inclination_to_Target to 0.
 
 function change_inclination 
@@ -52,16 +52,15 @@ function change_inclination
 		}
 		CLEARSCREEN. print " ". print " ".
 		//update_phase_title("Confirm: Change-Inclination?", 0, false).
-		runpath( "boot/Phase0-Normal.c", mission_target, force_now).// Correct Normal Before Burn(Please make sure that TARGET is selected)
+		runpath( "boot/Phase0-Normal.c", mission_target, force_now).// Correct Normal Before Burn
 		LOG "Normal" to normal.txt.
 		CLEARSCREEN. print " ". print " ".
 }
 
-
 // --------------------------------------------------------------------------------------------
 // ACTION: REFUEL?
 // --------------------------------------------------------------------------------------------
-if mission_origin <> DEFAULT_KSC and BODY:NAME <> "Sun"
+if (mission_origin <> DEFAULT_KSC and BODY:NAME <> "Sun") and (status = "LANDED" or status = "SPLASHED")
 {
 	CLEARSCREEN. print " ". print " ".
 	update_phase_title("Confirm: START Refuel?", 0, false).
@@ -122,10 +121,10 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 			change_inclination().
 		
 			// WAIT and recalculate:
-			//set WARP to 2. WAIT 5. set WARP to 0. WAIT 1.
+			set WARP to 3. WAIT 10. set WARP to 0. WAIT 1.
 			LOG "part-2-change_inclination" to LOG_FILE.
-			if (getNormalOrbitAngle() > 1) 
-				change_inclination().
+			if (getNormalOrbitAngle() > 0.1) 
+				change_inclination(true).
 		}
 		else
 			LOG  "SKIP: Normal" to LOG_FILE.
@@ -200,12 +199,39 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 	// ACTION: Break & LAND! -------------------------------------------
 	if vehicle_type = "Space4" or vehicle_type = "SaturnV"
 	{
+		CLEARSCREEN. print " ". print " ".
+		update_phase_title("ACTION: Break & LAND", 1, false).
+		if NOT EXISTS("orbit_target.txt")
+		{
+			//Decrease orbit to PE: 300km
+			update_phase_title("Process Low Orbit", 1, false).
+			retrograde_check().
+			set thrust to 1.
+			RCS OFF.
+			until (periapsis <= 5000*1000) WAIT 0.1.
+			set thrust to 0.10.
+			until (periapsis <= 500*1000) WAIT 0.01.
+			set thrust to 0.
+
+			//Do Circular orbit for PE: 300km
+			warp_until_periapsis(60).
+			SAS ON.
+			set sasmode TO "retrograde". wait 1.
+			set thrust to 1.
+			RCS OFF.
+			until (apoapsis <= 500*1000) WAIT 0.01.
+			set thrust to 0.
+
+			LOG "Done" to orbit_target.txt.
+		}
+		 
 		 //Process target landing:
+		 if periapsis > 100000
+			warp_until_periapsis(30).
+		 RUNPATH( "boot/PhaseIII-Land.c" ).  	// Auto-Land / Touch-Down
 		 
 		 
-		 
-	}
-	else if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN16-Profile1" and vehicle_sub_type <> "SN20-Profile" and vehicle_sub_type <> "StarShip")
+	} else if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN16-Profile1" and vehicle_sub_type <> "SN20-Profile" and vehicle_sub_type <> "StarShip")
 	{
 		if status <> "LANDED" and status <> "SPLASHED"
 		{
@@ -274,11 +300,8 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 		RUNPATH( "boot/starship_lowentry_return.c").
 	}
 	
-	//LOG  STAGE_1_TYPE+" REBOOT FOR RE-FUEL" to LOG_FILE.
-	CLEARSCREEN. print " ". print " ".
-	update_phase_title("Confirm, MISSON ENDED", 0, false).
-	PRINT "Press [ENTER], to Confirm, REBOOT!".
-	set ch to terminal:input:getchar().
+	print " ". print " ".
+	PRINT "Press [ENTER], to Confirm, REBOOT!" at (0,35). set ch to terminal:input:getchar().
 	reboot.
 }
 

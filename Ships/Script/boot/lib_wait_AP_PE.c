@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This is used in orbital mechanics warp to AP or PE.
-// 04/Nov/2021
+// 06/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 function  warp_until_periapsis
@@ -95,11 +95,11 @@ function retrograde_check
 	
 	update_phase_title("retrograde wait&check", 0, false).
 	
-	SET MAPVIEW TO FALSE. wait 1. // map view: off
-	RCS ON. wait 1.
-	UNLOCK STEERING. wait 1.
-	SAS ON. wait 1.
-	set sasmode TO sas_mode. wait 1.	
+	RCS ON. wait 0.1.
+	UNLOCK STEERING. wait 0.1.
+	SET MAPVIEW TO FALSE. wait 2. // map view: off
+	SAS ON. wait 0.1.
+	set sasmode TO sas_mode. wait 0.1.
 
 	set a to ship:retrograde:pitch.
 	set b to ship:retrograde:yaw.
@@ -126,10 +126,7 @@ function warp_until_node
 	WAIT until node:ETA < 86400.
 
 	if node:ETA > 600. 	//10Mins
-		// if (BODY:NAME = "Sun" or BODY:NAME = "Kerbol")
-			// set warp to 4.
-		// else
-			set warp to 3.
+		set warp to 3.
 	WAIT until node:ETA < 600.
 
 	if node:ETA > w. 		//30Secs

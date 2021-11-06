@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 04/Nov/2021
+// 06/Nov/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 LOG "START: Launch-Orbit.c" to LOG_FILE.
@@ -250,53 +250,6 @@ function GoSN9
 	PRINT "P-ST: "+profile_stage at (30,2).
 }
 
-
-// function Clamp {
-	// PARAMETER value.
-	// PARAMETER lower.
-	// PARAMETER upper.
- 
-	// return Max(lower, Min(upper, value)).
-// }
-// function GetLaunchAzimuthInertial {
-	// PARAMETER targetInclination.
-	// PARAMETER launchLatitude.
- 
-	// return Arcsin(Clamp(Cos(targetInclination)/Cos(launchLatitude), -1, 1)).
-// }
-// set targetInclination to mission_target:orbit:inclination.
-// function GetLaunchAzimuthRotating {
-	// set  launchLatitude to Ship:Latitude.
-	// set  targetAltitude to Altitude.
- 
-	// local azimuth_inertial to GetLaunchAzimuthInertial(targetInclination, launchLatitude).
- 
-	// local v_equatorial to 2*Constant():Pi*Body:Radius / Body:RotationPeriod.
- 
-	// local v_orbit to Sqrt(Body:Mu / (Body:Radius + targetAltitude)).
-	// local v_xrot to v_orbit * sin(azimuth_inertial) - v_equatorial * cos(launchLatitude).
-	// local v_yrot to v_orbit * cos(azimuth_inertial).
- 
-	// return Arctan(v_xrot/v_yrot).
-// }
-
-// declare t0 to time:seconds.	//returns compass direction to launch to a desired inclination:
-// declare dH to 0.
-// declare oldH to 0.		
-// declare function directionFindPD 
-// {
-  
-  // set t to time:seconds.	//iterate time step, only necessary for dH:
-  // set dT to t-t0.
-  // set t0 to t.
-  
-  
-  // set dH to (ship:heading-oldH)/dT.	//set dH to change in heading:
-  // set oldH to ship:heading.
-  
-  // return 90+.01*(ship:heading)+.01*dH.	//return Kp*(setpoint-P)+Kd*D
-// }
-
 declare function directionFindPD
 {
 	return 106.	//Magic Number to GetLaunchAzimuthRotatingHeading to Mars: 104
@@ -441,13 +394,15 @@ if alt:radar < 200
 	DELETEPATH("FLIGHT_LOG.txt").
 	LOG   "TIME,   VELO,   R:ALT,  Acel,   Q" to FLIGHT_LOG_FILE.
 
-	PRINT "Q-Max" 				at (0,2).
-	PRINT "Dynamic Pressure" 	at (0,3).
-	PRINT "q/Qmax" 				at (0,4).
 	if vehicle_type = "Space4"
 		PRINT "Space4 Phase:" 				at (0,5).
+	else
+	{
+		PRINT "Q-Max" 				at (0,2).
+		PRINT "Dynamic Pressure" 	at (0,3).
+		PRINT "q/Qmax" 				at (0,4).
+	}
 	set index2 to 6.
-
 	set profile_stage to 0.
 
 	// LOOP: UNTIL HALF Qmax
@@ -458,11 +413,15 @@ if alt:radar < 200
 		set H to altitude/(-5000).
 		set p to p0*(e^H).
 		set q to .5*p*(verticalspeed^2). // pd = 1/2 ρ v^2
-		
-		PRINT ROUND(Qmax) at (22,2).
-		PRINT ROUND(q) at (22,3).
 		set q_qmax to q/Qmax*100.
-		PRINT ROUND(q_qmax,2)+ " %       " at (22,4).
+		
+		if vehicle_type <> "Space4"
+		{
+			PRINT ROUND(Qmax) at (22,2).
+			PRINT ROUND(q) at (22,3).
+			PRINT ROUND(q_qmax,2)+ " %       " at (22,4).
+		}
+		
 		if vehicle_company = "SpaceX" and not splash_landing
 			PRINT "Launch Site Distance: "+ROUND(VESSEL("Landingzone1"):GEOPOSITION:DISTANCE/1000,3)+" km   " at (0,6).
 		
@@ -489,12 +448,6 @@ if alt:radar < 200
 				GoSN9().
 		}
 	
-		// set vsurf to velocity:surface.
-		// set Vsx to vsurf:x.
-		// set Vsy to vsurf:y.
-		// set Vsz to vsurf:z.
-		// set Vs2 to (Vsx^2)+(Vsy^2)+(Vsz^2).	
-		// set vel to SQRT(Vs2).
 		update_atmosphere (altitude, velocity:surface:mag).
 		log_data (vel).
 	}.
@@ -860,8 +813,6 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 	RCS OFF.
 	set phase to 0.
 	set deltaReduction to 0.
-	// UNLOCK STEERING. wait 0.1.
-	// LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll). wait 0.1.
 	
 	function do_orbit 
 	{
@@ -987,13 +938,11 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 			set steeringVroll to -270.				// -270 = Zero Rotation
 			SET steeringDir TO 90+lat_correction.	// W/E
 		}
-		//LOCK STEERING TO HEADING(steeringDir,Vdeg,Vroll).//steering_falcon(Vdeg).
 		
 		if do_orbit()
 			break.
 		
 		update_orbit_status().
-		//set vel to SQRT(Vs2).
 		update_atmosphere (altitude, velocity:orbit:mag).
 		log_data (vel).
 		check_if_we_need_new_stage().
@@ -1015,7 +964,6 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 		}.
 	}
 }
-
 
 set warp to 0.
 wait 2.

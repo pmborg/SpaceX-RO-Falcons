@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				...
-// 04/Nov/2021
+// 06/Nov/2021
 // --------------------------------------------------------------------------------------------
 clearscreen.
 update_phase_title("PhaseI-Transfer: START", 1, false).
@@ -96,7 +96,14 @@ if NOT EXISTS("transfer.txt")
 if NOT EXISTS("transfer2.txt")
 {
 	//TRANSFER:II = ENCOUNTER
-	change_inclination().	//FORCE MATCH PLANES, IT2
+	change_inclination().
+	
+	// WAIT and force:
+	set WARP to 4. WAIT 10. set WARP to 0. WAIT 1.
+	LOG "part-3-change_inclination" to LOG_FILE.
+	if (getNormalOrbitAngle() > 0.1) 
+		change_inclination(true).
+			
 	prograde_check().
 	update_phase_title("PhaseI-Transfer: BURN-II", 1, false).
 	PhaseI_Transfer().
@@ -113,4 +120,4 @@ UNTIL ship:Orbit:TRANSITION <> "ENCOUNTER".
 set warp to 0. wait 1.
 update_phase_title("PhaseI-Transfer: END", 1, false).
 
-LOG  "PhaseI-Transfer.c: done" to transfer-complete.txt.
+LOG  "PhaseI-Transfer.c: done" to transfer_complete.txt.
