@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				...
-// 06/Nov/2021
+// 07/Nov/2021
 // --------------------------------------------------------------------------------------------
 clearscreen.
 update_phase_title("PhaseI-Transfer: START", 1, false).
@@ -79,35 +79,54 @@ parameter burnmode is "PROGRADE".
 //---------------------------
 runpath("boot/lib_normal.c"). //set Relative_Inclination_to_Target to getNormalOrbitAngle().
 
-//TRANSFER:I
-if NOT EXISTS("transfer.txt")
-{
-	change_inclination(true).	  //FORCE MATCH PLANES, IT1
 
-	//TRANSFER:
-	update_phase_title("PhaseI-Transfer: ROTATE", 1, false).
-	SET MAPVIEW TO FALSE. wait 2. set sasmode to "PROGRADE". wait 0.1.
-	prograde_check().
-	update_phase_title("PhaseI-Transfer: BURN", 1, false).
-	PhaseI_Transfer().
-	LOG  "Done" to transfer.txt.
+if vehicle_type = "Space4"
+{
+	UNTIL NOT HASNODE { REMOVE NEXTNODE. WAIT 0.1. } //removeAllNodes!
+	WAIT 1.
+	//AGRESSIVE FAST VERSION: 8k delta-v 109day (out of StarShip range)
+	//set BURN to NODE(TIME:seconds+39*24*60*60+12*60*60,1980.40220028894,228.638614388312,5864.88903650271).
+	//CHEAP DELTA-V: 2.2k delta-v 
+	set BURN to NODE(TIME:seconds+13*24*60*60+9*60*60,1504.60488737683,1649.03977610003,2053.9472710979).
+	ADD BURN.
+	SAS ON.
+	SET MAPVIEW TO FALSE. wait 2. set sasmode to "maneuver". 	
+	warp_until_node (BURN, 60*2). //warp_until_node (BURN, 60+(BURN:TIME/2)).
+	wait 1.
+	RCS OFF.
+	execute_node (BURN, true, true, false).
 }
+else {
+	//TRANSFER:I
+	if NOT EXISTS("transfer.txt")
+	{
+		change_inclination(true).	  //FORCE MATCH PLANES, IT1
 
-if NOT EXISTS("transfer2.txt")
-{
-	//TRANSFER:II = ENCOUNTER
-	change_inclination().
-	
-	// WAIT and force:
-	set WARP to 4. WAIT 10. set WARP to 0. WAIT 1.
-	LOG "part-3-change_inclination" to LOG_FILE.
-	if (getNormalOrbitAngle() > 0.1) 
-		change_inclination(true).
-			
-	prograde_check().
-	update_phase_title("PhaseI-Transfer: BURN-II", 1, false).
-	PhaseI_Transfer().
-	LOG  "Done" to transfer2.txt.
+		//TRANSFER:
+		update_phase_title("PhaseI-Transfer: ROTATE", 1, false).
+		SET MAPVIEW TO FALSE. wait 2. set sasmode to "PROGRADE". wait 0.1.
+		prograde_check().
+		update_phase_title("PhaseI-Transfer: BURN", 1, false).
+		PhaseI_Transfer().
+		LOG  "Done" to transfer.txt.
+	}
+
+	if NOT EXISTS("transfer2.txt")
+	{
+		//TRANSFER:II = ENCOUNTER
+		change_inclination().
+		
+		// WAIT and force:
+		set WARP to 4. WAIT 10. set WARP to 0. WAIT 1.
+		LOG "part-3-change_inclination" to LOG_FILE.
+		if (getNormalOrbitAngle() > 0.1) 
+			change_inclination(true).
+				
+		prograde_check().
+		update_phase_title("PhaseI-Transfer: BURN-II", 1, false).
+		PhaseI_Transfer().
+		LOG  "Done" to transfer2.txt.
+	}
 }
 
 // WARP!

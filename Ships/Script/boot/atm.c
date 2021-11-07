@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used go get more realistic data from Planet Earth Atmosphere.
-// 02/Nov/2021
+// 07/Nov/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: atm.c" to LOG_FILE.
 // --------------------------------------------------------------------------------------------
@@ -83,7 +83,7 @@ function Pressure						//<=======================================PRESSURE (Pa)do
 		return Pb*(constant:e ^ (C*(H-Hb)/Tb)).
 }// (Pa)
 
-// Test:
+// DEBUG:
 // PRINT 0+": Temperature: "+ROUND (Temperature(0),2) + " Pressure: "+( ROUND (Pressure(0)/100,2))+" (hPa)".
 // FROM {local h is 0.} UNTIL h > 100000 STEP {set h to h+10000.} DO
 // {
@@ -114,7 +114,7 @@ function update_atmosphere
 	
 	display_speed_kmh (h0, v0, indice).
 	
-	if ROUND(BODY:ATM:ALTITUDEPRESSURE(h0),4) = 0 and ROUND(BODY:ATM:ALTITUDETEMPERATURE(h0),1) = 0
+	if (ROUND(BODY:ATM:ALTITUDEPRESSURE(h0),4) = 0 and ROUND(BODY:ATM:ALTITUDETEMPERATURE(h0),1) = 0) or h>=232940
 	{
 		PRINT "--- Cº   "		at (22,indice+3).
 		PRINT "--- kg/m^3   "	at (22,indice+4).

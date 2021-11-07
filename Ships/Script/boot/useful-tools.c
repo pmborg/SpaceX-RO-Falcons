@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 04/Nov/2021
+// 07/Nov/2021
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
 
@@ -526,9 +526,10 @@ function getNormalOrbitAngle
 //SOURCE INFO: https://ksp-kos.github.io/KOS/tutorials/exenode.html
 function execute_node 
 {
-PARAMETER nd.
-PARAMETER wait_for_node is true.
-PARAMETER  point_ship_to_maneuver is true.
+PARAMETER 	nd.
+PARAMETER 	wait_for_node is true.
+PARAMETER  	point_ship_to_maneuver is true.
+PARAMETER   detect_encounter is false.
 	
 	//Print out node's - ETA and deltaV
 	print "Node in: " + round(nd:eta) + ", DeltaV: " + round(nd:deltav:mag).	
@@ -601,9 +602,34 @@ PARAMETER  point_ship_to_maneuver is true.
 		}
 		
 		if nd:deltav:mag > 50
-			print ROUND (getNormalOrbitAngle(),2) at (25, 10).
+			print ROUND (getNormalOrbitAngle(),2)+"    " at (25, 10).
 			
 		wait 0.1.
+		if (detect_encounter)
+		{
+			set thesepatches to ship:patches.
+			//print "burnmode: "+burnmode+"        " 							 at (0,9).
+			print "ship:Orbit:TRANSITION: "+ship:Orbit:TRANSITION+"        " at (0,10).
+			print "ship:patches[1] "+thesepatches+"        " 				 at (0,12).
+			
+			if ship:patches:length = 3 {
+
+				if ship:Orbit:TRANSITION <> "FINAL" 
+				{
+					FROM {local i is 0.} UNTIL i = thesepatches:length-1 STEP {SET i to i + 1.} DO 
+					{
+						print "thesepatches[i] "+thesepatches[i]+"        " at (0,16+i).
+						if (thesepatches[i]:NAME = mission_target:NAME)
+						{
+							set thrust to 0.
+							set done to True.
+						}
+					}
+				}
+			}
+			
+			//no wait (faster as possible)
+		}
 	}
 	unlock steering.
 	unlock throttle.

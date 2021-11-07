@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used to match the target orbit inclination.
-// 04/Nov/2021
+// 07/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 PARAMETER mission_target_parameter.
@@ -146,6 +146,7 @@ function Inclination_Match
 		print "SAS NORMAL".
 	}
 	
+	set warp to 1. wait 1. set warp to 0. 
 	if vehicle_type = "Space4"
 		WAIT 30.
 	else

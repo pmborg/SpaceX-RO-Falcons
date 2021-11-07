@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Control the Manouver and prograde burn into: mission_target
-// 04/Nov/2021
+// 07/Nov/2021
 // --------------------------------------------------------------------------------------------
 CLEARSCREEN. print " ". print " ".
 
@@ -57,10 +57,10 @@ function DO_BURN {
 		}
 		if (Orbit:periapsis > MAX(40000, 1.5*BODY:atm:height)) // 40,000m safe altitude (periapsis wait) in all planets.
 		{
-			SET MAPVIEW TO FALSE. wait 2. set sasmode TO "retrograde". wait 1.	
+			//SET MAPVIEW TO FALSE. wait 2. set sasmode TO "retrograde". wait 0.1.	
 			warp_until_periapsis().
-			SET MAPVIEW TO FALSE.
-			wait 10.	// WAIT for GUI Refresh etc...
+			set warp to 0. 					//... just to make sure
+			SET MAPVIEW TO FALSE. wait 2.	// WAIT for Refresh etc...
 
 			if vehicle_type = "SaturnV"
 			{
@@ -75,14 +75,13 @@ function DO_BURN {
 			}
 			
 			// WAIT for RETRO:
-			retrograde_check().
-			
 			update_phase_title("CAPTURE BURN", 1, true).
+			retrograde_check().
 			set thrust to 1.
-			RCS OFF.
-			SET MAPVIEW TO TRUE.
+			RCS OFF. wait 1.
+			SET MAPVIEW TO TRUE. wait 1.
 			WAIT UNTIL STATUS <> "ESCAPING".
-			set thrust to 0.
+			set thrust to 0. wait 1.
 			SET MAPVIEW TO FALSE.
 		}
 	}
