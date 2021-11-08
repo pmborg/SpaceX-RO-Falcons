@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This is used in orbital mechanics warp to AP or PE.
-// 07/Nov/2021
+// 08/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 function  warp_until_periapsis
@@ -25,7 +25,10 @@ function  warp_until_periapsis
 	set sasmode TO sas_mode. wait 1.
 	
 	if eta:periapsis > 86400. 	//1Day
-		set warp to 4.
+		if BODY:radius >= 6400000
+			set warp to 4.
+		else
+			set warp to 3.
 	WAIT until eta:periapsis < 86400.
 
 	if eta:periapsis > 120. 	//2Mins
@@ -53,7 +56,10 @@ function warp_until_apoapsis
 	set sasmode TO sas_mode. wait 1.
 	
 	if eta:apoapsis > 86400. //1Day
-		set warp to 4.
+		if BODY:radius >= 6400000
+			set warp to 4.
+		else
+			set warp to 3.
 	WAIT until eta:apoapsis < 86400.
 
 	if eta:periapsis > 120. 	//2Mins
@@ -136,6 +142,3 @@ function retrograde_check
 	WAIT UNTIL ((ship:facing:pitch >= (ROUND(a) - 5) AND ship:facing:roll >= (ROUND(c) - 5)) 
 		   AND (ship:facing:pitch <= (ROUND(a) + 5) AND ship:facing:roll <= ROUND(c) + 5)).
 }
-
-
-

@@ -9,7 +9,7 @@
 // Purpose: 
 //              	- Used to land any where near by, (sample: after de-orbit on Mun or Moon)
 //                    used in missions (Beyond Earth)
-// 06/Nov/2021
+// 08/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 CLEARSCREEN.
@@ -23,6 +23,8 @@ lock throttle to thrust.
 LIGHTS ON. // lights off
 if vehicle_type <> "Space4"
 	RCS ON.
+else
+	RCS OFF.
 PRINT "@>5000km   " at (20,1).
 if alt:radar > 5000000 //5000km
 {
@@ -139,7 +141,7 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 	// }
 	if alt:radar < 300 {
 		set max to 6.
-		set SASMODE to "STABILITY".
+		//set SASMODE to "STABILITY".
 	}
 	if alt:radar < 200 {
 		set max to 3.
@@ -214,15 +216,16 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 		unlock steering. 
 		SAS ON.
 		RCS ON.
-		// if vehicle_sub_type <> "SN20-Profile"
+		//if vehicle_sub_type = "SN20-Profile"
+		{
+			set sasmode to "STABILITY".
+		}
 		// {
 			// SET MAPVIEW TO FALSE. wait 2. set sasmode TO "RETROGRADE".
-		// } else {
-			// SET MAPVIEW TO FALSE. wait 2. set sasmode to "STABILITY".
-		// }
-		// if vehicle_type = "SN16-Profile1"
-			// SET err TO 0.50.
-		// else
+		// } else 
+		if vehicle_type = "SN16-Profile1"
+			SET err TO 0.50.
+
 		SET err TO 0.80.
 	}
 

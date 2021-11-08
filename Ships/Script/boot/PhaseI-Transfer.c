@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				...
-// 07/Nov/2021
+// 08/Nov/2021
 // --------------------------------------------------------------------------------------------
 clearscreen.
 update_phase_title("PhaseI-Transfer: START", 1, false).
@@ -87,7 +87,12 @@ if vehicle_type = "Space4"
 	//AGRESSIVE FAST VERSION: 8k delta-v 109day (out of StarShip range)
 	//set BURN to NODE(TIME:seconds+39*24*60*60+12*60*60,1980.40220028894,228.638614388312,5864.88903650271).
 	//CHEAP DELTA-V: 2.2k delta-v 
-	set BURN to NODE(TIME:seconds+13*24*60*60+9*60*60,1504.60488737683,1649.03977610003,2053.9472710979).
+	//v1:
+	//set BURN to NODE(TIME:seconds+13*24*60*60+9*60*60,1504.60488737683,1649.03977610003,2053.9472710979).
+	//v2:
+	//17d+4h
+	//set BURN to NODE(TIME:seconds+17*24*60*60+4*60*60,836.616184676899,1667.15281801064,779.222569148375).
+	set BURN to NODE(TIME:seconds+17*24*60*60+4*60*60,827.055927939852,1457.45023656937,779.222569148375).
 	ADD BURN.
 	SAS ON.
 	SET MAPVIEW TO FALSE. wait 2. set sasmode to "maneuver". 	
