@@ -19,7 +19,7 @@ parameter burnmode.
 // ----------------------------------------------------------------
 if vehicle_type = "Space4"
 {
-	SET MAPVIEW TO FALSE. wait 1.  // map view: off
+	SET MAPVIEW TO FALSE. wait 0.1.  // map view: off
 	if  maxthrust = 0
 		{ AG9 ON. wait 1.}
 	if  maxthrust = 0
@@ -32,7 +32,7 @@ parameter burnmode is "PROGRADE".
 
 	UNLOCK STEERING. wait 0.1.
 	SAS ON. wait 0.1.
-	SET MAPVIEW TO FALSE. wait 2. set sasmode to burnmode. wait 0.1.
+	SET MAPVIEW TO FALSE. wait 0.1. set sasmode to burnmode. wait 0.1.
 
 	if burnmode <> "PROGRADE" 
 		wait 20.
@@ -84,22 +84,49 @@ if vehicle_type = "Space4"
 {
 	UNTIL NOT HASNODE { REMOVE NEXTNODE. WAIT 0.1. } //removeAllNodes!
 	WAIT 1.
-	//AGRESSIVE FAST VERSION: 8k delta-v 109day (out of StarShip range)
-	//set BURN to NODE(TIME:seconds+39*24*60*60+12*60*60,1980.40220028894,228.638614388312,5864.88903650271).
-	//CHEAP DELTA-V: 2.2k delta-v 
-	//v1:
-	//set BURN to NODE(TIME:seconds+13*24*60*60+9*60*60,1504.60488737683,1649.03977610003,2053.9472710979).
-	//v2:
-	//17d+4h
-	//set BURN to NODE(TIME:seconds+17*24*60*60+4*60*60,836.616184676899,1667.15281801064,779.222569148375).
-	set BURN to NODE(TIME:seconds+17*24*60*60+4*60*60,827.055927939852,1457.45023656937,779.222569148375).
-	ADD BURN.
-	SAS ON.
-	SET MAPVIEW TO FALSE. wait 2. set sasmode to "maneuver". 	
+	LOG  "[TIME:seconds]: "+TIME:seconds to LOG_FILE.
+	//set BURN to NODE(TIME:seconds+16*24*60*60+16*60*60,942.938953877252,1106.21889881665,2736.03716764584). //2nd intersection   3098m/s dv transfer: 398 days
+
+	SET MAPVIEW TO TRUE. wait 0.1.
+	set cond to 0.
+	set h to 0.
+	until cond = 1
+	{
+		set BURN to NODE(TIME:seconds+20*24*60*60-h*60*60,942.938953877252,1106.21889881665,4892.02150520109). //1st intersection  5103m/s dv transfer: 149 days
+		ADD BURN.	
+		
+		//set thesepatches to BURN:patches.
+		print "BURN: "+BURN+"        " 							 		 at (0,9).
+		print "BURN:Orbit:TRANSITION: "+BURN:Orbit:TRANSITION+"        " at (0,10).
+
+		if BURN:Orbit:TRANSITION <> "FINAL"
+			set cond to 1.
+
+		if cond = 0
+		{
+			set h to h+1.
+			wait 0.5.
+			REMOVE BURN.
+		}
+	}	
+	
+	CLEARSCREEN. print " ". print " ".
+	SET MAPVIEW TO FALSE. wait 0.5. 
+	SAS ON. wait 0.5. 
+	set sasmode to "maneuver". wait 0.5.
+	SET MAPVIEW TO TRUE. wait 0.5. 
 	warp_until_node (BURN, 60*2). //warp_until_node (BURN, 60+(BURN:TIME/2)).
-	wait 1.
-	RCS OFF.
+	SET MAPVIEW TO FALSE. wait 0.5. 
+	
+	RCS OFF. wait 0.5.
 	execute_node (BURN, true, true, false).
+	//KUniverse:QUICKSAVETO("6-execute_node done").
+	
+	// WAIT and recalculate:
+	set WARP to 4. WAIT 20. set WARP to 0. WAIT 1.
+	LOG "part-2-change_inclination" to LOG_FILE.
+	if (getNormalOrbitAngle() > 0.1) 
+		change_inclination(true).
 }
 else {
 	//TRANSFER:I
@@ -109,7 +136,7 @@ else {
 
 		//TRANSFER:
 		update_phase_title("PhaseI-Transfer: ROTATE", 1, false).
-		SET MAPVIEW TO FALSE. wait 2. set sasmode to "PROGRADE". wait 0.1.
+		SET MAPVIEW TO FALSE. wait 0.1. set sasmode to "PROGRADE". wait 0.1.
 		prograde_check().
 		update_phase_title("PhaseI-Transfer: BURN", 1, false).
 		PhaseI_Transfer().
@@ -137,9 +164,9 @@ else {
 // WARP!
 // ----------------------------------------------------------------
 update_phase_title("PhaseI-Transfer: WARP TO TARGET", 1, false).
-SET MAPVIEW TO FALSE. wait 1.  // map view: off
+SET MAPVIEW TO FALSE. wait 0.1.  // map view: off
 SAS OFF. wait 1.
-set warp to 7. wait 1.
+set warp to 6. wait 1.
 UNTIL ship:Orbit:TRANSITION <> "ENCOUNTER".
 set warp to 0. wait 1.
 update_phase_title("PhaseI-Transfer: END", 1, false).

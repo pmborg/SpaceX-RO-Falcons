@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This is used in orbital mechanics warp to AP or PE.
-// 08/Nov/2021
+// 10/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 function  warp_until_periapsis
@@ -24,11 +24,13 @@ function  warp_until_periapsis
 	RCS ON. wait 0.1.
 	set sasmode TO sas_mode. wait 1.
 	
-	if eta:periapsis > 86400. 	//1Day
+	if eta:periapsis > 86400 	//1Day
+	{
 		if BODY:radius >= 6400000
 			set warp to 4.
 		else
 			set warp to 3.
+	}
 	WAIT until eta:periapsis < 86400.
 
 	if eta:periapsis > 120. 	//2Mins
@@ -49,17 +51,19 @@ function warp_until_apoapsis
 	
 	update_phase_title("wait until apoapsis", 0, false).
 	set warp to 0. wait 1.
-	SET MAPVIEW TO FALSE. wait 1.  // map view: off
+	SET MAPVIEW TO FALSE. wait 0.1.  // map view: off
 	UNLOCK STEERING. wait 1.
 	SAS ON. wait 1.
 	RCS ON. wait 0.1.
 	set sasmode TO sas_mode. wait 1.
 	
-	if eta:apoapsis > 86400. //1Day
+	if eta:apoapsis > 86400 //1Day
+	{
 		if BODY:radius >= 6400000
 			set warp to 4.
 		else
 			set warp to 3.
+	}
 	WAIT until eta:apoapsis < 86400.
 
 	if eta:periapsis > 120. 	//2Mins
@@ -82,18 +86,20 @@ function warp_until_node
 	update_phase_title("Warp towards node", 0, false).	
 	set warp to 0. WAIT 0.1.
 	
-	if node:ETA > 86400. 	//1Day
+	if node:ETA > 86400 	//1Day
+	{
 		if (BODY:NAME = "Sun" or BODY:NAME = "Kerbol")
 			set warp to 5.
 		else
 			set warp to 4.
+	}
 	WAIT until node:ETA < 86400.
 
 	if node:ETA > 120. 	//2Mins
 		set warp to 3.
 	WAIT until node:ETA < 120.
 
-	SET MAPVIEW TO FALSE. wait 2. set sasmode to "maneuver". wait 0.1.
+	SET MAPVIEW TO FALSE. wait 0.1. set sasmode to "maneuver". wait 0.1.
 	if node:ETA > w. 		//30Secs
 		set warp to 1.		
 	WAIT until node:ETA < w.
@@ -108,7 +114,7 @@ function prograde_check
 	
 	update_phase_title("prograde wait&check", 0, false).
 	
-	SET MAPVIEW TO FALSE. wait 1. // map view: off
+	SET MAPVIEW TO FALSE. wait 0.1. // map view: off
 	RCS ON. wait 1.
 	UNLOCK STEERING. wait 1.
 	SAS ON. wait 1.
@@ -131,7 +137,7 @@ function retrograde_check
 	
 	RCS ON. wait 0.1.
 	UNLOCK STEERING. wait 0.1.
-	SET MAPVIEW TO FALSE. wait 2. // map view: off
+	SET MAPVIEW TO FALSE. wait 0.1. // map view: off
 	SAS ON. wait 0.1.
 	set sasmode TO sas_mode. wait 0.1.
 

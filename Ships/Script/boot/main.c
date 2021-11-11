@@ -77,7 +77,10 @@ if (mission_origin <> DEFAULT_KSC and BODY:NAME <> "Sun") and (status = "LANDED"
 if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY", GOTO "RETURN-JOURNEY"
 {
 	if (IS_INTER_PLANETARY_MISSION) and (altitude < alt:radar) and (BODY:NAME = "Earth" or BODY:NAME = "Kerbin")
+	{
 		RUNPATH( "boot/Phase-Angle.c", mission_target ).	// WARP to Correct Phase Angle
+		KUniverse:QUICKSAVETO("1-Phase-Angle done").
+	}
 
 	//ACTION: Launch-Orbit --------------------------------------------------------
 	if ( (  (BODY:name = DEFAULT_KSC and periapsis < body:atm:height) or
@@ -89,6 +92,8 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 				RUNPATH( "boot/Launch-Orbit.c", LEOrbit ).	// [1] ATM-Launch: "Launch-Orbit.c" (Have Atmosphere)
 			else
 				RUNPATH( "boot/PhaseIV-Orbit.c" ).			// NO-ATM-Launch: "PhaseIV-Orbit.c"
+			
+			KUniverse:QUICKSAVETO("2-Launch-Orbit done").
 		}
 		
 		//ACTION: Launch-Circularize --------------------------------------------------------
@@ -104,6 +109,7 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 					RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
 				else
 					RUNPATH( "boot/Launch-Circularize.c", apoapsis ).
+				KUniverse:QUICKSAVETO("3-Launch-Circularize done").
 			}
 		} else
 			LOG  "SKIP: Launch-Circularize" to LOG_FILE.
@@ -119,12 +125,6 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 		if NOT EXISTS("normal.txt") {
 			LOG "part-1-change_inclination" to LOG_FILE.
 			change_inclination().
-		
-			// WAIT and recalculate:
-			set WARP to 3. WAIT 10. set WARP to 0. WAIT 1.
-			LOG "part-2-change_inclination" to LOG_FILE.
-			if (getNormalOrbitAngle() > 0.1) 
-				change_inclination(true).
 		}
 		else
 			LOG  "SKIP: Normal" to LOG_FILE.
@@ -141,7 +141,7 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 				if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
 				if vehicle_type = "SaturnV" and mass > 120 { stage. wait 2. }
 
-				runpath("boot/BURN.c").
+				runpath("boot/BURN.c"). // BEFORE BREAK&LAND
 			}
 		else
 			LOG  "SKIP: BURN" to LOG_FILE.
@@ -284,7 +284,7 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 				
 				stage. wait 1.
 				SAS ON. wait 1.
-				SET MAPVIEW TO FALSE. wait 2. set sasmode TO "RADIALIN". wait 1.
+				SET MAPVIEW TO FALSE. wait 0.1. set sasmode TO "RADIALIN". wait 1.
 				AG4 ON.
 				CLEARSCREEN. print " ". print " ".
 			}

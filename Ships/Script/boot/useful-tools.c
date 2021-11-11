@@ -54,7 +54,7 @@ or SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5" and STAGE:NUMBER <= 4
 		if (KUniverse:ActiveVessel = SHIP) STAGE.
 		SAS ON.
 		wait 0.25.
-		SET MAPVIEW TO FALSE. wait 2. set sasmode TO "PROGRADE".
+		SET MAPVIEW TO FALSE. wait 0.1. set sasmode TO "PROGRADE".
 		wait 0.25.
 		set thrust to 0.25.
 		wait 0.25.
@@ -550,7 +550,7 @@ PARAMETER   detect_encounter is false.
 
 	set np to nd:deltav. //points to node, don't care about the roll direction.
 	unlock steering.
-	SET MAPVIEW TO FALSE. wait 2. set sasmode to "maneuver". wait 0.1.
+	SET MAPVIEW TO FALSE. wait 0.1. set sasmode to "maneuver". wait 0.1.
 		
 	if point_ship_to_maneuver {
 		//now we need to wait until the burn vector and ship's facing are aligned

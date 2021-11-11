@@ -128,7 +128,7 @@ function Inclination_Match
 		warp_until_node (BURN, 60+15). //warp_until_node (BURN, 60+(BURN:TIME/2)).
 	
 	set warp to 0. wait 1.
-	SET MAPVIEW TO FALSE. wait 1.  // map view: off
+	SET MAPVIEW TO FALSE. wait 0.1.  // map view: off
 	UNLOCK STEERING. wait 1.
 	SAS ON. wait 1.
 	RCS ON. wait 0.1.

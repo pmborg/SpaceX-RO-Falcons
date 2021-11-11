@@ -37,11 +37,14 @@ function DO_BURN {
 	//WARP(INTER_PLANETARY_MISSION) (SKIP FOR MOON) ----------------------------
 	if IS_INTER_PLANETARY_MISSION {
 		//update_phase_title("PhaseI-Warp", 1, false).
-		if STATUS = "ORBITING" and (BODY:NAME = "Earth" or BODY:NAME = "Kerbin") 
+		if STATUS = "ORBITING" and (BODY:NAME = "Earth" or BODY:NAME = "Kerbin") {
 			RUNPATH( "boot/PhaseI-Warp.c" ).	 			 // Warp out of "Kerbin" and all Moons until Sun Orbit...
+			KUniverse:QUICKSAVETO("5-PhaseI-Warp done").
+		}
 		
 		//PRINT "Press [ENTER] to Confirm - PhaseI-Transfer". set ch to terminal:input:getchar().
-		RUNPATH( "boot/PhaseI-Transfer.c", "RADIALIN" ). // Fine Tune: [NOW4]
+		RUNPATH( "boot/PhaseI-Transfer.c", "RADIALIN" ). 	// Target Orbit transfer
+		KUniverse:QUICKSAVETO("7-Encounter Done").	// Encounter Done!
 	}
 
 	if (STATUS = "ESCAPING")
@@ -57,10 +60,10 @@ function DO_BURN {
 		}
 		if (Orbit:periapsis > MAX(40000, 1.5*BODY:atm:height)) // 40,000m safe altitude (periapsis wait) in all planets.
 		{
-			SET MAPVIEW TO FALSE. wait 2. set sasmode TO "retrograde". wait 0.1.	
+			SET MAPVIEW TO FALSE. wait 0.1. set sasmode TO "retrograde". wait 0.1.	
 			warp_until_periapsis().
 			set warp to 0. 					//... just to make sure
-			SET MAPVIEW TO FALSE. wait 2.	// WAIT for Refresh etc...
+			SET MAPVIEW TO FALSE. wait 0.1.	// WAIT for Refresh etc...
 
 			if vehicle_type = "SaturnV"
 			{
@@ -85,12 +88,14 @@ function DO_BURN {
 			WAIT UNTIL STATUS <> "ESCAPING".
 			set thrust to 0. WAIT 0.1.
 			SET MAPVIEW TO FALSE. WAIT 0.1.
+			//KUniverse:QUICKSAVETO("8-Break Done").
 		}
 	}
 		
 	//CIRCULARIZE TARGET -------------------------------------------------------
 	update_phase_title("Circle "+mission_target:NAME, 1, true).
 	RUNPATH( "boot/PhaseII-Circularize.c", mission_target ).
+	KUniverse:QUICKSAVETO("9-PhaseII-Circularize Done").
 }
 
 DO_BURN().

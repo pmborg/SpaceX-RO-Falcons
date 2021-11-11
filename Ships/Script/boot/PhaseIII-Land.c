@@ -216,13 +216,14 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 		unlock steering. 
 		SAS ON.
 		RCS ON.
-		//if vehicle_sub_type = "SN20-Profile"
+		if vehicle_sub_type = "SN20-Profile" or vehicle_type = "Space4"
 		{
 			set sasmode to "STABILITY".
 		}
-		// {
-			// SET MAPVIEW TO FALSE. wait 2. set sasmode TO "RETROGRADE".
-		// } else 
+		else
+		{
+			SET MAPVIEW TO FALSE. wait 0.1. set sasmode TO "RETROGRADE".
+		}
 		if vehicle_type = "SN16-Profile1"
 			SET err TO 0.50.
 

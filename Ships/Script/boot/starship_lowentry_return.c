@@ -250,7 +250,7 @@ else {
 	AG2 OFF. wait 0.1.
 	AG2 ON. wait 0.1.
     UNLOCk steering. wait 1.
-	SET MAPVIEW TO FALSE. wait 2. set sasmode TO "RETROGRADE". wait 1.
+	SET MAPVIEW TO FALSE. wait 0.1. set sasmode TO "RETROGRADE". wait 1.
 	set thrust to 1.  wait 1.
 	
 	RUNPATH( "boot/PhaseIII-Land.c" ).

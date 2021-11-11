@@ -37,7 +37,7 @@ function DOTHEMAINBURN
 	{
 		UNLOCK STEERING. wait 0.1.
 		SAS ON. wait 0.1.
-		SET MAPVIEW TO FALSE. wait 2. set sasmode to "maneuver". wait 0.1.
+		SET MAPVIEW TO FALSE. wait 0.1. set sasmode to "maneuver". wait 0.1.
 	}
 
 	//-------------------------------------------------------------------------------
@@ -111,7 +111,7 @@ function DOTHEMAINBURN
 	
 	prograde_check(). 						// WAIT WITH RCS FOR PROGRADE DIRECTION
 	
-	SET MAPVIEW TO FALSE. wait 2. set sasmode to "maneuver". wait 0.1.
+	SET MAPVIEW TO FALSE. wait 0.1. set sasmode to "maneuver". wait 0.1.
 	warp_until_node (node, 30).				//WARP to NODE
 
 	//-------------------------------------------------------------------------------
@@ -133,8 +133,8 @@ function DOTHEMAINBURN
 	set np to node:deltav. //points to node, don't care about the roll direction.
 	
 	//lock steering to np.
-	set warp to 0. wait 1.
-	SET MAPVIEW TO FALSE. wait 1.  // map view: off
+	set warp to 0. wait 0.1.
+	SET MAPVIEW TO FALSE. wait 0.1.  // map view: off
 	UNLOCK STEERING. wait 1.
 	SAS ON. wait 1.
 	RCS OFF. wait 0.1.
@@ -239,17 +239,17 @@ if NOT EXISTS("burn.txt") or BODY:NAME = "Sun"
 if vehicle_type = "SaturnV" and NOT EXISTS("dock.txt")
 	RUNPATH( "boot/PhaseI-Docking.c" ).
 
-//WARP TO "MOON" SOI -------------------------------------------------------
+//AFTER BURN -> WARP TO "MOON" SOI -------------------------------------------------------
 
 if vehicle_type = "Space4"
 {
-	SET MAPVIEW TO TRUE. wait 1.
-	set warp to 0. wait 1.
-	SET MAPVIEW TO FALSE. wait 1.  // map view: off
-	UNLOCK STEERING. wait 1.
-	SAS ON. wait 1.
+	SET MAPVIEW TO TRUE. wait 0.1.
+	set warp to 0. wait 0.1.
+	SET MAPVIEW TO FALSE. wait 0.1.  // map view: off
+	UNLOCK STEERING. wait 0.1.
+	SAS ON. wait 0.1.
 	RCS OFF. wait 0.1.
-	SET MAPVIEW TO FALSE. wait 2. set sasmode TO "PROGRADE". wait 1.
+	SET MAPVIEW TO FALSE. wait 0.1. set sasmode TO "PROGRADE". wait 1.
 } else {
 	AG5 ON. //Panels ON
 }

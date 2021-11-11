@@ -56,7 +56,7 @@ UNTIL (Ship_Distance >= 25)
 	
 	//ROTATE (DO 180):
 	if (Ship_Distance > 20)
-		{ SET MAPVIEW TO FALSE. wait 2. set sasmode to "TARGET". wait 1. }
+		{ SET MAPVIEW TO FALSE. wait 0.1. set sasmode to "TARGET". wait 1. }
 	
 }
 RCS OFF.
