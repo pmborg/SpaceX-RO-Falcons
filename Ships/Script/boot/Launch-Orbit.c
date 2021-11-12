@@ -250,12 +250,13 @@ function GoSN9
 	PRINT "P-ST: "+profile_stage at (30,2).
 }
 
-declare function directionFindPD
+function directionFindPD
 {
+	//Magic Number to GetLaunchAzimuthRotatingHeading to Mars: 104
 	if (altitude < 10000)
 		return 90.
 	else
-		return 106.	//Magic Number to GetLaunchAzimuthRotatingHeading to Mars: 104
+		return 106.
 }
 
 set new_PITCH to 10. //Space4
@@ -287,9 +288,9 @@ function GoSpace4
 			set new_PITCH to 70.
 			update_phase_title("@ALT:002km, PITCH: "+new_PITCH, 0, true, 6, 0).
 		}
-		if vehicle_type = "Space4" and altitude > 12000 and Space4 = 3
+		if vehicle_type = "Space4" and altitude > 10000 and Space4 = 3
+		{
 			set Space4 to 3.
-			//set new_PITCH to 70.
 			update_phase_title("@ALT:010km, Azimute correction.", 0, true, 6, 0).
 		}
 		
