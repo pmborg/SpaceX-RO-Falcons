@@ -27,6 +27,9 @@ runpath("boot/common.c").
 if vehicle_sub_type = "SN20-Profile"
 	set lat_correction to -6. // -6 = HEADING: 90+6
 
+if vehicle_type = "Space4"
+	set target to mission_target.
+
 // --------------------------------------------------------------------------------------------
 function main_liftoff
 {
@@ -288,7 +291,7 @@ function GoSpace4
 			set new_PITCH to 70.
 			update_phase_title("@ALT:002km, PITCH: "+new_PITCH, 0, true, 6, 0).
 		}
-		if vehicle_type = "Space4" and altitude > 10000 and Space4 = 3
+		if vehicle_type = "Space4" and altitude > 10000 and Space4 = 2.5
 		{
 			set Space4 to 3.
 			update_phase_title("@ALT:010km, Azimute correction.", 0, true, 6, 0).
@@ -357,7 +360,7 @@ lock throttle to thrust.
 
 if vehicle_type = "Space4" {
 	LOCK STEERING TO HEADING(90, new_PITCH).
-	set target to mission_target.
+	//set target to mission_target.
 }
 else
 	if vehicle_type <> "SN16-Profile1"
