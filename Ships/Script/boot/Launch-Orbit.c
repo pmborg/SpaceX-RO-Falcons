@@ -316,12 +316,12 @@ function GoSpace4
 			AG9 ON. wait 0.1.
 			update_phase_title("@ALT:052km, VAC ENGINE: ON", 0, true, 6, 0).
 		}
-		if vehicle_type = "Space4" and apoapsis > 140000 and Space4 = 6
+		if vehicle_type = "Space4" and apoapsis > 100000 and Space4 = 6
 		{
 			set Space4 to 7.
 			AG2 OFF. wait 0.1.
 			set new_PITCH to 15.
-			update_phase_title("@AP:140km, ATM ENGINES: OFF / PITCH: "+new_PITCH, 0, true, 6, 0).
+			update_phase_title("@AP:100km, ATM ENGINES: OFF / PITCH: "+new_PITCH, 0, true, 6, 0).
 		}
 		if vehicle_type = "Space4" and apoapsis > 250000 and Space4 = 7
 		{
@@ -329,16 +329,16 @@ function GoSpace4
 			set new_PITCH to 2.
 			update_phase_title("@AP:250km, PITCH: "+new_PITCH, 0, true, 6, 0).
 		}
-		if vehicle_type = "Space4" and periapsis > -1000000 and Space4 = 8
+		if vehicle_type = "Space4" and periapsis > -3500000 and Space4 = 8
 		{
 			set Space4 to 9.
 			set new_PITCH to 0.
-			update_phase_title("@PE:-1000km, PITCH: "+new_PITCH, 0, true, 6, 0).
+			update_phase_title("@PE:-3500km, PITCH: "+new_PITCH, 0, true, 6, 0).
 		}
-		if vehicle_type = "Space4" and periapsis > 140000 and Space4 = 9
+		if vehicle_type = "Space4" and periapsis > 90000 and Space4 = 9
 		{
 			set Space4 to 10.
-			update_phase_title("@PE:140km, ORBIT: 140km", 0, true, 6, 0).
+			update_phase_title("@PE:140km, ORBIT: 90km", 0, true, 6, 0).
 		}
 		if vehicle_type = "Space4" and apoapsis > 1000000 and Space4 = 10
 		{
@@ -440,7 +440,7 @@ if alt:radar < 200
 		
 		if vehicle_type = "Space4"
 		{
-			PRINT Space4 				at (22,5).
+			PRINT Space4+"   " 				at (22,5).
 			GoSpace4().
 		}
 		else

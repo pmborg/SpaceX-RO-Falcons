@@ -85,14 +85,17 @@ if vehicle_type = "Space4"
 	UNTIL NOT HASNODE { REMOVE NEXTNODE. WAIT 0.1. } //removeAllNodes!
 	WAIT 1.
 	LOG  "[TIME:seconds]: "+TIME:seconds to LOG_FILE.
-	//set BURN to NODE(TIME:seconds+16*24*60*60+16*60*60,942.938953877252,1106.21889881665,2736.03716764584). //2nd intersection   3098m/s dv transfer: 398 days
+	
 
 	SET MAPVIEW TO TRUE. wait 0.1.
 	set cond to 0.
 	set h to 0.
 	until cond = 1
 	{
-		set BURN to NODE(TIME:seconds+20*24*60*60-h*60*60,942.938953877252,1106.21889881665,4892.02150520109). //1st intersection  5103m/s dv transfer: 149 days
+		//set BURN to NODE(TIME:seconds+30*24*60*60-h*60*60,942.938953877252,1106.21889881665,4892.02150520109). 	//1st intersection
+		//set BURN to NODE(TIME:seconds+16*24*60*60-h*60*60,942.938953877252,1106.21889881665,2736.03716764584).
+		//set BURN to NODE(TIME:seconds+25*24*60*60-h*60*60,-417.619036808344,997.389847035457,2734.42372902481). 	//2nd intersection 
+		set BURN to NODE(TIME:seconds+25*24*60*60-h*60*60,-1146.29880035088,988.645860942838,2737.77817934923).
 		ADD BURN.	
 		
 		//set thesepatches to BURN:patches.
@@ -105,7 +108,7 @@ if vehicle_type = "Space4"
 		if cond = 0
 		{
 			set h to h+1.
-			wait 0.5.
+			wait 0.25.
 			REMOVE BURN.
 		}
 	}	
@@ -123,10 +126,10 @@ if vehicle_type = "Space4"
 	//KUniverse:QUICKSAVETO("6-execute_node done").
 	
 	// WAIT and recalculate:
-	set WARP to 4. WAIT 20. set WARP to 0. WAIT 1.
-	LOG "part-2-change_inclination" to LOG_FILE.
-	if (getNormalOrbitAngle() > 0.1) 
-		change_inclination(true).
+	// set WARP to 4. WAIT 20. set WARP to 0. WAIT 1.
+	// LOG "part-2-change_inclination" to LOG_FILE.
+	// if (getNormalOrbitAngle() > 0.1) 
+		// change_inclination(true).
 }
 else {
 	//TRANSFER:I
