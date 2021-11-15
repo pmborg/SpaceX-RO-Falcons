@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Circularize an orbit after Launch-Orbit.c
-// 04/Nov/2021
+// 15/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
@@ -21,7 +21,8 @@ function do_circle_step
 	set z to 0.
 	set x to 1. //x=Throttle.
 
-	RCS ON.
+	RCS ON. wait 0.1.
+	SET MAPVIEW TO FALSE. wait 1. set sasmode to "PROGRADE". wait 0.1.
 
 	//SETUP:
 	// SET steeringDir TO 90.		// W/E

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to ...
-// 30/Oct/2021
+// 15/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 parameter destBod. 		// set destBod to BODY(mission_target).
@@ -24,10 +24,11 @@ if (ch = "y" OR ch = "Y")
 	set curangle to 0.
 	set warp to 7.
 	set y to 0.
-	until diff < 1 
+	until diff < 0.1 
 	{
 		// -------------------------------------------------------------------------------------------------
-		// SOURCE: https://www.reddit.com/r/Kos/comments/8z2aoe/need_some_help_with_true_anomaly_and_phase_angles/
+		// SOURCE: 		https://www.reddit.com/r/Kos/comments/8z2aoe/need_some_help_with_true_anomaly_and_phase_angles/
+		// VALIDATION: 	http://clowder.net/hop/railroad/EMa.htm
 		set curangle to vang(destBod:position-sun:position,body:position-sun:position).
 		set vcrsCurrentPhaseAngle to vcrs(destBod:position-sun:position,body:position-sun:position).
 		
@@ -56,14 +57,16 @@ if (ch = "y" OR ch = "Y")
 		print "Current Phase Angle: "+ ROUND(curangle,3) + "   " at (0, 6).
 		print "diff(curangle-phaseAngle): "+ ROUND(diff,3) + "   " at (0, 7).
 		print "vdot: "+ vdot(v(1,1,1), vcrsCurrentPhaseAngle) + "   " at (0, 8).
+		print "y: "+ y + "   " at (0, 9).
 
 		if (diff > -10 and diff < 10) and y = 0 {
 			set warp to 6.
 			set y to 1.
-			wait 0.1.
+			wait 0.05.
 		}
 			
 		if y = 0 wait 1.0.
+
 	}
 
 	set warp to 0.
@@ -71,4 +74,8 @@ if (ch = "y" OR ch = "Y")
 	wait 15.
 	//clearscreen.
 	SET MAPVIEW TO FALSE.  // map view: off
+
+	PRINT "Phase Angle, complete ".
+	PRINT "Press [ENTER] to continue.". set ch to terminal:input:getchar().
+	CLEARSCREEN. print " ". print " ".
 }

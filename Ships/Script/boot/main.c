@@ -77,7 +77,7 @@ if (mission_origin <> DEFAULT_KSC and BODY:NAME <> "Sun") and (status = "LANDED"
 // --------------------------------------------------------------------------------------------
 if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY", GOTO "RETURN-JOURNEY"
 {
-	if (IS_INTER_PLANETARY_MISSION) and (altitude < alt:radar) and (BODY:NAME = "Earth" or BODY:NAME = "Kerbin")
+	if (IS_INTER_PLANETARY_MISSION) and (STATUS = "PRELAUNCH") and (BODY:NAME = "Earth" or BODY:NAME = "Kerbin")
 	{
 		RUNPATH( "boot/Phase-Angle.c", mission_target ).	// WARP to Correct Phase Angle
 		KUniverse:QUICKSAVETO("1-Phase-Angle done").
