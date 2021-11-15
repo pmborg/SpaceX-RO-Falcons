@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 06/Nov/2021
+// 13/Nov/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 LOG "START: Launch-Orbit.c" to LOG_FILE.
@@ -137,10 +137,6 @@ function main_liftoff
 		if vehicle_type = "Crew Dragon 2" or vehicle_type = "Falcon Heavy"
 			WAIT 1.
 			
-		if (KUniverse:ActiveVessel = SHIP) STAGE.		//TOWER
-		if vehicle_company = "SpaceX" and Release_Tower_Clamp
-			Print "(Strongback Retracted)".
-
 		if vehicle_type = "Space4"
 		{
 			AG4 ON. WAIT 1. //Nucler Reactor on
@@ -148,7 +144,11 @@ function main_liftoff
 			AG1 ON. WAIT 1. //Jet Engines
 			AG2 ON. WAIT 1. //Multi/SPI Jet Engines
 			AG8 ON. WAIT 1. //VERTICAL RS-25
-		} 
+		} else {
+			if (KUniverse:ActiveVessel = SHIP) STAGE.		//TOWER
+			if vehicle_company = "SpaceX" and Release_Tower_Clamp
+				Print "(Strongback Retracted)".
+		}
 			
 		if vehicle_type = "Crew Dragon 2"
 			WAIT 1.										//CD2: TOWER+Liftoff
@@ -316,12 +316,12 @@ function GoSpace4
 			AG9 ON. wait 0.1.
 			update_phase_title("@ALT:052km, VAC ENGINE: ON", 0, true, 6, 0).
 		}
-		if vehicle_type = "Space4" and apoapsis > 100000 and Space4 = 6
+		if vehicle_type = "Space4" and apoapsis > 140000 and Space4 = 6
 		{
 			set Space4 to 7.
 			AG2 OFF. wait 0.1.
 			set new_PITCH to 15.
-			update_phase_title("@AP:100km, ATM ENGINES: OFF / PITCH: "+new_PITCH, 0, true, 6, 0).
+			update_phase_title("@AP:140km, ATM ENGINES: OFF / PITCH: "+new_PITCH, 0, true, 6, 0).
 		}
 		if vehicle_type = "Space4" and apoapsis > 250000 and Space4 = 7
 		{

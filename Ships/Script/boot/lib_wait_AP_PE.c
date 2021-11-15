@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This is used in orbital mechanics warp to AP or PE.
-// 10/Nov/2021
+// 14/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 function  warp_until_periapsis
@@ -39,7 +39,7 @@ function  warp_until_periapsis
 
 	if eta:periapsis > w. 		//30Secs
 		set warp to 1.		
-	WAIT until eta:periapsis < w.
+	WAIT until (eta:periapsis < w) or (eta:periapsis>0).
 
 	set warp to 0. WAIT 0.1.
 }

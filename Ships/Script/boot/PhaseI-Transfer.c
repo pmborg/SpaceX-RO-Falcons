@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				...
-// 08/Nov/2021
+// 13/Nov/2021
 // --------------------------------------------------------------------------------------------
 clearscreen.
 update_phase_title("PhaseI-Transfer: START", 1, false).
@@ -169,7 +169,7 @@ else {
 update_phase_title("PhaseI-Transfer: WARP TO TARGET", 1, false).
 SET MAPVIEW TO FALSE. wait 0.1.  // map view: off
 SAS OFF. wait 1.
-set warp to 6. wait 1.
+set warp to 5. wait 1.
 UNTIL ship:Orbit:TRANSITION <> "ENCOUNTER".
 set warp to 0. wait 1.
 update_phase_title("PhaseI-Transfer: END", 1, false).
