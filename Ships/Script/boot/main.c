@@ -8,13 +8,14 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestrate all mission phases.
-// 06/Nov/2021
+// 15/Nov/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: main.c" to LOG_FILE.
 
 // Reset Engine settings before all, ("migth be a reboot")
 set thrust to 0.	
 lock throttle to thrust.
+set target to BODY. //setup a Default
 WAIT 0.
 
 LOG  "SHIP:LAT: "+SHIP:GEOPOSITION:LAT to LOG_FILE.
