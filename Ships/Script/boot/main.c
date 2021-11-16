@@ -8,14 +8,13 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestrate all mission phases.
-// 15/Nov/2021
+// 16/Nov/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: main.c" to LOG_FILE.
 
 // Reset Engine settings before all, ("migth be a reboot")
 set thrust to 0.	
 lock throttle to thrust.
-set target to BODY. //setup a Default
 WAIT 0.
 
 LOG  "SHIP:LAT: "+SHIP:GEOPOSITION:LAT to LOG_FILE.
@@ -77,7 +76,7 @@ if (mission_origin <> DEFAULT_KSC and BODY:NAME <> "Sun") and (status = "LANDED"
 // --------------------------------------------------------------------------------------------
 if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY", GOTO "RETURN-JOURNEY"
 {
-	if (IS_INTER_PLANETARY_MISSION) and (STATUS = "PRELAUNCH") and (BODY:NAME = "Earth" or BODY:NAME = "Kerbin")
+	if (IS_INTER_PLANETARY_MISSION) and (STATUS = "PRELAUNCH" OR STATUS = "LANDED") and (BODY:NAME = "Earth" or BODY:NAME = "Kerbin")
 	{
 		RUNPATH( "boot/Phase-Angle.c", mission_target ).	// WARP to Correct Phase Angle
 		KUniverse:QUICKSAVETO("1-Phase-Angle done").

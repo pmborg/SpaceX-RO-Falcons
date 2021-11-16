@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				General functions used by other mission files.
-// 07/Nov/2021
+// 16/Nov/2021
 // --------------------------------------------------------------------------------------------
 set phase_title_position to 0.
 
@@ -601,7 +601,7 @@ PARAMETER   detect_encounter is false.
 			set done to True.
 		}
 		
-		if nd:deltav:mag > 50
+		if nd:deltav:mag > 50 and vehicle_type = "Space4"
 			print ROUND (getNormalOrbitAngle(),2)+"    " at (25, 10).
 			
 		wait 0.1.
