@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This data is used to start missions (Beyond Earth)
-// 04/Nov/2021
+// 16/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 // MORE - INFO: "body-data.txt"
@@ -80,10 +80,10 @@ if RealSolarSystemMod = true and mission_target:NAME <> "Earth"
 	print mission_target:NAME+" will move: "+ ROUND (Target_Move,3)+" degrees ".
 
 	// [9] FINALLY! Calculate the position of Target at the time of launch:
-	if mission_target:NAME = "Mars"
-		set phaseAngle to 63.87.							//phaseAngle: 63.87 degrees
 	set transferAngle to (180-Target_Move).
-	print "transferAngle: " + ROUND (transferAngle,3).		//transferAngle: 44 degrees
+	print "Best transferAngle: " + ROUND (transferAngle,3).		//transferAngle: 44.15 degrees (OPTIMUM)
+	
+	set phaseAngle to transferAngle.						//phaseAngle (CURRENT)
 	
 	wait 2.
 }

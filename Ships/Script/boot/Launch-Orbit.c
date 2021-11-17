@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 13/Nov/2021
+// 17/Nov/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 LOG "START: Launch-Orbit.c" to LOG_FILE.
@@ -22,6 +22,7 @@ set str_vehicle to "".
 //DEFINE SN20-Profile TARGET
 set LandingTarget to latlng(23.12854, -159.982839).
 runpath("boot/common.c").
+runpath("boot/external-lib/lib_lazcalc.ks").
 
 // LOOP: LAUNCH-Trusting:
 if vehicle_sub_type = "SN20-Profile"
@@ -136,6 +137,10 @@ function main_liftoff
 		// --------------------------------------------------------------------------------------------
 		if vehicle_type = "Crew Dragon 2" or vehicle_type = "Falcon Heavy"
 			WAIT 1.
+
+		if (KUniverse:ActiveVessel = SHIP) STAGE.		//TOWER
+		if vehicle_company = "SpaceX" and Release_Tower_Clamp
+			Print "(Strongback Retracted)".
 			
 		if vehicle_type = "Space4"
 		{
@@ -144,12 +149,8 @@ function main_liftoff
 			AG1 ON. WAIT 1. //Jet Engines
 			AG2 ON. WAIT 1. //Multi/SPI Jet Engines
 			AG8 ON. WAIT 1. //VERTICAL RS-25
-		} else {
-			if (KUniverse:ActiveVessel = SHIP) STAGE.		//TOWER
-			if vehicle_company = "SpaceX" and Release_Tower_Clamp
-				Print "(Strongback Retracted)".
 		}
-			
+					
 		if vehicle_type = "Crew Dragon 2"
 			WAIT 1.										//CD2: TOWER+Liftoff
 		else {
@@ -253,19 +254,31 @@ function GoSN9
 	PRINT "P-ST: "+profile_stage at (30,2).
 }
 
-function directionFindPD
-{
-	//Magic Number to GetLaunchAzimuthRotatingHeading to Mars: 104
-	if (altitude < 10000)
-		return 90.
-	else
-		return 106.
-}
-
+SET struct to LAZcalc_init(FINAL_ORBIT2, mission_target:Orbit:inclination).
 set new_PITCH to 10. //Space4
+
+CLEARSCREEN. PRINT " ".PRINT " ". update_phase_title("[0] WAIT for right azimuth...",0, false).
+
+if vehicle_type = "Space4"
+{
+	set NormalOrbitAngle to 9999.
+	until NormalOrbitAngle < 2
+	{
+		set NormalOrbitAngle to update_atmosphere (altitude, velocity:surface:mag).
+		log_data (velocity:surface:mag).
+		set warp to 3.
+	}
+	set warp to 0.
+	wait 2.
+}
 
 function GoSpace4
 {
+		SET launchAzimuth TO LAZcalc(struct).
+		LOCK STEERING TO HEADING(launchAzimuth, new_PITCH).
+		print "launchAzimuth:" at (0, 2).
+		print ROUND(launchAzimuth, 3)+"   " at (22, 2).
+		
 		if vehicle_type = "Space4" and altitude > 200 and Space4 = 0
 		{
 			RCS OFF.
@@ -279,7 +292,7 @@ function GoSpace4
 			//AG4 ON. WAIT 1. 	//Nucler Reactor on
 			AG5 OFF. WAIT 0.1. 	//Vertical Jet Engines
 			//AG1 ON. WAIT 0.1. //Jet Engines
-			//AG2 ON. WAIT 1. 	//Multi/SPI Jet Engines
+			//AG2 ON. WAIT 1. 	//Multi/KSPI Jet Engines
 			//AG8 OFF. WAIT 0.1.//VERTICAL RS-25
 			set Space4 to 2.
 			set new_PITCH to 30.
@@ -348,8 +361,6 @@ function GoSpace4
 			set profile_stage to 1.
 			update_phase_title("@AP:1000km, ORBIT: ", 0, true, 6, 0).
 		}
-		
-		LOCK STEERING TO HEADING(directionFindPD(), new_PITCH).
 }
 
 // Vehicle Release Auto Sequence:
@@ -462,7 +473,7 @@ if alt:radar < 200
 		}
 	
 		update_atmosphere (altitude, velocity:surface:mag).
-		log_data (vel).
+		log_data (velocity:surface:mag).
 	}.
 
 	// Throttle is reduced to maintain a constant terminal velocity.
@@ -597,7 +608,7 @@ if alt:radar < 200
 	
 		//set vel to SQRT(Vs2).
 		update_atmosphere (altitude, velocity:surface:mag).
-		log_data (vel).
+		log_data (velocity:surface:mag).
 	}.
 
 	if vehicle_type <> "SN9-Profile1" 
@@ -674,7 +685,7 @@ if alt:radar < 200
 
 			//set vel to SQRT(Vs2).
 			update_atmosphere (altitude, velocity:orbit:mag).
-			log_data (vel).
+			log_data (velocity:surface:mag).
 			check_if_we_need_new_stage().
 		}.		
 
@@ -919,7 +930,7 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 		update_orbit_status().
 		//set vel to SQRT(Vs2).
 		update_atmosphere (altitude, velocity:orbit:mag).
-		log_data (vel).
+		log_data (velocity:orbit:mag).
 		check_if_we_need_new_stage().
 		
 		set dx to eta:apoapsis.
@@ -957,7 +968,7 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 		
 		update_orbit_status().
 		update_atmosphere (altitude, velocity:orbit:mag).
-		log_data (vel).
+		log_data (velocity:orbit:mag).
 		check_if_we_need_new_stage().
 	}
 

@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to ...
-// 15/Nov/2021
+// 16/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 parameter destBod. 		// set destBod to BODY(mission_target).
@@ -34,13 +34,17 @@ PRINT ch. wait 2.
 if (ch = "y" OR ch = "Y")
 {
 	clearscreen.
-	SET MAPVIEW TO TRUE.  	// goto: map view
+	//SET MAPVIEW TO TRUE.  	// goto: map view
 
 	set diff to 999.
 	set curangle to 0.
 	set warp to 7.
 	set y to 0.
-	until diff < 0.1 
+	print "Target Phase Angle: " at (0, 5).
+	print "Current Phase Angle: " at (0, 6).
+	print "diff(curangle-phaseAngle): " at (0, 7).
+	print "y: " at (0, 8).
+	until diff < 1
 	{
 		// -------------------------------------------------------------------------------------------------
 		// SOURCE: 		https://www.reddit.com/r/Kos/comments/8z2aoe/need_some_help_with_true_anomaly_and_phase_angles/
@@ -74,29 +78,31 @@ if (ch = "y" OR ch = "Y")
 			}		
 		}
 
-		print "Target Phase Angle: "+ ROUND(phaseAngle,3) + "   " at (0, 5).
-		print "Current Phase Angle: "+ ROUND(curangle,3) + "   " at (0, 6).
-		print "diff(curangle-phaseAngle): "+ ROUND(diff,3) + "   " at (0, 7).
-		//print "vdot: "+ vdot(v(1,1,1), vcrsCurrentPhaseAngle) + "   " at (0, 8).
-		print "y: "+ y + "   " at (0, 9).
+		print ROUND(phaseAngle,3) + "   " at (30, 5).
+		print ROUND(curangle,3) + "   " at (30, 6).
+		print ROUND(diff,3) + "   " at (30, 7).
+		print y + "   " at (30, 8).
+
+		if y = 0 wait 1.0.
 
 		if (diff > -10 and diff < 10) and y = 0 {
 			set warp to 6.
 			set y to 1.
-			//wait 0.05.
 		}
-			
-		if y = 0 wait 1.0.
-
+		
+		if (diff > -1 and diff < 1) and y = 1 {
+			set warp to 5.
+			set y to 2.
+		}
 	}
 
 	set warp to 0.
-	print "We are on the correct Phase Angle" at (0, 9).
+	print "We are on the correct Phase Angle" at (0, 10).
 	wait 15.
 	//clearscreen.
-	SET MAPVIEW TO FALSE.  // map view: off
+	//SET MAPVIEW TO FALSE.  // map view: off
 
-	PRINT "Phase Angle, complete ".
-	PRINT "Press [ENTER] to continue.". set ch to terminal:input:getchar().
+	PRINT "Phase Angle, complete " at (0, 12).
+	PRINT "Press [ENTER] to continue." at (0, 13). set ch to terminal:input:getchar().
 	CLEARSCREEN. print " ". print " ".
 }

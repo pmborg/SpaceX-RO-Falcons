@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is used go get more realistic data from Planet Earth Atmosphere.
-// 07/Nov/2021
+// 17/Nov/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: atm.c" to LOG_FILE.
 // --------------------------------------------------------------------------------------------
@@ -96,10 +96,16 @@ function display_speed_kmh
 	parameter v0.
 	parameter indice.
 	parameter xpos is 22.
+	set NormalOrbitAngle to 0.
 	
-	print "Rel. angle to target: " at (0,indice+0).	print ROUND (getNormalOrbitAngle(), 4)+"    " at (xpos,indice+0).
+	if vehicle_type = "Space4" {
+		set NormalOrbitAngle to getNormalOrbitAngle().
+		print "Rel. angle to target: " at (0,indice+0).	print ROUND (getNormalOrbitAngle(), 4)+"    " at (xpos,indice+0).
+	}
 	PRINT "Altitude: "		 	at (0,indice+1).	PRINT ROUND(h0/1000,1)+" km   "		 	at (xpos,indice+1).
 	PRINT "Speed: "				at (0,indice+2).	PRINT ROUND(v0*3.6,1)+" km/h   "		at (xpos,indice+2).
+	
+	return NormalOrbitAngle.
 }
 
 // --------------------------------------------------------------------------------------------
@@ -112,9 +118,7 @@ function update_atmosphere
 	parameter v0.
 	set indice to 19.
 	
-	display_speed_kmh (h0, v0, indice).
-	
-	if (ROUND(BODY:ATM:ALTITUDEPRESSURE(h0),4) = 0 and ROUND(BODY:ATM:ALTITUDETEMPERATURE(h0),1) = 0) or h>=232940
+	if (ROUND(BODY:ATM:ALTITUDEPRESSURE(h0),4) = 0 and ROUND(BODY:ATM:ALTITUDETEMPERATURE(h0),1) = 0) or h0>=232940
 	{
 		PRINT "--- Cº   "		at (22,indice+3).
 		PRINT "--- kg/m^3   "	at (22,indice+4).
@@ -124,7 +128,7 @@ function update_atmosphere
 		PRINT "--- N/m^2      "	at (22,indice+8).
 		PRINT "--- K     "		at (22,indice+11).
 		PRINT ROUND(SHIP:Q,3)+"     " at (22,indice+12).
-		return.
+		return display_speed_kmh (h0, v0, indice).
 	}
 	
 	set TEMPSL to 518.67.
@@ -213,6 +217,8 @@ function update_atmosphere
 	// -----------
 	//PRINT "Pressure: "+( ROUND (Pressure(h)/100,2))+" (hPa)    " 	at (0,indice+12).
 	//PRINT "Temperature: "+ROUND (Temperature(h)) + "    " 		at (0,indice+13).
+	
+	return display_speed_kmh (h0, v0, indice).
 }
 
 LOG   "END: atm.c" to LOG_FILE.
