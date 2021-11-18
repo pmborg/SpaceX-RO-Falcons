@@ -42,15 +42,15 @@ FUNCTION LAZcalc_init {
     }.
     
     //Orbital inclination can't be less than launch latitude or greater than 180 - launch latitude
-    IF ABS(launchLatitude) > desiredInc {
-        SET desiredInc TO ABS(launchLatitude).
-        HUDTEXT("Inclination impossible from current latitude, setting for lowest possible inclination.", 10, 2, 30, RED, FALSE).
-    }.
+    // IF ABS(launchLatitude) > desiredInc {
+        // SET desiredInc TO ABS(launchLatitude).
+        // HUDTEXT("Inclination impossible from current latitude, setting for lowest possible inclination.", 10, 2, 30, RED, FALSE).
+    // }.
     
-    IF 180 - ABS(launchLatitude) < desiredInc {
-        SET desiredInc TO 180 - ABS(launchLatitude).
-        HUDTEXT("Inclination impossible from current latitude, setting for highest possible inclination.", 10, 2, 30, RED, FALSE).
-    }.
+    // IF 180 - ABS(launchLatitude) < desiredInc {
+        // SET desiredInc TO 180 - ABS(launchLatitude).
+        // HUDTEXT("Inclination impossible from current latitude, setting for highest possible inclination.", 10, 2, 30, RED, FALSE).
+    // }.
     
     //Does all the one time calculations and stores them in a list to help reduce the overhead or continuously updating
     LOCAL equatorialVel IS (2 * CONSTANT():Pi * BODY:RADIUS) / BODY:ROTATIONPERIOD.

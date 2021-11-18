@@ -205,14 +205,14 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 		update_phase_title("ACTION: Break & LAND", 1, false).
 		if NOT EXISTS("orbit_target.txt")
 		{
-			//Decrease orbit to PE: 150km
+			//Decrease orbit to PE: 300km
 			update_phase_title("Process Low Orbit", 1, false).
 			retrograde_check().
 			set thrust to 1.
 			RCS OFF.
 			until (periapsis <= 5000*1000) WAIT 0.1.
 			set thrust to 0.10.
-			until (periapsis <= 150*1000) WAIT 0.01.
+			until (periapsis <= 300*1000) WAIT 0.01.
 			set thrust to 0.
 
 			//Do Circular orbit for PE: 300km
@@ -221,7 +221,7 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 			set sasmode TO "retrograde". wait 1.
 			set thrust to 1.
 			RCS OFF.
-			until (apoapsis <= 150*1000) WAIT 0.01.
+			until (apoapsis <= 600*1000) WAIT 0.01.
 			set thrust to 0.
 
 			LOG "Done" to orbit_target.txt.

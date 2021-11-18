@@ -138,10 +138,6 @@ function main_liftoff
 		if vehicle_type = "Crew Dragon 2" or vehicle_type = "Falcon Heavy"
 			WAIT 1.
 
-		if (KUniverse:ActiveVessel = SHIP) STAGE.		//TOWER
-		if vehicle_company = "SpaceX" and Release_Tower_Clamp
-			Print "(Strongback Retracted)".
-			
 		if vehicle_type = "Space4"
 		{
 			AG4 ON. WAIT 1. //Nucler Reactor on
@@ -150,7 +146,11 @@ function main_liftoff
 			AG2 ON. WAIT 1. //Multi/SPI Jet Engines
 			AG8 ON. WAIT 1. //VERTICAL RS-25
 		}
-					
+		
+		if (KUniverse:ActiveVessel = SHIP) STAGE.		//TOWER
+		if vehicle_company = "SpaceX" and Release_Tower_Clamp
+			Print "(Strongback Retracted)".
+			
 		if vehicle_type = "Crew Dragon 2"
 			WAIT 1.										//CD2: TOWER+Liftoff
 		else {

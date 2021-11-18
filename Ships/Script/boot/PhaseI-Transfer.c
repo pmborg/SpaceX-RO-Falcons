@@ -79,6 +79,19 @@ parameter burnmode is "PROGRADE".
 //---------------------------
 runpath("boot/lib_normal.c"). //set Relative_Inclination_to_Target to getNormalOrbitAngle().
 
+//TRANSFER:I
+if NOT EXISTS("transfer.txt")
+{
+	change_inclination(true).	  //FORCE MATCH PLANES, IT1
+
+	//TRANSFER:I:
+	update_phase_title("PhaseI-Transfer: ROTATE", 1, false).
+	SET MAPVIEW TO FALSE. wait 0.1. set sasmode to "PROGRADE". wait 0.1.
+	prograde_check().
+	update_phase_title("PhaseI-Transfer: BURN", 1, false).
+	PhaseI_Transfer().
+	LOG  "Done" to transfer.txt.
+}
 
 if vehicle_type = "Space4"
 {
@@ -92,13 +105,10 @@ if vehicle_type = "Space4"
 	set h to 0.
 	until cond = 1
 	{
-		//set BURN to NODE(TIME:seconds+30*24*60*60-h*60*60,942.938953877252,1106.21889881665,4892.02150520109). 	//1st intersection
-		//set BURN to NODE(TIME:seconds+16*24*60*60-h*60*60,942.938953877252,1106.21889881665,2736.03716764584).
-		//set BURN to NODE(TIME:seconds+25*24*60*60-h*60*60,-417.619036808344,997.389847035457,2734.42372902481). 	//2nd intersection 
-		set BURN to NODE(TIME:seconds+25*24*60*60-h*60*60,-1146.29880035088,988.645860942838,2737.77817934923).
-		ADD BURN.	
+		//set BURN to NODE(TIME:seconds+25*24*60*60-h*60*60,-1146.29880035088,988.645860942838,2737.77817934923).
+		set BURN to NODE(TIME:seconds+25*24*60*60-h*60*60,544.528653172508,783.215485794892,1212.6127913971).
+		ADD BURN.
 		
-		//set thesepatches to BURN:patches.
 		print "BURN: "+BURN+"        " 							 		 at (0,9).
 		print "BURN:Orbit:TRANSITION: "+BURN:Orbit:TRANSITION+"        " at (0,10).
 
@@ -123,32 +133,13 @@ if vehicle_type = "Space4"
 	
 	RCS OFF. wait 0.5.
 	execute_node (BURN, true, true, false).
-	//KUniverse:QUICKSAVETO("6-execute_node done").
-	
-	// WAIT and recalculate:
-	// set WARP to 4. WAIT 20. set WARP to 0. WAIT 1.
-	// LOG "part-2-change_inclination" to LOG_FILE.
-	// if (getNormalOrbitAngle() > 0.1) 
-		// change_inclination(true).
 }
-else {
-	//TRANSFER:I
-	if NOT EXISTS("transfer.txt")
-	{
-		change_inclination(true).	  //FORCE MATCH PLANES, IT1
-
-		//TRANSFER:
-		update_phase_title("PhaseI-Transfer: ROTATE", 1, false).
-		SET MAPVIEW TO FALSE. wait 0.1. set sasmode to "PROGRADE". wait 0.1.
-		prograde_check().
-		update_phase_title("PhaseI-Transfer: BURN", 1, false).
-		PhaseI_Transfer().
-		LOG  "Done" to transfer.txt.
-	}
-
+else 
+{
 	if NOT EXISTS("transfer2.txt")
 	{
 		//TRANSFER:II = ENCOUNTER
+		// warp...
 		change_inclination().
 		
 		// WAIT and force:

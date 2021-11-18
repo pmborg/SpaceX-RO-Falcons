@@ -93,9 +93,12 @@ function DO_BURN {
 	}
 		
 	//CIRCULARIZE TARGET -------------------------------------------------------
-	update_phase_title("Circle "+mission_target:NAME, 1, true).
-	RUNPATH( "boot/PhaseII-Circularize.c", mission_target ).
-	KUniverse:QUICKSAVETO("9-PhaseII-Circularize Done").
+	if vehicle_type <> "Space4" 
+	{
+		update_phase_title("Circle "+mission_target:NAME, 1, true).
+		RUNPATH( "boot/PhaseII-Circularize.c", mission_target ).
+		KUniverse:QUICKSAVETO("9-PhaseII-Circularize Done").
+	}
 }
 
 DO_BURN().
