@@ -40,12 +40,12 @@ if not exist buildID64.txt (
 
 	REM ckan.exe ksp default auto
 	REM ckan.exe repo add Kopernicus_BE http://glacialsoftware.net/CKAN/Kopernicus_BE.tar.gz
-	REM ckan.exe update
-	REM ckan.exe cache reset
-	REM ckan.exe compat add 1.10.1
-	REM ckan.exe compat add 1.10.0
-	REM ckan.exe compat add 1.9.0
-	REM ckan.exe compat add 1.8.1
+	ckan.exe update
+	ckan.exe cache reset
+	ckan.exe compat add 1.10.1
+	ckan.exe compat add 1.10.0
+	ckan.exe compat add 1.9.0
+	ckan.exe compat add 1.8.1
 
 	REM DOWNLOAD Latest:
 	REM echo "Get CKAN Latest Version"
@@ -92,6 +92,10 @@ if not exist buildID64.txt (
 	ckan.exe install --headless --allow-incompatible --no-recommends AnimatedDecouplers BackgroundResources FASA HeatControl KerbalEngineerRedux 
 	REM BUG FIXED by pmborg: (faster version)
 	copy /Y GameData\KerbalEngineer\KerbalEngineer.dll_ GameData\KerbalEngineer\KerbalEngineer.dll
+	
+	REM Add a filter to PMBORG RO ships, only:
+	mkdir Ships_VAB
+	move Ships\VAB\*.* Ships_VAB
 	
 	ckan.exe install --headless --allow-incompatible --no-recommends MechJeb2
 	ckan.exe install --headless --allow-incompatible --no-recommends RetractableLiftingSurface SpaceXLaunchVehicles USITools SpaceXLegs
@@ -161,10 +165,6 @@ if not exist buildID64.txt (
 	REM call OPTIONAL-Add_Katniss.s.Cape.Canaveral.bat
 
 	echo set kspver to 1.11. > Ships\Script\kspver.c.
-
-	REM Add a filter to PMBORG RO ships, only:
-	mkdir Ships_VAB
-	move Ships\VAB\*.* Ships_VAB
 
 	echo.
 	echo "Installation ended."
