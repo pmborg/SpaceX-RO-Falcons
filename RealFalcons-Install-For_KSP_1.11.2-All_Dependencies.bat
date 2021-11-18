@@ -67,7 +67,7 @@ if not exist buildID64.txt (
 
 	REM RealismOverhaul:
 	echo "NOTE FOR NEXT Multi select option choose: RealismOverhaul"
-	ckan.exe install --allow-incompatible --no-recommends RealFuels
+	ckan.exe install --allow-incompatible --no-recommends RealFuels="rf-v12.9.1"
 	ckan.exe install --headless --allow-incompatible --no-recommends RealHeat
 	ckan.exe install --headless --allow-incompatible --no-recommends ROTanks ROSolar 
 
@@ -98,8 +98,6 @@ if not exist buildID64.txt (
 	mkdir Ships_VAB
 	move Ships\VAB\*.* Ships_VAB
 	ckan.exe install --headless --allow-incompatible --no-recommends RetractableLiftingSurface SpaceXLaunchVehicles USITools SpaceXLegs
-	move "GameData\Launchers Pack\Rockets\SpaceX_ITS\KK_Raptor\KK_Raptor_innerCircle.cfg" "GameData\Launchers Pack\Rockets\SpaceX_ITS\KK_Raptor\KK_Raptor_innerCircle.cfg_"
-	
 	ckan.exe install --headless --allow-incompatible --no-recommends BDAnimationModules DockingPortAlignmentIndicator REPOSoftTech-Agencies TextureReplacer
 
 	REM Acelerometers needed to Falcons:
