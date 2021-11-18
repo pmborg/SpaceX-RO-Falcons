@@ -92,13 +92,14 @@ if not exist buildID64.txt (
 	ckan.exe install --headless --allow-incompatible --no-recommends AnimatedDecouplers BackgroundResources FASA HeatControl KerbalEngineerRedux 
 	REM BUG FIXED by pmborg: (faster version)
 	copy /Y GameData\KerbalEngineer\KerbalEngineer.dll_ GameData\KerbalEngineer\KerbalEngineer.dll
+	ckan.exe install --headless --allow-incompatible --no-recommends MechJeb2
 	
 	REM Add a filter to PMBORG RO ships, only:
 	mkdir Ships_VAB
 	move Ships\VAB\*.* Ships_VAB
-	
-	ckan.exe install --headless --allow-incompatible --no-recommends MechJeb2
 	ckan.exe install --headless --allow-incompatible --no-recommends RetractableLiftingSurface SpaceXLaunchVehicles USITools SpaceXLegs
+	move "GameData\Launchers Pack\Rockets\SpaceX_ITS\KK_Raptor\KK_Raptor_innerCircle.cfg" "GameData\Launchers Pack\Rockets\SpaceX_ITS\KK_Raptor\KK_Raptor_innerCircle.cfg_"
+	
 	ckan.exe install --headless --allow-incompatible --no-recommends BDAnimationModules DockingPortAlignmentIndicator REPOSoftTech-Agencies TextureReplacer
 
 	REM Acelerometers needed to Falcons:
