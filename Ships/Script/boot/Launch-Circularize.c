@@ -83,7 +83,10 @@ function do_circle_step
 		if throttle > 0 and maxthrust = 0 
 		{
 			if vehicle_type <> "Space4"
-				stage. //confirm_stage().
+				if vehicle_company = "SpaceX"
+					activateLEMengine().
+				else
+					stage. //confirm_stage().
 			else
 				AG9 ON.
 			WAIT 1.
