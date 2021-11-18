@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestrate all mission phases.
-// 16/Nov/2021
+// 18/Nov/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: main.c" to LOG_FILE.
 
@@ -93,7 +93,8 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 			else
 				RUNPATH( "boot/PhaseIV-Orbit.c" ).			// NO-ATM-Launch: "PhaseIV-Orbit.c"
 			
-			KUniverse:QUICKSAVETO("2-Launch-Orbit done").
+			if vehicle_type = "Space4"
+				KUniverse:QUICKSAVETO("2-Launch-Orbit done").
 		}
 		
 		//ACTION: Launch-Circularize --------------------------------------------------------
@@ -109,7 +110,8 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 					RUNPATH( "boot/Launch-Circularize.c", LEOrbit ).
 				else
 					RUNPATH( "boot/Launch-Circularize.c", apoapsis ).
-				KUniverse:QUICKSAVETO("3-Launch-Circularize done").
+				if vehicle_type = "Space4"
+					KUniverse:QUICKSAVETO("3-Launch-Circularize done").
 			}
 		} else
 			LOG  "SKIP: Launch-Circularize" to LOG_FILE.

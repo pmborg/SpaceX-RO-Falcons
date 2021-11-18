@@ -254,13 +254,13 @@ function GoSN9
 	PRINT "P-ST: "+profile_stage at (30,2).
 }
 
-SET struct to LAZcalc_init(FINAL_ORBIT2, mission_target:Orbit:inclination).
-set new_PITCH to 10. //Space4
-
-CLEARSCREEN. PRINT " ".PRINT " ". update_phase_title("[0] WAIT for right azimuth...",0, false).
-
 if vehicle_type = "Space4"
 {
+	SET struct to LAZcalc_init(FINAL_ORBIT2, mission_target:Orbit:inclination).
+	set new_PITCH to 10. //Space4
+
+	CLEARSCREEN. PRINT " ".PRINT " ". update_phase_title("[0] WAIT for right azimuth...",0, false).
+
 	set NormalOrbitAngle to 9999.
 	until NormalOrbitAngle < 2
 	{
