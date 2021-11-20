@@ -105,48 +105,44 @@ SET Vdown TO 1.
 lock steering to retrograde. 
 until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 {
-	if alt:radar < 100000 	//<100km
-		set max to 500.
-	if alt:radar < 75000	//<060km
+	if x = 0
 	{
-		set max to 400.	
-		UNLOCK STEERING.
-		RCS ON.
-		sas on. wait 1.
-		set sasmode TO "retrograde". wait 1.
+		if alt:radar < 100000 	//<100km
+			set max to 500.
+		if alt:radar < 75000	//<060km
+		{
+			set max to 400.	
+			UNLOCK STEERING.
+			RCS ON.
+			sas on. wait 1.
+			set sasmode TO "retrograde". wait 1.
+		}
+		if alt:radar < 55000	//<030km
+			set max to 300.
+		if alt:radar < 45000
+			set max to 200.
+		if vehicle_type = "Space4" and maxthrust = 0
+			AG2 ON.
+		if alt:radar < 8000
+			set max to 100.
+		if alt:radar < 4000 {
+			set max to 50.
+			set err to 1.
+		}
+		if alt:radar < 1000
+			set max to 20.
+		if alt:radar < 500
+			set max to 6.
+		if alt:radar < 500
+			GEAR ON.	// retract gear
+		if alt:radar < 300 {
+			set max to 6.
+		}
+		if alt:radar < 200 {
+			set max to 3.
+		}
 	}
-	if alt:radar < 55000	//<030km
-		set max to 300.
-	if alt:radar < 45000
-		set max to 200.
-	if vehicle_type = "Space4" and maxthrust = 0
-		AG2 ON.
-	if alt:radar < 8000
-		set max to 100.
-	if alt:radar < 4000 {
-		set max to 50.
-		set err to 1.
-	}
-	// if alt:radar < 2000 {
-		// set max to 40.
-	// }
-	if alt:radar < 1000
-		set max to 20.
-	if alt:radar < 500
-		set max to 6.
-	if alt:radar < 500
-		GEAR ON.	// retract gear
-	// if alt:radar < 400 {
-		// set max to 9.
-	// }
-	if alt:radar < 300 {
-		set max to 6.
-		//set SASMODE to "STABILITY".
-	}
-	if alt:radar < 200 {
-		set max to 3.
-	}
-
+	
 	if alt:radar < 7500 and x=0 
 	{
 		if vehicle_sub_type <> "SN20-Profile" and vehicle_company = "SpaceX" 
@@ -207,7 +203,7 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 	else
 		set thrust to t.
 	
-	if alt:radar < 200 //and (impactDist < 75 and x = 1 or vehicle_sub_type = "SN20-Profile"))
+	if alt:radar < 200 and x < 1
 	{
 		PRINT "(KISS mode)" at (0,2).
 		set x to 2.
@@ -251,6 +247,6 @@ RCS ON.
 WAIT 10.
 RCS OFF.
 SAS OFF.
-BRAKES OFF.	// Air Breaks off
+//BRAKES OFF.	// Air Breaks off
 shutDownAllEngines().
 PRINT "All engines, secure and shutdown" at (0,26).

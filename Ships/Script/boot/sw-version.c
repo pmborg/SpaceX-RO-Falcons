@@ -8,14 +8,16 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              Used to specify the SW version and the diferent types of profiles supported.
-// 18/Nov/2021
+// 20/Nov/2021
 // --------------------------------------------------------------------------------------------
-set version_str to "SW-Ver: 1.21.11.18".
+set version_str to "SW-Ver: 1.21.11.20".
 //                          #.YY.MM.DD
 
 LOG   "START: sw-version.c" to LOG_FILE.
 PRINT " ".PRINT " ".PRINT " ".PRINT " ".
-PRINT version_str at (0,2). PRINT time:YEAR + " " + time:clock at (23,2).
+PRINT version_str at (0,2). //PRINT time:YEAR + " " + time:clock at (23,2).
+
+runpath("boot/lib_date.c", 25, 2).
 
 // REGRESSION TESTS for KOS, Automatic Pilot Orbit and Landing:
 // ------------------------------------------------------------

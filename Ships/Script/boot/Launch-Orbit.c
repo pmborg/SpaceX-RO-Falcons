@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to do the Launch until the point of Final Orbit AP
-// 17/Nov/2021
+// 20/Nov/2021
 // --------------------------------------------------------------------------------------------
 parameter FINAL_ORBIT. 			// Sample: 125000 or 150000 or 300000-- Set FINAL_ORBIT to your desired circular orbit
 LOG "START: Launch-Orbit.c" to LOG_FILE.
@@ -138,18 +138,19 @@ function main_liftoff
 		if vehicle_type = "Crew Dragon 2" or vehicle_type = "Falcon Heavy"
 			WAIT 1.
 
+		if (KUniverse:ActiveVessel = SHIP) STAGE.		//TOWER
+		if vehicle_company = "SpaceX" and Release_Tower_Clamp
+			Print "(Strongback Retracted)".
+			
 		if vehicle_type = "Space4"
 		{
+			WAIT 5.
 			AG4 ON. WAIT 1. //Nucler Reactor on
 			AG5 ON. WAIT 1. //Vertical Jet Engines
 			AG1 ON. WAIT 1. //Jet Engines
 			AG2 ON. WAIT 1. //Multi/SPI Jet Engines
 			AG8 ON. WAIT 1. //VERTICAL RS-25
 		}
-		
-		if (KUniverse:ActiveVessel = SHIP) STAGE.		//TOWER
-		if vehicle_company = "SpaceX" and Release_Tower_Clamp
-			Print "(Strongback Retracted)".
 			
 		if vehicle_type = "Crew Dragon 2"
 			WAIT 1.										//CD2: TOWER+Liftoff
@@ -266,7 +267,10 @@ if vehicle_type = "Space4"
 	{
 		set NormalOrbitAngle to update_atmosphere (altitude, velocity:surface:mag).
 		log_data (velocity:surface:mag).
-		set warp to 3.
+		if NormalOrbitAngle > 10
+			set warp to 4.
+		else
+			set warp to 3.
 	}
 	set warp to 0.
 	wait 2.
@@ -276,8 +280,9 @@ function GoSpace4
 {
 		SET launchAzimuth TO LAZcalc(struct).
 		LOCK STEERING TO HEADING(launchAzimuth, new_PITCH).
-		print "launchAzimuth:" at (0, 2).
-		print ROUND(launchAzimuth, 3)+"   " at (22, 2).
+		print "launchAzimuth:" at (0, 4).
+		print ROUND(launchAzimuth, 3)+"   " at (22, 4).
+		PRINT "Space4 Phase:" 		at (0,5).
 		
 		if vehicle_type = "Space4" and altitude > 200 and Space4 = 0
 		{
@@ -300,15 +305,15 @@ function GoSpace4
 		}
 		if vehicle_type = "Space4" and altitude > 2000 and Space4 = 2
 		{
-			set Space4 to 2.5.
+			set Space4 to 3.
 			set new_PITCH to 70.
 			update_phase_title("@ALT:002km, PITCH: "+new_PITCH, 0, true, 6, 0).
 		}
-		if vehicle_type = "Space4" and altitude > 10000 and Space4 = 2.5
-		{
-			set Space4 to 3.
-			update_phase_title("@ALT:010km, Azimute correction.", 0, true, 6, 0).
-		}
+		// if vehicle_type = "Space4" and altitude > 10000 and Space4 = 2.5
+		// {
+			// set Space4 to 3.
+			// update_phase_title("@ALT:010km, Azimute correction.", 0, true, 6, 0).
+		// }
 		
 		if vehicle_type = "Space4" and altitude > 12000 and Space4 = 3
 		{
@@ -414,18 +419,18 @@ if alt:radar < 200
 		set thrust to 1.
 
 	CLEARSCREEN. PRINT " ".PRINT " ". update_phase_title("[1] LIFTOFF...",0, false).
+
+	if vehicle_type = "Space4" {
+		PRINT "Launch Time: " at (0,2).
+		PRINT_REALTIME(1951, TIME:SECONDS).		// PRINT GAME TIME
+	}
 	
 	DELETEPATH("FLIGHT_LOG.txt").
 	LOG   "TIME,   VELO,   R:ALT,  Acel,   Q" to FLIGHT_LOG_FILE.
 
-	if vehicle_type = "Space4"
-		PRINT "Space4 Phase:" 				at (0,5).
-	else
-	{
-		PRINT "Q-Max" 				at (0,2).
-		PRINT "Dynamic Pressure" 	at (0,3).
-		PRINT "q/Qmax" 				at (0,4).
-	}
+	PRINT "Q-Max" 				at (0,2).
+	PRINT "Dynamic Pressure" 	at (0,3).
+	PRINT "q/Qmax" 				at (0,4).
 	set index2 to 6.
 	set profile_stage to 0.
 

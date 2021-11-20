@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is called by main processor to Orchestrate all mission phases.
-// 18/Nov/2021
+// 20/Nov/2021
 // --------------------------------------------------------------------------------------------
 LOG   "START: main.c" to LOG_FILE.
 
@@ -79,7 +79,7 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 	if (IS_INTER_PLANETARY_MISSION) and (STATUS = "PRELAUNCH" OR STATUS = "LANDED") and (BODY:NAME = "Earth" or BODY:NAME = "Kerbin")
 	{
 		RUNPATH( "boot/Phase-Angle.c", mission_target ).	// WARP to Correct Phase Angle
-		KUniverse:QUICKSAVETO("1-Phase-Angle done").
+		// KUniverse:QUICKSAVETO("1-Phase-Angle done").
 	}
 
 	//ACTION: Launch-Orbit --------------------------------------------------------

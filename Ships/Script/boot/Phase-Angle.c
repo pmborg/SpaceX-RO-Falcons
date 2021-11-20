@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              This code is to ...
-// 16/Nov/2021
+// 20/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 parameter destBod. 		// set destBod to BODY(mission_target).
@@ -34,6 +34,7 @@ PRINT ch. wait 2.
 if (ch = "y" OR ch = "Y")
 {
 	clearscreen.
+	update_phase_title("PHASE ANGLE: WARP TIME!", 0, false).
 	//SET MAPVIEW TO TRUE.  	// goto: map view
 
 	set diff to 999.
@@ -96,11 +97,12 @@ if (ch = "y" OR ch = "Y")
 		}
 	}
 
-	set warp to 0.
-	print "We are on the correct Phase Angle" at (0, 10).
-	wait 15.
-	//clearscreen.
-	//SET MAPVIEW TO FALSE.  // map view: off
+	set warp to 0. wait 5.
+	print "We are on the correct Day for Launch" at (0, 10).
+	SET MAPVIEW TO FALSE.  // map view: off
+
+	update_phase_title("PHASE ANGLE: COMPLETED", 0, false).
+	PRINT_REALTIME(1951, TIME:SECONDS).		// PRINT GAME TIME
 
 	PRINT "Phase Angle, complete " at (0, 12).
 	PRINT "Press [ENTER] to continue." at (0, 13). set ch to terminal:input:getchar().

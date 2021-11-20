@@ -100,7 +100,7 @@ function display_speed_kmh
 	
 	if vehicle_type = "Space4" {
 		set NormalOrbitAngle to getNormalOrbitAngle().
-		print "Rel. angle to target: " at (0,indice+0).	print ROUND (getNormalOrbitAngle(), 4)+"    " at (xpos,indice+0).
+		print "Rel. angle to target: " at (0,indice+0).	print ROUND (getNormalOrbitAngle(), 3)+"    " at (xpos,indice+0).
 	}
 	PRINT "Altitude: "		 	at (0,indice+1).	PRINT ROUND(h0/1000,1)+" km   "		 	at (xpos,indice+1).
 	PRINT "Speed: "				at (0,indice+2).	PRINT ROUND(v0*3.6,1)+" km/h   "		at (xpos,indice+2).
