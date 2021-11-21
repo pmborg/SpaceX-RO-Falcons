@@ -125,27 +125,28 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 			set max to 200.
 		if vehicle_type = "Space4" and maxthrust = 0
 			AG2 ON.
-		if alt:radar < 8000
-			set max to 100.
-		if alt:radar < 4000 {
-			set max to 50.
-			set err to 1.
-		}
-		if alt:radar < 1000
-			set max to 20.
-		if alt:radar < 500
-			set max to 6.
-		if alt:radar < 500
-			GEAR ON.	// retract gear
-		if alt:radar < 300 {
-			set max to 6.
-		}
-		if alt:radar < 200 {
-			set max to 3.
-		}
 	}
-	
-	if alt:radar < 7500 //and x=0.5
+
+	if alt:radar < 8000
+		set max to 100.
+	if alt:radar < 4000 {
+		set max to 50.
+		set err to 1.
+	}
+	if alt:radar < 1000
+		set max to 20.
+	if alt:radar < 500
+		set max to 6.
+	if alt:radar < 500
+		GEAR ON.	// retract gear
+	if alt:radar < 300 {
+		set max to 6.
+	}
+	if alt:radar < 200 {
+		set max to 3.
+	}
+		
+	if alt:radar < 7500 and x<1
 	{
 		if vehicle_sub_type <> "SN20-Profile" and vehicle_company = "SpaceX" 
 			activateOneEngine().
