@@ -105,8 +105,12 @@ if vehicle_type = "Space4"
 	set h to 0.
 	until cond = 1
 	{
-		//set BURN to NODE(TIME:seconds+25*24*60*60-h*60*60,-1146.29880035088,988.645860942838,2737.77817934923).
-		set BURN to NODE(TIME:seconds+25*24*60*60-h*60*60,544.528653172508,783.215485794892,1212.6127913971).
+
+		// time – TimeSpan (ETA), TimeStamp (UT), or Scalar (UT)
+		// radial – (m/s) Delta-V in radial-out direction
+		// normal – (m/s) Delta-V normal to orbital plane
+		// prograde – (m/s) Delta-V in prograde direction
+		set BURN to NODE(TIME:seconds+25*24*60*60-h*60*60,544.528653172508,783.215485794892,97+1212.6127913971).
 		ADD BURN.
 		
 		print "BURN: "+BURN+"        " 							 		 at (0,9).

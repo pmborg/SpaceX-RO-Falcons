@@ -57,7 +57,7 @@ until alt:radar < 1000000
 	set err to 1.	
 	set error to err*(Vdown-max).
 	
-	PRINT "Vdown: " + ROUND(Vdown) at (0,2).
+	PRINT "Vertical Vector Speed(Vdown): " + ROUND(Vdown) at (0,2).
 	if max+10 < Vdown {
 		if maxthrust > 0
 			set thrust to error*((1000*SHIP:MASS*g)/maxthrust).
@@ -97,7 +97,8 @@ if vehicle_type <> "Space4"
 	RCS ON.
 set breakspeed to 1000.
 PRINT "@<100km   " at (20,1).
-SET x to 0.
+
+SET x to 0.0.
 set err to 5.
 set t to 0.
 SET Vdown TO 1.
@@ -109,13 +110,14 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 	{
 		if alt:radar < 100000 	//<100km
 			set max to 500.
-		if alt:radar < 75000	//<060km
+		if alt:radar < 80000 and x = 0	//<060km
 		{
 			set max to 400.	
 			UNLOCK STEERING.
 			RCS ON.
 			sas on. wait 1.
 			set sasmode TO "retrograde". wait 1.
+			//set x to 0.5.
 		}
 		if alt:radar < 55000	//<030km
 			set max to 300.
@@ -143,7 +145,7 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 		}
 	}
 	
-	if alt:radar < 7500 and x=0 
+	if alt:radar < 7500 //and x=0.5
 	{
 		if vehicle_sub_type <> "SN20-Profile" and vehicle_company = "SpaceX" 
 			activateOneEngine().
@@ -226,7 +228,8 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 		SET err TO 0.80.
 	}
 
-	PRINT "Vdown: " + ROUND(Vdown)+" m/s    " at (0,3).
+	//PRINT "Vdown: " + ROUND(Vdown)+" m/s    " at (0,3).
+	PRINT "Vertical Vector Speed(Vdown): " + ROUND(Vdown) +" m/s    " at (0,3).
 	PRINT "alt:radar: "+ROUND(alt:radar)+" m     " at (0,4).
 	PRINT "Next Max-Speed: " + ROUND(max) + " m/s     " at (0,5).
 	PRINT "throttle: " + ROUND(thrust) + "     " at (0,6).

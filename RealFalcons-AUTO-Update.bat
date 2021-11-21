@@ -7,6 +7,7 @@ echo
 echo "Upgrading all Dependency Mods:"
 ckan.exe upgrade --all
 ckan.exe upgrade --headless KOS="1:1.2.1.0"
+ckan.exe upgrade --headless RealFuels="rf-v12.9.1"
 
 echo "RE-INSTALLING LATEST: Pmborg-RealFalcons"
 set KSPTEMP=%TEMP%\ksp~%RANDOM%.tmp

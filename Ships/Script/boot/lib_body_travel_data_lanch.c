@@ -83,7 +83,7 @@ if RealSolarSystemMod = true and mission_target:NAME <> "Earth"
 	set transferAngle to (180-Target_Move).
 	print "Best transferAngle: " + ROUND (transferAngle,3).		//transferAngle: 44.15 degrees (OPTIMUM)
 	
-	set phaseAngle to transferAngle.						//phaseAngle (CURRENT)
+	set phaseAngle to transferAngle.							//phaseAngle (CURRENT)
 	
 	wait 2.
 }

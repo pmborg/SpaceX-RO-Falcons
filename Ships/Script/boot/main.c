@@ -203,7 +203,7 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 	{
 		CLEARSCREEN. print " ". print " ".
 		update_phase_title("ACTION: Break & LAND", 1, false).
-		if NOT EXISTS("orbit_target.txt")
+		if NOT EXISTS("orbit_target.txt") and periapsis > 0
 		{
 			//Decrease orbit to PE: 300km
 			update_phase_title("Process Low Orbit", 1, false).
