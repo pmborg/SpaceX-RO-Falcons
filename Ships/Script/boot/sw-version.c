@@ -8,9 +8,9 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              Used to specify the SW version and the diferent types of profiles supported.
-// 20/Nov/2021
+// 28/Nov/2021
 // --------------------------------------------------------------------------------------------
-set version_str to "SW-Ver: 1.21.11.20".
+set version_str to "SW-Ver: 1.21.11.28".
 //                          #.YY.MM.DD
 
 LOG   "START: sw-version.c" to LOG_FILE.
@@ -170,7 +170,9 @@ if SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5" or
    SHIP_NAME = "PMBT-SpaceX Falcon Heavy v1.2 Block-5 LEM2"
     declare global vehicle_type to "Falcon Heavy".          // BASE: Falcon-9 v1.2Blk:5 
 else
-	if SHIP_NAME = "Space4-KSP1.12" or SHIP_NAME = "Space4.1-KSP1.12" or SHIP_NAME = "Space4.2-KSP1.12"
+	if SHIP_NAME = "Space4-KSP1.12" or SHIP_NAME = "Space4.1-KSP1.12" 
+	or SHIP_NAME = "Space4.2-KSP1.12" or SHIP_NAME = "Space4.3-KSP1.12"
+	or SHIP_NAME = "Space4.2B-KSP1.12" or SHIP_NAME = "Space4.2C-KSP1.12"
 	{
 		declare global vehicle_type to "Space4".         	// BASE: Space4-KSP1_12
 		set vehicle_company to "PMBORG".

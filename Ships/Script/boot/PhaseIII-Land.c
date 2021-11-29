@@ -9,7 +9,7 @@
 // Purpose: 
 //              	- Used to land any where near by, (sample: after de-orbit on Mun or Moon)
 //                    used in missions (Beyond Earth)
-// 08/Nov/2021
+// 29/Nov/2021
 // --------------------------------------------------------------------------------------------
 
 CLEARSCREEN.
@@ -206,7 +206,7 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 	else
 		set thrust to t.
 	
-	if alt:radar < 200 and x < 1
+	if alt:radar < 200 and x < 2
 	{
 		PRINT "(KISS mode)" at (0,2).
 		set x to 2.
