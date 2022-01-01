@@ -50,8 +50,8 @@ if not exist buildID64.txt (
     REM General Base Stuff:
     ckan.exe install --headless --allow-incompatible --no-recommends CraftManager HangerExtenderExtended MoarFEConfigs DraggableNavball
 
-    ckan.exe install --headless --allow-incompatible --no-recommends BetterCrewAssignment KerbalAlarmClock Trajectories PatchManager 
-    
+    ckan.exe install --headless --allow-incompatible --no-recommends BetterCrewAssignment KerbalAlarmClock Trajectories PatchManager KerbalJointReinforcementNext
+	
     ckan.exe install --headless --allow-incompatible --no-recommends AmpYearPowerManager DMagicScienceAnimate 
     ckan.exe install --headless --allow-incompatible --no-recommends CommunityTechTree 
     ckan.exe install --headless --allow-incompatible --no-recommends B9PartSwitch KSP-Recall 
@@ -96,9 +96,6 @@ if not exist buildID64.txt (
 
     REM To show FPS (press F8 and drag it with mouse)
     ckan.exe install --headless --allow-incompatible --no-recommends ShowFPS
-
-	ckan.exe install --headless --allow-incompatible --no-recommends RealPlume-StockConfigs RealPlume
-	ckan.exe install --headless --allow-incompatible --no-recommends EnvironmentalVisualEnhancements
 
     REM INSTALL: ISS (International SpaceStation) Dep-1:
     set KSPTEMP=%TEMP%\ksp~%RANDOM%.tmp
@@ -166,7 +163,8 @@ if not exist buildID64.txt (
     echo "Please keep KOS at this version (1:1.2.1.0), and for future updates run scipt: RealFalcons-AUTO-Update.bat"
     
     REM call ULTRA-EVO-INSTALLER-v1.0-KSP1.11+.bat
-    
+    call "EVO-INSTALLER.bat"
+	
     REM ADD StarShip
     ckan.exe install --headless --allow-incompatible --no-recommends AT-Utils Waterfall TundraExploration
     
