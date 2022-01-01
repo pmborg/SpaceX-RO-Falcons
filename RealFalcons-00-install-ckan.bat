@@ -5,13 +5,16 @@ if not exist "%TEMP%" mkdir %TEMP%
 cd /D %~dp0
 
 :CHOICE
-REM 1.8.1:  2010.10.25 (not sup.)
-REM 1.9.1:  2020.02.21
-REM 1.10.1: 2020.07.21
-REM 1.11.2: 2021.03.03
-REM 1.12:   2021.06.17
-REM 1.12.1: 2021.06.24
-REM 1.12.2: 2021.07.28
+REM 1.8.1:  2010.10.25 2694 (not sup.)
+REM 1.9.1:  2020.02.21 2788
+REM 1.10.1: 2020.07.21 2939
+REM 1.11.2: 2021.03.03 3077
+REM 1.12.0: 2021.06.17 3140
+REM 1.12.1: 2021.06.24 3142
+REM 1.12.2: 2021.07.28 3167
+REM 1.12.3: 2021.11.02 3173
+
+set c=0
 
 REM 9:
 type buildID64.txt | find "2020.02"
@@ -42,7 +45,17 @@ if %errorlevel% == 0 (
 	set c=12
 	goto KSP
 )
+type buildID64.txt | find "2021.11"
+if %errorlevel% == 0 ( 
+	set c=12
+	goto KSP
+)
 
+if /I "%c%" EQU "0" goto :CHOICEMENU
+echo "Detected KSP Version (1.%c%)"
+goto :KSP
+
+:CHOICEMENU
 echo valid numbers are:
 REM 
 echo 9

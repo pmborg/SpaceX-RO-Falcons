@@ -8,9 +8,9 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //              Used to specify the SW version and the diferent types of profiles supported.
-// 28/Nov/2021
+// 29/Nov/2021
 // --------------------------------------------------------------------------------------------
-set version_str to "SW-Ver: 1.21.11.28".
+set version_str to "SW-Ver: 1.21.11.29".
 //                          #.YY.MM.DD
 
 LOG   "START: sw-version.c" to LOG_FILE.

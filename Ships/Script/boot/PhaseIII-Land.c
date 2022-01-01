@@ -102,22 +102,36 @@ SET x to 0.0.
 set err to 5.
 set t to 0.
 SET Vdown TO 1.
-
 lock steering to retrograde. 
-until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
+set error to 1.
+
+PRINT "Vertical Vector Speed(Vdown): " at (0,3).
+PRINT "alt:radar: " at (0,4).
+PRINT "Next Max-Speed: " at (0,5).
+//PRINT "throttle: " at (0,6).
+PRINT "error: " at (0,6).
+PRINT "err: " at (0,7).
+PRINT "g: " at (0,8).
+PRINT "mass: " at (0,9).
+PRINT "thrust: " at (0,10).
+PRINT "maxthrust: " at (0,11).
+PRINT "t: " at (0,12).
+PRINT "x: " at (0,13).
+
+until Vdown < 1 and alt:radar < 100
 {
 	if x = 0
 	{
 		if alt:radar < 100000 	//<100km
 			set max to 500.
-		if alt:radar < 80000 and x = 0	//<060km
+		if alt:radar < 85000 and x = 0	//<060km
 		{
 			set max to 400.	
 			UNLOCK STEERING.
 			RCS ON.
 			sas on. wait 1.
 			set sasmode TO "retrograde". wait 1.
-			//set x to 0.5.
+			set x to 0.5.
 		}
 		if alt:radar < 55000	//<030km
 			set max to 300.
@@ -173,16 +187,6 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 		set x to 1.
 	}
 	
-	if alt:radar < 125 {
-		if vehicle_type = "SN16-Profile1"
-			set max to 1. //6m/s
-		else
-			set max to 0.5. //m/s
-	}
-	
-	set r to altitude + mission_target:radius.
-	set g to GM/(r)^2.
-	
 	if (alt:radar > 5000) 
 	{
 		set vorbit to ship:velocity:surface. //Surface!!
@@ -193,54 +197,78 @@ until Vdown < 1 //or status = "LANDED" or status = "SPLASHED"
 	} else
 		set Vdown to (-1)*verticalspeed.
 	
-	set error to err*(Vdown-max).
-	if error <= 0
-		set error to 4.
-	
-	PRINT "(mode:2)" at (0,2).
-	if maxthrust > 0
-		set t to (error/5)*((mass*g)/maxthrust).
-		
-	if t < 0.20 and vehicle_type <> "Space4"
-		set thrust to 0.20.
-	else
-		set thrust to t.
-	
-	if alt:radar < 200 and x < 2
+	if alt:radar < 200 
 	{
-		PRINT "(KISS mode)" at (0,2).
-		set x to 2.
-		if KUniverse:ActiveVessel = SHIP and vehicle_sub_type <> "SN20-Profile" and vehicle_company = "SpaceX" 
-			set TARGET to LandingZone.
-		unlock steering. 
-		SAS ON.
-		RCS ON.
-		if vehicle_sub_type = "SN20-Profile" or vehicle_type = "Space4"
+		if x < 2
 		{
-			set sasmode to "STABILITY".
-		}
-		else
-		{
-			SET MAPVIEW TO FALSE. wait 0.1. set sasmode TO "RETROGRADE".
+			set x to 2.
+			if KUniverse:ActiveVessel = SHIP and vehicle_sub_type <> "SN20-Profile" and vehicle_company = "SpaceX" 
+				set TARGET to LandingZone.
+			unlock steering. 
+			SAS ON.
+			RCS ON.
+			if vehicle_sub_type = "SN20-Profile" or vehicle_type = "Space4"
+			{
+				set sasmode to "STABILITY".
+			}
+			else
+			{
+				SET MAPVIEW TO FALSE. wait 0.1. 
+				set sasmode TO "RETROGRADE". wait 0.1. 
+			}
 		}
 		if vehicle_type = "SN16-Profile1"
 			SET err TO 0.50.
 
-		SET err TO 0.80.
+		if vehicle_type = "Space4"
+			SET err TO 0.95.
+		else
+			SET err TO 0.80.
 	}
 
-	//PRINT "Vdown: " + ROUND(Vdown)+" m/s    " at (0,3).
-	PRINT "Vertical Vector Speed(Vdown): " + ROUND(Vdown) +" m/s    " at (0,3).
-	PRINT "alt:radar: "+ROUND(alt:radar)+" m     " at (0,4).
-	PRINT "Next Max-Speed: " + ROUND(max) + " m/s     " at (0,5).
-	PRINT "throttle: " + ROUND(thrust) + "     " at (0,6).
-	PRINT "error: " + ROUND(error,1) + "     " at (0,7).
-	PRINT "g: " + ROUND(g,2) + "     " at (0,8).
-	PRINT "mass: " + ROUND(SHIP:MASS) + " t     " at (0,9).
-	PRINT "thrust: " + ROUND(thrust,1) + " kN     " at (0,10).
-	PRINT "maxthrust: " + ROUND(maxthrust) + " kN     " at (0,11).
-	PRINT "t: " + ROUND(t,1) + "     " at (0,12).
-	PRINT "x: " + x + "     " at (0,13).
+	if alt:radar < 125 {
+		// if vehicle_type = "SN16-Profile1"
+			// set max to 1. 	//6m/s
+		// else
+			// set max to 0.5. //m/s
+		
+		set max to 0.75.
+		set error to err*((Vdown+error/2)-max).
+	}
+	else
+		set error to err*(Vdown-max).
+
+	if error <= 0
+		set error to 4.
+	
+	set r to altitude + mission_target:radius.
+	set g to GM/(r)^2.
+	set max_t to maxthrust.
+	if max_t > 0
+		set t to (error/5)*((mass*g)/max_t).
+	
+	if t < 0.20 and vehicle_type <> "Space4"
+		set thrust to 0.20.
+	else
+		set thrust to t.
+
+	if  x < 2	
+		PRINT "(mode:2)" at (0,2).
+	else
+		PRINT "(KISS mode)" at (0,2).
+
+	PRINT ROUND(Vdown) +" m/s    " at (30,3).
+	PRINT ROUND(alt:radar)+" m     " at (30,4).
+	PRINT ROUND(max,1) + " m/s     " at (30,5).
+	//PRINT ROUND(thrust) + "     " at (30,6).
+	PRINT ROUND(error,1) + "     " at (30,6).
+	PRINT ROUND(err,2) + "     " at (30,7).
+	PRINT ROUND(g,2) + "     " at (30,8).
+	PRINT ROUND(SHIP:MASS) + " t     " at (30,9).
+	PRINT ROUND(thrust*100,1) + " %     " at (30,10).
+	PRINT ROUND(maxthrust) + " kN     " at (30,11).
+	PRINT ROUND(t,1) + "     " at (30,12).
+	PRINT x + "     " at (30,13).
 }
 
 PRINT vehicle_type+" has: "+status at (0,25).
@@ -252,5 +280,7 @@ WAIT 10.
 RCS OFF.
 SAS OFF.
 //BRAKES OFF.	// Air Breaks off
+if vehicle_type = "Space4"
+	BRAKES ON.
 shutDownAllEngines().
 PRINT "All engines, secure and shutdown" at (0,26).

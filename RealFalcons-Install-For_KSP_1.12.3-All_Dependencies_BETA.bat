@@ -80,7 +80,7 @@ if not exist buildID64.txt (
 
     REM RealismOverhaul:
     echo "NOTE FOR NEXT Multi select option choose: RealismOverhaul"
-    ckan.exe install --allow-incompatible --no-recommends RealFuels
+    ckan.exe install --allow-incompatible --no-recommends RealFuels="rf-v12.9.1"
     ckan.exe install --headless --allow-incompatible --no-recommends RealHeat
     ckan.exe install --headless --allow-incompatible --no-recommends ROTanks ROSolar 
 
