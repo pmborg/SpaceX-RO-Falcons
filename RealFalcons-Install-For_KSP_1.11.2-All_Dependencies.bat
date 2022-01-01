@@ -50,7 +50,7 @@ if not exist buildID64.txt (
     REM General Base Stuff:
     ckan.exe install --headless --allow-incompatible --no-recommends CraftManager HangerExtenderExtended MoarFEConfigs DraggableNavball
 
-    ckan.exe install --headless --allow-incompatible --no-recommends BetterCrewAssignment KerbalAlarmClock Trajectories PatchManager KerbalJointReinforcementNext
+    ckan.exe install --headless --allow-incompatible --no-recommends BetterCrewAssignment KerbalAlarmClock Trajectories PatchManager
 	
     ckan.exe install --headless --allow-incompatible --no-recommends AmpYearPowerManager DMagicScienceAnimate 
     ckan.exe install --headless --allow-incompatible --no-recommends CommunityTechTree 
@@ -146,7 +146,7 @@ if not exist buildID64.txt (
     move GameData\FerramAerospaceResearch %NONEED%
     move GameData\AJE %NONEED%
     move GameData\EngineGroupController %NONEED%
-    move GameData\RSSDateTime %NONEED%
+    REM move GameData\RSSDateTime %NONEED%
     move GameData\PatchManager %NONEED%
     move GameData\ShipEffectsContinued %NONEED%
     move GameData\TextureReplacer %NONEED%
@@ -162,14 +162,14 @@ if not exist buildID64.txt (
     echo "Installation ended."
     echo "Please keep KOS at this version (1:1.2.1.0), and for future updates run scipt: RealFalcons-AUTO-Update.bat"
     
-    REM call ULTRA-EVO-INSTALLER-v1.0-KSP1.11+.bat
-    call "EVO-INSTALLER.bat"
-	
     REM ADD StarShip
     ckan.exe install --headless --allow-incompatible --no-recommends AT-Utils Waterfall TundraExploration
     
 	REM Remove duplicated dll:
 	move GameData\KXAPI\Plugins\KatLib.dll GameData\KXAPI\Plugins\KatLib.dll_
+	
+    REM call ULTRA-EVO-INSTALLER-v1.0-KSP1.11+.bat
+    call "EVO-INSTALLER.bat"
     PAUSE
 :No
     EXIT
