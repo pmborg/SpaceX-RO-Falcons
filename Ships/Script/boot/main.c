@@ -122,7 +122,7 @@ if NOT EXISTS("resources.txt") 								// Refuelled already?, SKIP "GO-JOURNEY",
 	// ACTION: ADJUST Normal/Inclination?
 	// --------------------------------------------------------------------------------------------
 	// Adjust mission inclination?
-	if (vehicle_type <> "SN9-Profile1" and vehicle_sub_type <> "SN16-Profile1" and vehicle_sub_type <> "SN20-Profile")
+	if ( vehicle_company <> "SpaceX" )
 	{
 		if NOT EXISTS("normal.txt") {
 			LOG "part-1-change_inclination" to LOG_FILE.
