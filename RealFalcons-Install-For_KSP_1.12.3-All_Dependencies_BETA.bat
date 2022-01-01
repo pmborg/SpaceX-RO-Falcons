@@ -33,41 +33,21 @@ if not exist buildID64.txt (
     if "%TEMP%" == "" (echo The TEMP variable must be set. ;goto :No)
     if not exist "%TEMP%" mkdir %TEMP%
 
-	call RealFalcons-00-install-ckan
-	
+    call RealFalcons-00-install-ckan
+    
     REM echo "Get CKAN Version: v1.29.2"
     REM powershell -command "& { iwr https://github.com/KSP-CKAN/CKAN/releases/download/v1.29.2/ckan.exe -OutFile ckan.exe }"
-
-    REM ckan.exe ksp default auto
-    REM ckan.exe repo add Kopernicus_BE http://glacialsoftware.net/CKAN/Kopernicus_BE.tar.gz
-    REM ckan.exe update
-    REM ckan.exe cache reset
-    REM ckan.exe compat add 1.12
-    REM ckan.exe compat add 1.11
-    REM ckan.exe compat add 1.10
-    REM ckan.exe compat add 1.10.1
-    REM ckan.exe compat add 1.10.0
-    REM ckan.exe compat add 1.9
-    REM ckan.exe compat add 1.9.0
-    REM ckan.exe compat add 1.8.1
 
     REM DOWNLOAD Latest:
     REM echo "Get CKAN Latest Version"
     REM powershell -command "& { $latestRelease = (Invoke-WebRequest https://github.com/KSP-CKAN/CKAN/releases/latest -Headers @{'Accept'='application/json'}) ; $json = $latestRelease.Content | ConvertFrom-Json ; $LATESTVERSION = $json.tag_name ; iwr https://github.com/KSP-CKAN/CKAN/releases/download/$LATESTVERSION/ckan.exe -OutFile ckan.exe }"
 
-    REM ckan.exe compat 1.11.2.3077
-    REM ckan.exe compat 1.11.1.3066
-    REM ckan.exe compat 1.11.0.3045
-    REM ckan.exe compat 1.10.1.2939
-    REM ckan.exe compat 1.10.0.2917
-    REM ckan.exe compat 1.9.1.2788
-    
     REM Install Normal Kopernicus
     ckan.exe install --headless --allow-incompatible --no-recommends Kopernicus
 
     REM General Base Stuff:
     ckan.exe install --headless --allow-incompatible --no-recommends CraftManager HangerExtenderExtended MoarFEConfigs DraggableNavball
-	REM KerbalXMod 
+    REM KerbalXMod 
 
     ckan.exe install --headless --allow-incompatible --no-recommends BetterCrewAssignment KerbalAlarmClock PatchManager 
     ckan.exe install --headless --allow-incompatible --no-recommends Trajectories
@@ -105,10 +85,14 @@ if not exist buildID64.txt (
 
     REM DEPS:
     ckan.exe install --headless --allow-incompatible --no-recommends AnimatedDecouplers BackgroundResources FASA HeatControl KerbalEngineerRedux 
-	REM BUG FIXED by pmborg: (faster version)
-	copy /Y GameData\KerbalEngineer\KerbalEngineer.dll_ GameData\KerbalEngineer\KerbalEngineer.dll
-	
+    REM BUG FIXED by pmborg: (faster version)
+    copy /Y GameData\KerbalEngineer\KerbalEngineer.dll_ GameData\KerbalEngineer\KerbalEngineer.dll
+                                                                          
+    
     ckan.exe install --headless --allow-incompatible --no-recommends MechJeb2
+                
+    mkdir Ships_VAB
+    move Ships\VAB\*.* Ships_VAB                 
     ckan.exe install --headless --allow-incompatible --no-recommends RetractableLiftingSurface SpaceXLaunchVehicles USITools SpaceXLegs
     ckan.exe install --headless --allow-incompatible --no-recommends BDAnimationModules DockingPortAlignmentIndicator REPOSoftTech-Agencies TextureReplacer
 
@@ -129,6 +113,7 @@ if not exist buildID64.txt (
     powershell.exe -NoP -NonI -Command "Expand-Archive 'HabTech2-0.2.0.zip' '%KSPTEMP%'"
     mkdir GameData\HabTech2
     xcopy /S %KSPTEMP%\HabTech2_0.2.0\GameData\HabTech2 GameData\HabTech2
+                           
     mkdir GameData\Benjee10_sharedAssets
     xcopy /S %KSPTEMP%\HabTech2_0.2.0\GameData\Benjee10_sharedAssets GameData\Benjee10_sharedAssets
     move HabTech2-0.2.0.zip %KSPTEMP%
@@ -136,6 +121,7 @@ if not exist buildID64.txt (
     REM INSTALL: ISS (International SpaceStation) Dep-2:
     powershell -command "& { iwr https://archive.org/download/NewTantares-v18.0/C0E93925-NewTantares-v18.0.zip -OutFile NewTantares-v18.0.zip }"
     powershell.exe -NoP -NonI -Command "Expand-Archive 'NewTantares-v18.0.zip' '%KSPTEMP%'"
+                                       
     mkdir GameData\Tantares
     xcopy /S %KSPTEMP%\GameData\Tantares GameData\Tantares
     move NewTantares-v18.0.zip %KSPTEMP%
@@ -171,25 +157,25 @@ if not exist buildID64.txt (
     move GameData\AJE %NONEED%
     move GameData\EngineGroupController %NONEED%
     move GameData\RSSDateTime %NONEED%
-	move GameData\PatchManager %NONEED%
-	move GameData\ShipEffectsContinued %NONEED%
-	move GameData\TextureReplacer %NONEED%
-	move GameData\EngineLightRelit %NONEED%
-	
-	REM call OPTIONAL-Add_Katniss.s.Cape.Canaveral.bat
-	
+    move GameData\PatchManager %NONEED%
+    move GameData\ShipEffectsContinued %NONEED%
+    move GameData\TextureReplacer %NONEED%
+    move GameData\EngineLightRelit %NONEED%
+    
+    REM call OPTIONAL-Add_Katniss.s.Cape.Canaveral.bat
+    
     echo set kspver to 1.12. > Ships\Script\kspver.c.
 
     REM Add a filter to PMBORG RO ships, only:
-	mkdir Ships_VAB
-	move Ships\VAB\*.* Ships_VAB
+    mkdir Ships_VAB
+    move Ships\VAB\*.* Ships_VAB
 
     echo.
     echo "Installation ended."
     echo "Please keep KOS at this version (1:1.2.1.0), and for future updates run scipt: RealFalcons-AUTO-Update.bat"
-	
-	call ULTRA-EVO-INSTALLER-v1.0-KSP1.11+.bat
-	
+    
+    REM call ULTRA-EVO-INSTALLER-v1.0-KSP1.11+.bat
+    
     PAUSE
 :No
     EXIT
