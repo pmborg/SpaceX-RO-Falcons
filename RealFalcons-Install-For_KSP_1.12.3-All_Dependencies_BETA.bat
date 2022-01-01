@@ -47,7 +47,6 @@ if not exist buildID64.txt (
 
     REM General Base Stuff:
     ckan.exe install --headless --allow-incompatible --no-recommends CraftManager HangerExtenderExtended MoarFEConfigs DraggableNavball
-    REM KerbalXMod 
 
     ckan.exe install --headless --allow-incompatible --no-recommends BetterCrewAssignment KerbalAlarmClock PatchManager 
     ckan.exe install --headless --allow-incompatible --no-recommends Trajectories
@@ -65,8 +64,7 @@ if not exist buildID64.txt (
     ckan.exe install --headless --allow-incompatible --no-recommends ROTanks ROSolar 
 
     REM RSS (Real Solar System):
-    REM ckan.exe install --headless --allow-incompatible --no-recommends RSSDateTimeFormatter
-    ckan.exe install --headless --allow-incompatible --no-recommends RSSTextures4096 KSCSwitcher RealSolarSystem
+    ckan.exe install --headless --allow-incompatible --no-recommends RSSTextures4096 RSSDateTimeFormatter KSCSwitcher RealSolarSystem
     
 
     REM SmokeScreen (already as dep)
@@ -88,23 +86,22 @@ if not exist buildID64.txt (
     REM BUG FIXED by pmborg: (faster version)
     copy /Y GameData\KerbalEngineer\KerbalEngineer.dll_ GameData\KerbalEngineer\KerbalEngineer.dll
                                                                           
-    
     ckan.exe install --headless --allow-incompatible --no-recommends MechJeb2
                 
     mkdir Ships_VAB
-    move Ships\VAB\*.* Ships_VAB                 
+    move Ships\VAB\*.* Ships_VAB
     ckan.exe install --headless --allow-incompatible --no-recommends RetractableLiftingSurface SpaceXLaunchVehicles USITools SpaceXLegs
     ckan.exe install --headless --allow-incompatible --no-recommends BDAnimationModules DockingPortAlignmentIndicator REPOSoftTech-Agencies TextureReplacer
 
     REM Acelerometers needed to Falcons:
     ckan.exe install --headless --allow-incompatible --no-recommends TantaresSP
 
-    REM ADD StarShip
-    ckan.exe install --headless --allow-incompatible --no-recommends AT-Utils Waterfall TundraExploration
-
     REM To show FPS (press F8 and drag it with mouse)
     ckan.exe install --headless --allow-incompatible --no-recommends ShowFPS
 
+	ckan.exe install --headless --allow-incompatible --no-recommends RealPlume-StockConfigs RealPlume
+	ckan.exe install --headless --allow-incompatible --no-recommends EnvironmentalVisualEnhancements
+	
     REM INSTALL: ISS (International SpaceStation) Dep-1:
     set KSPTEMP=%TEMP%\ksp~%RANDOM%.tmp
     MKDIR %KSPTEMP%
@@ -161,21 +158,24 @@ if not exist buildID64.txt (
     move GameData\ShipEffectsContinued %NONEED%
     move GameData\TextureReplacer %NONEED%
     move GameData\EngineLightRelit %NONEED%
-    
-    REM call OPTIONAL-Add_Katniss.s.Cape.Canaveral.bat
-    
-    echo set kspver to 1.12. > Ships\Script\kspver.c.
 
     REM Add a filter to PMBORG RO ships, only:
     mkdir Ships_VAB
     move Ships\VAB\*.* Ships_VAB
 
+    REM call OPTIONAL-Add_Katniss.s.Cape.Canaveral.bat
+    echo set kspver to 1.12. > Ships\Script\kspver.c.
     echo.
     echo "Installation ended."
     echo "Please keep KOS at this version (1:1.2.1.0), and for future updates run scipt: RealFalcons-AUTO-Update.bat"
     
     REM call ULTRA-EVO-INSTALLER-v1.0-KSP1.11+.bat
     
+    REM ADD StarShip
+    ckan.exe install --headless --allow-incompatible --no-recommends AT-Utils Waterfall TundraExploration
+	
+	REM Remove duplicated dll:
+	move GameData\KXAPI\Plugins\KatLib.dll GameData\KXAPI\Plugins\KatLib.dll_
     PAUSE
 :No
     EXIT

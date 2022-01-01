@@ -49,7 +49,6 @@ if not exist buildID64.txt (
 
     REM General Base Stuff:
     ckan.exe install --headless --allow-incompatible --no-recommends CraftManager HangerExtenderExtended MoarFEConfigs DraggableNavball
-    REM KerbalXMod
 
     ckan.exe install --headless --allow-incompatible --no-recommends BetterCrewAssignment KerbalAlarmClock Trajectories PatchManager 
     
@@ -87,7 +86,6 @@ if not exist buildID64.txt (
     copy /Y GameData\KerbalEngineer\KerbalEngineer.dll_ GameData\KerbalEngineer\KerbalEngineer.dll
     ckan.exe install --headless --allow-incompatible --no-recommends MechJeb2
     
-    REM Add a filter to PMBORG RO ships, only:
     mkdir Ships_VAB
     move Ships\VAB\*.* Ships_VAB
     ckan.exe install --headless --allow-incompatible --no-recommends RetractableLiftingSurface SpaceXLaunchVehicles USITools SpaceXLegs
@@ -98,6 +96,9 @@ if not exist buildID64.txt (
 
     REM To show FPS (press F8 and drag it with mouse)
     ckan.exe install --headless --allow-incompatible --no-recommends ShowFPS
+
+	ckan.exe install --headless --allow-incompatible --no-recommends RealPlume-StockConfigs RealPlume
+	ckan.exe install --headless --allow-incompatible --no-recommends EnvironmentalVisualEnhancements
 
     REM INSTALL: ISS (International SpaceStation) Dep-1:
     set KSPTEMP=%TEMP%\ksp~%RANDOM%.tmp
@@ -154,6 +155,10 @@ if not exist buildID64.txt (
     move GameData\TextureReplacer %NONEED%
     move GameData\EngineLightRelit %NONEED%
     
+    REM Add a filter to PMBORG RO ships, only:
+    mkdir Ships_VAB
+    move Ships\VAB\*.* Ships_VAB
+	
     REM call OPTIONAL-Add_Katniss.s.Cape.Canaveral.bat
     echo set kspver to 1.11. > Ships\Script\kspver.c.
     echo.
@@ -165,6 +170,8 @@ if not exist buildID64.txt (
     REM ADD StarShip
     ckan.exe install --headless --allow-incompatible --no-recommends AT-Utils Waterfall TundraExploration
     
+	REM Remove duplicated dll:
+	move GameData\KXAPI\Plugins\KatLib.dll GameData\KXAPI\Plugins\KatLib.dll_
     PAUSE
 :No
     EXIT
