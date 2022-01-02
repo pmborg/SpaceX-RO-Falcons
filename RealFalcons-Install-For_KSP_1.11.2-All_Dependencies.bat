@@ -84,7 +84,7 @@ if not exist buildID64.txt (
     ckan.exe install --headless --allow-incompatible --no-recommends AnimatedDecouplers BackgroundResources FASA HeatControl KerbalEngineerRedux 
     REM BUG FIXED by pmborg: (faster version)
     copy /Y GameData\KerbalEngineer\KerbalEngineer.dll_ GameData\KerbalEngineer\KerbalEngineer.dll
-    ckan.exe install --headless --allow-incompatible --no-recommends MechJeb2
+    ckan.exe install --headless --allow-incompatible --no-recommends MechJeb2 PersistentThrust
     
     mkdir Ships_VAB
     move Ships\VAB\*.* Ships_VAB

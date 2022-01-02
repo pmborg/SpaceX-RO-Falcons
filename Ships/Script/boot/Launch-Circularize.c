@@ -8,7 +8,7 @@
 // Latest Download: - https://github.com/pmborg/SpaceX-RO-Falcons
 // Purpose: 
 //				Used to Circularize an orbit after Launch-Orbit.c
-// 15/Nov/2021
+// 02/Jan/2022
 // --------------------------------------------------------------------------------------------
 
 parameter FINAL_ORBIT. //Sample: 125000 or 150000 or 500000
@@ -19,9 +19,15 @@ function do_circle_step
 	set y to .5.
 	set Vo to 0.
 	set z to 0.
-	set x to 1. //x=Throttle.
-
-	RCS ON. wait 0.1.
+	if vehicle_type = "F9v1.2B5"
+	{ 
+		set x to 0.25. //x=Throttle.
+		RCS OFF. wait 0.1.
+	} else {
+		set x to 1. 	//x=Throttle.
+		RCS ON. wait 0.1.
+	}
+	
 	SET MAPVIEW TO FALSE. wait 1. set sasmode to "PROGRADE". wait 0.1.
 
 	//SETUP:
@@ -112,10 +118,15 @@ function do_circle_step
 				if vehicle_type <> "Crew Dragon 2"		
 				{
 					if x > 1
-						set x to 1.
+					{
+						if vehicle_type = "F9v1.2B5"
+							set x to 0.25. //x=Throttle.
+						else
+							set x to 1. 	//x=Throttle.
+					}
 				}else{
-					if x > 0.5.
-						set x to 0.5.	//Slow part...
+					if x > 0.25.
+						set x to 0.25.	//Slow part...
 				}
 			}
 			
