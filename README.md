@@ -68,10 +68,10 @@ The **SpaceX-RO-Falcons** Mod Introduce:
 &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   PMBT-SpaceX Falcon Heavy v1_2 Block-5.craft<br>
 
 **Supported versions are:**
-* **KSP 1.9.1** (include original ISS)<br>
-* **KSP 1.10.1** (**ISS for KSP 1.10.1 & 1.11**)<br>
-* **KSP 1.11.x** (**1.11.1 & 1.11.2** There is a new install bat file, to install this version)<br>
-* **KSP 1.12.3** ( **[NEW]** )<br>
+* **KSP 1.9.1** (include original ISS: **PMB ISS HT2 & TANTARES.craft**)<br>
+* **KSP 1.10.2** (include ISS version for KSP 1.10++: **PMB ISS HT2 & TANTARES KSP1_10.craft**)<br>
+* **KSP 1.11.2** (include ISS version for KSP 1.10++: **PMB ISS HT2 & TANTARES KSP1_10.craft**)<br>
+* **KSP 1.12.3** (include ISS version for KSP 1.10++: **PMB ISS HT2 & TANTARES KSP1_10.craft**)<br>
 
 ----
 **CURRENT FLEET:**
