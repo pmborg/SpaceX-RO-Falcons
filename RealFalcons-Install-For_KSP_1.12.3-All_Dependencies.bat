@@ -45,8 +45,12 @@ if not exist buildID64.txt (
     REM Install Normal Kopernicus
     ckan.exe install --headless --allow-incompatible --no-recommends Kopernicus
 
+    REM TO avoid Multiple Bugs:
+	ckan.exe install --headless --allow-incompatible --no-recommends ZeroMiniAVC="1:1.1.0.2"
+	
     REM General Base Stuff:
-    ckan.exe install --headless --allow-incompatible --no-recommends CraftManager HangerExtenderExtended MoarFEConfigs DraggableNavball
+	ckan.exe install --headless --allow-incompatible --no-recommends CraftManager
+    ckan.exe install --headless --allow-incompatible --no-recommends HangerExtenderExtended MoarFEConfigs DraggableNavball
 
     ckan.exe install --headless --allow-incompatible --no-recommends BetterCrewAssignment KerbalAlarmClock Trajectories PatchManager
 	
@@ -98,26 +102,24 @@ if not exist buildID64.txt (
     REM To show FPS (press F8 and drag it with mouse)
     ckan.exe install --headless --allow-incompatible --no-recommends ShowFPS
 
-    REM INSTALL: ISS (International SpaceStation) Dep-1:
     set KSPTEMP=%TEMP%\ksp~%RANDOM%.tmp
     MKDIR %KSPTEMP%
     
-    powershell -command "& { iwr https://spacedock.info/mod/2078/HabTech2/download/0.2.0 -OutFile HabTech2-0.2.0.zip }"
-    powershell.exe -NoP -NonI -Command "Expand-Archive 'HabTech2-0.2.0.zip' '%KSPTEMP%'"
-    mkdir GameData\HabTech2
-    xcopy /S %KSPTEMP%\HabTech2_0.2.0\GameData\HabTech2 GameData\HabTech2
-                           
-    mkdir GameData\Benjee10_sharedAssets
-    xcopy /S %KSPTEMP%\HabTech2_0.2.0\GameData\Benjee10_sharedAssets GameData\Benjee10_sharedAssets
-    move HabTech2-0.2.0.zip %KSPTEMP%
+	REM INSTALL: ISS (International SpaceStation) Dep-1:
+    REM powershell -command "& { iwr https://spacedock.info/mod/2078/HabTech2/download/0.2.0 -OutFile HabTech2-0.2.0.zip }"
+    REM powershell.exe -NoP -NonI -Command "Expand-Archive 'HabTech2-0.2.0.zip' '%KSPTEMP%'"
+    REM mkdir GameData\HabTech2
+    REM xcopy /S %KSPTEMP%\HabTech2_0.2.0\GameData\HabTech2 GameData\HabTech2
+    REM mkdir GameData\Benjee10_sharedAssets
+    REM xcopy /S %KSPTEMP%\HabTech2_0.2.0\GameData\Benjee10_sharedAssets GameData\Benjee10_sharedAssets
+    REM move HabTech2-0.2.0.zip %KSPTEMP%
 
     REM INSTALL: ISS (International SpaceStation) Dep-2:
-    powershell -command "& { iwr https://archive.org/download/NewTantares-v18.0/C0E93925-NewTantares-v18.0.zip -OutFile NewTantares-v18.0.zip }"
-    powershell.exe -NoP -NonI -Command "Expand-Archive 'NewTantares-v18.0.zip' '%KSPTEMP%'"
-                                       
-    mkdir GameData\Tantares
-    xcopy /S %KSPTEMP%\GameData\Tantares GameData\Tantares
-    move NewTantares-v18.0.zip %KSPTEMP%
+    REM powershell -command "& { iwr https://archive.org/download/NewTantares-v18.0/C0E93925-NewTantares-v18.0.zip -OutFile NewTantares-v18.0.zip }"
+    REM powershell.exe -NoP -NonI -Command "Expand-Archive 'NewTantares-v18.0.zip' '%KSPTEMP%'"
+    REM mkdir GameData\Tantares
+    REM xcopy /S %KSPTEMP%\GameData\Tantares GameData\Tantares
+    REM move NewTantares-v18.0.zip %KSPTEMP%
     
     REM INSTALL: SpaceX Towers
     powershell -command "& { iwr https://spacedock.info/mod/626/SpaceX%20Launch%20Towers/download/1.7.3 -OutFile SpaceX_Launch_Towers-1.7.3.zip }"
@@ -125,15 +127,6 @@ if not exist buildID64.txt (
     mkdir GameData\Science818
     xcopy /S %KSPTEMP%\GameData\Science818 GameData\Science818
     move SpaceX_Launch_Towers-1.7.3.zip %KSPTEMP%
-
-    REM INSTALL: BETA Kopernicus for 1.12:
-    REM powershell -command "& { iwr https://github.com/Kopernicus/Kopernicus/releases/download/release-46/Kopernicus-1.12.0-46.zip -OutFile Kopernicus.zip }"
-    REM powershell.exe -NoP -NonI -Command "Expand-Archive 'Kopernicus.zip' '%KSPTEMP%'"
-    REM mkdir GameData\Kopernicus
-    REM mkdir GameData\ModularFlightIntegrator
-    REM xcopy /S /Y %KSPTEMP%\GameData\Kopernicus GameData\Kopernicus
-    REM xcopy /S /Y %KSPTEMP%\GameData\ModularFlightIntegrator GameData\ModularFlightIntegrator
-    REM move Kopernicus.zip %KSPTEMP%
 
     REM ...OR... INSTALL: EVO ULTRA:
     powershell -command "& { iwr https://github.com/Its-Just-Luci/EVO/releases/download/Alpha-v0.2a/EVO-64k.Alpha.v0.2.zip -OutFile EVO.zip }"
@@ -164,12 +157,14 @@ if not exist buildID64.txt (
     echo.
     echo "Installation ended."
     echo "Please keep KOS at this version (1:1.2.1.0), and for future updates run scipt: RealFalcons-AUTO-Update.bat"
+	echo "Please keep RealFuels at this version (rf-v12.9.1), and for future updates run scipt: RealFalcons-AUTO-Update.bat"
+	echo "Please keep ZeroMiniAVC at this version (1:1.1.0.2), and for future updates run scipt: RealFalcons-AUTO-Update.bat"
     
     REM ADD StarShip
     ckan.exe install --headless --allow-incompatible --no-recommends AT-Utils Waterfall TundraExploration
 	
 	REM Remove duplicated dll:
-	move GameData\KXAPI\Plugins\KatLib.dll GameData\KXAPI\Plugins\KatLib.dll_
+	REM move GameData\KXAPI\Plugins\KatLib.dll GameData\KXAPI\Plugins\KatLib.dll_
 	
     REM call ULTRA-EVO-INSTALLER-v1.0-KSP1.11+.bat
     call "EVO-INSTALLER.bat"
