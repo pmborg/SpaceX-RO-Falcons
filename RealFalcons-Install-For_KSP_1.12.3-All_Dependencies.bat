@@ -105,21 +105,21 @@ if not exist buildID64.txt (
     set KSPTEMP=%TEMP%\ksp~%RANDOM%.tmp
     MKDIR %KSPTEMP%
     
-	REM INSTALL: ISS (International SpaceStation) Dep-1:
-    REM powershell -command "& { iwr https://spacedock.info/mod/2078/HabTech2/download/0.2.0 -OutFile HabTech2-0.2.0.zip }"
-    REM powershell.exe -NoP -NonI -Command "Expand-Archive 'HabTech2-0.2.0.zip' '%KSPTEMP%'"
-    REM mkdir GameData\HabTech2
-    REM xcopy /S %KSPTEMP%\HabTech2_0.2.0\GameData\HabTech2 GameData\HabTech2
-    REM mkdir GameData\Benjee10_sharedAssets
-    REM xcopy /S %KSPTEMP%\HabTech2_0.2.0\GameData\Benjee10_sharedAssets GameData\Benjee10_sharedAssets
-    REM move HabTech2-0.2.0.zip %KSPTEMP%
+	REM INSTALL: Needed for Crew Dragon & ISS (International SpaceStation) Dep-1:
+    powershell -command "& { iwr https://spacedock.info/mod/2078/HabTech2/download/0.2.0 -OutFile HabTech2-0.2.0.zip }"
+    powershell.exe -NoP -NonI -Command "Expand-Archive 'HabTech2-0.2.0.zip' '%KSPTEMP%'"
+    mkdir GameData\HabTech2
+    xcopy /S %KSPTEMP%\HabTech2_0.2.0\GameData\HabTech2 GameData\HabTech2
+    mkdir GameData\Benjee10_sharedAssets
+    xcopy /S %KSPTEMP%\HabTech2_0.2.0\GameData\Benjee10_sharedAssets GameData\Benjee10_sharedAssets
+    move HabTech2-0.2.0.zip %KSPTEMP%
 
-    REM INSTALL: ISS (International SpaceStation) Dep-2:
-    REM powershell -command "& { iwr https://archive.org/download/NewTantares-v18.0/C0E93925-NewTantares-v18.0.zip -OutFile NewTantares-v18.0.zip }"
-    REM powershell.exe -NoP -NonI -Command "Expand-Archive 'NewTantares-v18.0.zip' '%KSPTEMP%'"
-    REM mkdir GameData\Tantares
-    REM xcopy /S %KSPTEMP%\GameData\Tantares GameData\Tantares
-    REM move NewTantares-v18.0.zip %KSPTEMP%
+    REM INSTALL: Needed for Crew Dragon & ISS (International SpaceStation) Dep-2:
+    powershell -command "& { iwr https://archive.org/download/NewTantares-v18.0/C0E93925-NewTantares-v18.0.zip -OutFile NewTantares-v18.0.zip }"
+    powershell.exe -NoP -NonI -Command "Expand-Archive 'NewTantares-v18.0.zip' '%KSPTEMP%'"
+    mkdir GameData\Tantares
+    xcopy /S %KSPTEMP%\GameData\Tantares GameData\Tantares
+    move NewTantares-v18.0.zip %KSPTEMP%
     
     REM INSTALL: SpaceX Towers
     powershell -command "& { iwr https://spacedock.info/mod/626/SpaceX%20Launch%20Towers/download/1.7.3 -OutFile SpaceX_Launch_Towers-1.7.3.zip }"
