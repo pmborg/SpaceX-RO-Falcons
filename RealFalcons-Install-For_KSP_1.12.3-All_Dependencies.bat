@@ -108,8 +108,8 @@ if not exist buildID64.txt (
 	REM INSTALL: Needed for Crew Dragon & ISS (International SpaceStation) Dep-1:
     powershell -command "& { iwr https://spacedock.info/mod/2078/HabTech2/download/0.2.0 -OutFile HabTech2-0.2.0.zip }"
     powershell.exe -NoP -NonI -Command "Expand-Archive 'HabTech2-0.2.0.zip' '%KSPTEMP%'"
-    mkdir GameData\HabTech2
-    xcopy /S %KSPTEMP%\HabTech2_0.2.0\GameData\HabTech2 GameData\HabTech2
+    REM mkdir GameData\HabTech2
+    REM xcopy /S %KSPTEMP%\HabTech2_0.2.0\GameData\HabTech2 GameData\HabTech2
     mkdir GameData\Benjee10_sharedAssets
     xcopy /S %KSPTEMP%\HabTech2_0.2.0\GameData\Benjee10_sharedAssets GameData\Benjee10_sharedAssets
     move HabTech2-0.2.0.zip %KSPTEMP%
@@ -150,7 +150,7 @@ if not exist buildID64.txt (
 
     REM Add a filter to PMBORG RO ships, only:
     mkdir Ships_VAB
-    move Ships\VAB\*.* Ships_VAB
+    move /Y Ships\VAB\*.* Ships_VAB
 
     REM call OPTIONAL-Add_Katniss.s.Cape.Canaveral.bat
     echo set kspver to 1.12. > Ships\Script\kspver.c.
@@ -160,14 +160,32 @@ if not exist buildID64.txt (
 	echo "Please keep RealFuels at this version (rf-v12.9.1), and for future updates run scipt: RealFalcons-AUTO-Update.bat"
 	echo "Please keep ZeroMiniAVC at this version (1:1.1.0.2), and for future updates run scipt: RealFalcons-AUTO-Update.bat"
     
-    REM ADD StarShip
+    REM ADD StarShip deps:
     ckan.exe install --headless --allow-incompatible --no-recommends AT-Utils Waterfall TundraExploration
 	
 	REM Remove duplicated dll:
 	REM move GameData\KXAPI\Plugins\KatLib.dll GameData\KXAPI\Plugins\KatLib.dll_
 	
-    REM call ULTRA-EVO-INSTALLER-v1.0-KSP1.11+.bat
-    call "EVO-INSTALLER.bat"
+	REM CLEAN NOT NEED FILES (make it simple):
+	REM move other craft files to a backup directory:
+	move /Y Ships\VAB\*.* Ships_VAB
+	mkdir Ships_SPH
+    move /Y Ships\SPH\*.* Ships_SPH
+	move /Y %NONEED% %KSPTEMP%
+	move /Y .gitignore %KSPTEMP%
+	move /Y RealFalcons-Install-* %KSPTEMP%
+	
+	REM delete other saved games other than KSP default ones and DEMO:
+	pushd "saves" || exit /B 1
+	for /D %%D in ("*") do (
+		if /I not "%%~nxD"=="InterStar"  if /I not "%%~nxD"=="default" if /I not "%%~nxD"=="scenarios" if /I not "%%~nxD"=="training" rd /S /Q "%%~D"
+	)
+	for %%F in ("*") do (
+		REM del "%%~F"
+		move /Y "%%~F" %KSPTEMP%
+	)
+	popd
+	
     PAUSE
 :No
     EXIT

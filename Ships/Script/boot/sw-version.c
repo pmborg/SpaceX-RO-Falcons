@@ -159,7 +159,8 @@ if SHIP_NAME = "PMBT-SpaceX Falcon 1 (Merlin 1A)" or
    SHIP_NAME = "PMBT-SpaceX Falcon 1 (Merlin 1C)"
     declare global vehicle_type to "F1-M1".                 // BASE: Falcon 1 (Merlin 1A)
 else
-if SHIP_NAME = "PMBT-SpaceX Falcon 9 v1.2 Block-5"
+if SHIP_NAME = "PMBT-SpaceX Falcon 9 v1.2 Block-5" or
+   SHIP_NAME = "PMBT-SpaceX Falcon 9 v1.2 Block-5-FTv2"
     declare global vehicle_type to "F9v1.2B5".              // BASE: Falcon-9 v1.2Blk:5 
 else
 if SHIP_NAME = "PMBT-SpaceX Falcon 9 v1.2 Block-5 Crew Dragon 2"
