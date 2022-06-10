@@ -184,6 +184,9 @@ if not exist buildID64.txt (
 		REM del "%%~F"
 		move /Y "%%~F" %KSPTEMP%
 	)
+	
+	move InterStar\KSP1-9-BASE-DroneShip-LZ1-LZ2-ISS.loadmeta InterStar\KSP1-9-BASE-DroneShip-LZ1-LZ2-ISS.loadmeta_
+	move InterStar\KSP1-9-BASE-DroneShip-LZ1-LZ2-ISS.sfs InterStar\KSP1-9-BASE-DroneShip-LZ1-LZ2-ISS.sfs_
 	popd
 	
     PAUSE
