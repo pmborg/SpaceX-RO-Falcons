@@ -189,6 +189,8 @@ if not exist buildID64.txt (
 	move InterStar\KSP1-9-BASE-DroneShip-LZ1-LZ2-ISS.sfs InterStar\KSP1-9-BASE-DroneShip-LZ1-LZ2-ISS.sfs_
 	popd
 	
+	echo "PRESS KEY: |ENTER| -> TO START KSP or |CTRL-C| to abort..."
     PAUSE
+	call KSP_x64.exe
 :No
     EXIT
