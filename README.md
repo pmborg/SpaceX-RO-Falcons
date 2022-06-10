@@ -1,12 +1,5 @@
 # SpaceX-RO-Falcons - using Real Solar System with EVO
 
-**NEWS:**
-- The new Merlin engines Falcon 9 v1.2 (block5 FTv2), will be also updated to align the **SpaceX-RO-Falcons** with the new real performance, base on data-sheet: **March 19, 2022**.
-- So a new version of the engines will be added
-- A new version of Falcon 9 v1.2 (block5 FTv2) with those engines too 
-- and will be added the respective new flight profile for it.
-
-
 ----------------------------
 
 **Yes... it's possible! :)**
