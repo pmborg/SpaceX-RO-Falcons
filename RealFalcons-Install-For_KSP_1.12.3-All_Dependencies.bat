@@ -173,7 +173,7 @@ if not exist buildID64.txt (
     move /Y Ships\SPH\*.* Ships_SPH
 	move /Y %NONEED% %KSPTEMP%
 	move /Y .gitignore %KSPTEMP%
-	move /Y RealFalcons-Install-* %KSPTEMP%
+	REM move /Y RealFalcons-Install-* %KSPTEMP%
 	
 	REM delete other saved games other than KSP default ones and DEMO:
 	pushd "saves" || exit /B 1
