@@ -185,9 +185,15 @@ if not exist buildID64.txt (
 		move /Y "%%~F" %KSPTEMP%
 	)
 	
-	move InterStar\KSP1-9-BASE-DroneShip-LZ1-LZ2-ISS.loadmeta InterStar\KSP1-9-BASE-DroneShip-LZ1-LZ2-ISS.loadmeta_
-	move InterStar\KSP1-9-BASE-DroneShip-LZ1-LZ2-ISS.sfs InterStar\KSP1-9-BASE-DroneShip-LZ1-LZ2-ISS.sfs_
+	REM NO NEED IN KSP1.12:
+	move /Y InterStar\KSP1-9-BASE-DroneShip-LZ1-LZ2-ISS.loadmeta InterStar\KSP1-9-BASE-DroneShip-LZ1-LZ2-ISS.loadmeta_
+	move /Y InterStar\KSP1-9-BASE-DroneShip-LZ1-LZ2-ISS.sfs InterStar\KSP1-9-BASE-DroneShip-LZ1-LZ2-ISS.sfs_
 	popd
+	
+	REM NO NEED IN KSP1.12:
+	move /Y Ships\VAB\NASA\Apollo11-4KSP1_11.craft Ships\VAB\NASA\Apollo11-4KSP1_11.craft_
+	move /Y "Ships\VAB\ISS\PMB ISS HT2 & TANTARES KSP1_10.craft" "Ships\VAB\ISS\PMB ISS HT2 & TANTARES KSP1_10.craft_"
+	move /Y "Ships\VAB\ISS\PMB ISS HT2 & TANTARES.craft" "Ships\VAB\ISS\PMB ISS HT2 & TANTARES.craft_"
 	
 	echo "PRESS KEY: |ENTER| -> TO START KSP or |CTRL-C| to abort..."
     PAUSE
