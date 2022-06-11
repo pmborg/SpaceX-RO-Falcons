@@ -153,10 +153,19 @@ function ReEntryburn
 	
 	sas off.
 	lock steering to retrograde.
+	set need_reload_terrain to true.
 	until SHIP:ALTITUDE < 3000
 	{
 		SET prev_impactDist to impactDist.
-		updateHoverSteering().	
+		updateHoverSteering().
+		
+		// WA to FIX kopernicus bug of not loading terrain:
+		if need_reload_terrain and altitude < 65000 and vehicle_type = "Stage-1"
+		{
+			set need_reload_terrain to false.
+			activateMainVessel().
+			wait 2.
+		}
 		
 		if SHIP:ALTITUDE < safe_alt
 		{

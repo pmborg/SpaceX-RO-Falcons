@@ -902,6 +902,7 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 	
 	// LOOP: ORBIT PHASE I (Maximizing: Horizontal Aceleration)
 	// --------------------------------------------------------------------------------------------
+	set once to true.
 	UNTIL periapsis > 0 and apoapsis < FINAL_ORBIT2
 	{
 		//UPDATE FROM: steering_falcon(90-delta, lat_correction).
@@ -916,7 +917,10 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 			set steeringVroll to -270.				// -270 = Zero Rotation
 			SET steeringDir TO 90+lat_correction.	// W/E
 		}
-		LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
+		if once {
+			set once to false.		
+			LOCK STEERING TO HEADING(steeringDir,steeringVdeg,steeringVroll).
+		}
 		
 		if do_orbit()
 			break.
@@ -943,8 +947,8 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 			break.
 	}
 
-	if vehicle_type = "F9v1.2B5"
-		activateVesselProbe().			//Time to Switch to ST-1
+	//if vehicle_type = "F9v1.2B5"
+	//	activateVesselProbe().			//Time to Switch to ST-1
 
 	if vehicle_type = "StarShip"
 		activateVesselProbe(0, "Ship").
@@ -954,6 +958,16 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 	// --------------------------------------------------------------------------------------------
 	UNTIL (apoapsis >= FINAL_ORBIT2) 
 	{
+		// WA to FIX kopernicus bug of not loading terrain:
+		if (KUniverse:ActiveVessel = SHIP)
+		{
+			if vehicle_type = "F9v1.2B5"
+			{
+				wait 2.
+				activateVesselProbe().			//Time to Switch to ST-1
+			}
+		}
+		
 		if verticalspeed < 0 
 			SET steeringVdeg to (-verticalspeed/8).	// UP/DOWN: Vertical = 90 (magical number: 8 tune precision)
 		else
