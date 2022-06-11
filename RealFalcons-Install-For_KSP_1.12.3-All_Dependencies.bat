@@ -195,6 +195,10 @@ if not exist buildID64.txt (
 	move /Y "Ships\VAB\ISS\PMB ISS HT2 & TANTARES KSP1_10.craft" "Ships\VAB\ISS\PMB ISS HT2 & TANTARES KSP1_10.craft_"
 	move /Y "Ships\VAB\ISS\PMB ISS HT2 & TANTARES.craft" "Ships\VAB\ISS\PMB ISS HT2 & TANTARES.craft_"
 	
+	REM FIX1: Fix perfomance / bug on Kopernicus:
+	copy /Y GameData\ModularFlightIntegrator\ModularFlightIntegrator.dll_ GameData\ModularFlightIntegrator\ModularFlightIntegrator.dll
+	copy /Y GameData\Kopernicus\Config\Kopernicus_Config.cfg_ GameData\Kopernicus\Config\Kopernicus_Config.cfg
+	
 	echo "PRESS KEY: |ENTER| -> TO START KSP or |CTRL-C| to abort..."
     PAUSE
 	call KSP_x64.exe

@@ -1,0 +1,21 @@
+        protected override void CalculateSunBodyFlux()
+        {
+            if (calculateSunBodyFluxPre != null)
+            {
+                calculateSunBodyFluxPre(this);
+            }
+
+            if (calculateSunBodyFluxOverride == null)
+            {
+                base.CalculateSunBodyFlux();
+            }
+            //else
+            //{
+                //calculateSunBodyFluxOverride(this);
+            //}
+
+            if (calculateSunBodyFluxPost != null)
+            {
+                calculateSunBodyFluxPost(this);
+            }
+        }

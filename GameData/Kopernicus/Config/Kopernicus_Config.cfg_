@@ -1,0 +1,15 @@
+// Kopernicus base configuration.  Provides ability to flag things and set user options.  Generates at defaults for stock settings and warnings config.
+Kopernicus_config
+{
+	EnforceShaders = True //Boolean.  Whether or not to force the user into EnforcedShaderLevel, not allowing them to change settings.
+	WarnShaders = False //Boolean.  Whether or not to warn the user with a message if not using EnforcedShaderLevel.
+	EnforcedShaderLevel = 2 //Integer.  A number defining the enforced shader level for the above parameters.  0=Low,1=Medium,2=High,3=Ultra.
+	UseKopernicusAsteroidSystem = True //String with three valid values, True,False, and Stock.  True means use the old customizable Kopernicus asteroid generator with no comet support (many packs use this so it's the default).  False means don't generate anything, or wait for an external generator.  Stock means use the internal games generator, which supports comets, but usually only works well in stock based systems with Dres and Kerbin present.
+	SolarRefreshRate = 1 //Integer.  A number defining the number of seconds between EC calculations when using the multistar cfg file.  Can be used to finetine performance (higher runs faster).  Otherwise irrelevant.
+	ScatterCountLimit = 4250 //Integer.  A number defining the maximum number of land scatters that may spawn.  Works best set close to ScatterDistanceLimit, setting them far apart can lead to odd patterning behavior.
+	ScatterDistanceLimit = 4250 //Integer.  A number defining the maximum distance away at which a land scatter may spawn.  Works best set close to ScatterCountLimit, setting them far apart can lead to odd patterning behavior.
+	EnableKopernicusShadowManager = True //Boolean.  Whether or not to run the Internal Kopernicus Shadow System.  True by default, users using mods that do their own shadows (scatterer etc) may want to disable this to save a small bit of performance.
+	ShadowDistanceLimit = 25000 //Integer.  A number defining the maximum distance at which shadows may be cast.  Lower numbers yield less shadow cascading artifacts, but higher numbers cast shadows farther. Default at 25000 is an approximation of stock. Only works if EnableKopernicusShadowManager is true.
+	DisableMainMenuMunScene = False //Boolean.  Whether or not to disable the Mun main menu scene.  Only set to false if you actually have a Mun, and want that scene back.
+	HandleHomeworldAtmosphericUnitDisplay  = True //Boolean.  This is for calculating 1atm unit at home world.  Normally should be true, but mods like PlanetaryInfoPlus may want to set this false.
+}
