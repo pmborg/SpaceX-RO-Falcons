@@ -10,7 +10,7 @@
 //              Used to specify the SW version and the diferent types of profiles supported.
 // 02/Jan/2022
 // --------------------------------------------------------------------------------------------
-set version_str to "SW-Ver: 1.22.06.11".
+set version_str to "SW-Ver: 1.22.06.14".
 //                          #.YY.MM.DD
 
 LOG   "START: sw-version.c" to LOG_FILE.

@@ -18,6 +18,7 @@ set FINAL_ORBIT  to 150000. 	//(FINAL_ORBIT/2) - For Phase-1 falcon stage-1
 set phase to 0.
 set vel to 0.
 set str_vehicle to "".
+set switch_once to true.
 
 //DEFINE SN20-Profile TARGET
 set LandingTarget to latlng(23.12854, -159.982839).
@@ -900,6 +901,19 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 		return do_break.
 	}
 	
+	function check_wa_fix
+	{
+		if (KUniverse:ActiveVessel = SHIP) and switch_once
+		{
+			if vehicle_type = "F9v1.2B5"
+			{
+				wait 2.
+				activateVesselProbe().			//Time to Switch to ST-1
+			}
+			set switch_once to false.
+		}
+	}
+	
 	// LOOP: ORBIT PHASE I (Maximizing: Horizontal Aceleration)
 	// --------------------------------------------------------------------------------------------
 	set once to true.
@@ -978,20 +992,21 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 		check_if_we_need_new_stage().
 		
 		// WA to FIX kopernicus bug of not loading terrain:
-		if (KUniverse:ActiveVessel = SHIP)
-		{
-			if vehicle_type = "F9v1.2B5"
-			{
-				wait 2.
-				activateVesselProbe().			//Time to Switch to ST-1
-			}
-		}
+		if STAGE1_LAND_ON = "LAND"
+			check_wa_fix().
 	}
 
 	set thrust to 0.
 	LOCK STEERING TO PROGRADE. 	//UNLOCK STEERING.
 	PRINT "Orbit insertion completed".
 	WAIT 5.
+
+	if KUniverse:ActiveVessel <> SHIP {
+		update_phase_title("(WAIT TO BE ACTIVE)", 0, true).
+		UNTIL (KUniverse:ActiveVessel = SHIP) WAIT 1.
+	}
+	// WA to FIX kopernicus bug of not loading terrain:
+	check_wa_fix().
 
 	if orbit_type = "GSO"
 	{

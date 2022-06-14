@@ -160,7 +160,7 @@ function ReEntryburn
 		updateHoverSteering().
 		
 		// WA to FIX kopernicus bug of not loading terrain:
-		if need_reload_terrain and altitude < 65000 and vehicle_type = "Stage-1"
+		if need_reload_terrain and altitude < 65000 and vehicle_type = "Stage-1" and STAGE1_LAND_ON = "LAND"
 		{
 			set need_reload_terrain to false.
 			activateMainVessel().
