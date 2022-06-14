@@ -12,5 +12,5 @@
 // --------------------------------------------------------------------------------------------
 
 // USER CAN SELECT:
-declare global STAGE1_LAND_ON to "LAND". // "LAND" OR "SEA"
-//declare global STAGE1_LAND_ON to "SEA".
+//declare global STAGE1_LAND_ON to "LAND". // "LAND" OR "SEA"
+declare global STAGE1_LAND_ON to "SEA".

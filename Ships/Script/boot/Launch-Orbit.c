@@ -947,27 +947,14 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 			break.
 	}
 
-	//if vehicle_type = "F9v1.2B5"
-	//	activateVesselProbe().			//Time to Switch to ST-1
-
 	if vehicle_type = "StarShip"
 		activateVesselProbe(0, "Ship").
 			
 	update_phase_title("[7] ORBIT PHASE II",1,false). 
 	// LOOP: ORBIT PHASE II (Maximizing Apoapsis Increase)
 	// --------------------------------------------------------------------------------------------
-	UNTIL (apoapsis >= FINAL_ORBIT2) 
+	UNTIL (apoapsis >= FINAL_ORBIT2) and (periapsis > -200000) //200km
 	{
-		// WA to FIX kopernicus bug of not loading terrain:
-		if (KUniverse:ActiveVessel = SHIP)
-		{
-			if vehicle_type = "F9v1.2B5"
-			{
-				wait 2.
-				activateVesselProbe().			//Time to Switch to ST-1
-			}
-		}
-		
 		if verticalspeed < 0 
 			SET steeringVdeg to (-verticalspeed/8).	// UP/DOWN: Vertical = 90 (magical number: 8 tune precision)
 		else
@@ -989,6 +976,16 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 		update_atmosphere (altitude, velocity:orbit:mag).
 		log_data (velocity:orbit:mag).
 		check_if_we_need_new_stage().
+		
+		// WA to FIX kopernicus bug of not loading terrain:
+		if (KUniverse:ActiveVessel = SHIP)
+		{
+			if vehicle_type = "F9v1.2B5"
+			{
+				wait 2.
+				activateVesselProbe().			//Time to Switch to ST-1
+			}
+		}
 	}
 
 	set thrust to 0.
