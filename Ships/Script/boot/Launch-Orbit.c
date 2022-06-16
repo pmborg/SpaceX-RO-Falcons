@@ -910,7 +910,8 @@ if altitude*1.1 < FINAL_ORBIT2 and vehicle_type <> "SN9-Profile1" and vehicle_ty
 				wait 2.
 				activateVesselProbe().			//Time to Switch to ST-1
 			}
-			set switch_once to false.
+			if STAGE1_LAND_ON = "SEA"
+				set switch_once to false.
 		}
 	}
 	
