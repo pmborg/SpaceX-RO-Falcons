@@ -102,6 +102,8 @@ if not exist buildID64.txt (
     REM To show FPS (press F8 and drag it with mouse)
     ckan.exe install --headless --allow-incompatible --no-recommends ShowFPS
 
+	ckan.exe install --headless --allow-incompatible --no-recommends BDAnimationModules DockingPortAlignmentIndicator TextureReplacer
+
     set KSPTEMP=%TEMP%\ksp~%RANDOM%.tmp
     MKDIR %KSPTEMP%
     
