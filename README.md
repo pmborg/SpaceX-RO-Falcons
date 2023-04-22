@@ -1,198 +1,318 @@
-# SpaceX-RO-Falcons - using Real Solar System with EVO
+# WoMA3Dengine (DX11, DX12, OPENGL, DX9) Advanced Tutorials
+<hr>
+<h1>WoMA3Dengine at Level 29 INTRO DEMO</h1>
 
-----------------------------
+<h2>Movement Keys: (at level28)</h2> <br>
+  - <b>Left:		</b> arrow or a<br>
+  - <b>Right:	 	</b>	arrow or d<br>
+  - <b>Front:		</b> arrow or w<br>
+  - <b>Back:		</b> arrow or s<br>
+  - <b>Look Up:		</b> pg. Up<br>
+  - <b>Look Down:	</b>	pg. Down<br>
+  - <b>Go Up: 		</b>	R<br>
+  - <b>Go Down: 	</b>	F<br>
+  
+<h2>Keys / Hints:</h2> <br>
+<b>[F1]</b> System Info<br>
+<b>[F2]</b> Celestial Info<br>
+Latitude/Longitude<br>
+Calculate Sun Rise / Sun Set<br>
+Moon Distance<br>
+Sun Geometric elevation<br>
+Moon Geometric elevation<br>
+Moon Azimuth<br>
+<b>[F3]</b> Map with current location<br>
+<b>[F4]</b> Get real time weather info (when network option is: ON)<br>
+<b>[F5]</b> Game Rendering page (defaultt page)<br>
+<b>[F6]</b> SETUP<br>
+Try to Change the driver on the fly without the need of close and open the Application.<br>
+- DirectX 12<br>
+- DirectX 11<br>
+- DirectX 9<br>
+- OPENGL 4<br>
 
-**Yes... it's possible! :)**
-
-The SHIP was re-scaled:
-TO KSP: 119.736 m x 9.088 m
-
-Starship & Super Heavy stacked in preparation for orbital flight:
-![!](https://i.imgur.com/IzZDN02.png)
-![!](https://i.imgur.com/hKTYWvE.png)
-
-DEMO VIDEO with the current version of the code:
-[![SpaceX RO Falcons - HOW TO INSTALL and RUN DEMO(FULL VIDEO)](https://i.imgur.com/EfK4psB.png)](https://www.youtube.com/watch?v=8C6WOAyUm9c)
-
-I hope you like it!
-
-
-**SpaceX RO Falcons - HOW TO INSTALL and RUN DEMO(FULL VIDEO)**
-[![SpaceX RO Falcons - HOW TO INSTALL and RUN DEMO(FULL VIDEO)](https://i.imgur.com/9O8ArGM.png)](https://www.youtube.com/watch?v=A_dMWbzeP2k)
-
-# WHAT WILL BE ON RELEASE 1 ?
-
-**Testing all Crew Dragon 2 Mission:**
-![!](https://i.imgur.com/1L7eKOC.png)
-
-# SpaceX-RO-Falcons
-This KSP (**Kerbal Space Program**) addon, works ontop of [kks-spacex-pack mod](https://forum.kerbalspaceprogram.com/index.php?/topic/193933-1101-kks-spacex-pack-v65-01112020/) for KSP.<br>
-The **SpaceX-RO-Falcons** Mod Introduce: 
-* A realistic Performance of SpaceX Falcon family to KSP users.<br>
-* Expand the physics of KSP to allow multiple ships flying at the same time, but with high performance.<br>
-* All parts to create all the Falcon rocket family are available.
-* LEO and GSO Payloads are allowed.
-* Land or Sea landings is a *User Choise* ([KSP-ROOT-DIR]/Ships/Script/boot/**USER-CONFIG.KS**).
-* Faring separation.
-* ST-2 Deorbit.
-* In resume all types of missions are coded in KOS.
-* **Supported crafts:**<br>
-───ISS<br>
-│       PMB ISS HT2 & TANTARES KSP1_10.craft<br>
-│       PMB ISS HT2 & TANTARES.craft<br>
-│<br>
-├───NASA<br>
-│       LEM.craft (not included)<br>
-│       PMBT-SpaceX Falcon Heavy v1_2 Block-5 LEM.craft (not included)<br>
-│<br>
-└───SpaceX<br>
-&nbsp;&nbsp;&nbsp;   ├───Crew Dragon 2<br>
-&nbsp;&nbsp;&nbsp;   │       PMB-SpaceX Crew Dragon 2.craft<br>
-&nbsp;&nbsp;&nbsp;   │<br>
-&nbsp;&nbsp;&nbsp;   ├───Falcon 1 (2006-2010)<br>
-&nbsp;&nbsp;&nbsp;   │       PMBT-SpaceX Falcon 1 (Merlin 1A).craft<br>
-&nbsp;&nbsp;&nbsp;   │       PMBT-SpaceX Falcon 1 (Merlin 1C).craft<br>
-&nbsp;&nbsp;&nbsp;   │<br>
-&nbsp;&nbsp;&nbsp;   ├───Falcon 9 (2010-2018)<br>
-&nbsp;&nbsp;&nbsp;   │       PMBT-SpaceX Falcon 9 v1_0.craft<br>
-&nbsp;&nbsp;&nbsp;   │       PMBT-SpaceX Falcon 9 v1_1 Block-2.craft<br>
-&nbsp;&nbsp;&nbsp;   │       PMBT-SpaceX Falcon 9 v1_2 Block-3.craft<br>
-&nbsp;&nbsp;&nbsp;   │       PMBT-SpaceX Falcon 9 v1_2 Block-4.craft<br>
-&nbsp;&nbsp;&nbsp;   │<br>
-&nbsp;&nbsp;&nbsp;   └───Falcon 9&FH v1.2 Block-5<br>
-&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   PMBT-SpaceX Falcon 9 v1_2 Block-5 Crew Dragon 2.craft<br>
-&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   PMBT-SpaceX Falcon 9 v1_2 Block-5.craft<br>
-&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;   PMBT-SpaceX Falcon Heavy v1_2 Block-5.craft<br>
-
-**Supported versions are:**
-* **KSP 1.9.1** (include original ISS: **PMB ISS HT2 & TANTARES.craft**)<br>
-* **KSP 1.10.2** (include ISS version for KSP 1.10++: **PMB ISS HT2 & TANTARES KSP1_10.craft**)<br>
-* **KSP 1.11.2** (include ISS version for KSP 1.10++: **PMB ISS HT2 & TANTARES KSP1_10.craft**)<br>
-* **KSP 1.12.3** (include ISS version for KSP 1.10++: **PMB ISS HT2 & TANTARES KSP1_10.craft**)<br>
-
-----
-**CURRENT FLEET:**
-![!](https://i.imgur.com/w9gUgOb.png)
-
-----
-<H1>Regression Tests for KOS Code:</H2>
-
-[ok] **F1-M1C QMAX**<br>
-[ok] **F1-M1C ST-1 STAGE**<br>
-[ok] **F1-M1C ST-2 LEO ORBIT**<br>
 <br>
-[ok] **F9 QMAX**<br>
-[ok] **F9 ST-1 STAGE**<br>
-[ok] **F9 ST-1 LANDING**<br>
-[ok] **F9 ST-2 LEO ORBIT**<br>
+- <b>DX 160 Full Demo (to be added later, maybe?)<br>
+
+<hr>
+<h2>3D - INTERMEDIATE TUTORIAL SERIES</h2>
+<hr>
+
+
+ ...<br>
+ ...<br>
+
+<hr>
+
+- <b>DX37: WORLD.XML: load OBJ 3D file format, render chess board pieces</b><br> 
+	- Adding MAIN THREAD and the LOADER THREAD
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_037.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_037.png)	
+
+
+<hr>
+
+- <b>DX36: WORLD.XML: load OBJ 3D file format, render a SHADOW MAP</b><br> 
+	- Loading now OBJ with SHADOW MAP,  using render to texture
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_036.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_036.png)	
+
+
+<hr>
+
+- <b>DX35: WORLD.XML: load OBJ 3D file format, with BUMP MAP</b><br> 
+	- Loading now OBJ with BUMP MAP texture
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_035.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_035.png)	
+
+<hr>
+- <b>DX34: WORLD.XML: load OBJ 3D file format, with SPECULAR and SHININESS</b><br> 
+	- Loading now OBJ with SPECULAR and SHININESS
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_034.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_034.png)	
+
+<hr>
+- <b>DX33: WORLD.XML: load OBJ 3D file format, the compond, using transparent textures ALFA MAP and ALFA COLOR</b><br> 
+	- Loading now OBJ with alfa color and alfamap
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_033.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_033.png)	
+
+
+<hr>
+	
+- <b>DX32: WORLD.XML: load OBJ 3D file format, the first advanced object, using LIGHT shader</b><br> 
+	- Loading more complex objects with light, the: OLD HOUSE.
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_032.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_032.png)	
+
+<hr>
+- <b>DX31: WORLD.XML: load OBJ 3D file format, with MULTIPLE TEXTURES, using TEXTURE shader</b><br> 
+	- Loading Multiple Textures in one object
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_031.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_031.png)	
+
+
+<hr>
+
+- <b>DX30: WORLD.XML: load OBJ 3D file format, using COLOR shader</b><br> 
+	- SceneManager and SceneNode<br> 
+	- QuadTree and Frustum<br> 
+	- <b>World</b> and <b>Objects</b>: Loading objects as a descriptor:	<b>World.xml</b><br>
+	- Load <b>obj</b> format<br>
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_030.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_030.png)	
+
+<h2>INTERMEDIATE 3D ENGINE TUTORIAL LIST</h2>
+
+- <b>DX29: INTRO DEMO OF BASIC TUTORIAL SERIES</b><br>
+	-  Adding the Sound Manager<br>
+	-  Adding Play background Music<br>
+	-  Generate the first RELEASE BUILD<br>
+	-  Add the installer of INTRO DEMO OF BASIC TUTORIAL SERIES<br>
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_029_VIDEO_DEMO.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_029_VIDEO_DEMO.png)	
+  
+<hr>
+
+- <b>DX28: Sky dome with a sky sphere</b><br>
+	- Adding the fixed camera Sky<br>
+	- Adding Direct input for DX Drivers<br>
+	- Allow snapshot file dump using "print screen" key, in any of these image formats:<br>
+  
+			- Bmp
+			- Png
+			- Ico
+			- Jpeg
+			- Tiff
+			- Gif
+			- Wmp
+			- Dds
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_028.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_028.png)	
+
+<hr>
+
+- <b>DX27: The Rastertek text font</b>
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_027.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_027.png)	
+
+
+<hr>
+
+- <b>DX26: The Spheres (COLOR, TEXTURE and LIGHT Shaders)</b>
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_026.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_026.png)	
+
+<hr>
+
+- <b>DX25: The CUBEs (COLOR, TEXTURE and LIGHT Shaders)</b>
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_025.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_025.png)	
+
+
+<hr>
+
+- <b>DX24: The 2D Rendering (Sprite)</b>
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_024.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_024.png)	
+
+<hr>
+
+- <b>DX23: The directional LIGHT Shader with environment color</b>	
+
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_023.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_023.png)	
+
+<hr>
+
+- <b>DX22: The TEXTURE Shader</b><br>
+Add third party image readers:<br>
+	- BMP<br>
+	- JPG<br>
+	- PNG<br>
+	- TIFF<br>
+	- DDS<br>
+	- TGA<br>
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_022.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_022.png)	
+
+<hr>
+
+- <b>DX21: The COLOR Shader</b><br>
+ Introduction to the: Rasterizer State
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_021.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_021.png)	
+
+<hr>
+- <b>DX20: Resize Main window</b><br>
+ Allow alt enter swap
+ And allow user to change the window size
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_020.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_020.png)	
+
+<hr>
+
+- <b>DX19: The Main window</b><br>
+	- Add Render Engine for Windows only, with these drivers:<br>
+	- DX9sdk (the original sdk, will be added/revealed later, at least on basic series)<br>
+	- DX9(using 11)<br>
+	- DX11<br>
+	- OPENGL3/4<br>
+	- DX12<br>
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_019.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/DXEngine_019.png)	
+
+<h2>BASIC 3D ENGINE TUTORIAL LIST</h2>
+
+<hr>
+
+- <b>009 Get current RealTime Weather using the aviation METAR</b><br>
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/CoreEngine_009_PAINT_METAR_WEATHER_REALTIME.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/CoreEngine_009_PAINT_METAR_WEATHER_REALTIME.png)	
+
+<hr>
+
+- <b>008 RealTimeMapGPSPosition</b><br>
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/CoreEngine_008_PAINT_REALTIME_GPS_MAP_LOCATION.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/CoreEngine_008_PAINT_REALTIME_GPS_MAP_LOCATION.png)	
+
+<hr>	 
+- <b>007 Add the Real Time Celestial calculations.</b><br>
+	- Loading files from engine.pck on RELEASE BUILD (explained later in an advanced chapeter with the installer)<br>
+	- Calculate SunRise, SunSet<br>
+	- Calculate Sun altitude angle and azimuth angle<br>
+	- Moon Phase (based of realime date)<br>
+	- Calculate Moon Distance<br>
+	- Calculate moon Elevation, taking into account atmospheric refraction<br>
+	- calculate Moon Ecliptic Latitude, Ecliptic Longitude and Azimuth<br>
+	
+(later will be used to re-create more realistic astro positions)<br>
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/CoreEngine_007_PAINT_REALTIMECELESTIAL_ASTROCLASS.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/CoreEngine_007_PAINT_REALTIMECELESTIAL_ASTROCLASS.png)	
+
+<hr>	
+- <b>006 PACKmanager + IDEA + MATH + CPU BENCH</b><br>
+	- Create a pack file called <b>engine.pack</b>, which is a zip with the contents of all engine directory.<br>
+	- Cypher the file with IDEA and call it: <b>engine.pck</b><br>
+	- Add the first Math libs for DX and OPENGL<br>
+	- Add a simple CPU benchmark, to measure the performance improvement<br>
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/CoreEngine_006_PACKMANAGER_IDEA_CPU_BENCHMARK.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/CoreEngine_006_PACKMANAGER_IDEA_CPU_BENCHMARK.png)	
+
+<hr>	
+- <b>005 The System settings (settings.xml)</b><br>
+	- Adding the OS Paint events<br>
+	- Allow Load/Save Game System Settigns in the <b>settings.xml</b> file.<br>
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/CoreEngine_005_PAINT_SETTINGS_XML.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/CoreEngine_005_PAINT_SETTINGS_XML.png)	
+
+<hr>
+- <b>004 SystemManager + TIMER + FPS</b><br>
+	- Adding the first version of SystemManager viewer<br>
+	- Adding Precision Timer<br>
+	- Add FPS (Frame per second) calculation<br>
+	
+![https://github.com/pmborg/WoMA3Dengine/blob/main/Image_Tutorial_Snapshot/CoreEngine_004_SYSTEMMANAGER_TIMER_FPS_MATH.png](https://github.com/pmborg/WoMA3Dengine/blob/main/Image_Tutorial_Snapshot/CoreEngine_004_SYSTEMMANAGER_TIMER_FPS_MATH.png)	
+	
+<hr>
+- <b>003 EXCEPTION_trace + DUMP_upload</b><br>
+	- Exception Stack trace viewer in detail for an _DEBUG build<br>
+	- Exception Stack trace viewer and create  the respective Mini Dump report<br>
+	- Option to Upload the report for an FTP site.<br>
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/CoreEngine_003_MINIDUMPER_STACK_EXCEPTION.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/CoreEngine_003_MINIDUMPER_STACK_EXCEPTION.png)	
+
+<hr>
+- <b>002 MAIN_Window</b><br>
+	- Create MAIN OS Window<br>
+	- Handle the OS Windows events<br>
+	- Main Window Paint events<br>
+	- OS INPUT manager<br>
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/CoreEngine_002_MAINWINDOW_EVENTS.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/CoreEngine_002_MAINWINDOW_EVENTS.png)	
+
+
+<hr>
+- <b>001 The User International Language</b><br>
+	- User language detection (later automatic translation)<br>
+	- Log manager, will log on: <b>REPORT.txt</b>, on Visual Studio Console and on Console Window<br>
+	- Memory leak detector level 1 <br>
+	- OS manager for main OS directories (DEBUG/RELEASE)<br>
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/CoreEngine_001_LANG_LOG_MEMLEAK_OSMAINDIRs.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/CoreEngine_001_LANG_LOG_MEMLEAK_OSMAINDIRs.png)	
+
+<hr>
+- <b>000 OSengine - The basic pillar foundations of the 3D WoMA Engine</b><br>
+ Debug Console<br>
+ default settings<br>
+ SystemClass (common for all platforms)<br>
+ <b>WinSystemClass (for windows)</b><br>
+ XboxSystemClass<br>
+ LinuxSystemClass<br>
+ AndroidSystemClass<br>
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/CoreEngine_000_OSENGINE_SYSTEM.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/Image_Tutorial_Snapshot/CoreEngine_000_OSENGINE_SYSTEM.png)	
+
+<hr>
+<h2>3D - CORE TUTORIAL SERIES</h2>
+
+
 <br>
-[ok] **F9 + Crew Dragon 2 QMAX**<br>
-[ok] **F9 + Crew Dragon 2 STAGE**<br>
-[ok] **F9 + Crew Dragon 2 ST-1 LANDING**<br>
-[ok] **F9 + Crew Dragon 2 LEO ORBIT**<br>
+<h2>HTTP WOMA 3D ENGINE TUTORIAL LIST</h2>
+
 <br>
-[ok] **FH ST1 QMAX**<br>
-[ok] **FH ST1 STAGE**<br>
-[ok] **FH ST1 Master ST-1 LANDING**<br>
-[ok] **FH LEO Orbit**<br>
-[ok] **FH Core ST-1 LANDING**<br>
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/thumbs/1.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/thumbs/1.png)
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/thumbs/2.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/thumbs/2.png)
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/thumbs/3.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/thumbs/3.png)
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/thumbs/4.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/thumbs/4.png)
+	
+![https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/thumbs/5.png](https://raw.githubusercontent.com/pmborg/WoMA3Dengine/main/thumbs/5.png)
 
-----
-**CURRENT in Development: StarShip already do SN10 style landings... :)**
-![!](https://i.imgur.com/xHjSP5u.png)
+<br>
 
-----
-<h2>HOW TODO: Automatic Installation:</h2>
-
-[1] First **do a Kerbal Space Program clean Install**, to avoid mod conflicts.
-
-[2] **Copy all files from** https://github.com/pmborg/SpaceX-RO-Falcons/archive/main.zip **to [KSP ROOT]**<br>
-(Sample: C:\SteamLibrary\steamapps\common\Kerbal Space Program)<br>
-
-[3] then after the copy, Run the .BAT file: 
-(**Run Script From**: [KSP ROOT]\SteamLibrary\steamapps\common\Kerbal Space Program)<br>
- **Pmborg-RealFalcons-v2-Install-For_KSP_1.9.1-All_Dependencies.bat**<br>
- --or--(depending of your case)<br>
- **Pmborg-RealFalcons-v2-Install-For_KSP_1.10.1-All_Dependencies.bat**<br>
- 
-![!](https://i.imgur.com/XtxincO.png)
-
-You can also check the videos about HOW TO INSTALL in Wiki page:
-
-**WIKI-HOW TO INSTALL**: (https://github.com/pmborg/SpaceX-RO-Falcons/wiki/HOW-TO-INSTALL)
- 
-**Note:**<br> 
-After the instalation, during the KSP Loading, there will be some addon's that will rise some warnings about *outdated versions*, but that is "normal", they were not compiled for KSP 1.10.1 but they will work.
-
-----
-<h2>HOW TODO: Automatic Mod dependencies Update:</h2>
-
-- RUN  **Pmborg-RealFalcons-v2-CheckForModUpdates.bat**<br>
-
-----
-<h2>Demo a Sample Mission, (load this saved game):</h2>
-
-saves\InterStar\\**KSP1-9-BASE-DroneShip-LZ1-LZ2-ISS.sfs**<br>
-(Include: LZ-1, LZ-2, OCISLY, JRTI, ISS and F9)<br>
---OR--<br>
-saves\InterStar\\**KSP1-10-DEMO-BASE-DroneShip1-2-LZ1-2.sfs**<br>
-(Include: LZ-1, LZ-2, OCISLY, JRTI and F9)<br>
-
-Select: 0 3 [ENTER] at KOS Console Launch Menu.
-
-If you want to follow Stage-1 landing, switch vessels imediattly after the stage separation.
-
-----
-<h2>HOW TO: Disable the RSS Real Solar System and keep Kerbin System:</h2>
-
-After the full  instalation, you can remove this directory:
-**[KSP ROOT]**\GameData\Kopernicus<br>
-This will remove the RSS but keep RO, its an option... 
-
-----
-<h2>HOW TO: Disable the KOS automatic Launch and Landing:</h2>
-
-Rename directory:<br>
-
-**[KSP ROOT]**/Ships/Script/**boot** TO **[KSP ROOT]**/Ships/Script/**nouse.boot**
-
-----
-<h2>YouTube video demos Playlist:</h2>
-
-[![YouTube video Demos](blob:https://imgur.com/2e364972-9526-46f9-be95-8cb1b43dc7d2)](https://www.youtube.com/playlist?list=PLKyZSZ3Rbi6afgvRnMc2XUgyUA8dcYNkP)
-
-
-# Falcon 9 Mission Video:
-[![Falcon 9 Mission - How it works?](https://i.imgur.com/l2MbG4p.png)](https://www.youtube.com/watch?v=ktnvzGVYlrM)
-
-----
-**Earth with Real Solar System Mod: (NOW also on KSP 1.11)**
-![!](https://i.imgur.com/7XuzhOa.png)
-
-**Crew Dragon Launch:**
-![!](https://i.imgur.com/AVH8tmX.png)
-
-**Falcon Heavy Launch:**
-![!](https://i.imgur.com/xonhB3n.png)
-
-**Stage-1 Landing on DroneShip (JRTI):**
-![!](https://i.imgur.com/Qd0NqYw.png)
-
-**Stage-1 Landing on LandingZone (LZ-2):**
-![!](https://i.imgur.com/iUABkp8.png)
-
-**ISS: For (KSP1.9.1 Only)**
-![!](https://i.imgur.com/DZpBFGa.png)
-
-----
-
-What is on development [Not yet Available]<br>
--- [FH+LEM] On the Moon?<br>
--- [FH] Landing Both FH ST-1 Boosters at the same time on LZ-1 and LZ-2. **(Already work! tunning it...)**<br>
-
-----
-**Testing all Moon Mission code with SaturnV, (before use FH+LEM)**
-![!](https://i.imgur.com/OXC7pUn.png)
-
-**Note:** The SaturnV after fly certification will be also released.<br>
-
+<b>VIDEO:</b>
+	
+[![WoMA3Dengine at Level 29 INTRO DEMO](https://i.imgur.com/q3AMNrr.png)](https://www.youtube.com/watch?v=tdMsRX_lQ5A)
